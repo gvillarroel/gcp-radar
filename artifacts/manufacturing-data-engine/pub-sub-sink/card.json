@@ -1,0 +1,138 @@
+{
+  "feature_name": "Pub/Sub sink",
+  "feature_slug": "pub-sub-sink",
+  "summary": "Adds a Pub/Sub sink for extensibility and custom integration.",
+  "extended_definition": "Adds a Pub/Sub sink for extensibility and custom integration.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/concepts/manufacturing-connect",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/access/how-to-query-in-gcs",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/content",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Overview \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Full flexibility : Can work with any edge stack, just requires data to land in Pub/Sub directly or using Message Queuing Telemetry Transport (MQTT) bridge, with custom definition parsers to map incoming data schemas to the MDE standard.",
+          "Adaptability : As MDE deploys fully in your own Google Cloud tenant project, all MDE components (such as Pub/Sub, Dataflow, and BigQuery) are transparent and can be used as if you had built the platform yourself.",
+          "Cloud Data Integration : MC transforms data into MQTT and Pub/Sub messages, seamlessly integrating with Google Cloud."
+        ]
+      },
+      {
+        "title": "\"Query in Cloud Storage \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/access/how-to-query-in-gcs",
+        "source_id": "site-docs-reference",
+        "final_score": 129,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Raw data is stored in AVRO format using the following schema: { \"type\" : \"record\" , \"name\" : \"AvroPubsubMessageRecord\" , \"namespace\" : \"com.google.cloud.industry.manufacturing.sfp.datalake.core\" , \"fields\" : [ { \"name\" : \"attributes\" , \"type\" : { \"type\" : \"map\" , \"values\" : \"string\" } }, { \"name\" : \"message\" , \"type\" : { \"type\" : \"bytes\" , \"java-class\" : \"[B\" } }, { \"name\" : \"messageId\" , \"type\" : \"string\" }, { \"name\" : \"timestamp\" , \"type\" : \"long\" } ] The schema is composed by the following values: attributes : Stores the Pub/Sub message attribute map. message : Stores the raw message as received in the Pub/Sub topic input-messages . messageId : ID set by Pub/Sub when receiving the message, it's written into all the sinks in order to have lineage of where the data came from. timestamp : When the message was received by Pub/Sub.",
+          "As with Raw data, messages are grouped in 10 minute windows and 10 files are written in each of the windows, this data is used to produce the filenames, ie: gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00000-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00001-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00002-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00003-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00004-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00005-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00006-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00007-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00008-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00009-of-00010.avro There's a different schema which only vary slightly for each Archetype, and so each type uses that corresponding schema.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "\"Manufacturing Connect \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/concepts/manufacturing-connect",
+        "source_id": "site-docs-root",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Secure connection Communication between MCe and Google Cloud are performed over PKI encrypted channels for Pub/Sub.",
+          "Additionally to the encryption, the network traffic between MC and Pub/Sub can be routed through private connectivity options between onPrem and Cloud (Interconnect or VPN) to private endpoints of Google APIs.",
+          "In such a scenario, the traffic between corporate networks and Google Cloud is not crossing the public internet by being processed only within the customer's private network perimeters."
+        ]
+      },
+      {
+        "title": "File content \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/content",
+        "source_id": "site-docs-reference",
+        "final_score": 125,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Bucket This section shares a sample configuration for a MDE bucket. { \"type\" : \"TAG\" , \"name\" : \"second-tag-bucket\" , \"attributes\" : { \"instanceOverwriteMode\" : \"true\" }, \"versions\" : [ { \"version\" : 1 , \"schema\" : \"'{{schemas/generic-schema.json}}'\" , \"provider\" : \"local\" } ] } Ingestion specification This section shares a sample configuration for a MDE ingestion specification. { \"name\" : \"csv-full-ingestion-specification\" , \"source\" : \"CSV\" , \"folderName\" : \"test-csv-folder\" , \"separator\" : \",\" , \"skipRows\" : 10 , \"headers\" : { \"headerNames\" : { \"names\" : [ \"one\" , \"two\" , \"three\" ] } }, \"insertMetadata\" : true , \"disabled\" : false } Message classes This section shares a sample configuration for MDE message classes. { \"name\" : \"default-numeric-message-class\" , \"priority\" : 970 , \"expression\" : \"#root.event['value'] instanceof T(Number) && #root.event['timestamp'] != null && #root.event['tagName'] != null && #root.event['cluster'] == null\" } Metadata instances This section shares a sample configuration for MDE metadata instances. { \"bucketReference\" : { \"bucketName\" : \"default-tag-bucket\" , \"bucketType\" : \"TAG\" , \"version\" : 1 }, \"naturalKey\" : \"cloud-natural-key\" , \"instance\" : { \"site\" : \"simulated-site\" , \"factory\" : \"test-factory\" } } Parsers This section shares a sample configuration for MDE parsers. { \"name\" : \"default-numeric-parser\" , \"messageClassName\" : \"default-numeric-message-class\" , \"typeReference\" : { \"name\" : \"default-numeric-type\" , \"version\" : 1 }, \"disabled\" : false , \"script\" : \"'{{scripts/parser-script.wstl}}'\" } Type This section shares a sample configuration for a MDE type. { \"archetype\" : \"NUMERIC DATA SERIES\" , \"name\" : \"default-numeric-type\" , \"disabled\" : false , \"versions\" : [ { \"version\" : 1 , \"dataSchema\" : \"\" , \"storageSpecs\" : [ { \"sink\" : \"PUBSUB PROTO\" , \"disabled\" : true , \"materializeCloudMetadata\" : false }, { \"sink\" : \"BIG QUERY\" , \"disabled\" : false , \"materializeCloudMetadata\" : true }, { \"sink\" : \"GCS\" , \"disabled\" : false , \"materializeCloudMetadata\" : false }, { \"sink\" : \"PUBSUB JSON\" , \"disabled\" : true , \"materializeCloudMetadata\" : false }, { \"sink\" : \"BIG TABLE\" , \"disabled\" : false , \"materializeCloudMetadata\" : false } ], \"metadataBuckets\" : [ { \"bucketName\" : \"default-record-bucket\" , \"version\" : 1 , \"required\" : false }, { \"bucketName\" : \"second-tag-bucket\" , \"version\" : 1 , \"required\" : false }, { \"bucketName\" : \"default-tag-bucket\" , \"version\" : 1 , \"required\" : false } ], \"transformations\" : [ { \"window\" : { \"id\" : \"10-minutes-window\" , \"durationMinutes\" : 10 , \"valueExpression\" : \"#message['data']['numeric'].toString()\" } }, { \"eventChange\" : { \"keyExpression\" : \"#message['tagName']\" , \"valueExpression\" : \"#message['data']['numeric'].toString()\" } } ] } ] } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]",
+          "The referenced file could be in any directory, and you can create different directories for organization purposes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.industry.manufacturing.sfp.datalake.core",
+      "file.json",
+      "root.event",
+      "schema.json",
+      "script.wstl",
+      "v1.3"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/overview",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/access/how-to-query-in-gcs",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/concepts/manufacturing-connect",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/content"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/overview",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/access/how-to-query-in-gcs",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/concepts/manufacturing-connect",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/content"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/overview",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/access/how-to-query-in-gcs",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/concepts/manufacturing-connect",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/content"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/overview",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/access/how-to-query-in-gcs",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/concepts/manufacturing-connect",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/content"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:25.914Z",
+  "source_step08_card": "data/step-08/current/products/manufacturing-data-engine/card.json",
+  "product_name": "Manufacturing Data Engine",
+  "product_slug": "manufacturing-data-engine"
+}

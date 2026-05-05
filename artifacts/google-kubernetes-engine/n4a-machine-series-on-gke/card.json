@@ -1,0 +1,151 @@
+{
+  "feature_name": "N4A machine series on GKE",
+  "feature_slug": "n4a-machine-series-on-gke",
+  "summary": "The N4A machine series is available for GKE clusters in both Autopilot and Standard modes.",
+  "extended_definition": "The N4A machine series is available for GKE clusters in both Autopilot and Standard modes.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"GKE Autopilot overview \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 167,
+        "relevance": "",
+        "evidence_snippets": [
+          "Autopilot workloads that select specific hardware : Pods that select specific hardware, such as Compute Engine machine series or hardware accelerators, use a node-based billing model .",
+          "Manage and monitor your Autopilot clusters In Autopilot, GKE automatically manages cluster upgrades and maintenance for both the control plane and worker nodes.",
+          "Network policy enforcement is available with GKE Dataplane V2, which is enabled by default in Autopilot clusters."
+        ]
+      },
+      {
+        "title": "\"About custom ComputeClasses \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "source_id": "site-docs-reference-2",
+        "final_score": 163,
+        "relevance": "",
+        "evidence_snippets": [
+          "GKE takes one of the following actions: In Autopilot clusters, GKE places the Pod on a new or existing node, regardless of the node machine configuration.",
+          "In Standard clusters that use node pool auto-creation, GKE might create a new node pool that uses the default E2 machine series to place the Pod.",
+          "For example, if the N4 machine series isn't available, you can fall back to C3 machines."
+        ]
+      },
+      {
+        "title": "\"Encrypt workload data in-use with Confidential GKE Nodes \\_|\\_ GKE security\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes",
+        "source_id": "site-iam-reference",
+        "final_score": 159,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cluster-level In Autopilot clusters, both of the following costs apply: Balanced compute class pricing, because the default machine series in the cluster changes to N2D.",
+          "Pricing The following pricing applies, depending on how you configure Confidential GKE Nodes: Confidential GKE Nodes pricing Workload-level In Autopilot workloads, both of the following costs apply: Autopilot node-based billing for the Compute Engine machine series that the Pods run on.",
+          "When you enable Confidential GKE Nodes, the default machine series in the Autopilot cluster changes to N2D."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "node.kubernetes.io",
+      "priorities.gpu.driverVersion",
+      "priorities.gpu.type",
+      "priorities.machineFamily",
+      "priorities.machineType",
+      "priorities.reservations.affinity",
+      "priorities.reservations.specific.name",
+      "priorities.reservations.specific.project",
+      "priorities.spot",
+      "priorities.storage.bootDiskSize",
+      "priorities.storage.bootDiskType",
+      "priorities.storage.localSSDCount"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:15.353Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

@@ -1,0 +1,98 @@
+{
+  "feature_name": "Ops Agent self-log collection control",
+  "feature_slug": "ops-agent-self-log-collection-control",
+  "summary": "This feature lets users prevent the Ops Agent from collecting and sending its self logs to Cloud Logging.",
+  "extended_definition": "This feature lets users prevent the Ops Agent from collecting and sending its self logs to Cloud Logging.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies",
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/configuration"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Ops Agent overview \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+        "source_id": "site-iam-reference",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "Metrics collected include: cpu metrics disk metrics iis metrics (Windows only) interface metrics gpu metrics (Linux only) memory metrics mssql metrics (Windows only) pagefile metrics (Windows only) swap metrics network metrics processes metrics agent self metrics : Third-party application support Curated integrations for third-party application metrics , which collect common app metrics and offer sample dashboards and alert policies.",
+          "Combining the collection of logs, metrics, and traces into a single process, the Ops Agent uses Fluent Bit for logs, which supports high-throughput logging, and the OpenTelemetry Collector for metrics and traces.",
+          "Logging features Logging features include: Improved performance compared to the legacy Logging Agent: High throughput capability, taking full advantage of multi-core architecture."
+        ]
+      },
+      {
+        "title": "Configure the Ops Agent \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/configuration",
+        "source_id": "site-iam-reference",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "To disable self-log collection, add a global section to your user-specified configuration file and set the default self log file collection option to the value false : logging: ... metrics: ... global: default self log file collection: false Log-rotation configuration Starting with Ops Agent version 2.31.0, you can also set up the agent's log-rotation feature by using the configuration files.",
+          "The entire metrics configuration looks like the following: metrics : service : pipelines : default pipeline : receivers : [] The following example shows the built-in service configuration for Windows: metrics : service : pipelines : default pipeline : receivers : - hostmetrics - iis - mssql processors : - metrics filter The following service configuration customizes log verbosity for the metrics submodule to be debug instead: metrics : service : log level : debug Collection of self logs By default, the Ops Agent's Fluent Bit self logs are sent to Cloud Logging.",
+          "You can disable the collection of these self logs, starting with Ops Agent version 2.44.0, by using the default self log file collection option."
+        ]
+      },
+      {
+        "title": "\"Install and manage the Ops Agent by using VM Extension Manager policies\\",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies",
+        "source_id": "site-iam-reference",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Observability Cloud Monitoring Guides Send feedback Install and manage the Ops Agent by using VM Extension Manager policies Stay organized with collections Save and categorize content based on your preferences.",
+          "To find the status information for an Ops Agent managed by VM Extension Manager, see the following: Agent health checks Agent self logs .",
+          "For information about verifying collection of metrics, see Agent is running, but data is not ingested ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/configuration",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/configuration",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:33.032Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring"
+}

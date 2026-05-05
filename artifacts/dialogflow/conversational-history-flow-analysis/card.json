@@ -1,0 +1,92 @@
+{
+  "feature_name": "Conversational history flow analysis",
+  "feature_slug": "conversational-history-flow-analysis",
+  "summary": "The conversational history flow analysis feature is available.",
+  "extended_definition": "The conversational history flow analysis feature is available.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/conversation-history",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Conversation history \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/conversation-history",
+        "source_id": "site-docs-root",
+        "final_score": 216,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Flow and page analysis can be used along with conversation history filters, to allow for maximum flexibility in studying a relevant subset of traffic.",
+          "The following metadata is provided for each conversation: X Item Conversation ID An identifier for the conversation Duration Duration of the conversation Turns The number of conversational turns Channel Either chat (text), voice, or undetermined (no end-user input has been provided to the conversation yet) Language The language for the conversation Environment The agent's environment Start time Start time for the conversation Flags May be set to Live Agent Handoff (if conversation escalated to a human agent) or Abandoned (if end-user left the incomplete conversation) or TU,TD (if answer in the conversation got end-user rating) You can filter the results by metadata (except environment and duration) and the following additional filter options: X Item Intent The provided intent was matched at some point in the conversation No Match Some subset of conversational turns resulted in an intent no-match Flow The provided flow is the final active flow at the end of some conversation turn Page The provided page is the final active page at the end of some conversation turn Is Live Agent Handoff The Live Agent Handoff flag is set Is Abandoned The Abandoned flag is set Conversation ID A specific conversation is chosen Start Time A date range is provided Agent Utterance The provided text is a substring of an utterance that was used by the agent at some point in the conversation.",
+          "Each conversational turn provides the end-user message, the agent message, and the following metadata: X Item Intent An intent display name that was matched or No Match Page The final active page name Flow The final active flow name Parameters Parameters collected during the conversational turn Example use case The tool can be used to identify agent issues that result in escalations to a human agent."
+        ]
+      },
+      {
+        "title": "\"Conversational Agents console overview \\_|\\_ Dialogflow CX \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents",
+        "source_id": "site-docs-root",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Conversational Agents console is a new console that includes features from both the Dialogflow CX console and the Vertex AI Agent Builder console.",
+          "Users of the Dialogflow CX console that want to incorporate generative features into agents should start using the Conversational Agents console.",
+          "The Dialogflow CX console will continue to be supported until the Conversational Agents console is generally available (GA)."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.dialogflow.v2 (4.94.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "source_id": "site-java-reference",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Sentiment analysis inspects user input and identifies the prevailing subjective opinion, especially to determine a user's attitude as positive, negative, or neutral. com. google. cloud. dialogflow. v2.",
+          "Sentiment analysis inspects user input and identifies the prevailing subjective opinion, especially to determine a user's attitude as positive, negative, or neutral. com. google. cloud. dialogflow. v2.",
+          "Clear Suggestion Feature Config Operation Metadata Metadata for a ConversationProfiles.ClearSuggestionFeatureConfig operation. com. google. cloud. dialogflow. v2."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/conversation-history",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:58.946Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

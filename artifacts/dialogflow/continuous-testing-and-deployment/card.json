@@ -1,0 +1,123 @@
+{
+  "feature_name": "Continuous testing and deployment",
+  "feature_slug": "continuous-testing-and-deployment",
+  "summary": "Dialogflow CX provides a preview feature for continuous testing and deployment.",
+  "extended_definition": "Dialogflow CX provides a preview feature for continuous testing and deployment.",
+  "lifecycle": {
+    "latest_feature_date": "2021-10-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/continuous-tests",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Continuous tests and deployment \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/continuous-tests",
+        "source_id": "site-docs-root",
+        "final_score": 172,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Send feedback Continuous tests and deployment Stay organized with collections Save and categorize content based on your preferences.",
+          "Manage continuous tests and deployment To manage continuous tests and deployment: Console Open the Dialogflow CX console .",
+          "To prevent a bad version from becoming live in the environment, you can also use continuous deployment to run the same set of verification tests before deploying a flow version to the environment."
+        ]
+      },
+      {
+        "title": "Dialogflow API \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 85,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: v3.projects.locations REST Resource: v3.projects.locations.agents REST Resource: v3.projects.locations.agents.changelogs REST Resource: v3.projects.locations.agents.entityTypes REST Resource: v3.projects.locations.agents.environments REST Resource: v3.projects.locations.agents.environments.continuousTestResults REST Resource: v3.projects.locations.agents.environments.deployments REST Resource: v3.projects.locations.agents.environments.experiments REST Resource: v3.projects.locations.agents.environments.sessions REST Resource: v3.projects.locations.agents.environments.sessions.entityTypes REST Resource: v3.projects.locations.agents.flows REST Resource: v3.projects.locations.agents.flows.pages REST Resource: v3.projects.locations.agents.flows.transitionRouteGroups REST Resource: v3.projects.locations.agents.flows.versions REST Resource: v3.projects.locations.agents.generators REST Resource: v3.projects.locations.agents.intents REST Resource: v3.projects.locations.agents.playbooks REST Resource: v3.projects.locations.agents.playbooks.examples REST Resource: v3.projects.locations.agents.playbooks.versions REST Resource: v3.projects.locations.agents.sessions REST Resource: v3.projects.locations.agents.sessions.entityTypes REST Resource: v3.projects.locations.agents.testCases REST Resource: v3.projects.locations.agents.testCases.results REST Resource: v3.projects.locations.agents.tools REST Resource: v3.projects.locations.agents.tools.versions REST Resource: v3.projects.locations.agents.transitionRouteGroups REST Resource: v3.projects.locations.agents.webhooks REST Resource: v3.projects.locations.operations REST Resource: v3.projects.locations.securitySettings REST Resource: v3.projects.operations Service: dialogflow.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "This service provides the following discovery document: https://dialogflow.googleapis.com/$discovery/rest?version=v3 Service endpoint A service endpoint is a base URL that specifies the network address of an API service.",
+          "REST Resource: v3.projects.locations.agents.environments Methods create POST /v3/{parent=projects/ /locations/ /agents/ }/environments Creates an Environment in the specified Agent . delete DELETE /v3/{name=projects/ /locations/ /agents/ /environments/ } Deletes the specified Environment . deployFlow POST /v3/{environment=projects/ /locations/ /agents/ /environments/ }:deployFlow Deploys a flow to the specified Environment . get GET /v3/{name=projects/ /locations/ /agents/ /environments/ } Retrieves the specified Environment . list GET /v3/{parent=projects/ /locations/ /agents/ }/environments Returns the list of all environments in the specified Agent . lookupEnvironmentHistory GET /v3/{name=projects/ /locations/ /agents/ /environments/ }:lookupEnvironmentHistory Looks up the history of the specified Environment . patch PATCH /v3/{environment.name=projects/ /locations/ /agents/ /environments/ } Updates the specified Environment . runContinuousTest POST /v3/{environment=projects/ /locations/ /agents/ /environments/ }:runContinuousTest Kicks off a continuous test under the specified Environment ."
+        ]
+      },
+      {
+        "title": "Data store tools \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler",
+        "source_id": "site-docs-root",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "Each integration provides instructions for deployment.",
+          "The following is a example of a userMetadata parameter value to refine search results relevant to a specific: \"userMetadata\": { \"favoriteColor\": \"blue\", ... } The fallback parameter provides an answer that the data store tool should respond with if there is no valid summarized answer for the query.",
+          "When creating data store tool examples, the tool input parameter requestBody provides three optional inputs together with the required query string - a filter string, a userMetadata structured object, and a fallback string."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dialogflow.googleapis.com",
+      "environment.name",
+      "v3.projects.locations",
+      "v3.projects.locations.agents",
+      "v3.projects.locations.agents.changelogs",
+      "v3.projects.locations.agents.entityTypes",
+      "v3.projects.locations.agents.environments",
+      "v3.projects.locations.agents.environments.continuousTestResults",
+      "v3.projects.locations.agents.environments.deployments",
+      "v3.projects.locations.agents.environments.experiments",
+      "v3.projects.locations.agents.environments.sessions",
+      "v3.projects.locations.agents.environments.sessions.entityTypes",
+      "v3.projects.locations.agents.flows",
+      "v3.projects.locations.agents.flows.pages",
+      "v3.projects.locations.agents.flows.transitionRouteGroups",
+      "v3.projects.locations.agents.flows.versions",
+      "v3.projects.locations.agents.generators",
+      "v3.projects.locations.agents.intents",
+      "v3.projects.locations.agents.playbooks",
+      "v3.projects.locations.agents.playbooks.examples",
+      "v3.projects.locations.agents.playbooks.versions",
+      "v3.projects.locations.agents.sessions",
+      "v3.projects.locations.agents.sessions.entityTypes",
+      "v3.projects.locations.agents.testCases",
+      "v3.projects.locations.agents.testCases.results",
+      "v3.projects.locations.agents.tools",
+      "v3.projects.locations.agents.tools.versions",
+      "v3.projects.locations.agents.transitionRouteGroups",
+      "v3.projects.locations.agents.webhooks",
+      "v3.projects.locations.operations",
+      "v3.projects.locations.securitySettings",
+      "v3.projects.operations"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/continuous-tests",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3-overview",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:58.946Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

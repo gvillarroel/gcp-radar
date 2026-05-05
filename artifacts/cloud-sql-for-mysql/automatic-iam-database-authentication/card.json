@@ -1,0 +1,222 @@
+{
+  "feature_name": "Automatic IAM database authentication",
+  "feature_slug": "automatic-iam-database-authentication",
+  "summary": "Cloud SQL for MySQL supports automatic IAM database authentication.",
+  "extended_definition": "Cloud SQL for MySQL supports automatic IAM database authentication.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+      "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+      "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure SSL/TLS certificates \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+        "source_id": "site-docs-reference-3",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Retrieve the public key for the certificate you just created and copy it into the client-cert.pem file with the ssl client-certs describe command: gcloud sql ssl client-certs describe CERT NAME \\ --instance = INSTANCE NAME \\ --format = \"value(cert)\" > client-cert.pem Copy the server certificate into the server-ca.pem file using the instances describe command: gcloud sql instances describe INSTANCE NAME \\ --format = \"value(serverCaCert.cert)\" > server-ca.pem Terraform To create a client certificate, use a Terraform resource : resource \"google sql ssl cert\" \"mysql client cert\" { common name = \"mysql common name\" instance = google sql database instance.mysql instance.name } REST v1 Create an SSL/TLS certificate, giving it a unique name for this instance: Before using any of the request data, make the following replacements: project-id : The project ID instance-id : The instance ID client-cert-name : The client cert name HTTP method and URL: POST https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id /sslCerts Request JSON body: { \"commonName\" : \" client-cert-name \" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Terraform To enforce SSL/TLS encryption, use a Terraform resource : resource \"google sql database instance\" \"mysql instance\" { name = \"mysql-instance\" region = \"asia-northeast1\" database version = \"MYSQL 8 0\" settings { tier = \"db-f1-micro\" ip configuration { The following SSL enforcement options only allow connections encrypted with SSL/TLS and with valid client certificates.",
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback Configure SSL/TLS certificates Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Manage users with IAM database authentication \\_|\\_ Cloud SQL for MySQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "source_id": "site-docs-reference-3",
+        "final_score": 40,
+        "relevance": "",
+        "evidence_snippets": [
+          "Terraform To add IAM user and service accounts on an instance with IAM database authentication enabled, use a Terraform resource . resource \"google sql database instance\" \"default\" { name = \"mysql-db-auth-instance-name-test\" region = \"us-west4\" database version = \"MYSQL 8 0\" settings { tier = \"db-f1-micro\" database flags { name = \"cloudsql iam authentication\" value = \"on\" } } } Specify the email address of the IAM user to add to the instance This resource does not create a new IAM user account; this account must already exist resource \"google sql user\" \"iam user\" { name = \"test-user@example.com\" instance = google sql database instance.default.name type = \"CLOUD IAM USER\" } Create a new IAM service account resource \"google service account\" \"default\" { account id = \"cloud-sql-mysql-sa\" display name = \"Cloud SQL for MySQL Service Account\" } Specify the email address of the IAM service account to add to the instance resource \"google sql user\" \"iam service account user\" { name = google service account.default.email instance = google sql database instance.default.name type = \"CLOUD IAM SERVICE ACCOUNT\" } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.",
+          "For example, a log might have information similar to the following: { insertId: \"...\" logName: \"projects/.../logs/cloudaudit.googleapis.com%2Fdata access\" protoPayload: { @type: \"type.googleapis.com/google.cloud.audit.AuditLog\" authenticationInfo: { principalEmail: \"...\" } authorizationInfo: [ 0: { granted: true permission: \"cloudsql.instances.login\" resource: \"instances/...\" resourceAttributes: { } } ] methodName: \"cloudsql.instances.login\" request: { @type: \"type.googleapis.com/google.cloud.sql.authorization.v1.InstancesLoginRequest\" clientIpAddress: \"...\" database: \"...\" databaseSessionId: ... instance: \"projects/.../locations/us-central1/instances/...\" user: \"...\" } requestMetadata: { callerIp: \"...\" destinationAttributes: { } requestAttributes: { auth: { } time: \"...\" } } resourceName: \"instances/...\" serviceName: \"cloudsql.googleapis.com\" status: { } } receiveTimestamp: \"...\" resource: { labels: { database id: \"...:...\" project id: \"...\" region: \"us-central\" } type: \"cloudsql database\" } severity: \"INFO\" timestamp: \"...\" } Troubleshoot a login failure When an attempt to log in fails, MySQL returns a minimal error message for security reasons.",
+          "Terraform To add IAM user and service accounts on an instance with IAM database authentication enabled, use a Terraform resource . resource \"google sql database instance\" \"default\" { name = \"mysql-iam-group-auth-instance-name\" region = \"us-west4\" database version = \"MYSQL 8 0\" settings { tier = \"db-f1-micro\" database flags { name = \"cloudsql iam authentication\" value = \"on\" } } } Specify the email address of the Cloud Identity group to add to the instance This resource does not create a Cloud Identity group; the group must already exist resource \"google sql user\" \"iam group\" { name = \"example-group@example.com\" instance = google sql database instance.default.name type = \"CLOUD IAM GROUP\" } data \"google project\" \"project\" { } resource \"google project iam binding\" \"cloud sql user\" { project = data.google project.project.project id role = \"roles/cloudsql.instanceUser\" members = [ \"group:example-group@example.com\" ] } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections."
+        ]
+      },
+      {
+        "title": "IAM authentication \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "source_id": "site-docs-reference-3",
+        "final_score": 38,
+        "relevance": "",
+        "evidence_snippets": [
+          "Automatic versus manual IAM database authentication Cloud SQL for MySQL has two options for IAM database authentication: automatic and manual.",
+          "Automatic IAM database authentication Automatic IAM database authentication lets you hand off requesting and managing access tokens to an intermediary Cloud SQL connector , such as the Cloud SQL Auth Proxy or one of the Cloud SQL Language Connectors.",
+          "Cloud SQL IAM database authentication for different instance scenarios Read replicas IAM database authentication is not enabled in a read replica automatically, even when it is enabled on the primary instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.default.email",
+      "ca.pem",
+      "cert.pem",
+      "cloudaudit.googleapis.com",
+      "cloudsql.googleapis.com",
+      "cloudsql.instances.login",
+      "cloudsql.instanceUser",
+      "data.google",
+      "example.com",
+      "instance.default.name",
+      "instance.mysql",
+      "instance.name",
+      "project.project.project",
+      "request.json",
+      "sqladmin.googleapis.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudsql.instanceUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:38.345Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql"
+}

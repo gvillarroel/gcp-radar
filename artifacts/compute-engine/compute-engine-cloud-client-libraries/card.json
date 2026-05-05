@@ -1,0 +1,102 @@
+{
+  "feature_name": "Compute Engine Cloud Client Libraries",
+  "feature_slug": "compute-engine-cloud-client-libraries",
+  "summary": "Compute Engine Cloud Client Libraries based on the latest client library model are available for Java, .NET, Node.js, PHP, Python, and Ruby.",
+  "extended_definition": "Compute Engine Cloud Client Libraries based on the latest client library model are available for Java, .NET, Node.js, PHP, Python, and Ruby.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/compute/docs/api/using-libraries",
+      "https://docs.cloud.google.com/compute/docs/api/libraries",
+      "https://docs.cloud.google.com/compute/docs/api/using-libraries"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Using client libraries \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/api/using-libraries",
+        "source_id": "site-api-reference",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The library makes multiple requests to the API for you, so you can simply iterate over all the images. client . list ( request ) . each do image puts \" - #{ image . name } \" end end You can also use the pages attribute of the returned object to have more granular control of iteration over paginated results from the API. require \"google/cloud/compute/v1\" Prints a list of all non-deprecated image names available in a given project, divided into pages as returned by the Compute Engine API. @param [String] project ID or project number of the Cloud project you want to list images from. @param [Number] size of the pages you want the API to return on each call. def print images list by page project :, page size : 10 client = :: Google :: Cloud :: Compute :: V1 :: Images :: Rest :: Client . new Make the request to list all non-deprecated images in a project. request = { project : project , max results indicates the maximum number of items that will be returned per page. max results : page size , Listing only non-deprecated images to reduce the size of the reply. filter : \"deprecated.state != DEPRECATED\" } Call the each page method of the returned enumerable to have more granular control of iteration over paginated results from the API.",
+          "The library makes multiple requests to the API for you, so you can simply iterate over all the images. for img in images client . list ( request = images list request ): print ( f \" - { img . name } \" ) output . append ( f \" - { img . name } \" ) return \" \\n \" . join ( output ) You can also use the pages attribute of the returned object to have more granular control of iteration over paginated results from the API. import google.cloud.compute v1 as compute v1 def print images list by page ( project : str , page size : int = 10 ) - > str : \"\"\" Prints a list of all non-deprecated image names available in a given project, divided into pages as returned by the Compute Engine API.",
+          "Home Documentation Compute Compute Engine APIs & Reference Send feedback Using client libraries Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Using client libraries \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://developers.google.com/compute/docs/api/using-libraries",
+        "source_id": "site-docs-root-3",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The library makes multiple requests to the API for you, so you can simply iterate over all the images. client . list ( request ) . each do image puts \" - #{ image . name } \" end end You can also use the pages attribute of the returned object to have more granular control of iteration over paginated results from the API. require \"google/cloud/compute/v1\" Prints a list of all non-deprecated image names available in a given project, divided into pages as returned by the Compute Engine API. @param [String] project ID or project number of the Cloud project you want to list images from. @param [Number] size of the pages you want the API to return on each call. def print images list by page project :, page size : 10 client = :: Google :: Cloud :: Compute :: V1 :: Images :: Rest :: Client . new Make the request to list all non-deprecated images in a project. request = { project : project , max results indicates the maximum number of items that will be returned per page. max results : page size , Listing only non-deprecated images to reduce the size of the reply. filter : \"deprecated.state != DEPRECATED\" } Call the each page method of the returned enumerable to have more granular control of iteration over paginated results from the API.",
+          "The library makes multiple requests to the API for you, so you can simply iterate over all the images. for img in images client . list ( request = images list request ): print ( f \" - { img . name } \" ) output . append ( f \" - { img . name } \" ) return \" \\n \" . join ( output ) You can also use the pages attribute of the returned object to have more granular control of iteration over paginated results from the API. import google.cloud.compute v1 as compute v1 def print images list by page ( project : str , page size : int = 10 ) - > str : \"\"\" Prints a list of all non-deprecated image names available in a given project, divided into pages as returned by the Compute Engine API.",
+          "Home Documentation Compute Compute Engine APIs & Reference Send feedback Using client libraries Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Compute Engine client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/api/libraries",
+        "source_id": "site-api-reference",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This client only needs to be created once, and can be reused for multiple requests. client = :: Google :: Cloud :: Compute :: V1 :: Instances :: Rest :: Client . new Send the request to list all VM instances in the given zone in the specified project. instance list = client . list project : project , zone : zone puts \"Instances found in zone #{ zone } :\" instances = [] instance list . each do instance puts \" - #{ instance . name } ( #{ instance . machine type } )\" instances << instance end instances end Rust pub async fn quickstart ( project id : & str ) - > anyhow :: Result < () > { use google cloud compute v1 :: client :: Instances ; use google cloud gax :: paginator :: ItemPaginator ; const ZONE : & str = \"us-central1-a\" ; let client = Instances :: builder (). build (). await ? ; println! ( \"Listing instances for project {project id}\" ); let mut instances = client . list () . set project ( project id ) . set zone ( ZONE ) . by item (); while let Some ( item ) = instances . next (). await . transpose () ? { println! ( \" {:?}\" , item . name ); } println! ( \"DONE\" ); Ok (()) } Additional resources C++ The following list contains links to more resources related to the client library for C++: API reference Client libraries best practices Issue tracker google-compute-engine on Stack Overflow Source code C# The following list contains links to more resources related to the client library for C#: API reference Client libraries best practices Issue tracker google-compute-engine on Stack Overflow Source code Go The following list contains links to more resources related to the client library for Go: API reference Client libraries best practices Issue tracker google-compute-engine on Stack Overflow Source code Java The following list contains links to more resources related to the client library for Java: API reference Client libraries best practices Issue tracker google-compute-engine on Stack Overflow Source code Node.js The following list contains links to more resources related to the client library for Node.js: API reference Client libraries best practices Issue tracker google-compute-engine on Stack Overflow Source code PHP The following list contains links to more resources related to the client library for PHP: API reference Client libraries best practices Issue tracker google-compute-engine on Stack Overflow Source code Python The following list contains links to more resources related to the client library for Python: API reference Client libraries best practices Issue tracker google-compute-engine on Stack Overflow Source code Ruby The following list contains links to more resources related to the client library for Ruby: API reference Client libraries best practices Issue tracker google-compute-engine on Stack Overflow Source code Rust The following list contains links to more resources related to the client library for Rust: API reference Client libraries best practices Issue tracker google-compute-engine on Stack Overflow Source code Older client libraries Cloud Client Libraries use our latest client library model and are the recommended option for accessing Cloud APIs programmatically.",
+          "For more information about BOMs, see The Google Cloud Platform Libraries BOM . < dependencyManagement > < dependencies > < dependency > < groupId>com . google . cloud < / groupId > < artifactId>libraries - bom < / artifactId > < version>26 .79.0 < / version > < type>pom < / type > < scope>import < / scope > < / dependency > < / dependencies > < / dependencyManagement > < dependencies > < dependency > < groupId>com . google . cloud < / groupId > < artifactId>google - cloud - compute < / artifactId > < / dependency > < / dependencies > If you are using Gradle , add the following to your dependencies: implementation ' com . google . cloud : google - cloud - compute : 1.100.0 ' If you are using sbt , add the following to your dependencies: libraryDependencies += \"com.google.cloud\" % \"google-cloud-compute\" % \"1.100.0\" The older version of the Cloud Client Libraries for Java for Compute Engine is available as version 0.120.x or earlier in the Maven artifact .",
+          "For cases where you can't use Cloud Client Libraries, the following Google API Client Libraries are available: Language Library Resources Go Google API Go Client Library Documentation Java Google API Java Client Library Documentation JavaScript Google API JavaScript Client Library Documentation .NET Google API .NET Client Library Documentation Node.js Google API Node.js Client Library Documentation Objective-C Google API Objective-C Client Library Documentation PHP Google API PHP Client Library Documentation Python Google API Python Client Library Documentation Ruby Google API Ruby Client Library Documentation Dart Google API Dart Client Library Documentation Third-party Compute Engine API client libraries libcloud libcloud is a Python library used for interacting with multiple cloud service providers through a single unified API."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud",
+      "deprecated.state",
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/compute/docs/api/using-libraries",
+        "https://docs.cloud.google.com/compute/docs/api/using-libraries",
+        "https://docs.cloud.google.com/compute/docs/api/libraries"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/compute/docs/api/using-libraries",
+        "https://docs.cloud.google.com/compute/docs/api/using-libraries",
+        "https://docs.cloud.google.com/compute/docs/api/libraries"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:45.884Z",
+  "source_step08_card": "data/step-08/current/products/compute-engine/card.json",
+  "product_name": "Compute Engine",
+  "product_slug": "compute-engine"
+}

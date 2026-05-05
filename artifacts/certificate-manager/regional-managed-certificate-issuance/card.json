@@ -1,0 +1,102 @@
+{
+  "feature_name": "Regional managed certificate issuance",
+  "feature_slug": "regional-managed-certificate-issuance",
+  "summary": "Certificate Manager adds support for issuing regional managed certificates.",
+  "extended_definition": "Certificate Manager provides regional issuance for Google-managed certificates, allowing you to create a certificate with a Regional location (and selected region) and deploy it to a regional external or internal Application Load Balancer. For Google-managed certificates using DNS authorization, regional issuance requires a regional DNS authorization in the same region, and regional certificates cannot use global DNS authorizations; only the per-project DNS authorization type is supported. For CA Service-backed issuance, the regional certificate’s region must be aligned with the selected CA pool (same region) when creating the certificate issuance configuration.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "HIGH",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-cas-regional",
+      "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-regional",
+      "https://docs.cloud.google.com/certificate-manager/docs/domain-authorization"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Domain authorization types for Google-managed certificates \\_|\\_ Certificate\\",
+        "url": "https://docs.cloud.google.com/certificate-manager/docs/domain-authorization",
+        "source_id": "site-docs-root",
+        "final_score": 66,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Deploy a regional Google-managed certificate with Certificate Authority\\",
+        "url": "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-cas-regional",
+        "source_id": "site-iam-reference",
+        "final_score": 64,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Deploy a regional Google-managed certificate with DNS authorization \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-regional",
+        "source_id": "site-iam-reference",
+        "final_score": 64,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "The cited pages document how to deploy regional Google-managed certificates, the required regional configuration (location/region and matching CA pool or regional DNS authorization), and the restriction that regional certificates cannot use global DNS authorization."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/domain-authorization",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-cas-regional",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-regional"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/domain-authorization",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-cas-regional",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-regional"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/domain-authorization",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-cas-regional",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-regional"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/domain-authorization",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-cas-regional",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-regional"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:26.551Z",
+  "source_step08_card": "data/step-08/current/products/certificate-manager/card.json",
+  "product_name": "Certificate Manager",
+  "product_slug": "certificate-manager"
+}

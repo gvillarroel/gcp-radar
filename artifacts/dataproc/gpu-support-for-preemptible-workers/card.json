@@ -1,0 +1,102 @@
+{
+  "feature_name": "GPU support for preemptible workers",
+  "feature_slug": "gpu-support-for-preemptible-workers",
+  "summary": "Dataproc supports attaching GPUs to preemptible worker nodes.",
+  "extended_definition": "Dataproc supports attaching GPUs to preemptible worker nodes.",
+  "lifecycle": {
+    "latest_feature_date": "2020-02-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-scale-cluster",
+      "https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Scale GKE clusters \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-scale-cluster",
+        "source_id": "site-docs-root",
+        "final_score": 34,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment)."
+        ]
+      },
+      {
+        "title": "\"InstanceGroupConfig \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "source_id": "site-docs-reference",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": [
+          "If minNumInstances is set, cluster creation will succeed if the number of primary workers created is at least equal to the minNumInstances number.",
+          "The default value for master and worker groups is NON PREEMPTIBLE .",
+          "This configuration is applicable to only secondary workers for now."
+        ]
+      },
+      {
+        "title": "\"Managed Service for Apache Spark Spark performance enhancements \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements",
+        "source_id": "site-iam-reference",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": [
+          "PROPERTIES : To enable Spark optimization enhancements, specify: spark.dataproc.enhanced.optimizer.enabled = true To enable Spark execution enhancements, specify: spark.dataproc.enhanced.execution.enabled = true To enable Spark optimization and execution enhancements, specify: spark.dataproc.enhanced.optimizer.enabled = true,spark.dataproc.enhanced.execution.enabled = true API Specify the following properties for a SparkJob , PySparkJob , SparkSqlJob , or SparkRJob as part of a jobs.submit request: To enable Spark optimization enhancements, specify: \"spark.dataproc.enhanced.optimizer.enabled=true\" To enable Spark execution enhancements, specify: \"spark.dataproc.enhanced.execution.enabled=true\" To enable Spark optimization and execution enhancements, specify: \"spark.dataproc.enhanced.execution.enabled=true,spark.dataproc.enhanced.optimizer.enabled=true\" Note: You can click Equivalent Command Line or Equivalent REST at the bottom of the left panel of the Create a Managed Service for Apache Spark cluster page in the Google Cloud console to have the console construct an equivalent gcloud tool command or API REST request that you can use from the command line or in your code to create a cluster.",
+          "PROPERTIES : To enable Spark optimization enhancements, specify: spark:spark.dataproc.enhanced.optimizer.enabled = true To enable Spark execution enhancements, specify: spark:spark.dataproc.enhanced.execution.enabled = true To enable Spark optimization and execution enhancements, specify: spark:spark.dataproc.enhanced.optimizer.enabled = true,spark:spark.dataproc.enhanced.execution.enabled = true API Specify the following SoftwareConfig.properties as part of a clusters.create request: To enable Spark optimization enhancements, specify: \"spark:spark.dataproc.enhanced.optimizer.enabled\" : \"true\" To enable Spark execution enhancements, specify: \"spark:spark.dataproc.enhanced.execution.enabled\" : \"true\" To enable Spark optimization and execution enhancements, specify: \"spark:spark.dataproc.enhanced.optimizer.enabled\" : \"true\" , \"spark:spark.dataproc.enhanced.execution.enabled\" : \"true\" Enable or disable enhancements at job submission You can use the Google Cloud console, Google Cloud CLI, and the Managed Service for Apache Spark API to enable or disable Spark performance enhancements on a Spark job submitted to Managed Service for Apache Spark.",
+          "Complete filling in or confirming the other cluster creation fields, then click Create . gcloud Run the following gcloud dataproc clusters create command locally in a terminal window or in Cloud Shell . gcloud dataproc clusters create CLUSTER NAME \\ --project= PROJECT ID \\ --region= REGION \\ --image-version= IMAGE \\ --properties= PROPERTIES Notes: CLUSTER NAME : The cluster name, which must be unique within a project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "clusters.create",
+      "jobs.submit",
+      "spark.dataproc.enhanced.execution.enabled",
+      "spark.dataproc.enhanced.optimizer.enabled"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-scale-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/performance-enhancements"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:55.306Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc"
+}

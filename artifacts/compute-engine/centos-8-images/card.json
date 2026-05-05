@@ -1,0 +1,116 @@
+{
+  "feature_name": "CentOS 8 images",
+  "feature_slug": "centos-8-images",
+  "summary": "Compute Engine CentOS 8 images are deprecated following the end of life of CentOS 8; deprecated on 2022-02-01.",
+  "extended_definition": "Compute Engine CentOS 8 images are deprecated following the end of life of CentOS 8; deprecated on 2022-02-01.",
+  "lifecycle": {
+    "latest_feature_date": "2022-02-01",
+    "deprecation_date": "2022-02-01",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/compute/docs/instances/instance-lifecycle",
+      "https://docs.cloud.google.com/compute/docs/gcloud-compute/tips",
+      "https://docs.cloud.google.com/compute/docs/instances/instance-lifecycle"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Compute Engine instance lifecycle \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/instances/instance-lifecycle",
+        "source_id": "site-docs-root",
+        "final_score": 86,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following diagram shows the different states that Compute Engine can set an instance to: The states shown in the preceding diagram are as follows: PENDING : after you create a standalone Flex-start VM with a wait time ( requestValidForDuration ) that is 90 seconds or longer, the VM state changes to PENDING .",
+          "After the guest OS shuts down and based on the operation that is running, Compute Engine does one of the following: Compute Engine completes the stops operation and changes the instance state to TERMINATED .",
+          "Home Documentation Compute Compute Engine Guides Send feedback Compute Engine instance lifecycle Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Compute Engine instance lifecycle \\_|\\_ Google Cloud Documentation",
+        "url": "https://developers.google.com/compute/docs/instances/instance-lifecycle",
+        "source_id": "site-docs-root-3",
+        "final_score": 86,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following diagram shows the different states that Compute Engine can set an instance to: The states shown in the preceding diagram are as follows: PENDING : after you create a standalone Flex-start VM with a wait time ( requestValidForDuration ) that is 90 seconds or longer, the VM state changes to PENDING .",
+          "After the guest OS shuts down and based on the operation that is running, Compute Engine does one of the following: Compute Engine completes the stops operation and changes the instance state to TERMINATED .",
+          "Home Documentation Compute Compute Engine Guides Send feedback Compute Engine instance lifecycle Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "gcloud compute usage tips \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/gcloud-compute/tips",
+        "source_id": "site-api-reference",
+        "final_score": 84,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, the following two commands illustrate a scenario when you can list images to get an image name and its associated project so that you can provide these as inputs to a describe command: gcloud compute images list NAME PROJECT FAMILY DEPRECATED STATUS ... centos-7-v20170620 centos-cloud centos-7 READY ... debian-9-stretch-v20170619 debian-cloud debian-9 READY ... gcloud compute images describe debian-9-stretch-v20170619 --project debian-cloud The default output from describe commands is YAML format, but you can use the --format flag to choose between JSON, YAML, and text output formats.",
+          "To run code or samples from a local development environment, you can authenticate to Compute Engine by selecting one of the following options: Install the Google Cloud CLI.",
+          "The following command gets instance settings in JSON format ( --format json ). gcloud compute instances describe example-instance \\ --zone us-central1-a --format json { ... \"name\": \"example-instance\", \"networkInterfaces\": [ { \"accessConfigs\": [ { \"kind\": \"compute#accessConfig\", \"name\": \"external-nat\", \"natIP\": \"107.167.187.66\", \"type\": \"ONE TO ONE NAT\" } ], \"name\": \"nic0\", \"network\": \"https://www.googleapis.com/compute/v1/projects/myproject/global/networks/default\", \"networkIP\": \"10.240.111.51\" } ], ... \"status\": \"RUNNING\" ... } Checking which user you are authorized as Use the following command to find out which account you are authorizes as, use: gcloud auth list Revoking a refresh token To revoke the credentials for an account on the machine where you are using the Google Cloud CLI, use: gcloud auth revoke This will force you to use re-authenticate using gcloud init ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/compute/docs/instances/instance-lifecycle",
+        "https://docs.cloud.google.com/compute/docs/instances/instance-lifecycle",
+        "https://docs.cloud.google.com/compute/docs/gcloud-compute/tips"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/compute/docs/instances/instance-lifecycle",
+        "https://docs.cloud.google.com/compute/docs/instances/instance-lifecycle",
+        "https://docs.cloud.google.com/compute/docs/gcloud-compute/tips"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/compute/docs/instances/instance-lifecycle",
+        "https://docs.cloud.google.com/compute/docs/instances/instance-lifecycle",
+        "https://docs.cloud.google.com/compute/docs/gcloud-compute/tips"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/compute/docs/instances/instance-lifecycle",
+        "https://docs.cloud.google.com/compute/docs/instances/instance-lifecycle",
+        "https://docs.cloud.google.com/compute/docs/gcloud-compute/tips"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:45.884Z",
+  "source_step08_card": "data/step-08/current/products/compute-engine/card.json",
+  "product_name": "Compute Engine",
+  "product_slug": "compute-engine"
+}

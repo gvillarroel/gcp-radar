@@ -1,0 +1,167 @@
+{
+  "feature_name": "Prepay private offer one-time credits",
+  "feature_slug": "prepay-private-offer-one-time-credits",
+  "summary": "When creating or amending a prepay private offer with CUD pricing, you can add one-time credits to specific installments.",
+  "extended_definition": "When creating or amending a prepay private offer with CUD pricing, you can add one-time credits to specific installments.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/pricing-models",
+      "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements",
+      "https://docs.cloud.google.com/marketplace/docs/partners/create-offers",
+      "https://docs.cloud.google.com/marketplace/docs/partners/data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: providers.entitlements \\_|\\_ Google Cloud Marketplace Partners\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements",
+        "source_id": "site-api-reference",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"name\" : string , \"account\" : string , \"provider\" : string , \"product\" : string , \"quoteExternalName\" : string , \"productExternalName\" : string , \"plan\" : string , \"offer\" : string , \"newPendingOffer\" : string , \"newOfferStartTime\" : string , \"offerDuration\" : string , \"newPendingOfferDuration\" : string , \"offerEndTime\" : string , \"newOfferEndTime\" : string , \"newPendingPlan\" : string , \"state\" : enum ( EntitlementState ) , \"inputProperties\" : { object } , \"updateTime\" : string , \"createTime\" : string , \"usageReportingId\" : string , \"messageToUser\" : string , \"consumers\" : [ { object ( Consumer ) } ] , \"subscriptionEndTime\" : string , \"orderId\" : string , \"entitlementBenefitIds\" : [ string ] , \"cancellationReason\" : string } Fields name string Output only.",
+          "If the entitlement is in the state ENTITLEMENT PENDING PLAN CHANGE APPROVAL or ENTITLEMENT PENDING PLAN CHANGE: If the entitlement's pricing model is usage based and the associated offer is a private offer whose term has ended, then this field reflects the ACTUAL end time of the entitlement's associated offer (in the past), even though the entitlement associated with this private offer does not terminate at the end of that private offer's term.",
+          "The timestamp when the new offer becomes effective."
+        ]
+      },
+      {
+        "title": "\"Create a private offer for a customer \\_|\\_ Google Cloud Marketplace Partners\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/create-offers",
+        "source_id": "site-docs-root",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you're creating a private offer to replace an active one, visit Modify a published offer to learn about replacement options.",
+          "For information about managing your team's access, see Configure access control for creating and managing private offers in Producer Portal .",
+          "For the Google Cloud project where you manage your products, you must have the following Identity and Access Management (IAM) role(s): Project Editor ( roles/editor ) OR Commerce Producer Viewer ( roles/commerceproducer.viewer ) AND Commerce Price Management Private Offers Admin ( roles/commercepricemanagement.privateOffersAdmin ) If you don't have the roles, request access from a Project Owner ( roles/owner )."
+        ]
+      },
+      {
+        "title": "\"Pricing models for AI agents from Google Cloud Marketplace \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/pricing-models",
+        "source_id": "site-iam-reference",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "For steps to create a custom quote, see Creating private offers for specific customers .",
+          "For example, the following pricing model offers three subscription plans, with access to different features in each plan: Standard Pro Enterprise $9.99 / month $39.99 / month $99.99 / month Features: Unlimited calls Access to Admin Console Features: Unlimited calls Access to Admin Console Multiple logins Security Features: Unlimited calls Access to Admin Console Multiple logins Security The following pricing model modifies the previous example, adding discounted prices if customers sign up for one-year or three-year subscriptions.",
+          "The following table includes examples of the types of metrics that you can use, and the reporting units that we recommend: Metric type Supported units Recommended reporting unit Example price, shown on your Cloud Marketplace page Time Second, minute, hour, day 1 second (smallest possible) $5 per hour Data processed Byte, Kibibyte (KiB), Mebibyte (MiB), Gibibyte (GiB) The units for data processed are based on binary multiples, where one kibibyte is 1024 bytes, one mebibyte is 1024 kibibytes, and one gibibyte is 1024 mebibytes."
+        ]
+      },
+      {
+        "title": "\"Offer data products \\_|\\_ Google Cloud Marketplace Partners \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/data",
+        "source_id": "site-docs-root",
+        "final_score": 112,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can have multiple draft configs for one data product, but you can only submit one config at a time for review.",
+          "For steps to create a custom quote, see Create a private offer for a customer .",
+          "If you offer data products, they must meet the following additional requirement: Your data product can't contain any \"personally identifiable sensitive information\", as defined in the Protecting Americans' Data from Foreign Adversaries Act of 2024 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "commercepricemanagement.privateOffersAdmin",
+      "commerceproducer.viewer",
+      "providers.entitlements"
+    ],
+    "missing_inventory_roles": [
+      "roles/commercepricemanagement.privateOffersAdmin",
+      "roles/commerceproducer.viewer",
+      "roles/editor",
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements",
+        "https://docs.cloud.google.com/marketplace/docs/partners/create-offers",
+        "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/pricing-models",
+        "https://docs.cloud.google.com/marketplace/docs/partners/data"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements",
+        "https://docs.cloud.google.com/marketplace/docs/partners/create-offers",
+        "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/pricing-models",
+        "https://docs.cloud.google.com/marketplace/docs/partners/data"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements",
+        "https://docs.cloud.google.com/marketplace/docs/partners/create-offers",
+        "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/pricing-models",
+        "https://docs.cloud.google.com/marketplace/docs/partners/data"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements",
+        "https://docs.cloud.google.com/marketplace/docs/partners/create-offers",
+        "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/pricing-models",
+        "https://docs.cloud.google.com/marketplace/docs/partners/data"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements",
+        "https://docs.cloud.google.com/marketplace/docs/partners/create-offers",
+        "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/pricing-models",
+        "https://docs.cloud.google.com/marketplace/docs/partners/data"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements",
+        "https://docs.cloud.google.com/marketplace/docs/partners/create-offers",
+        "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/pricing-models",
+        "https://docs.cloud.google.com/marketplace/docs/partners/data"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements",
+        "https://docs.cloud.google.com/marketplace/docs/partners/create-offers",
+        "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/pricing-models",
+        "https://docs.cloud.google.com/marketplace/docs/partners/data"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:14.243Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-marketplace-partners/card.json",
+  "product_name": "Google Cloud Marketplace Partners",
+  "product_slug": "google-cloud-marketplace-partners"
+}

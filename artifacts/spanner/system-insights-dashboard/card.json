@@ -1,0 +1,135 @@
+{
+  "feature_name": "System insights dashboard",
+  "feature_slug": "system-insights-dashboard",
+  "summary": "Spanner provides a system insights dashboard that displays metrics and scorecards for instances and databases.",
+  "extended_definition": "Spanner provides a system insights dashboard that displays metrics and scorecards for instances and databases.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus",
+      "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+      "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Change dual-region quorum \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "source_id": "site-docs-root",
+        "final_score": 133,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Check dual-region quorum status You can check the status of your dual-region quorum in the following ways: On the Database overview page Use the System insights dashboard Use a Cloud Monitoring REST API or Google Cloud CLI On the Database overview page Go to the Spanner Instances page in the Google Cloud console.",
+          "Use the System insights dashboard After you create a dual-region configuration, you can view the Dual-region quorum health timeline metric on the Instance-level System insights dashboard.",
+          "For more information, see View the system insights dashboard ."
+        ]
+      },
+      {
+        "title": "\"Capture custom client-side metrics using OpenCensus \\_|\\_ Spanner \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus",
+        "source_id": "site-docs-root",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "SpannerRpcViews . registerGfeLatencyView (); // Capture GFE Latency and GFE Header missing count. // SpannerRpcViews.registerGfeLatencyAndHeaderMissingCountViews(); // Capture only GFE Header missing count. // SpannerRpcViews.registerGfeHeaderMissingCountView(); // Enable OpenCensus exporters to export metrics to Stackdriver Monitoring. // Exporters use Application Default Credentials to authenticate. // See https://developers.google.com/identity/protocols/application-default-credentials // for more details. try { StackdriverStatsExporter . createAndRegister (); } catch ( IOException IllegalStateException e ) { System . out . println ( \"Error during StackdriverStatsExporter\" ); } try ( ResultSet resultSet = dbClient . singleUse () // Execute a single read or query against Cloud Spanner. . executeQuery ( Statement . of ( \"SELECT SingerId, AlbumId, AlbumTitle FROM Albums\" ))) { while ( resultSet . next ()) { System . out . printf ( \"%d %d %s\" , resultSet . getLong ( 0 ), resultSet . getLong ( 1 ), resultSet . getString ( 2 )); } } } Go // We are in the process of adding support in the Cloud Spanner Go Client Library // to capture the gfe latency metric. import ( \"context\" \"fmt\" \"io\" \"strconv\" \"strings\" spanner \"cloud.google.com/go/spanner/apiv1\" sppb \"cloud.google.com/go/spanner/apiv1/spannerpb\" gax \"github.com/googleapis/gax-go/v2\" \"google.golang.org/grpc\" \"google.golang.org/grpc/metadata\" \"contrib.go.opencensus.io/exporter/stackdriver\" \"go.opencensus.io/stats\" \"go.opencensus.io/stats/view\" \"go.opencensus.io/tag\" ) // OpenCensus Tag, Measure and View. var ( KeyMethod = tag .",
+          "It is imperative that this step exists, // otherwise recorded metrics will be dropped and never exported. static View QUERY STATS LATENCY VIEW = View . create ( Name . create ( \"cloud.google.com/java/spanner/query stats elapsed\" ), \"The execution of the query\" , QUERY STATS ELAPSED , AGGREGATION WITH MILLIS HISTOGRAM , Collections . emptyList ()); static ViewManager manager = Stats . getViewManager (); private static final StatsRecorder STATS RECORDER = Stats . getStatsRecorder (); static void captureQueryStatsMetric ( DatabaseClient dbClient ) { manager . registerView ( QUERY STATS LATENCY VIEW ); // Enable OpenCensus exporters to export metrics to Cloud Monitoring. // Exporters use Application Default Credentials to authenticate. // See https://developers.google.com/identity/protocols/application-default-credentials // for more details. try { StackdriverStatsExporter . createAndRegister (); } catch ( IOException IllegalStateException e ) { System . out . println ( \"Error during StackdriverStatsExporter\" ); } try ( ResultSet resultSet = dbClient . singleUse () . analyzeQuery ( Statement . of ( \"SELECT SingerId, AlbumId, AlbumTitle FROM Albums\" ), QueryAnalyzeMode .",
+          "RpcViews . registerClientGrpcBasicViews (); // Enable OpenCensus exporters to export metrics to Stackdriver Monitoring. // Exporters use Application Default Credentials to authenticate. // See https://developers.google.com/identity/protocols/application-default-credentials // for more details. try { StackdriverStatsExporter . createAndRegister (); } catch ( IOException IllegalStateException e ) { System . out . println ( \"Error during StackdriverStatsExporter\" ); } try ( ResultSet resultSet = dbClient . singleUse () // Execute a single read or query against Cloud Spanner. . executeQuery ( Statement . of ( \"SELECT SingerId, AlbumId, AlbumTitle FROM Albums\" ))) { while ( resultSet . next ()) { System . out . printf ( \"%d %d %s\" , resultSet . getLong ( 0 ), resultSet . getLong ( 1 ), resultSet . getString ( 2 )); } } } Go import ( \"context\" \"fmt\" \"io\" \"regexp\" \"cloud.google.com/go/spanner\" \"google.golang.org/api/iterator\" \"contrib.go.opencensus.io/exporter/stackdriver\" \"go.opencensus.io/plugin/ocgrpc\" \"go.opencensus.io/stats/view\" ) var validDatabasePattern = regexp ."
+        ]
+      },
+      {
+        "title": "\"Build change streams connections using Dataflow \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "source_id": "site-docs-root",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "Standard Dataflow metrics Dataflow provides several metrics to make sure your job is healthy, such as data freshness, system lag, job throughput, worker CPU utilization and more.",
+          "Apache Beam documentation provides a myriad of transforms that can be applied, as well as ready to use I/O connectors to write the data into external systems.",
+          "For change streams pipelines, there are two main metrics that should be taken into account: the system latency and the data freshness ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "contrib.go.opencensus.io",
+      "developers.google.com",
+      "github.com",
+      "go.opencensus.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:37.939Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

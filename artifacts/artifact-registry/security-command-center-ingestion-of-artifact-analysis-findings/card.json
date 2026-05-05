@@ -1,0 +1,159 @@
+{
+  "feature_name": "Security Command Center ingestion of Artifact Analysis findings",
+  "feature_slug": "security-command-center-ingestion-of-artifact-analysis-findings",
+  "summary": "Security Command Center now ingests Artifact Analysis findings from Artifact Registry image scans and supports exporting them to BigQuery.",
+  "extended_definition": "Security Command Center now ingests Artifact Analysis findings from Artifact Registry image scans and supports exporting them to BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+      "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+      "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Artifact analysis and vulnerability scanning \\_|\\_ Artifact Registry \\_\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "source_id": "site-docs-root-2",
+        "final_score": 151,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Security Command Center aggregates vulnerability findings from Artifact Registry scans, allowing you to view container image vulnerabilities within your running workloads, across all projects alongside your other security risks in Security Command Center.",
+          "Centralized risk management with Security Command Center Preview This product or feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "Security Command Center centralizes your cloud security, offering vulnerability scanning, threat detection, posture monitoring, and data management."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Artifact Registry \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 73,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, to add an IAM policy binding for the role roles/artifactregistry.writer for the user write@gmail.com with the repository my-repo in the location --us-west1 , run: gcloud artifacts repositories add-iam-policy-binding my-repo \\ --location = us-west1 --member = user:write@gmail.com --role = roles/artifactregistry.writer To grant roles using a policy file, use the procedure described in Grant or revoke multiple roles programmatically with the gcloud artifacts repositories get-iam-policy and gcloud artifacts repositories set-iam-policy commands.",
+          "To specify access scopes when creating a cluster, run the following command: gcloud container clusters create NAME --scopes = SCOPES To specify access scopes when creating a node pool, run the following command: gcloud container node-pools create NAME --scopes = SCOPES Replace the following values: NAME is the name of the cluster or node pool.",
+          "If you're granting roles using the gcloud command, you can specify a single role binding for a principal or you can make large-scale policy changes by getting a resource's allow policy, modifying it, and then setting the modified allow policy."
+        ]
+      },
+      {
+        "title": "\"Configure authentication to Artifact Registry for Docker \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "source_id": "site-docs-root-2",
+        "final_score": 60,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you want to use sudo with docker commands instead of using the Docker security group, configure credentials with sudo docker-credential-gcr configure-docker instead.",
+          "If you want to use sudo with docker commands instead of using the Docker security group, configure credentials with sudo gcloud auth configure-docker instead.",
+          "To add your username, run the following command: sudo usermod -a -G docker ${USER} Windows The Docker security group is called docker-users ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "artifactregistry.writer",
+      "gmail.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.writer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/analysis",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:16.792Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry"
+}

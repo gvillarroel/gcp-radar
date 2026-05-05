@@ -1,0 +1,335 @@
+{
+  "feature_name": "Access Transparency logging",
+  "feature_slug": "access-transparency-logging",
+  "summary": "Access Transparency logging records Google administrator actions on customer content.",
+  "extended_definition": "Access Transparency logging records Google administrator actions on customer content.",
+  "lifecycle": {
+    "latest_feature_date": "2018-09-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/access-control",
+      "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+      "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Access control with IAM \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to create log-based alerting policies, to create notification channels, and to create the associated Logging notification rules , ask your administrator to grant you the following IAM roles on your project: Monitoring AlertPolicy Editor ( roles/monitoring.alertPolicyEditor ) Monitoring NotificationChannel Editor ( roles/monitoring.notificationChannelEditor ) Logs Configuration Writer ( roles/logging.configWriter ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Home Documentation Observability Cloud Logging Guides Send feedback Access control with IAM Stay organized with collections Save and categorize content based on your preferences.",
+          "Lowest-level resources where you can grant this role: View logging.buckets.copyLogEntries logging.buckets.create logging. buckets. createTagBinding logging.buckets.delete logging. buckets. deleteTagBinding logging.buckets.get logging.buckets.list logging. buckets. listEffectiveTags logging. buckets. listTagBindings logging.buckets.undelete logging.buckets.update logging.exclusions. logging.exclusions.create logging.exclusions.delete logging.exclusions.get logging.exclusions.list logging.exclusions.update logging.fields.access logging.links. logging.links.create logging.links.delete logging.links.get logging.links.list logging.locations. logging.locations.get logging.locations.list logging.logEntries. logging.logEntries.create logging.logEntries.download logging.logEntries.list logging.logEntries.route logging.logMetrics. logging.logMetrics.create logging.logMetrics.delete logging.logMetrics.get logging.logMetrics.list logging.logMetrics.update logging.logScopes. logging.logScopes.create logging.logScopes.delete logging.logScopes.get logging.logScopes.list logging.logScopes.update logging.logServiceIndexes.list logging.logServices.list logging.logs. logging.logs.delete logging.logs.list logging.notificationRules. logging. notificationRules. create logging. notificationRules. delete logging.notificationRules.get logging.notificationRules.list logging. notificationRules. update logging.operations. logging.operations.cancel logging.operations.get logging.operations.list logging.privateLogEntries.list logging.queries. logging.queries.deleteShared logging.queries.getShared logging.queries.listShared logging.queries.share logging.queries.updateShared logging.queries.usePrivate logging.settings. logging.settings.get logging.settings.update logging.sinks. logging.sinks.create logging.sinks.delete logging.sinks.get logging.sinks.list logging.sinks.update logging.sqlAlerts. logging.sqlAlerts.create logging.sqlAlerts.update logging.usage.get logging.views. logging.views.access logging.views.create logging.views.delete logging.views.get logging.views.getIamPolicy logging.views.list logging.views.listLogs logging.views.listResourceKeys logging. views. listResourceValues logging.views.setIamPolicy logging.views.update observability.scopes.get resourcemanager.projects.get resourcemanager.projects.list Logs Bucket Writer ( roles/ logging.bucketWriter ) Ability to write logs to a log bucket."
+        ]
+      },
+      {
+        "title": "\"Monitored resources and services \\_|\\_ Cloud Logging \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "source_id": "site-docs-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "If a service does not have any notion of zones then 'global' can be used. credential id : The client credential ID, such as an API key ID or the OAuth client ID. contactcenteraiplatform.googleapis.com/ContactCenter CCAI Platform Contact Center A CCAI Platform Contact Center instance. resource container : Container of the current project. resource id : The identifier of the Contact Center instance. location : The region in which the Contact Center is running. container GKE Container A Google Kubernetes Engine (GKE) container instance. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". cluster name : An immutable name for the cluster the container is running in. namespace id : Immutable ID of the cluster namespace the container is running in. instance id : Immutable ID of the Compute Engine instance the container is running in. pod id : Immutable ID of the pod the container is running in. container name : Immutable name of the container. zone : The Compute Engine zone in which the instance is running. container.googleapis.com/Cluster Kubernetes Cluster Limits Kubernetes Cluster. resource container : Project or organization. location : Region or zone where the cluster was created. cluster name : Cluster name. container.googleapis.com/NodePool GKE Node Pool GKE Node Pool. resource container : Project or organization. location : Region or zone where the cluster was created. cluster name : Cluster name. node pool name : Node pool name. contextawareaccess.googleapis.com/Location Location Access summary for risk based access levels. resource container : The identifier of the Google Cloud organization associated with this resource. location : The location of the resource. csr repository Cloud Source Repository A repository in Google Cloud Source Repositories. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". name : The name of the repository. dataflow step Dataflow Step A step in a Dataflow job. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". job id : The ID of the job. step id : The ID of the step. job name : The name of the job. region : The region in which the job is running. dataform.googleapis.com/Repository Dataform Repository A Repository on Google Cloud Dataform. resource container : The identifier of the GCP resource container associated with this resource, such as \"my-project\". location : The region in which the Repository is created. repository id : The user-specified ID of the Repository. datafusion.googleapis.com/InstanceV2 Cloud Data Fusion Instance An instance of Cloud Data Fusion. resource container : The ID of the customer project. org id : The ID of the organization that the customer project belongs to. location : The zone/region that the instance is hosted in. edition : The edition of the instance. is private ip enabled : Does the instance use private IP. version : The data plane version of the instance. instance id : The instance ID. namespace : Name of the namespace. datafusion.googleapis.com/InstanceV3 Cloud Data Fusion Instance An instance of Cloud Data Fusion. resource container : The ID of the customer project. location : The zone/region that the instance is hosted in. edition : The edition of the instance. is private ip enabled : Does the instance use private IP. version : The data plane version of the instance. instance id : The instance ID. datafusion.googleapis.com/PipelineV2 Cloud Data Fusion Pipeline A deployed Pipeline in a Cloud Data Fusion instance. resource container : The ID of the customer project. org id : The ID of the organization that the customer project belongs to. location : The zone/region that the instance is hosted in. edition : The edition of the instance. is private ip enabled : Does the instance use private IP. version : The data plane version of the instance. instance id : The instance ID. namespace : The namespace of the pipeline. pipeline id : The Pipeline ID. run id : The Run ID. datamigration.googleapis.com/MigrationJob Database migration service migration job Database migration service migration job. resource container : The resource container (project ID). location : The location. migration job id : The migration job ID. dataplex.googleapis.com/Asset Cloud Dataplex Asset An Asset within a Cloud Dataplex Lake. resource container : The identifier of GCP project associated with this resource. location : The GCP region associated with this resource. lake id : The identifier of the Lake resource containing this resource. zone id : The identifier of the Zone resource containing this resource. asset id : The identifier of this Asset resource. dataplex.googleapis.com/DataScan Cloud Dataplex DataScan A DataScan resource in Dataplex. resource container : The identifier of GCP project associated with this resource. location : The GCP region associated with this resource. datascan id : The identifier of this DataScan resource. dataplex.googleapis.com/EntryLink Cloud Dataplex Glossary Entry Link Resource A Glossary Entry Link resource in Dataplex. resource container : The identifier of GCP project associated with this resource. location : The cloud region that contains the resource. entry group id : The user-provided identifier for the entry group resource. entry link id : The user-provided identifier for the entry link resource. dataplex.googleapis.com/Environment Cloud Dataplex Environment An Environment within a Cloud Dataplex Lake. resource container : The identifier of GCP project associated with this resource. location : The GCP region associated with this resource. lake id : The identifier of the Lake resource containing this resource. environment id : The identifier of this Environment resource. dataplex.googleapis.com/Glossary Cloud Dataplex Glossary Resource A Glossary resource in Dataplex. resource container : The identifier of GCP project associated with this resource. location : The cloud region that contains the resource. glossary id : The user-provided identifier for the glossary resource. dataplex.googleapis.com/GlossaryCategory Cloud Dataplex Glossary Category Resource A Glossary Category resource in Dataplex. resource container : The identifier of GCP project associated with this resource. location : The cloud region that contains the resource. glossary id : The user-provided identifier for the glossary resource. glossary category id : The user-provided identifier for the glossary category resource. dataplex.googleapis.com/GlossaryTerm Cloud Dataplex Glossary Term Resource A Glossary Term resource in Dataplex. resource container : The identifier of GCP project associated with this resource. location : The cloud region that contains the resource. glossary id : The user-provided identifier for the glossary resource. glossary term id : The user-provided identifier for the glossary term resource. dataplex.googleapis.com/GovernanceRule Cloud Dataplex Governance Rule A Governance rule resource in Dataplex. resource container : The identifier of GCP project associated with this resource. location : The cloud region that contains the resource. rule id : The user-provided identifier for the governance rule. dataplex.googleapis.com/Lake Cloud Dataplex Lake A Cloud Dataplex Lake. resource container : The identifier of GCP project associated with this resource. location : The GCP region associated with this resource. lake id : The identifier of this Lake resource. dataplex.googleapis.com/Project Cloud Dataplex Project.",
+          "Cloud Dataplex Project. resource container : The identifier of the GCP project associated with this resource. location : The location of the resource. dataplex.googleapis.com/Task Cloud Dataplex Task A Task within a Cloud Dataplex Lake. resource container : The identifier of GCP project associated with this resource. location : The GCP region associated with this resource. lake id : The identifier of the Lake resource containing this resource. task id : The identifier of this Task resource. dataplex.googleapis.com/Zone Cloud Dataplex Zone A Zone within a Cloud Dataplex Lake. resource container : The identifier of GCP project associated with this resource. location : The GCP region associated with this resource. lake id : The identifier of the Lake resource containing this resource. zone id : The identifier of this Zone resource. datastore database Cloud Datastore Database A Cloud Datastore database. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". database id : The unique id of the database. datastore index Cloud Datastore Index A Cloud Datastore index. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". database id : The database the index belongs to. index id : The unique id of the index. datastream.googleapis.com/Stream Datastream Stream A Datastream stream. resource container : The resource container (project ID). location : The location. stream id : The stream ID. dell emc cloud onefs cluster Dell EMC Cloud OneFS Cluster Multi-protocol access to files and directories on GCP, Isilon Cloud OneFS clusters with SMB for Windows, and NFS for UNIX file systems. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". location : The Google Cloud location in which the cluster is running. cluster id : Unique identifier of the cluster. deployment Deployment A Deployment Manager deployment. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". name : Name that uniquely identifies the deployment within a project. deployment manager manifest Deployment Manager Manifest A Deployment Manager manifest which is used to specify the contents of a deployment. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". manifest name : Name that uniquely identifies the manifest within a project. deployment name : Name of the deployment. deployment manager operation Deployment Manager Operation A Deployment Manager operation. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". operation name : Name that uniquely identifies the operation within a project. deployment manager resource Deployment Manager Resource Deployment Manager's record of Google Cloud Platform resources in a Deployment, such as a VM or a bucket. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". resource name : Name of the resource, unique within a deployment. deployment name : Name of the deployment. deployment manager type Deployment Manager Type A Deployment Manager type. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". name : Name that uniquely identifies the type within a project. dialogflow.googleapis.com/Location Dialogflow Location A Dialogflow Location (sometimes called Region). resource container : The id of the GCP resource container associated with this resource. location : Location of resource. discoveryengine.googleapis.com/Agent Gemini Enterprise Agent A specific Agent resource within Gemini Enterprise, mapping to discoveryengine.googleapis.com/Agent. resource container : The identifier of the GCP project associated with this resource. location : The Google Cloud location where the Agent is located. assistant id : The unique identifier of the Assistant. engine id : The unique identifier of the Engine. agent id : The unique identifier of the Agent. discoveryengine.googleapis.com/AgentToolInvocation Gemini Enterprise Agent Tool Invocation An Invocation of a specific Tool within the context of Gemini Enterprise Agent.",
+          "Won't be exposed to customer. instance id : Customer given identifier unique among Memcached instances in the region that this node belongs to. node id : Name of this Memcached node which is unique within a single Memcached instance. uid : A string to uniquely distinguish an instance of custom root. memorystore.googleapis.com/Instance Memorystore Instance An instance hosted on Google Cloud Memorystore. resource container : The identifier of the GCP consumer project associated with this resource, such as 'my-project'. location : The Google Cloud region in which the managed instance is running. instance id : The ID of the managed instance. instance uid : Identifier assigned by Google to uniquely distinguish an instance. mesh Mesh A mesh serves as the \"key\" to deliver configuration to data plane proxy instances. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". location : The location of the control plane mesh : The name of the mesh metastore.googleapis.com/Federation Dataproc Metastore Federation A Dataproc Metastore Federation. resource container : The ID of the customer project. location : The region that the federation is hosted in. federation id : The federation ID. metastore.googleapis.com/Service Dataproc Metastore Service A Dataproc Metastore Service. resource container : The ID of the customer project. location : The region that the service is hosted in. service id : The service ID. metric Metric Type A Stackdriver Monitoring metric type. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". name : The name of the metric type, such as \"logging.googleapis.com/my-metric-name\". microsoft ad domain Microsoft Active Directory Domain A Microsoft Active Directory Domain hosted and managed by Google Cloud Platform project id : The identifier of the GCP project associated with this resource, such as \"my-project\". fqdn : The fully qualified domain name of the Active Directory Domain location : The location where Active Directory Domain resources (like VMs, etc.) are present. ml job Cloud ML Job A Cloud Machine Learning job. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". job id : The job identifier. task name : The task name. mobilitybilling.googleapis.com/Project Google Maps Platform - Mobility Billing A top-level resource for Mobility Billing metrics and logs. resource container : The identifier of the GCP container associated with this resource. location : The region in which the Mobility Billing instance is running. modelarmor.googleapis.com/SanitizeOperation Model Armor Sanitize Operation A resource that represents the Model Armor sanitize operations. resource container : The identifier of the GCP resource container associated with this resource, such as \"my project\" or \"organizations/5678\". location : The GCP location. template id : The template ID. modelarmor.googleapis.com/Template Model Armor Template A resource that represents the Model Armor template operations. resource container : The identifier of the GCP resource container associated with this resource, such as \"my project\" or \"organizations/5678\". location : The GCP location. template id : The template ID. nat gateway Cloud NAT Gateway A Cloud NAT Gateway. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". region : The region where the NAT gateway is located. router id : Identifier of the router under which the NAT gateway is defined. gateway name : The name of the NAT gateway. netapp cloud volume NetApp Cloud Volume A specific volume in the NetApp Cloud Volumes service. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". location : The Google Cloud location in which the NetApp Cloud Volume instance is running. volume id : The ID of a NetApp Volume. network security policy Network Security Policy A network security policy. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". location : The region where the security policy resides."
+        ]
+      },
+      {
+        "title": "View and analyze logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "source_id": "site-docs-root",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "To get the permissions that you need to download logs, ask your administrator to grant you the Logs View Accessor ( roles/logging.viewAccessor ) IAM role on your project.",
+          "Before you begin To get the permissions that you need to use the Logs Explorer to view log entries, ask your administrator to grant you the following IAM roles: To view log entries in the Required bucket and those in the Default view on the Default bucket, or to select a log scope: Logs Viewer ( roles/logging.viewer ) on your project, folder, or organization.",
+          "To view and download log entries stored in a log view on a log bucket: Logs View Accessor ( roles/logging.viewAccessor ) on the project, folder, or organization that contains the log bucket."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "contactcenteraiplatform.googleapis.com",
+      "container.googleapis.com",
+      "contextawareaccess.googleapis.com",
+      "dataform.googleapis.com",
+      "datafusion.googleapis.com",
+      "datamigration.googleapis.com",
+      "dataplex.googleapis.com",
+      "datastream.googleapis.com",
+      "dialogflow.googleapis.com",
+      "discoveryengine.googleapis.com",
+      "e.g",
+      "logging.buckets.copyLogEntries",
+      "logging.buckets.create",
+      "logging.buckets.delete",
+      "logging.buckets.get",
+      "logging.buckets.list",
+      "logging.buckets.undelete",
+      "logging.buckets.update",
+      "logging.bucketWriter",
+      "logging.configWriter",
+      "logging.exclusions",
+      "logging.exclusions.create",
+      "logging.exclusions.delete",
+      "logging.exclusions.get",
+      "logging.exclusions.list",
+      "logging.exclusions.update",
+      "logging.fieldAccessor",
+      "logging.fields.access",
+      "logging.googleapis.com",
+      "logging.links",
+      "logging.links.create",
+      "logging.links.delete",
+      "logging.links.get",
+      "logging.links.list",
+      "logging.locations",
+      "logging.locations.get",
+      "logging.locations.list",
+      "logging.logEntries",
+      "logging.logEntries.create",
+      "logging.logEntries.download",
+      "logging.logEntries.list",
+      "logging.logEntries.route",
+      "logging.logMetrics",
+      "logging.logMetrics.create",
+      "logging.logMetrics.delete",
+      "logging.logMetrics.get",
+      "logging.logMetrics.list",
+      "logging.logMetrics.update",
+      "logging.logs",
+      "logging.logs.delete",
+      "logging.logs.list",
+      "logging.logScopes",
+      "logging.logScopes.create",
+      "logging.logScopes.delete",
+      "logging.logScopes.get",
+      "logging.logScopes.list",
+      "logging.logScopes.update",
+      "logging.logServiceIndexes.list",
+      "logging.logServices.list",
+      "logging.notificationRules",
+      "logging.notificationRules.get",
+      "logging.notificationRules.list",
+      "logging.operations",
+      "logging.operations.cancel",
+      "logging.operations.get",
+      "logging.operations.list",
+      "logging.privateLogEntries.list",
+      "logging.queries",
+      "logging.queries.deleteShared",
+      "logging.queries.getShared",
+      "logging.queries.listShared",
+      "logging.queries.share",
+      "logging.queries.updateShared",
+      "logging.queries.usePrivate",
+      "logging.settings",
+      "logging.settings.get",
+      "logging.settings.update",
+      "logging.sinks",
+      "logging.sinks.create",
+      "logging.sinks.delete",
+      "logging.sinks.get",
+      "logging.sinks.list",
+      "logging.sinks.update",
+      "logging.sqlAlerts",
+      "logging.sqlAlerts.create",
+      "logging.sqlAlerts.update",
+      "logging.usage.get",
+      "logging.viewAccessor",
+      "logging.viewer",
+      "logging.views",
+      "logging.views.access",
+      "logging.views.create",
+      "logging.views.delete",
+      "logging.views.get",
+      "logging.views.getIamPolicy",
+      "logging.views.list",
+      "logging.views.listLogs",
+      "logging.views.listResourceKeys",
+      "logging.views.setIamPolicy",
+      "logging.views.update",
+      "memorystore.googleapis.com",
+      "metastore.googleapis.com",
+      "mobilitybilling.googleapis.com",
+      "modelarmor.googleapis.com",
+      "monitoring.alertPolicyEditor",
+      "monitoring.notificationChannelEditor",
+      "observability.scopes.get",
+      "transferappliance.googleapis.com",
+      "videostitcher.googleapis.com",
+      "visionai.googleapis.com",
+      "vmmigration.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.configWriter",
+      "roles/logging.viewAccessor",
+      "roles/logging.viewer",
+      "roles/monitoring.alertPolicyEditor",
+      "roles/monitoring.notificationChannelEditor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/access-control",
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:31.891Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging"
+}

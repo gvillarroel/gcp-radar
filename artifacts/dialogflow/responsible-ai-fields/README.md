@@ -1,0 +1,37 @@
+# Responsible AI fields
+
+Product: Dialogflow
+Feature slug: `responsible-ai-fields`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+The v3 and v3beta1 APIs now expose Responsible AI fields that let you flag, filter, or block harmful content.
+
+## Lifecycle
+
+- Latest feature date: 2025-12-11
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access (evidence: [https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/changelog](https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/changelog), [https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings](https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings), [https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library](https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library))
+- allow (evidence: [https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/changelog](https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/changelog), [https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings](https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings), [https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library](https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library))
+- auth (evidence: [https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/changelog](https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/changelog), [https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings](https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings), [https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library](https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library))
+- certificate (evidence: [https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/changelog](https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/changelog), [https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings](https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings), [https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library](https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library))
+- credential (evidence: [https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/changelog](https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/changelog), [https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings](https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings), [https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library](https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library))
+- key (evidence: [https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/changelog](https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/changelog), [https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings](https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings), [https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library](https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library))
+- logging (evidence: [https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/changelog](https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/changelog), [https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings](https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings), [https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library](https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library))
+- security (evidence: [https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/changelog](https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/changelog), [https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings](https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings), [https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library](https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library))
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library](https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library)
+- [https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings](https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings)
+- [https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/changelog](https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/changelog)

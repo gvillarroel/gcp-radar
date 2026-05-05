@@ -1,0 +1,133 @@
+{
+  "feature_name": "Narrow road callouts",
+  "feature_slug": "narrow-road-callouts",
+  "summary": "The navigation route can display callouts for narrow roads in supported areas and driving modes.",
+  "extended_definition": "The navigation route can display callouts for narrow roads in supported areas and driving modes.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/nav-only-feed",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/route"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Navigate a route \\_|\\_ Navigation SDK for iOS \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/route",
+        "source_id": "site-docs-root",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set the travelMode property of the map view, as shown in the following example: Swift self . mapView . travelMode = . cycling Objective-C mapView . travelMode = GMSNavigationTravelModeCycling ; Set roads to avoid Use the avoidsHighways and avoidsTolls BOOL properties to avoid highways and/or toll roads along a route.",
+          "UNUserNotificationCenter center = [ UNUserNotificationCenter currentNotificationCenter ]; UNAuthorizationOptions options = UNAuthorizationOptionAlert ; [ center requestAuthorizationWithOptions : options completionHandler : ^ ( BOOL granted , NSError Nullable error ) { if ( ! error && granted ) { NSLog ( @\"iOS Notification Permission: newly Granted\" ); } else { NSLog ( @\"iOS Notification Permission: Failed or Denied\" ); } }]; } else { // Handle rejection of the terms and conditions. } }]; self . view = mapView ; [ self makeButton ]; } // Create a route and initiate navigation. - ( void ) startNav { NSArray<GMSNavigationWaypoint > destinations = @[ [[ GMSNavigationWaypoint alloc ] initWithPlaceID : @\"ChIJnUYTpNASkFQR gSty5kyoUk\" title : @\"PCC Natural Market\" ], [[ GMSNavigationWaypoint alloc ] initWithPlaceID : @\"ChIJJ326ROcSkFQRBfUzOL2DSbo\" title : @\"Marina Park\" ] ] ; [ mapView . navigator setDestinations : destinations callback : ^ ( GMSRouteStatus routeStatus ){ [ mapView . locationSimulator simulateLocationsAlongExistingRoute ]; mapView . navigator . guidanceActive = YES ; mapView . navigator . sendsBackgroundNotifications = YES ; mapView . cameraMode = GMSNavigationCameraModeFollowing ; }]; } // Add a button to the view. - ( void ) makeButton { // A button to start navigation.",
+          "UNUserNotificationCenter . current () . requestAuthorization ( options : [ . alert ]) { granted , error in // Handle denied authorization to display notifications . if ! granted error != nil { print ( \"User rejected request to display notifications.\" ) } } } else { // Handle rejection of terms and conditions . } } view = mapView makeButton () } // Create a route and start guidance . func startNav () { var destinations = GMSNavigationWaypoint destinations . append ( GMSNavigationWaypoint . init ( placeID : \"ChIJnUYTpNASkFQR gSty5kyoUk\" , title : \"PCC Natural Market\" ) ! ) destinations . append ( GMSNavigationWaypoint . init ( placeID : \"ChIJJ326ROcSkFQRBfUzOL2DSbo\" , title : \"Marina Park\" ) ! ) mapView . navigator ? . setDestinations ( destinations ) { routeStatus in guard routeStatus == ."
+        ]
+      },
+      {
+        "title": "\"Details about the turn-by-turn data feed \\_|\\_ Navigation SDK for iOS \\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/nav-only-feed",
+        "source_id": "site-docs-root",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It provides upcoming maneuvers with elements you supply: icons (left, right, U-turn) turn numbers in roundabouts road names estimated distances and time to the next navigation step or final destination You can use the turn-by-turn feed to create experiences where the full Navigation SDK UI is not appropriate, such as for small screen displays.",
+          "Shown below are example event listeners for the didChangeNavInfo event: Swift // ViewController.swift class SomeViewController : UIViewController { ... mapView . navigator ? . add ( self ); ... } extension SomeViewController : GMSNavigatorListener { func navigator ( navigator : GMSNavigator , didUpdateNavInfo navInfo : GMSNavigationNavInfo ) { // Get the current step information if navInfo . navState == . enroute { if let currentStep = navInfo . currentStep { ... roadNameLabel . text = currentStep . simpleRoadName ... } } } } Objective-C // ViewController.h @ interface SomeViewController () < GMSNavigatorListener > @ end // ViewController.m @ implementation SomeViewController // Some initialization code. ... { ... [ mapView . navigator addListener : self ]; ... } #pragma mark GMSNavigatorListener - ( void ) navigator : ( GMSNavigator ) navigator didUpdateNavInfo : ( GMSNavigationNavInfo ) navInfo { // Get the current step information if ( navInfo . navState == GMSNavigationNavStateEnroute ) { GMSNavigationStepInfo currentStep = navInfo . currentStep ; if ( currentStep ) { ... roadNameLabel . text = currentStep . simpleRoadName ; ... } } ... } Navigation states Use navState property of GMSNavigationNavInfo to get the current state of navigation, which is one of the following: Enroute - The GMSNavigationNavStateEnroute state means that guided navigation is active and the user is on the provided route.",
+          "Essential navigation display elements The primary fields for each navigation step are the full road name, maneuver, and total distance of the step, which are available in GMSNavigationStepInfo ."
+        ]
+      },
+      {
+        "title": "\"GoogleNavigation Framework Reference \\_|\\_ Navigation SDK for iOS \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference",
+        "source_id": "site-docs-reference",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "With style options you can customize the presentation of the standard Google map styles, changing the visual display of features like roads, parks, and other points of interest.",
+          "Declaration Swift class GMSNavigationLicensePlateRestriction : NSObject Objective-C @interface GMSNavigationLicensePlateRestriction : NSObject GMSNavigationNavInfo Contains information about the state of navigation Declaration Swift class GMSNavigationNavInfo : NSObject Objective-C @interface GMSNavigationNavInfo : NSObject GMSNavigationRouteInfo An immutable class that encapsulates ETA and distance information for both the default best route, and the shortest route, to a specific waypoint.",
+          "Declaration Swift class GMSNavigationStepInfo : NSObject Objective-C @interface GMSNavigationStepInfo : NSObject GMSNavigationStepInfoImageOptions Declaration Swift class GMSNavigationStepInfoImageOptions : NSObject Objective-C @interface GMSNavigationStepInfoImageOptions : NSObject / The object which provides screen metrics for the screen the image will be displayed on."
+        ]
+      },
+      {
+        "title": "\"GoogleNavigation Framework Reference \\_|\\_ Navigation SDK for iOS \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes",
+        "source_id": "site-docs-reference",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "With style options you can customize the presentation of the standard Google map styles, changing the visual display of features like roads, parks, and other points of interest.",
+          "Declaration Swift class GMSNavigationLicensePlateRestriction : NSObject Objective-C @interface GMSNavigationLicensePlateRestriction : NSObject GMSNavigationNavInfo Contains information about the state of navigation Declaration Swift class GMSNavigationNavInfo : NSObject Objective-C @interface GMSNavigationNavInfo : NSObject GMSNavigationRouteInfo An immutable class that encapsulates ETA and distance information for both the default best route, and the shortest route, to a specific waypoint.",
+          "Declaration Swift class GMSNavigationStepInfo : NSObject Objective-C @interface GMSNavigationStepInfo : NSObject GMSNavigationStepInfoImageOptions Declaration Swift class GMSNavigationStepInfoImageOptions : NSObject Objective-C @interface GMSNavigationStepInfoImageOptions : NSObject / The object which provides screen metrics for the screen the image will be displayed on."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/nav-only-feed",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/nav-only-feed",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/nav-only-feed",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/nav-only-feed",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:29.610Z",
+  "source_step08_card": "data/step-08/current/products/navigation-sdk-for-ios/card.json",
+  "product_name": "Navigation SDK for iOS",
+  "product_slug": "navigation-sdk-for-ios"
+}

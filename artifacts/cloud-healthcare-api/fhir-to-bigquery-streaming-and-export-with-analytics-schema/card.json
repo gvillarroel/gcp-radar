@@ -1,0 +1,146 @@
+{
+  "feature_name": "FHIR-to-BigQuery streaming and export with analytics schema",
+  "feature_slug": "fhir-to-bigquery-streaming-and-export-with-analytics-schema",
+  "summary": "Cloud Healthcare API can now stream and export FHIR resources to BigQuery using the FHIR analytics schema, including repeated extension columns and JSON-string contained resources.",
+  "extended_definition": "Cloud Healthcare API can now stream and export FHIR resources to BigQuery using the FHIR analytics schema, including repeated extension columns and JSON-string contained resources.",
+  "lifecycle": {
+    "latest_feature_date": "2022-02-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+      "https://docs.cloud.google.com/healthcare-api/docs/tutorials/fhir-bigquery-streaming-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Stream and synchronize FHIR resources with BigQuery \\_|\\_ Cloud Healthcare\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/tutorials/fhir-bigquery-streaming-tutorial",
+        "source_id": "site-docs-root-2",
+        "final_score": 195,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BIGQUERY DATASET ID \", \"schemaConfig\": { \"schemaType\": \"ANALYTICS V2\" } } } ] } Verify streaming configuration to BigQuery Verify that streaming is configured correctly by completing the following steps: Create a third Patient resource in the FHIR store: REST Before using any of the request data, make the following replacements: PROJECT ID : your Google Cloud project ID LOCATION : the location of the parent dataset DATASET ID : the FHIR store's parent dataset FHIR STORE ID : the FHIR store ID Request JSON body: { \"name\": [ { \"use\": \"official\", \"family\": \"Lee\", \"given\": [ \"Alex\" ] } ], \"gender\": \"male\", \"birthDate\": \"1990-01-01\", \"resourceType\": \"Patient\" } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "BIGQUERY DATASET ID \", \"schemaConfig\": { \"schemaType\": \"ANALYTICS V2\" } } } ] } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID ?updateMask=streamConfigs\" Select-Object -Expand Content APIs Explorer Copy the request body and open the method reference page .",
+          "BIGQUERY DATASET ID \", \"schemaConfig\": { \"schemaType\": \"ANALYTICS\" } } } ] } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores?fhirStoreId= SECOND FHIR STORE ID \" Select-Object -Expand Content APIs Explorer Copy the request body and open the method reference page ."
+        ]
+      },
+      {
+        "title": "\"Creating and managing FHIR stores \\_|\\_ Cloud Healthcare API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "source_id": "site-docs-root",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "To export resource changes to BigQuery each time the FHIR resources in your store are created, updated, patched, or deleted, click Add new streaming config in the Dataset field.",
+          "Optional: To export resource changes to BigQuery each time the FHIR resources in your store are created, updated, patched, or deleted, do the following: Click Stream resource changes to BigQuery .",
+          "For more information on BigQuery streaming, see Streaming FHIR resource changes to BigQuery ."
+        ]
+      },
+      {
+        "title": "\"Import and export FHIR resources using Cloud Storage \\_|\\_ Cloud Healthcare\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "source_id": "site-docs-root",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "An optional flag, --resource-type , that only exports specific resource types, defined as a comma-separated list of one or more FHIR resources types An optional flag, --since , that only exports resources updated after a specific time, defined as YYYY-MM-DDThh:mm:ss.sss+zz:zz The following sample shows the gcloud healthcare fhir-stores export gcs command. gcloud healthcare fhir-stores export gcs FHIR STORE ID \\ --dataset = DATASET ID \\ --location = LOCATION \\ --project = PROJECT ID --gcs-uri = gs:// BUCKET / DIRECTORY The command line displays the operation ID: Waiting for operation [ OPERATION ID ] to complete...done. name: projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID To view the status of the operation, run the gcloud healthcare operations describe command, providing the OPERATION ID from the response: gcloud healthcare operations describe OPERATION ID \\ --dataset = DATASET ID After the command completes, the response includes done . metadata: '@type': type.googleapis.com/google.cloud.healthcare.v1.OperationMetadata apiMethodName: google.cloud.healthcare.v1.fhir.FhirService.ExportFhirData createTime: \" CREATE TIME \" endTime: \" END TIME \" name: projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /operations/ OPERATION ID response: '@type': type.googleapis.com/google.cloud.healthcare.v1.fhir.rest.ExportResourcesResponse fhirStore: projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /operations/ OPERATION ID resourceCount: ' RESOURCE COUNT ' API To export FHIR resources, use the projects.locations.datasets.fhirStores.export method.",
+          "See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/fhir before running the sample.\"\"\" Imports the Google API Discovery Service. from googleapiclient import discovery api version = \"v1\" service name = \"healthcare\" Instantiates an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the parent dataset's ID fhir store id = 'my-fhir-store' # replace with the FHIR store ID gcs uri = 'my-bucket' # replace with a Cloud Storage bucket fhir store parent = \"projects/ {} /locations/ {} /datasets/ {} \" . format ( project id , location , dataset id ) fhir store name = f \" { fhir store parent } /fhirStores/ { fhir store id } \" body = { \"contentStructure\" : \"CONTENT STRUCTURE UNSPECIFIED\" , \"gcsSource\" : { \"uri\" : f \"gs:// { gcs uri } \" }, } Escape \"import()\" method keyword because \"import\" is a reserved keyword in Python request = ( client . projects () . locations () . datasets () . fhirStores () . import ( name = fhir store name , body = body ) ) response = request . execute () print ( f \"Imported FHIR resources: { gcs uri } \" ) return response Exporting FHIR resources The following samples show how to export FHIR resources to a Cloud Storage bucket.",
+          "GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const sleep = ms = > { return new Promise ( resolve = > setTimeout ( resolve , ms )); }; const exportFhirResourcesGcs = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const fhirStoreId = 'my-fhir-store'; // const gcsUri = 'my-bucket/my-directory' const name = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /fhirStores/ ${ fhirStoreId } ; const request = { name , resource : { gcsDestination : { // The destination location in Cloud Storage for the FHIR resources uriPrefix : gs:// ${ gcsUri } , }, }, }; const operation = await healthcare . projects . locations . datasets . fhirStores . export ( request ); const operationName = operation . data . name ; // Wait ten seconds for the LRO to finish await sleep ( 10000 ); // Check the LRO's status const operationStatus = await healthcare . projects . locations . datasets . operations . get ({ name : operationName , }); if ( typeof operationStatus . data . metadata . counter !== 'undefined' ) { console . log ( 'Exported FHIR resources successfully' ); } else { console . log ( 'Export failed' ); } }; exportFhirResourcesGcs (); Python def export fhir store gcs ( project id , location , dataset id , fhir store id , gcs uri ): \"\"\"Export resources to a Google Cloud Storage bucket by copying them from the FHIR store."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "complete...done",
+      "github.com",
+      "healthcare.googleapis.com",
+      "projects.locations.datasets.fhirStores.export",
+      "request.json",
+      "ss.sss",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/tutorials/fhir-bigquery-streaming-tutorial",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/tutorials/fhir-bigquery-streaming-tutorial",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/tutorials/fhir-bigquery-streaming-tutorial",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/tutorials/fhir-bigquery-streaming-tutorial",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/tutorials/fhir-bigquery-streaming-tutorial",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/tutorials/fhir-bigquery-streaming-tutorial",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/tutorials/fhir-bigquery-streaming-tutorial",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:29.484Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api"
+}

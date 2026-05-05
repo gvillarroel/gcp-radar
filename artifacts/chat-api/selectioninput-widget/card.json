@@ -1,0 +1,112 @@
+{
+  "feature_name": "SelectionInput widget",
+  "feature_slug": "selectioninput-widget",
+  "summary": "Chat apps can use the SelectionInput widget to present checkboxes, radio buttons, switches, and dropdown menus.",
+  "extended_definition": "Chat apps can use the SelectionInput widget to present checkboxes, radio buttons, switches, and dropdown menus.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards",
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/Event",
+      "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Package google.apps.card.v1 \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+        "source_id": "site-docs-reference",
+        "final_score": 166,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, this is a JSON representation of a carousel that contains three text paragraph widgets. { \"carouselCards\": [ { \"widgets\": [ { \"textParagraph\": { \"text\": \"First text paragraph in carousel\", } } ] }, { \"widgets\": [ { \"textParagraph\": { \"text\": \"Second text paragraph in carousel\", } } ] }, { \"widgets\": [ { \"textParagraph\": { \"text\": \"Third text paragraph in carousel\", } } ] } ] } Available for Google Chat apps and unavailable for Google Workspace add-ons.",
+          "Google Workspace add-ons and Chat apps Fields Union field data . data can be only one of the following: text paragraph TextParagraph TextParagraph widget. image Image Image widget. decorated text DecoratedText DecoratedText widget. button list ButtonList ButtonList widget. text input TextInput TextInput widget. selection input SelectionInput SelectionInput widget. date time picker DateTimePicker DateTimePicker widget. chip list ChipList ChipList widget.",
+          "Google Workspace add-ons and Chat apps Fields horizontal size style HorizontalSizeStyle Specifies how a column fills the width of the card. horizontal alignment HorizontalAlignment Specifies whether widgets align to the left, right, or center of a column. vertical alignment VerticalAlignment Specifies whether widgets align to the top, bottom, or center of a column. widgets[] Widgets An array of widgets included in a column."
+        ]
+      },
+      {
+        "title": "Cards v2 \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards",
+        "source_id": "site-api-reference",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Google Workspace add-ons and Chat apps JSON representation { \"textParagraph\" : { object ( TextParagraph ) } , \"image\" : { object ( Image ) } , \"decoratedText\" : { object ( DecoratedText ) } , \"buttonList\" : { object ( ButtonList ) } , \"textInput\" : { object ( TextInput ) } , \"selectionInput\" : { object ( SelectionInput ) } , \"dateTimePicker\" : { object ( DateTimePicker ) } , \"chipList\" : { object ( ChipList ) } } Fields Union field data . data can be only one of the following: textParagraph object ( TextParagraph ) TextParagraph widget. image object ( Image ) Image widget. decoratedText object ( DecoratedText ) DecoratedText widget. buttonList object ( ButtonList ) ButtonList widget. textInput object ( TextInput ) TextInput widget. selectionInput object ( SelectionInput ) SelectionInput widget. dateTimePicker object ( DateTimePicker ) DateTimePicker widget. chipList object ( ChipList ) ChipList widget.",
+          "Google Workspace add-ons and Chat apps JSON representation { \"horizontalSizeStyle\" : enum ( HorizontalSizeStyle ) , \"horizontalAlignment\" : enum ( HorizontalAlignment ) , \"verticalAlignment\" : enum ( VerticalAlignment ) , \"widgets\" : [ { object ( Widgets ) } ] } Fields horizontalSizeStyle enum ( HorizontalSizeStyle ) Specifies how a column fills the width of the card. horizontalAlignment enum ( HorizontalAlignment ) Specifies whether widgets align to the left, right, or center of a column. verticalAlignment enum ( VerticalAlignment ) Specifies whether widgets align to the top, bottom, or center of a column. widgets[] object ( Widgets ) An array of widgets included in a column.",
+          "For example, this is a JSON representation of a carousel that contains three text paragraph widgets. { \"carouselCards\": [ { \"widgets\": [ { \"textParagraph\": { \"text\": \"First text paragraph in carousel\", } } ] }, { \"widgets\": [ { \"textParagraph\": { \"text\": \"Second text paragraph in carousel\", } } ] }, { \"widgets\": [ { \"textParagraph\": { \"text\": \"Third text paragraph in carousel\", } } ] } ] } Available for Google Chat apps and unavailable for Google Workspace add-ons."
+        ]
+      },
+      {
+        "title": "Event \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/Event",
+        "source_id": "site-api-reference",
+        "final_score": 104,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"type\" : enum ( EventType ) , \"eventTime\" : string , \"token\" : string , \"threadKey\" : string , \"message\" : { object ( Message ) } , \"user\" : { object ( User ) } , \"thread\" : { object ( Thread ) } , \"space\" : { object ( Space ) } , \"action\" : { object ( FormAction ) } , \"configCompleteRedirectUrl\" : string , \"isDialogEvent\" : boolean , \"dialogEventType\" : enum ( DialogEventType ) , \"common\" : { object ( CommonEventObject ) } , \"appCommandMetadata\" : { object ( AppCommandMetadata ) } } Fields type enum ( EventType ) The type of user interaction with the Chat app, such as MESSAGE or ADDED TO SPACE . eventTime string ( Timestamp format) The timestamp indicating when the interaction event occurred. token string A secret value that legacy Chat apps can use to verify if a request is from Google.",
+          "If the widget accepts multiple values, such as a SelectionInput widget of checkboxes, the list contains a string object for each value that the user inputs or selects. dateTimeInput object ( DateTimeInput ) Date and time input values from a DateTimePicker widget that accepts both a date and time. dateInput object ( DateInput ) Date input values from a DateTimePicker widget that only accepts date values. timeInput object ( TimeInput ) Time input values from a DateTimePicker widget that only accepts time values.",
+          "For Chat apps, the name of the function that the user invoked when interacting with a widget."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apps.extensions.markup",
+      "avatar.png",
+      "developers.google.com",
+      "example.com",
+      "spaces.messages"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/Event"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/Event"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/Event"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:26.701Z",
+  "source_step08_card": "data/step-08/current/products/chat-api/card.json",
+  "product_name": "Chat API",
+  "product_slug": "chat-api"
+}

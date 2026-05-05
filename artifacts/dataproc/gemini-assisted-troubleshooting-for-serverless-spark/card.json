@@ -1,0 +1,170 @@
+{
+  "feature_name": "Gemini-assisted troubleshooting for Serverless Spark",
+  "feature_slug": "gemini-assisted-troubleshooting-for-serverless-spark",
+  "summary": "Dataproc Serverless for Spark includes Gemini-assisted troubleshooting for supported Spark workloads.",
+  "extended_definition": "Dataproc Serverless for Spark includes Gemini-assisted troubleshooting for supported Spark workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/network-access",
+      "https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark",
+      "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Managed Service for Apache Spark \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark",
+        "source_id": "site-docs-root",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "User roles To get the permissions that you need to use the Managed Service for Apache Spark service, ask your administrator to grant you the following IAM roles: Dataproc Editor ( roles/dataproc.editor ) on the project Service Account User ( roles/iam.serviceAccountUser ) on the Compute Engine default service account Service account roles To ensure that the Compute Engine default service account has the necessary permissions to submit Managed Service for Apache Spark jobs and access secrets, ask your administrator to grant the following IAM roles to the Compute Engine default service account on the project: Important: You must grant these roles to the Compute Engine default service account, not to your user account.",
+          "Run the following command to submit the job to your Managed Service for Apache Spark cluster: gcloud dataproc jobs submit spark --cluster = CLUSTER NAME --class = com.customer.app.PostgresToMySql \\ --jars = BUCKET /postgres-to-mysql-migration- VERSION .jar \\ -- POSTGRES TABLE MYSQL-TABLE \\ POSTGRES SECRET MYSQL-SECRET COLUMN BATCH SIZE Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Manage Java and Scala dependencies for Apache Spark \\_|\\_ Managed Service\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies",
+        "source_id": "site-docs-root",
+        "final_score": 105,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "Example: gcloud dataproc jobs submit spark \\ --cluster=my-cluster \\ --region= region \\ --properties=spark.jars.packages='com.google.cloud:google-cloud-translate:1.35.0,org.apache.bahir:spark-streaming-pubsub 2.11:2.2.0' When submitting a job directly on your cluster use the spark-submit command with the --packages=[DEPENDENCIES] parameter.",
+          "Here are recommended approaches to including these dependencies when you submit a Spark job to a Managed Service for Apache Spark cluster: When submitting a job from your local machine with the gcloud dataproc jobs submit command, use the --properties spark.jars.packages=[DEPENDENCIES] flag."
+        ]
+      },
+      {
+        "title": "Configuring Network Access for Dataproc Metastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/network-access",
+        "source_id": "site-docs-root-2",
+        "final_score": 103,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Refer to General Troubleshooting: For more detailed network diagnostics, refer to: Troubleshooting Managed Service for Apache Spark Cluster Creation Failures Troubleshooting Managed Service for Apache Spark Batch Creation Failures Troubleshooting Dataproc Metastore Connectivity What's next Learn more about Dataproc Metastore .",
+          "Egress Rule from Workload to Metastore: Verify that an egress firewall rule allows outbound TCP traffic from your Managed Service for Apache Spark cluster or Managed Service for Apache Spark workloads to the IP address range of your Dataproc Metastore instance on port 9083 .",
+          "Correct network setup is essential for Managed Service for Apache Spark clusters and Managed Service for Apache Spark workloads to securely and privately communicate with your managed Dataproc Metastore service."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.py",
+      "com.customer.app.PostgresToMySql",
+      "com.google.cloud",
+      "com.google.common",
+      "dataproc.editor",
+      "iam.serviceAccountUser",
+      "maven.apache.org",
+      "org.apache.bahir",
+      "org.apache.maven.plugins.shade.resource.ManifestResourceTransformer",
+      "pyspark.sql",
+      "repackaged.com.google.common",
+      "spark.jars.packages"
+    ],
+    "missing_inventory_roles": [
+      "roles/dataproc.editor",
+      "roles/iam.serviceAccountUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/network-access",
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/network-access",
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/network-access",
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/network-access",
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/network-access",
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/network-access",
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/network-access",
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/network-access",
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/gemini-spark",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/network-access",
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:55.306Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc"
+}

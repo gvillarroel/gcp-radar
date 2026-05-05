@@ -1,0 +1,131 @@
+{
+  "feature_name": "Imagen 1",
+  "feature_slug": "imagen-1",
+  "summary": "Imagen 1 is a Vertex AI text-to-image generation model; deprecated on 2025-06-24.",
+  "extended_definition": "Imagen 1 is a Vertex AI text-to-image generation model; deprecated on 2025-06-24.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-24",
+    "deprecation_date": "2025-06-24",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Generate and edit images on Vertex AI \\_|\\_ Generative AI on Vertex AI \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "source_id": "site-docs-root",
+        "final_score": 345,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Try more examples To learn more, run the following notebooks in the environment of your choice: \"Gemini 3 Pro Image Generation in Vertex AI\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Gemini 2.5 Flash Image Generation in Vertex AI\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Imagen 4 Image Generation\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Imagen 3 Image Editing\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub For a full list of Jupyter notebook tutorials using Imagen, see the Generative AI on Vertex AI cookbook .",
+          "With Gemini and Imagen on Vertex AI on Vertex AI, application developers can build next-generation AI products that transform their user's imagination into high-quality visual assets using AI generation, in seconds.",
+          "Try image generation (Vertex AI Studio) Try Imagen in a Colab With Gemini and Imagen, you can do the following: Generate novel images using only a text prompt (text-to-image AI generation)."
+        ]
+      },
+      {
+        "title": "\"Prompt and image attribute guide \\_|\\_ Generative AI on Vertex AI \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide",
+        "source_id": "site-docs-root",
+        "final_score": 307,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Prompt: an expansive mountain range, landscape wide angle 10mm Model: Imagen 3 ( imagen-3.0-generate-002 ) Prompt: a photo of the moon, astro photography, wide angle 10mm Model: Imagen 3 ( imagen-3.0-generate-002 ) What's next Read articles about Imagen and other Generative AI on Vertex AI products: A developer's guide to getting started with Imagen 3 on Vertex AI New generative media models and tools, built with and for creators New in Gemini: Custom Gems and improved image generation with Imagen 3 Google DeepMind: Imagen 3 - Our highest quality text-to-image model Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Camera Proximity - Close up, taken from far away Prompt: A close-up photo of coffee beans Prompt: A zoomed out photo of a small bag of coffee beans in a messy kitchen Camera Position - aerial, from below Prompt: aerial photo of urban city with skyscrapers Prompt: A photo of a forest canopy with blue skies from below Lighting - natural, dramatic, warm, cold Prompt: studio photo of a modern arm chair, natural lighting Prompt: studio photo of a modern arm chair, dramatic lighting Camera Settings - motion blur, soft focus, bokeh, portrait Prompt: photo of a city with skyscrapers from the inside of a car with motion blur Prompt: soft focus photograph of a bridge in an urban city at night Lens types - 35mm, 50mm, fisheye, wide angle, macro Prompt: photo of a leaf, macro lens Prompt: street photography, new york city, fisheye lens Film types - black and white, polaroid Prompt: a polaroid portrait of a dog wearing sunglasses Prompt: black and white photo of a dog wearing sunglasses Image source: Each image was generated using its corresponding text prompt with the Imagen 3 model.",
+          "The following are some ideas of historical painting or art styles that you can try. \"generate an image in the style of [art period or movement] : a wind farm\" Prompt: generate an image in the style of an impressionist painting : a wind farm Prompt: generate an image in the style of a renaissance painting : a wind farm Prompt: generate an image in the style of pop art : a wind farm Image source: Each image was generated using its corresponding text prompt with the Imagen 3 model."
+        ]
+      },
+      {
+        "title": "\"Vertex AI quickstart \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal",
+        "source_id": "site-docs-root",
+        "final_score": 303,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "GOOGLE CLOUD LOCATION 'global' ; async function generateContent ( projectId = GOOGLE CLOUD PROJECT , location = GOOGLE CLOUD LOCATION ) { const client = new GoogleGenAI ({ vertexai : true , project : projectId , location : location , }); const image = { fileData : { fileUri : 'gs://cloud-samples-data/generative-ai/image/scones.jpg' , mimeType : 'image/jpeg' , }, }; const response = await client . models . generateContent ({ model : 'gemini-2.5-flash' , contents : [ image , 'What is shown in this image?' ], }); console . log ( response . text ); return response . text ; } Java import com.google.genai.Client ; import com.google.genai.types.Content ; import com.google.genai.types.GenerateContentResponse ; import com.google.genai.types.HttpOptions ; import com.google.genai.types.Part ; public class TextGenerationWithTextAndImage { public static void main ( String [] args ) { // TODO ( developer ): Replace these variables before running the sample .",
+          "Once created , it can be reused for multiple requests . try ( Client client = Client . builder () . location ( \"global\" ) . vertexAI ( true ) . build ()) { GenerateContentConfig contentConfig = GenerateContentConfig . builder () . responseModalities ( \"TEXT\" , \"IMAGE\" ) . candidateCount ( 1 ) . safetySettings ( SafetySetting . builder () . method ( \"PROBABILITY\" ) . category ( \"HARM CATEGORY DANGEROUS CONTENT\" ) . threshold ( \"BLOCK MEDIUM AND ABOVE\" ) . build ()) . build (); GenerateContentResponse response = client . models . generateContent ( modelId , \"Generate an image of the Eiffel tower with fireworks in the background.\" , contentConfig ); // Get parts of the response List<Part> parts = response . candidates () . flatMap ( candidates - > candidates . stream () . findFirst ()) . flatMap ( Candidate :: content ) . flatMap ( Content :: parts ) . orElse ( new ArrayList <> ()); // For each part print text if present , otherwise read image data if present and // write it to the output file for ( Part part : parts ) { if ( part . text () . isPresent ()) { System . out . println ( part . text () . get ()); } else if ( part . inlineData () . flatMap ( Blob :: data ) . isPresent ()) { BufferedImage image = ImageIO . read ( new ByteArrayInputStream ( part . inlineData () . flatMap ( Blob :: data ) . get ())); ImageIO . write ( image , \"png\" , new File ( outputFile )); } } System . out . println ( \"Content written to: \" + outputFile ); // Example response : // Here is the Eiffel Tower with fireworks in the background ... // // Content written to : resources / output / example - image - eiffel - tower . png } } } Image understanding Gemini can understand images as well.",
+          "This client only needs to be created // once , and can be reused for multiple requests . try ( Client client = Client . builder () . location ( \"global\" ) . vertexAI ( true ) . httpOptions ( HttpOptions . builder () . apiVersion ( \"v1\" ) . build ()) . build ()) { GenerateContentResponse response = client . models . generateContent ( modelId , Content . fromParts ( Part . fromText ( \"What is shown in this image?\" ), Part . fromUri ( \"gs://cloud-samples-data/generative-ai/image/scones.jpg\" , \"image/jpeg\" )), null ); System . out . print ( response . text ()); // Example response : // The image shows a flat lay of blueberry scones arranged on parchment paper ."
+        ]
+      },
+      {
+        "title": "\"Generative AI glossary \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "source_id": "site-docs-root",
+        "final_score": 291,
+        "relevance": "",
+        "evidence_snippets": [
+          "Imagen Imagen is a text-to-image generative AI service available through the Vertex AI platform.",
+          "However, for generative tasks like summarization and text generation, other metrics like Rough-L score might be more appropriate. feature In machine learning (ML), a feature is a characteristic or attribute of an instance or entity that's used as an input to train an ML model or to make inferences. feature extraction In the context of generative AI, feature extraction refers to the process of identifying and selecting relevant features from input data to be used in model training.",
+          "Home Documentation AI and ML Vertex AI Generative AI on Vertex AI Guides Send feedback Generative AI glossary Stay organized with collections Save and categorize content based on your preferences. agent In the context of generative AI, an agent is software that autonomously plans and executes a series of actions in pursuit of a goal, potentially in novel situations."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.genai.Client",
+      "com.google.genai.types.Blob",
+      "com.google.genai.types.Candidate",
+      "com.google.genai.types.Content",
+      "com.google.genai.types.GenerateContentConfig",
+      "com.google.genai.types.GenerateContentResponse",
+      "com.google.genai.types.HttpOptions",
+      "com.google.genai.types.Part",
+      "com.google.genai.types.SafetySetting",
+      "java.awt.image.BufferedImage",
+      "java.io.ByteArrayInputStream",
+      "java.io.File",
+      "java.io.IOException",
+      "java.util.ArrayList",
+      "java.util.List",
+      "javax.imageio.ImageIO",
+      "scones.jpg"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:10.639Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai"
+}

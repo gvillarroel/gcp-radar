@@ -1,0 +1,135 @@
+{
+  "feature_name": "Cloud Data Fusion metrics observability in Cloud Monitoring",
+  "feature_slug": "cloud-data-fusion-metrics-observability-in-cloud-monitoring",
+  "summary": "Cloud Data Fusion added support for viewing instance and pipeline metrics in Cloud Monitoring and the Cloud Data Fusion dashboard.",
+  "extended_definition": "Cloud Data Fusion added support for viewing instance and pipeline metrics in Cloud Monitoring and the Cloud Data Fusion dashboard.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/data-fusion/docs/concepts/console-overview",
+      "https://docs.cloud.google.com/data-fusion/docs/create-data-pipeline",
+      "https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a pipeline monitoring dashboard using Cloud Monitoring \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard",
+        "source_id": "site-iam-reference",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a Cloud Data Fusion instance with Cloud Logging enabled To use Cloud Logging with your Cloud Data Fusion pipeline, create a Cloud Data Fusion instance with Cloud Logging enabled: Go to the Cloud Data Fusion Instances page and click Create instance .",
+          "In the Build filter field, enter the following: resource.type=\"cloud dataproc cluster\" log name= \"projects/. /logs/datafusion-pipeline-logs\" In the Labels section, click Add label and create the following labels.",
+          "Create a pipeline monitoring dashboard using Cloud Monitoring Learn how to use Cloud Monitoring to create a dashboard to monitor pipelines."
+        ]
+      },
+      {
+        "title": "Introduction to Cloud Data Fusion: Console \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/data-fusion/docs/concepts/console-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 108,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Choose the edition based on the following criteria: Cost Concurrency limits for pipeline execution Role-based access control (RBAC) availability The editions are intended for the following use cases: Cloud Data Fusion edition Use case Developer edition For development, testing, or small-scale integrations Basic edition For production with moderate needs Enterprise edition For large-scale, mission-critical data pipelines with RBAC Public or private instance Depending on your requirements, decide if you need a public or a private instance.",
+          "Each instance is a unique, independent Cloud Data Fusion deployment, which contains a set of services that handle pipeline lifecycle management, orchestration, coordination, and metadata management.",
+          "Logging and monitoring Cloud Logging and Cloud Monitoring are crucial for gaining insights into the health and performance of your Cloud Data Fusion pipelines."
+        ]
+      },
+      {
+        "title": "Create a data pipeline by using Cloud Data Fusion \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/data-fusion/docs/create-data-pipeline",
+        "source_id": "site-api-reference",
+        "final_score": 107,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable the API Required roles To get the permissions that you need to create a Cloud Data Fusion instance and manage pipelines, ask your administrator to grant you the Cloud Data Fusion Admin ( roles/datafusion.admin ) IAM role on the project.",
+          "Create a data pipeline This quickstart shows you how to do the following: Create a Cloud Data Fusion instance.",
+          "Deploy a sample pipeline that's provided with your Cloud Data Fusion instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datafusion.admin",
+      "resource.type"
+    ],
+    "missing_inventory_roles": [
+      "roles/datafusion.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/console-overview",
+        "https://docs.cloud.google.com/data-fusion/docs/create-data-pipeline"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/console-overview",
+        "https://docs.cloud.google.com/data-fusion/docs/create-data-pipeline"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/console-overview",
+        "https://docs.cloud.google.com/data-fusion/docs/create-data-pipeline"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/console-overview",
+        "https://docs.cloud.google.com/data-fusion/docs/create-data-pipeline"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/console-overview",
+        "https://docs.cloud.google.com/data-fusion/docs/create-data-pipeline"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/console-overview",
+        "https://docs.cloud.google.com/data-fusion/docs/create-data-pipeline"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:28.342Z",
+  "source_step08_card": "data/step-08/current/products/cloud-data-fusion/card.json",
+  "product_name": "Cloud Data Fusion",
+  "product_slug": "cloud-data-fusion"
+}

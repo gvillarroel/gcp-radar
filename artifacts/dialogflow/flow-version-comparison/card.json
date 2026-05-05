@@ -1,0 +1,124 @@
+{
+  "feature_name": "Flow version comparison",
+  "feature_slug": "flow-version-comparison",
+  "summary": "Dialogflow CX provides side-by-side comparison of flow versions.",
+  "extended_definition": "Dialogflow CX provides side-by-side comparison of flow versions.",
+  "lifecycle": {
+    "latest_feature_date": "2021-10-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3-overview",
+      "https://docs.cloud.google.com/dialogflow/es/docs/agents-versions",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Versions and environments \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-versions",
+        "source_id": "site-iam-reference",
+        "final_score": 190,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Dialogflow Dialogflow ES Send feedback Versions and environments Stay organized with collections Save and categorize content based on your preferences.",
+          "Consider possible agent errors while changing versions If you change an agent version in your production environment while sessions are active, it may cause agent errors for some active sessions.",
+          "Publish a version in a new environment To publish an agent draft to a version and create a custom environment: Console Go to the Dialogflow ES console ."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.dialogflow.v2 (4.94.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "source_id": "site-java-reference",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Project Location Version Builder Builder for projects/{project}/locations/{location}/agent/versions/{version}. com. google. cloud. dialogflow. v2.",
+          "Environment You can create multiple versions of your agent and publish them to separate environments. com. google. cloud. dialogflow. v2.",
+          "Builder You can create multiple versions of your agent and publish them to separate environments. com. google. cloud. dialogflow. v2."
+        ]
+      },
+      {
+        "title": "Dialogflow API \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 158,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v3.projects.locations REST Resource: v3.projects.locations.agents REST Resource: v3.projects.locations.agents.changelogs REST Resource: v3.projects.locations.agents.entityTypes REST Resource: v3.projects.locations.agents.environments REST Resource: v3.projects.locations.agents.environments.continuousTestResults REST Resource: v3.projects.locations.agents.environments.deployments REST Resource: v3.projects.locations.agents.environments.experiments REST Resource: v3.projects.locations.agents.environments.sessions REST Resource: v3.projects.locations.agents.environments.sessions.entityTypes REST Resource: v3.projects.locations.agents.flows REST Resource: v3.projects.locations.agents.flows.pages REST Resource: v3.projects.locations.agents.flows.transitionRouteGroups REST Resource: v3.projects.locations.agents.flows.versions REST Resource: v3.projects.locations.agents.generators REST Resource: v3.projects.locations.agents.intents REST Resource: v3.projects.locations.agents.playbooks REST Resource: v3.projects.locations.agents.playbooks.examples REST Resource: v3.projects.locations.agents.playbooks.versions REST Resource: v3.projects.locations.agents.sessions REST Resource: v3.projects.locations.agents.sessions.entityTypes REST Resource: v3.projects.locations.agents.testCases REST Resource: v3.projects.locations.agents.testCases.results REST Resource: v3.projects.locations.agents.tools REST Resource: v3.projects.locations.agents.tools.versions REST Resource: v3.projects.locations.agents.transitionRouteGroups REST Resource: v3.projects.locations.agents.webhooks REST Resource: v3.projects.locations.operations REST Resource: v3.projects.locations.securitySettings REST Resource: v3.projects.operations Service: dialogflow.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "This service provides the following discovery document: https://dialogflow.googleapis.com/$discovery/rest?version=v3 Service endpoint A service endpoint is a base URL that specifies the network address of an API service.",
+          "REST Resource: v3.projects.locations.agents.flows.versions Methods compareVersions POST /v3/{baseVersion=projects/ /locations/ /agents/ /flows/ /versions/ }:compareVersions Compares the specified base version with target version. create POST /v3/{parent=projects/ /locations/ /agents/ /flows/ }/versions Creates a Version in the specified Flow . delete DELETE /v3/{name=projects/ /locations/ /agents/ /flows/ /versions/ } Deletes the specified Version . get GET /v3/{name=projects/ /locations/ /agents/ /flows/ /versions/ } Retrieves the specified Version . list GET /v3/{parent=projects/ /locations/ /agents/ /flows/ }/versions Returns the list of all versions in the specified Flow . load POST /v3/{name=projects/ /locations/ /agents/ /flows/ /versions/ }:load Loads resources in the specified version to the draft flow. patch PATCH /v3/{version.name=projects/ /locations/ /agents/ /flows/ /versions/ } Updates the specified Version ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2",
+      "dialogflow.googleapis.com",
+      "v3.projects.locations",
+      "v3.projects.locations.agents",
+      "v3.projects.locations.agents.changelogs",
+      "v3.projects.locations.agents.entityTypes",
+      "v3.projects.locations.agents.environments",
+      "v3.projects.locations.agents.environments.continuousTestResults",
+      "v3.projects.locations.agents.environments.deployments",
+      "v3.projects.locations.agents.environments.experiments",
+      "v3.projects.locations.agents.environments.sessions",
+      "v3.projects.locations.agents.environments.sessions.entityTypes",
+      "v3.projects.locations.agents.flows",
+      "v3.projects.locations.agents.flows.pages",
+      "v3.projects.locations.agents.flows.transitionRouteGroups",
+      "v3.projects.locations.agents.flows.versions",
+      "v3.projects.locations.agents.generators",
+      "v3.projects.locations.agents.intents",
+      "v3.projects.locations.agents.playbooks",
+      "v3.projects.locations.agents.playbooks.examples",
+      "v3.projects.locations.agents.playbooks.versions",
+      "v3.projects.locations.agents.sessions",
+      "v3.projects.locations.agents.sessions.entityTypes",
+      "v3.projects.locations.agents.testCases",
+      "v3.projects.locations.agents.testCases.results",
+      "v3.projects.locations.agents.tools",
+      "v3.projects.locations.agents.tools.versions",
+      "v3.projects.locations.agents.transitionRouteGroups",
+      "v3.projects.locations.agents.webhooks",
+      "v3.projects.locations.operations",
+      "v3.projects.locations.securitySettings",
+      "v3.projects.operations",
+      "version.name"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-versions",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3-overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:58.946Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

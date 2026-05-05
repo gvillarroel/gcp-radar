@@ -1,0 +1,169 @@
+{
+  "feature_name": "HorizontalPodAutoscaler",
+  "feature_slug": "horizontalpodautoscaler",
+  "summary": "HorizontalPodAutoscaler is a Kubernetes API for scaling workloads based on observed metrics; HorizontalPodAutoscaler is a Kubernetes API for scaling workloads based on observed metrics; deprecated on 2022-09-14.",
+  "extended_definition": "HorizontalPodAutoscaler is a Kubernetes API for scaling workloads based on observed metrics; HorizontalPodAutoscaler is a Kubernetes API for scaling workloads based on observed metrics; deprecated on 2022-09-14.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-14",
+    "deprecation_date": "2022-09-14",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/autoscaling-metrics",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/full-stack-scale"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Optimize Pod autoscaling based on metrics \\_|\\_ Kubernetes Engine \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/autoscaling-metrics",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 193,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Documentation Guides Send feedback Optimize Pod autoscaling based on metrics Stay organized with collections Save and categorize content based on your preferences.",
+          "This tutorial demonstrates how to automatically scale your Google Kubernetes Engine (GKE) workloads based on metrics available in Cloud Monitoring .",
+          "Learn more about autoscaling workloads based on metrics ."
+        ]
+      },
+      {
+        "title": "\"Collect and view kube state metrics \\_|\\_ Google Kubernetes Engine (GKE)\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+        "source_id": "site-docs-reference-2",
+        "final_score": 163,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example: The condition ScalingLimited and status of true indicates that the HPA is bound by either its minimum or maximum replica count: kube horizontalpodautoscaler status condition{status=\"true\", condition=\"ScalingLimited\"} == 1 The condition AbleToScale and a status of false indicates that the HPA is encountering issues fetching or updating scales: kube horizontalpodautoscaler status condition{status=\"false\", condition=\"AbleToScale\"} == 1 The condition ScalingActive and a status of false indicates that the HPA is disabled or is unable to calculate a new scale: kube horizontalpodautoscaler status condition{status=\"false\", condition=\"ScalingActive\"} == 1 Some of the query and alert expressions in this section were adapted from the kubernetes-apps.yaml file in the Prometheus community Kubernetes Helm Charts repository on GitHub.",
+          "To enable kube state metrics from the Observability tab for a Deployment, do the following: In the Google Cloud console, go to the Workloads page: Go to Workloads If you use the search bar to find this page, then select the result whose subheading is Kubernetes Engine .",
+          "On the Observability tab for a cluster, you can filter the set of charts for kube state metrics by the following two items: Workloads State : includes the metrics for Pods, Deployments, StatefulSets, DaemonSets, and HorizontalPodAutoscaler resources."
+        ]
+      },
+      {
+        "title": "\"Run full-stack workloads at scale on GKE \\_|\\_ Kubernetes Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/full-stack-scale",
+        "source_id": "site-docs-root",
+        "final_score": 153,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "See the License for the specific language governing permissions and limitations under the License. --- apiVersion : autoscaling/v2 kind : HorizontalPodAutoscaler metadata : name : frontend spec : behavior : scaleUp : stabilizationWindowSeconds : 0 policies : - type : Percent value : 100 periodSeconds : 5 selectPolicy : Max scaleTargetRef : apiVersion : apps/v1 kind : Deployment name : frontend minReplicas : 5 maxReplicas : 25 metrics : - type : External external : metric : name : loadbalancing.googleapis.com https request count selector : matchLabels : resource.labels.forwarding rule name : FORWARDING RULE NAME target : type : AverageValue averageValue : \"5\" This manifest uses the following fields: spec.scaleTargetRef : The Kubernetes resource to scale. spec.minReplicas : The minimum number of replicas, which is 5 in this sample. spec.maxReplicas : The maximum number of replicas, which is 25 in this sample. spec.metrics. : The metric to use.",
+          "To automatically scale the number of Pods in the cluster based on resource metrics, you must implement Kubernetes horizontal Pod autoscaling .",
+          "Deploy the adapter: kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/k8s-stackdriver/master/custom-metrics-stackdriver-adapter/deploy/production/adapter.yaml Configure the adapter to use Workload Identity Federation for GKE to get metrics: Configure the IAM service account: gcloud projects add-iam-policy-binding PROJECT ID \\ --member \"serviceAccount:bank-of-anthos@ PROJECT ID .iam.gserviceaccount.com\" \\ --role roles/monitoring.viewer gcloud iam service-accounts add-iam-policy-binding bank-of-anthos@ PROJECT ID .iam.gserviceaccount.com \\ --role roles/iam.workloadIdentityUser \\ --member \"serviceAccount: PROJECT ID .svc.id.goog[custom-metrics/custom-metrics-stackdriver-adapter]\" Annotate the Kubernetes service account that the adapter uses: kubectl annotate serviceaccount custom-metrics-stackdriver-adapter \\ --namespace = custom-metrics \\ iam.gke.io/gcp-service-account = bank-of-anthos@ PROJECT ID .iam.gserviceaccount.com Restart the adapter Deployment to propagate the changes: kubectl rollout restart deployment custom-metrics-stackdriver-adapter \\ --namespace = custom-metrics Configure autoscaling for the database When you deployed Bank of Anthos and PostgreSQL earlier in this tutorial,, you deployed the database as a StatefulSet with one primary read/write replica to handle all incoming SQL statements."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "adapter.yaml",
+      "apps.yaml",
+      "custom.googleapis.com",
+      "github.com",
+      "iam.gke.io",
+      "iam.googleapis.com",
+      "iam.gserviceaccount.com",
+      "iam.workloadIdentityUser",
+      "loadbalancing.googleapis.com",
+      "model.yaml",
+      "monitoring.viewer",
+      "raw.githubusercontent.com",
+      "resource.labels.forwarding",
+      "samples.git",
+      "spec.maxReplicas",
+      "spec.metrics",
+      "spec.minReplicas",
+      "spec.scaleTargetRef",
+      "svc.id.goog"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.workloadIdentityUser",
+      "roles/monitoring.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/autoscaling-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/full-stack-scale"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/autoscaling-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/full-stack-scale"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/autoscaling-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/full-stack-scale"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/autoscaling-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/full-stack-scale"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/autoscaling-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/full-stack-scale"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/autoscaling-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/full-stack-scale"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/autoscaling-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/full-stack-scale"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/autoscaling-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/full-stack-scale"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:15.353Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

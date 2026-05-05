@@ -1,0 +1,151 @@
+{
+  "feature_name": "Cycling chevron direction update",
+  "feature_slug": "cycling-chevron-direction-update",
+  "summary": "The cycling guidance chevron points in the direction of device movement during active guidance.",
+  "extended_definition": "The cycling guidance chevron points in the direction of device movement during active guidance.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/manage-waypoints",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/navigation-points",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/route"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Navigate a route \\_|\\_ Navigation SDK for iOS \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/route",
+        "source_id": "site-docs-root",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: When testing cycling or walking mode with an emulator, neither the chevron direction nor the map orientation will appear to change.",
+          "In driving and taxi mode, the user's course is based on the direction of travel; in cycling and walking mode the course is represented by the direction the device is facing (toward the top of the device in landscape mode).",
+          "However, when using a physical device, the map orientation will change when the device is rotated, while the chevron continues to point in the direction that the device is facing."
+        ]
+      },
+      {
+        "title": "Manage waypoints \\_|\\_ Navigation SDK for iOS \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/manage-waypoints",
+        "source_id": "site-docs-root",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set an arrival heading You provide the geographic coordinates of the waypoint, and then provide an arrival heading preferredSegmentHeading that matches the direction of traffic flow on the same side of the road as the destination. ( nullable instancetype ) initWithLocation : ( CLLocationCoordinate2D ) location title :( NSString ) title preferredSegmentHeading :( int32 t ) preferredSegmentHeading ; The Navigation SDK chooses the road segment closest to the waypoint—that has a lane direction that aligns (within +/- 55 degrees) with the side of the road that the waypoint is on.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-09 UTC.\"],[],[]]",
+          "Side of the Road Routing ensures arrival on the correct side of the road using preferSameSideOfRoad or preferredSegmentHeading when creating waypoints. preferSameSideOfRoad snaps the waypoint to the nearest sidewalk, while preferredSegmentHeading aligns the arrival with traffic flow on the desired side of the road."
+        ]
+      },
+      {
+        "title": "\"GoogleNavigation Framework Reference \\_|\\_ Navigation SDK for iOS \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView",
+        "source_id": "site-docs-reference",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "The simulated location affects the position of the chevron on the map, the progress of turn-by-turn guidance, and the updates provided by the road-snapped location provider.",
+          "In driving mode, device course is based on the direction of movement, while in cycling or walking mode the course is based on the compass direction the device is facing.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-12-18 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "\"Route to Navigation points \\_|\\_ Navigation SDK for iOS \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/navigation-points",
+        "source_id": "site-docs-root",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-02-26 UTC.\"],[],[]]",
+          "The Navigation SDK for iOS offers enhanced ways to specify waypoints, providing more accurate routing and a better arrival experience, especially for destinations with multiple entrances or specific access points.",
+          "Use a Navigation Point token For the most precise routing to specific access points like entrances, loading docks, or designated pick-up areas, you can use a navigationPointToken ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/manage-waypoints",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/navigation-points"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/manage-waypoints",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/navigation-points"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/manage-waypoints",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/navigation-points"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/manage-waypoints",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/navigation-points"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/manage-waypoints",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/navigation-points"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/manage-waypoints",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/navigation-points"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:29.610Z",
+  "source_step08_card": "data/step-08/current/products/navigation-sdk-for-ios/card.json",
+  "product_name": "Navigation SDK for iOS",
+  "product_slug": "navigation-sdk-for-ios"
+}

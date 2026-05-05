@@ -1,0 +1,123 @@
+{
+  "feature_name": "Go runtime GOROOT mapping",
+  "feature_slug": "go-runtime-goroot-mapping",
+  "summary": "App Engine maps Go api_version values to a specific GOROOT directory for runtime selection; App Engine maps Go api_version values to a specific GOROOT directory for runtime selection.",
+  "extended_definition": "App Engine maps Go api_version values to a specific GOROOT directory for runtime selection; App Engine maps Go api_version values to a specific GOROOT directory for runtime selection.",
+  "lifecycle": {
+    "latest_feature_date": "2017-05-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref",
+      "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+      "https://docs.cloud.google.com/appengine/docs/standard/go/runtime"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Mapping custom domains \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+        "source_id": "site-docs-reference-4",
+        "final_score": 101,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Deleting custom domains from your app In order to delete a custom domain mapping from your app, your account must have the App Engine Admin role ( roles/appengine.appAdmin ) or a custom role that contains the appengine.applications.update permission.",
+          "Troubleshooting If your app shows authentication errors after configuring your custom domain with Google Workspace domain authentication, remove your custom domain mapping and redo the steps for mapping a custom domain to your app .",
+          "Note: Some third party CDN providers might inadvertently intercept validation requests, preventing them from reaching the App Engine app and causing the domain mapping to fail or its certificate to fail to renew."
+        ]
+      },
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref",
+        "source_id": "site-docs-reference-4",
+        "final_score": 82,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example The following is an example of an app.yaml file: runtime : python314 instance class : F2 env variables : BUCKET NAME : \"example-gcs-bucket\" handlers : Matches requests to /images/... to files in static/images/... - url : /images static dir : static/images - url : /. secure : always redirect http response code : 301 script : auto The following table provides YAML examples of available fields in an app.yaml file: Runtime and app elements Element Description app engine apis Optional.",
+          "Python example handlers : - url : /youraccount/. secure : always script : auto To target a specific version of your app using the REGION ID .r.appspot.com domain, you replace the periods that would usually separate the subdomain components of the URL with the string \" -dot- \", for example: https:// VERSION ID -dot-default-dot- PROJECT ID .",
+          "The combined length of VERSION-dot-SERVICE-dot-PROJECT ID , where VERSION is the name of your version, SERVICE is the name of your service, and PROJECT ID is your project ID, cannot be longer than 63 characters and cannot start or end with a hyphen."
+        ]
+      },
+      {
+        "title": "\"Go runtime environment \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/runtime",
+        "source_id": "site-docs-reference",
+        "final_score": 81,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The Go runtime for App Engine in the standard environment is declared in the app.yaml file: runtime : go VERSION Where VERSION is the Go MAJOR and MINOR version numbers.",
+          "For other supported Go versions, and the corresponding Ubuntu version for your Go version, see the Runtime support schedule .",
+          "The Go runtime uses the latest stable release of the version that is specified in your app.yaml file."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "appengine.appAdmin",
+      "appengine.applications.update",
+      "myapp.settings",
+      "os.environ",
+      "r.appspot.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/appengine.appAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/runtime"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/runtime"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/runtime"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/runtime"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:10.483Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-go/card.json",
+  "product_name": "App Engine standard environment Go",
+  "product_slug": "app-engine-standard-environment-go"
+}

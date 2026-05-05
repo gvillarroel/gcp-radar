@@ -1,0 +1,118 @@
+{
+  "feature_name": "chat-bison@001 model",
+  "feature_slug": "chat-bison-001-model",
+  "summary": "The chat-bison@001 model was updated to follow instructions in the context field more effectively.",
+  "extended_definition": "The chat-bison@001 model was updated to follow instructions in the context field more effectively.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+      "https://docs.cloud.google.com/vertex-ai/docs/experiments/tensorboard-profiler",
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/monitoring"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Vertex AI model evaluation notebook tutorials \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "source_id": "site-docs-reference-2",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "In this tutorial, you'll complete the following steps: Tutorial steps Colab Colab Enterprise GitHub Vertex AI Workbench model monitoring v2 Model Monitoring for Vertex AI Custom Model Online Prediction .",
+          "In this tutorial, you'll complete the following steps: Tutorial steps Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Model Registry Get started with Vertex AI Model Registry .",
+          "Make a streaming prediction Load a pretrained chat model."
+        ]
+      },
+      {
+        "title": "\"Enable Cloud Profiler for debugging model training performance debugging\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/experiments/tensorboard-profiler",
+        "source_id": "site-docs-reference-3",
+        "final_score": 109,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable Profiler To enable Profiler for your training job, add the following to your training script: Add the cloud profiler import at your top level imports: from google.cloud.aiplatform.training utils import cloud profiler Initialize the cloud profiler plugin by adding: cloud profiler . init () Example Here's a sample training script: #!/usr/bin/env python import tensorflow as tf import argparse import os from google.cloud.aiplatform.training utils import cloud profiler import time \"\"\"Train an mnist model and use cloud profiler for profiling.\"\"\" def create model (): model = tf . keras . models .",
+          "Notebook To see examples of how to profile model training performance, run the following notebooks in the environment of your choice: \"Profile model training performance using Cloud Profiler\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Profile model training performance using Cloud Profiler in custom training with prebuilt container\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub What's next See the Tensorflow Profiler documentation to learn about the profiler tools and how to use them to optimize model performance.",
+          "To see an example of how to profile model training performance, run the \"Profile model training performance using Cloud Profiler in custom training with prebuilt container\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub This page shows you how to enable Cloud Profiler so you can debug model training performance for your serverless training jobs."
+        ]
+      },
+      {
+        "title": "Monitoring \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/monitoring",
+        "source_id": "site-docs-reference-3",
+        "final_score": 106,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// LOCATION ID -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION ID /featurestores/ FEATURESTORE ID /entityTypes/ ENTITY TYPE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION ID /featurestores/ FEATURESTORE ID /entityTypes/ ENTITY TYPE ID \", \"createTime\": \"2021-07-22T23:18:31.339972Z\", \"updateTime\": \"2021-07-29T22:24:40.221821Z\", \"etag\": \"AMEw9yPGDpwUwHx39gIDIg5mTQz65GMhnYHRzRslVPonm1g8xTnsTC5YUibmWo2MIuI=\", \"monitoringConfig\": { \"snapshotAnalysis\": { \"monitoringIntervalDays\": \" DURATION IN DAYS \", \"stalenessDays\": \" STALENESS DAYS \" } }, \"numericalThresholdConfig\": { \"value\": \" NUMERICAL THRESHOLD VALUE \" }, \"categoricalThresholdConfig\": { \"value\": \" CATEGORICAL THRESHOLD VALUE \" }, \"importFeatureAnalysis\": { \"state\": \" IMPORT FEATURE ANALYSIS STATE \", \"anomalyDetectionBaseline\": \" IMPORT FEATURE ANALYSIS BASELINE \" } } Java Before trying this sample, follow the Java setup instructions in the Vertex AI quickstart using client libraries .",
+          "After completing all of your requests, call // the \"close\" method on the client to safely clean up any remaining background resources. try ( FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient . create ( featurestoreServiceSettings )) { FeaturestoreMonitoringConfig featurestoreMonitoringConfig = FeaturestoreMonitoringConfig . newBuilder () . setSnapshotAnalysis ( SnapshotAnalysis . newBuilder (). setMonitoringIntervalDays ( monitoringIntervalDays )) . build (); EntityType entityType = EntityType . newBuilder () . setName ( EntityTypeName . of ( project , location , featurestoreId , entityTypeId ). toString ()) . setMonitoringConfig ( featurestoreMonitoringConfig ) . build (); UpdateEntityTypeRequest updateEntityTypeRequest = UpdateEntityTypeRequest . newBuilder (). setEntityType ( entityType ). build (); EntityType entityTypeResponse = featurestoreServiceClient . updateEntityType ( updateEntityTypeRequest ); System . out . println ( \"Update Entity Type Monitoring Response\" ); System . out . println ( entityTypeResponse ); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the Vertex AI quickstart using client libraries .",
+          "You can use the OPERATION ID in the response to get the status of the operation. { \"name\": \"projects/ PROJECT ID /locations/ LOCATION ID /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.aiplatform.ui.CreateEntityTypeOperationMetadata\", \"genericMetadata\": { \"createTime\": \"2022-04-29T20:29:05.206525Z\", \"updateTime\": \"2022-04-29T20:29:05.206525Z\" } } } Java Before trying this sample, follow the Java setup instructions in the Vertex AI quickstart using client libraries ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "request.json",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/experiments/tensorboard-profiler",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/monitoring"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/experiments/tensorboard-profiler",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/monitoring"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/experiments/tensorboard-profiler",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/monitoring"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/experiments/tensorboard-profiler",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/monitoring"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:42.435Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai"
+}

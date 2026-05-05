@@ -1,0 +1,124 @@
+{
+  "feature_name": "App Engine firewall",
+  "feature_slug": "app-engine-firewall",
+  "summary": "App Engine firewall provides traffic filtering controls for App Engine applications; App Engine firewall lets you control access to applications with firewall rules.",
+  "extended_definition": "App Engine firewall provides traffic filtering controls for App Engine applications; App Engine firewall lets you control access to applications with firewall rules.",
+  "lifecycle": {
+    "latest_feature_date": "2017-10-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/application-security",
+      "https://docs.cloud.google.com/appengine/docs/standard/go/application-security",
+      "https://docs.cloud.google.com/appengine/docs/standard/go/understanding-firewalls"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Understanding the App Engine firewall \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/understanding-firewalls",
+        "source_id": "site-docs-reference-4",
+        "final_score": 149,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If your ingress controls are set to receive internal-and-cloud-load-balancing traffic, leave the default App Engine firewall rule as is ( allow ), and use Google Cloud Armor web application firewall (WAF) rules .",
+          "App Engine flexible example Your app running in the flexible environment has two services: frontend service and backend service , and has a firewall configured to deny traffic by default. frontend service uses Cloud Tasks with App Engine HTTP to send messages to backend service .",
+          "In cases where your app is configured to use other networking services or products, you might need to create rules for controlling incoming traffic in both the App Engine firewall and the firewall or security settings of other products."
+        ]
+      },
+      {
+        "title": "\"Overview of app security \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/application-security",
+        "source_id": "site-docs-reference",
+        "final_score": 115,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Block abusive IP addresses While Google Cloud has many mechanisms in place to prevent attacks, you can use the App Engine firewall to block traffic to your app from IP addresses that present malicious intent or shield your app from denial of service attacks and similar forms of abuse.",
+          "Create a firewall to: Allow only traffic from within a specific network Ensure that only a certain range of IP addresses from specific networks can access your app.",
+          "Ingress controls You can use Ingress controls to restrict inbound traffic to your App Engine app."
+        ]
+      },
+      {
+        "title": "\"Overview of app security \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/application-security",
+        "source_id": "site-docs-reference-4",
+        "final_score": 115,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Block abusive IP addresses While Google Cloud has many mechanisms in place to prevent attacks, you can use the App Engine firewall to block traffic to your app from IP addresses that present malicious intent or shield your app from denial of service attacks and similar forms of abuse.",
+          "Create a firewall to: Allow only traffic from within a specific network Ensure that only a certain range of IP addresses from specific networks can access your app.",
+          "Ingress controls You can use Ingress controls to restrict inbound traffic to your App Engine app."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/understanding-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/standard/application-security",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/application-security"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/understanding-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/standard/application-security",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/application-security"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/understanding-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/standard/application-security",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/application-security"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/understanding-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/standard/application-security",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/application-security"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/understanding-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/standard/application-security",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/application-security"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:10.483Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-go/card.json",
+  "product_name": "App Engine standard environment Go",
+  "product_slug": "app-engine-standard-environment-go"
+}

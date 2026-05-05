@@ -1,0 +1,123 @@
+{
+  "feature_name": "History-based query optimizations",
+  "feature_slug": "history-based-query-optimizations",
+  "summary": "BigQuery supports enabling, disabling, and analyzing history-based optimizations for queries; BigQuery lets users enable, disable, and analyze history-based optimizations for queries.",
+  "extended_definition": "BigQuery supports enabling, disabling, and analyzing history-based optimizations for queries; BigQuery lets users enable, disable, and analyze history-based optimizations for queries.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/automatic-discovery",
+      "https://docs.cloud.google.com/bigquery/docs/continuous-queries-introduction",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Introduction to continuous queries \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/continuous-queries-introduction",
+        "source_id": "site-docs-reference-5",
+        "final_score": 31,
+        "relevance": "",
+        "evidence_snippets": [
+          "BigQuery automatically determines the number of continuous queries that can run concurrently, based on available reservation assignments that use the CONTINUOUS job type.",
+          "Home Documentation Data analytics BigQuery Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "You can't use the following SQL capabilities in a continuous query, unless they are listed as a supported stateful operation : The following query operators: PIVOT UNPIVOT TABLESAMPLE Query set operators The SELECT DISTINCT statement EXISTS or NOT EXISTS subqueries Recursive CTEs User-defined functions Window function calls BigQuery ML functions other than those listed in Supported functionality Data definition language (DDL) statements Data manipulation language (DML) statements except for INSERT ."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": [
+          "Sets the default queue timeout for batch queries in the us region to 30 minutes. default query optimizer options STRING The history-based query optimizations.",
+          "Sets the default queue timeout for batch queries in the us region to 30 minutes. default query optimizer options STRING The history-based query optimizations.",
+          "This option can be one of the following: 'adaptive=on' : Use history-based query optimizations. 'adaptive=off' : Don't use history-based query optimizations."
+        ]
+      },
+      {
+        "title": "\"Discover and catalog Cloud Storage data \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/automatic-discovery",
+        "source_id": "site-docs-reference-5",
+        "final_score": 29,
+        "relevance": "",
+        "evidence_snippets": [
+          "The discovery scan supports the following compression formats: Structured and semi-structured data Internal compression for the following formats: Compression File extension sample Supported format gzip .gz.parquet Parquet lz4 .lz4.parquet Parquet Snappy .snappy.parquet Parquet, ORC, Avro lzo .lzo.parquet Parquet, ORC External compression for JSON and CSV files: gzip bzip2 Unstructured data For object tables, compression is managed primarily through Cloud Storage object metadata , rather than BigQuery internal settings.",
+          "Home Documentation Data analytics BigQuery Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Apache Spark To query BigLake tables using Spark SQL on a Managed Service for Apache Spark serverless job, follow these steps: Create a PySpark script similar to the following sample script: from pyspark.sql import SparkSession session = ( SparkSession . builder . appName ( \"testing\" ) . config ( \"viewsEnabled\" , \"true\" ) . config ( \"materializationDataset\" , \" DATASET ID \" ) . config ( \"spark.hive.metastore.bigquery.project.id\" , \" PROJECT ID \" ) . config ( \"spark.hive.metastore.client.factory.class\" , \"com.google.cloud.bigquery.metastore.client.BigQueryMetastoreClientFactory\" ) . enableHiveSupport () . getOrCreate () ) session . sql ( \"show databases\" ) . show () session . sql ( \"use TABLE NAME \" ) . show () session . sql ( \"show tables\" ) . show () sql = \"SELECT FROM DATASET ID ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.connections.delegate",
+      "bigquery.connections.use",
+      "bigquery.datasets.create",
+      "bigquery.datasets.get",
+      "com.google.cloud.bigquery.metastore.client.BigQueryMetastoreClientFactory",
+      "gz.parquet",
+      "lz4.parquet",
+      "lzo.parquet",
+      "pyspark.sql",
+      "snappy.parquet",
+      "spark.hive.metastore.bigquery.project.id",
+      "spark.hive.metastore.client.factory.class",
+      "storage.buckets.get",
+      "storage.objects.get",
+      "storage.objects.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/continuous-queries-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/automatic-discovery"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/continuous-queries-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/automatic-discovery"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

@@ -1,0 +1,90 @@
+{
+  "feature_name": "Automatic hot key detection",
+  "feature_slug": "automatic-hot-key-detection",
+  "summary": "Dataflow can automatically detect hot keys in batch pipelines for Apache Beam SDK 2.15.0 or higher.",
+  "extended_definition": "Dataflow can automatically detect hot keys in batch pipelines for Apache Beam SDK 2.15.0 or higher.",
+  "lifecycle": {
+    "latest_feature_date": "2019-09-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+      "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk",
+      "https://docs.cloud.google.com/dataflow/docs/machine-learning"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot Dataflow errors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "source_id": "site-docs-reference-2",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "Pipelines that use Managed I/O might fail with this error if Dataflow can't automatically upgrade the I/O transforms to the latest supported version.",
+          "Dataflow automatically retries sending the Pub/Sub messages with a backoff delay.",
+          "Dataflow automatically responds to and addresses the underlying issue."
+        ]
+      },
+      {
+        "title": "Dataflow ML \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/machine-learning",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 87,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Anomaly Detection Anomaly Detection with statistical methods This notebook demonstrates how to perform anomaly detection on both batch and streaming data using the AnomalyDetection PTransform.",
+          "Use Vertex AI Pipelines to orchestrate workflow DAGs defined by either TFX or KFP and to automatically track your ML artifacts using Vertex ML Metadata.",
+          "Additional features Use accelerators (GPUs/TPUs) Using accelerators like GPUs and TPUs in Dataflow jobs can significantly speed up data processing tasks frequently used in machine learning and image processing use cases."
+        ]
+      },
+      {
+        "title": "Install the Apache Beam SDK \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 86,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set up your development environment For information about setting up your Google Cloud project and development environment to use Dataflow, follow one of the tutorials: Create a Dataflow pipeline using Java Create a Dataflow pipeline using Python Create a Dataflow pipeline using Go Source code and examples The Apache Beam source code is available in the Apache Beam repository on GitHub.",
+          "The console will contain a message like the following, which contains the Dataflow SDK version information: Python To find out what version of the Dataflow SDK that a given pipeline is running, you can look at the console output when running with DataflowRunner .",
+          "The console will contain a message like the following, which contains the Dataflow SDK version information: Go To find out what version of the Dataflow SDK that a given pipeline is running, you can look at the console output when running with DataflowRunner ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/machine-learning",
+        "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:53.762Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow"
+}

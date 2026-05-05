@@ -1,0 +1,124 @@
+{
+  "feature_name": "Range and inequality filters on multiple fields",
+  "feature_slug": "range-and-inequality-filters-on-multiple-fields",
+  "summary": "Queries can apply range and inequality filters across multiple fields; Queries can apply range and inequality filters across multiple fields.",
+  "extended_definition": "Queries can apply range and inequality filters across multiple fields; Queries can apply range and inequality filters across multiple fields.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/aggregation-queries",
+      "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+      "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+      "https://docs.cloud.google.com/datastore/docs/concepts/queries"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Datastore queries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/concepts/queries",
+        "source_id": "site-iam-reference",
+        "final_score": 250,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information on queries with inequality filters, see Query using range and inequality filters on multiple properties .",
+          "Range and inequality filters on multiple properties Firestore in Datastore mode supports multiple inequality filters in a compound query.",
+          "See Query using range and inequality filters on multiple properties ."
+        ]
+      },
+      {
+        "title": "Aggregation queries \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/aggregation-queries",
+        "source_id": "site-iam-reference",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If the query includes aggregations on multiple fields, the query requires a composite index, and each aggregation calculation includes only those entities that contain all the fields used by each aggregation.",
+          "GetDoubleValue ()) GQL AGGREGATE SUM(hours) AS total hours, COUNT( ) AS total tasks OVER ( SELECT FROM tasks WHERE is done = false AND tag = 'house' ) GQL supports a simplified form for aggregation queries: SELECT SUM(hours) AS total hours, COUNT( ) AS total tasks FROM tasks WHERE is done = false AND tag = 'house' This example uses the optional aliases of total hours and total tasks .",
+          "GetIntegerValue ()) GQL AGGREGATE SUM(hours) AS total hours OVER ( SELECT FROM tasks WHERE is done = false AND tag = 'house' ) GQL supports a simplified form of sum() queries: SELECT SUM(hours) AS total hours FROM tasks WHERE is done = false AND tag = 'house' This example uses an optional alias of total hours ."
+        ]
+      },
+      {
+        "title": "Optimizing Indexes \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+        "source_id": "site-iam-reference",
+        "final_score": 199,
+        "relevance": "",
+        "evidence_snippets": [
+          "The perfect composite index for a query, which allows the query to be executed most efficiently, is defined on the following properties, in order: Properties used in equality filters Properties used in sort orders Properties used in distinctOn filter Properties used in range & inequality filters (that are not already included in sort orders) Properties used in aggregations and projections (that are not already included in sort orders and range & inequality filters) This ensures that all results for every possible execution of the query are accounted.",
+          "Client () query owner id = client . query ( kind = \"Photo\" , filters = [( \"owner id\" , \"=\" , \"user1234\" )]) query size = client . query ( kind = \"Photo\" , filters = [( \"size\" , \"=\" , 2 )]) query coloration = client . query ( kind = \"Photo\" , filters = [( \"coloration\" , \"=\" , 2 )]) The Photo filter feature also requires queries that combine multiple equality filters with a logical AND : Python from google.cloud import datastore For help authenticating your client, visit https://cloud.google.com/docs/authentication/getting-started client = datastore .",
+          "By merging different sections of the built-in index for the tag property, Firestore in Datastore mode supports queries that combine multiple tag filters in a logical AND : Python from google.cloud import datastore For help authenticating your client, visit https://cloud.google.com/docs/authentication/getting-started client = datastore ."
+        ]
+      },
+      {
+        "title": "Indexes \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "source_id": "site-iam-reference",
+        "final_score": 198,
+        "relevance": "",
+        "evidence_snippets": [
+          "Composite indexes are required for queries of the following form: Queries with ancestor and inequality filters Queries with one or more inequality filters on a property and one or more equality filters on other properties Queries with a sort order on keys in descending order Queries with multiple sort orders Queries with one or more filters and one or more sort orders Composite indexes are defined in the application's index configuration file ( index.yaml ). (Built-in indexes are not contained in the index configuration file.) Composite indexes are composed of multiple properties and require that each individual property must not be excluded from your indexes .",
+          "Index configuration Firestore in Datastore mode provides built-in , or automatic, indexes for queries of the following forms: Kindless queries using only ancestor and key filters Queries using only ancestor and equality filters Queries using only inequality filters (which are limited to a single property ) Queries using only ancestor filters, equality filters on properties, and inequality filters on keys Queries with no filters and only one sort order on a property, either ascending or descending As an example, by default, Datastore mode databases automatically predefine two single property indexes for each property of each entity kind, one in ascending order and one in descending order.",
+          "As described earlier, this includes queries with multiple sort orders or queries with a mix of equality and inequality filters."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "index.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/queries",
+        "https://docs.cloud.google.com/datastore/docs/aggregation-queries",
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/queries",
+        "https://docs.cloud.google.com/datastore/docs/aggregation-queries",
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/queries",
+        "https://docs.cloud.google.com/datastore/docs/aggregation-queries",
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:56.488Z",
+  "source_step08_card": "data/step-08/current/products/datastore/card.json",
+  "product_name": "Datastore",
+  "product_slug": "datastore"
+}

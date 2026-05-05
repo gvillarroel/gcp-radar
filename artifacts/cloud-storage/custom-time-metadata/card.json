@@ -1,0 +1,202 @@
+{
+  "feature_name": "Custom time metadata",
+  "feature_slug": "custom-time-metadata",
+  "summary": "Custom time metadata lets users assign an arbitrary date and time to Cloud Storage objects.",
+  "extended_definition": "Custom time metadata lets users assign an arbitrary date and time to Cloud Storage objects.",
+  "lifecycle": {
+    "latest_feature_date": "2020-09-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+      "https://docs.cloud.google.com/storage/docs/access-control/lists",
+      "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+      "https://docs.cloud.google.com/storage/docs/hosting-static-website"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Host a static website \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/hosting-static-website",
+        "source_id": "site-docs-root",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . def set bucket public iam bucket name : The ID of your GCS bucket bucket name = \"your-unique-bucket-name\" require \"google/cloud/storage\" storage = Google :: Cloud :: Storage . new bucket = storage . bucket bucket name bucket . policy do p p . add \"roles/storage.objectViewer\" , \"allUsers\" end puts \"Bucket #{ bucket name } is now publicly readable\" end Terraform Make bucket public by granting allUsers storage.objectViewer access resource \"google storage bucket iam member\" \"public rule\" { bucket = google storage bucket.static website.name role = \"roles/storage.objectViewer\" member = \"allUsers\" } REST APIs JSON API Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header.",
+          "Assigning either is optional, but if you don't assign an index page suffix and upload the corresponding index page, users who access your top-level site are served an XML document tree containing a list of the public objects in your bucket.",
+          "Recommended: assign specialty pages You can assign an index page suffix and a custom error page, which are known as specialty pages."
+        ]
+      },
+      {
+        "title": "\"Create and manage access control lists (ACLs) \\_|\\_ Cloud Storage \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "source_id": "site-iam-reference",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Apply a predefined ACL Rather than specifying the entire ACL one entry at a time as shown previously, you can use a predefined ACL , which will automatically apply a number of entries customized to a specific scenario.",
+          "The following example shows different bucket ACL entries: <?xml version=\"1.0\" encoding=\"UTF-8\"?> <AccessControlList> <Owner> <ID>00b4903a9721...</ID> </Owner> <Entries> <Entry> <Scope type=\"GroupById\"> <ID>00b4903a9722...</ID> </Scope> <Permission>FULL CONTROL</Permission> </Entry> <Entry> <Scope type=\"GroupByDomain\"> <Domain>example.com</Domain> </Scope> <Permission>READ</Permission> </Entry> <Entry> <Scope type=\"GroupByEmail\"> <EmailAddress>gs-announce@googlegroups.com</EmailAddress> </Scope> <Permission>READ</Permission> </Entry> <Entry> <Scope type=\"UserByEmail\"> <EmailAddress>jeffersonloveshiking@gmail.com</EmailAddress> <Name>Jefferson</Name> </Scope> <Permission>FULL CONTROL</Permission> </Entry> <Entry> <Scope type=\"AllUsers\"/> <Permission>READ</Permission> </Entry> <Entry> <Scope type=\"AllAuthenticatedUsers\"/> <Permission>READ</Permission> </Entry> </Entries> </AccessControlList> Set the Name element in ACL XML When you retrieve an ACL from a bucket or object, you might notice an additional <Name> element appended to some of your entries.",
+          "You can use // addAllUsers(), addDomain(), addProject(), addGroup(), and // addAllAuthenticatedUsers() to grant access to different types of entities. // You can also use \"readers\" and \"writers\" to grant different roles. await storage . bucket ( bucketName ). acl . default . owners . addUser ( userEmail ); console . log ( Added user ${ userEmail } as an owner on bucket ${ bucketName } . ); } addBucketDefaultOwner (). catch ( console . error ); The following sample deletes a default object ACL from a bucket: / TODO(developer): Uncomment the following lines before running the sample. / // The ID of your GCS bucket // const bucketName = 'your-unique-bucket-name'; // The email address of the user to remove // const userEmail = 'user-email-to-remove'; // Imports the Google Cloud client library const { Storage } = require ( ' @google-cloud/storage ' ); // Creates a client const storage = new Storage (); async function removeBucketDefaultOwner () { // Removes the user from the access control list of the bucket."
+        ]
+      },
+      {
+        "title": "\"Set and manage IAM policies on managed folders \\_|\\_ Cloud Storage \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "source_id": "site-iam-reference",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use the gcloud storage managed-folders set-iam-policy command to set the modified IAM policy on the managed folder. gcloud storage managed-folders set-iam-policy gs:// BUCKET NAME / MANAGED FOLDER NAME tmp-policy.json REST APIs JSON Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header.",
+          "This role contain the following permissions, which are required to set and manage IAM policies for managed folders: storage.managedFolders.getIamPolicy storage.managedFolders.setIamPolicy You can also get these permissions with custom roles .",
+          "REST APIs JSON Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header."
+        ]
+      },
+      {
+        "title": "Access control lists (ACLs) \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/lists",
+        "source_id": "site-iam-reference",
+        "final_score": 153,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Storage lets you assign the following concentric permissions for your buckets and objects, as shown in the following table: Buckets Objects READER Allows a user to list a bucket's contents.",
+          "A scope (sometimes referred to as a grantee ), which defines who can perform the specified actions (for example, a specific user or group of users).",
+          "You can specify an ACL scope using any of the following entities: Scope (\"grantee\") Entity Type(s) Example Special identifier for all entities User allUsers Special identifier for all valid accounts User allAuthenticatedUsers User account email address User jeffersonloveshiking@gmail.com Service account email address User my-service-account@my-project.iam.gserviceaccount.com Google group email address Group work-group@googlegroups.com Convenience values for projects Project owners-123456789012 Google Workspace domain Domain dana@example.com Cloud Identity domain Domain dana@example.com Special identifier for all entities : The special scope identifier allUsers represents any entity on the Internet."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bucket.static",
+      "developers.google.com",
+      "example.com",
+      "file.txt",
+      "gmail.com",
+      "googlegroups.com",
+      "index.html",
+      "policy.json",
+      "project.iam.gserviceaccount.com",
+      "storage.managedFolders.getIamPolicy",
+      "storage.managedFolders.setIamPolicy",
+      "storage.objectViewer",
+      "website.id",
+      "website.name"
+    ],
+    "missing_inventory_roles": [
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/hosting-static-website",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/access-control/lists"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/hosting-static-website",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/access-control/lists"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/hosting-static-website",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/access-control/lists"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/hosting-static-website",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/access-control/lists"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/hosting-static-website",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/access-control/lists"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/hosting-static-website",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/access-control/lists"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/hosting-static-website",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/access-control/lists"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/hosting-static-website",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/access-control/lists"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/hosting-static-website",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/access-control/lists"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/hosting-static-website",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/access-control/lists"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:43.359Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage"
+}

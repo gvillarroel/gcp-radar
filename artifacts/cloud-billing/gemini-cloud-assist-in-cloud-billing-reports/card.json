@@ -1,0 +1,136 @@
+{
+  "feature_name": "Gemini Cloud Assist in Cloud Billing Reports",
+  "feature_slug": "gemini-cloud-assist-in-cloud-billing-reports",
+  "summary": "Cloud Billing Reports now includes Gemini Cloud Assist support to help users access saved reports, create custom reports, and summarize report insights.",
+  "extended_definition": "Cloud Billing Reports now includes Gemini Cloud Assist support to help users access saved reports, create custom reports, and summarize report insights.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/gemini/overview",
+      "https://docs.cloud.google.com/billing/docs/how-to/gemini/set-up-gemini",
+      "https://docs.cloud.google.com/billing/docs/how-to/reports"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Set up Gemini Cloud Assist in Cloud Billing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/gemini/set-up-gemini",
+        "source_id": "site-docs-root-2",
+        "final_score": 221,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Any custom roles for project permissions that you create need the following permissions to access Gemini Cloud Assist: geminicloudassist.companions.generateChat geminicloudassist.companions.generateCode serviceusage.services.use Grant IAM roles in a Cloud Billing account For users who need access to Cloud Billing cost data, you need to grant permissions on the Cloud Billing account that are adequate to access the Reports page and the FinOps hub .",
+          "If the project users also have access to view Cloud Billing data , they can use Gemini Cloud Assist in Cloud Billing Reports and the FinOps hub to get AI assistance to create cost reports and to summarize key insights about cloud costs and optimization recommendations.",
+          "For users who need access to Cloud Billing data and Gemini Cloud Assist in Cloud Billing, grant IAM roles in the Cloud Billing account that's linked to the project where the Gemini Cloud Assist API is enabled."
+        ]
+      },
+      {
+        "title": "Gemini Cloud Assist in Cloud Billing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/gemini/overview",
+        "source_id": "site-docs-root-2",
+        "final_score": 203,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Compute Engine — sets the Services filter US regions — sets the Locations filter Save custom reports to use again In billing reports, Gemini Cloud Assist is focused on helping you to create the cost reports that you need to analyze your Google Cloud costs.",
+          "Gemini Cloud Assist in Cloud Billing Cost Reports provides AI assistance to help you in the following ways: Using saved reports .",
+          "You might be able to enable Gemini Cloud Assist from the billing report Consider the following when you view the Cloud Billing Reports page: If you haven't enabled the Gemini for Google Cloud API in a Google Cloud project but you have adequate project permissions to do so, you can select Enable Gemini API to use Gemini Cloud Assist in Cloud Billing: If you haven't enabled the Gemini for Google Cloud API in a Google Cloud project, and you don't have adequate project permissions to enable the API in any of the projects associated with the Cloud Billing account, the Enable Gemini API button is greyed out: Ask an administrator or project owner to set you up to use Gemini Cloud Assist in Cloud Billing ."
+        ]
+      },
+      {
+        "title": "\"Analyze billing data and cost trends with Reports \\_|\\_ Cloud Billing \\_\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "source_id": "site-docs-root",
+        "final_score": 185,
+        "relevance": "",
+        "evidence_snippets": [
+          "Also, for customers who have enabled Gemini Cloud Assist in Cloud Billing , the preset reports and your custom saved reports are accessible in a carousel that displays below the Ask Gemini Cloud Assist prompt field.",
+          "Also, for customers who have enabled Gemini Cloud Assist in Cloud Billing , your custom saved reports and the preset reports are accessible in a carousel that displays below the Ask Gemini Cloud Assist prompt field.",
+          "Note that to use the reports carousel, you must enable Gemini Cloud Assist in Cloud Billing ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.accounts.get",
+      "billing.accounts.getSpendingInformation",
+      "geminicloudassist.companions.generateChat",
+      "geminicloudassist.companions.generateCode",
+      "serviceusage.services.use"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/set-up-gemini",
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/overview",
+        "https://docs.cloud.google.com/billing/docs/how-to/reports"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/set-up-gemini",
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/overview",
+        "https://docs.cloud.google.com/billing/docs/how-to/reports"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/set-up-gemini",
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/overview",
+        "https://docs.cloud.google.com/billing/docs/how-to/reports"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/set-up-gemini",
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/overview",
+        "https://docs.cloud.google.com/billing/docs/how-to/reports"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/set-up-gemini",
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/overview",
+        "https://docs.cloud.google.com/billing/docs/how-to/reports"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/set-up-gemini",
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/overview",
+        "https://docs.cloud.google.com/billing/docs/how-to/reports"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:27.261Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing"
+}

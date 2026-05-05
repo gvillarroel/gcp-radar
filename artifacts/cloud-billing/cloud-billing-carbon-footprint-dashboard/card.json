@@ -1,0 +1,280 @@
+{
+  "feature_name": "Cloud Billing Carbon Footprint dashboard",
+  "feature_slug": "cloud-billing-carbon-footprint-dashboard",
+  "summary": "Cloud Billing introduces a Carbon Footprint dashboard in FinOps hub to display estimated greenhouse gas emissions for Google Cloud usage.",
+  "extended_definition": "Cloud Billing introduces a Carbon Footprint dashboard in FinOps hub to display estimated greenhouse gas emissions for Google Cloud usage.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/finops-hub",
+      "https://docs.cloud.google.com/billing/docs/how-to/finops-recommendations-dashboard",
+      "https://docs.cloud.google.com/iam/docs/roles-permissions/billing"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Optimize costs with FinOps hub \\_|\\_ Cloud Billing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/finops-hub",
+        "source_id": "site-docs-root",
+        "final_score": 165,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Name Recommender ID Short Description Committed Use Discounts (CUDs) recommenders Committed use discount recommender google.compute.commitment.UsageCommitmentRecommender Reduce costs through purchasing resource-based commitments Committed use discount recommender google.cloudbilling.commitment.SpendBasedCommitmentRecommender Reduce costs through purchasing spend-based and Compute flexible commitments Compute Engine recommenders Idle custom image recommender google.compute.image.IdleResourceRecommender Remove unused images Idle IP address recommender google.compute.address.IdleResourceRecommender Remove unused IPs Idle persistent disk recommender google.compute.disk.IdleResourceRecommender Backup and remove unused disks Idle VM recommender google.compute.instance.IdleResourceRecommender Remove unused VMs Idle reservations recommender google.compute.IdleResourceRecommender Remove unused reservations Managed instance group machine type recommender google.compute.instanceGroupManager.MachineTypeRecommender Right-size MIG machine types Underutilized reservations recommender google.compute.RightSizeResourceRecommender Right-size underutilized reservations VM machine type recommender google.compute.instance.MachineTypeRecommender Note: Recommendations of this type indicating an underutilized VM (those with a negative costs savings or cost increase) are shown on the Utilization insights dashboard but not on the FinOps Recommendations dashboard.",
+          "The FinOps hub automatically generates the dashboard based on historical usage metrics gathered by Cloud Billing and Recommender , including recent usage and current commitments.",
+          "The Carbon Footprint dashboard presents the estimated greenhouse gas emissions from your Google Cloud usage, helping you optimize cloud spend while reducing carbon impact."
+        ]
+      },
+      {
+        "title": "\"Review and apply FinOps hub Recommendations \\_|\\_ Cloud Billing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/finops-recommendations-dashboard",
+        "source_id": "site-docs-root-2",
+        "final_score": 93,
+        "relevance": "",
+        "evidence_snippets": [
+          "To access the FinOps hub and Recommendations dashboard using a custom role, you need the following permissions on your Cloud Billing account: billing.accounts.get billing.accounts.getSpendingInformation billing.finOpsBenchmarkInformation.get billing.finOpsHealthInformation.get recommender.costRecommendations.listAll Open the Recommendations dashboard To view the Recommendations dashboard: In the Google Cloud console, go to the FinOps hub.",
+          "Permissions required to access the FinOps hub Recommendations To access the FinOps hub and view available recommendations, the FinOps score and CUDs optimization metrics, you need either the Billing Account Administrator or the Billing Account Viewer role for your Cloud Billing account.",
+          "Explore the Recommendations dashboard In the Recommendations dashboard, you can review all of the FinOps recommendations, view the recommendation details, send recommendations to others to review, and apply recommendations to optimize your cloud costs."
+        ]
+      },
+      {
+        "title": "\"Cloud Billing roles and permissions \\_|\\_ Identity and Access Management\\",
+        "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/billing",
+        "source_id": "site-iam-reference",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "App Engine flexible environment Service Agent ( roles/ appengineflex.serviceAgent ) Serverless VPC Access Service Agent ( roles/ vpcaccess.serviceAgent ) billing. accounts. getCarbonInformation Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Carbon Footprint Viewer ( roles/ billing.carbonViewer ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) billing.accounts.getIamPolicy Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Billing Account Costs Manager ( roles/ billing.costsManager ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) Project Billing Costs Manager ( roles/ billing.projectCostsManager ) Billing Account User ( roles/ billing.user ) Consumer Procurement Order Administrator ( roles/ consumerprocurement.orderAdmin ) Consumer Procurement Order Viewer ( roles/ consumerprocurement.orderViewer ) Consumer Procurement Administrator ( roles/ consumerprocurement.procurementAdmin ) Consumer Procurement Viewer ( roles/ consumerprocurement.procurementViewer ) Security Auditor ( roles/ iam.securityAuditor ) billing. accounts. getPaymentInfo Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) billing.accounts.getPricing Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) billing. accounts. getSpendingInformation Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Billing Account Costs Manager ( roles/ billing.costsManager ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) billing. accounts. getSpendingInformationScoped Project Billing Costs Manager ( roles/ billing.projectCostsManager ) billing. accounts. getUsageExportSpec Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Billing Account Costs Manager ( roles/ billing.costsManager ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) billing.accounts.list Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Data Processing Controls Resource Admin ( roles/ dataprocessing.admin ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Carbon Footprint Viewer ( roles/ billing.carbonViewer ) Billing Account Costs Manager ( roles/ billing.costsManager ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) Billing Account User ( roles/ billing.user ) Consumer Procurement Order Administrator ( roles/ consumerprocurement.orderAdmin ) Consumer Procurement Order Viewer ( roles/ consumerprocurement.orderViewer ) Consumer Procurement Administrator ( roles/ consumerprocurement.procurementAdmin ) Consumer Procurement Viewer ( roles/ consumerprocurement.procurementViewer ) Security Auditor ( roles/ iam.securityAuditor ) BigQuery Recommender Billing Account Admin ( roles/ recommender.bigQueryCapacityCommitmentsBillingAccountAdmin ) BigQuery Recommender Billing Account Viewer ( roles/ recommender.bigQueryCapacityCommitmentsBillingAccountViewer ) Billing Account Usage Commitment Recommender Admin ( roles/ recommender.billingAccountCudAdmin ) Billing Account Usage Commitment Recommender Viewer ( roles/ recommender.billingAccountCudViewer ) Spend Based Commitment Recommender Admin ( roles/ recommender.ucsAdmin ) Spend Based Commitment Recommender Viewer ( roles/ recommender.ucsViewer ) billing.accounts.move Billing Account Administrator ( roles/ billing.admin ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) billing. accounts. redeemPromotion Billing Account Administrator ( roles/ billing.admin ) Billing Account User ( roles/ billing.user ) Consumer Procurement Order Administrator ( roles/ consumerprocurement.orderAdmin ) Consumer Procurement Administrator ( roles/ consumerprocurement.procurementAdmin ) billing. accounts. removeFromOrganization Billing Account Administrator ( roles/ billing.admin ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) billing.accounts.reopen Billing Account Administrator ( roles/ billing.admin ) billing.accounts.setIamPolicy Billing Account Administrator ( roles/ billing.admin ) Security Admin ( roles/ iam.securityAdmin ) billing.accounts.update Billing Account Administrator ( roles/ billing.admin ) billing. accounts. updatePaymentInfo Billing Account Administrator ( roles/ billing.admin ) billing. accounts. updateUsageExportSpec Billing Account Administrator ( roles/ billing.admin ) Billing Account Costs Manager ( roles/ billing.costsManager ) billing.anomalies.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Billing Account Costs Manager ( roles/ billing.costsManager ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) Support User ( roles/ iam.supportUser ) billing.anomalies.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Billing Account Costs Manager ( roles/ billing.costsManager ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) billing. anomalies. submitFeedback Owner ( roles/ owner ) Billing Account Administrator ( roles/ billing.admin ) billing.anomaliesConfigs.get Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Billing Account Costs Manager ( roles/ billing.costsManager ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) billing. anomaliesConfigs. update Billing Account Administrator ( roles/ billing.admin ) Billing Account Costs Manager ( roles/ billing.costsManager ) billing. billingAccountPrice. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) Support User ( roles/ iam.supportUser ) billing. billingAccountPrices. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) billing. billingAccountServices. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) Support User ( roles/ iam.supportUser ) billing. billingAccountServices. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) billing. billingAccountSkuGroupSkus. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) Support User ( roles/ iam.supportUser ) billing. billingAccountSkuGroupSkus. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) billing. billingAccountSkuGroups. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) Support User ( roles/ iam.supportUser ) billing. billingAccountSkuGroups. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) billing.billingAccountSkus.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) Support User ( roles/ iam.supportUser ) billing. billingAccountSkus. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) billing.budgets.create Billing Account Administrator ( roles/ billing.admin ) Billing Account Costs Manager ( roles/ billing.costsManager ) billing.budgets.delete Billing Account Administrator ( roles/ billing.admin ) Billing Account Costs Manager ( roles/ billing.costsManager ) billing.budgets.get Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Billing Account Costs Manager ( roles/ billing.costsManager ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) billing.budgets.list Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Billing Account Costs Manager ( roles/ billing.costsManager ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) Security Auditor ( roles/ iam.securityAuditor ) billing.budgets.update Billing Account Administrator ( roles/ billing.admin ) Billing Account Costs Manager ( roles/ billing.costsManager ) billing. costRecommendations. listScoped Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Project Billing Costs Manager ( roles/ billing.projectCostsManager ) Support User ( roles/ iam.supportUser ) billing.credits.list Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) Billing Account User ( roles/ billing.user ) Consumer Procurement Order Administrator ( roles/ consumerprocurement.orderAdmin ) Consumer Procurement Order Viewer ( roles/ consumerprocurement.orderViewer ) Consumer Procurement Administrator ( roles/ consumerprocurement.procurementAdmin ) Consumer Procurement Viewer ( roles/ consumerprocurement.procurementViewer ) Security Auditor ( roles/ iam.securityAuditor ) billing. finOpsBenchmarkInformation. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) Support User ( roles/ iam.supportUser ) billing. finOpsHealthInformation. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Billing Account Administrator ( roles/ billing.admin ) Billing Account Viewer ( roles/ billing.viewer ) Account Hierarchy Manager ( roles/ billing.linkAdmin ) Support User ( roles/ iam.supportUser ) billing. resourceAssociations. create Billing Account Administrator ( roles/ billing.admin ) Billing Account User ( roles/ billing.user ) Consumer Procurement Order Administrator ( roles/ consumerprocurement.orderAdmin ) Consumer Procurement Administrator ( roles/ consumerprocurement.procurementAdmin ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "Lowest-level resources where you can grant this role: Billing Account billing.accounts.get billing. accounts. getCarbonInformation billing.accounts.getIamPolicy billing. accounts. getPaymentInfo billing.accounts.getPricing billing. accounts. getSpendingInformation billing. accounts. getUsageExportSpec billing.accounts.list billing.anomalies.get billing.anomalies.list billing.anomaliesConfigs.get billing. billingAccountPrice. get billing. billingAccountPrices. list billing. billingAccountServices. billing. billingAccountServices. get billing. billingAccountServices. list billing. billingAccountSkuGroupSkus. billing. billingAccountSkuGroupSkus. get billing. billingAccountSkuGroupSkus. list billing. billingAccountSkuGroups. billing. billingAccountSkuGroups. get billing. billingAccountSkuGroups. list billing.billingAccountSkus. billing.billingAccountSkus.get billing. billingAccountSkus. list billing.budgets.get billing.budgets.list billing.credits.list billing. finOpsBenchmarkInformation. get billing. finOpsHealthInformation. get billing. resourceAssociations. list billing.subscriptions.get billing.subscriptions.list chroniclesm.contracts.get commerceoffercatalog. commerceoffercatalog. agreements. get commerceoffercatalog. agreements. list commerceoffercatalog. documents. get commerceoffercatalog. documents. list commerceoffercatalog. offers. get consumerprocurement. accounts. get consumerprocurement. accounts. list consumerprocurement. consents. check consumerprocurement. consents. list consumerprocurement. orderAttributions. get consumerprocurement. orderAttributions. list consumerprocurement.orders.get consumerprocurement. orders. list dataprocessing.datasources.get dataprocessing. datasources. list dataprocessing. groupcontrols. get dataprocessing. groupcontrols. list discoveryengine. billingAccountLicenseConfigs. get discoveryengine. billingAccountLicenseConfigs. list recommender. commitmentUtilizationInsights. get recommender. commitmentUtilizationInsights. list recommender.costInsights.get recommender.costInsights.list recommender. costRecommendations. recommender. costRecommendations. listAll recommender. costRecommendations. summarizeAll recommender. spendBasedCommitmentInsights. get recommender. spendBasedCommitmentInsights. list recommender. spendBasedCommitmentRecommendations. get recommender. spendBasedCommitmentRecommendations. list recommender. spendBasedCommitmentRecommenderConfig. get recommender. usageCommitmentRecommendations. get recommender. usageCommitmentRecommendations. list Carbon Footprint Viewer ( roles/ billing.carbonViewer ) billing.accounts.get billing. accounts. getCarbonInformation billing.accounts.list Billing Account Costs Manager ( roles/ billing.costsManager ) Manage budgets for a billing account, and view, analyze, and export cost information of a billing account.",
+          "Lowest-level resources where you can grant this role: Billing Account billing.accounts.close billing.accounts.get billing. accounts. getCarbonInformation billing.accounts.getIamPolicy billing. accounts. getPaymentInfo billing.accounts.getPricing billing. accounts. getSpendingInformation billing. accounts. getUsageExportSpec billing.accounts.list billing.accounts.move billing. accounts. redeemPromotion billing. accounts. removeFromOrganization billing.accounts.reopen billing.accounts.setIamPolicy billing.accounts.update billing. accounts. updatePaymentInfo billing. accounts. updateUsageExportSpec billing.anomalies. billing.anomalies.get billing.anomalies.list billing. anomalies. submitFeedback billing.anomaliesConfigs. billing.anomaliesConfigs.get billing. anomaliesConfigs. update billing. billingAccountPrice. get billing. billingAccountPrices. list billing. billingAccountServices. billing. billingAccountServices. get billing. billingAccountServices. list billing. billingAccountSkuGroupSkus. billing. billingAccountSkuGroupSkus. get billing. billingAccountSkuGroupSkus. list billing. billingAccountSkuGroups. billing. billingAccountSkuGroups. get billing. billingAccountSkuGroups. list billing.billingAccountSkus. billing.billingAccountSkus.get billing. billingAccountSkus. list billing.budgets. billing.budgets.create billing.budgets.delete billing.budgets.get billing.budgets.list billing.budgets.update billing.credits.list billing. finOpsBenchmarkInformation. get billing. finOpsHealthInformation. get billing.resourceAssociations. billing. resourceAssociations. create billing. resourceAssociations. delete billing. resourceAssociations. list billing.subscriptions. billing.subscriptions.create billing.subscriptions.get billing.subscriptions.list billing.subscriptions.update chroniclesm.contracts. chroniclesm.contracts.get chroniclesm.contracts.update cloudasset. assets. searchAllResources cloudnotifications. activities. list cloudsupport.properties.get cloudsupport.techCases. cloudsupport.techCases.create cloudsupport. techCases. escalate cloudsupport.techCases.get cloudsupport.techCases.list cloudsupport.techCases.update commerceoffercatalog. commerceoffercatalog. agreements. get commerceoffercatalog. agreements. list commerceoffercatalog. documents. get commerceoffercatalog. documents. list commerceoffercatalog. offers. get compute.commitments.create compute.commitments.get compute.commitments.list compute.commitments.update compute. commitments. updateReservations consumerprocurement.accounts. consumerprocurement. accounts. create consumerprocurement. accounts. delete consumerprocurement. accounts. get consumerprocurement. accounts. list consumerprocurement. consents. check consumerprocurement. consents. grant consumerprocurement. consents. list consumerprocurement. consents. revoke consumerprocurement.events. consumerprocurement.events.get consumerprocurement. events. list consumerprocurement. licensePools. consumerprocurement. licensePools. assign consumerprocurement. licensePools. enumerateLicensedUsers consumerprocurement. licensePools. get consumerprocurement. licensePools. unassign consumerprocurement. licensePools. update consumerprocurement. orderAttributions. consumerprocurement. orderAttributions. get consumerprocurement. orderAttributions. list consumerprocurement. orderAttributions. update consumerprocurement.orders. consumerprocurement. orders. cancel consumerprocurement.orders.get consumerprocurement. orders. list consumerprocurement. orders. modify consumerprocurement. orders. place dataprocessing.datasources.get dataprocessing. datasources. list dataprocessing. groupcontrols. get dataprocessing. groupcontrols. list discoveryengine. billingAccountLicenseConfigs. discoveryengine. billingAccountLicenseConfigs. distribute discoveryengine. billingAccountLicenseConfigs. get discoveryengine. billingAccountLicenseConfigs. list discoveryengine. billingAccountLicenseConfigs. retract logging.logEntries.list logging.logServiceIndexes.list logging.logServices.list logging.logs.list logging.privateLogEntries.list recommender. cloudsqlIdleInstanceRecommendations. get recommender. cloudsqlIdleInstanceRecommendations. list recommender. cloudsqlOverprovisionedInstanceRecommendations. get recommender. cloudsqlOverprovisionedInstanceRecommendations. list recommender. commitmentUtilizationInsights. recommender. commitmentUtilizationInsights. get recommender. commitmentUtilizationInsights. list recommender. commitmentUtilizationInsights. update recommender. computeAddressIdleResourceRecommendations. get recommender. computeAddressIdleResourceRecommendations. list recommender. computeDiskIdleResourceRecommendations. get recommender. computeDiskIdleResourceRecommendations. list recommender. computeImageIdleResourceRecommendations. get recommender. computeImageIdleResourceRecommendations. list recommender. computeInstanceGroupManagerMachineTypeRecommendations. get recommender. computeInstanceGroupManagerMachineTypeRecommendations. list recommender. computeInstanceIdleResourceRecommendations. get recommender. computeInstanceIdleResourceRecommendations. list recommender. computeInstanceMachineTypeRecommendations. get recommender. computeInstanceMachineTypeRecommendations. list recommender.costInsights. recommender.costInsights.get recommender.costInsights.list recommender. costInsights. update recommender. costRecommendations. recommender. costRecommendations. listAll recommender. costRecommendations. summarizeAll recommender. resourcemanagerProjectUtilizationRecommendations. get recommender. resourcemanagerProjectUtilizationRecommendations. list recommender. spendBasedCommitmentInsights. recommender. spendBasedCommitmentInsights. get recommender. spendBasedCommitmentInsights. list recommender. spendBasedCommitmentInsights. update recommender. spendBasedCommitmentRecommendations. recommender. spendBasedCommitmentRecommendations. get recommender. spendBasedCommitmentRecommendations. list recommender. spendBasedCommitmentRecommendations. update recommender. spendBasedCommitmentRecommenderConfig. recommender. spendBasedCommitmentRecommenderConfig. get recommender. spendBasedCommitmentRecommenderConfig. update recommender. usageCommitmentRecommendations. recommender. usageCommitmentRecommendations. get recommender. usageCommitmentRecommendations. list recommender. usageCommitmentRecommendations. update resourcemanager. projects. createBillingAssignment resourcemanager. projects. deleteBillingAssignment resourcemanager.projects.get resourcemanager.projects.list Project Billing Manager ( roles/ billing.projectManager ) When granted in conjunction with the Billing Account User role, provides access to assign a project's billing account or disable its billing."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengineflex.serviceAgent",
+      "billing.accounts.close",
+      "billing.accounts.create",
+      "billing.accounts.get",
+      "billing.accounts.getIamPolicy",
+      "billing.accounts.getPricing",
+      "billing.accounts.getSpendingInformation",
+      "billing.accounts.list",
+      "billing.accounts.move",
+      "billing.accounts.reopen",
+      "billing.accounts.setIamPolicy",
+      "billing.accounts.update",
+      "billing.admin",
+      "billing.anomalies",
+      "billing.anomalies.get",
+      "billing.anomalies.list",
+      "billing.anomaliesConfigs",
+      "billing.anomaliesConfigs.get",
+      "billing.billingAccountSkus",
+      "billing.billingAccountSkus.get",
+      "billing.budgets",
+      "billing.budgets.create",
+      "billing.budgets.delete",
+      "billing.budgets.get",
+      "billing.budgets.list",
+      "billing.budgets.update",
+      "billing.carbonViewer",
+      "billing.costsManager",
+      "billing.credits.list",
+      "billing.finOpsBenchmarkInformation.get",
+      "billing.finOpsHealthInformation.get",
+      "billing.linkAdmin",
+      "billing.projectCostsManager",
+      "billing.projectManager",
+      "billing.resourceAssociations",
+      "billing.subscriptions",
+      "billing.subscriptions.create",
+      "billing.subscriptions.get",
+      "billing.subscriptions.list",
+      "billing.subscriptions.update",
+      "billing.user",
+      "billing.viewer",
+      "chroniclesm.contracts",
+      "chroniclesm.contracts.get",
+      "chroniclesm.contracts.update",
+      "cloudsupport.properties.get",
+      "cloudsupport.techCases",
+      "cloudsupport.techCases.create",
+      "cloudsupport.techCases.get",
+      "cloudsupport.techCases.list",
+      "cloudsupport.techCases.update",
+      "compute.commitments.create",
+      "compute.commitments.get",
+      "compute.commitments.list",
+      "compute.commitments.update",
+      "consumerprocurement.accounts",
+      "consumerprocurement.events",
+      "consumerprocurement.events.get",
+      "consumerprocurement.orderAdmin",
+      "consumerprocurement.orders",
+      "consumerprocurement.orders.get",
+      "consumerprocurement.orderViewer",
+      "consumerprocurement.procurementAdmin",
+      "consumerprocurement.procurementViewer",
+      "dataprocessing.admin",
+      "dataprocessing.datasources.get",
+      "iam.securityAdmin",
+      "iam.securityAuditor",
+      "iam.securityReviewer",
+      "iam.supportUser",
+      "logging.logEntries.list",
+      "logging.logs.list",
+      "logging.logServiceIndexes.list",
+      "logging.logServices.list",
+      "logging.privateLogEntries.list",
+      "recommender.bigQueryCapacityCommitmentsBillingAccountAdmin",
+      "recommender.bigQueryCapacityCommitmentsBillingAccountViewer",
+      "recommender.billingAccountCudAdmin",
+      "recommender.billingAccountCudViewer",
+      "recommender.costInsights",
+      "recommender.costInsights.get",
+      "recommender.costInsights.list",
+      "recommender.costRecommendations.listAll",
+      "recommender.ucsAdmin",
+      "recommender.ucsViewer",
+      "vpcaccess.serviceAgent"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-hub",
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-recommendations-dashboard",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/billing"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-hub",
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-recommendations-dashboard",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/billing"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-hub",
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-recommendations-dashboard",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/billing"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-hub",
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-recommendations-dashboard",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/billing"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-hub",
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-recommendations-dashboard",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/billing"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-hub",
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-recommendations-dashboard",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/billing"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-hub",
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-recommendations-dashboard",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/billing"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-hub",
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-recommendations-dashboard",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/billing"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-hub",
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-recommendations-dashboard",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/billing"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-hub",
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-recommendations-dashboard",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/billing"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-hub",
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-recommendations-dashboard",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/billing"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:27.261Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing"
+}

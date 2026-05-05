@@ -1,0 +1,104 @@
+{
+  "feature_name": "Materialized views with inner join",
+  "feature_slug": "materialized-views-with-inner-join",
+  "summary": "BigQuery supports materialized views defined with inner joins; BigQuery materialized views can include inner joins in their definitions.",
+  "extended_definition": "BigQuery supports materialized views defined with inner joins; BigQuery materialized views can include inner joins in their definitions.",
+  "lifecycle": {
+    "latest_feature_date": "2022-01-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/geospatial-tutorial-hurricane",
+      "https://docs.cloud.google.com/bigquery/docs/salesforce-quickstart",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-cancel-job"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cancel a job \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-cancel-job",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 46,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "String jobName = \"jobId \" + UUID . randomUUID (). toString (); JobId jobId = JobId . newBuilder (). setLocation ( \"us\" ). setJob ( jobName ). build (); // Create a job with job ID bigquery . create ( JobInfo . of ( jobId , queryConfig )); // Get a job that was just created Job job = bigquery . getJob ( jobId ); if ( job . cancel ()) { System . out . println ( \"Job canceled successfully\" ); } else { System . out . println ( \"Job was not canceled\" ); } } catch ( BigQueryException e ) { System . out . println ( \"Job was not canceled.\\n\" + e . toString ()); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the BigQuery quickstart using client libraries .",
+          "For more information, see Set up authentication for client libraries . // Import the Google Cloud client library const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const bigquery = new BigQuery (); async function cancelJob () { // Attempts to cancel a job. / TODO(developer): Uncomment the following lines before running the sample. / // const jobId = \"existing-job-id\"; // Create a job reference const job = bigquery . job ( jobId ); // Attempt to cancel job const [ apiResult ] = await job . cancel (); console . log ( apiResult . job . status ); } Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "For more information, see Set up authentication for client libraries . import ( \"context\" \"fmt\" \"cloud.google.com/go/bigquery\" ) // cancelJob demonstrates how a job cancellation request can be issued for a specific // BigQuery job. func cancelJob ( projectID , jobID string ) error { // projectID := \"my-project-id\" // jobID := \"my-job-id\" ctx := context ."
+        ]
+      },
+      {
+        "title": "\"Using geospatial analytics to plot a hurricane's path \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/geospatial-tutorial-hurricane",
+        "source_id": "site-docs-reference",
+        "final_score": 42,
+        "relevance": "",
+        "evidence_snippets": [
+          "SELECT ST GeogPoint ( longitude , latitude ) AS point , name , iso time , dist2land , usa wind , usa pressure , usa sshs , ( usa r34 ne + usa r34 nw + usa r34 se + usa r34 sw ) / 4 AS radius 34kt , ( usa r50 ne + usa r50 nw + usa r50 se + usa r50 sw ) / 4 AS radius 50kt FROM bigquery-public-data.noaa hurricanes.hurricanes WHERE name LIKE '%MARIA%' AND season = '2017' AND ST DWithin ( ST GeogFromText ( 'POLYGON((-179 26, -179 48, -10 48, -10 26, -100 -10.1, -179 26))' ), ST GeogPoint ( longitude , latitude ), 10 ) ORDER BY iso time ASC The query clauses do the following: SELECT ST GeogPoint(longitude, latitude) AS point, name, iso time, dist2land, usa wind, usa pressure, usa sshs, (usa r34 ne + usa r34 nw + usa r34 se + usa r34 sw)/4 AS radius 34kt, (usa r50 ne + usa r50 nw + usa r50 se + usa r50 sw)/4 AS radius 50kt The SELECT clause selects all the storm's weather data and uses the ST GeogPoint function to convert the values in the latitude and longitude columns to GEOGRAPHY types (points).",
+          "SELECT ST GeogPoint ( longitude , latitude ) AS point , name , iso time , dist2land , usa wind , usa pressure , usa sshs , ( usa r34 ne + usa r34 nw + usa r34 se + usa r34 sw ) / 4 AS radius 34kt , ( usa r50 ne + usa r50 nw + usa r50 se + usa r50 sw ) / 4 AS radius 50kt FROM bigquery-public-data.noaa hurricanes.hurricanes WHERE name LIKE '%MARIA%' AND season = '2017' AND ST DWithin ( ST GeogFromText ( 'POLYGON((-179 26, -179 48, -10 48, -10 26, -100 -10.1, -179 26))' ), ST GeogPoint ( longitude , latitude ), 10 ) ORDER BY iso time ASC Click Run .",
+          "SELECT ST GeogPoint ( longitude , latitude ) AS point , name , iso time , dist2land , usa wind , usa pressure , usa sshs , ( usa r34 ne + usa r34 nw + usa r34 se + usa r34 sw ) / 4 AS radius 34kt , ( usa r50 ne + usa r50 nw + usa r50 se + usa r50 sw ) / 4 AS radius 50kt FROM bigquery-public-data.noaa hurricanes.hurricanes WHERE name LIKE '%MARIA%' AND season = '2017' AND ST DWithin ( ST GeogFromText ( 'POLYGON((-179 26, -179 48, -10 48, -10 26, -100 -10.1, -179 26))' ), ST GeogPoint ( longitude , latitude ), 10 ) ORDER BY iso time ASC Click Run ."
+        ]
+      },
+      {
+        "title": "Work with Salesforce Data Cloud data in BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/salesforce-quickstart",
+        "source_id": "site-docs-reference-2",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "CREATE MATERIALIZED VIEW us data.total sales replica AS REPLICA OF aws data.total sales ; Run a query on a replica materialized view The following example runs a query on a replica materialized view: -- Find total sales for the current month for the dashboard SELECT EXTRACT ( MONTH FROM CURRENT DATE ()) as month , SUM ( sales ) FROM us data . total sales replica WHERE month = EXTRACT ( MONTH FROM date ) GROUP BY 1 Using Data Cloud data with INFORMATION SCHEMA Data Cloud datasets support BigQuery INFORMATION SCHEMA views.",
+          "BigQuery supports three types of Data Cloud objects: Data Lake Objects (DLO) Data Model Objects (DMO) Calculated Insights Objects (CIO) All of these objects are represented as views in BigQuery.",
+          "Cross cloud materialized views Cross Cloud Materialized Views ( CCMV ) transfer data from a BigQuery Omni region to a non-BigQuery Omni BigQuery region incrementally."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.noaa",
+      "data.total",
+      "hurricanes.hurricanes",
+      "john.nto"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-cancel-job",
+        "https://docs.cloud.google.com/bigquery/docs/geospatial-tutorial-hurricane",
+        "https://docs.cloud.google.com/bigquery/docs/salesforce-quickstart"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

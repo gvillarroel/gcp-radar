@@ -1,0 +1,85 @@
+{
+  "feature_name": "Direct VPC egress with dual-stack subnets and internal IPv6",
+  "feature_slug": "direct-vpc-egress-with-dual-stack-subnets-and-internal-ipv6",
+  "summary": "Cloud Run services and jobs can use dual-stack subnets with internal IPv6 to send IPv4 and internal IPv6 traffic through Direct VPC egress.",
+  "extended_definition": "Cloud Run services and jobs can use dual-stack subnets with internal IPv6 to send IPv4 and internal IPv6 traffic through Direct VPC egress.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/container-contract",
+      "https://docs.cloud.google.com/run/docs/reference/container-contract",
+      "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Tutorial: Local troubleshooting of a Cloud Run service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 108,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "NAME ) { // Plain error logs do not appear in Stackdriver Error Reporting. console . error ( 'Environment validation failed.' ); console . error ( new Error ( 'Missing required server parameter' )); return res . status ( 500 ). send ( 'Internal Server Error' ); } Python Find the source of the error message in the file main.py around the line number called out in the stack trace shown in the logs: NAME = os . getenv ( \"NAME\" ) if not NAME : print ( \"Environment validation failed.\" ) raise Exception ( \"Missing required service parameter.\" ) Go Find the source of the error message in the file main.go around the line number called out in the stack trace shown in the logs: name := os .",
+          "System . err . println ( \"Environment validation failed.\" ); String msg = \"Missing required server parameter\" ; logger . error ( msg , new Exception ( msg )); res . status ( 500 ); return \"Internal Server Error\" ; } res . status ( 200 ); return String . format ( \"Hello %s!\" , name ); }); } } Create a Dockerfile to define the container image used to deploy the service: Node.js Use the official lightweight Node . js image . https : //hub.docker.com/ /node FROM node : 20 - slim Create and change to the app directory .",
+          "NAME ) { // Plain error logs do not appear in Stackdriver Error Reporting. console . error ( 'Environment validation failed.' ); console . error ( new Error ( 'Missing required server parameter' )); return res . status ( 500 ). send ( 'Internal Server Error' ); } Python NAME = os . getenv ( \"NAME\" ) if not NAME : print ( \"Environment validation failed.\" ) raise Exception ( \"Missing required service parameter.\" ) Go name := os ."
+        ]
+      },
+      {
+        "title": "Container runtime contract \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/container-contract",
+        "source_id": "site-docs-root",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "Make sure you create your instance under a dual-stack subnet . /computeMetadata/v1/instance/network-interfaces/ /computeMetadata/v1/instance/network-interfaces/0/ Network interface directory path for worker pools.",
+          "Cloud Run worker pools support both Direct VPC egress and Direct VPC ingress .",
+          "Cloud Run services and jobs support Direct VPC egress ."
+        ]
+      },
+      {
+        "title": "Container runtime contract \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "source_id": "site-docs-root",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "Make sure you create your instance under a dual-stack subnet . /computeMetadata/v1/instance/network-interfaces/ /computeMetadata/v1/instance/network-interfaces/0/ Network interface directory path for worker pools.",
+          "Cloud Run worker pools support both Direct VPC egress and Direct VPC ingress .",
+          "Cloud Run services and jobs support Direct VPC egress ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "hub.docker.com",
+      "main.go",
+      "main.py"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:35.569Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run"
+}

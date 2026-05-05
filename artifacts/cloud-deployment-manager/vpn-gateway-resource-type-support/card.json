@@ -1,0 +1,230 @@
+{
+  "feature_name": "VPN Gateway resource type support",
+  "feature_slug": "vpn-gateway-resource-type-support",
+  "summary": "Deployment Manager supports creating Compute Engine VpnGateway resources with the gcp-types/compute-v1:vpnGateways type.",
+  "extended_definition": "Deployment Manager supports creating Compute Engine VpnGateway resources with the gcp-types/compute-v1:vpnGateways type.",
+  "lifecycle": {
+    "latest_feature_date": "2019-10-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deployment-manager/docs/configuration/composite-types/creating-composite-types",
+      "https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-resource-types",
+      "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/create-composite-types"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported resource types \\_|\\_ Cloud Deployment Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-resource-types",
+        "source_id": "site-api-reference",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For a full list of supported resource types, including resources that are in alpha, run the types list command in gcloud : gcloud deployment - manager types list Resource Type Reference appengine.v1.version Documentation bigquery.v2.dataset Documentation bigquery.v2.table Documentation bigtableadmin.v2.instance Documentation bigtableadmin.v2.instance.table Documentation cloudresourcemanager.v1.project Documentation compute.beta.address Documentation compute.beta.autoscaler Documentation compute.beta.backendBucket Documentation compute.beta.backendService Documentation compute.beta.disk Documentation compute.beta.firewall Documentation compute.beta.forwardingRule Documentation compute.beta.globalAddress Documentation compute.beta.globalForwardingRule Documentation compute.beta.healthCheck Documentation compute.beta.httpHealthCheck Documentation compute.beta.httpsHealthCheck Documentation compute.beta.image Documentation compute.beta.instance Documentation compute.beta.instanceGroup Documentation compute.beta.instanceGroupManager Documentation compute.beta.instanceTemplate Documentation compute.beta.network Documentation compute.beta.regionAutoscaler Documentation compute.beta.regionBackendService Documentation compute.beta.regionInstanceGroup Documentation compute.beta.regionInstanceGroupManager Documentation compute.beta.route Documentation compute.beta.router Documentation compute.beta.sslCertificate Documentation compute.beta.subnetwork Documentation compute.beta.targetHttpProxy Documentation compute.beta.targetHttpsProxy Documentation compute.beta.targetInstance Documentation compute.beta.targetPool Documentation compute.beta.targetSslProxy Documentation compute.beta.targetVpnGateway Documentation compute.beta.urlMap Documentation compute.beta.vpnTunnel Documentation compute.beta.xpnHost Documentation compute.beta.xpnResource Documentation compute.v1.address Documentation compute.v1.autoscaler Documentation compute.v1.backendService Documentation compute.v1.disk Documentation compute.v1.firewall Documentation compute.v1.forwardingRule Documentation compute.v1.globalAddress Documentation compute.v1.globalForwardingRule Documentation compute.v1.healthCheck Documentation compute.v1.httpHealthCheck Documentation compute.v1.httpsHealthCheck Documentation compute.v1.image Documentation compute.v1.instance Documentation compute.v1.instanceGroup Documentation compute.v1.instanceGroupManager Documentation compute.v1.instanceTemplate Documentation compute.v1.network Documentation compute.v1.regionAutoscaler Documentation compute.v1.regionBackendService Documentation compute.v1.regionInstanceGroup Documentation compute.v1.regionInstanceGroupManager Documentation compute.v1.route Documentation compute.v1.router Documentation compute.v1.sslCertificate Documentation compute.v1.subnetwork Documentation compute.v1.targetHttpProxy Documentation compute.v1.targetHttpsProxy Documentation compute.v1.targetInstance Documentation compute.v1.targetPool Documentation compute.v1.targetSslProxy Documentation compute.v1.targetVpnGateway Documentation compute.v1.urlMap Documentation compute.v1.vpnTunnel Documentation container.v1.cluster Documentation container.v1.nodePool Documentation dataproc.v1.cluster Documentation dns.v1.managedZone Documentation iam.v1.serviceAccount Documentation iam.v1.serviceAccounts.key Documentation logging.v2.metric Documentation logging.v2.sink Documentation pubsub.v1.subscription Documentation pubsub.v1.topic Documentation runtimeconfig.v1beta1.config Documentation runtimeconfig.v1beta1.variable Documentation runtimeconfig.v1beta1.waiter Documentation spanner.v1.instance Documentation sqladmin.v1beta4.database Documentation sqladmin.v1beta4.instance Documentation sqladmin.v1beta4.user Documentation storage.v1.bucket Documentation storage.v1.bucketAccessControl Documentation storage.v1.defaultObjectAccessControl Documentation storage.v1.object Documentation storage.v1.objectAccessControl Documentation What's next Create a configuration .",
+          "Resources for project creation If you are creating projects using Deployment Manager, you can use the following virtual resource types to enable APIs in your project, or change the billing information for your project.",
+          "Home Documentation Infrastructure as code Cloud Deployment Manager Reference Send feedback Supported resource types Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Adding a template as a composite type \\_|\\_ Cloud Deployment Manager \\_\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/configuration/composite-types/creating-composite-types",
+        "source_id": "site-docs-root-2",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the composite field, define: The top-level schema The contents of your imported templates The contents of your top-level template The API request body has the following structure: POST https : // www . googleapis . com / deploymentmanager / v2beta / projects /[ PROJECT ID ]/ global / compositeTypes { \"composite\" : { \"files\" : { \"schema\" : \"[CONTENTS OF SCHEMA]\" , \"imports\" : [ { \"name\": \"[TEMPLATE FILE ] \", \" content \": \" [ CONTENTS OF TEMPLATE FILE ] \" }, { \" name \": \" [ ANOTHER TEMPLATE IF NECESSARY ] \", \" content \": \" [ CONTENTS OF TEMPLATES ] \" } ], \" template \": \" [ TOP-LEVEL TEMPLATE CONTENTS ] \", \" templateFileType \": \" [ FILE TYPE ] \" } }, \" name \": \" [ TYPE NAME ] \" } For an example on how to construct these requests, see Creating an autoscaled managed instance group composite type .",
+          "Replace [PROJECT ID] with your project ID: resources : - name : ha - service - example type : [ PROJECT ID ]/ composite : ha - service - example properties : dockerImage : gcr . io / deployment - manager - examples / nodejsservicestatic zones : - us - central1 - b - us - central1 - a Save the configuration as example-config.yaml .",
+          "Deploy your new composite type: gcloud deployment-manager deployments create ha-service-deployment --config example-config.yaml The API returns with a list of resources created from the type: Waiting for create [operation-1488254932422-5498f5a950d71-2bd3b8c8-b13ddab5]...done."
+        ]
+      },
+      {
+        "title": "\"Adding a template as a composite type \\_|\\_ Cloud Deployment Manager \\_\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/create-composite-types",
+        "source_id": "site-docs-root-2",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the composite field, define: The top-level schema The contents of your imported templates The contents of your top-level template The API request body has the following structure: POST https : // www . googleapis . com / deploymentmanager / v2beta / projects /[ PROJECT ID ]/ global / compositeTypes { \"composite\" : { \"files\" : { \"schema\" : \"[CONTENTS OF SCHEMA]\" , \"imports\" : [ { \"name\": \"[TEMPLATE FILE ] \", \" content \": \" [ CONTENTS OF TEMPLATE FILE ] \" }, { \" name \": \" [ ANOTHER TEMPLATE IF NECESSARY ] \", \" content \": \" [ CONTENTS OF TEMPLATES ] \" } ], \" template \": \" [ TOP-LEVEL TEMPLATE CONTENTS ] \", \" templateFileType \": \" [ FILE TYPE ] \" } }, \" name \": \" [ TYPE NAME ] \" } For an example on how to construct these requests, see Creating an autoscaled managed instance group composite type .",
+          "Replace [PROJECT ID] with your project ID: resources : - name : ha - service - example type : [ PROJECT ID ]/ composite : ha - service - example properties : dockerImage : gcr . io / deployment - manager - examples / nodejsservicestatic zones : - us - central1 - b - us - central1 - a Save the configuration as example-config.yaml .",
+          "Deploy your new composite type: gcloud deployment-manager deployments create ha-service-deployment --config example-config.yaml The API returns with a list of resources created from the type: Waiting for create [operation-1488254932422-5498f5a950d71-2bd3b8c8-b13ddab5]...done."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.v1.version",
+      "bigquery.v2.dataset",
+      "bigquery.v2.table",
+      "bigtableadmin.v2.instance",
+      "bigtableadmin.v2.instance.table",
+      "cloudresourcemanager.v1.project",
+      "compute.beta.address",
+      "compute.beta.autoscaler",
+      "compute.beta.backendBucket",
+      "compute.beta.backendService",
+      "compute.beta.disk",
+      "compute.beta.firewall",
+      "compute.beta.forwardingRule",
+      "compute.beta.globalAddress",
+      "compute.beta.globalForwardingRule",
+      "compute.beta.healthCheck",
+      "compute.beta.httpHealthCheck",
+      "compute.beta.httpsHealthCheck",
+      "compute.beta.image",
+      "compute.beta.instance",
+      "compute.beta.instanceGroup",
+      "compute.beta.instanceGroupManager",
+      "compute.beta.instanceTemplate",
+      "compute.beta.network",
+      "compute.beta.regionAutoscaler",
+      "compute.beta.regionBackendService",
+      "compute.beta.regionInstanceGroup",
+      "compute.beta.regionInstanceGroupManager",
+      "compute.beta.route",
+      "compute.beta.router",
+      "compute.beta.sslCertificate",
+      "compute.beta.subnetwork",
+      "compute.beta.targetHttpProxy",
+      "compute.beta.targetHttpsProxy",
+      "compute.beta.targetInstance",
+      "compute.beta.targetPool",
+      "compute.beta.targetSslProxy",
+      "compute.beta.targetVpnGateway",
+      "compute.beta.urlMap",
+      "compute.beta.vpnTunnel",
+      "compute.beta.xpnHost",
+      "compute.beta.xpnResource",
+      "compute.v1.address",
+      "compute.v1.autoscaler",
+      "compute.v1.backendService",
+      "compute.v1.disk",
+      "compute.v1.firewall",
+      "compute.v1.forwardingRule",
+      "compute.v1.globalAddress",
+      "compute.v1.globalForwardingRule",
+      "compute.v1.healthCheck",
+      "compute.v1.httpHealthCheck",
+      "compute.v1.httpsHealthCheck",
+      "compute.v1.image",
+      "compute.v1.instance",
+      "compute.v1.instanceGroup",
+      "compute.v1.instanceGroupManager",
+      "compute.v1.instanceTemplate",
+      "compute.v1.network",
+      "compute.v1.regionAutoscaler",
+      "compute.v1.regionBackendService",
+      "compute.v1.regionInstanceGroup",
+      "compute.v1.regionInstanceGroupManager",
+      "compute.v1.route",
+      "compute.v1.router",
+      "compute.v1.sslCertificate",
+      "compute.v1.subnetwork",
+      "compute.v1.targetHttpProxy",
+      "compute.v1.targetHttpsProxy",
+      "compute.v1.targetInstance",
+      "compute.v1.targetPool",
+      "compute.v1.targetSslProxy",
+      "compute.v1.targetVpnGateway",
+      "compute.v1.urlMap",
+      "compute.v1.vpnTunnel",
+      "config.yaml",
+      "container.v1.cluster",
+      "container.v1.nodePool",
+      "dataproc.v1.cluster",
+      "deploymentmanager.v2.virtual.enableService",
+      "dns.v1.managedZone",
+      "iam.v1.serviceAccount",
+      "iam.v1.serviceAccounts.key",
+      "logging.v2.metric",
+      "logging.v2.sink",
+      "pubsub.v1.subscription",
+      "pubsub.v1.topic",
+      "runtimeconfig.v1beta1.config",
+      "runtimeconfig.v1beta1.variable",
+      "runtimeconfig.v1beta1.waiter",
+      "spanner.v1.instance",
+      "sqladmin.v1beta4.database",
+      "sqladmin.v1beta4.instance",
+      "sqladmin.v1beta4.user",
+      "storage.v1.bucket",
+      "storage.v1.bucketAccessControl",
+      "storage.v1.defaultObjectAccessControl",
+      "storage.v1.object",
+      "storage.v1.objectAccessControl"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-resource-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/composite-types/creating-composite-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/create-composite-types"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-resource-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/composite-types/creating-composite-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/create-composite-types"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-resource-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/composite-types/creating-composite-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/create-composite-types"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-resource-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/composite-types/creating-composite-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/create-composite-types"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-resource-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/composite-types/creating-composite-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/create-composite-types"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/supported-resource-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/composite-types/creating-composite-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/create-composite-types"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:28.909Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deployment-manager/card.json",
+  "product_name": "Cloud Deployment Manager",
+  "product_slug": "cloud-deployment-manager"
+}

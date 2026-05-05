@@ -1,0 +1,161 @@
+{
+  "feature_name": "Entitlement cancellation_reason field",
+  "feature_slug": "entitlement-cancellation-reason-field",
+  "summary": "The Entitlement resource now includes a cancellation_reason field that explains why an entitlement was cancelled.",
+  "extended_definition": "The Entitlement resource now includes a cancellation_reason field that explains why an entitlement was cancelled.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.accounts",
+      "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements",
+      "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements/list",
+      "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements/reject"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: providers.entitlements \\_|\\_ Google Cloud Marketplace Partners\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements",
+        "source_id": "site-api-reference",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"name\" : string , \"account\" : string , \"provider\" : string , \"product\" : string , \"quoteExternalName\" : string , \"productExternalName\" : string , \"plan\" : string , \"offer\" : string , \"newPendingOffer\" : string , \"newOfferStartTime\" : string , \"offerDuration\" : string , \"newPendingOfferDuration\" : string , \"offerEndTime\" : string , \"newOfferEndTime\" : string , \"newPendingPlan\" : string , \"state\" : enum ( EntitlementState ) , \"inputProperties\" : { object } , \"updateTime\" : string , \"createTime\" : string , \"usageReportingId\" : string , \"messageToUser\" : string , \"consumers\" : [ { object ( Consumer ) } ] , \"subscriptionEndTime\" : string , \"orderId\" : string , \"entitlementBenefitIds\" : [ string ] , \"cancellationReason\" : string } Fields name string Output only.",
+          "If the entitlement is in the state ENTITLEMENT ACTIVE, ENTITLEMENT PENDING CANCELLATION, ENTITLEMENT PENDING PLAN CHANGE, or ENTITLEMENT PENDING PLAN CHANGE APPROVAL, and the current offer doesn't have a specified end date, then this field contains the duration of the current offer.",
+          "Possible values include \"unknown\", \"expired\", \"user-cancelled\", \"account-closed\", \"billing-disabled\" (if the customer has manually disabled billing to their resources), \"user-aborted\", and \"migrated\" (if the entitlement has migrated across products)."
+        ]
+      },
+      {
+        "title": "\"Method: providers.entitlements.list \\_|\\_ Google Cloud Marketplace Partners\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements/list",
+        "source_id": "site-api-reference",
+        "final_score": 135,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If successful, the response body contains data with the following structure: JSON representation { \"entitlements\" : [ { object ( Entitlement ) } ] , \"nextPageToken\" : string } Fields entitlements[] object ( Entitlement ) The list of entitlements in this response. nextPageToken string The token for fetching the next page.",
+          "For example, consumers.project:projects/123456789 finds entitlements with at least one consumer with project field equal to projects/123456789 . changeHistory.new offer retrieves all entitlements that were once associated or are currently active with the offer.",
+          "Authorization requires the following IAM permission on the specified resource parent : commerceprocurement.providerEntitlements.list Query parameters Parameters filter string The filter that can be used to limit the list request."
+        ]
+      },
+      {
+        "title": "\"Method: providers.entitlements.reject \\_|\\_ Google Cloud Marketplace Partners\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements/reject",
+        "source_id": "site-api-reference",
+        "final_score": 135,
+        "relevance": "",
+        "evidence_snippets": [
+          "Authorization requires the following IAM permission on the specified resource name : commerceprocurement.providerEntitlements.reject Request body The request body contains data with the following structure: JSON representation { \"reason\" : string } Fields reason string Free form text string explaining the rejection reason.",
+          "This method is invoked by the provider to reject the creation of the entitlement resource.",
+          "The resource name of the entitlement."
+        ]
+      },
+      {
+        "title": "\"REST Resource: providers.accounts \\_|\\_ Google Cloud Marketplace Partners\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.accounts",
+        "source_id": "site-api-reference",
+        "final_score": 125,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Methods approve Grants an approval on an Account . get Gets a requested Account resource. list Lists Account s that the provider has access to. reject Rejects an approval on an Account . reset Resets an Account and cancels all associated Entitlement s.",
+          "Resource: Account JSON representation AccountState Approval JSON representation State Methods Resource: Account Represents an account that was established by the customer on the service provider's system.",
+          "ACCOUNT ACTIVATION REQUESTED The customer has requested the creation of the account resource, and the provider notification message is dispatched."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "commerceprocurement.providerEntitlements.list",
+      "commerceprocurement.providerEntitlements.reject",
+      "consumers.project",
+      "providers.accounts",
+      "providers.entitlements",
+      "providers.entitlements.approve",
+      "providers.entitlements.approvePlanChange",
+      "providers.entitlements.get",
+      "providers.entitlements.list",
+      "providers.entitlements.patch",
+      "providers.entitlements.reject"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements",
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements/list",
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements/reject",
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.accounts"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements",
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements/list",
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements/reject",
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.accounts"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements",
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements/list",
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements/reject",
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.accounts"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements",
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements/list",
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements/reject",
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.accounts"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements",
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements/list",
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements/reject",
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.accounts"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements",
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements/list",
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements/reject",
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.accounts"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:14.243Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-marketplace-partners/card.json",
+  "product_name": "Google Cloud Marketplace Partners",
+  "product_slug": "google-cloud-marketplace-partners"
+}

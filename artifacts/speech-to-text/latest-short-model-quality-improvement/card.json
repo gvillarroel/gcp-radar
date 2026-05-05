@@ -1,0 +1,94 @@
+{
+  "feature_name": "latest_short model quality improvement",
+  "feature_slug": "latest-short-model-quality-improvement",
+  "summary": "Speech-to-Text now includes substantially improved recognition quality for the latest_short model.",
+  "extended_definition": "Speech-to-Text now includes substantially improved recognition quality for the latest_short model.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/speech-to-text/docs/adaptation-model",
+      "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+      "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/evaluate-model",
+      "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Overview of custom speech models \\_|\\_ Cloud Speech-to-Text \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "source_id": "site-docs-root",
+        "final_score": 280,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported models, languages and regions Custom Speech-to-Text models support the following combinations of models and languages and locales for training: Language BCP-47 Base model German (Germany) de-DE latest long English (Australia) en-AU latest long English (United Kingdom) en-GB latest long English (India) en-IN latest long English (United States) en-US latest long Spanish (United States) es-US latest long Spanish (Spain) es-ES latest long French (Canada) fr-CA latest long French (France) fr-FR latest long Hindi (India) hi-IN latest long Italian (Italy) it-IT latest long Japanese (Japan) ja-JP latest long Korean (South Korea) ko-KR latest long Dutch (Netherlands) nl-NL latest long Portuguese (Brazil) pt-BR latest long Portuguese (Portugal) pt-PT latest long Additionally, to comply with your data residency requirements we offer training and deployment hardware in different regions.",
+          "Dedicated hardware is supported in the following combinations of models and regions: Base model Google Cloud Region Supported tasks latest long us-east1 Training and Deployment latest long europe-west4 Training and Deployment Quota For Custom Speech-to-Text model training, each Google Cloud project should have enough default quota to run multiple training jobs concurrently and is intended to meet the needs of most projects without additional adjustments.",
+          "Following a successful training, you can deploy a Custom Speech-to-Text model in an endpoint with one click, and use it directly through the Cloud Cloud Speech-to-Text V2 API for inference and benchmarking."
+        ]
+      },
+      {
+        "title": "\"Chirp 3 Transcription: Enhanced multilingual accuracy \\_|\\_ Cloud Speech-to-Text\\",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/models/chirp-3",
+        "source_id": "site-docs-root",
+        "final_score": 254,
+        "relevance": "",
+        "evidence_snippets": [
+          "Model Model identifier Chirp 3 chirp 3 API methods Not all recognition methods support the same language availability sets, because Chirp 3 is available in the Speech-to-Text API V2, it supports the following recognition methods: API version API method Support V2 Speech.StreamingRecognize (good for streaming and real-time audio) Supported V2 Speech.Recognize (good for audio shorter than one minute) Supported V2 Speech.BatchRecognize (good for long audio 1 minute to 1 hour in general, but up to 20 minutes with word-level timestamp enabled) Supported Note: You can always find the latest list of supported locales and features for each transcription model, using the locations API as explained here.",
+          "Try Chirp 3 in the Google Cloud console Try in Colab View notebook on GitHub Chirp 3 is the latest generation of Google's multilingual Automatic Speech Recognition (ASR)-specific generative models, designed to meet user needs based on feedback and experience.",
+          "RecognizeResponse : \"\"\"Transcribes an audio file using the Chirp 3 model of Google Cloud Speech-to-Text v2 API, which provides word-level timestamps for each transcribed word."
+        ]
+      },
+      {
+        "title": "\"Improve transcription results with model adaptation \\_|\\_ Cloud Speech-to-Text\\",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/adaptation-model",
+        "source_id": "site-docs-root",
+        "final_score": 249,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, suppose that your audio data often includes the word \"weather.\" When Speech-to-Text encounters the word \"weather,\" you want it to transcribe the word as \"weather\" more often than \"whether.\" In this case, you might use model adaptation to bias Speech-to-Text toward recognizing \"weather.\" Model adaptation is particularly helpful in the following use cases: Improving the accuracy of words and phrases that occur frequently in your audio data.",
+          "AutoDetectDecodingConfig (), adaptation = adaptation , language codes = [ \"en-US\" ], model = \"short\" , ) Prepare the request which includes specifying the recognizer, configuration, and the audio content request = cloud speech .",
+          "AutoDetectDecodingConfig (), adaptation = adaptation , language codes = [ \"en-US\" ], model = \"short\" , ) Prepare the request which includes specifying the recognizer, configuration, and the audio content request = cloud speech ."
+        ]
+      },
+      {
+        "title": "Evaluate models \\_|\\_ Cloud Speech-to-Text \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/evaluate-model",
+        "source_id": "site-docs-root",
+        "final_score": 244,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use the benchmarking functionality of the Cloud Cloud Speech-to-Text Console to measure the accuracy of any of the transcription models used in the Cloud Speech-to-Text V2 API.",
+          "Benchmark the model Using the Custom Speech-to-Text model and your benchmarking dataset to assess the accuracy of your model, follow the Measure and improve accuracy guide .",
+          "Home Documentation AI and ML Cloud Speech-to-Text Send feedback Evaluate models Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:40.059Z",
+  "source_step08_card": "data/step-08/current/products/speech-to-text/card.json",
+  "product_name": "Speech-to-Text",
+  "product_slug": "speech-to-text"
+}

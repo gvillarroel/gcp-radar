@@ -1,0 +1,168 @@
+{
+  "feature_name": "Cloud SQL federated queries",
+  "feature_slug": "cloud-sql-federated-queries",
+  "summary": "BigQuery supports federated queries against Cloud SQL data; BigQuery supports federated queries across BigQuery and Cloud SQL data.",
+  "extended_definition": "BigQuery supports federated queries against Cloud SQL data; BigQuery supports federated queries across BigQuery and Cloud SQL data.",
+  "lifecycle": {
+    "latest_feature_date": "2020-05-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 2,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/access-historical-data",
+      "https://docs.cloud.google.com/bigquery/docs/quickstarts/load-data-console",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-iam"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a dataset and grant access to it \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-iam",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 52,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see the Terraform provider reference documentation . resource \"google bigquery dataset\" \"default\" { dataset id = \"mydataset\" default partition expiration ms = 2592000000 # 30 days default table expiration ms = 31536000000 # 365 days description = \"dataset description\" location = \"US\" max time travel hours = 96 # 4 days labels = { billing group = \"accounting\" , pii = \"sensitive\" } } Update the user, group, or service account provided by the members argument with the appropriate principals for your organization. data \"google iam policy\" \"default\" { binding { role = \"roles/bigquery.dataOwner\" members = [ \"user:raha@altostrat.com\" , ] } binding { role = \"roles/bigquery.admin\" members = [ \"user:raha@altostrat.com\" , ] } binding { role = \"roles/bigquery.user\" members = [ \"group:analysts@altostrat.com\" , ] } binding { role = \"roles/bigquery.dataViewer\" members = [ \"serviceAccount:bqcx-1234567891011-abcd@gcp-sa-bigquery-condel.iam.gserviceaccount.com\" , ] } } resource \"google bigquery dataset iam policy\" \"default\" { dataset id = google bigquery dataset.default.dataset id policy data = data.google iam policy.default.policy data } What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .",
+          "Home Documentation Data analytics BigQuery Samples Create a dataset and grant access to it Stay organized with collections Save and categorize content based on your preferences.",
+          "The following example creates a dataset named mydataset, then uses the google bigquery dataset iam policy resource to grant access to it."
+        ]
+      },
+      {
+        "title": "Load and query data \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/quickstarts/load-data-console",
+        "source_id": "site-docs-reference-2",
+        "final_score": 48,
+        "relevance": "",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to create a dataset, create a table, load data, and query data, ask your administrator to grant you the following IAM roles on the project: Run load jobs and query jobs: BigQuery Job User ( roles/bigquery.jobUser ) Create a dataset, create a table, load data into a table, and query a table: BigQuery Data Editor ( roles/bigquery.dataEditor ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Home Documentation Data analytics BigQuery Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "You have successfully queried a table in a public dataset and then loaded your sample data into BigQuery using the Google Cloud console."
+        ]
+      },
+      {
+        "title": "Access historical data \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/access-historical-data",
+        "source_id": "site-docs-reference-2",
+        "final_score": 46,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For this example, we choose the current time as we're about to delete the table immediately afterwards. / const snapshotEpoch = Date . now (); // Delete the table await bigquery . dataset ( datasetId ) . table ( tableId ) . delete (); console . log ( Table ${ tableId } deleted. ); // Construct the restore-from table ID using a snapshot decorator. const snapshotTableId = ${ tableId } @ ${ snapshotEpoch } ; // Construct and run a copy job. await bigquery . dataset ( datasetId ) . table ( snapshotTableId ) . copy ( bigquery . dataset ( datasetId ). table ( recoveredTableId )); console . log ( Copied data from deleted table ${ tableId } to ${ recoveredTableId } ); } Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "TableId . of ( datasetName , recoverTableName ), TableId . of ( datasetName , snapshotTableId )) . build (); Job job = bigquery . create ( JobInfo . of ( configuration )); job = job . waitFor (); if ( job . isDone () && job . getStatus (). getError () == null ) { System . out . println ( \"Undelete table recovered successfully.\" ); } else { System . out . println ( \"BigQuery was unable to copy the table due to an error: \\n\" + job . getStatus (). getError ()); return ; } } catch ( BigQueryException InterruptedException e ) { System . out . println ( \"Table not found. \\n\" + e . toString ()); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the BigQuery quickstart using client libraries .",
+          "For more information, see Set up authentication for client libraries . // Import the Google Cloud client library const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const bigquery = new BigQuery (); async function undeleteTable () { // Undeletes \"my table to undelete\" from \"my dataset\". / TODO(developer): Uncomment the following lines before running the sample. / // const datasetId = \"my dataset\"; // const tableId = \"my table to undelete\"; // const recoveredTableId = \"my recovered table\"; / TODO(developer): Choose an appropriate snapshot point as epoch milliseconds."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "altostrat.com",
+      "bigquery.admin",
+      "bigquery.dataEditor",
+      "bigquery.dataOwner",
+      "bigquery.dataViewer",
+      "bigquery.jobUser",
+      "bigquery.user",
+      "condel.iam.gserviceaccount.com",
+      "data.google",
+      "dataset.default.dataset",
+      "policy.default.policy"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.admin",
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.dataOwner",
+      "roles/bigquery.dataViewer",
+      "roles/bigquery.jobUser",
+      "roles/bigquery.user"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-iam",
+        "https://docs.cloud.google.com/bigquery/docs/quickstarts/load-data-console",
+        "https://docs.cloud.google.com/bigquery/docs/access-historical-data"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-iam",
+        "https://docs.cloud.google.com/bigquery/docs/quickstarts/load-data-console",
+        "https://docs.cloud.google.com/bigquery/docs/access-historical-data"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-iam",
+        "https://docs.cloud.google.com/bigquery/docs/quickstarts/load-data-console",
+        "https://docs.cloud.google.com/bigquery/docs/access-historical-data"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-iam",
+        "https://docs.cloud.google.com/bigquery/docs/quickstarts/load-data-console",
+        "https://docs.cloud.google.com/bigquery/docs/access-historical-data"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-iam",
+        "https://docs.cloud.google.com/bigquery/docs/quickstarts/load-data-console",
+        "https://docs.cloud.google.com/bigquery/docs/access-historical-data"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-iam",
+        "https://docs.cloud.google.com/bigquery/docs/quickstarts/load-data-console",
+        "https://docs.cloud.google.com/bigquery/docs/access-historical-data"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

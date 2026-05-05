@@ -1,0 +1,106 @@
+{
+  "feature_name": "Streaming Engine resource-based billing",
+  "feature_slug": "streaming-engine-resource-based-billing",
+  "summary": "Dataflow Streaming Engine supports resource-based billing based on the total resources consumed by a job.",
+  "extended_definition": "Dataflow Streaming Engine supports resource-based billing based on the total resources consumed by a job.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/cuds",
+      "https://docs.cloud.google.com/dataflow/docs/guides/kafka-bigquery-performance",
+      "https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Set the pipeline streaming mode \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes",
+        "source_id": "site-docs-reference-2",
+        "final_score": 199,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you set the streaming mode at least once option, Dataflow automatically enables Streaming Engine with resource-based billing .",
+          "Limitations At-least-once streaming mode requires Streaming Engine with resource-based billing .",
+          "Pricing At-least-once mode always uses resource-based billing , where you're billed for the total resources that are consumed by your job."
+        ]
+      },
+      {
+        "title": "Committed use discounts \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/cuds",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dataflow CUDs apply to your spending on the following resources: Worker CPU and memory for streaming jobs Streaming Engine data processed Streaming Engine compute units Data Compute Units (DCUs) for Dataflow Prime streaming jobs Dataflow CUDs don't apply to your spending on the following resources: Worker CPU and memory for batch and FlexRS jobs Dataflow Shuffle data processed Data Compute Units (DCUs) for Dataflow Prime batch jobs Persistent Disk storage GPUs and TPUs Snapshots Confidential VMs For a list of applicable SKUs, see Dataflow CUD Eligible SKUs .",
+          "Resources eligible for Dataflow CUDs Note: While Dataflow Committed Use Discounts (CUDs) don't apply to GPUs and TPUs, you can apply resource-based CUDs for these accelerators by purchasing Compute Engine resource-based commitments with specifically targeted reservations, and using these reservations with Dataflow.",
+          "From the pricing page , see the price in the column labeled 1-year commitment to calculate the approximate hourly commitment cost: Total expenditure in us-central1 = $2.08271 per hour 10 nodes 1 streaming vCPU per node $0.0552 per streaming vCPU per hour = $0.552 per hour 10 nodes 3.75GB per node $0.0028456 per GB per hour = $0.10671 per hour 20 Streaming Engine Compute Units $0.0712 per compute unit per hour = $1.424 per hour Total expenditure in us-west2 = $2.5024 per hour 10 nodes 1 streaming vCPU per node $0.06624 per streaming vCPU per hour = $0.6624 per hour 10 nodes 3.75GB per node $0.00341472 per GB per hour = $0.128 per hour 20 Streaming Engine Compute Units $0.0856 per compute unit per hour = $1.712 per hour Total expenditure across all regions = $4.585 per hour If you expect to spend that minimum of $4.585 per hour continuously for the next year or more, then you can make a commitment for that amount."
+        ]
+      },
+      {
+        "title": "\"Performance characteristics of Kafka to BigQuery pipelines \\_|\\_ Cloud Dataflow\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/kafka-bigquery-performance",
+        "source_id": "site-docs-root-2",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Setting Value Worker machine type e2-standard-2 Worker machine vCPUs 2 Worker machine RAM 8 GB Worker machine Persistent Disk Standard Persistent Disk (HDD), 30 GB Maximum workers 120 Streaming Engine Yes Horizontal autoscaling Yes Billing model Resource-based billing Storage Write API enabled?",
+          "Based on the benchmark results for a 1 GiB/s pipeline, you can estimate the resource requirements as follows: Scaling Factor: (100 MiB/s) / (1 GiB/s) = 0.1 Projected worker nodes: 63 workers × 0.1 = 6.3 workers Projected number of Streaming Engine Compute Units per hour: 58 × 0.1 = 5.8 units per hour This value should only be used as an initial estimate.",
+          "BQ TABLE NAME dlq\" , \\ numStorageWriteApiStreams = 400 At-least-once mode gcloud dataflow flex-template run JOB NAME \\ --project = PROJECT ID \\ --template-file-gcs-location = gs://dataflow-templates-us-central1/latest/flex/Kafka to BigQuery Flex \\ --enable-streaming-engine \\ --additional-experiments = streaming mode at least once \\ --parameters \\ readBootstrapServerAndTopic = \" KAFKA BOOTSTRAP ADDRESS ; KAFKA TOPIC \" , \\ kafkaReadAuthenticationMode = APPLICATION DEFAULT CREDENTIALS, \\ messageFormat = JSON, \\ writeMode = SINGLE TABLE NAME, \\ outputTableSpec = \" PROJECT ID : BQ DATASET ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes",
+        "https://docs.cloud.google.com/dataflow/docs/cuds",
+        "https://docs.cloud.google.com/dataflow/docs/guides/kafka-bigquery-performance"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes",
+        "https://docs.cloud.google.com/dataflow/docs/cuds",
+        "https://docs.cloud.google.com/dataflow/docs/guides/kafka-bigquery-performance"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes",
+        "https://docs.cloud.google.com/dataflow/docs/cuds",
+        "https://docs.cloud.google.com/dataflow/docs/guides/kafka-bigquery-performance"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:53.762Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow"
+}

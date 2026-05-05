@@ -1,0 +1,134 @@
+{
+  "feature_name": "Versions and environments",
+  "feature_slug": "versions-and-environments",
+  "summary": "Dialogflow supports versions and environments for managing agent releases; Versions and Environments let you manage agent versions and deployment environments.",
+  "extended_definition": "Dialogflow supports versions and environments for managing agent releases; Versions and Environments let you manage agent versions and deployment environments.",
+  "lifecycle": {
+    "latest_feature_date": "2020-02-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/continuous-tests",
+      "https://docs.cloud.google.com/dialogflow/es/docs/agents-validation",
+      "https://docs.cloud.google.com/dialogflow/es/docs/agents-versions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Versions and environments \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-versions",
+        "source_id": "site-iam-reference",
+        "final_score": 47,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Limitations The following limitations apply: Maximum number of environments per agent: 10 Maximum number of versions per agent: 1000 Previous arrow back Prebuilt agents Next Multilingual agents arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For example, the following endpoint uses the \"development\" environment with an unspecified user: \"https://dialogflow.googleapis.com/v2/projects/my-project-id/agent/environments/development/users/-/sessions/123456789:detectIntent\" Environment-specific settings Fulfillment and text-to-speech are configured by the environment, so the agent will use the environment's settings for these features.",
+          "Home Documentation AI and ML Dialogflow Dialogflow ES Send feedback Versions and environments Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Continuous tests and deployment \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/continuous-tests",
+        "source_id": "site-docs-root",
+        "final_score": 43,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Go to the Environment API reference Select a protocol and version for the Environment reference: Protocol V3 V3beta1 REST Environment resource Environment resource RPC Environment interface Environment interface C++ EnvironmentsClient Not available C# EnvironmentsClient Not available Go EnvironmentsClient Not available Java EnvironmentsClient EnvironmentsClient Node.js EnvironmentsClient EnvironmentsClient PHP Not available Not available Python EnvironmentsClient EnvironmentsClient Ruby Not available Not available Close Previous arrow back Experiments Next Conversation profiles arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Send feedback Continuous tests and deployment Stay organized with collections Save and categorize content based on your preferences.",
+          "The continuous tests feature automatically runs a set of test cases configured for an environment to verify the intended behavior of the flow versions in that environment."
+        ]
+      },
+      {
+        "title": "Agent validation \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-validation",
+        "source_id": "site-iam-reference",
+        "final_score": 41,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Validation results for versions and environments When viewing versions and environments , each agent version may have unique validation errors.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT ID \" } Invoke-WebRequest -Method GET -Headers $headers ` -Uri \"https://dialogflow.googleapis.com/v2/projects/ PROJECT ID /agent/validationResult?languageCode=en\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"validationErrors\": [ { \"severity\": \"ERROR\", \"entries\": [ \"projects/my-project/agent/intents/58b44b2d-4967-4a81-b017-12623dcd5d28/parameters/bf6fdf55-b862-4101-b5b1-36f1423629d0\" ], \"errorMessage\": \"Parameter 'test' has an empty value.\" }, { \"severity\": \"WARNING\", \"entries\": [ \"projects/my-project/agent/intents/271e3808-3c91-4e6b-89e8-47951abcec8d\" ], \"errorMessage\": \"Intent 'app.current.update' does not have enough unique training phrases.",
+          "Before using any of the request data, make the following replacements: PROJECT ID : your Google Cloud project ID HTTP method and URL: GET https://dialogflow.googleapis.com/v2/projects/ PROJECT ID /agent/validationResult?languageCode=en To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.current.update",
+      "dialogflow.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-versions",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-validation",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/continuous-tests"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-versions",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-validation",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/continuous-tests"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-versions",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-validation",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/continuous-tests"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-versions",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-validation",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/continuous-tests"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-versions",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-validation",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/continuous-tests"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:58.946Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

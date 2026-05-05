@@ -1,0 +1,117 @@
+{
+  "feature_name": "Push-based plugin ingestion for API hub plugins",
+  "feature_slug": "push-based-plugin-ingestion-for-api-hub-plugins",
+  "summary": "Adds support for push-based plugin ingestion as the default synchronization method for supported Apigee plugin types.",
+  "extended_definition": "Adds support for push-based plugin ingestion as the default synchronization method for supported Apigee plugin types.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies",
+      "https://docs.cloud.google.com/apigee/docs/apihub/create-custom-plugins",
+      "https://docs.cloud.google.com/apigee/docs/apihub/curations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Auto-register APIs from Google Cloud projects \\_|\\_ Apigee \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies",
+        "source_id": "site-docs-reference-2",
+        "final_score": 138,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For push-based plugins, data ingestion is automatically triggered by changes in the source.",
+          "Supported Google Cloud services Auto-registration is currently supported for the following Google Cloud services: Google Cloud service Ingested data Apigee and Apigee hybrid Deployed API proxies and their associated OpenAPI specifications API Gateway Gateway definitions and managed endpoints Project associations and plugins Deprecated: Pull-based ingestion is no longer supported for Apigee and Apigee hybrid plugins as of July 31, 2025 .",
+          "For existing projects that have pull-based Apigee and hybrid plugins configured, these plugins will continue to function and will be automatically migrated to the push-based type starting August, 2025 ."
+        ]
+      },
+      {
+        "title": "Manage custom plugins \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/create-custom-plugins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 132,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application development Apigee Guides Send feedback Manage custom plugins Stay organized with collections Save and categorize content based on your preferences.",
+          "REST You can create a custom plugin using the Create Plugin API : Custom plugin without a hosting service: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -d '{ \"display name\": \" PLUGIN DISPLAY NAME \", \"description\": \" PLUGIN DESCRIPTION \", \"actions config\": [ { \"id\": \" PLUGIN ACTION ID \", \"display name\": \" PLUGIN ACTION DISPLAY NAME \", \"description\": \" PLUGIN ACTION DESCRIPTION \", \"trigger mode\": \" PLUGIN ACTION TRIGGER MODE \" } ], \"plugin category\": \" PLUGIN CATEGORY \", \"ownership type\": \"USER OWNED\" }' \\ \"https://apihub.googleapis.com/v1/projects/ PROJECT ID /locations/ HUB LOCATION /plugins?plugin id= PLUGIN ID \" Example curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -d '{ \"display name\": \"Nebula Connect\", \"description\": \"Nebula Connect plugin for syncing metadata via gRPC.\", \"actions config\": [ { \"id\": \"sync-metadata-core\", \"display name\": \"Sync Core Metadata\", \"description\": \"Initiates synchronization of core API metadata.\", \"trigger mode\": \"API HUB SCHEDULE TRIGGER\" } ], \"plugin category\": \"API GATEWAY\", \"ownership type\": \"USER OWNED\" }' \\ \"https://apihub.googleapis.com/v1/projects/test-project/locations/us-west1/plugins?plugin id=nebula-connect-v1\" Custom plugin with a hosting service: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -d '{ \"display name\": \" PLUGIN DISPLAY NAME \", \"description\": \" PLUGIN DESCRIPTION \", \"actions config\": [ { \"id\": \" PLUGIN ACTION ID \", \"display name\": \" PLUGIN ACTION DISPLAY NAME \", \"description\": \" PLUGIN ACTION DESCRIPTION \", \"trigger mode\": \" PLUGIN ACTION TRIGGER MODE \" } ], \"plugin category\": \" PLUGIN CATEGORY \", \"hosting service\": { \"service uri\": \" PLUGIN HOSTING SERVICE URI \" }, \"ownership type\": \"USER OWNED\" }' \\ \"https://apihub.googleapis.com/v1/projects/ PROJECT ID /locations/ HUB LOCATION /plugins?plugin id= PLUGIN ID \" Example curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -d '{ \"display name\": \"Nebula Connect\", \"description\": \"Nebula Connect plugin for syncing metadata via gRPC.\", \"actions config\": [ { \"id\": \"sync-metadata-core\", \"display name\": \"Sync Core Metadata\", \"description\": \"Initiates synchronization of core API metadata.\", \"trigger mode\": \"API HUB SCHEDULE TRIGGER\" } ], \"plugin category\": \"API GATEWAY\", \"hosting service\": { \"service uri\": \"https://nebula-endpoints-987654321098.us-west1.run.app\" }, \"ownership type\": \"USER OWNED\" }' \\ \"https://apihub.googleapis.com/v1/projects/test-project/locations/us-west1/plugins?plugin id=nebula-connect-v1\" Replace the following: PLUGIN DISPLAY NAME : The display name of the plugin.",
+          "List custom plugins REST API To list all the custom plugins in your project, do the following: Send a GET request to the plugins resource: curl -X GET -H \"Authorization: Bearer $(gcloud auth print-access-token)\" https://apihub.googleapis.com/v1/projects/ PROJECT ID /locations/ HUB LOCATION /plugins Replace the following: PROJECT ID : The name of your API hub host project."
+        ]
+      },
+      {
+        "title": "Curations overview \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/curations",
+        "source_id": "site-docs-reference-2",
+        "final_score": 94,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "When plugin instances contain APIs with the same display name from multiple sources, the default curation logic consolidates them into a single API entity within API hub.",
+          "Default curation Default curation is the basic level of curation offered in API hub and is auto-selected during the plugin instance creation process.",
+          "If both projects have an API named Orders , the default curation process recognizes these as the same API based on their display name."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apihub.googleapis.com",
+      "west1.run.app"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies",
+        "https://docs.cloud.google.com/apigee/docs/apihub/create-custom-plugins",
+        "https://docs.cloud.google.com/apigee/docs/apihub/curations"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies",
+        "https://docs.cloud.google.com/apigee/docs/apihub/create-custom-plugins",
+        "https://docs.cloud.google.com/apigee/docs/apihub/curations"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies",
+        "https://docs.cloud.google.com/apigee/docs/apihub/create-custom-plugins",
+        "https://docs.cloud.google.com/apigee/docs/apihub/curations"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies",
+        "https://docs.cloud.google.com/apigee/docs/apihub/create-custom-plugins",
+        "https://docs.cloud.google.com/apigee/docs/apihub/curations"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:05.893Z",
+  "source_step08_card": "data/step-08/current/products/apigee-api-hub/card.json",
+  "product_name": "Apigee API hub",
+  "product_slug": "apigee-api-hub"
+}

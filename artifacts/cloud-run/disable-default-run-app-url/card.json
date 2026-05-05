@@ -1,0 +1,146 @@
+{
+  "feature_name": "Disable default run.app URL",
+  "feature_slug": "disable-default-run-app-url",
+  "summary": "Disabling the default run.app URL lets you turn off the default Cloud Run service URL.",
+  "extended_definition": "Disabling the default run.app URL lets you turn off the default Cloud Run service URL.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/mapping-custom-domains",
+      "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+      "https://docs.cloud.google.com/run/docs/triggering/https-request"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Invoke with an HTTPS Request \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/triggering/https-request",
+        "source_id": "site-docs-root",
+        "final_score": 112,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can disable these default run.app URLs .",
+          "The non-deterministic URL for a Cloud Run service has the format https://[ TAG ---] SERVICE IDENTIFIER .run.app , where TAG refers to the optional traffic tag for the revision that you are requesting, and SERVICE IDENTIFIER is a stable and unique identifier for a Cloud Run service.",
+          "REGION .run.app where: TAG is the optional traffic tag for the revision that you are requesting."
+        ]
+      },
+      {
+        "title": "Configure IAP for Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "source_id": "site-docs-root",
+        "final_score": 108,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "By enabling IAP on Cloud Run directly, you can secure traffic with a single click from all ingress paths, including default run.app URLs and load balancers.",
+          "To retrieve the current IAM policy data, add the following to a google cloud run v2 service iam policy resource in your Terraform configuration. data \"google cloud run v2 service iam policy\" \"policy\" { project = google cloud run v2 service.default.project location = google cloud run v2 service.default.location name = google cloud run v2 service.default.name } Manage user or group access By default, IAP for Cloud Run uses a Google-managed OAuth client that lets you add in-organization identities with an email address associated with a user.",
+          "Add iap enabled = true to a google cloud run v2 service resource in your Terraform configuration to enable IAP on the service: resource \"google cloud run v2 service\" \"default\" { name = \"cloudrun-iap-service\" location = \"europe-west1\" ingress = \"INGRESS TRAFFIC ALL\" iap enabled = true template { containers { image = \"us-docker.pkg.dev/cloudrun/container/hello\" } } } Add the following to grant the roles/run.invoker role to the IAP service agent. resource \"google cloud run v2 service iam member\" \"iap invoker\" { project = google cloud run v2 service.default.project location = google cloud run v2 service.default.location name = google cloud run v2 service.default.name role = \"roles/run.invoker\" member = \"serviceAccount:service-PROJECT NUMBER@gcp-sa-iap.iam.gserviceaccount.com\" } Replace PROJECT NUMBER with your project number."
+        ]
+      },
+      {
+        "title": "Mapping custom domains \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/mapping-custom-domains",
+        "source_id": "site-docs-root",
+        "final_score": 100,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Audience is usually the full URL of the target service, which by default for Cloud Run services is a generated URL ending in run.app .",
+          "To create a Cloud Run service, add the following to your existing main.tf file: resource \"google cloud run v2 service\" \"default\" { name = \"custom-domain\" # Replace with your service name location = \"us-central1\" deletion protection = false # set to true to prevent destruction of the resource template { containers { image = \"us-docker.pkg.dev/cloudrun/container/hello\" # Replace with your container image } } } Replace: custom-domain with your Cloud Run service name. us-docker.pkg.dev/cloudrun/container/hello with a reference to your container image.",
+          "Map your Cloud Run service to the custom domain: data \"google project\" \"project\" {} resource \"google cloud run domain mapping\" \"default\" { name = \"verified-domain.com\" location = google cloud run v2 service.default.location metadata { namespace = data.google project.project.project id } spec { route name = google cloud run v2 service.default.name } } Replace verified-domain.com with your custom verified domain, for example, example.com or subdomain.example.com ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.google",
+      "docker.pkg.dev",
+      "domain.com",
+      "example.com",
+      "iap.iam.gserviceaccount.com",
+      "main.tf",
+      "project.project.project",
+      "run.app",
+      "run.invoker",
+      "service.default.location",
+      "service.default.name",
+      "service.default.project",
+      "subdomain.example.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/run.invoker"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/triggering/https-request",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/triggering/https-request",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/triggering/https-request",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/triggering/https-request",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/triggering/https-request",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/triggering/https-request",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:35.569Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run"
+}

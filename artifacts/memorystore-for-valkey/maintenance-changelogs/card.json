@@ -1,0 +1,178 @@
+{
+  "feature_name": "Maintenance changelogs",
+  "feature_slug": "maintenance-changelogs",
+  "summary": "Memorystore for Valkey now provides maintenance changelogs with details about updates in new maintenance versions.",
+  "extended_definition": "Memorystore for Valkey now provides maintenance changelogs with details about updates in new maintenance versions.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/valkey/about-maintenance",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/ha-and-replicas",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About maintenance \\_|\\_ Memorystore for Valkey \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/about-maintenance",
+        "source_id": "site-iam-reference",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Default maintenance windows By default, Memorystore updates your instance in the following windows according to your instance's time zone: Weekday window (Monday to Friday): 10 PM to 6 AM Weekend window: Friday, 10 PM to Monday, 6 AM Gradual deployment strategy Memorystore for Valkey performs deployments with a progressively increasing scope, and at a rate that allows for failure detection early enough to mitigate any impact and establish stability confidence.",
+          "Memorystore for Valkey achieves zero-downtime maintenance by using the request redirection capabilities of the OSS Valkey instance protocol with the following Memorystore mechanisms: A coordinated failover without any loss of data.",
+          "Caution: Although Memorystore for Valkey doesn't provide you with the option to reschedule maintenance for multiple instances at once, you can reschedule maintenance in bulk programmatically."
+        ]
+      },
+      {
+        "title": "Best practices for Memorystore for Valkey \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "source_id": "site-docs-root",
+        "final_score": 231,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Using these commands might result in the following performance issues: High latency and client timeouts Memory pressure caused by commands that increase memory usage Data loss during node replication and synchronization because the Valkey main thread is blocked Starved health checks, observability, and replication The following table lists examples of Valkey commands that are resource-intensive and provides you with alternatives that are resource-efficient.",
+          "Home Documentation Databases Memorystore Memorystore for Valkey Guides Send feedback Best practices for Memorystore for Valkey Stay organized with collections Save and categorize content based on your preferences.",
+          "This can cause a snowball effect because Memorystore for Valkey attempts to re-establish timed-out connections, which increases the resources it uses to establish connections."
+        ]
+      },
+      {
+        "title": "\"High availability and replicas \\_|\\_ Memorystore for Valkey \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/ha-and-replicas",
+        "source_id": "site-docs-root",
+        "final_score": 213,
+        "relevance": "",
+        "evidence_snippets": [
+          "Using recommended best practices allows your client to handle the following items for your instance automatically and without any downtime: The role (automatic failovers) The endpoint (node replacement) Cluster Mode Enabled-related slot assignment changes (consumer scale out and in) Replicas A highly available Memorystore for Valkey instance is a regional resource.",
+          "Home Documentation Databases Memorystore Memorystore for Valkey Guides Send feedback High availability and replicas Stay organized with collections Save and categorize content based on your preferences.",
+          "This page explains how Memorystore for Valkey's architecture supports and provides high availability (HA)."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: memorystore.googleapis.com \\_|\\_ Memorystore for Valkey\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+        "source_id": "site-api-reference",
+        "final_score": 211,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Databases Memorystore Memorystore for Valkey Reference Send feedback MCP Tools Reference: memorystore.googleapis.com Stay organized with collections Save and categorize content based on your preferences.",
+          "If not provided, the maintenance event will be performed based on Memorystore internal rollout schedule. maintenanceSchedule object ( MaintenanceSchedule ) Output only.",
+          "Tool: create instance Create a Memorystore for Valkey instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "memorystore.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:26.694Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-valkey/card.json",
+  "product_name": "Memorystore for Valkey",
+  "product_slug": "memorystore-for-valkey"
+}

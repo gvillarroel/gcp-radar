@@ -1,0 +1,157 @@
+{
+  "feature_name": "Saved queries in Cloud SQL Studio",
+  "feature_slug": "saved-queries-in-cloud-sql-studio",
+  "summary": "This feature lets you save and manage SQL queries in Cloud SQL Studio.",
+  "extended_definition": "This feature lets you save and manage SQL queries in Cloud SQL Studio.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+      "https://docs.cloud.google.com/sql/docs/mysql/quotas",
+      "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Build context sets using Gemini CLI \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 115,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The context set file similar to my-cluster-psc-primary postgres templates 20251104111122.json is saved in the directory where you ran the commands.",
+          "The context set file similar to my-cluster-psc-primary postgres templates 20251104111122.json is saved in the directory where you ran the commands.",
+          "The context set file similar to my-cluster-psc-primary postgres templates 20251104111122.json is saved in the directory where you ran the commands."
+        ]
+      },
+      {
+        "title": "\"Use the Cloud SQL remote MCP server \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before you begin Required roles To get the permissions that you need to use the Cloud SQL remote MCP server, ask your administrator to grant you the following IAM roles on the project where you want to use the remote Cloud SQL MCP server: Make MCP tool calls in a project: MCP Tool User ( roles/mcp.toolUser ) Create an OAuth client ID: OAuth Config Editor ( roles/oauthconfig.editor ) Create, clone, or update a Cloud SQL instance: Cloud SQL Admin ( roles/cloudsql.admin ) Create or update a Cloud SQL user: Cloud SQL Admin ( roles/cloudsql.admin ) Execute SQL queries in Cloud SQL: Cloud SQL Admin ( roles/cloudsql.admin ) Cloud SQL Studio User ( roles/cloudsql.StudioUser ) Get a Cloud SQL instance or list all Cloud SQL instances in a project: Cloud SQL Viewer ( roles/cloudsql.viewer ) Import data into a Cloud SQL instance: Cloud SQL Admin ( roles/cloudsql.admin ) Storage Admin ( roles/storage.admin ) List Cloud SQL users: Cloud SQL Viewer ( roles/cloudsql.viewer ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to use the Cloud SQL remote MCP server: Make MCP tool calls: mcp.tools.call Clone a Cloud SQL instance: cloudsql.instances.clone Create a Cloud SQL instance: cloudsql.instances.create Create a Cloud SQL user: cloudsql.users.create Execute SQL queries on a Cloud SQL instance: cloudsql.instances.executeSql cloudsql.instances.login Get a Cloud SQL instance: cloudsql.instances.get Get a Cloud SQL instance operation: cloudsql.instances.get Import data to a Cloud SQL instance: cloudsql.instances.import List Cloud SQL instances in a project: cloudsql.instances.list List Cloud SQL users: cloudsql.users.list Update a Cloud SQL instance: cloudsql.instances.update Update a Cloud SQL user: cloudsql.users.update You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Save the following content in your extension file: { \"name\" : \" EXT NAME \" , \"version\" : \"1.0.0\" , \"mcpServers\" : { \"Cloud SQL MCP Server\" : { \"httpUrl\" : \"https://sqladmin.googleapis.com/mcp\" , \"authProviderType\" : \"google credentials\" , \"oauth\" : { \"scopes\" : [ \"https://www.googleapis.com/auth/cloud-platform\" ] }, \"timeout\" : 30000 , \"headers\" : { \"x-goog-user-project\" : \" PROJECT ID \" } } } } Save the extensions file."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/quotas",
+        "source_id": "site-docs-root",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "Saved queries limits Preview — Saved queries This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "Value Limit Maximum number of saved queries per project (including saved queries for other Google Cloud products) 10,000 Maximum size for each query 1 MiB Cloud SQL storage limits Dedicated core: Up to 64 TB.",
+          "Home Documentation Databases Cloud SQL MySQL Resources Send feedback Quotas and limits Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.admin",
+      "cloudsql.instances.clone",
+      "cloudsql.instances.create",
+      "cloudsql.instances.executeSql",
+      "cloudsql.instances.get",
+      "cloudsql.instances.import",
+      "cloudsql.instances.list",
+      "cloudsql.instances.login",
+      "cloudsql.instances.update",
+      "cloudsql.StudioUser",
+      "cloudsql.users.create",
+      "cloudsql.users.list",
+      "cloudsql.users.update",
+      "cloudsql.viewer",
+      "mcp.tools.call",
+      "mcp.toolUser",
+      "oauthconfig.editor",
+      "sqladmin.googleapis.com",
+      "storage.admin"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudsql.admin",
+      "roles/cloudsql.StudioUser",
+      "roles/cloudsql.viewer",
+      "roles/mcp.toolUser",
+      "roles/oauthconfig.editor",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:38.345Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql"
+}

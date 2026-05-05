@@ -1,0 +1,197 @@
+{
+  "feature_name": "Vertex AI pipeline run caching",
+  "feature_slug": "vertex-ai-pipeline-run-caching",
+  "summary": "Vertex AI added the enable_caching option in the Google Cloud console to configure pipeline run caching.",
+  "extended_definition": "Vertex AI added the enable_caching option in the Google Cloud console to configure pipeline run caching.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule",
+        "source_id": "site-docs-reference",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "This property is managed by clients (such as Vertex AI Pipelines) and the system does not prescribe or check the validity of state transitions. etag string An eTag used to perform consistent read-modify-write updates.",
+          "This property is managed by clients (such as Vertex AI Pipelines) and the system does not prescribe or check the validity of state transitions. etag string An eTag used to perform consistent read-modify-write updates.",
+          "This property is managed by clients (such as Vertex AI Pipelines), and the system does not prescribe or check the validity of state transitions. schemaTitle string The title of the schema describing the metadata."
+        ]
+      },
+      {
+        "title": "\"Build a pipeline for continuous model training \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "PipelineJob ( display name = \"triggered custom regression evaluation\" , template path = TEMPLATE URI , parameter values = parameters , pipeline root = BUCKET URI , enable caching = False ) Run the pipeline job job . run () The job takes about 30 minutes to complete.",
+          "Use the in operator to verify subject is present. print ( f \"Subject: { cloudevent [ 'subject' ] } \" ) Print out details from the protoPayload This field encapsulates a Cloud Audit Logging entry See https://cloud.google.com/logging/docs/audit#audit log entry structure payload = cloudevent . data . get ( \"protoPayload\" ) if payload : print ( f \"API method: { payload . get ( 'methodName' ) } \" ) print ( f \"Resource name: { payload . get ( 'resourceName' ) } \" ) print ( f \"Principal: { payload . get ( 'authenticationInfo' , dict ()) . get ( 'principalEmail' ) } \" ) row count = payload . get ( 'metadata' , dict ()) . get ( 'tableDataChange' , dict ()) . get ( 'insertedRowsCount' ) print ( f \"No. of rows: { row count } !!\" ) if row count : if int ( row count ) > 0 : print ( \"Pipeline trigger Condition met !!\" ) submit pipeline job () else : print ( \"No pipeline triggered !!!\" ) def submit pipeline job (): PROJECT ID = ' PROJECT ID ' REGION = ' REGION ' BUCKET NAME = \" BUCKET NAME \" DATASET NAME = \"mlops\" TABLE NAME = \"chicago\" base output dir = BUCKET NAME BUCKET URI = \"gs:// {} \" . format ( BUCKET NAME ) PIPELINE ROOT = \" {} /pipeline root/chicago-taxi-pipe\" . format ( BUCKET URI ) PIPELINE NAME = \"vertex-mlops-pipeline-tutorial\" EXPERIMENT NAME = PIPELINE NAME + \"-experiment\" REPO NAME = \"mlops\" TEMPLATE NAME = \"custom-model-training-evaluation-pipeline\" TRAINING JOB DISPLAY NAME = \"taxifare-prediction-training-job\" worker pool specs = [{ \"machine spec\" : { \"machine type\" : \"e2-highmem-2\" }, \"replica count\" : 1 , \"python package spec\" :{ \"executor image uri\" : \"us-docker.pkg.dev/vertex-ai/training/sklearn-cpu.1-0:latest\" , \"package uris\" : [ f \" { BUCKET URI } /trainer-0.1.tar.gz\" ], \"python module\" : \"trainer.task\" , \"args\" :[ \"--project-id\" , PROJECT ID , \"--training-dir\" , f \"/gcs/ { BUCKET NAME } \" , \"--bq-source\" , f \" { PROJECT ID } . { DATASET NAME } . { TABLE NAME } \" ] }, }] parameters = { \"project\" : PROJECT ID , \"location\" : REGION , \"training job display name\" : \"taxifare-prediction-training-job\" , \"worker pool specs\" : worker pool specs , \"base output dir\" : BUCKET URI , \"prediction container uri\" : \"us-docker.pkg.dev/vertex-ai/prediction/sklearn-cpu.1-0:latest\" , \"model display name\" : \"taxifare-prediction-model\" , \"batch prediction job display name\" : \"taxifare-prediction-batch-job\" , \"target field name\" : \"fare\" , \"test data gcs uri\" : [ f \" { BUCKET URI } /test no target.csv\" ], \"ground truth gcs source\" : [ f \" { BUCKET URI } /test.csv\" ], \"batch predictions gcs prefix\" : f \" { BUCKET URI } /batch predict output\" , \"existing model\" : False } TEMPLATE URI = f \"https:// { REGION } -kfp.pkg.dev/ { PROJECT ID } / { REPO NAME } / { TEMPLATE NAME } /latest\" print ( \"TEMPLATE URI: \" , TEMPLATE URI ) request body = { \"name\" : PIPELINE NAME , \"displayName\" : PIPELINE NAME , \"runtimeConfig\" :{ \"gcsOutputDirectory\" : PIPELINE ROOT , \"parameterValues\" : parameters , }, \"templateUri\" : TEMPLATE URI } pipeline url = \"https://us-central1-aiplatform.googleapis.com/v1/projects/ {} /locations/ {} /pipelineJobs\" . format ( PROJECT ID , REGION ) creds , project = google . auth . default () auth req = google . auth . transport . requests .",
+          "Grant roles to your Google Account: ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/bigquery.admin ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/aiplatform.user ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/storage.admin ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/pubsub.editor ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/cloudfunctions.admin ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/logging.viewer ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/logging.configWriter ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/iam.serviceAccountUser ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/eventarc.admin ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/aiplatform.colabEnterpriseUser ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/artifactregistry.admin ! gcloud projects add-iam-policy-binding PROJECT ID --member=\"user:\" EMAIL ADDRESS \"\" --role=roles/serviceusage.serviceUsageAdmin Enable the following APIs Artifact Registry API BigQuery API Cloud Build API Cloud Functions API Cloud Logging API Pub/Sub API Cloud Run Admin API Cloud Storage API Eventarc API Service Usage API Vertex AI API ! gcloud services enable artifactregistry.googleapis.com bigquery.googleapis.com cloudbuild.googleapis.com cloudfunctions.googleapis.com logging.googleapis.com pubsub.googleapis.com run.googleapis.com storage-component.googleapis.com eventarc.googleapis.com serviceusage.googleapis.com aiplatform.googleapis.com Grant roles to your project's service accounts: See the names of your service accounts ! gcloud iam service-accounts list Note the name of your Compute service agent."
+        ]
+      },
+      {
+        "title": "Custom training notebook tutorials \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks",
+        "source_id": "site-docs-reference-2",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "Tutorial steps Prepare your custom training code and load your training code as a Python package to a prebuilt container Create and run a custom training job that enables Profiler View the Profiler dashboard to debug your model training performance Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI TensorBoard Vertex AI Pipelines Vertex AI TensorBoard integration with Vertex AI Pipelines .",
+          "Compile and execute the KFP pipeline in Vertex AI Pipelines with Vertex AI TensorBoard enabled for near real time monitoring.",
+          "List of notebooks Select a service AutoML BigQuery BigQuery ML Custom training Image Ray on Vertex AI Tabular Text Vector Search Vertex AI Experiments Vertex AI Feature Store Vertex AI Inference Vertex AI model evaluation Vertex AI Model Monitoring Vertex AI Model Registry Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex AI Workbench Vertex Explainable AI Vertex ML Metadata Services Description Open in Classification for tabular data AutoML tabular training and prediction ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.colabEnterpriseUser",
+      "aiplatform.googleapis.com",
+      "aiplatform.user",
+      "artifactregistry.admin",
+      "artifactregistry.googleapis.com",
+      "bigquery.admin",
+      "bigquery.googleapis.com",
+      "cloudbuild.googleapis.com",
+      "cloudfunctions.admin",
+      "cloudfunctions.googleapis.com",
+      "component.googleapis.com",
+      "components.types",
+      "components.v1.batch",
+      "components.v1.custom",
+      "components.v1.endpoint",
+      "components.v1.model",
+      "components.v1.vertex",
+      "cpu.1",
+      "docker.pkg.dev",
+      "eventarc.admin",
+      "eventarc.googleapis.com",
+      "iam.serviceAccountUser",
+      "kfp.dsl",
+      "kfp.pkg.dev",
+      "logging.configWriter",
+      "logging.googleapis.com",
+      "logging.viewer",
+      "pubsub.editor",
+      "pubsub.googleapis.com",
+      "run.googleapis.com",
+      "serviceusage.googleapis.com",
+      "serviceusage.serviceUsageAdmin",
+      "storage.admin",
+      "tar.gz",
+      "target.csv",
+      "test.csv",
+      "trainer.task"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.colabEnterpriseUser",
+      "roles/aiplatform.user",
+      "roles/artifactregistry.admin",
+      "roles/bigquery.admin",
+      "roles/cloudfunctions.admin",
+      "roles/eventarc.admin",
+      "roles/iam.serviceAccountUser",
+      "roles/logging.configWriter",
+      "roles/logging.viewer",
+      "roles/pubsub.editor",
+      "roles/serviceusage.serviceUsageAdmin",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:42.435Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai"
+}

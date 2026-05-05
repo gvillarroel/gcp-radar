@@ -1,0 +1,154 @@
+{
+  "feature_name": "Private Service Connect interface",
+  "feature_slug": "private-service-connect-interface",
+  "summary": "Agent Engine can be deployed in a private VPC environment using a Private Service Connect interface.",
+  "extended_definition": "Agent Engine can be deployed in a private VPC environment using a Private Service Connect interface.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deploy/overview",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Generative AI glossary \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "source_id": "site-docs-root",
+        "final_score": 177,
+        "relevance": "",
+        "evidence_snippets": [
+          "It's an execution instance of your ML pipeline definition, which is defined as a set of ML tasks interconnected by input-output dependencies. pipeline run One or more Vertex PipelineJobs can be associated with an experiment where each PipelineJob is represented as a single run.",
+          "The artifacts of the run are inferred from artifacts produced by that PipelineJob. private services access Private services access is a private connection between your Virtual Private Cloud (VPC) network and networks owned by Google or third-party service providers.",
+          "Agents can be used in various applications, such as natural language processing, machine learning, and robotics."
+        ]
+      },
+      {
+        "title": "\"Deploy and inference Gemma using Model Garden and Vertex AI GPU-backed endpoints\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "To check the deployment status, you can try one of the following methods: 1) Look for endpoint ENDPOINT DISPLAY NAME at the [Vertex AI] -> [Online prediction] tab in Cloud Console 2) Use gcloud ai operations describe OPERATION ID --region= LOCATION to find the status of the deployment long-running operation To see details about your deployment, run the gcloud ai endpoints list --list-model-garden-endpoints-only command: gcloud ai endpoints list --list-model-garden-endpoints-only \\ --region = LOCATION ID Replace LOCATION ID with the region where you deployed the model.",
+          "Note: You can only delete the endpoint after all models have been undeployed from it.",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"hugging face model id\": \" MODEL ID \", \"hugging face access token\": \" ACCESS TOKEN \", \"model config\": { \"accept eula\": \"true\" } } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION :deploy\" Select-Object -Expand Content You receive a JSON response similar to the following. { \"name\": \"projects/ PROJECT ID /locations/us-central1 LOCATION /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.aiplatform.v1.DeployOperationMetadata\", \"genericMetadata\": { \"createTime\": \"2025-03-13T21:44:44.538780Z\", \"updateTime\": \"2025-03-13T21:44:44.538780Z\" }, \"publisherModel\": \"publishers/ PUBLISHER NAME /model/ MODEL NAME \", \"destination\": \"projects/ PROJECT ID /locations/ LOCATION \", \"projectNumber\": \" PROJECT ID \" } } Deploy a model with customizations Before using any of the request data, make the following replacements: LOCATION : A region where the model is deployed."
+        ]
+      },
+      {
+        "title": "\"Deploy and inference Gemma using Model Garden and Vertex AI TPU-backed endpoints\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "source_id": "site-docs-root",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: You can only delete the endpoint after all models have been undeployed from it.",
+          "For more information, see the Python API reference documentation . \"\"\" Sample to run inference on a Gemma2 model deployed to a Vertex AI endpoint with TPU accellerators. \"\"\" from google.cloud import aiplatform from google.protobuf import json format from google.protobuf.struct pb2 import Value TODO(developer): Update & uncomment lines below PROJECT ID = \"your-project-id\" ENDPOINT REGION = \"your-vertex-endpoint-region\" ENDPOINT ID = \"your-vertex-endpoint-id\" Default configuration config = { \"max tokens\" : 1024 , \"temperature\" : 0.9 , \"top p\" : 1.0 , \"top k\" : 1 } Prompt used in the prediction prompt = \"Why is the sky blue?\" Encapsulate the prompt in a correct format for TPUs Example format: [{'prompt': 'Why is the sky blue?', 'temperature': 0.9}] input = { \"prompt\" : prompt } input . update ( config ) Convert input message to a list of GAPIC instances for model input instances = [ json format .",
+          "JsonFormat ; import java.io.IOException ; import java.util.ArrayList ; import java.util.HashMap ; import java.util.List ; import java.util.Map ; public class Gemma2PredictTpu { private final PredictionServiceClient predictionServiceClient ; // Constructor to inject the PredictionServiceClient public Gemma2PredictTpu ( PredictionServiceClient predictionServiceClient ) { this . predictionServiceClient = predictionServiceClient ; } public static void main ( String [] args ) throws IOException { // TODO(developer): Replace these variables before running the sample."
+        ]
+      },
+      {
+        "title": "\"Deploy generative AI models \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deploy/overview",
+        "source_id": "site-docs-root",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "Ensure capacity for deployed models with Compute Engine reservations You can deploy Model Garden models on VM resources that have been allocated through Compute Engine reservations.",
+          "Limitations A tuned Gemini model can only be deployed to a shared public endpoint.",
+          "Deploy a generative model that doesn't have a managed API To use a model from the Model Garden that doesn't have a managed API, you must upload the model to Model Registry and deploy it to an endpoint before you can send prompt requests."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "aiplatform.NewPredictionClient",
+      "client.Close",
+      "fmt.Errorf",
+      "fmt.Sprintf",
+      "java.io.IOException",
+      "java.util.ArrayList",
+      "java.util.HashMap",
+      "java.util.List",
+      "java.util.Map",
+      "option.WithEndpoint",
+      "request.json",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deploy/overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deploy/overview"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deploy/overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deploy/overview"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deploy/overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:10.639Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai"
+}

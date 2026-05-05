@@ -1,0 +1,168 @@
+{
+  "feature_name": "Earth Engine Apps Google Group access control",
+  "feature_slug": "earth-engine-apps-google-group-access-control",
+  "summary": "Earth Engine Apps can be restricted so only members of a specified Google Group can access them.",
+  "extended_definition": "Earth Engine Apps can be restricted so only members of a specified Google Group can access them.",
+  "lifecycle": {
+    "latest_feature_date": "2019-11-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/access_control",
+      "https://developers.google.com/earth-engine/guides/apps",
+      "https://developers.google.com/earth-engine/guides/noncommercial_tiers"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Control access to resources \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/access_control",
+        "source_id": "site-docs-root-2",
+        "final_score": 172,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the case of a public Earth Engine App, the identity granted that role is earth-engine-public-apps@appspot.gserviceaccount.com and in the case of restricted apps the identity is the Access Restriction Google Group configured by the app creator.",
+          "Permissions needed on the billing account billing.subscriptions.list Apps management Display app info Permissions needed iam.serviceAccounts.get iam.serviceAccounts.getIamPolicy , if app is restricted (less common) Suggested roles Viewer ( roles/viewer ) OR Earth Engine Apps Publisher ( roles/earthengine.appsPublisher ) Publish/Update app Permissions needed iam.serviceAccounts.get iam.serviceAccounts.create iam.serviceAccounts.enable iam.serviceAccounts.getIamPolicy iam.serviceAccounts.setIamPolicy iam.serviceAccounts.disable , if app is moved from one project to another (uncommon) Suggested roles Earth Engine Apps Publisher ( roles/earthengine.appsPublisher ) OR Service Account Admin ( roles/iam.serviceAccountAdmin ) Notes In addition, Earth Engine App service accounts identify themselves to the Earth Engine servers by presenting an OAuth access token.",
+          "These roles are: Role Title Description roles/earthengine.viewer Earth Engine Resource Viewer Provides permission to view and list Assets and tasks. roles/earthengine.writer Earth Engine Resource Writer Provides permission to read, create, modify and delete assets, import images and tables, read and update tasks, perform interactive computations, and create long running export tasks. roles/earthengine.admin Earth Engine Admin Provides permission for all Earth Engine resources including changing access controls for Earth Engine assets. roles/earthengine.appsPublisher Earth Engine Apps Publisher Provides permission to create a service account for use with an Earth Engine app."
+        ]
+      },
+      {
+        "title": "Earth Engine Apps \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/apps",
+        "source_id": "site-docs-root",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Page Summary outlined flag Earth Engine Apps are dynamic, shareable user interfaces for Earth Engine analyses accessible via a unique URL without requiring an Earth Engine account.",
+          "Apps can be restricted to members of a Google Group or made publicly accessible, viewable by anyone without signing in.",
+          "Apps published from Earth Engine are accessible from the application-specific URL generated at time of publishing."
+        ]
+      },
+      {
+        "title": "\"Earth Engine Noncommercial Tiers \\_|\\_ Google Earth Engine \\_|\\_ Google\\",
+        "url": "https://developers.google.com/earth-engine/guides/noncommercial_tiers",
+        "source_id": "site-docs-reference",
+        "final_score": 110,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Earth Engine Apps created by non-commercial projects are exempt from non-commercial eligibility confirmation, but may get slowed down with noncommercial tiers, when the owners' project runs out of their daily or monthly quota resources for their tier.",
+          "Restricted mode Even if your project runs out of EECU-hour credits, you can still use Earth Engine, but it'll be in restricted mode until your credits refresh.",
+          "Exceptions Earth Engine Apps usage is tracked against the parent project of the EE App."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "billing.subscriptions.list",
+      "developers.google.com",
+      "earthengine.admin",
+      "earthengine.appsPublisher",
+      "earthengine.viewer",
+      "earthengine.writer",
+      "iam.serviceAccountAdmin",
+      "iam.serviceAccounts.create",
+      "iam.serviceAccounts.disable",
+      "iam.serviceAccounts.enable",
+      "iam.serviceAccounts.get",
+      "iam.serviceAccounts.getIamPolicy",
+      "iam.serviceAccounts.setIamPolicy"
+    ],
+    "missing_inventory_roles": [
+      "roles/earthengine.admin",
+      "roles/earthengine.appsPublisher",
+      "roles/earthengine.viewer",
+      "roles/earthengine.writer",
+      "roles/iam.serviceAccountAdmin",
+      "roles/viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/apps",
+        "https://developers.google.com/earth-engine/guides/noncommercial_tiers"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/apps",
+        "https://developers.google.com/earth-engine/guides/noncommercial_tiers"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/apps",
+        "https://developers.google.com/earth-engine/guides/noncommercial_tiers"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/apps",
+        "https://developers.google.com/earth-engine/guides/noncommercial_tiers"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/apps",
+        "https://developers.google.com/earth-engine/guides/noncommercial_tiers"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/apps",
+        "https://developers.google.com/earth-engine/guides/noncommercial_tiers"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/apps",
+        "https://developers.google.com/earth-engine/guides/noncommercial_tiers"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/apps",
+        "https://developers.google.com/earth-engine/guides/noncommercial_tiers"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:02.778Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-code-editor/card.json",
+  "product_name": "Earth Engine Code Editor",
+  "product_slug": "earth-engine-code-editor"
+}

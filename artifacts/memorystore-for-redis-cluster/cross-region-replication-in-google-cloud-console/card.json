@@ -1,0 +1,145 @@
+{
+  "feature_name": "cross-region replication in Google Cloud console",
+  "feature_slug": "cross-region-replication-in-google-cloud-console",
+  "summary": "You can use the Google Cloud console to work with cross-region replication.",
+  "extended_definition": "You can use the Google Cloud console to work with cross-region replication.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/connect-cluster-instance",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About cross-region replication \\_|\\_ Memorystore for Redis Cluster \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "source_id": "site-docs-root",
+        "final_score": 280,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Benefits Benefits of cross-region replication on Memorystore for Redis Cluster include the following: Disaster recovery : If the primary cluster's region becomes unavailable, then you can detach or switch over to a secondary cluster in another region to serve read and write requests.",
+          "How to manage cross-region replication Cross-region replication involves the following tasks: Create a secondary cluster : create a secondary cluster that replicates data from your primary cluster continuously.",
+          "Pricing : Memorystore for Redis Cluster charges customers that use cross-region replication for any secondary clusters that Memorystore for Redis Cluster provisions for cross-region replication."
+        ]
+      },
+      {
+        "title": "\"About maintenance \\_|\\_ Memorystore for Redis Cluster \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "source_id": "site-docs-root",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Unless you enable persistence , Memorystore for Redis Cluster doesn't use disks during replication.",
+          "Configure your client application To configure your client application for the best performance and availability possible during maintenance, follow these steps: Use and configure your OSS Redis cluster client according to the guidance at Redis client best practices to make sure that any scheduled maintenance doesn't impact your client application.",
+          "Upcoming maintenance notifications To ensure you stay informed about maintenance events on your cluster, you can set up email notifications regarding upcoming maintenance at least one week before it's scheduled."
+        ]
+      },
+      {
+        "title": "Connect to a Memorystore for Redis Cluster instance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/connect-cluster-instance",
+        "source_id": "site-docs-root",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cross region access You can access a Memorystore for Redis Cluster instance from a client located in a different region than where the Memorystore instance is located.",
+          "Connect from a Compute Engine VM using redis-cli You can connect to the Memorystore for Redis Cluster instance from any Compute Engine VM that uses the Memorystore instance's authorized network.",
+          "You can view the discovery endpoint of a cluster in Memorystore for Redis Cluster by using either the Google Cloud console or the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "\"Create instances \\_|\\_ Memorystore for Redis Cluster \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "source_id": "site-docs-root",
+        "final_score": 191,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the Set up connection section, select the network that your applications can use to connect to this cluster.",
+          "In the Set up connection section, select the network that your applications can use to connect to this cluster.",
+          "Note: You can only create instances in the supported regions for Memorystore for Redis Cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "rdb.get",
+      "rdb.set",
+      "rdb.unlink",
+      "redis.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/connect-cluster-instance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/connect-cluster-instance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/connect-cluster-instance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/connect-cluster-instance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/connect-cluster-instance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:26.516Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis-cluster/card.json",
+  "product_name": "Memorystore for Redis Cluster",
+  "product_slug": "memorystore-for-redis-cluster"
+}

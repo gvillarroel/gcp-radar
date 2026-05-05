@@ -1,0 +1,101 @@
+{
+  "feature_name": "Chat thread retrieval methods",
+  "feature_slug": "chat-thread-retrieval-methods",
+  "summary": "Chat thread retrieval methods let Apps Script access chat threads through getChatThreads overloads; Chat thread retrieval methods let Apps Script access chat threads through getChatThreads overloads; deprecated on 2022-11-01.",
+  "extended_definition": "Chat thread retrieval methods let Apps Script access chat threads through getChatThreads overloads; Chat thread retrieval methods let Apps Script access chat threads through getChatThreads overloads; deprecated on 2022-11-01.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-01",
+    "deprecation_date": "2022-11-01",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/reference/add-ons-response-service/accessory-widget",
+      "https://developers.google.com/apps-script/reference/add-ons-response-service/chat-message",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "July 08, 2022 Deprecated Apps Script has deprecated the following methods: getChatThreads() getChatThreads(start, max) These methods will become unavailable later this year once Google switches all users from Classic Hangouts to Google Chat.",
+          "November 01, 2022 Deprecated Apps Script has sunset the following methods: getChatThreads() getChatThreads(start, max) There isn't a replacement method to get this data with Apps Script.",
+          "Feature The Spreadsheet service has been extended with the following new classes and methods to support text styles and Rich Text cell formatting: RichTextValue RichTextValueBuilder TextStyle TextStyleBuilder Range.getRichTextValue() Range.getRichTextValues() Range.getTextStyle() Range.getTextStyles() Range.setRichTextValue(value) Range.setRichTextValues(values) Range.setTextStyle(style) Range.setTextStyles(styles) SpreadsheetApp.newRichTextValue() SpreadsheetApp.newTextStyle() The Data Studio service has been extended with the following new classes and methods that define and support authentication types for community connectors: GetAuthTypeResponse AuthType CommunityConnector,newAuthTypeResponse() January 04, 2019 Feature The Slides service has been extended with the following new classes and methods that support slide linking and text box insertion: SlideLinkingMode [ Layout.insertTextBox(text) }(https://developers.google.com/apps-script/reference/slides/layout#inserttextboxtext) Layout.insertTextBox(text, left, top, width, height) Master.insertTextBox(text) Master.insertTextBox(text, left, top, width, height) Page.insertTextBox(text) Page.insertTextBox(text, left, top, width, height) Presentation.appendSlide(slide, linkingMode) Presentation.insertSlide(insertionIndex, slide, linkingMode) Slide.getSlideLinkingMode() Slide.getSourcePresentationId() Slide.getSourceSlideObjectId() Slide.insertTextBox(text) Slide.insertTextBox(text, left, top, width, height) Slide.refreshSlide() Slide.unlink() The Data Studio service has been extended with the following new classes and methods that error displays: DebugError UserError CommunityConnector.newDebugError() CommunityConnector.newUserError() December 13, 2018 Deprecated The Fusion Tables advanced service has been deprecated and will shutdown fully on December 3rd, 2019."
+        ]
+      },
+      {
+        "title": "Class ChatMessage \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/add-ons-response-service/chat-message",
+        "source_id": "site-docs-reference-3",
+        "final_score": 90,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Available for Google Workspace add-ons that extend Google Chat. const card = CardService . newCardBuilder () . setHeader ( CardService . newCardHeader (). setTitle ( \"Card Title\" )) . addSection ( CardService . newCardSection () . addWidget ( CardService . newTextParagraph (). setText ( \"Text paragraph\" ))) . build (); const cardWithId = CardService . newCardWithId (). setCardId ( \"card one\" ). setCard ( card ); const message = AddOnsResponseService . newChatMessage (). addCardWithId ( cardWithId ); Methods Method Return type Brief description add Accessory Widget(accessoryWidget) Chat Message Sets the accessoryWidget for this action. add Card With Id(cardWithId) Chat Message Sets the card of the message. set Text(text) Chat Message Sets the text of the message.",
+          "Home Google Workspace Apps Script Reference Send feedback Class ChatMessage Stay organized with collections Save and categorize content based on your preferences.",
+          "Return ChatMessage — This object, for chaining. addCardWithId(cardWithId) Sets the card of the message. const card = CardService . newCardBuilder () . setHeader ( CardService . newCardHeader () . setTitle ( \"Card Title\" )) . addSection ( CardService . newCardSection () . addWidget ( CardService . newTextParagraph () . setText ( \"Text paragraph\" ))) . build (); const cardWithId = CardService . newCardWithId () . setCardId ( \"card one\" ) . setCard ( card ); const message = AddOnsResponseService . newChatMessage () . addCardWithId ( cardWithId ); Parameters Name Type Description card With Id Card With Id The cardWithId to set."
+        ]
+      },
+      {
+        "title": "Class AccessoryWidget \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/add-ons-response-service/accessory-widget",
+        "source_id": "site-docs-reference-3",
+        "final_score": 80,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "PHONE ) . setOnClickAction ( CardService . newAction () . setFunctionName ( \"phone\" ))) . addButton ( CardService . newTextButton () . setText ( \"Robot\" ) . setIconUrl ( \"https://developers.google.com/chat/images/quickstart-app-avatar.png\" ) . setOnClickAction ( CardService . newAction () . setFunctionName ( \"robot\" ))); const accessoryWidget = AddOnsResponseService . newAccessoryWidget () . addWidget ( widget ); Methods Method Return type Brief description add Widget(widget) Accessory Widget Sets the widget for this action.",
+          "Home Google Workspace Apps Script Reference Send feedback Class AccessoryWidget Stay organized with collections Save and categorize content based on your preferences.",
+          "AccessoryWidget A builder for Chat AccessoryWidget objects."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "avatar.png",
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/chat-message",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/accessory-widget"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/chat-message",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/accessory-widget"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:15.255Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script"
+}

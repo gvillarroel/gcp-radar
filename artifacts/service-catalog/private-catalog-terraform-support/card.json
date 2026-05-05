@@ -1,0 +1,146 @@
+{
+  "feature_name": "Private Catalog Terraform support",
+  "feature_slug": "private-catalog-terraform-support",
+  "summary": "Private Catalog improves Terraform usage by adding enhancements for updating solutions, surfacing version highlights, and updating deployments; Private Catalog introduces Terraform support so administrators can create and curate Terraform configurations as catalog solutions.",
+  "extended_definition": "Private Catalog improves Terraform usage by adding enhancements for updating solutions, surfacing version highlights, and updating deployments; Private Catalog introduces Terraform support so administrators can create and curate Terraform configurations as catalog solutions.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-catalog/docs/dm-based-solution",
+      "https://docs.cloud.google.com/service-catalog/docs/marketplace-solutions",
+      "https://docs.cloud.google.com/service-catalog/docs/terraform-configuration",
+      "https://docs.cloud.google.com/service-catalog/docs/view-and-launch"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Creating a Terraform configuration \\_|\\_ Service Catalog \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/service-catalog/docs/terraform-configuration",
+        "source_id": "site-docs-reference",
+        "final_score": 171,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following screenshot illustrates creating a Terraform configuration: Next steps Assign the Terraform configuration to a catalog, so that users in your organization can access and deploy the solution.",
+          "Creating a Terraform configuration When curating Service Catalog solutions for your organization, you can create a Terraform configuration, or config , which your users deploy using Terraform.",
+          "Creating the configuration in Service Catalog After setting up a Cloud Storage bucket with your Terraform module, you create a Service Catalog solution that includes the bucket."
+        ]
+      },
+      {
+        "title": "\"Creating a Deployment Manager-based solution \\_|\\_ Service Catalog \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/service-catalog/docs/dm-based-solution",
+        "source_id": "site-docs-reference",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After you create a solution, you can share it with your users by adding it to catalogs .",
+          "Before you begin You must have the Catalog Admin ( roles/cloudprivatecatalogproducer.admin ) OR Catalog Manager ( roles/cloudprivatecatalogproducer.manager ) role for the Google Cloud organization associated with the Google Cloud project which has Service Catalog enabled.",
+          "For custom machine types, refer to https://cloud.google.com/compute/docs/instances/creating-instance-with-custom-machine-type machineType : https://www.googleapis.com/compute/v1/projects/{{ env[\"project\"] }}/zones/{{ properties[\"zone\"] }}/machineTypes/{{ properties[\"machinetype\"] }} disks : - deviceName : boot type : PERSISTENT boot : true autoDelete : true initializeParams : diskName : disk-{{ env[\"deployment\"] }} sourceImage : https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/family/debian-9 networkInterfaces : - network : https://www.googleapis.com/compute/v1/projects/{{ env[\"project\"] }}/global/networks/default Access Config required to give the instance a public IP address accessConfigs : - name : External NAT type : ONE TO ONE NAT Creating the solution in Service Catalog To create a Deployment Manager template-based solution: Go to the Service Catalog Admin Solutions page in the Google Cloud console."
+        ]
+      },
+      {
+        "title": "\"Adding a solution from Cloud Marketplace \\_|\\_ Service Catalog \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/service-catalog/docs/marketplace-solutions",
+        "source_id": "site-docs-reference",
+        "final_score": 139,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Adding SaaS solutions To add a SaaS solution in Service Catalog: Go to Cloud Marketplace and filter by APIs & services .",
+          "Adding VMs To add a VM solution in Service Catalog: Go to Cloud Marketplace and filter by Virtual machines .",
+          "Before you begin You must have the Catalog Admin ( roles/cloudprivatecatalogproducer.admin ) OR Catalog Manager ( roles/cloudprivatecatalogproducer.manager ) role for the Google Cloud organization associated with the Google Cloud project which has Service Catalog enabled."
+        ]
+      },
+      {
+        "title": "\"Viewing and launching solutions \\_|\\_ Service Catalog \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/service-catalog/docs/view-and-launch",
+        "source_id": "site-docs-reference",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Go to the Service Catalog page Under TYPE , filter by Terraform and click a solution.",
+          "To manage all of your Terraform state files in Service Catalog, grant the Storage Admin role to your Cloud Build service account for the project where the configuration is shared and the project where you're deploying it.",
+          "Launch a Terraform configuration To launch a Terraform configuration: Go to the Google Cloud console Service Catalog page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudprivatecatalogproducer.admin",
+      "cloudprivatecatalogproducer.manager"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudprivatecatalogproducer.admin",
+      "roles/cloudprivatecatalogproducer.manager"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/terraform-configuration",
+        "https://docs.cloud.google.com/service-catalog/docs/dm-based-solution",
+        "https://docs.cloud.google.com/service-catalog/docs/marketplace-solutions",
+        "https://docs.cloud.google.com/service-catalog/docs/view-and-launch"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/terraform-configuration",
+        "https://docs.cloud.google.com/service-catalog/docs/dm-based-solution",
+        "https://docs.cloud.google.com/service-catalog/docs/marketplace-solutions",
+        "https://docs.cloud.google.com/service-catalog/docs/view-and-launch"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/terraform-configuration",
+        "https://docs.cloud.google.com/service-catalog/docs/dm-based-solution",
+        "https://docs.cloud.google.com/service-catalog/docs/marketplace-solutions",
+        "https://docs.cloud.google.com/service-catalog/docs/view-and-launch"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/terraform-configuration",
+        "https://docs.cloud.google.com/service-catalog/docs/dm-based-solution",
+        "https://docs.cloud.google.com/service-catalog/docs/marketplace-solutions",
+        "https://docs.cloud.google.com/service-catalog/docs/view-and-launch"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/terraform-configuration",
+        "https://docs.cloud.google.com/service-catalog/docs/dm-based-solution",
+        "https://docs.cloud.google.com/service-catalog/docs/marketplace-solutions",
+        "https://docs.cloud.google.com/service-catalog/docs/view-and-launch"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:37.273Z",
+  "source_step08_card": "data/step-08/current/products/service-catalog/card.json",
+  "product_name": "Service Catalog",
+  "product_slug": "service-catalog"
+}

@@ -1,0 +1,235 @@
+{
+  "feature_name": "Cloud HSM regional availability in asia-east2",
+  "feature_slug": "cloud-hsm-regional-availability-in-asia-east2",
+  "summary": "Cloud HSM resources are available in the asia-east2 region.",
+  "extended_definition": "Cloud HSM resources are available in the asia-east2 region.",
+  "lifecycle": {
+    "latest_feature_date": "2019-06-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+      "https://docs.cloud.google.com/kms/docs/create-manage-single-tenant-hsm",
+      "https://docs.cloud.google.com/kms/docs/ekm",
+      "https://docs.cloud.google.com/kms/docs/hsm"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Best practices for using CMEKs \\_|\\_ Cloud Key Management Service \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "source_id": "site-iam-reference",
+        "final_score": 163,
+        "relevance": "",
+        "evidence_snippets": [
+          "For guidance about how Google Cloud services can help meet the requirements of different compliance frameworks, see the following resources: Protecting healthcare data on Google Cloud Cloud Compliance & Regulations Resources Google Cloud FedRAMP implementation guide PCI Data Security Standard compliance Summary of best practices The following table summarizes the best practices recommended in this document: Topic Task Decide whether to use CMEK Use CMEK if you require any of the capabilities enabled by CMEK .",
+          "If you want to follow a different granularity strategy, consider the following trade-offs of different patterns: High granularity keys —for example, one key for each individual resource More control to safely disable key versions: Disabling or destroying a key version that is used for a narrow scope has lower risk of affecting other resources than disabling or destroying a shared key.",
+          "The following table lists which IAM roles are typically associated with which job function: IAM role Description NIST SP 800-152 designation roles/cloudkms.admin Provides access to Cloud KMS resources, except for access to restricted resource types and cryptographic operations."
+        ]
+      },
+      {
+        "title": "\"Cloud External Key Manager \\_|\\_ Cloud Key Management Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kms/docs/ekm",
+        "source_id": "site-docs-root",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "To learn more, choose a Cloud EKM partner that supports single-tenant HSMs and review the requirements for Bare Metal Rack HSMs .",
+          "This is different from Single-tenant Cloud HSM , and you should carefully consider which solution better meets your requirements.",
+          "Cloud EKM can be used with Bare Metal Rack HSM to create a standalone HSM solution integrated with Cloud KMS."
+        ]
+      },
+      {
+        "title": "\"Create and manage a Single-tenant Cloud HSM instance \\_|\\_ Cloud Key Management\\",
+        "url": "https://docs.cloud.google.com/kms/docs/create-manage-single-tenant-hsm",
+        "source_id": "site-iam-reference",
+        "final_score": 159,
+        "relevance": "",
+        "evidence_snippets": [
+          "This step requires the Cloud KMS single-tenant HSM Quorum Member role. gcloud kms single-tenant-hsm proposal approve PROPOSAL ID \\ --location LOCATION \\ --single tenant hsm instance INSTANCE ID \\ --quorum-challenge-replies = \" SIGNED QUORUM CHALLENGE LIST \" \\ --required-challenge-replies = \" SIGNED REQUIRED CHALLENGE LIST \" Replace the following: SIGNED QUORUM CHALLENGE LIST : a JSON-formatted array of challenges signed using private keys that are already registered, where each list item is a tuple that contains the path to the signed challenge and the path to the corresponding the public key—for example, [('signed-challenge-1.txt','rsapub1.pem'), ('signed-challenge-2.txt','rsapub2.pem')] to submit the first two signed challenges in one command.",
+          "To get the permissions that you need to create, manage, and use Single-tenant Cloud HSM instances, ask your administrator to grant you the following IAM roles on the project or a parent resource: Create proposals: Cloud KMS single-tenant HSM Proposer ( cloudkms.hsmSingleTenantProposer ) Approve proposals: Cloud KMS single-tenant HSM Quorum Member ( cloudkms.hsmSingleTenantQuorumMember ) Execute proposals: Cloud KMS single-tenant HSM Executor ( cloudkms.hsmSingleTenantExecutor ) Create keys: Cloud KMS single-tenant HSM Key Creator ( roles/cloudkms.hsmSingleTenantKeyCreator ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "You can compare the public keys with your private 2FA keys to verify which control keys are active. gcloud View a list of existing instances using the kms single-tenant-hsm list method. gcloud kms single-tenant-hsm list projects/ PROJECT ID /locations/ LOCATION Replace the following: PROJECT ID : the identifier of the project where you want to view Single-tenant Cloud HSM instances."
+        ]
+      },
+      {
+        "title": "Cloud HSM \\_|\\_ Cloud Key Management Service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kms/docs/hsm",
+        "source_id": "site-docs-root",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "CryptoKey createdKey = client . createCryptoKey ( keyRingName , id , key ); System . out . printf ( \"Created hsm key %s%n\" , createdKey . getName ()); } } } Node.js To run this code, first set up a Node.js development environment and install the Cloud KMS Node.js SDK . // // TODO(developer): Uncomment these variables before running the sample. // // const projectId = 'my-project'; // const locationId = 'us-east1'; // const keyRingId = 'my-key-ring'; // const id = 'my-hsm-encryption-key'; // Imports the Cloud KMS library const { KeyManagementServiceClient } = require ( ' @google-cloud/kms ' ); // Instantiates a client const client = new KeyManagementServiceClient (); // Build the parent key ring name const keyRingName = client . keyRingPath ( projectId , locationId , keyRingId ); async function createKeyHsm () { const [ key ] = await client . createCryptoKey ({ parent : keyRingName , cryptoKeyId : id , cryptoKey : { purpose : 'ENCRYPT DECRYPT' , versionTemplate : { algorithm : 'GOOGLE SYMMETRIC ENCRYPTION' , protectionLevel : 'HSM' , }, // Optional: customize how long key versions should be kept before // destroying. destroyScheduledDuration : { seconds : 60 60 24 }, }, }); console . log ( Created hsm key: ${ key . name } ); return key ; } return createKeyHsm (); PHP To run this code, first learn about using PHP on Google Cloud and install the Cloud KMS PHP SDK . use Google\\Cloud\\Kms\\V1\\Client\\KeyManagementServiceClient; use Google\\Cloud\\Kms\\V1\\CreateCryptoKeyRequest; use Google\\Cloud\\Kms\\V1\\CryptoKey; use Google\\Cloud\\Kms\\V1\\CryptoKey\\CryptoKeyPurpose; use Google\\Cloud\\Kms\\V1\\CryptoKeyVersion\\CryptoKeyVersionAlgorithm; use Google\\Cloud\\Kms\\V1\\CryptoKeyVersionTemplate; use Google\\Cloud\\Kms\\V1\\ProtectionLevel; use Google\\Protobuf\\Duration; function create key hsm( string $projectId = 'my-project', string $locationId = 'us-east1', string $keyRingId = 'my-key-ring', string $id = 'my-hsm-key' ): CryptoKey { // Create the Cloud KMS client. $client = new KeyManagementServiceClient(); // Build the parent key ring name. $keyRingName = $client->keyRingName($projectId, $locationId, $keyRingId); // Build the key. $key = (new CryptoKey()) ->setPurpose(CryptoKeyPurpose::ENCRYPT DECRYPT) ->setVersionTemplate((new CryptoKeyVersionTemplate()) ->setAlgorithm(CryptoKeyVersionAlgorithm::GOOGLE SYMMETRIC ENCRYPTION) ->setProtectionLevel(ProtectionLevel::HSM) ) // Optional: customize how long key versions should be kept before destroying. ->setDestroyScheduledDuration((new Duration()) ->setSeconds(24 60 60) ); // Call the API. $createCryptoKeyRequest = (new CreateCryptoKeyRequest()) ->setParent($keyRingName) ->setCryptoKeyId($id) ->setCryptoKey($key); $createdKey = $client->createCryptoKey($createCryptoKeyRequest); printf('Created hsm key: %s' .",
+          "TODO(developer): uncomment these values before running the sample. project id = \"my-project\" location id = \"us-east1\" key ring id = \"my-key-ring\" id = \"my-hsm-key\" Require the library. require \"google/cloud/kms\" Create the client. client = Google :: Cloud :: Kms . key management service Build the parent key ring name. key ring name = client . key ring path project : project id , location : location id , key ring : key ring id Build the key. key = { purpose : :ENCRYPT DECRYPT , version template : { algorithm : :GOOGLE SYMMETRIC ENCRYPTION , protection level : :HSM }, Optional: customize how long key versions should be kept before destroying. destroy scheduled duration : { seconds : 24 60 60 } } Call the API. created key = client . create crypto key parent : key ring name , crypto key id : id , crypto key : key puts \"Created hsm key: #{ created key . name } \" API These examples use curl as an HTTP client to demonstrate using the API.",
+          "To create a Single-tenant Cloud HSM key, use the CryptoKey.create method with the HSM SINGLE TENANT protection level: curl \"https://cloudkms.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /keyRings/ KEY RING /cryptoKeys?crypto key id= KEY NAME \" \\ --request \"POST\" \\ --header \"authorization: Bearer TOKEN \" \\ --header \"content-type: application/json\" \\ --data '{\"purpose\": \"ENCRYPT DECRYPT\", \"versionTemplate\": { \"protectionLevel\": \"HSM SINGLE TENANT\", \"algorithm\": \" ALGORITHM \", \"cryptoKeyBackend\": \"projects/ INSTANCE PROJECT /locations/ LOCATION /singleTenantHsmInstances/ INSTANCE NAME \" }}' Replace the following: PROJECT ID : the ID of the project that contains the key ring."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.admin",
+      "cloudkms.googleapis.com",
+      "cloudkms.hsmSingleTenantExecutor",
+      "cloudkms.hsmSingleTenantKeyCreator",
+      "cloudkms.hsmSingleTenantProposer",
+      "cloudkms.hsmSingleTenantQuorumMember",
+      "projects.locations.keyRings.cryptoKeys",
+      "projects.locations.keyRings.cryptoKeys.getProtectedResourcesSummary",
+      "rsapub1.pem",
+      "rsapub2.pem"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.admin",
+      "roles/cloudkms.hsmSingleTenantKeyCreator"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-manage-single-tenant-hsm",
+        "https://docs.cloud.google.com/kms/docs/hsm"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-manage-single-tenant-hsm",
+        "https://docs.cloud.google.com/kms/docs/hsm"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-manage-single-tenant-hsm",
+        "https://docs.cloud.google.com/kms/docs/hsm"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-manage-single-tenant-hsm",
+        "https://docs.cloud.google.com/kms/docs/hsm"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-manage-single-tenant-hsm",
+        "https://docs.cloud.google.com/kms/docs/hsm"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-manage-single-tenant-hsm",
+        "https://docs.cloud.google.com/kms/docs/hsm"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-manage-single-tenant-hsm",
+        "https://docs.cloud.google.com/kms/docs/hsm"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-manage-single-tenant-hsm",
+        "https://docs.cloud.google.com/kms/docs/hsm"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-manage-single-tenant-hsm",
+        "https://docs.cloud.google.com/kms/docs/hsm"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-manage-single-tenant-hsm",
+        "https://docs.cloud.google.com/kms/docs/hsm"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-manage-single-tenant-hsm",
+        "https://docs.cloud.google.com/kms/docs/hsm"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-manage-single-tenant-hsm",
+        "https://docs.cloud.google.com/kms/docs/hsm"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-manage-single-tenant-hsm",
+        "https://docs.cloud.google.com/kms/docs/hsm"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-manage-single-tenant-hsm",
+        "https://docs.cloud.google.com/kms/docs/hsm"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:30.283Z",
+  "source_step08_card": "data/step-08/current/products/cloud-key-management-service/card.json",
+  "product_name": "Cloud Key Management Service",
+  "product_slug": "cloud-key-management-service"
+}

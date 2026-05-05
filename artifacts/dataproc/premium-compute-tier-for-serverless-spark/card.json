@@ -1,0 +1,163 @@
+{
+  "feature_name": "Premium compute tier for Serverless Spark",
+  "feature_slug": "premium-compute-tier-for-serverless-spark",
+  "summary": "Dataproc Serverless Spark workloads support a premium compute tier for higher performance per core.",
+  "extended_definition": "Dataproc Serverless Spark workloads support a premium compute tier for higher performance per core.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/guides/explore-data",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+      "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"ClusterConfig \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "source_id": "site-docs-reference",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "CLUSTER TIER PREMIUM Premium Dataproc cluster.",
+          "JSON representation { \"clusterType\" : enum ( ClusterType ) , \"clusterTier\" : enum ( ClusterTier ) , \"configBucket\" : string , \"tempBucket\" : string , \"gceClusterConfig\" : { object ( GceClusterConfig ) } , \"masterConfig\" : { object ( InstanceGroupConfig ) } , \"workerConfig\" : { object ( InstanceGroupConfig ) } , \"secondaryWorkerConfig\" : { object ( InstanceGroupConfig ) } , \"softwareConfig\" : { object ( SoftwareConfig ) } , \"initializationActions\" : [ { object ( NodeInitializationAction ) } ] , \"encryptionConfig\" : { object ( EncryptionConfig ) } , \"autoscalingConfig\" : { object ( AutoscalingConfig ) } , \"securityConfig\" : { object ( SecurityConfig ) } , \"lifecycleConfig\" : { object ( LifecycleConfig ) } , \"endpointConfig\" : { object ( EndpointConfig ) } , \"metastoreConfig\" : { object ( MetastoreConfig ) } , \"dataprocMetricConfig\" : { object ( DataprocMetricConfig ) } , \"auxiliaryNodeGroups\" : [ { object ( AuxiliaryNodeGroup ) } ] } Fields clusterType enum ( ClusterType ) Optional."
+        ]
+      },
+      {
+        "title": "Managed Service for Apache Spark \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/explore-data",
+        "source_id": "site-docs-root",
+        "final_score": 133,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "Use the following PySpark script to create a SparkSession, configure it for Cloud Storage access, and read the raw CSV file into a DataFrame. from pyspark.sql import SparkSession --- Configuration --- gcs bucket = \" BUCKET NAME \" raw path = f \"gs:// { gcs bucket } /raw/shakespeare/shakespeare.csv\" For local development only. service account key path = \"/path/to/your/service-account-key.json\" --- Spark Session Initialization --- spark = SparkSession . builder \\ . appName ( \"DataprocETL-RawIngestion\" ) \\ . config ( \"spark.jars\" , \"https://storage.googleapis.com/hadoop-lib/gcs/gcs-connector-hadoop3-latest.jar\" ) \\ . getOrCreate () --- Authentication for local development --- This step is not necessary when running on a Dataproc cluster with the service account attached to the cluster VMs. spark . conf . set ( \"google.cloud.auth.service.account.json.keyfile\" , service account key path ) --- Read Raw Data from Cloud Storage --- Read the raw CSV data into a DataFrame. inferSchema=True scans the data to determine column types. raw df = spark . read . csv ( raw path , header = True , inferSchema = True ) --- Initial Exploration --- print ( \"Raw data count:\" , raw df . count ()) print ( \"Schema:\" ) raw df . printSchema () print ( \"Sample of raw data:\" ) raw df . show ( 10 , truncate = False ) --- Stop Spark Session --- spark . stop () Run the script as a Managed Service for Apache Spark job to ingest and explore the raw data.",
+          "You can use Managed Service for Apache Spark to process high-volume streams from a service like Pub/Sub or Apache Kafka and land the data in the bronze tier."
+        ]
+      },
+      {
+        "title": "\"Use the Cloud Storage connector with Apache Spark \\_|\\_ Managed Service\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "Run the command, below, to create a single-node Managed Service for Apache Spark cluster in the specified Compute Engine zone . gcloud dataproc clusters create ${CLUSTER} \\ --project=${PROJECT} \\ --region=${REGION} \\ --single-node The above command installs the default cluster image version .",
+          "Create a set of directories with the path src/main/java/dataproc/codelab : mkdir -p src/main/java/dataproc/codelab Copy WordCount.java to your local machine into src/main/java/dataproc/codelab : cp WordCount.java src/main/java/dataproc/codelab WordCount.java is a Spark job in Java that reads text files from Cloud Storage, performs a word count, then writes the text file results to Cloud Storage. package dataproc.codelab ; import java.util.Arrays ; import org.apache.spark.SparkConf ; import org.apache.spark.api.java.JavaPairRDD ; import org.apache.spark.api.java.JavaRDD ; import org.apache.spark.api.java.JavaSparkContext ; import scala.Tuple2 ; public class WordCount { public static void main ( String [] args ) { if ( args . length != 2 ) { throw new IllegalArgumentException ( \"Exactly 2 arguments are required: <inputUri> <outputUri>\" ); } String inputPath = args [ 0 ] ; String outputPath = args [ 1 ] ; JavaSparkContext sparkContext = new JavaSparkContext ( new SparkConf (). setAppName ( \"Word Count\" )); JavaRDD<String> lines = sparkContext . textFile ( inputPath ); JavaRDD<String> words = lines . flatMap ( ( String line ) - > Arrays . asList ( line . split ( \" \" )). iterator () ); JavaPairRDD<String , Integer > wordCounts = words . mapToPair ( ( String word ) - > new Tuple2 <> ( word , 1 ) ). reduceByKey ( ( Integer count1 , Integer count2 ) - > count1 + count2 ); wordCounts . saveAsTextFile ( outputPath ); } } Build the package. mvn clean package If the build is successful, a target/word-count-1.0.jar is created."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataproc.codelab",
+      "java.util.Arrays",
+      "key.json",
+      "latest.jar",
+      "major.minor",
+      "maven.apache.org",
+      "org.apache.spark.api.java.JavaPairRDD",
+      "org.apache.spark.api.java.JavaRDD",
+      "org.apache.spark.api.java.JavaSparkContext",
+      "org.apache.spark.SparkConf",
+      "pyspark.sql",
+      "samples.shakespeare",
+      "scala.Tuple2",
+      "shakespeare.csv",
+      "spark.jars",
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/explore-data",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/explore-data",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/explore-data",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/explore-data",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/explore-data",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/explore-data",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/explore-data",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/explore-data",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:55.306Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc"
+}

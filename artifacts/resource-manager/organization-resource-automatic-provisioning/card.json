@@ -1,0 +1,114 @@
+{
+  "feature_name": "Organization resource automatic provisioning",
+  "feature_slug": "organization-resource-automatic-provisioning",
+  "summary": "The Organization resource is automatically provisioned for Google Workspace and Cloud Identity customers when they create a project with a domain email account.",
+  "extended_definition": "The Organization resource is automatically provisioned for Google Workspace and Cloud Identity customers when they create a project with a domain email account.",
+  "lifecycle": {
+    "latest_feature_date": "2017-01-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy",
+      "https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization",
+      "https://docs.cloud.google.com/resource-manager/docs/manage-google-cloud-resources"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Set up a Google Cloud organization resource \\_|\\_ Resource Manager \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization",
+        "source_id": "site-docs-root",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Once you have created your Google Workspace or Cloud Identity account and associated it with a domain, your organization resource will be automatically created for you.",
+          "Set up your organization resource If you're a Google Workspace or Cloud Identity customer, an organization resource is provided to you automatically.",
+          "Google Workspace or Cloud Identity super administrator responsibilities, in the context of Google Cloud organization resource setup are: Assigning the Organization Administrator role to some users Being a point of contact in case of recovery issues Controlling the lifecycle of the Google Workspace or Cloud Identity account and organization resource as explained under Delete an organization The Organization Administrator , once assigned, can assign Identity and Access Management roles to other users."
+        ]
+      },
+      {
+        "title": "About resource hierarchy \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy",
+        "source_id": "site-docs-reference-2",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When a user with a Google Workspace or Cloud Identity account creates a Google Cloud project resource, an organization resource is automatically provisioned for them.",
+          "Association with Google Workspace or Cloud Identity accounts A Google Workspace or Cloud Identity account is a prerequisite to have access to the organization resource.",
+          "Google Workspace and Cloud Identity customers have access to additional features of the Google Cloud resource hierarchy, such as organization and folder resources."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create your Google Cloud resource hierarchy \\_|\\_ Resource Manager\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/manage-google-cloud-resources",
+        "source_id": "site-docs-root",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "Once you have created your Google Workspace or Cloud Identity account and associated it with a domain, your organization resource will be automatically created for you.",
+          "Once you have created your first Project, your organization resource will be provisioned automatically.",
+          "The organization resource is bound to your Google Workspace or Cloud Identity account, and deleting it is potentially a very damaging action that might be impossible to fully reverse."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization",
+        "https://docs.cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-google-cloud-resources"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization",
+        "https://docs.cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-google-cloud-resources"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization",
+        "https://docs.cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-google-cloud-resources"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization",
+        "https://docs.cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-google-cloud-resources"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:33.880Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager"
+}

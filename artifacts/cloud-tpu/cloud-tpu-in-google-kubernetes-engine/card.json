@@ -1,0 +1,159 @@
+{
+  "feature_name": "Cloud TPU in Google Kubernetes Engine",
+  "feature_slug": "cloud-tpu-in-google-kubernetes-engine",
+  "summary": "Cloud TPU integration with Google Kubernetes Engine lets you run machine learning workloads in GKE while Google manages TPU resources.",
+  "extended_definition": "Cloud TPU integration with Google Kubernetes Engine lets you run machine learning workloads in GKE while Google manages TPU resources.",
+  "lifecycle": {
+    "latest_feature_date": "2018-07-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iam/docs/roles-permissions/tpu",
+      "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+      "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About TPUs in GKE \\_|\\_ GKE AI/ML \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+        "source_id": "site-docs-root",
+        "final_score": 104,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Machine type naming Machine type naming for TPUs in GKE varies depending on the cluster mode and TPU version: GKE Standard: you select a specific Compute Engine machine type, for example, ct6e-standard-1t for TPU Trillium (v6e).",
+          "Autopilot Standard This document describes how Cloud TPU works with Google Kubernetes Engine (GKE), including terminology, the benefits of Tensor Processing Units (TPUs), and workload scheduling considerations.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE AI/ML Guides Send feedback About TPUs in GKE Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Cloud TPU roles and permissions \\_|\\_ Identity and Access Management (IAM)\\",
+        "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/tpu",
+        "source_id": "site-iam-reference",
+        "final_score": 90,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Kubernetes Engine Service Agent ( roles/ container.serviceAgent ) tpu.runtimeversions.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) TPU Admin ( roles/ tpu.admin ) TPU Viewer ( roles/ tpu.viewer ) Support User ( roles/ iam.supportUser ) tpu.runtimeversions.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) TPU Admin ( roles/ tpu.admin ) TPU Viewer ( roles/ tpu.viewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) tpu.tensorflowversions.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) TPU Admin ( roles/ tpu.admin ) TPU Viewer ( roles/ tpu.viewer ) Support User ( roles/ iam.supportUser ) tpu.tensorflowversions.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) TPU Admin ( roles/ tpu.admin ) TPU Viewer ( roles/ tpu.viewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Kubernetes Engine Service Agent ( roles/ container.serviceAgent ) tpu.nodes.performMaintenance Owner ( roles/ owner ) Editor ( roles/ editor ) TPU Admin ( roles/ tpu.admin ) tpu.nodes.reimage Owner ( roles/ owner ) Editor ( roles/ editor ) TPU Admin ( roles/ tpu.admin ) tpu.nodes.reset Owner ( roles/ owner ) Editor ( roles/ editor ) TPU Admin ( roles/ tpu.admin ) tpu. nodes. simulateMaintenanceEvent Owner ( roles/ owner ) Editor ( roles/ editor ) TPU Admin ( roles/ tpu.admin ) tpu.nodes.start Owner ( roles/ owner ) Editor ( roles/ editor ) TPU Admin ( roles/ tpu.admin ) tpu.nodes.stop Owner ( roles/ owner ) Editor ( roles/ editor ) TPU Admin ( roles/ tpu.admin ) tpu.nodes.update Owner ( roles/ owner ) Editor ( roles/ editor ) TPU Admin ( roles/ tpu.admin ) tpu.operations.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) TPU Admin ( roles/ tpu.admin ) TPU Viewer ( roles/ tpu.viewer ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "Kubernetes Engine Service Agent ( roles/ container.serviceAgent ) tpu.operations.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) TPU Admin ( roles/ tpu.admin ) TPU Viewer ( roles/ tpu.viewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents ."
+        ]
+      },
+      {
+        "title": "TPU architecture \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "source_id": "site-docs-root",
+        "final_score": 82,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can directly use TPU VMs for your workloads or use them through Google Kubernetes Engine or Vertex AI.",
+          "TPU topology visualizer The TPU topology visualizer is a tool that lets you visualize the physical layout of TPUs and their associated networking infrastructure within a physical data center.",
+          "Using this hybrid connectivity, Multislice enables parallelism across slices and lets you use a greater number of TPU cores for a single job than what a single slice can accommodate."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.serviceAgent",
+      "iam.securityAdmin",
+      "iam.securityAuditor",
+      "iam.securityReviewer",
+      "iam.supportUser",
+      "tpu.admin",
+      "tpu.locations.list",
+      "tpu.nodes.performMaintenance",
+      "tpu.nodes.reimage",
+      "tpu.nodes.reset",
+      "tpu.nodes.start",
+      "tpu.nodes.stop",
+      "tpu.nodes.update",
+      "tpu.operations.get",
+      "tpu.operations.list",
+      "tpu.runtimeversions.get",
+      "tpu.runtimeversions.list",
+      "tpu.tensorflowversions.get",
+      "tpu.tensorflowversions.list",
+      "tpu.viewer"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+        "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/tpu"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+        "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/tpu"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+        "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/tpu"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+        "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/tpu"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+        "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/tpu"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+        "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/tpu"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+        "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/tpu"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:44.459Z",
+  "source_step08_card": "data/step-08/current/products/cloud-tpu/card.json",
+  "product_name": "Cloud TPU",
+  "product_slug": "cloud-tpu"
+}

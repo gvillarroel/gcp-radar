@@ -1,0 +1,117 @@
+{
+  "feature_name": "Vertex AI Workbench post-startup daemon persistence",
+  "feature_slug": "vertex-ai-workbench-post-startup-daemon-persistence",
+  "summary": "Daemon processes launched by post-startup scripts in Vertex AI Workbench instances now continue running after the script finishes.",
+  "extended_definition": "Daemon processes launched by post-startup scripts in Vertex AI Workbench instances now continue running after the script finishes.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/authentication",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime_template"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime",
+        "source_id": "site-api-reference",
+        "final_score": 58,
+        "relevance": "",
+        "evidence_snippets": [
+          "NotebookSoftwareConfig JSON representation { \"env\" : [ { object ( EnvVar ) } ] , \"postStartupScriptConfig\" : { object ( PostStartupScriptConfig ) } , // Union field runtime image can be only one of the following: \"colabImage\" : { object ( ColabImage ) } // End of list of possible types for union field runtime image . } Fields env[] object ( EnvVar ) Optional.",
+          "PostStartupScriptConfig JSON representation { \"postStartupScript\" : string , \"postStartupScriptUrl\" : string , \"postStartupScriptBehavior\" : enum ( PostStartupScriptBehavior ) } Fields postStartupScript string Optional.",
+          "Example: gs://bucket/script.sh postStartupScriptBehavior enum ( PostStartupScriptBehavior ) Optional."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime_template",
+        "source_id": "site-api-reference",
+        "final_score": 58,
+        "relevance": "",
+        "evidence_snippets": [
+          "NotebookSoftwareConfig JSON representation { \"env\" : [ { object ( EnvVar ) } ] , \"postStartupScriptConfig\" : { object ( PostStartupScriptConfig ) } , // Union field runtime image can be only one of the following: \"colabImage\" : { object ( ColabImage ) } // End of list of possible types for union field runtime image . } Fields env[] object ( EnvVar ) Optional.",
+          "PostStartupScriptConfig JSON representation { \"postStartupScript\" : string , \"postStartupScriptUrl\" : string , \"postStartupScriptBehavior\" : enum ( PostStartupScriptBehavior ) } Fields postStartupScript string Optional.",
+          "Example: gs://bucket/script.sh postStartupScriptBehavior enum ( PostStartupScriptBehavior ) Optional."
+        ]
+      },
+      {
+        "title": "Authenticate to Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/authentication",
+        "source_id": "site-api-reference",
+        "final_score": 50,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you're trying to authenticate to Vertex AI Workbench, see Authenticate to Vertex AI Workbench .",
+          "What's next Learn how to authenticate to Vertex AI Workbench.",
+          "You can access the API in the following ways: Client libraries Google Cloud CLI REST Client libraries The Vertex AI client libraries provide high-level language support for authenticating to Vertex AI programmatically."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "script.sh"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime_template",
+        "https://docs.cloud.google.com/vertex-ai/docs/authentication"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime_template",
+        "https://docs.cloud.google.com/vertex-ai/docs/authentication"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime_template",
+        "https://docs.cloud.google.com/vertex-ai/docs/authentication"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime_template",
+        "https://docs.cloud.google.com/vertex-ai/docs/authentication"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:45.074Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-workbench/card.json",
+  "product_name": "Vertex AI Workbench",
+  "product_slug": "vertex-ai-workbench"
+}

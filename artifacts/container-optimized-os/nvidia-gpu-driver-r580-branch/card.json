@@ -1,0 +1,115 @@
+{
+  "feature_name": "NVIDIA GPU driver R580 branch",
+  "feature_slug": "nvidia-gpu-driver-r580-branch",
+  "summary": "Adds the NVIDIA GPU driver R580 branch and updates the latest GPU driver label to version 580.65.06; Adds the NVIDIA GPU driver R580 branch and updates the latest GPU driver label to version 580.65.06.",
+  "extended_definition": "Adds the NVIDIA GPU driver R580 branch and updates the latest GPU driver label to version 580.65.06; Adds the NVIDIA GPU driver R580 branch and updates the latest GPU driver label to version 580.65.06.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/concepts/auto-update",
+      "https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Running instances with GPU accelerators \\_|\\_ Container-Optimized OS \\_\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "source_id": "site-docs-reference",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "NVIDIA driver branch : Installs the latest stable driver within a specific NVIDIA branch to stay current with security updates and bug fixes within that branch.",
+          "End-to-end: Running a GPU application on Container-Optimized OS The following end-to-end example shows you how to use cloud-init to configure Container-Optimized OS VM instances that provision a GPU application container myapp:latest after the GPU driver has been installed: #cloud-config users : - name : myuser uid : 2000 write files : - path : /etc/systemd/system/install-gpu.service permissions : 0644 owner : root content : [Unit] Description=Install GPU drivers Wants=gcr-online.target docker.socket After=gcr-online.target docker.socket [Service] User=root Type=oneshot ExecStart=cos-extensions install gpu StandardOutput=journal+console StandardError=journal+console - path : /etc/systemd/system/myapp.service permissions : 0644 owner : root content : [Unit] Description=Run a myapp GPU application container Requires=install-gpu.service After=install-gpu.service [Service] User=root Type=oneshot RemainAfterExit=true ExecStart=/usr/bin/docker run --rm -u 2000 --name=myapp --device /dev/nvidia0:/dev/nvidia0 myapp:latest StandardOutput=journal+console StandardError=journal+console runcmd : - systemctl daemon-reload - systemctl start install-gpu.service - systemctl start myapp.service About the NVIDIA CUDA-X libraries CUDA® is NVIDIA's parallel computing platform and programming model for GPUs.",
+          "The following example shows you how to run a CUDA application in a Docker container that consumes /dev/nvidia0 : docker run \\ --volume /var/lib/nvidia/lib64:/usr/local/nvidia/lib64 \\ --volume /var/lib/nvidia/bin:/usr/local/nvidia/bin \\ --device /dev/nvidia0:/dev/nvidia0 \\ --device /dev/nvidia-uvm:/dev/nvidia-uvm \\ --device /dev/nvidiactl:/dev/nvidiactl \\ registry.k8s.io/cuda-vector-add:v0.1 You can run your containers through cloud-init to specify the dependency between driver installation and your containers. see the End-to-end: Running a GPU application on Container-Optimized OS section for more details."
+        ]
+      },
+      {
+        "title": "Automatic updates \\_|\\_ Container-Optimized OS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/concepts/auto-update",
+        "source_id": "site-docs-reference",
+        "final_score": 48,
+        "relevance": "",
+        "evidence_snippets": [
+          "Configure auto-updates on a new instance Create a new instance with automatic updates enabled: gcloud compute instances create INSTANCE NAME \\ --metadata cos-update-strategy = update enabled Create a new instance with automatic updates disabled: gcloud compute instances create INSTANCE NAME \\ --metadata cos-update-strategy = update disabled Configure auto-updates on an existing instance Enable automatic updates for an existing instance: gcloud compute instances add-metadata INSTANCE NAME \\ --metadata cos-update-strategy = update enabled Disable automatic updates for an existing instance: gcloud compute instances add-metadata INSTANCE NAME \\ --metadata cos-update-strategy = update disabled Configure auto-updates on all instances in a project Starting from milestone 97 , you can enable or disable auto-updates for all instances in a project using metadata flags in project metadata.",
+          "The affected list of images are as followings: These images cannot be updated to latest versions: On Milestone 77: images prior to cos-77-12371-1000-0 On Milestone 81: images prior to cos-81-12871-1000-0 On Milestone 85: images prior to cos-85-13310-1000-0 On Milestone 86: images prior to cos-dev-86-15053-0-0 These images will no longer receive any updates: All milestones before 77, including any previously deprecated milestones.",
+          "Enable updates for all instances in a project: gcloud compute project-info add-metadata \\ --metadata cos-update-strategy = update enabled Disable updates for all instances in a project: gcloud compute project-info add-metadata \\ --metadata cos-update-strategy = update disabled Note: Metadata flags defined at the instance level take precedence over metadata flags defined at project level."
+        ]
+      },
+      {
+        "title": "Versioning scheme \\_|\\_ Container-Optimized OS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning",
+        "source_id": "site-docs-reference",
+        "final_score": 45,
+        "relevance": "",
+        "evidence_snippets": [
+          "Long Term Supported (LTS) milestones Milestones that are intended for production use and supported for longer duration are labelled as LTS (for Long Term Supported).",
+          "Before being labeled as LTS, the milestone undergoes approximately 6 months of feature development and 2 months of extensive testing and stabilization.",
+          "Each new milestone indicates the start of a new development cycle (a branch in our code) and may introduce new features and other major changes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "docker.socket",
+      "gpu.service",
+      "myapp.service",
+      "nvidia.ko",
+      "nvidia.NVreg",
+      "online.target",
+      "registry.k8s.io",
+      "v0.1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/auto-update"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/auto-update"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/auto-update"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:52.085Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os"
+}

@@ -1,0 +1,220 @@
+{
+  "feature_name": "effective_io_concurrency flag",
+  "feature_slug": "effective-io-concurrency-flag",
+  "summary": "The effective_io_concurrency flag sets the number of concurrent disk I/O operations that can run at the same time.",
+  "extended_definition": "The effective_io_concurrency flag sets the number of concurrent disk I/O operations that can run at the same time.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+      "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+      "https://docs.cloud.google.com/sql/docs/postgres/flags"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure database flags | Cloud SQL for PostgreSQL | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 263,
+        "relevance": "",
+        "evidence_snippets": [
+          "Configure database flags | Cloud SQL for PostgreSQL | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Cloud SQL PostgreSQL Start free Overview Guides Reference Samples Resources Technology areas More Overview Guides Reference Samples Resources Cross-product tools More Console Discover Product overview Cloud SQL editions overview Cloud SQL for PostgreSQL features Key terms Get started Free trial instances Free trial instance overview Create a free trial instance Quickstart: Create and query a database in the Cloud Console Create an instance in a private network and then import a database Connect from a Cloud Service Quickstart: Connect from Cloud Shell Quickstart: Connect from Cloud Run Quickstart: Connect from Google Kubernetes Engine Quickstart: Connect from App Engine standard environment Quickstart: Connect from App Engine flexible environment Quickstart: Connect from Compute Engine Quickstart: Connect using private IP Quickstart: Connect using the Cloud SQL Auth proxy Quickstart: Connect from your local computer Plan and prepare Overview Choose a Cloud SQL edition Choose a machine series Choose a storage option Region availability Data cache overview Create and manage Instances Create instances Edit instances Clone instances Start, stop, and restart instances Label instances Delete instances Prevent deletion of an instance Supported instance settings View instance information Configure database flags Configure PostgreSQL extensions Manage instance locations Manage connectivity tests Manage capacity About storage shrink Shrink instance storage capacity Manage maintenance updates Maintenance updates on instances View and set maintenance windows Perform self-service maintenance Upgrade Upgrade an instance to Cloud SQL Enterprise Plus edition Upgrade an instance by using in-place upgrade Upgrade an instance by using IP allowlists Upgrade an instance by using VPC peering Upgrade an instance to the new network architecture Upgrade the database major version Upgrade the database major version in-place Upgrade the database major version by migrating data Use best practices General best practices Operational guidelines Manage memory usage Databases Create and manage databases Execute SQL statements using the Cloud SQL Data API Users About PostgreSQL users Cloud SQL built-in database authentication Create and manage users Cloud SQL Studio Manage your data using Cloud SQL Studio Write SQL with Gemini assistance Manage your resources using Knowledge Catalog Secure and control access Overview About access control Data privacy strategies Data residency overview Use Secret Manager to handle secrets in Cloud SQL Organization policies Cloud SQL organization policies Add predefined organization policies Add custom organization policies Identity and Access Management (IAM) IAM authentication Roles and permissions Use IAM Conditions Configure instances for IAM database authentication Manage users with IAM database authentication Log in using IAM database authentication Fine-grained access control with tags Access control with Google Cloud tags Attach and manage tags on Cloud SQL instances Use encryption About client-side encryption About customer-managed encryption keys (CMEK) Use customer-managed encryption keys (CMEK) Configure VPC Service Controls Use Cloud SQL brute-force protection Connect Choose how to connect to Cloud SQL Authorize with authorized networks Connect to an instance using public IP Configure public IP Connect to an instance using private IP Learn about using private IP Configure private IP Configure private services access Connect to an instance using a write endpoint Private Service Connect overview Connect to an instance using Private Service Connect Configure both private services access and Private Service Connect Connect to your instance across Multiple VPCs Connect using SSL/TLS certificates Authorize with SSL/TLS certificates Configure SSL/TLS certificates Manage SSL/TLS certificates Use a customer-managed certificate authority (CA) Set up a custom DNS name Connect using Cloud SQL Language Connectors Cloud SQL Language Connectors overview Connect using the Cloud SQL Language Connectors Connect using the Cloud SQL Auth Proxy About the Cloud SQL Auth Proxy Connect using the Cloud SQL Auth Proxy Connect using Cloud SQL Proxy Operator Use Managed Connection Pooling Managed Connection Pooling overview Configure Managed Connection Pooling Connect from applications Connect using a psql client Connect from Cloud Run Connect from Cloud Functions Connect from App Engine (Standard) Connect from App Engine (Flexible) Connect from Compute Engine Connect from Kubernetes Engine Connect from Cloud Build Manage database connections Connect to an instance from outside its VPC Replicate About replication in Cloud SQL Create and manage replicas Create read replicas Manage read replicas Promote replicas for regional migration or disaster recovery Replication lag Create and manage read pools About read pools Create a read pool Read pool autoscaling Set up logical replication and decoding Configure external replicas Replicate from an external server About replicating from an external server Configure Cloud SQL and the external server for replication Use a managed import to set up replication from external databases About data migration in Cloud SQL Availability and disaster recovery (DR) Availability in Cloud SQL About high availability (HA) Enable and disable high availability (HA) on an instance About disaster recovery (DR) Use advanced disaster recovery (DR) Back up and restore Back up an instance Cloud SQL backups overview Choose your backup option Manage standard backups Manage enhanced backups Manage backups for deleted instances Restore an instance Overview Restore an instance using a backup Configure point-in-time recovery Perform point-in-time recovery Import and export Best practices for importing and exporting data Export and import using pg_dump, pg_dumpall, and pg_restore Export and import using SQL dump files Export and import using CSV files Export and import files in parallel Cancel the import and export of data Check the status of import and export operations Develop Build generative AI applications using Cloud SQL Overview Integrate Cloud SQL with Vertex AI Invoke online predictions Understand an example of an embedding workflow Build LLM-powered applications using LangChain Build LLM-powered applications using LlamaIndex Interact with custom models using model endpoint management Overview Register a model Generate embeddings Invoke predictions Model endpoint management reference Vector search Generate and manage vector embeddings Use Cloud SQL for PostgreSQL with agents Use the Cloud SQL remote MCP server Best practices for securing agent interactions with MCP Use saved queries Overview Create and manage saved queries Vector assist Overview Use Vector assist Vector assist reference Query database in natural language with QueryData Use context sets Context sets overview Build context sets using Gemini CLI Manage context sets in Cloud SQL Studio Query your agentic application data QueryData overview Test QueryData in Cloud SQL Studio Integrate QueryData with an application Monitor and optimize About database observability Monitor and troubleshoot with AI assistance Audit Audit logs Auditing for PostgreSQL using pgAudit Query performance Use query insights Use index advisor Monitor active queries System performance Monitor instances View instance logs Use system insights Find and fix Index inconsistencies Foreign key violations Apply recommendations Disable public IP Enable database auditing Enforce SSL/TLS encryption Improve instance reliability by enabling high availability Improve performance with AlloyDB for PostgreSQL Improve performance with Enterprise Plus Monitor disk availability Optimize high CPU usage Optimize high memory usage Optimize queries with high memory usage Prevent data loss by enabling automated backups Prevent data loss by increasing backup retention Prevent transaction ID wraparound Reduce idle Cloud SQL instances Reduce overprovisioned Cloud SQL instances Reduce underprovisioned Cloud SQL instances Remove authorized networks Remove broad public IP ranges Rotate server certificates Set instance password policies Set user password policies Use Looker with Cloud SQL Troubleshoot Troubleshoot slow queries with AI assistance Troubleshoot high database load with AI assistance Known issues Troubleshoot Error messages Debug connection issues Diagnose issues Overcome transaction ID (TXID) wraparound protection Issues updating storage capacity AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Databases Cloud SQL PostgreSQL Guides Send feedback Configure database flags Stay organized with collections Save and categorize content based on your preferences.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest ` -Method GET ` -Headers $headers ` -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id \" | Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \" machine-type \", \"kind\": \"sql#settings\", \"availabilityType\": \"REGIONAL\", \"pricingPlan\": \"PER_USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"privateNetwork\": \"projects/ project-id /global/networks/default\", \"authorizedNetworks\": [], \"ipv4Enabled\": false }, \"locationPreference\": { \"zone\": \" zone \", \"kind\": \"sql#locationPreference\" }, \"databaseFlags\": [ { \"name\": \"general_log\", \"value\": \"on\" } ], \"dataDiskType\": \"PD_SSD\", \"maintenanceWindow\": { \"kind\": \"sql#maintenanceWindow\", \"hour\": 0, \"day\": 0 }, \"backupConfiguration\": { \"startTime\": \"03:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true, \"binaryLogEnabled\": true }, \"settingsVersion\": \"54\", \"storageAutoResizeLimit\": \"0\", \"storageAutoResize\": true, \"dataDiskSizeGb\": \"10\" } } In the output, look for the databaseFlags field.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest ` -Method GET ` -Headers $headers ` -Uri \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id \" | Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \" machine-type \", \"kind\": \"sql#settings\", \"availabilityType\": \"REGIONAL\", \"pricingPlan\": \"PER_USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"privateNetwork\": \"projects/ project-id /global/networks/default\", \"authorizedNetworks\": [], \"ipv4Enabled\": false }, \"locationPreference\": { \"zone\": \" zone \", \"kind\": \"sql#locationPreference\" }, \"databaseFlags\": [ { \"name\": \"general_log\", \"value\": \"on\" } ], \"dataDiskType\": \"PD_SSD\", \"maintenanceWindow\": { \"kind\": \"sql#maintenanceWindow\", \"hour\": 0, \"day\": 0 }, \"backupConfiguration\": { \"startTime\": \"03:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true, \"binaryLogEnabled\": true }, \"settingsVersion\": \"54\", \"storageAutoResizeLimit\": \"0\", \"storageAutoResize\": true, \"dataDiskSizeGb\": \"10\" } } In the output, look for the databaseFlags field."
+        ]
+      },
+      {
+        "title": "REST Resource: instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "source_id": "site-iam-reference",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"settingsVersion\" : string , \"authorizedGaeApplications\" : [ string ] , \"tier\" : string , \"kind\" : string , \"userLabels\" : { string : string , ... } , \"availabilityType\" : enum ( SqlAvailabilityType ) , \"pricingPlan\" : enum ( SqlPricingPlan ) , \"replicationType\" : enum ( SqlReplicationType ) , \"storageAutoResizeLimit\" : string , \"activationPolicy\" : enum ( SqlActivationPolicy ) , \"ipConfiguration\" : { object ( IpConfiguration ) } , \"storageAutoResize\" : boolean , \"locationPreference\" : { object ( LocationPreference ) } , \"databaseFlags\" : [ { object ( DatabaseFlags ) } ] , \"dataDiskType\" : enum ( SqlDataDiskType ) , \"maintenanceWindow\" : { object ( MaintenanceWindow ) } , \"backupConfiguration\" : { object ( BackupConfiguration ) } , \"databaseReplicationEnabled\" : boolean , \"crashSafeReplicationEnabled\" : boolean , \"dataDiskSizeGb\" : string , \"activeDirectoryConfig\" : { object ( SqlActiveDirectoryConfig ) } , \"collation\" : string , \"denyMaintenancePeriods\" : [ { object ( DenyMaintenancePeriod ) } ] , \"insightsConfig\" : { object ( InsightsConfig ) } , \"passwordValidationPolicy\" : { object ( PasswordValidationPolicy ) } , \"sqlServerAuditConfig\" : { object ( SqlServerAuditConfig ) } , \"edition\" : enum ( Edition ) , \"connectorEnforcement\" : enum ( ConnectorEnforcement ) , \"deletionProtectionEnabled\" : boolean , \"timeZone\" : string , \"advancedMachineFeatures\" : { object ( AdvancedMachineFeatures ) } , \"dataCacheConfig\" : { object ( DataCacheConfig ) } , \"replicationLagMaxSeconds\" : integer , \"enableGoogleMlIntegration\" : boolean , \"enableDataplexIntegration\" : boolean , \"retainBackupsOnDelete\" : boolean , \"dataDiskProvisionedIops\" : string , \"dataDiskProvisionedThroughput\" : string , \"connectionPoolConfig\" : { object ( ConnectionPoolConfig ) } , \"finalBackupConfig\" : { object ( FinalBackupConfig ) } , \"readPoolAutoScaleConfig\" : { object ( ReadPoolAutoScaleConfig ) } , \"autoUpgradeEnabled\" : boolean , \"dataApiAccess\" : enum ( DataApiAccess ) } Fields settingsVersion string ( Int64Value format) The version of instance settings.",
+          "Resource: DatabaseInstance JSON representation SqlInstanceState Settings JSON representation SqlAvailabilityType SqlPricingPlan SqlReplicationType SqlActivationPolicy IpConfiguration JSON representation AclEntry JSON representation SslMode PscConfig JSON representation PscAutoConnectionConfig JSON representation CaMode ServerCertificateRotationMode LocationPreference JSON representation DatabaseFlags JSON representation SqlDataDiskType MaintenanceWindow JSON representation SqlUpdateTrack BackupConfiguration JSON representation BackupRetentionSettings JSON representation RetentionUnit TransactionalLogStorageState BackupTier SqlActiveDirectoryConfig JSON representation ActiveDirectoryMode DenyMaintenancePeriod JSON representation InsightsConfig JSON representation PasswordValidationPolicy JSON representation Complexity SqlServerAuditConfig JSON representation Edition ConnectorEnforcement AdvancedMachineFeatures JSON representation DataCacheConfig JSON representation ConnectionPoolConfig JSON representation ConnectionPoolFlags JSON representation FinalBackupConfig JSON representation ReadPoolAutoScaleConfig JSON representation TargetMetric JSON representation DataApiAccess IpMapping JSON representation SqlIpAddressType SqlInstanceType OnPremisesConfiguration JSON representation InstanceReference JSON representation SelectedObjects JSON representation SslOption ReplicaConfiguration JSON representation MySqlReplicaConfiguration JSON representation SqlBackendType SqlSuspensionReason SqlScheduledMaintenance JSON representation SqlOutOfDiskReport JSON representation SqlOutOfDiskState AvailableDatabaseVersion JSON representation SqlNetworkArchitecture ReplicationCluster JSON representation GeminiInstanceConfig JSON representation PoolNodeConfig JSON representation DnsNameMapping JSON representation ConnectionType DnsScope RecordManager Methods Resource: DatabaseInstance A Cloud SQL instance resource.",
+          "App Engine co-location was only applicable to First Generation instances. databaseFlags[] object ( DatabaseFlags ) The database flags passed to the instance at startup. dataDiskType enum ( SqlDataDiskType ) The type of data disk: PD SSD (default) or PD HDD ."
+        ]
+      },
+      {
+        "title": "\"REST Resource: instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "source_id": "site-api-reference",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"settingsVersion\" : string , \"authorizedGaeApplications\" : [ string ] , \"tier\" : string , \"kind\" : string , \"userLabels\" : { string : string , ... } , \"availabilityType\" : enum ( SqlAvailabilityType ) , \"pricingPlan\" : enum ( SqlPricingPlan ) , \"replicationType\" : enum ( SqlReplicationType ) , \"storageAutoResizeLimit\" : string , \"activationPolicy\" : enum ( SqlActivationPolicy ) , \"ipConfiguration\" : { object ( IpConfiguration ) } , \"storageAutoResize\" : boolean , \"locationPreference\" : { object ( LocationPreference ) } , \"databaseFlags\" : [ { object ( DatabaseFlags ) } ] , \"dataDiskType\" : enum ( SqlDataDiskType ) , \"maintenanceWindow\" : { object ( MaintenanceWindow ) } , \"backupConfiguration\" : { object ( BackupConfiguration ) } , \"databaseReplicationEnabled\" : boolean , \"crashSafeReplicationEnabled\" : boolean , \"dataDiskSizeGb\" : string , \"activeDirectoryConfig\" : { object ( SqlActiveDirectoryConfig ) } , \"collation\" : string , \"denyMaintenancePeriods\" : [ { object ( DenyMaintenancePeriod ) } ] , \"insightsConfig\" : { object ( InsightsConfig ) } , \"passwordValidationPolicy\" : { object ( PasswordValidationPolicy ) } , \"sqlServerAuditConfig\" : { object ( SqlServerAuditConfig ) } , \"edition\" : enum ( Edition ) , \"connectorEnforcement\" : enum ( ConnectorEnforcement ) , \"deletionProtectionEnabled\" : boolean , \"timeZone\" : string , \"advancedMachineFeatures\" : { object ( AdvancedMachineFeatures ) } , \"dataCacheConfig\" : { object ( DataCacheConfig ) } , \"replicationLagMaxSeconds\" : integer , \"enableGoogleMlIntegration\" : boolean , \"enableDataplexIntegration\" : boolean , \"retainBackupsOnDelete\" : boolean , \"dataDiskProvisionedIops\" : string , \"dataDiskProvisionedThroughput\" : string , \"connectionPoolConfig\" : { object ( ConnectionPoolConfig ) } , \"finalBackupConfig\" : { object ( FinalBackupConfig ) } , \"readPoolAutoScaleConfig\" : { object ( ReadPoolAutoScaleConfig ) } , \"autoUpgradeEnabled\" : boolean , \"dataApiAccess\" : enum ( DataApiAccess ) } Fields settingsVersion string ( Int64Value format) The version of instance settings.",
+          "Resource: DatabaseInstance JSON representation SqlInstanceState Settings JSON representation SqlAvailabilityType SqlPricingPlan SqlReplicationType SqlActivationPolicy IpConfiguration JSON representation AclEntry JSON representation SslMode PscConfig JSON representation PscAutoConnectionConfig JSON representation CaMode ServerCertificateRotationMode LocationPreference JSON representation DatabaseFlags JSON representation SqlDataDiskType MaintenanceWindow JSON representation SqlUpdateTrack BackupConfiguration JSON representation BackupRetentionSettings JSON representation RetentionUnit TransactionalLogStorageState BackupTier SqlActiveDirectoryConfig JSON representation ActiveDirectoryMode DenyMaintenancePeriod JSON representation InsightsConfig JSON representation PasswordValidationPolicy JSON representation Complexity SqlServerAuditConfig JSON representation Edition ConnectorEnforcement AdvancedMachineFeatures JSON representation DataCacheConfig JSON representation ConnectionPoolConfig JSON representation ConnectionPoolFlags JSON representation FinalBackupConfig JSON representation ReadPoolAutoScaleConfig JSON representation TargetMetric JSON representation DataApiAccess IpMapping JSON representation SqlIpAddressType SqlInstanceType OnPremisesConfiguration JSON representation InstanceReference JSON representation SelectedObjects JSON representation SslOption ReplicaConfiguration JSON representation MySqlReplicaConfiguration JSON representation SqlBackendType SqlSuspensionReason SqlScheduledMaintenance JSON representation SqlOutOfDiskReport JSON representation SqlOutOfDiskState AvailableDatabaseVersion JSON representation SqlNetworkArchitecture ReplicationCluster JSON representation GeminiInstanceConfig JSON representation PoolNodeConfig JSON representation DnsNameMapping JSON representation ConnectionType DnsScope RecordManager Methods Resource: DatabaseInstance A Cloud SQL instance resource.",
+          "App Engine co-location was only applicable to First Generation instances. databaseFlags[] object ( DatabaseFlags ) The database flags passed to the instance at startup. dataDiskType enum ( SqlDataDiskType ) The type of data disk: PD SSD (default) or PD HDD ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/flags",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:39.896Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql"
+}

@@ -1,0 +1,124 @@
+{
+  "feature_name": "Vertex AI Feature Store feature view multi-entity ID support",
+  "feature_slug": "vertex-ai-feature-store-feature-view-multi-entity-id-support",
+  "summary": "Enables feature views to accept multiple entity ID columns when creating or updating a feature view.",
+  "extended_definition": "Enables feature views to accept multiple entity ID columns when creating or updating a feature view.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featureview",
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create a feature view instance \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featureview",
+        "source_id": "site-docs-reference-3",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see the Python API reference documentation . from google.cloud import aiplatform from vertexai.resources.preview import feature store from typing import List def create feature view from bq source with embedding management ( project : str , location : str , existing feature online store id : str , feature view id : str , bq table uri : str , entity id columns : List [ str ], embedding column : str , embedding dimensions : int , ): aiplatform . init ( project = project , location = location ) fos = feature store .",
+          "For more information, see the Python API reference documentation . from google.cloud import aiplatform from vertexai.resources.preview import feature store from typing import List def create feature view from bq source ( project : str , location : str , existing feature online store id : str , feature view id : str , bq table uri : str , entity id columns : List [ str ], ): aiplatform . init ( project = project , location = location ) fos = feature store .",
+          "Vertex AI Feature Store assigns the BigQuery Data Viewer Identity and Access Management (IAM) role to this service account."
+        ]
+      },
+      {
+        "title": "Manage featurestores \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "source_id": "site-docs-reference-3",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To learn more, run the \"Example Feature Store workflow with sample data\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Learn how to create, list, describe, update, and delete featurestores.",
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample.\\ (Not necessary if passing values as arguments) / // const project = 'YOUR PROJECT ID'; // const featurestoreId = 'YOUR FEATURESTORE ID'; // const minNodeCount = <MINIMUM NO OF NODES>; // const maxNodeCount = <MAXIMUM NO OF NODES>; // const location = 'YOUR PROJECT LOCATION'; // const apiEndpoint = 'YOUR API ENDPOINT'; // const timeout = <TIMEOUT IN MILLI SECONDS>; // Imports the Google Cloud Featurestore Service Client library const { FeaturestoreServiceClient } = require ( ' @google-cloud/aiplatform ' ). v1beta1 ; // Specifies the location of the api endpoint const clientOptions = { apiEndpoint : apiEndpoint , }; // Instantiates a client const featurestoreServiceClient = new FeaturestoreServiceClient ( clientOptions ); async function updateFeaturestore () { // Configure the parent resource const parent = projects/ ${ project } /locations/ ${ location } /featurestores/ ${ featurestoreId } ; const featurestore = { name : parent , onlineServingConfig : { scaling : { minNodeCount : minNodeCount , maxNodeCount : maxNodeCount , }, }, }; const request = { featurestore : featurestore , }; // Update Featurestore request const [ operation ] = await featurestoreServiceClient . updateFeaturestore ( request , { timeout : Number ( timeout )} ); const [ response ] = await operation . promise (); console . log ( 'Update featurestore response' ); console . log ( Name : ${ response . name } ); console . log ( 'Raw response:' ); console . log ( JSON . stringify ( response , null , 2 )); } updateFeaturestore (); Additional languages To learn how to install and use the Vertex AI SDK for Python, see Use the Vertex AI SDK for Python .",
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample.\\ (Not necessary if passing values as arguments) / // const project = 'YOUR PROJECT ID'; // const featurestoreId = 'YOUR FEATURESTORE ID'; // const force = <BOOLEAN>; // const location = 'YOUR PROJECT LOCATION'; // const apiEndpoint = 'YOUR API ENDPOINT'; // const timeout = <TIMEOUT IN MILLI SECONDS>; // Imports the Google Cloud Featurestore Service Client library const { FeaturestoreServiceClient } = require ( ' @google-cloud/aiplatform ' ). v1 ; // Specifies the location of the api endpoint const clientOptions = { apiEndpoint : apiEndpoint , }; // Instantiates a client const featurestoreServiceClient = new FeaturestoreServiceClient ( clientOptions ); async function deleteFeaturestore () { // Configure the name resource const name = projects/ ${ project } /locations/ ${ location } /featurestores/ ${ featurestoreId } ; const request = { name : name , force : Boolean ( force ), }; // Delete Featurestore request const [ operation ] = await featurestoreServiceClient . deleteFeaturestore ( request , { timeout : Number ( timeout )} ); const [ response ] = await operation . promise (); console . log ( 'Delete featurestore response' ); console . log ( 'Raw response:' ); console . log ( JSON . stringify ( response , null , 2 )); } deleteFeaturestore (); What's next Learn how to manage entity types and features ."
+        ]
+      },
+      {
+        "title": "About Vertex AI Feature Store \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+        "source_id": "site-docs-reference-3",
+        "final_score": 212,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Vertex AI Feature Store terms Terms related to feature engineering feature engineering Feature engineering is the process of transforming raw machine learning (ML) data into features that can be used to train ML models or to make inferences. feature In machine learning (ML), a feature is a characteristic or attribute of an instance or entity that's used as an input to train an ML model or to make inferences. feature value A feature value corresponds to the actual and measurable value of a feature (attribute) of an instance or entity.",
+          "There are two types of Vertex AI Feature Store resources in the Feature Registry: Feature Registry resources for feature data Feature Registry resources for feature monitoring Feature Registry resources for feature data To register your feature data in the Feature Registry, you need to create the following Vertex AI Feature Store resources: Feature group ( FeatureGroup ): A FeatureGroup resource is associated with a specific BigQuery source table or view.",
+          "Open in Colab Open in Colab Enterprise View on GitHub Vertex AI Feature Store based LLM grounding tutorial In this tutorial, you learn how to chunk user-provided data, and then generate embedding vectors for each chunk using a Large Language Model (LLM) that has embedding generation capabilities."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "vertexai.resources.preview"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featureview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featureview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featureview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featureview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featureview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:42.435Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai"
+}

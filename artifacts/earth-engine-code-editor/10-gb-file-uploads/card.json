@@ -1,0 +1,118 @@
+{
+  "feature_name": "10 GB file uploads",
+  "feature_slug": "10-gb-file-uploads",
+  "summary": "The Code Editor supports uploading files up to 10 GB.",
+  "extended_definition": "The Code Editor supports uploading files up to 10 GB.",
+  "lifecycle": {
+    "latest_feature_date": "2015-08-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/app_engine_intro",
+      "https://developers.google.com/earth-engine/guides/command_line",
+      "https://developers.google.com/earth-engine/guides/ee-vertex-hosting-a-model"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Hosted Custom Model for Earth Engine \\_|\\_ Google Earth Engine \\_|\\_ Google\\",
+        "url": "https://developers.google.com/earth-engine/guides/ee-vertex-hosting-a-model",
+        "source_id": "site-docs-root-2",
+        "final_score": 63,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before saving and uploading, ensure your model accepts data in a payload format that Earth Engine supports.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2024-10-14 UTC.\"],[],[]]",
+          "An example of that is here: torch-model-archiver -f \\ --model-name model \\ --version 1 .0 \\ --serialized-file $model file \\ --handler $hander file \\ --extra-files $index to name file \\ --export-path $model path Model Deployment to Vertex AI Once your model files are saved the next step is to upload your model to Vertex AI."
+        ]
+      },
+      {
+        "title": "Command Line Tool \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/command_line",
+        "source_id": "site-docs-reference",
+        "final_score": 44,
+        "relevance": "",
+        "evidence_snippets": [
+          "The options are also described in the Image Manifest guide. table To upload a Shapefile, CSV, or TFRecord from Google Cloud Storage to an Earth Engine table asset, you can use any of: earthengine upload table --asset id=projects/my-project/assets/myUploadedShapefile gs://bucket/foo.shp earthengine upload table --asset id=projects/my-project/assets/myUploadedCSV gs://bucket/foo.csv earthengine upload table --asset id=projects/my-project/assets/myUploadedTFRecord gs://bucket/foo.tfrecord Note: when uploading Shapefiles, you only need to specify the path to the .shp file.",
+          "The cancel sub-command cancels one or more running tasks. upload Uploads images or tables from Google Cloud Storage to Earth Engine, or creates assets backed by external images. image To upload an image asset using default settings: earthengine upload image --asset id=projects/my-project/assets/asset id gs://bucket/image.tif If you specify multiple input image files they will be interpreted as tiles of a single image asset.",
+          "You can see a complete list of table upload options by visiting the Table Manifest guide or with: earthengine upload table -h external image To create an asset backed by an external image, run the upload image command with a manifest: earthengine upload external image --manifest /tmp/foo.json An example manifest is: { \"name\" : \"projects/{project}/assets/cogdemo1\" , \"tilesets\" : [ { \"id\" : \"0\" , \"sources\" : [{ \"uris\" : [ \"gs://ee-docs-demos/COG demo.tif\" ] }] } ], \"properties\" : { \"source\" : \"https://code.earthengine.google.com/d541cf8b268b2f9d8f834c255698201d\" }, \"startTime\" : \"2016-01-01T00:00:00.000000000Z\" , \"endTime\" : \"2016-12-31T15:01:23.000000000Z\" } See the Cloud GeoTIFF guide and the Image Manifest guide for more details on constructing the manifest."
+        ]
+      },
+      {
+        "title": "\"App Engine & Earth Engine Overview \\_|\\_ Google Earth Engine \\_|\\_ Google\\",
+        "url": "https://developers.google.com/earth-engine/guides/app_engine_intro",
+        "source_id": "site-docs-root",
+        "final_score": 39,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If the test succeeds, update config.py (or an equivalent file in your source code) with your service account email address. (The path to the key file should not change since it's in your project directory).",
+          "The config.py file contains authentication code using the service account email address and a private key file.",
+          "Update static/script.js (or an equivalent file in your source code) to use your client ID."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "code.earthengine.google.com",
+      "config.py",
+      "demo.tif",
+      "developers.google.com",
+      "foo.csv",
+      "foo.json",
+      "foo.shp",
+      "foo.tfrecord",
+      "image.tif",
+      "model.pt",
+      "script.js"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/ee-vertex-hosting-a-model",
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides/app_engine_intro"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/ee-vertex-hosting-a-model",
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides/app_engine_intro"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/ee-vertex-hosting-a-model",
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides/app_engine_intro"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:02.778Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-code-editor/card.json",
+  "product_name": "Earth Engine Code Editor",
+  "product_slug": "earth-engine-code-editor"
+}

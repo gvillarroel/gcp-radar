@@ -1,0 +1,122 @@
+{
+  "feature_name": "ALTER COLUMN DROP NOT NULL",
+  "feature_slug": "alter-column-drop-not-null",
+  "summary": "BigQuery supports dropping a NOT NULL constraint from a column with ALTER COLUMN.",
+  "extended_definition": "BigQuery supports dropping a NOT NULL constraint from a column with ALTER COLUMN.",
+  "lifecycle": {
+    "latest_feature_date": "2021-04-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 2,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-load-data-from-bigquery",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-load-data-from-bigquery-job",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-load-data-from-csv"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a BigQuery DataFrame from a finished query job \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-load-data-from-bigquery-job",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 46,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Client ( project = project , location = location ) Job ID inserted based on the query results selcted to explore job id = JOB ID job = client . get job ( job id ) destination = str ( job . destination ) Load data from a BigQuery table using BigFrames DataFrames: bq df = bpd . read gbq table ( destination ) What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .",
+          "For more information, see Set up authentication for client libraries . from google.cloud import bigquery import bigframes.pandas as bpd Project ID inserted based on the query results selected to explore project = your project id Location inserted based on the query results selected to explore location = \"us\" client = bigquery .",
+          "Home Documentation Data analytics BigQuery Samples Create a BigQuery DataFrame from a finished query job Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Create a BigQuery DataFrame from a CSV file in GCS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-load-data-from-csv",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 46,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . import bigframes.pandas as bpd filepath or buffer = \"gs://cloud-samples-data/bigquery/us-states/us-states.csv\" df from gcs = bpd . read csv ( filepath or buffer ) Display the first few rows of the DataFrame: df from gcs . head () What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .",
+          "Home Documentation Data analytics BigQuery Samples Create a BigQuery DataFrame from a CSV file in GCS Stay organized with collections Save and categorize content based on your preferences.",
+          "Code sample Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "Create a BigQuery DataFrame from a table \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-load-data-from-bigquery",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 46,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a DataFrame from a BigQuery table: import bigframes.pandas as bpd query or table = \"bigquery-public-data.ml datasets.penguins\" bq df = bpd . read gbq ( query or table ) What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .",
+          "Use the BigQuery DataFrames API to turn a table into a BigQuery DataFrame Code sample Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "Home Documentation Data analytics BigQuery Samples Create a BigQuery DataFrame from a table Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigframes.pandas",
+      "data.ml",
+      "datasets.penguins",
+      "states.csv"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-load-data-from-bigquery",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-load-data-from-bigquery-job",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-load-data-from-csv"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-load-data-from-bigquery",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-load-data-from-bigquery-job",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-load-data-from-csv"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

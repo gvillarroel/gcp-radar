@@ -1,0 +1,195 @@
+{
+  "feature_name": "HeaderName support for Authentication bearer token header customization",
+  "feature_slug": "headername-support-for-authentication-bearer-token-header-customization",
+  "summary": "Apigee hybrid adds the HeaderName element under Authentication so ServiceCallout, ExternalCallout, and TargetEndpoint configurations can use a custom header for bearer tokens.",
+  "extended_definition": "Apigee hybrid adds the HeaderName element under Authentication so ServiceCallout, ExternalCallout, and TargetEndpoint configurations can use a custom header for bearer tokens.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+      "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Get started with the Apigee Extension Processor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 130,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The response appears similar to the following: { ... \"headers\" : { \"Accept\" : \" / \" , \" Authorization\" : \"Bearer ya29.c.c0ASRK0Gbw03y9cfvxL11DxaRYBQUU18SmUP4Vu63OckHI5cX7wJ4DmGMG2vbDDS69HXJHqMj-lak4tcqOsJGmE65crn2gNuJLanXidwM8\" , \"First\" : \"1.0\" , \"Host\" : \"apigee-ext-proc-test.apigee.net\" , \"Second\" : \"1.0\" , \"Sum\" : \"2\" , \"User-Agent\" : \"curl/8.7.1\" , \"X-Api-Key\" : \"McYcHGR3PTSGLXExvKADwQ1JJeCjgPDUvAakCl0rJKCFaX0Y\" , \"X-Cloud-Trace-Context\" : \"0fd3dadc2a3c328fa968d5f5f1434c29/18300783092696918345\" } , ... } The response shows the successful injection of the Google authentication token into the request header.",
+          "Under the <Set> element, add the following child elements: <Set> <Authentication> <HeaderName>Authorization</HeaderName> <GoogleAccessToken> <Scopes> <Scope>https://www.googleapis.com/auth/cloud-platform</Scope> </Scopes> </GoogleAccessToken> </Authentication> </Set> Click Save .",
+          "Create the traffic extension using the following command to call the Extension Processor provisioning API: curl -X POST -H \"Authorization: Bearer $TOKEN \" \\ https://apigee.googleapis.com/v1/organizations/ $ORG NAME /apimServiceExtensions?apimServiceExtensionId = TRAFFIC EXT NAME \\ -H \"Content-Type:application/json\" -d \\ '{ \"extensionProcessor\": \" TARGET PROXY NAME \" \"lbForwardingRule\": \" LB FORWARDING RULE \", \"network\" : \" NETWORK \", \"networkConfigs\": [ { \"region\": \"$REGION\", \"subnet\": \"project/my-project/regions/$REGION/subnetworks/$SUBNET\" } ], \"extensions\": [ { \"name\": \" TARGET PROXY NAME \", \"matchCondition\": \" CEL EXPRESSION \", \"failOpen\": FAIL OPEN , \"hostname\": \" ENV GROUP HOSTNAME \", \"supportedEvents\": [ \"REQUEST HEADERS\", \"RESPONSE HEADERS\" ] } ] }' Where: TRAFFIC EXT NAME is is the name of the traffic extension you are creating."
+        ]
+      },
+      {
+        "title": "\"New Apigee hybrid installation and administration Preview \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 101,
+        "relevance": "",
+        "evidence_snippets": [
+          "Get a shell inside the vault dev pod kubectl exec -it vault-0 -- /bin/sh Enable kubernetes authentication method vault auth enable kubernetes Write the auth config vault write auth / kubernetes / config \\ issuer = \"https://kubernetes.default.svc.cluster.local\" \\ token reviewer jwt = \"$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)\" \\ kubernetes host = \"https://$KUBERNETES PORT 443 TCP ADDR:443\" \\ kubernetes ca cert = @ / var / run / secrets / kubernetes . io / serviceaccount / ca . crt \\ disable iss validation = true Create the auth policy vault policy write apigee-runtime-app - <<EOF path \"secret/data/runtime-gcp-sa-key\" { capabilities = [\"read\"] } EOF Bind the policy with the service account vault write auth/kubernetes/role/apigee-runtime-role \\ bound service account names=apigee-runtime-sa \\ bound service account namespaces= ${ APIGEE NAMESPACE } \\ policies=apigee-runtime-app \\ ttl=20m Here, we assume that the service account is inside the apigee namespace.",
+          "The command checks the nodetool status for the two regions. kubectl exec apigee - cassandra - default - 0 - n apigee -- nodetool - u JMX user - pw JMX password status Datacenter: us-central1 ======================= Status=Up/Down / State=Normal/Leaving/Joining/Moving -- Address Load Tokens Owns (effective) Host ID Rack UN 10.12.1.45 112.09 KiB 256 100.0% 3c98c816-3f4d-48f0-9717-03d0c998637f ra-1 UN 10.12.4.36 95.27 KiB 256 100.0% 0a36383d-1d9e-41e2-924c-7b62be12d6cc ra-1 UN 10.12.5.22 88.7 KiB 256 100.0% 3561f4fa-af3d-4ea4-93b2-79ac7e938201 ra-1 Datacenter: us-west1 ==================== Status=Up/Down / State=Normal/Leaving/Joining/Moving -- Address Load Tokens Owns (effective) Host ID Rack UN 10.0.4.33 78.69 KiB 256 100.0% a200217d-260b-45cd-b83c-182b27ff4c99 ra-1 UN 10.0.0.21 78.68 KiB 256 100.0% 9f3364b9-a7a1-409c-9356-b7d1d312e52b ra-1 UN 10.0.1.26 15.46 KiB 256 100.0% 1666df0f-702e-4c5b-8b6e-086d0f2e47fa ra-1 Troubleshooting Supportability, Diagnosis & Troubleshooting Guide https://cloud.google.com/apigee/docs/api-platform/troubleshoot/playbooks/troubleshooting-apigee-hybrid .",
+          "4ed2c903-ff56-40fa-a15e-80a3de3cb22d ra-1 DN 10.60.0.17 573.08 KiB 256 ? f9a50d19-c04a-4d0d-a088-612384bed9f5 ra-1 Remove all the nodes in the deleted region (here us-west1 ) region apigee @ apigee - cassandra - default - 0 : $ nodetool - u $ APIGEE JMX USER - pw $ APIGEE JMX PASSWORD removenode 355 d6ace - ab77 - 42 cb - 8138 - 9993 bfd62d0e apigee @ apigee - cassandra - default - 0 : $ nodetool - u $ APIGEE JMX USER - pw $ APIGEE JMX PASSWORD removenode 4 ed2c903 - ff56 - 40 fa - a15e - 80 a3de3cb22d apigee @ apigee - cassandra - default - 0 : $ nodetool - u $ APIGEE JMX USER - pw $ APIGEE JMX PASSWORD removenode f9a50d19 - c04a - 4 d0d - a088 - 612384 bed9f5 Verify no nodes of the deleted region (here us-west1 ) are left apigee @ apigee - cassandra - default - 0 : $ nodetool - u $ APIGEE JMX USER - pw $ APIGEE JMX PASSWORD status Datacenter: us-east1 ==================== Status=Up/Down / State=Normal/Leaving/Joining/Moving -- Address Load Tokens Owns Host ID Rack UN 10.52.0.212 699.71 KiB 256 ? e1aa61e3-4eae-4549-9b58-506d495d87ab ra-1 UN 10.52.0.72 586.77 KiB 256 ?"
+        ]
+      },
+      {
+        "title": "\"Get started with semantic caching policies \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+        "source_id": "site-docs-reference",
+        "final_score": 89,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create and deploy a Vector Search index To create and deploy a Vector Search index: Create a Vector Search index that allows streaming updates: ACCESS TOKEN = $( gcloud auth print-access-token ) && curl --location --request POST \\ \"https:// $REGION -aiplatform.googleapis.com/v1/projects/ $PROJECT ID /locations/ $REGION /indexes\" \\ --header \"Authorization: Bearer $ACCESS TOKEN \" \\ --header 'Content-Type: application/json' \\ --data-raw \\ '{ \"displayName\": \"semantic-cache-index\", \"description\": \"semantic-cache-index\", \"metadata\": { \"config\": { \"dimensions\": \"768\", \"approximateNeighborsCount\": 150, \"distanceMeasureType\": \"DOT PRODUCT DISTANCE\", \"featureNormType\": \"NONE\", \"algorithmConfig\": { \"treeAhConfig\": { \"leafNodeEmbeddingCount\": \"10000\", \"fractionLeafNodesToSearch\": 0.05 } }, \"shardSize\": \"SHARD SIZE MEDIUM\" }, }, \"indexUpdateMethod\": \"STREAM UPDATE\" }' The $REGION defines the region where the Vector Search index deploys.",
+          "Edit the XML to add the following configuration under <HTTPTargetConnection> : <Authentication> <GoogleAccessToken> <Scopes> <Scope>https://www.googleapis.com/auth/cloud-platform</Scope> </Scopes> </GoogleAccessToken> </Authentication> Click Save .",
+          "Add Google authentication to the API proxy You must also add Google authentication to the API proxy's target endpoint to enable proxy calls to the target."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "apigee.googleapis.com",
+      "iam.gserviceaccount.com",
+      "kubernetes.default.svc.cluster.local",
+      "kubernetes.io",
+      "svc.id.goog",
+      "test.apigee.net",
+      "ya29.c.c0ASRK0Gbw03y9cfvxL11DxaRYBQUU18SmUP4Vu63OckHI5cX7wJ4DmGMG2vbDDS69HXJHqMj"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:06.056Z",
+  "source_step08_card": "data/step-08/current/products/apigee-hybrid/card.json",
+  "product_name": "Apigee hybrid",
+  "product_slug": "apigee-hybrid"
+}

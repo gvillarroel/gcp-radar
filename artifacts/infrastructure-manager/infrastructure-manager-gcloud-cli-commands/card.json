@@ -1,0 +1,152 @@
+{
+  "feature_name": "Infrastructure Manager gcloud CLI commands",
+  "feature_slug": "infrastructure-manager-gcloud-cli-commands",
+  "summary": "The gcloud CLI commands for Infrastructure Manager reached general availability.",
+  "extended_definition": "The gcloud CLI commands for Infrastructure Manager reached general availability.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/infrastructure-manager/docs/authentication",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/enable-service",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/reference/libraries"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Authenticate to Infra Manager \\_|\\_ Infrastructure Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/authentication",
+        "source_id": "site-api-reference",
+        "final_score": 275,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can access the API in the following ways: Google Cloud CLI REST Google Cloud CLI When you use the gcloud CLI to access Infra Manager, you log in to the gcloud CLI with a user account, which provides the credentials used by the gcloud CLI commands.",
+          "For more information about using the gcloud CLI with Infra Manager, see the gcloud CLI reference pages .",
+          "You can set up the gcloud CLI to use service account impersonation by using the gcloud config set command : gcloud config set auth/impersonate service account SERVICE ACCT EMAIL For select languages, you can use service account impersonation to create a local ADC file for use by client libraries."
+        ]
+      },
+      {
+        "title": "\"Infra Manager client libraries \\_|\\_ Infrastructure Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/reference/libraries",
+        "source_id": "site-api-reference",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This page shows how to get started with the Cloud Client Libraries for the Infrastructure Manager API.",
+          "Additional resources C++ The following list contains links to more resources related to the client library for C++: API reference Client libraries best practices Issue tracker on Stack Overflow Source code C# The following list contains links to more resources related to the client library for C#: API reference Client libraries best practices Issue tracker on Stack Overflow Source code Go The following list contains links to more resources related to the client library for Go: API reference Client libraries best practices Issue tracker on Stack Overflow Source code Java The following list contains links to more resources related to the client library for Java: API reference Client libraries best practices Issue tracker on Stack Overflow Source code Node.js The following list contains links to more resources related to the client library for Node.js: API reference Client libraries best practices Issue tracker on Stack Overflow Source code PHP The following list contains links to more resources related to the client library for PHP: API reference Client libraries best practices Issue tracker on Stack Overflow Source code Python The following list contains links to more resources related to the client library for Python: API reference Client libraries best practices Issue tracker on Stack Overflow Source code Ruby The following list contains links to more resources related to the client library for Ruby: API reference Client libraries best practices Issue tracker on Stack Overflow Source code Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Set up authentication To authenticate calls to Google Cloud APIs, client libraries support Application Default Credentials (ADC) ; the libraries look for credentials in a set of defined locations and use those credentials to authenticate requests to the API."
+        ]
+      },
+      {
+        "title": "Deploy infrastructure using Infrastructure Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "source_id": "site-docs-root",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Deploy the Terraform configuration: gcloud infra-manager deployments apply projects/ PROJECT ID /locations/ LOCATION /deployments/ DEPLOYMENT ID \\ --service-account projects/ SERVICE ACCOUNT PROJECT ID /serviceAccounts/ SERVICE ACCOUNT \\ --git-source-repo = \" GIT REPO \" \\ --git-source-directory = \" DIRECTORY \" \\ --git-source-ref = \" REF \" \\ --quota-validation = QUOTA VALIDATION \\ --input-values = INPUT 1 NAME = VALUE , INPUT 2 NAME = VALUE \\ --tf-version-constraint = TERRAFORM VERSION \\ --annotations = \" ANNOTATION KEY = ANNOTATION VALUE \" --provider-source = SERVICE MAINTAINED Replace: PROJECT ID : the project ID where Infra Manager runs.",
+          "Deploy the Terraform configuration: gcloud infra-manager deployments apply projects/ PROJECT ID /locations/ LOCATION /deployments/ DEPLOYMENT ID \\ --service-account projects/ SERVICE ACCOUNT PROJECT ID /serviceAccounts/ SERVICE ACCOUNT \\ --gcs-source gs:// BUCKET NAME / OBJECT NAME \\ --quota-validation = QUOTA VALIDATION \\ --input-values = INPUT 1 NAME = VALUE , INPUT 2 NAME = VALUE \\ --tf-version-constraint = TERRAFORM VERSION \\ --annotations = \" ANNOTATION KEY = ANNOTATION VALUE \" --provider-source = SERVICE MAINTAINED Replace: PROJECT ID : the project ID where Infra Manager runs.",
+          "Deploy the Terraform configuration: gcloud infra-manager deployments apply projects/ PROJECT ID /locations/ LOCATION /deployments/ DEPLOYMENT ID \\ --service-account projects/ SERVICE ACCOUNT PROJECT ID /serviceAccounts/ SERVICE ACCOUNT \\ --local-source = \" LOCAL DIRECTORY \" \\ --quota-validation = QUOTA VALIDATION \\ --input-values = INPUT 1 NAME = VALUE , INPUT 2 NAME = VALUE \\ --tf-version-constraint = TERRAFORM VERSION \\ --annotations = \" ANNOTATION KEY = ANNOTATION VALUE \" --provider-source = SERVICE MAINTAINED Replace: PROJECT ID : the project ID where Infra Manager runs."
+        ]
+      },
+      {
+        "title": "\"Enable and disable the service \\_|\\_ Infrastructure Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/enable-service",
+        "source_id": "site-iam-reference",
+        "final_score": 238,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Disable API . gcloud Run the following command to disable the API for your current project: gcloud services disable config.googleapis.com What's next Learn more about Terraform with Google Cloud .",
+          "The gcloud CLI snap package does not include kubectl or extensions to authenticate with Infra Manager using the gcloud CLI.",
+          "For an existing installation, update components of the Google Cloud CLI with the command: gcloud components update ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudquotas.googleapis.com",
+      "config.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/libraries",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/enable-service"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/libraries",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/enable-service"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/libraries",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/enable-service"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/libraries",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/enable-service"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/libraries",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/enable-service"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/libraries",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/enable-service"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:22.573Z",
+  "source_step08_card": "data/step-08/current/products/infrastructure-manager/card.json",
+  "product_name": "Infrastructure Manager",
+  "product_slug": "infrastructure-manager"
+}

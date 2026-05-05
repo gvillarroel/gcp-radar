@@ -1,0 +1,125 @@
+{
+  "feature_name": "Rebilling BigQuery Export Schema Enhancements",
+  "feature_slug": "rebilling-bigquery-export-schema-enhancements",
+  "summary": "Extends rebilling data exports to BigQuery with CustomerRepricingConfigName, ChannelPartnerRepricingName, and Tags columns.",
+  "extended_definition": "Extends rebilling data exports to BigQuery with CustomerRepricingConfigName, ChannelPartnerRepricingName, and Tags columns.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/channel/docs/rebilling/example-export-queries",
+      "https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery",
+      "https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Export Channel Services data to BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery",
+        "source_id": "site-docs-reference",
+        "final_score": 153,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The service account is: cloud-channel-billing-reporting-rebilling@system.gserviceaccount.com This service account requires the predefined role: roles/bigquery.dataEditor to allow exports.",
+          "The following columns or fields don't apply to offline order billing exports: project labels system labels location resource credits entitlement name channel partner name channel partner cost customer name customer cost cost at list customer repricing config name channel partner repricing config name tags price.effective price price.tier start amount price.list price price.effective price default price.list price consumption model transaction type seller name consumption model Other notes about Google Workspace export There are several special behaviors with Google Workspace exports: Google Workspace data doesn't contain the reseller's own usage.",
+          "The following fields don't apply to Google Workspace exports: project labels resource credits adjustmentsInfo customer repricing config name channel partner repricing config name tags price.effective price price.tier start amount price.list price price.effective price default price.list price consumption model transaction type seller name consumption model Columns not applicable to Google Workspace Consumptive SKUs When a column or field doesn't apply to a Product Family, the exported data for this product family contains null in this field."
+        ]
+      },
+      {
+        "title": "Rebilling overview \\_|\\_ Channel Services \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 129,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Rebilling consists of two main features: Repricing configurations BigQuery exports BigQuery exports You can export a comprehensive report of your customers' billing usage and cost data to a BigQuery dataset that you own.",
+          "Compatible with Cloud Billing data exports : The Channel Services data export table schema is backward compatible with Cloud Billing Detailed data export , so you can migrate your existing data exports.",
+          "Optimized queries : Channel Services data exports use the payer billing account id as the clustering column, so queries for one parent billing account are optimized to reduce the cost of querying data data."
+        ]
+      },
+      {
+        "title": "\"BigQuery export query examples \\_|\\_ Channel Services \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/channel/docs/rebilling/example-export-queries",
+        "source_id": "site-docs-reference",
+        "final_score": 86,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Identifying and accessing the BigQuery table Channel Services exports are set up using the Partner Sales Console .",
+          "For additional troubleshooting tips, see Troubleshoot issues with BigQuery exports .",
+          "DATASET NAME . reseller billing detailed export v1 WHERE export time BETWEEN TIMESTAMP ( START DATE ) AND TIMESTAMP ( END DATE ) AND payer billing account id = ' EXTERNAL BILLING ACCOUNT ID ' AND invoice . month = ' INVOICE MONTH ' GROUP BY domain name , customer id , sku name , sku id , description , order name , start date , end date , po number HAVING amount != 0 ORDER BY domain name , order name , start date , end date ; Other columns of interest to add to SELECT and GROUP BY clauses: billing account id : Represents the Customer Cloud Identity ID. customer name : Represents the customer resource which can be used in API calls. channel partner name : (For distributors) Represents the channel partner. entitlement name : Resource name of the Entitlement in Channel Services. customer correlation id : A Customer Relationship Management (CRM) ID that you can define for a customer. usage.amount : For Google Workspace seat-based usage, this indicates paid seats."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.dataEditor",
+      "price.effective",
+      "price.list",
+      "price.tier",
+      "service.id",
+      "sku.id",
+      "system.gserviceaccount.com",
+      "usage.amount"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataEditor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery",
+        "https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview",
+        "https://docs.cloud.google.com/channel/docs/rebilling/example-export-queries"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery",
+        "https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview",
+        "https://docs.cloud.google.com/channel/docs/rebilling/example-export-queries"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery",
+        "https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview",
+        "https://docs.cloud.google.com/channel/docs/rebilling/example-export-queries"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery",
+        "https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview",
+        "https://docs.cloud.google.com/channel/docs/rebilling/example-export-queries"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:26.585Z",
+  "source_step08_card": "data/step-08/current/products/channel-services/card.json",
+  "product_name": "Channel Services",
+  "product_slug": "channel-services"
+}

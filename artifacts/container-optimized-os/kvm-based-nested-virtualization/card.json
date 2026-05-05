@@ -1,0 +1,106 @@
+{
+  "feature_name": "KVM-based nested virtualization",
+  "feature_slug": "kvm-based-nested-virtualization",
+  "summary": "Container-Optimized OS enables KVM-based nested virtualization on x86; Container-Optimized OS enables KVM-based nested virtualization on x86.",
+  "extended_definition": "Container-Optimized OS enables KVM-based nested virtualization on x86; Container-Optimized OS enables KVM-based nested virtualization on x86.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/arm",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Using Arm-based Container-Optimized OS images \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/arm",
+        "source_id": "site-docs-reference",
+        "final_score": 51,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can also see all available releases on command line by running the following command: gcloud compute images list --project cos-cloud --no-standard-images --filter = \"name 'cos-arm64- '\" The output is similar to the following: NAME PROJECT FAMILY DEPRECATED STATUS cos-arm64-101-17162-40-5 cos-cloud cos-arm64-101-lts READY cos-arm64-beta-101-17162-40-5 cos-cloud cos-arm64-beta READY cos-arm64-dev-105-17228-0-0 cos-cloud cos-arm64-dev READY cos-arm64-stable-101-17162-40-5 cos-cloud cos-arm64-stable READY Arm-based Container-Optimized OS images share the same versioning scheme and LTS milestone lifecycle with x86-based images.",
+          "Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Using Arm-based Container-Optimized OS images Stay organized with collections Save and categorize content based on your preferences.",
+          "Differences between Arm and x86 images The Arm-based and x86-based Container-Optimized OS images share the same source code , but the build and compile configurations are different."
+        ]
+      },
+      {
+        "title": "Security Overview \\_|\\_ Container-Optimized OS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security",
+        "source_id": "site-docs-reference",
+        "final_score": 41,
+        "relevance": "",
+        "evidence_snippets": [
+          "Infrastructure Security In addition to various hardening features in the OS itself, the Container-Optimized OS team also takes the software supply chain seriously and prioritizes infrastructure security when developing, building, and deploying images, based on years of experience from both Chromium OS and Google in general.",
+          "Security-hardened kernel Container-Optimized OS enables several security-hardening kernel features, including Integrity Measurement Architecture (IMA), Audit, Kernel Page Table Isolation (KPTI), and some Linux Security Modules (LSMs) from Chromium OS.",
+          "Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Security Overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Using Cloud Logging with Container-Optimized OS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "source_id": "site-docs-reference",
+        "final_score": 35,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Using Cloud Logging with Container-Optimized OS Stay organized with collections Save and categorize content based on your preferences.",
+          "However, if you have a custom logging configuration, you might experience breakage when migrating workloads to images that are based on a different architecture or to a newer version of Container-Optimized OS.",
+          "Logging agent configuration compatibility The logging agent is a fluentd-based container on x86-based Container-Optimized OS images and a fluent-bit binary on Arm-based Container-Optimized OS images."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/arm",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/arm",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/arm",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:52.085Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os"
+}

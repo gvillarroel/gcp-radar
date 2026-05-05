@@ -1,0 +1,132 @@
+{
+  "feature_name": "Pub/Sub BigQuery subscriptions",
+  "feature_slug": "pub-sub-bigquery-subscriptions",
+  "summary": "Pub/Sub BigQuery subscriptions can write messages directly to an existing BigQuery table.",
+  "extended_definition": "Pub/Sub BigQuery subscriptions can write messages directly to an existing BigQuery table.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-subscriptions",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-stream-sharing",
+      "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Stream sharing with Pub/Sub \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-stream-sharing",
+        "source_id": "site-docs-reference-5",
+        "final_score": 85,
+        "relevance": "",
+        "evidence_snippets": [
+          "Revoke a subscription To remove a subscription to a shared topic listing from BigQuery sharing, select one of the following options: Console To list shared topic subscribers for a listing, follow the Google Cloud console instructions in View all subscriptions .",
+          "Depending on how the message data is delivered, additional permissions may be required, such as Pub/Sub service account permissions for writing messages to BigQuery.",
+          "This limit includes linked Pub/Sub subscriptions and Pub/Sub subscriptions created outside of Sharing, for example, those created directly from Pub/Sub."
+        ]
+      },
+      {
+        "title": "Manage subscriptions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-subscriptions",
+        "source_id": "site-docs-root-2",
+        "final_score": 83,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Manage subscriptions This document describes how to manage subscriptions in BigQuery sharing (formerly Analytics Hub), covering tasks for both subscribers and publishers.",
+          "Subscriber workflows for managing subscriptions This section describes how BigQuery sharing subscribers manage subscriptions.",
+          "Publisher workflows for managing subscriptions This section describes how BigQuery sharing publishers manage subscriptions."
+        ]
+      },
+      {
+        "title": "bq command-line tool reference \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 80,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you create a Spanner connection and want to use Data Boost , include the \"useParallelism\":true and \"useDataBoost\":true pairs. --connection credential= CONNECTION CREDENTIAL The credentials of the connection in JSON format. username and password must be specified. --project id= PROJECT ID Specifies the ID of the project that the connection belongs to. --location= LOCATION Specifies the location that the connection will be stored. --display name= DISPLAY NAME Specifies an optional friendly name for the connection. --description= DESCRIPTION Specifies an optional description of the connection. --iam role id= ROLE ID For BigQuery Omni on AWS, specifies an IAM role that allows access to the resource.",
+          "For information about using the bq mk command with the BigQuery Data Transfer Service, see the following: Set up an Amazon S3 transfer Set up a Campaign Manager transfer Set up a Cloud Storage transfer Set up a Google Ad Manager transfer Set up a Google Ads transfer Set up a Google Merchant Center transfer (beta) Set up a Google Play transfer Set up a Search Ads 360 transfer (beta) Set up a YouTube Channel transfer Set up a YouTube Content Owner transfer Migrate data from Amazon Redshift Migrate data from Teradata bq mk --transfer run Creates a data transfer run at the specified time or time range using the specified data transfer configuration.",
+          "For example, this command specifies false for the boolean flag --use legacy sql by placing no at the front of the flag: bq query --nouse legacy sql \\ 'SELECT COUNT( ) FROM bigquery-public-data.samples.shakespeare' Alternatively, to specify false as the flag's argument, you can enter the following: bq query --use legacy sql = false \\ 'SELECT COUNT( ) FROM bigquery-public-data.samples.shakespeare' Run commands in a script You can run the bq command-line tool in a script, as you would run a Google Cloud CLI command ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.samples.shakespeare"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-stream-sharing",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-subscriptions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-stream-sharing",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-subscriptions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-stream-sharing",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-subscriptions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-stream-sharing",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-subscriptions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-stream-sharing",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-subscriptions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-stream-sharing",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-subscriptions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

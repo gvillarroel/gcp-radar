@@ -1,0 +1,83 @@
+{
+  "feature_name": "Vertex AI Pipelines ParallelFor concurrency controls",
+  "feature_slug": "vertex-ai-pipelines-parallelfor-concurrency-controls",
+  "summary": "Vertex AI Pipelines now supports limiting concurrent or parallel task runs within a pipeline run via the dsl.ParallelFor API.",
+  "extended_definition": "Vertex AI Pipelines now supports limiting concurrent or parallel task runs within a pipeline run via the dsl.ParallelFor API.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/experiments/compare-analyze-runs",
+      "https://docs.cloud.google.com/vertex-ai/docs/pipelines/introduction",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/image-classification"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Introduction to Vertex AI Pipelines \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/pipelines/introduction",
+        "source_id": "site-docs-reference-2",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "In this stage, you need to perform the following steps: Choose an ML framework : Vertex AI Pipelines supports ML pipelines defined using the TFX or Kubeflow Pipelines framework.",
+          "Structure of an ML pipeline Pipeline tasks and components Life cycle of an ML pipeline Use Vertex ML Metadata to track the lineage of ML artifacts Add pipeline runs to experiments Note: If you're experienced in creating ML pipelines using the Kubeflow Pipelines SDK and want to understand the differences between Vertex AI Pipelines and Kubeflow Pipelines, see Migrate from Kubeflow Pipelines to Vertex AI Pipelines .",
+          "To learn more, run the \"Vertex AI Pipelines: Lightweight Python function-based components, and component I/O\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Vertex AI Pipelines lets you automate, monitor, and govern your machine learning (ML) systems in a serverless manner by using ML pipelines to orchestrate your ML workflows."
+        ]
+      },
+      {
+        "title": "Compare and analyze runs \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/experiments/compare-analyze-runs",
+        "source_id": "site-docs-reference-3",
+        "final_score": 68,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Send feedback Compare and analyze runs Stay organized with collections Save and categorize content based on your preferences.",
+          "Compare runs Using the Vertex AI SDK for Python, you can retrieve the data associated with your experiment.",
+          "You can use the Vertex AI SDK for Python to view Vertex AI Experiments runs data and compare the runs."
+        ]
+      },
+      {
+        "title": "\"Fine-tune an image classification model with custom data on Vertex AI Pipelines\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/image-classification",
+        "source_id": "site-docs-reference-2",
+        "final_score": 61,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Send feedback Fine-tune an image classification model with custom data on Vertex AI Pipelines Stay organized with collections Save and categorize content based on your preferences.",
+          "This tutorial shows you how to use Vertex AI Pipelines to run an end-to-end ML workflow, including the following tasks: Import and transform data.",
+          "Monitor the pipeline In the Google Cloud console, in the Vertex AI section, go to the Pipelines page and open the Runs tab."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dsl.ParallelFor"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:42.435Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai"
+}

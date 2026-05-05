@@ -1,0 +1,116 @@
+{
+  "feature_name": "compiler memory corruption mitigations",
+  "feature_slug": "compiler-memory-corruption-mitigations",
+  "summary": "Container-Optimized OS includes compiler mitigations to reduce memory corruption vulnerabilities; Container-Optimized OS adds compiler mitigations against memory corruption vulnerabilities.",
+  "extended_definition": "Container-Optimized OS includes compiler mitigations to reduce memory corruption vulnerabilities; Container-Optimized OS adds compiler mitigations against memory corruption vulnerabilities.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Collecting debugging information using sosreport \\_|\\_ Container-Optimized\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport",
+        "source_id": "site-docs-reference",
+        "final_score": 27,
+        "relevance": "",
+        "evidence_snippets": [
+          "Container-Optimized OS includes the sosreport utility, which collects information on demand to help you debug problems in a Container-Optimized OS virtual machine instance.",
+          "Collecting the sosreport data To generate a sosreport: Connect to the instance using the gcloud compute ssh command. gcloud compute ssh [INSTANCE NAME] --zone [ZONE] --project [PROJECT ID] Check the OS version: sudo cat /etc/os-release egrep -w 'NAME VERSION' The output is similar to the following: NAME=\"Container-Optimized OS\" VERSION=105 Run the sos command that corresponds to your OS version: COS 85 and earlier Run the following sosreport command to collect the logs: sudo sosreport --all-logs --batch --tmp-dir = /var If the previous command fails with sosreport: command not found , install the sosreport package and then run the previous sosreport command: sudo toolbox sudo apt install sosreport -y COS 105 and later Run the following sos command to collect the logs: sudo sos report --all-logs --batch --tmp-dir = /var If the previous command fails with sos: command not found , install the sosreport package and then run the previous sos report command: sudo toolbox sudo apt install sosreport -y Ubuntu-18 and earlier Run the following sosreport command to collect the logs: sudo sosreport --all-logs --batch --tmp-dir = /var If the previous command fails with sosreport: command not found , install the sosreport package and then run the previous sosreport command: sudo apt install sosreport Ubuntu-20 and later Run the following sos command to collect the logs: sudo sos report --all-logs --batch --tmp-dir = /var If the previous command fails with sos: command not found , install the sosreport package and then run the previous sos report command: sudo apt install sosreport You can change the directory where the report is stored by passing a different directory to the --tmp-dir option.",
+          "Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Collecting debugging information using sosreport Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Configuring and Checking CIS Compliance \\_|\\_ Container-Optimized OS \\_\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "source_id": "site-docs-reference",
+        "final_score": 22,
+        "relevance": "",
+        "evidence_snippets": [
+          "This level includes recommendations such as the following: Firewall rules exist for all open ports ICMP redirects and router advertisements are not accepted Default user shell timeout is 900 seconds or less How Container-Optimized OS complies with the CIS Benchmarks Starting with Milestone 97 , Container-Optimized OS images comply with to CIS Level 1 by default and provide an option to comply with CIS Level 2.",
+          "Periodic checking of CIS compliance status Container-Optimized OS images include the following services to periodically check CIS compliance: cis-compliance-scanner.service : checks the compliance status based on environment variables defined at /etc/cis-scanner/env vars .",
+          "Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Configuring and Checking CIS Compliance Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Monitoring system health with Node Problem Detector \\_|\\_ Container-Optimized\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring",
+        "source_id": "site-docs-reference",
+        "final_score": 22,
+        "relevance": "",
+        "evidence_snippets": [
+          "Using user-defined guest policies Container-Optimized OS includes OS Config agent , that uses OS system utilities to maintain the state for the VM that is specified in the guest policy.",
+          "Starting with Milestone 77, Container-Optimized OS includes the Node Problem Detector agent.",
+          "You can use cloud-init to enable health monitoring with the following cloud-config example: #cloud-config runcmd: - systemctl start node-problem-detector Using metadata In Container-Optimized OS Milestone 88 and later, the Node Problem Detector can also be enabled by setting the value of google-monitoring-enabled to true in the custom metadata section."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "scanner.service"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:52.085Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os"
+}

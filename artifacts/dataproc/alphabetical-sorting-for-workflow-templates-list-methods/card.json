@@ -1,0 +1,142 @@
+{
+  "feature_name": "Alphabetical sorting for Workflow Templates list methods",
+  "feature_slug": "alphabetical-sorting-for-workflow-templates-list-methods",
+  "summary": "Dataproc Workflow Templates list methods support alphabetical sorting.",
+  "extended_definition": "Dataproc Workflow Templates list methods support alphabetical sorting.",
+  "lifecycle": {
+    "latest_feature_date": "2020-03-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListWorkflowTemplatesResponse",
+      "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_template_controller.pagers.ListSessionTemplatesAsyncPager"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"ListWorkflowTemplatesResponse \\_|\\_ Managed Service for Apache Spark \\_\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListWorkflowTemplatesResponse",
+        "source_id": "site-docs-reference",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Managed Service for Apache Spark Reference Send feedback ListWorkflowTemplatesResponse Stay organized with collections Save and categorize content based on your preferences.",
+          "To fetch additional results, provide this value as the pageToken in a subsequent ListWorkflowTemplatesRequest . unreachable[] string Output only.",
+          "JSON representation A response to a request to list workflow templates in a project."
+        ]
+      },
+      {
+        "title": "\"Cloud Dataproc API \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest",
+        "source_id": "site-docs-reference",
+        "final_score": 136,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1.projects.locations.workflowTemplates Methods create POST /v1/{parent=projects/ /locations/ }/workflowTemplates Creates new workflow template. delete DELETE /v1/{name=projects/ /locations/ /workflowTemplates/ } Deletes a workflow template. get GET /v1/{name=projects/ /locations/ /workflowTemplates/ } Retrieves the latest workflow template. getIamPolicy POST /v1/{resource=projects/ /locations/ /workflowTemplates/ }:getIamPolicy Gets the access control policy for a resource. instantiate POST /v1/{name=projects/ /locations/ /workflowTemplates/ }:instantiate Instantiates a template and begins execution. instantiateInline POST /v1/{parent=projects/ /locations/ }/workflowTemplates:instantiateInline Instantiates a template and begins execution. list GET /v1/{parent=projects/ /locations/ }/workflowTemplates Lists workflows that match the specified filter in the request. setIamPolicy POST /v1/{resource=projects/ /locations/ /workflowTemplates/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1/{resource=projects/ /locations/ /workflowTemplates/ }:testIamPermissions Returns permissions that a caller has on the specified resource. update PUT /v1/{template.name=projects/ /locations/ /workflowTemplates/ } Updates (replaces) workflow template.",
+          "REST Resource: v1.projects.regions.workflowTemplates Methods create POST /v1/{parent=projects/ /regions/ }/workflowTemplates Creates new workflow template. delete DELETE /v1/{name=projects/ /regions/ /workflowTemplates/ } Deletes a workflow template. get GET /v1/{name=projects/ /regions/ /workflowTemplates/ } Retrieves the latest workflow template. getIamPolicy POST /v1/{resource=projects/ /regions/ /workflowTemplates/ }:getIamPolicy Gets the access control policy for a resource. instantiate POST /v1/{name=projects/ /regions/ /workflowTemplates/ }:instantiate Instantiates a template and begins execution. instantiateInline POST /v1/{parent=projects/ /regions/ }/workflowTemplates:instantiateInline Instantiates a template and begins execution. list GET /v1/{parent=projects/ /regions/ }/workflowTemplates Lists workflows that match the specified filter in the request. setIamPolicy POST /v1/{resource=projects/ /regions/ /workflowTemplates/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1/{resource=projects/ /regions/ /workflowTemplates/ }:testIamPermissions Returns permissions that a caller has on the specified resource. update PUT /v1/{template.name=projects/ /regions/ /workflowTemplates/ } Updates (replaces) workflow template.",
+          "REST Resource: v1.projects.regions.clusters Methods create POST /v1/projects/{projectId}/regions/{region}/clusters Creates a cluster in a project. delete DELETE /v1/projects/{projectId}/regions/{region}/clusters/{clusterName} Deletes a cluster in a project. diagnose POST /v1/projects/{projectId}/regions/{region}/clusters/{clusterName}:diagnose Gets cluster diagnostic information. get GET /v1/projects/{projectId}/regions/{region}/clusters/{clusterName} Gets the resource representation for a cluster in a project. getIamPolicy POST /v1/{resource=projects/ /regions/ /clusters/ }:getIamPolicy Gets the access control policy for a resource. list GET /v1/projects/{projectId}/regions/{region}/clusters Lists all regions/{region}/clusters in a project alphabetically. patch PATCH /v1/projects/{projectId}/regions/{region}/clusters/{clusterName} Updates a cluster in a project. setIamPolicy POST /v1/{resource=projects/ /regions/ /clusters/ }:setIamPolicy Sets the access control policy on the specified resource. start POST /v1/projects/{projectId}/regions/{region}/clusters/{clusterName}:start Starts a cluster in a project. stop POST /v1/projects/{projectId}/regions/{region}/clusters/{clusterName}:stop Stops a cluster in a project. testIamPermissions POST /v1/{resource=projects/ /regions/ /clusters/ }:testIamPermissions Returns permissions that a caller has on the specified resource."
+        ]
+      },
+      {
+        "title": "\"Class ListSessionTemplatesAsyncPager (5.26.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_template_controller.pagers.ListSessionTemplatesAsyncPager",
+        "source_id": "site-python-reference",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.dataproc v1.types.ListSessionTemplatesRequest The initial request object. response google.cloud.dataproc v1.types.ListSessionTemplatesResponse The initial response object. retry google.api core.retry.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "ListSessionTemplatesResponse ], ], request : google . cloud . dataproc v1 . types . session templates .",
+          "ListSessionTemplatesResponse ], ], request : google . cloud . dataproc v1 . types . session templates ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dataproc.v1",
+      "core.retry.AsyncRetry",
+      "dataproc.googleapis.com",
+      "policy.name",
+      "template.name",
+      "v1.projects.locations.autoscalingPolicies",
+      "v1.projects.locations.workflowTemplates",
+      "v1.projects.regions.clusters",
+      "v1.projects.regions.workflowTemplates",
+      "v1.types.ListSessionTemplatesRequest",
+      "v1.types.ListSessionTemplatesResponse"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListWorkflowTemplatesResponse",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_template_controller.pagers.ListSessionTemplatesAsyncPager"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListWorkflowTemplatesResponse",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_template_controller.pagers.ListSessionTemplatesAsyncPager"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListWorkflowTemplatesResponse",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_template_controller.pagers.ListSessionTemplatesAsyncPager"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListWorkflowTemplatesResponse",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_template_controller.pagers.ListSessionTemplatesAsyncPager"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListWorkflowTemplatesResponse",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_template_controller.pagers.ListSessionTemplatesAsyncPager"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListWorkflowTemplatesResponse",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.session_template_controller.pagers.ListSessionTemplatesAsyncPager"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:55.306Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc"
+}

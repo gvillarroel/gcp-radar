@@ -1,0 +1,171 @@
+{
+  "feature_name": "Adaptive translation",
+  "feature_slug": "adaptive-translation",
+  "summary": "Adaptive translation uses Google LLMs to tailor translations to the provided context; Adaptive translation uses Google LLMs to tailor translations to the provided context.",
+  "extended_definition": "Adaptive translation uses Google LLMs to tailor translations to the provided context; Adaptive translation uses Google LLMs to tailor translations to the provided context.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation",
+      "https://docs.cloud.google.com/translate/docs/advanced/custom-translations",
+      "https://docs.cloud.google.com/translate/docs/advanced/glossary",
+      "https://docs.cloud.google.com/translate/docs/intro-to-v3"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Translate text by using adaptive translation \\_|\\_ Cloud Translation \\_\\",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation",
+        "source_id": "site-iam-reference",
+        "final_score": 292,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Translate text by using adaptive translation When you request an adaptive translation, you provide the text to translate and example translations that Cloud Translation uses to tailor its responses.",
+          "DATASET NAME : The name of the dataset that Cloud Translation uses to customize your translations, formatted as projects/ PROJECT ID /locations/ LOCATION /adaptiveMtDatasets/ DATASET ID .",
+          "For more information, see Set up authentication for a local development environment . / Translates using AdaptiveMt. / private static void adaptiveMtTranslate ( TranslationServiceClient translationServiceClient , String projectId , String sourceLang , String targetLang , Pair<String , String > referencePairs ) { ReferenceSentencePairList refList = ReferenceSentencePairList . newBuilder (); for ( Pair<String , String > referencePair : referencePairs ) { ReferenceSentencePair refPair = ReferenceSentencePair . newBuilder () . setSourceSentence ( referencePair . getKey ()) . setTargetSentence ( referencePair . getValue ()); refList . addReferenceSentencePair ( refPair ); } AdaptiveMtTranslateRequest request = AdaptiveMtTranslateRequest . newBuilder () . setParent ( LocationName . of ( projectId , \"us-central1\" ). toString ()) . setSourceLanguageCode ( sourceLang ) . setTargetLanguageCOde ( targetLang ) . addReferenceSentencePairLists ( refList ) . build (); AdaptiveMtTranslateResponse response = translationServiceClient . adaptiveMtTranslate ( request ); System . out . println ( \"Translating using AdaptiveMt\" ); System . out . println ( response ); } Node.js Before trying this sample, follow the Node.js setup instructions in the Cloud Translation quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "\"Custom translations overview \\_|\\_ Cloud Translation \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/custom-translations",
+        "source_id": "site-iam-reference",
+        "final_score": 286,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Adaptive Translation Adaptive translations use LLMs combined with small datasets to provide high-quality translations, often on par with Cloud Translation custom models.",
+          "You provide a list of terms and their translations that Cloud Translation uses to ensure consistent and accurate translations for those terms.",
+          "The advanced version of the Cloud Translation API provides a variety of solutions for customizing translations: NMT customization : You can train your own custom version of the standard NMT model with a rich dataset of translation examples."
+        ]
+      },
+      {
+        "title": "Overview of the Cloud Translation API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "source_id": "site-iam-reference",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Feature Basic Advanced Translate with the NMT model Translate with the Translation LLM Translate with Adaptive Translation models Translate with custom models Translate multiple strings in a single request Batch translations with Cloud Storage Translate documents Glossary support (control terminology) Train custom models Language Detection Integrated REST API Integrated gRPC API Service Account API Key Audit logging Supports HTML Supports 100+ Languages Romanization support Transliteration support Adaptive Translation Multi-regional endpoint support VPC Service Controls support Refer to Cloud Translation - Advanced API features for more details on Cloud Translation - Advanced API.",
+          "Compare supported models Customize the NMT model Customize the Translation LLM Supported languages Supported formats Perform adaptive translation Migrate to Translation Advanced For answers to general questions about Cloud Translation API, refer to the General FAQs page.",
+          "Glossaries A glossary is a custom dictionary that Cloud Translation - Advanced API uses to correctly and consistently translate domain-specific terms, named entities, and other kinds of terms that are specific to you."
+        ]
+      },
+      {
+        "title": "\"Creating and using glossaries (Advanced) \\_|\\_ Cloud Translation \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/glossary",
+        "source_id": "site-iam-reference",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DATASET NAME : The name of the dataset that Cloud Translation uses to customize your translations, formatted as projects/ PROJECT ID /locations/ LOCATION /adaptiveMtDatasets/ DATASET ID .",
+          "For more information, see Set up authentication for a local development environment . { % setvar launch stage % } preview { % endsetvar % } { % setvar launch type % } feature { % endsetvar % } { % include \"cloud/ shared/ info launch stage disclaimer.html\" % } / Translates using AdaptiveMt. / private static void adaptiveMtTranslate ( TranslationServiceClient translationServiceClient , String projectId , String datasetId ) { String adaptiveMtDatasetName = String . format ( \"projects/%s/locations/LOCATION/adaptiveMtDatasets/%s\" , projectId , datasetId ); String glossaryId = \"your-glossary-display-name\" ; GlossaryName glossaryName = GlossaryName . of ( projectId , location , glossaryId ); GlossaryConfig glossaryConfig = GlossaryConfig . newBuilder (). setGlossary ( glossaryName . toString ()). build (); AdaptiveMtTranslateRequest request = AdaptiveMtTranslateRequest . newBuilder () . setParent ( LocationName . of ( projectId , \"us-central1\" ). toString ()) . setDataset ( adaptiveMtDatasetName ) . addContent ( \"Sample translation text\" ) . setGlossaryConfig ( glossaryConfig ) . build (); AdaptiveMtTranslateResponse response = translationServiceClient . adaptiveMtTranslate ( request ); System . out . println ( \"Translating using AdaptiveMt\" ); System . out . println ( response ); } Node.js Before trying this sample, follow the Node.js setup instructions in the Cloud Translation quickstart using client libraries .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT NUMBER OR ID \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION :adaptiveMtTranslate\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"translations\": [ { \"translatedText\": \" TRANSLATED TEXT \" } ], \"languageCode\": \" TARGET LANGUAGE \", \"glossaryTranslations\": { \"translatedText\": \" TRANSLATED TEXT \", \"glossaryConfig\": { \"glossary\": \"projects/ project-number /locations/ LOCATION /glossaries/ GLOSSARY ID \", \"ignoreCase\": BOOLEAN , \"contextual translation enabled\": BOOLEAN CONTEXTUAL } }, } Java Before trying this sample, follow the Java setup instructions in the Cloud Translation quickstart using client libraries ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "disclaimer.html",
+      "request.json",
+      "translation.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-translations",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "https://docs.cloud.google.com/translate/docs/advanced/glossary"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-translations",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "https://docs.cloud.google.com/translate/docs/advanced/glossary"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-translations",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "https://docs.cloud.google.com/translate/docs/advanced/glossary"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-translations",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "https://docs.cloud.google.com/translate/docs/advanced/glossary"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-translations",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "https://docs.cloud.google.com/translate/docs/advanced/glossary"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-translations",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "https://docs.cloud.google.com/translate/docs/advanced/glossary"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-translations",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "https://docs.cloud.google.com/translate/docs/advanced/glossary"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-translations",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "https://docs.cloud.google.com/translate/docs/advanced/glossary"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:44.771Z",
+  "source_step08_card": "data/step-08/current/products/cloud-translation/card.json",
+  "product_name": "Cloud Translation",
+  "product_slug": "cloud-translation"
+}

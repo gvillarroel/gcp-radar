@@ -1,0 +1,130 @@
+{
+  "feature_name": "Querying Apache Iceberg tables created by open source engines",
+  "feature_slug": "querying-apache-iceberg-tables-created-by-open-source-engines",
+  "summary": "BigQuery supports querying Apache Iceberg tables created by open source engines.",
+  "extended_definition": "BigQuery supports querying Apache Iceberg tables created by open source engines.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+      "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+      "https://docs.cloud.google.com/bigquery/docs/pandas-gbq-migration"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use open source Python libraries \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/pandas-gbq-migration",
+        "source_id": "site-docs-reference",
+        "final_score": 41,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see the documentation and source code . google-cloud-bigquery BigQuery deployment, administration, and SQL-based querying Open source library maintained by Google Python package that wraps all the BigQuery APIs.",
+          "SchemaField ( \"my string\" , \"STRING\" ), ] ) job = client . load table from dataframe ( df , table id , job config = job config ) Wait for the load job to complete. job . result () Features not supported by pandas-gbq While the pandas-gbq library provides a useful interface for querying data and writing data to tables, it does not cover many of the BigQuery API features, including but not limited to: Managing datasets , including creating new datasets , updating dataset properties , and deleting datasets Loading data into BigQuery from formats other than pandas DataFrames or from pandas DataFrames with JSON columns Managing tables , including listing tables in a dataset , copying table data , and deleting tables Exporting BigQuery data directly to Cloud Storage Troubleshooting connection pool errors Error string: Connection pool is full, discarding connection: bigquery.googleapis.com.",
+          "For more information, see Introduction to BigQuery DataFrames . pandas-gbq Python based data processing using client side data copy Open source library maintained by PyData and volunteer contributors Lets you move data to and from Python DataFrames on the client side."
+        ]
+      },
+      {
+        "title": "\"Introduction to BigLake external tables \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "source_id": "site-docs-reference-5",
+        "final_score": 38,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, the following diagram demonstrates how the BigQuery Storage API lets users access authorized data using open source query engines such as Apache Spark: For more information about connectors supported by BigQuery, see BigQuery connectors .",
+          "BigLake tables support the following formats: Avro CSV Delta Lake Iceberg JSON ORC Parquet You can't use cached metadata with Apache Iceberg external tables ; BigQuery already uses the metadata that Iceberg captures in manifest files.",
+          "For information about BigLake, the stand-alone Google Cloud product that includes BigLake metastore, the Apache Iceberg REST catalog, and BigLake tables for Apache Iceberg see BigLake overview ."
+        ]
+      },
+      {
+        "title": "Use the BigLake metastore Iceberg REST catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "source_id": "site-docs-reference-5",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "Prior Iceberg releases For open source Iceberg releases prior to 1.10, you can configure standard OAuth authentication by configuring a session with the following: import pyspark from pyspark.context import SparkContext from pyspark.sql import SparkSession catalog name = \" CATALOG NAME \" spark = SparkSession . builder . appName ( \" APP NAME \" ) \\ . config ( 'spark.jars.packages' , 'org.apache.iceberg:iceberg-spark-runtime-3.5 2.12:1.9.1,org.apache.iceberg:iceberg-gcp-bundle:1.9.1' ) \\ . config ( f 'spark.sql.catalog. { catalog name } ' , 'org.apache.iceberg.spark.SparkCatalog' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .type' , 'rest' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .uri' , 'https://biglake.googleapis.com/iceberg/v1/restcatalog' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .warehouse' , ' WAREHOUSE PATH ' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .header.x-goog-user-project' , ' PROJECT ID ' ) \\ . config ( f \"spark.sql.catalog. { catalog name } .token\" , \" TOKEN \" ) \\ . config ( f \"spark.sql.catalog. { catalog name } .oauth2-server-uri\" , \"https://oauth2.googleapis.com/token\" ) \\ . config ( f 'spark.sql.catalog. { catalog name } .io-impl' , 'org.apache.iceberg.gcp.gcs.GCSFileIO' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .rest-metrics-reporting-enabled' , 'false' ) \\ . config ( 'spark.sql.extensions' , 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions' ) \\ . config ( 'spark.sql.defaultCatalog' , ' CATALOG NAME ' ) \\ . getOrCreate () Replace the following: CATALOG NAME : the name of your Iceberg REST catalog.",
+          "It lets query engines, such as Apache Spark, discover, read metadata from, and manage Iceberg tables in a consistent way.",
+          "For managed BigLake tables for Apache Iceberg , this name often matches the Cloud Storage bucket ID used with the REST catalog—for example, if your bucket is gs://bucket-id , the catalog name might be bucket-id ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "biglake.googleapis.com",
+      "bigquery.googleapis.com",
+      "header.x",
+      "oauth2.googleapis.com",
+      "org.apache.iceberg",
+      "org.apache.iceberg.gcp.gcs.GCSFileIO",
+      "org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions",
+      "org.apache.iceberg.spark.SparkCatalog",
+      "pyspark.context",
+      "pyspark.sql",
+      "spark.jars.packages",
+      "spark.sql.catalog",
+      "spark.sql.defaultCatalog",
+      "spark.sql.extensions"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "https://docs.cloud.google.com/bigquery/docs/pandas-gbq-migration"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "https://docs.cloud.google.com/bigquery/docs/pandas-gbq-migration"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "https://docs.cloud.google.com/bigquery/docs/pandas-gbq-migration"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

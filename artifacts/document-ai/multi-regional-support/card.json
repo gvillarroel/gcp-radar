@@ -1,0 +1,123 @@
+{
+  "feature_name": "Multi-regional support",
+  "feature_slug": "multi-regional-support",
+  "summary": "Multi-regional support lets Document AI store and process data in us or eu regions.",
+  "extended_definition": "Multi-regional support lets Document AI store and process data in us or eu regions.",
+  "lifecycle": {
+    "latest_feature_date": "2020-04-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/create-processor",
+      "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+      "https://docs.cloud.google.com/document-ai/docs/processors-list",
+      "https://docs.cloud.google.com/document-ai/docs/regions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Regional and multi-regional support \\_|\\_ Document AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/regions",
+        "source_id": "site-docs-root-2",
+        "final_score": 305,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Document AI Guides Send feedback Regional and multi-regional support Stay organized with collections Save and categorize content based on your preferences.",
+          "You must specify either a regional or multi-regional location for data storage and document processing.",
+          "Full list of processors : CE with GenAI Region v1.4 v1.5 us eu asia-south1 † asia-southeast1 † australia-southeast1 † europe-west2 † europe-west3 northamerica-northeast1 † Custom extractor with generative AI † In Preview CE custom Region us eu asia-south1 asia-southeast1 australia-southeast1 europe-west2 europe-west3 northamerica-northeast1 Custom-based and template-based extractor OCR Region v1.0 v1.1 v1.2 v2.0 v2.1 v2.1.1 (Preview) us eu asia-south1 asia-southeast1 australia-southeast1 europe-west2 europe-west3 northamerica-northeast1 Custom classifier Region v1.0 us eu asia-south1 asia-southeast1 australia-southeast1 europe-west2 europe-west3 northamerica-northeast1 Custom splitter Region v1.0 us eu asia-south1 asia-southeast1 australia-southeast1 europe-west2 europe-west3 northamerica-northeast1 Form Parser Region v1.0 v2.0 v2.1 us eu asia-south1 asia-southeast1 australia-southeast1 europe-west2 europe-west3 northamerica-northeast1 Layout Parser Region v1.0 us eu asia-south1 asia-southeast1 australia-southeast1 europe-west2 europe-west3 northamerica-northeast1 For more details, see the full list of processors ."
+        ]
+      },
+      {
+        "title": "Creating and managing processors \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/create-processor",
+        "source_id": "site-docs-root",
+        "final_score": 290,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Processor ; public class SyncListProcessors { public static void main ( String [] args ) throws Exception { syncListProcessors (); } public static void syncListProcessors () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient . create ()) { ListProcessorsRequest request = ListProcessorsRequest . newBuilder () . setParent ( LocationName . of ( \"[PROJECT]\" , \"[LOCATION]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . build (); for ( Processor element : documentProcessorServiceClient . listProcessors ( request ). iterateAll ()) { // doThingsWith(element); } } } } Ruby For more information, see the Document AI Ruby API reference documentation .",
+          "Processor ; public class SyncCreateProcessor { public static void main ( String [] args ) throws Exception { syncCreateProcessor (); } public static void syncCreateProcessor () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient . create ()) { CreateProcessorRequest request = CreateProcessorRequest . newBuilder () . setParent ( LocationName . of ( \"[PROJECT]\" , \"[LOCATION]\" ). toString ()) . setProcessor ( Processor . newBuilder (). build ()) . build (); Processor response = documentProcessorServiceClient . createProcessor ( request ); } } } Ruby For more information, see the Document AI Ruby API reference documentation .",
+          "ProcessorName ; public class SyncDisableProcessor { public static void main ( String [] args ) throws Exception { syncDisableProcessor (); } public static void syncDisableProcessor () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient . create ()) { DisableProcessorRequest request = DisableProcessorRequest . newBuilder () . setName ( ProcessorName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[PROCESSOR]\" ). toString ()) . build (); DisableProcessorResponse response = documentProcessorServiceClient . disableProcessorAsync ( request ). get (); } } } Ruby For more information, see the Document AI Ruby API reference documentation ."
+        ]
+      },
+      {
+        "title": "Managing processor versions \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "source_id": "site-docs-root-2",
+        "final_score": 285,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SetDefaultProcessorVersionResponse ; public class SyncSetDefaultProcessorVersion { public static void main ( String [] args ) throws Exception { syncSetDefaultProcessorVersion (); } public static void syncSetDefaultProcessorVersion () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient . create ()) { SetDefaultProcessorVersionRequest request = SetDefaultProcessorVersionRequest . newBuilder () . setProcessor ( ProcessorName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[PROCESSOR]\" ). toString ()) . setDefaultProcessorVersion ( ProcessorVersionName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[PROCESSOR]\" , \"[PROCESSOR VERSION]\" ) . toString ()) . build (); SetDefaultProcessorVersionResponse response = documentProcessorServiceClient . setDefaultProcessorVersionAsync ( request ). get (); } } } Python For more information, see the Document AI Python API reference documentation .",
+          "ProcessorVersion ; public class SyncListProcessorVersions { public static void main ( String [] args ) throws Exception { syncListProcessorVersions (); } public static void syncListProcessorVersions () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient . create ()) { ListProcessorVersionsRequest request = ListProcessorVersionsRequest . newBuilder () . setParent ( ProcessorName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[PROCESSOR]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . build (); for ( ProcessorVersion element : documentProcessorServiceClient . listProcessorVersions ( request ). iterateAll ()) { // doThingsWith(element); } } } } Python For more information, see the Document AI Python API reference documentation .",
+          "UndeployProcessorVersionResponse ; public class SyncUndeployProcessorVersion { public static void main ( String [] args ) throws Exception { syncUndeployProcessorVersion (); } public static void syncUndeployProcessorVersion () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient . create ()) { UndeployProcessorVersionRequest request = UndeployProcessorVersionRequest . newBuilder () . setName ( ProcessorVersionName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[PROCESSOR]\" , \"[PROCESSOR VERSION]\" ) . toString ()) . build (); UndeployProcessorVersionResponse response = documentProcessorServiceClient . undeployProcessorVersionAsync ( request ). get (); } } } Python For more information, see the Document AI Python API reference documentation ."
+        ]
+      },
+      {
+        "title": "Processor list \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/processors-list",
+        "source_id": "site-docs-root",
+        "final_score": 275,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Category Pretrained Functions OCR, Entity Extraction Release stage General availability Access status Public lock open Type in API BANK STATEMENT PROCESSOR Notes If a page of a multi-page input file is the correct document type and one of the supported versions, the processor performs entity extraction on the first supported document.",
+          "Category Pretrained Functions OCR, Entity Extraction Release stage General availability Access status Public lock open Type in API FORM W2 PROCESSOR Notes If a page of a multi-page input file is the correct document type and one of the supported versions, the processor performs entity extraction on the first supported document.",
+          "Category Digitize Functions OCR, Quality Analysis Release stage General availability Access status Public lock open Type in API OCR PROCESSOR Supported languages Full list of languages Language Name BCP 47 Tag Script Handwriting supported Afrikaans af Latn Albanian sq Latn Arabic ar Arab Armenian hy Armn Belarusian be Cyrl Bangla bn Beng Bengali bn Beng Bulgarian bg Cyrl Catalan ca Latn Chinese zh Hani Croatian hr Latn Czech cs Latn Danish da Latn Dutch nl Latn English en Latn Estonian et Latn Filipino fil Latn Finnish fi Latn French fr Latn German de Latn Greek el Grek Gujarati gu Gujr Hebrew iw Hebr Hindi hi Deva Hungarian hu Latn Icelandic is Latn Indonesian id Latn Italian it Latn Japanese ja Jpan Kannada kn Knda Khmer km Khmr Korean ko Kore Lao lo Laoo Latvian lv Latn Lithuanian lt Latn Macedonian mk Cyrl Malay ms Latn Malayalam ml Mlym Marathi mr Deva Nepali ne Deva Norwegian no Latn Persian fa Arab Polish pl Latn Portuguese (Portugal & Brazil) pt Latn Punjabi pa Guru Romanian ro Latn Russian ru Cyrl Serbian sr Cyrl Slovak sk Latn Slovenian sl Latn Spanish es Latn Swedish sv Latn Tagalog tl Latn Tamil ta Taml Telugu te Telu Thai th Thai Turkish tr Latn Ukrainian uk Cyrl Vietnamese vi Latn Yiddish yi Hebr Processor versions Version ID Release Channel Release Maturity Description pretrained-ocr-v1.2-2022-11-10 Stable GA Frozen model version of v1.0: Model files, configurations, and binaries of a version snapshot frozen in a container image for up to 18 months. pretrained-ocr-v2.0-2023-06-02 Stable GA Production-ready model specialized for document use cases."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.documentai.v1",
+      "v1.0",
+      "v1.1",
+      "v1.2",
+      "v1.4",
+      "v1.5",
+      "v2.0",
+      "v2.1",
+      "v2.1.1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/regions",
+        "https://docs.cloud.google.com/document-ai/docs/create-processor",
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/document-ai/docs/processors-list"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/regions",
+        "https://docs.cloud.google.com/document-ai/docs/create-processor",
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/document-ai/docs/processors-list"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:00.744Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai"
+}

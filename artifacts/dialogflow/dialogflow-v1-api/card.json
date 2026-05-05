@@ -1,0 +1,90 @@
+{
+  "feature_name": "Dialogflow V1 API",
+  "feature_slug": "dialogflow-v1-api",
+  "summary": "Dialogflow V1 API supports bot requests for legacy Dialogflow integrations; The Dialogflow V1 API is undergoing a gradual shutdown; deprecated on 2021-07-12.",
+  "extended_definition": "Dialogflow V1 API supports bot requests for legacy Dialogflow integrations; The Dialogflow V1 API is undergoing a gradual shutdown; deprecated on 2021-07-12.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-15",
+    "deprecation_date": "2021-07-12",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/analytics-legacy",
+      "https://docs.cloud.google.com/dialogflow/es/docs/analytics"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Analytics \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/analytics",
+        "source_id": "site-iam-reference",
+        "final_score": 63,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: OK PERMISSION DENIED INTERNAL DEADLINE EXCEEDED Integrations view This view charts session and interaction counts for all requests (except Google Assistant) by integration type .",
+          "Hovering your mouse over a data point shows a popup with individual counts at that point: Knowledge had result Knowledge was used Knowledge had primary result Sentiment view This view charts session and interaction counts for sentiment requests by sentiment result data.",
+          "Common metrics The following common metrics are displayed on multiple chart types: Interactions : For most views, interactions include detect intent request counts via direct API calls and indirect calls via integrations (except for Google Assistant)."
+        ]
+      },
+      {
+        "title": "Legacy Analytics \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/analytics-legacy",
+        "source_id": "site-docs-root",
+        "final_score": 63,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Send feedback Legacy Analytics Stay organized with collections Save and categorize content based on your preferences.",
+          "Common metric definitions The following metrics are displayed on multiple charts: Interactions : Interactions include detect intent request counts via direct API calls and indirect calls via integrations.",
+          "The Dialogflow CX console provides an analytics panel that shows various agent request and response data statistics."
+        ]
+      },
+      {
+        "title": "\"General agent design best practices \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+        "source_id": "site-docs-root",
+        "final_score": 55,
+        "relevance": "",
+        "evidence_snippets": [
+          "Dialogflow CX API If none of the ready-to-use integrations are suitable, or you would like to customize the interface for your system, you can use the Dialogflow CX API directly .",
+          "If you use an integration, you do not need to directly call the Dialogflow CX API, as integrations handle this for you.",
+          "Integrations and connecting your services There are multiple ways to integrate with Dialogflow CX agents."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/analytics-legacy",
+        "https://docs.cloud.google.com/dialogflow/es/docs/analytics",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:58.946Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

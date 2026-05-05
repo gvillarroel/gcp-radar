@@ -1,0 +1,216 @@
+{
+  "feature_name": "NotebookLM Enterprise sharing autocomplete",
+  "feature_slug": "notebooklm-enterprise-sharing-autocomplete",
+  "summary": "Autocomplete helps users select email addresses and group names when sharing notebooks in NotebookLM Enterprise.",
+  "extended_definition": "Autocomplete helps users select email addresses and group names when sharing notebooks in NotebookLM Enterprise.",
+  "lifecycle": {
+    "latest_feature_date": "2026-04-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/configure-chrome",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure autocomplete \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "source_id": "site-docs-root",
+        "final_score": 176,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example command and result curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -H \"X-Goog-User-Project: my-project-123\" \\ https://discoveryengine.googleapis.com/v1alpha/projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig?updateMask=numUniqueUsersThreshold \\ -d '{ \"name\": \"projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig\", \"numUniqueUsersThreshold\": 6 }' { \"name\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/completionConfig\", \"matchingOrder\": \"exact-prefix\", \"maxSuggestions\": 20, \"minPrefixLength\": 1, \"queryModel\": \"automatic\", \"enableMode\": \"AUTOMATIC\", \"numUniqueUsersThreshold\": 6, \"queryFrequencyThreshold\": 30 } Update completable field annotations in schema To turn on autocomplete for fields in structured data schema, follow these steps: Console In the Google Cloud console, go to the Gemini Enterprise page.",
+          "If there is an email address jeffersonloveshiking@gmail.com in the data store, Gemini Enterprise won't return the email address as an autocomplete suggestion if the user types jef in the search bar.",
+          "Example command and result curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\$ curl -X PATCH \\ -H \"X-Goog-User-Project: my-project-123\" \\t-access-token)\" \\ https://discoveryengine.googleapis.com/v1alpha/projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig?updateMask=queryFrequencyThreshold \\ -d '{ \"name\": \"projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig\", \"queryFrequencyThreshold\": 30 }' { \"name\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/completionConfig\", \"matchingOrder\": \"exact-prefix\", \"maxSuggestions\": 20, \"minPrefixLength\": 1, \"queryModel\": \"automatic\", \"enableMode\": \"AUTOMATIC\", \"queryFrequencyThreshold\": 30 } Update the CompletionConfig.numUniqueUsersThreshold field: curl -X PATCH \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -H \"X-Goog-User-Project: PROJECT ID \" \\ https://discoveryengine.googleapis.com/v1alpha/projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /completionConfig?updateMask = numUniqueUsersThreshold \\ -d '{ \"name\": \"projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /completionConfig\", \"numUniqueUsersThreshold\": UNIQUE USERS }' Replace UNIQUE USERS with an integer value that represents the minimum number of unique users who must enter a given search query before it can be returned as an autocomplete suggestion."
+        ]
+      },
+      {
+        "title": "NotebookLM Enterprise, Gemini Enterprise, or both? \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+        "source_id": "site-docs-root",
+        "final_score": 167,
+        "relevance": "",
+        "evidence_snippets": [
+          "Key features of NotebookLM Enterprise NotebookLM Enterprise includes the following key features: Centralized knowledge : Notebooks serve as a single, trusted reference for specific topics, projects, or departments, built from your intentionally selected sources.",
+          "Users can then add these newly-discovered sources directly into a NotebookLM Enterprise notebook, further enriching their curated knowledge bases.",
+          "NotebookLM Enterprise Gemini Enterprise Primary Goal Centralized knowledge, content generation from your own documents Enterprise-wide data search, multi-modal content generation, and agent orchestration Input Your uploaded documents, websites, and specific sources Broad queries and data from across enterprise systems (Google and third-party SaaS) Output Synthesized insights, generated content (FAQs, timelines), interactive audio podcasts, and chat-based questions and answers confined to sources Answers from diverse data, text and multi-modal content from across your enterprise, and automated actions by agents User Individual knowledge workers, small teams, content creators Process owners, developers, IT, operations, business analysts, general knowledge seekers, and content creators Complexity Focused knowledge management and document-specific chat experiences Orchestrating multi-agent systems for business processes and general AI assistance Core Function Understanding and extracting from unstructured text, generating content based on your sources Comprehensive information retrieval, multi-modal content creation, and autonomous agent execution How NotebookLM Enterprise and Gemini Enterprise work together NotebookLM Enterprise and Gemini Enterprise are complementary products , enhancing each other's value."
+        ]
+      },
+      {
+        "title": "Configure identity provider \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "source_id": "site-docs-root",
+        "final_score": 163,
+        "relevance": "",
+        "evidence_snippets": [
+          "Entra ID with OIDC protocol This example uses the email to uniquely identify users. google.subject=assertion.email.lowerAscii() google.groups=assertion.groups google.display name=assertion.given name Entra ID with SAML protocol This example uses the email to uniquely identify users. google . subject = assertion . attributes [ ' http : //schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'][0].lowerAscii() google . groups = assertion . attributes [ ' http : //schemas.microsoft.com/ws/2008/06/identity/claims/groups'] google . display name = assertion . attributes [ ' http : //schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname'][0] Okta with OIDC protocol This example uses the email to uniquely identify users. google.subject=assertion.email.lowerAscii() google.groups=assertion.groups Okta with SAML protocol This example uses the subject assertion of the JWT to uniquely identify users. google.subject=assertion.subject.lowerAscii() google.groups=assertion.attributes['groups'] Optional: Verify Workforce Identity Federation setup To verify successful sign-ins and correct attribute mapping using the Workforce Identity Federation audit logging feature, do the following: Enable audit logs for the Data Access activity's Security Token Service API.",
+          "For example, if your organization uses both email and principal name as user identifiers across different applications, and the principal name is set as the preferred username in your third-party identity provider, you can map it to Gemini Enterprise using the Workforce Identity Federation attribute mapping (for example, attribute.as user identifier 1=assertion.preferred username ).",
+          "Okta Configure Workforce Identity Federation with Okta and sign in users OIDC or SAML 2.0 Configure Workforce Identity Federation with an identity provider (IdP) that supports OIDC or SAML 2.0 Configure attribute mapping Attribute mapping helps you connect your third-party identity information with Google using Workforce Identity Federation."
+        ]
+      },
+      {
+        "title": "\"Configure Chrome Enterprise cloud-managed browsers \\_|\\_ Gemini Enterprise\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/configure-chrome",
+        "source_id": "site-docs-root",
+        "final_score": 146,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable autocomplete in your Gemini Enterprise project To enable Autocomplete in your Gemini Enterprise project, go to your Google Cloud Console Gemini Enterprise page , select your app, then select Configurations > Autocomplete .",
+          "Example copied value: https://discoveryengine.googleapis.com/v1alpha/projects/1234/locations/global/collections/default collection/engines/enterprisesearch/ servingConfigs/default search:search Formatted value: https://discoveryengine.googleapis.com/v1alpha/projects/1234/locations/global/collections/default collection/engines/enterprisesearch/ completionConfig:completeQuery Note: To find the ID for your Gemini Enterprise agent, navigate to your Google Cloud Console's AI Applications page, select the appropriate Gemini Enterprise application, then select Integration > Web App.",
+          "Example copied value: https://vertexaisearch.cloud.google.com/home/cid/ 1234 Formatted value: https://vertexaisearch.cloud.google.com/home/cid/ 1234?q={searchTerms} Note: To find the ID for your Gemini Enterprise agent, navigate to your Google Cloud Console's AI Applications page, select the appropriate Gemini Enterprise application, then select Integration > Web App."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "assertion.attributes",
+      "assertion.email.lowerAscii",
+      "assertion.given",
+      "assertion.groups",
+      "assertion.preferred",
+      "assertion.subject.lowerAscii",
+      "attribute.as",
+      "discoveryengine.googleapis.com",
+      "gmail.com",
+      "schemas.microsoft.com",
+      "schemas.xmlsoap.org",
+      "vertexaisearch.cloud.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-chrome"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-chrome"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-chrome"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-chrome"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-chrome"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-chrome"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-chrome"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-chrome"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-chrome"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-chrome"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-chrome"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-chrome"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:09.587Z",
+  "source_step08_card": "data/step-08/current/products/gemini-enterprise/card.json",
+  "product_name": "Gemini Enterprise",
+  "product_slug": "gemini-enterprise"
+}

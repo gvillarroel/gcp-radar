@@ -1,0 +1,164 @@
+{
+  "feature_name": "PodSecurityPolicy extensions/v1beta1 API version",
+  "feature_slug": "podsecuritypolicy-extensions-v1beta1-api-version",
+  "summary": "The extensions/v1beta1 API version for PodSecurityPolicy is no longer served in GKE 1.16; deprecated on 2020-03-06.",
+  "extended_definition": "The extensions/v1beta1 API version for PodSecurityPolicy is no longer served in GKE 1.16; deprecated on 2020-03-06.",
+  "lifecycle": {
+    "latest_feature_date": "2020-03-06",
+    "deprecation_date": "2020-03-06",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 155,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following upcoming GKE on AWS versions or newer will include the fix for this vulnerability, and this bulletin will be updated when they are available: 1.5.0-gke.6 1.4.3-gke.7 Drop the CAP NET RAW capability from containers with one of the following methods: Enforce blocking these capabilities with PodSecurityPolicy , for example: Require dropping CAP NET RAW with a PSP apiversion: extensions/v1beta1 kind: PodSecurityPolicy metadata: name: no-cap-net-raw spec: requiredDropCapabilities: -NET RAW ...",
+          "This and other powerful capabilities should be blocked by default through Anthos Policy Controller or by updating your Pod specs: Drop the CAP NET RAW capability from containers with one of the following methods: Enforce blocking these capabilities with PodSecurityPolicy , for example: Require dropping CAP NET RAW with a PSP apiversion: extensions/v1beta1 kind: PodSecurityPolicy metadata: name: no-cap-net-raw spec: requiredDropCapabilities: -NET RAW ...",
+          "This and other powerful capabilities should be blocked by default through Anthos Policy Controller or by updating your Pod specs: Drop the CAP NET RAW capability from containers with one of the following methods: Enforce blocking these capabilities with PodSecurityPolicy , for example: Require dropping CAP NET RAW with a PSP apiversion: extensions/v1beta1 kind: PodSecurityPolicy metadata: name: no-cap-net-raw spec: requiredDropCapabilities: -NET RAW ..."
+        ]
+      },
+      {
+        "title": "\"Optimize GKE resource utilization for mixed AI/ML training and inference\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "This ConfigMap customizes Kueue to exclude management of Pods in the kube-system and kueue-system namespaces. apiVersion : v1 kind : ConfigMap metadata : name : kueue-manager-config data : controller manager config.yaml : apiVersion: config.kueue.x-k8s.io/v1beta1 kind: Configuration health: healthProbeBindAddress: :8081 metrics: bindAddress: :8080 enableClusterQueueResources: true webhook: port: 9443 leaderElection: leaderElect: true resourceName: c1f6bfd2.kueue.x-k8s.io controller: groupKindConcurrency: Job.batch: 5 Pod: 5 Workload.kueue.x-k8s.io: 5 LocalQueue.kueue.x-k8s.io: 1 ClusterQueue.kueue.x-k8s.io: 1 ResourceFlavor.kueue.x-k8s.io: 1 clientConnection: qps: 50 burst: 100 #pprofBindAddress: :8083 #waitForPodsReady: enable: false timeout: 5m blockAdmission: false requeuingStrategy: timestamp: Eviction backoffLimitCount: null # null indicates infinite requeuing backoffBaseSeconds: 60 backoffMaxSeconds: 3600 #manageJobsWithoutQueueName: true managedJobsNamespaceSelector: matchExpressions: - key: kubernetes.io/metadata.name operator: NotIn values: [ kube-system, kueue-system ] #internalCertManagement: enable: false webhookServiceName: \"\" webhookSecretName: \"\" integrations: frameworks: - \"batch/job\" - \"kubeflow.org/mpijob\" - \"ray.io/rayjob\" - \"ray.io/raycluster\" - \"jobset.x-k8s.io/jobset\" - \"kubeflow.org/paddlejob\" - \"kubeflow.org/pytorchjob\" - \"kubeflow.org/tfjob\" - \"kubeflow.org/xgboostjob\" - \"kubeflow.org/jaxjob\" - \"workload.codeflare.dev/appwrapper\" - \"pod\" - \"deployment\" # requires enabling pod integration - \"statefulset\" # requires enabling pod integration - \"leaderworkerset.x-k8s.io/leaderworkerset\" # requires enabling pod integration externalFrameworks: - \"Foo.v1.example.com\" #fairSharing: enable: true preemptionStrategies: [LessThanOrEqualToFinalShare, LessThanInitialShare] #admissionFairSharing: usageHalfLifeTime: \"168h\" # 7 days usageSamplingInterval: \"5m\" resourceWeights: # optional, defaults to 1 for all resources if not specified cpu: 0 # if you want to completely ignore cpu usage memory: 0 # ignore completely memory usage example.com/gpu: 100 # and you care only about GPUs usage #resources: excludeResourcePrefixes: [] transformations: - input: nvidia.com/mig-4g.5gb strategy: Replace Retain outputs: example.com/accelerator-memory: 5Gi example.com/accelerator-gpc: 4 #objectRetentionPolicies: workloads: afterFinished: null # null indicates infinite retention, 0s means no retention at all afterDeactivatedByKueue: null # null indicates infinite retention, 0s means no retention at all In Cloud Shell, run the following command to install Kueue: cd ${ EXAMPLE HOME } kubectl kustomize kueue kubectl apply --server-side --filename = - Wait until the Kueue Pods are ready: watch kubectl --namespace = kueue-system get pods The output should look similar to the following: NAME READY STATUS RESTARTS AGE kueue-controller-manager-bdc956fc4-vhcmx 1/1 Running 0 3m15s In the /workloads directory, view the flavors.yaml , cluster-queue.yaml , and local-queue.yaml files.",
+          "The preemption field in the ClusterQueue configuration references the PriorityClasses to determine which Pods can be preempted when resources are scarce. apiVersion : kueue.x-k8s.io/v1beta1 kind : ClusterQueue metadata : name : \"cluster-queue\" spec : namespaceSelector : {} # match all. preemption : reclaimWithinCohort : LowerPriority withinClusterQueue : LowerPriority resourceGroups : - coveredResources : [ \"cpu\" , \"memory\" , \"nvidia.com/gpu\" , \"ephemeral-storage\" ] flavors : - name : default-flavor resources : - name : \"cpu\" nominalQuota : 72 - name : \"memory\" nominalQuota : 288Gi - name : \"nvidia.com/gpu\" nominalQuota : 6 - name : \"ephemeral-storage\" nominalQuota : 200Gi LocalQueue This manifest creates a Kueue LocalQueue named lq in the llm namespace. apiVersion : kueue.x-k8s.io/v1beta1 kind : LocalQueue metadata : namespace : llm # LocalQueue under llm namespace name : lq spec : clusterQueue : cluster-queue # Point to the ClusterQueue View the default-priorityclass.yaml , low-priorityclass.yaml , and high-priorityclass.yaml files.",
+          "Run the following command to scale the inference server's replicas to two: kubectl scale --replicas = 2 deployment/tgi-gemma-deployment --namespace = llm Check the status of the Workload objects: kubectl get workloads --namespace = llm The output looks similar to the following: NAME QUEUE RESERVED IN ADMITTED FINISHED AGE job-finetune-gemma-l4-3316f lq False 32m pod-tgi-gemma-deployment-6cb95cc7f5-cbxg2-d9fe7 lq cluster-queue True 70m pod-tgi-gemma-deployment-6cb95cc7f5-p49sh-167de lq cluster-queue True 14s The output shows that the fine-tuning Job is no longer admitted because the increased inference server replicas are using the available GPU quota."
+        ]
+      },
+      {
+        "title": "\"Feature and API deprecations \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+        "source_id": "site-iam-reference-required-2",
+        "final_score": 93,
+        "relevance": "",
+        "evidence_snippets": [
+          "Container Registry May 15, 2023 March 18, 2025 Transition from Container Registry to Artifact Registry in GKE No GKE Compliance dashboard (Preview) January 28, 2025 June 30, 2025 Posture management feature deprecations No Workload vulnerability scanning GKE security posture dashboard Standard tier: July 23, 2024 Advanced Vulnerability Insights: June 16, 2025 Standard tier: July 31, 2025 Advanced Vulnerability Insights: June 16, 2026 Vulnerability scanning removal from GKE Standard edition Yes Supply chain concerns - Binary Authorization (Preview) GKE security posture dashboard January 28, 2025 March 31, 2025 Posture management feature deprecations No Kubernetes security posture - advanced tier (Preview) GKE security posture dashboard January 28, 2025 March 31, 2025 Posture management feature deprecations Yes containerd 1.7 features GKE version 1.32 GKE version 1.33 Migrate nodes to containerd 2 Yes Linux cgroupv1 mode GKE version 1.31 TBD Migrate nodes to Linux cgroupv2 No Vulnerability scanning removal from GKE standard edition July 23, 2024 July 31, 2025 Vulnerability scanning removal from GKE Standard edition No TLS certificates signed with SHA-1 algorithm GKE version 1.24 GKE version 1.29 SHA-1 TLS certificates support removal Yes Built-in authentication plugin for Kubernetes clients GKE version 1.22 GKE version 1.25 Deprecated authentication plugin for Kubernetes clients No PodSecurityPolicy GKE version 1.21 GKE version 1.25 PodSecurityPolicy deprecation Yes Docker-based node images GKE version 1.20 GKE version 1.24 Docker node image deprecation Yes X.509 Common Name field in webhook certificates GKE version 1.19 GKE version 1.23 Webhook certificates CN field deprecation Yes Kubernetes API deprecations The following table provides an overview of Kubernetes APIs that are deprecated and no longer served, sorted by Kubernetes version: Kubernetes version More information Does GKE detect and report usage?",
+          "Kubernetes feature deprecations The following table outlines ongoing GKE feature deprecations, as well as the version in which those features are no longer supported: Name Deprecated Removed More information Does GKE detect and report usage?",
+          "After you make changes to stop usage of deprecated APIs or features in your cluster, GKE waits until it has no longer observed use of deprecated APIs or features for 30 days, and then unblocks automatic upgrades."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "c1f6bfd2.kueue.x",
+      "config.kueue.x",
+      "config.yaml",
+      "example.com",
+      "flavors.yaml",
+      "github.com",
+      "gke.6",
+      "gke.7",
+      "jobset.x",
+      "k8s.io",
+      "kubeflow.org",
+      "kubernetes.io",
+      "kueue.x",
+      "kustomize.config.k8s.io",
+      "leaderworkerset.x",
+      "manifests.yaml",
+      "metadata.name",
+      "nvidia.com",
+      "patch.yaml",
+      "priorityclass.yaml",
+      "queue.yaml",
+      "ray.io",
+      "v0.12.3",
+      "v1.example.com",
+      "workload.codeflare.dev"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:15.353Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

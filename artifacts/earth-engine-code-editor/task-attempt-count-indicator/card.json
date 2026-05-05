@@ -1,0 +1,133 @@
+{
+  "feature_name": "Task attempt count indicator",
+  "feature_slug": "task-attempt-count-indicator",
+  "summary": "The task manager now shows how many times a task has been attempted.",
+  "extended_definition": "The task manager now shows how many times a task has been attempted.",
+  "lifecycle": {
+    "latest_feature_date": "2020-09-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/access_control",
+      "https://developers.google.com/earth-engine/guides/computation_overview",
+      "https://developers.google.com/earth-engine/guides/debugging"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Control access to resources \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/access_control",
+        "source_id": "site-docs-root-2",
+        "final_score": 85,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "These roles are: Role Title Description roles/earthengine.viewer Earth Engine Resource Viewer Provides permission to view and list Assets and tasks. roles/earthengine.writer Earth Engine Resource Writer Provides permission to read, create, modify and delete assets, import images and tables, read and update tasks, perform interactive computations, and create long running export tasks. roles/earthengine.admin Earth Engine Admin Provides permission for all Earth Engine resources including changing access controls for Earth Engine assets. roles/earthengine.appsPublisher Earth Engine Apps Publisher Provides permission to create a service account for use with an Earth Engine app.",
+          "Permissions needed on the billing account billing.subscriptions.create (to change an Earth Engine plan) billing.subscriptions.list (to view the current Earth Engine plan) Suggested roles on the billing account Billing Account Viewer ( roles/billing.viewer ), to view the current Earth Engine plan Billing Account Administrator ( roles/billing.admin ), to change an Earth Engine plan Batch task management The following permissions pertain to configuring per-project limits on batch task concurrency .",
+          "Permissions needed Billing account billing.resourceAssociations.create Cloud project resourcemanager.projects.createBillingAssignment Suggested roles Billing account Billing Account User ( roles/billing.user ) Cloud project Project Billing Manager ( roles/billing.projectManager ) Commercial Project Registration The following permissions pertain to registering projects for paid use ."
+        ]
+      },
+      {
+        "title": "Debugging guide \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/debugging",
+        "source_id": "site-docs-root-2",
+        "final_score": 77,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Attempting to circumvent quota restrictions through the use of multiple Google accounts is a violation of the Earth Engine Terms of Service.",
+          "Code Editor (JavaScript) Export . table . toDrive ({ collection : terribleAggregations , description : 'terribleAggregations' , fileFormat : 'CSV' }); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) task = ee . batch .",
+          "Export . table . toDrive ( collection = terrible aggregations , description = 'terrible aggregations' , fileFormat = 'CSV' , ) task.start() User memory limit exceeded One way your algorithms get parallelized in Earth Engine is by splitting the inputs into tiles, running the same computation separately on each tile, then combining the results."
+        ]
+      },
+      {
+        "title": "Computation Overview \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/computation_overview",
+        "source_id": "site-docs-root-2",
+        "final_score": 71,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Count An indicator proportional to the number of times the operation described in 'Description' was invoked.",
+          "EECU usage tracks the computational footprint of tasks and does not directly correspond to CPU-seconds or wall clock time due to the managed nature of the service.",
+          "Metrics for failed requests Earth Engine doesn't provide performance metrics for failed requests/tasks, since these numbers would be inaccurate or misleading."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.admin",
+      "billing.projectManager",
+      "billing.resourceAssociations.create",
+      "billing.subscriptions.create",
+      "billing.subscriptions.list",
+      "billing.user",
+      "billing.viewer",
+      "developers.google.com",
+      "earthengine.admin",
+      "earthengine.appsPublisher",
+      "earthengine.config.get",
+      "earthengine.config.update",
+      "earthengine.viewer",
+      "earthengine.writer",
+      "geemap.core",
+      "resourcemanager.projects.createBillingAssignment",
+      "task.start"
+    ],
+    "missing_inventory_roles": [
+      "roles/billing.admin",
+      "roles/billing.projectManager",
+      "roles/billing.user",
+      "roles/billing.viewer",
+      "roles/earthengine.admin",
+      "roles/earthengine.appsPublisher",
+      "roles/earthengine.viewer",
+      "roles/earthengine.writer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/debugging",
+        "https://developers.google.com/earth-engine/guides/computation_overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/debugging",
+        "https://developers.google.com/earth-engine/guides/computation_overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/debugging",
+        "https://developers.google.com/earth-engine/guides/computation_overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:02.778Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-code-editor/card.json",
+  "product_name": "Earth Engine Code Editor",
+  "product_slug": "earth-engine-code-editor"
+}

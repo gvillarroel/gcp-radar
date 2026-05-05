@@ -1,0 +1,146 @@
+{
+  "feature_name": "Service account management organization policies",
+  "feature_slug": "service-account-management-organization-policies",
+  "summary": "Provides organization policies for managing service accounts.",
+  "extended_definition": "Provides organization policies for managing service accounts.",
+  "lifecycle": {
+    "latest_feature_date": "2019-09-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization",
+      "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases",
+      "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Set up a Google Cloud organization resource \\_|\\_ Resource Manager \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization",
+        "source_id": "site-docs-root",
+        "final_score": 188,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For this reason, we recommend against using Google Workspace or Cloud Identity super administrator accounts for day-to-day management of your organization resource.",
+          "Google Workspace or Cloud Identity super administrator responsibilities, in the context of Google Cloud organization resource setup are: Assigning the Organization Administrator role to some users Being a point of contact in case of recovery issues Controlling the lifecycle of the Google Workspace or Cloud Identity account and organization resource as explained under Delete an organization The Organization Administrator , once assigned, can assign Identity and Access Management roles to other users.",
+          "These super administrator accounts should be used carefully because they have a lot of control over your organization resource and all the resources underneath it."
+        ]
+      },
+      {
+        "title": "Handle special cases \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases",
+        "source_id": "site-iam-reference",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If a customer's source organization resource has the legacy behavior (service accounts attachment is possible without the normal role grant) and the destination organization resource does not, grant the Service Account User role ( roles/iam.serviceAccountUser ) to users that attach these service accounts to resources.",
+          "Cross-project service accounts In the context of migrating a cross-project service account , the following cases apply: If you migrate a project that has a cross-project service account attached to it, that service account will continue to function in the destination organization resource.",
+          "In the filter box at the top of the list of organization policies, enter constraints/appengine.enforceServiceAccountActAsCheck ."
+        ]
+      },
+      {
+        "title": "\"Manage multiple organization resources \\_|\\_ Resource Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs",
+        "source_id": "site-iam-reference",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The super administrators of the Google Workspace account associated with your primary organization resource have administrative control over all with your primary organization resource have administrative control over all resources, including those created by users from the other Google Workspace accounts.",
+          "If you want to maintain sub-organizations or departments within your company as isolated entities with no central administration, you can set up multiple Google Workspace or Cloud Identity accounts.",
+          "Manage multiple organizations under a primary organization resource If your organization has multiple Google Workspace accounts, you have multiple organization resources by default."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.enforceServiceAccountActAsCheck",
+      "composer.enforceServiceAccountActAsCheck",
+      "dataflow.enforceComputeDefaultServiceAccountCheck",
+      "dataproc.enforceComputeDefaultServiceAccountCheck",
+      "iam.serviceAccountUser"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.serviceAccountUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:33.880Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager"
+}

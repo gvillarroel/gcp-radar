@@ -1,0 +1,197 @@
+{
+  "feature_name": "Static routes for Network Connectivity Center",
+  "feature_slug": "static-routes-for-network-connectivity-center",
+  "summary": "Static routes let you define the next hop for network traffic in Network Connectivity Center; Static routes let you define the next hop for network traffic in Network Connectivity Center.",
+  "extended_definition": "Static routes let you define the next hop for network traffic in Network Connectivity Center; Static routes let you define the next hop for network traffic in Network Connectivity Center.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging",
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Preset connectivity topologies \\_|\\_ Network Connectivity Center \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "source_id": "site-iam-reference",
+        "final_score": 323,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking Network Connectivity Network Connectivity Center Guides Send feedback Preset connectivity topologies Stay organized with collections Save and categorize content based on your preferences.",
+          "When you create a Network Connectivity Center (NCC) hub, you can choose one of the following preset topologies .",
+          "The following table shows the spoke groups that are supported according to the spoke type: Spoke Can be in the center spoke group Can be in the edge spoke group VPC spoke Producer VPC spoke Hybrid spoke with site-to-site data transfer disabled Hybrid spoke with site-to-site data transfer enabled The gcloud network-connectivity hubs groups list --hub command returns the center and edge groups when using star topology."
+        ]
+      },
+      {
+        "title": "\"NCC Gateway overview \\_|\\_ Network Connectivity Center \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 310,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Secure remote workforce: You can securely connect remote workforces—such as those in branches, data centers, and remote offices—to private applications in Google Cloud, on-premises, or other cloud providers and to public applications, like Palo Alto Networks Prisma Access and Symantec Cloud Secure Web Gateway (Cloud SWG).",
+          "Home Documentation Networking Network Connectivity Network Connectivity Center Guides Send feedback NCC Gateway overview Stay organized with collections Save and categorize content based on your preferences.",
+          "NCC Gateway lets you create regional deployments for optimal data center proximity and manage cross-region traffic on Google Cloud's private backbone."
+        ]
+      },
+      {
+        "title": "NCC overview \\_|\\_ Network Connectivity Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 310,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "NCC supports the following types of spokes: Virtual Private Cloud (VPC) spokes Producer VPC spokes NCC Gateway spokes Hybrid spokes, that can be associated with any of the following resources: HA VPN tunnels Cloud Interconnect VLAN attachments Router appliance VMs Cross-Cloud Interconnect VLAN attachments Partner Cross-Cloud Interconnect for Oracle Cloud Infrastructure (OCI) VLAN attachments Partner Cross-Cloud Interconnect for Amazon Web Services (AWS) ( Preview ) With the hub and spoke connectivity, you can do the following: Connect multiple VPC networks to one another.",
+          "Connect networks using Router appliance VMs NCC can use Router appliance VMs in the following two IPv4 connectivity scenarios: Connecting a VPC network to an on-premises or other cloud provider network using dynamic routes Connecting two VPC networks to each other using dynamic routes With this option, Cloud Router manages the BGP sessions for Router appliance VMs.",
+          "When a hub uses hybrid spokes located in a single VPC network, you can also configure site-to-site data transfer so that the dynamic routes whose next hops are a hybrid spoke—for example, a Cloud Interconnect VLAN attachment—are advertised to an on-premises network by the BGP sessions of the other hybrid spokes in that VPC network."
+        ]
+      },
+      {
+        "title": "Network Connectivity Center audit logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 291,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.GetServiceClass google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.GetServiceConnectionMap google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.GetServiceConnectionPolicy google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.GetServiceConnectionToken google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.ListServiceClasses google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.ListServiceConnectionMaps google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.ListServiceConnectionPolicies google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.ListServiceConnectionTokens google.cloud.networkconnectivity.v1.DataTransferService.GetDestination google.cloud.networkconnectivity.v1.DataTransferService.GetMulticloudDataTransferConfig google.cloud.networkconnectivity.v1.DataTransferService.GetMulticloudDataTransferSupportedService google.cloud.networkconnectivity.v1.DataTransferService.ListDestinations google.cloud.networkconnectivity.v1.DataTransferService.ListMulticloudDataTransferConfigs google.cloud.networkconnectivity.v1.DataTransferService.ListMulticloudDataTransferSupportedServices google.cloud.networkconnectivity.v1.HubService.GetGroup google.cloud.networkconnectivity.v1.HubService.GetHub google.cloud.networkconnectivity.v1.HubService.GetRoute google.cloud.networkconnectivity.v1.HubService.GetRouteTable google.cloud.networkconnectivity.v1.HubService.GetSpoke google.cloud.networkconnectivity.v1.HubService.ListGroups google.cloud.networkconnectivity.v1.HubService.ListHubSpokes google.cloud.networkconnectivity.v1.HubService.ListHubs google.cloud.networkconnectivity.v1.HubService.ListRouteTables google.cloud.networkconnectivity.v1.HubService.ListRoutes google.cloud.networkconnectivity.v1.HubService.ListSpokes google.cloud.networkconnectivity.v1.HubService.QueryHubStatus google.cloud.networkconnectivity.v1.InternalRangeService.GetInternalRange google.cloud.networkconnectivity.v1.InternalRangeService.ListInternalRanges google.cloud.networkconnectivity.v1.PolicyBasedRoutingService.GetPolicyBasedRoute google.cloud.networkconnectivity.v1.PolicyBasedRoutingService.ListPolicyBasedRoutes google.cloud.networkconnectivity.v1.RegionalEndpointService.GetRegionalEndpoint google.cloud.networkconnectivity.v1.RegionalEndpointService.ListRegionalEndpoints google.cloud.networkconnectivity.v1alpha1.HubService.GetHub google.cloud.networkconnectivity.v1alpha1.HubService.GetSpoke google.cloud.networkconnectivity.v1alpha1.HubService.ListHubs google.cloud.networkconnectivity.v1alpha1.HubService.ListSpokes google.cloud.networkconnectivity.v1alpha1.InternalRangeService.GetInternalRange google.cloud.networkconnectivity.v1alpha1.InternalRangeService.ListInternalRanges google.cloud.networkconnectivity.v1beta.DataTransferService.GetDestination google.cloud.networkconnectivity.v1beta.DataTransferService.GetMulticloudDataTransferConfig google.cloud.networkconnectivity.v1beta.DataTransferService.GetMulticloudDataTransferSupportedService google.cloud.networkconnectivity.v1beta.DataTransferService.ListDestinations google.cloud.networkconnectivity.v1beta.DataTransferService.ListMulticloudDataTransferConfigs google.cloud.networkconnectivity.v1beta.DataTransferService.ListMulticloudDataTransferSupportedServices google.cloud.networkconnectivity.v1beta.HubService.GetGatewayAdvertisedRoute google.cloud.networkconnectivity.v1beta.HubService.GetGroup google.cloud.networkconnectivity.v1beta.HubService.GetHub google.cloud.networkconnectivity.v1beta.HubService.GetRoute google.cloud.networkconnectivity.v1beta.HubService.GetRouteTable google.cloud.networkconnectivity.v1beta.HubService.GetSpoke google.cloud.networkconnectivity.v1beta.HubService.ListGatewayAdvertisedRoutes google.cloud.networkconnectivity.v1beta.HubService.ListGroups google.cloud.networkconnectivity.v1beta.HubService.ListHubSpokes google.cloud.networkconnectivity.v1beta.HubService.ListHubs google.cloud.networkconnectivity.v1beta.HubService.ListRouteTables google.cloud.networkconnectivity.v1beta.HubService.ListRoutes google.cloud.networkconnectivity.v1beta.HubService.ListSpokes google.cloud.networkconnectivity.v1beta.HubService.QueryHubStatus google.cloud.networkconnectivity.v1beta.PolicyBasedRoutingService.GetPolicyBasedRoute google.cloud.networkconnectivity.v1beta.PolicyBasedRoutingService.ListPolicyBasedRoutes google.cloud.networkconnectivity.v1beta.RegionalEndpointService.GetRegionalEndpoint google.cloud.networkconnectivity.v1beta.RegionalEndpointService.ListRegionalEndpoints google.cloud.networkconnectivity.v1beta.TransportManager.GetRemoteTransportProfile google.cloud.networkconnectivity.v1beta.TransportManager.GetTransport google.cloud.networkconnectivity.v1beta.TransportManager.ListRemoteTransportProfiles google.cloud.networkconnectivity.v1beta.TransportManager.ListTransports GetIamPolicy google.longrunning.Operations.GetOperation google.longrunning.Operations.ListOperations ADMIN WRITE google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.CheckConsumerConfig google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.CreateServiceConnectionMap (LRO) google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.CreateServiceConnectionPolicy (LRO) google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.DeleteServiceClass (LRO) google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.DeleteServiceConnectionMap (LRO) google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.DeleteServiceConnectionPolicy (LRO) google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.DeleteServiceConnectionToken google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.UpdateServiceClass google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.UpdateServiceConnectionMap (LRO) google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.UpdateServiceConnectionPolicy (LRO) google.cloud.networkconnectivity.v1.DataTransferService.CreateDestination (LRO) google.cloud.networkconnectivity.v1.DataTransferService.CreateMulticloudDataTransferConfig (LRO) google.cloud.networkconnectivity.v1.DataTransferService.DeleteDestination (LRO) google.cloud.networkconnectivity.v1.DataTransferService.DeleteMulticloudDataTransferConfig (LRO) google.cloud.networkconnectivity.v1.DataTransferService.UpdateDestination (LRO) google.cloud.networkconnectivity.v1.DataTransferService.UpdateMulticloudDataTransferConfig (LRO) google.cloud.networkconnectivity.v1.HubService.AcceptHubSpoke (LRO) google.cloud.networkconnectivity.v1.HubService.AcceptSpokeUpdate (LRO) google.cloud.networkconnectivity.v1.HubService.CreateHub (LRO) google.cloud.networkconnectivity.v1.HubService.CreateSpoke (LRO) google.cloud.networkconnectivity.v1.HubService.DeleteHub (LRO) google.cloud.networkconnectivity.v1.HubService.DeleteSpoke (LRO) google.cloud.networkconnectivity.v1.HubService.RejectHubSpoke (LRO) google.cloud.networkconnectivity.v1.HubService.RejectSpokeUpdate (LRO) google.cloud.networkconnectivity.v1.HubService.UpdateGroup (LRO) google.cloud.networkconnectivity.v1.HubService.UpdateHub (LRO) google.cloud.networkconnectivity.v1.HubService.UpdateSpoke (LRO) google.cloud.networkconnectivity.v1.InternalRangeService.CreateInternalRange (LRO) google.cloud.networkconnectivity.v1.InternalRangeService.DeleteInternalRange (LRO) google.cloud.networkconnectivity.v1.InternalRangeService.UpdateInternalRange (LRO) google.cloud.networkconnectivity.v1.PolicyBasedRoutingService.CreatePolicyBasedRoute (LRO) google.cloud.networkconnectivity.v1.PolicyBasedRoutingService.DeletePolicyBasedRoute (LRO) google.cloud.networkconnectivity.v1.RegionalEndpointService.CreateRegionalEndpoint (LRO) google.cloud.networkconnectivity.v1.RegionalEndpointService.DeleteRegionalEndpoint (LRO) google.cloud.networkconnectivity.v1alpha1.HubService.CreateHub (LRO) google.cloud.networkconnectivity.v1alpha1.HubService.CreateSpoke (LRO) google.cloud.networkconnectivity.v1alpha1.HubService.DeleteHub (LRO) google.cloud.networkconnectivity.v1alpha1.HubService.DeleteSpoke (LRO) google.cloud.networkconnectivity.v1alpha1.HubService.UpdateHub (LRO) google.cloud.networkconnectivity.v1alpha1.HubService.UpdateSpoke google.cloud.networkconnectivity.v1alpha1.InternalRangeService.CreateInternalRange (LRO) google.cloud.networkconnectivity.v1alpha1.InternalRangeService.DeleteInternalRange (LRO) google.cloud.networkconnectivity.v1alpha1.InternalRangeService.UpdateInternalRange (LRO) google.cloud.networkconnectivity.v1beta.DataTransferService.CreateDestination (LRO) google.cloud.networkconnectivity.v1beta.DataTransferService.CreateMulticloudDataTransferConfig (LRO) google.cloud.networkconnectivity.v1beta.DataTransferService.DeleteDestination (LRO) google.cloud.networkconnectivity.v1beta.DataTransferService.DeleteMulticloudDataTransferConfig (LRO) google.cloud.networkconnectivity.v1beta.DataTransferService.UpdateDestination (LRO) google.cloud.networkconnectivity.v1beta.DataTransferService.UpdateMulticloudDataTransferConfig (LRO) google.cloud.networkconnectivity.v1beta.HubService.AcceptHubSpoke (LRO) google.cloud.networkconnectivity.v1beta.HubService.CreateGatewayAdvertisedRoute (LRO) google.cloud.networkconnectivity.v1beta.HubService.CreateHub (LRO) google.cloud.networkconnectivity.v1beta.HubService.CreateSpoke (LRO) google.cloud.networkconnectivity.v1beta.HubService.DeleteGatewayAdvertisedRoute (LRO) google.cloud.networkconnectivity.v1beta.HubService.DeleteHub (LRO) google.cloud.networkconnectivity.v1beta.HubService.DeleteSpoke (LRO) google.cloud.networkconnectivity.v1beta.HubService.RejectHubSpoke (LRO) google.cloud.networkconnectivity.v1beta.HubService.UpdateGatewayAdvertisedRoute google.cloud.networkconnectivity.v1beta.HubService.UpdateGroup (LRO) google.cloud.networkconnectivity.v1beta.HubService.UpdateHub (LRO) google.cloud.networkconnectivity.v1beta.HubService.UpdateSpoke (LRO) google.cloud.networkconnectivity.v1beta.PolicyBasedRoutingService.CreatePolicyBasedRoute (LRO) google.cloud.networkconnectivity.v1beta.PolicyBasedRoutingService.DeletePolicyBasedRoute (LRO) google.cloud.networkconnectivity.v1beta.RegionalEndpointService.CreateRegionalEndpoint (LRO) google.cloud.networkconnectivity.v1beta.RegionalEndpointService.DeleteRegionalEndpoint (LRO) google.cloud.networkconnectivity.v1beta.TransportManager.CreateTransport (LRO) google.cloud.networkconnectivity.v1beta.TransportManager.DeleteTransport (LRO) google.cloud.networkconnectivity.v1beta.TransportManager.UpdateTransport (LRO) SetIamPolicy google.longrunning.Operations.CancelOperation google.longrunning.Operations.DeleteOperation API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Network Connectivity Center. google.cloud.networkconnectivity.v1.CrossNetworkAutomationService The following audit logs are associated with methods belonging to google.cloud.networkconnectivity.v1.CrossNetworkAutomationService .",
+          "AcceptHubSpoke Method : google.cloud.networkconnectivity.v1beta.HubService.AcceptHubSpoke Audit log type : Admin activity Permissions : networkconnectivity.groups.acceptSpoke - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networkconnectivity.v1beta.HubService.AcceptHubSpoke\" CreateGatewayAdvertisedRoute Method : google.cloud.networkconnectivity.v1beta.HubService.CreateGatewayAdvertisedRoute Audit log type : Admin activity Permissions : networkconnectivity.gatewayAdvertisedRoutes.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networkconnectivity.v1beta.HubService.CreateGatewayAdvertisedRoute\" CreateHub Method : google.cloud.networkconnectivity.v1beta.HubService.CreateHub Audit log type : Admin activity Permissions : networkconnectivity.hubs.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networkconnectivity.v1beta.HubService.CreateHub\" CreateSpoke Method : google.cloud.networkconnectivity.v1beta.HubService.CreateSpoke Audit log type : Admin activity Permissions : networkconnectivity.spokes.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networkconnectivity.v1beta.HubService.CreateSpoke\" DeleteGatewayAdvertisedRoute Method : google.cloud.networkconnectivity.v1beta.HubService.DeleteGatewayAdvertisedRoute Audit log type : Admin activity Permissions : networkconnectivity.gatewayAdvertisedRoutes.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networkconnectivity.v1beta.HubService.DeleteGatewayAdvertisedRoute\" DeleteHub Method : google.cloud.networkconnectivity.v1beta.HubService.DeleteHub Audit log type : Admin activity Permissions : networkconnectivity.hubs.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networkconnectivity.v1beta.HubService.DeleteHub\" DeleteSpoke Method : google.cloud.networkconnectivity.v1beta.HubService.DeleteSpoke Audit log type : Admin activity Permissions : networkconnectivity.spokes.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networkconnectivity.v1beta.HubService.DeleteSpoke\" GetGatewayAdvertisedRoute Method : google.cloud.networkconnectivity.v1beta.HubService.GetGatewayAdvertisedRoute Audit log type : Data access Permissions : networkconnectivity.gatewayAdvertisedRoutes.get - ADMIN READ Method is a long-running or streaming operation : No.",
+          "CreatePolicyBasedRoute Method : google.cloud.networkconnectivity.v1beta.PolicyBasedRoutingService.CreatePolicyBasedRoute Audit log type : Admin activity Permissions : networkconnectivity.policyBasedRoutes.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networkconnectivity.v1beta.PolicyBasedRoutingService.CreatePolicyBasedRoute\" DeletePolicyBasedRoute Method : google.cloud.networkconnectivity.v1beta.PolicyBasedRoutingService.DeletePolicyBasedRoute Audit log type : Admin activity Permissions : networkconnectivity.policyBasedRoutes.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networkconnectivity.v1beta.PolicyBasedRoutingService.DeletePolicyBasedRoute\" GetPolicyBasedRoute Method : google.cloud.networkconnectivity.v1beta.PolicyBasedRoutingService.GetPolicyBasedRoute Audit log type : Data access Permissions : networkconnectivity.policyBasedRoutes.get - ADMIN READ Method is a long-running or streaming operation : No."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "networkconnectivity.gatewayAdvertisedRoutes.create",
+      "networkconnectivity.gatewayAdvertisedRoutes.delete",
+      "networkconnectivity.gatewayAdvertisedRoutes.get",
+      "networkconnectivity.groups.acceptSpoke",
+      "networkconnectivity.hubs.create",
+      "networkconnectivity.hubs.delete",
+      "networkconnectivity.policyBasedRoutes.create",
+      "networkconnectivity.policyBasedRoutes.delete",
+      "networkconnectivity.policyBasedRoutes.get",
+      "networkconnectivity.spokes.create",
+      "networkconnectivity.spokes.delete"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:30.376Z",
+  "source_step08_card": "data/step-08/current/products/network-connectivity-center/card.json",
+  "product_name": "Network Connectivity Center",
+  "product_slug": "network-connectivity-center"
+}

@@ -25,7 +25,7 @@ flowchart TD
 Use `.specs/` for project rules and decisions.
 
 - `.specs/specs.md` is the current workflow contract.
-- `.specs/ADRs/` stores architecture decisions.
+- `.specs/adr/` stores architecture decisions.
 - `.specs/issues/` stores tracked implementation gaps and evidence-backed
   incidents.
 

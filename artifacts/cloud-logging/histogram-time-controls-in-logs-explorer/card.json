@@ -1,0 +1,140 @@
+{
+  "feature_name": "Histogram Time Controls in Logs Explorer",
+  "feature_slug": "histogram-time-controls-in-logs-explorer",
+  "summary": "The Logs Explorer histogram includes zooming and scrolling controls for deeper time-based log analysis.",
+  "extended_definition": "The Logs Explorer histogram includes zooming and scrolling controls for deeper time-based log analysis.",
+  "lifecycle": {
+    "latest_feature_date": "2021-05-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/access-control",
+      "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+      "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and analyze logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "source_id": "site-docs-root",
+        "final_score": 179,
+        "relevance": "",
+        "evidence_snippets": [
+          "Scroll or zoom to time In addition to the time controls previously listed, the timeline provides the Scroll to time and Zoom to time features to give you more in-depth control of the timeline and the data that you see in other panes in the Logs Explorer.",
+          "Adjust time controls The timeline provides time controls that let you adjust the data that you see in the Logs Explorer: Time handles: Drag the timeline's handles inward to narrow the data or outward to widen the data in the timeline.",
+          "The Logs Explorer contains the following sections, which are detailed on this page: Primary toolbar Query pane Fields pane Timeline Query results pane Primary toolbar in the Logs Explorer Using the primary toolbar, you can do the following: menu book Query library : View saved, recent, and suggested queries."
+        ]
+      },
+      {
+        "title": "Configure the Logging agent \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "source_id": "site-docs-root",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "To send logs via the fluentd in forward plugin, read the following instructions: Execute the following command on the VM with the Logging agent installed: echo '{\"code\": \"send-log-via-fluent-cat\", \"message\": \"This is a log from in forward plugin.\"}' /opt/google-fluentd/embedded/bin/fluent-cat log-via-in-forward-plugin Check the Logs Explorer to see the ingested log entry: { insertId: \"1kvvmhsg1ib4689\" jsonPayload: { code: \"send-log-via-fluent-cat\" message: \"This is a log from in forward plugin.\" } labels: { compute.googleapis.com/resource name: \"add-structured-log-resource\" } logName: \"projects/my-sample-project-12345/logs/log-via-in-forward-plugin\" receiveTimestamp: \"2018-03-21T02:11:27.981020900Z\" resource: { labels: { instance id: \"5351724540900470204\" project id: \"my-sample-project-12345\" zone: \"us-central1-c\" } type: \"gce instance\" } timestamp: \"2018-03-21T02:11:22.717692494Z\" } Streaming structured (JSON) log records from application code You can enable connectors in various languages to send structured logs from application code; for more information, review the fluentd documentation .",
+          "Restart the agent to apply the configuration changes: sudo service google-fluentd restart Generate a log record into the log file: echo '{\"code\": \"structured-log-code\", \"message\": \"This is a log from the log file at test-structured-log.log\"}' >> /tmp/test-structured-log.log Check the Logs Explorer to see the ingested log entry: { insertId: \"1m9mtk4g3mwilhp\" jsonPayload: { code: \"structured-log-code\" message: \"This is a log from the log file at test-structured-log.log\" } labels: { compute.googleapis.com/resource name: \"add-structured-log-resource\" } logName: \"projects/my-sample-project-12345/logs/structured-log\" receiveTimestamp: \"2018-03-21T01:53:41.118200931Z\" resource: { labels: { instance id: \"5351724540900470204\" project id: \"my-sample-project-12345\" zone: \"us-central1-c\" } type: \"gce instance\" } timestamp: \"2018-03-21T01:53:39.071920609Z\" } In the Logs Explorer, filter by your resource type and a logName of structured-log .",
+          "Restart the agent to apply the configuration changes: sudo service google-fluentd restart Generate a log record into the log file: echo 'This is a log from the log file at test-unstructured-log.log' >> /tmp/test-unstructured-log.log Check the Logs Explorer to see the ingested log entry: { insertId: \"eps2n7g1hq99qp\" labels: { compute.googleapis.com/resource name: \"add-unstructured-log-resource\" } logName: \"projects/my-sample-project-12345/logs/unstructured-log\" receiveTimestamp: \"2018-03-21T01:47:11.475065313Z\" resource: { labels: { instance id: \"3914079432219560274\" project id: \"my-sample-project-12345\" zone: \"us-central1-c\" } type: \"gce instance\" } textPayload: \"This is a log from the log file at test-unstructured-log.log\" timestamp: \"2018-03-21T01:47:05.051902169Z\" } Streaming structured (JSON) logs via log files Note: This section contains a Linux command example."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "List and view log scopes logging.logScopes.{get, list} View the default log scope observability.scopes.get Exclude logs logging.exclusions.{list, create, get, update, delete} When creating a custom role that includes permissions to manage exclusion filters, add the logging.sinks. permissions to the role instead of adding the logging.exclusions. permissions.",
+          "To let a user read logs in the Required and Default buckets or to use the Logs Explorer and Observability Analytics pages, grant one of the following roles: For access to all logs in the Required bucket, and access to the Default view on the Default bucket, grant the Logs Viewer ( roles/logging.viewer ) role.",
+          "This role includes all permissions granted by the Logs Viewer ( roles/logging.viewer ) role, and the permissions to write log entries, delete logs, and create log-based metrics."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "log.log",
+      "logging.exclusions",
+      "logging.logScopes",
+      "logging.sinks",
+      "logging.viewer",
+      "observability.scopes.get"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:31.891Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging"
+}

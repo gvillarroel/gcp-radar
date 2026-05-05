@@ -1,0 +1,81 @@
+{
+  "feature_name": "time_series_billed_for_queries_count metric",
+  "feature_slug": "time-series-billed-for-queries-count-metric",
+  "summary": "Cloud Monitoring provides the time_series_billed_for_queries_count metric to estimate charges based on queried time series.",
+  "extended_definition": "Cloud Monitoring provides the time_series_billed_for_queries_count metric to estimate charges based on queried time series.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+      "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.pagers.ListTimeSeriesAsyncPager",
+      "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.pagers.ListTimeSeriesPager"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and manage metric usage \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "source_id": "site-docs-reference",
+        "final_score": 221,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In Cloud Monitoring, cardinality refers to the number of time series associated a metric and a resource, and is related to the labels and their values; there is one time series for each combination of label values.",
+          "To view the status of metric-write requests to the Cloud Monitoring API, use the API - Create Time Series (Status Codes) chart.",
+          "To view collection rates over time, do the following: In the Google Cloud console, go to the query stats Metrics management page: Go to Metrics management If you use the search bar to find this page, then select the result whose subheading is Monitoring ."
+        ]
+      },
+      {
+        "title": "\"Class ListTimeSeriesAsyncPager (2.30.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.pagers.ListTimeSeriesAsyncPager",
+        "source_id": "site-python-reference",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ListTimeSeriesResponse ], ], request : google . cloud . monitoring v3 . types . metric service .",
+          "ListTimeSeriesResponse ], ], request : google . cloud . monitoring v3 . types . metric service .",
+          "ListTimeSeriesRequest , response : google . cloud . monitoring v3 . types . metric service ."
+        ]
+      },
+      {
+        "title": "\"Class ListTimeSeriesPager (2.30.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.pagers.ListTimeSeriesPager",
+        "source_id": "site-python-reference",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ListTimeSeriesResponse ], request : google . cloud . monitoring v3 . types . metric service .",
+          "ListTimeSeriesResponse ], request : google . cloud . monitoring v3 . types . metric service .",
+          "ListTimeSeriesRequest , response : google . cloud . monitoring v3 . types . metric service ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:33.032Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring"
+}

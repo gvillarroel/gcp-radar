@@ -1,0 +1,179 @@
+{
+  "feature_name": "Custom SAN configuration",
+  "feature_slug": "custom-san-configuration",
+  "summary": "Custom SAN configuration lets users set custom DNS names for an instance by configuring a custom subject alternative name.",
+  "extended_definition": "Custom SAN configuration lets users set custom DNS names for an instance by configuring a custom subject alternative name.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+      "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+      "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances Request JSON body: { \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"databaseVersion\": \" DATABASE VERSION \", \"rootPassword\": \" PASSWORD \", \"settings\": { \"tier\": \" MACHINE TYPE \", \"edition\": \" EDITION TYPE \", \"enableGoogleMlIntegration\": \" true \" \" false \" \"databaseFlags\": [ { \"name\": \"cloudsql.enable google ml integration\", \"value\": \" on \" \" off \" } ] \"dataCacheConfig\": { \"dataCacheEnabled\": DATA CACHE ENABLED }, \"backupConfiguration\": { \"enabled\": true }, \"passwordValidationPolicy\": { \"enablePasswordPolicy\": true \"minLength\": \" MIN LENGTH \", \"complexity\": COMPLEXITY DEFAULT, \"reuseInterval\": \" REUSE INTERVAL \", \"disallowUsernameSubstring\": \" DISALLOW USERNAME SUBSTRING \", \"passwordChangeInterval\": \" PASSWORD CHANGE INTERVAL \" }, \"ipConfiguration\": { \"privateNetwork\": \" PRIVATE NETWORK \", \"authorizedNetworks\": [ AUTHORIZED NETWORKS ], \"ipv4Enabled\": false, \"enablePrivatePathForGoogleCloudServices\": true, \"serverCaMode\": \" CA MODE \", \"serverCertificateRotationMode\": \" SERVER CERTIFICATE ROTATION MODE \", \"customSubjectAlternativeNames\": \" DNS NAMES \" }, \"dataApiAccess\": \"ALLOW DATA API\" }, \"sqlNetworkArchitecture\": \"NEW NETWORK ARCHITECTURE\" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: POST https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances Request JSON body: { \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"databaseVersion\": \" DATABASE VERSION \", \"rootPassword\": \" PASSWORD \", \"settings\": { \"tier\": \" MACHINE TYPE \", \"edition\": \" EDITION TYPE \", \"enableGoogleMlIntegration\": \" true \" \" false \" \"databaseFlags\": [ { \"name\": \"cloudsql.enable google ml integration\", \"value\": \" on \" \" off \" } ] \"dataCacheConfig\": { \"dataCacheEnabled\": DATA CACHE ENABLED }, \"backupConfiguration\": { \"enabled\": true }, \"passwordValidationPolicy\": { \"enablePasswordPolicy\": true \"minLength\": \" MIN LENGTH \", \"complexity\": COMPLEXITY DEFAULT, \"reuseInterval\": \" REUSE INTERVAL \", \"disallowUsernameSubstring\": \" DISALLOW USERNAME SUBSTRING \", \"passwordChangeInterval\": \" PASSWORD CHANGE INTERVAL \" }, \"ipConfiguration\": { \"privateNetwork\": \" PRIVATE NETWORK \", \"authorizedNetworks\": [ AUTHORIZED NETWORKS ], \"ipv4Enabled\": false, \"enablePrivatePathForGoogleCloudServices\": true, \"serverCaMode\": \" CA MODE \", \"serverCertificateRotationMode\": \" SERVER CERTIFICATE ROTATION MODE \", \"customSubjectAlternativeNames\": \" DNS NAMES \" }, \"dataApiAccess\": \"ALLOW DATA API\" }, \"sqlNetworkArchitecture\": \"NEW NETWORK ARCHITECTURE\" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Set the password for the postgres user: gcloud sql users set-password postgres \\ --instance = INSTANCE NAME \\ --password = PASSWORD Terraform To create an instance, use a Terraform resource . resource \"google sql database instance\" \"postgres pvp instance name\" { name = \"postgres-pvp-instance-name\" region = \"asia-northeast1\" database version = \"POSTGRES 14\" root password = \"abcABC123!\" settings { tier = \"db-custom-2-7680\" password validation policy { min length = 6 reuse interval = 2 complexity = \"COMPLEXITY DEFAULT\" disallow username substring = true password change interval = \"30s\" enable password policy = true } } set deletion protection to true, will ensure that one cannot accidentally delete this instance by use of Terraform whereas deletion protection enabled flag protects this instance at the GCP level. deletion protection = false } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections."
+        ]
+      },
+      {
+        "title": "\"Manage users with IAM database authentication \\_|\\_ Cloud SQL for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "source_id": "site-iam-reference",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "Terraform To add IAM user and service accounts on an instance with IAM database authentication enabled, use a Terraform resource . resource \"google sql database instance\" \"default\" { name = \"postgres-db-auth-instance-name-test\" region = \"us-west4\" database version = \"POSTGRES 14\" settings { tier = \"db-custom-2-7680\" database flags { name = \"cloudsql.iam authentication\" value = \"on\" } } } Specify the email address of the IAM user to add to the instance This resource does not create a new IAM user account; this account must already exist resource \"google sql user\" \"iam user\" { name = \"test-user@example.com\" instance = google sql database instance.default.name type = \"CLOUD IAM USER\" } Specify the email address of the IAM service account to add to the instance This resource does not create a new IAM service account; this service account must already exist Create a new IAM service account resource \"google service account\" \"default\" { account id = \"cloud-sql-postgres-sa\" display name = \"Cloud SQL for Postgres Service Account\" } resource \"google sql user\" \"iam service account user\" { Note: for PostgreSQL only, Google Cloud requires that you omit the \".gserviceaccount.com\" suffix from the service account email due to length limits on database usernames. name = trimsuffix(google service account.default.email, \".gserviceaccount.com\") instance = google sql database instance.default.name type = \"CLOUD IAM SERVICE ACCOUNT\" } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.",
+          "Delete the changes To delete your changes, do the following: To disable deletion protection, in your Terraform configuration file set the deletion protection argument to false . deletion protection = \"false\" Apply the updated Terraform configuration by running the following command and entering yes at the prompt: terraform apply Remove resources previously applied with your Terraform configuration by running the following command and entering yes at the prompt: terraform destroy REST v1 Before using any of the request data, make the following replacements: PROJECT ID : the project ID INSTANCE ID : the instance ID for the instance you are adding the user to USERNAME : the email address for the user USER TYPE : the Cloud SQL user type, which is one of the following IAM user types: CLOUD IAM USER CLOUD IAM SERVICE ACCOUNT CLOUD IAM GROUP ROLE 1 , ROLE 2 ..., ROLE N : the database role or roles to assign to the IAM user, service account, or group HTTP method and URL: POST https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID /users Request JSON body: { \"name\": \" USERNAME \", \"type\": \" USER TYPE \", \"databaseRoles\": [ \" ROLE 1 \", \" ROLE 2 \" ] } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Delete the changes To delete your changes, do the following: To disable deletion protection, in your Terraform configuration file set the deletion protection argument to false . deletion protection = \"false\" Apply the updated Terraform configuration by running the following command and entering yes at the prompt: terraform apply Remove resources previously applied with your Terraform configuration by running the following command and entering yes at the prompt: terraform destroy REST v1 Before using any of the request data, make the following replacements: PROJECT ID : the project ID INSTANCE ID : the instance ID for the instance you are adding the Cloud Identity group to GROUP EMAIL : the email address for the Cloud Identity group HTTP method and URL: POST https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID /users Request JSON body: { \"name\": \" GROUP EMAIL \", \"type\": \"CLOUD IAM GROUP\" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "Troubleshoot \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "You're trying to use a custom SAN to add more than three DNS names to the server certificate of a Cloud SQL instance.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers ` -Uri \"https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME /forwardingRules/ ENDPOINT NAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"compute#forwardingRule\", \"id\": \" ENDPOINT ID \", \"creationTimestamp\": \"2024-05-09T12:03:21.383-07:00\", \"name\": \" ENDPOINT NAME \", \"region\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME \", \"IPAddress\": \" IP ADDRESS \", \"target\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME /serviceAttachments/ SERVICE ATTACHMENT NAME \", \"selfLink\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME /forwardingRules/ ENDPOINT NAME \", \"network\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /global/networks/default\", \"serviceDirectoryRegistrations\": [ { \"namespace\": \"goog-psc-default\" } ], \"networkTier\": \"PREMIUM\", \"labelFingerprint\": \" LABEL FINGERPRINT ID \", \"fingerprint\": \" FINGERPRINT ID \", \"pscConnectionId\": \" CONNECTION ID \", \"pscConnectionStatus\": \"ACCEPTED\", \"allowPscGlobalAccess\": true } Verify that the status of the endpoint is ACCEPTED .",
+          "Log into the database and run this command: SELECT datname, usename, application name as appname, client addr, state, now () - backend start as conn age, now () - state change as last activity age FROM pg stat activity WHERE backend type = 'client backend' ORDER BY 6 DESC LIMIT 20 Hostname/IP does not match certificate's altnames: Host: localhost. is not in the cert's altnames ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.default.email",
+      "cloudsql.enable",
+      "cloudsql.iam",
+      "compute.googleapis.com",
+      "example.com",
+      "gserviceaccount.com",
+      "instance.default.name",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:39.896Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql"
+}

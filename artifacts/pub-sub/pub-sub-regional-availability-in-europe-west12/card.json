@@ -1,0 +1,162 @@
+{
+  "feature_name": "Pub/Sub regional availability in europe-west12",
+  "feature_slug": "pub-sub-regional-availability-in-europe-west12",
+  "summary": "Pub/Sub is available in the europe-west12 region.",
+  "extended_definition": "Pub/Sub is available in the europe-west12 region.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-pubsub/latest/com.google.cloud.pubsub.v1.PublisherInterface",
+      "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud",
+      "https://docs.cloud.google.com/pubsub/docs/reference/service_apis_overview",
+      "https://docs.cloud.google.com/pubsub/docs/reliability-intro"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Pub/Sub: Introduction to reliability \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "source_id": "site-docs-root",
+        "final_score": 282,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Regional Isolation To minimize the infrastructure that publish and subscribe operations depend on outside a single region and to ensure that all data stays isolated to that region, follow these steps: Create a topic per region.",
+          "When using the regional endpoints , such as us-central1-pubsub.googleapis.com , or locational endpoints , such as pubsub.us-central1.rep.googleapis.com , publishers and subscribers connect to Pub/Sub in the specified region.",
+          "Failover If you don't need regional isolation, you may want to take advantage of Pub/Sub's ability to deliver messages efficiently across multiple regions in order to achieve multi-region failover capabilities."
+        ]
+      },
+      {
+        "title": "Pub/Sub APIs overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/service_apis_overview",
+        "source_id": "site-docs-root",
+        "final_score": 276,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: export CLOUDSDK API ENDPOINT OVERRIDES PUBSUB = ENDPOINT OVERRIDE List of locational endpoints To send requests directly to a locational endpoint, use the following Pub/Sub endpoints: Region Endpoint africa-south1 https://africa-south1-pubsub.googleapis.com asia-east1 https://asia-east1-pubsub.googleapis.com asia-east2 https://asia-east2-pubsub.googleapis.com asia-northeast1 https://asia-northeast1-pubsub.googleapis.com asia-northeast2 https://asia-northeast2-pubsub.googleapis.com asia-northeast3 https://asia-northeast3-pubsub.googleapis.com asia-south1 https://asia-south1-pubsub.googleapis.com asia-south2 https://asia-south2-pubsub.googleapis.com asia-southeast1 https://asia-southeast1-pubsub.googleapis.com asia-southeast2 https://asia-southeast2-pubsub.googleapis.com asia-southeast3 https://asia-southeast3-pubsub.googleapis.com australia-southeast1 https://australia-southeast1-pubsub.googleapis.com australia-southeast2 https://australia-southeast2-pubsub.googleapis.com europe-central2 https://europe-central2-pubsub.googleapis.com europe-north1 https://europe-north1-pubsub.googleapis.com europe-north2 https://europe-north2-pubsub.googleapis.com europe-southwest1 https://europe-southwest1-pubsub.googleapis.com europe-west1 https://europe-west1-pubsub.googleapis.com europe-west10 https://europe-west10-pubsub.googleapis.com europe-west12 https://europe-west12-pubsub.googleapis.com europe-west2 https://europe-west2-pubsub.googleapis.com europe-west3 https://europe-west3-pubsub.googleapis.com europe-west4 https://europe-west4-pubsub.googleapis.com europe-west6 https://europe-west6-pubsub.googleapis.com europe-west8 https://europe-west8-pubsub.googleapis.com europe-west9 https://europe-west9-pubsub.googleapis.com me-central1 https://me-central1-pubsub.googleapis.com me-central2 https://me-central2-pubsub.googleapis.com me-west1 https://me-west1-pubsub.googleapis.com northamerica-northeast1 https://northamerica-northeast1-pubsub.googleapis.com northamerica-northeast2 https://northamerica-northeast2-pubsub.googleapis.com northamerica-south1 https://northamerica-south1-pubsub.googleapis.com southamerica-east1 https://southamerica-east1-pubsub.googleapis.com southamerica-west1 https://southamerica-west1-pubsub.googleapis.com us-central1 https://us-central1-pubsub.googleapis.com us-east1 https://us-east1-pubsub.googleapis.com us-east4 https://us-east4-pubsub.googleapis.com us-east5 https://us-east5-pubsub.googleapis.com us-south1 https://us-south1-pubsub.googleapis.com us-west1 https://us-west1-pubsub.googleapis.com us-west2 https://us-west2-pubsub.googleapis.com us-west3 https://us-west3-pubsub.googleapis.com us-west4 https://us-west4-pubsub.googleapis.com List of regional endpoints To send requests directly to a regional endpoint, use the following Pub/Sub endpoints: Region Endpoint africa-south1 https://pubsub.africa-south1.rep.googleapis.com asia-east1 https://pubsub.asia-east1.rep.googleapis.com asia-east2 https://pubsub.asia-east2.rep.googleapis.com asia-northeast1 https://pubsub.asia-northeast1.rep.googleapis.com asia-northeast2 https://pubsub.asia-northeast2.rep.googleapis.com asia-northeast3 https://pubsub.asia-northeast3.rep.googleapis.com asia-south1 https://pubsub.asia-south1.rep.googleapis.com asia-south2 https://pubsub.asia-south2.rep.googleapis.com asia-southeast1 https://pubsub.asia-southeast1.rep.googleapis.com asia-southeast2 https://pubsub.asia-southeast2.rep.googleapis.com asia-southeast3 https://pubsub.asia-southeast3.rep.googleapis.com australia-southeast1 https://pubsub.australia-southeast1.rep.googleapis.com australia-southeast2 https://pubsub.australia-southeast2.rep.googleapis.com europe-central2 https://pubsub.europe-central2.rep.googleapis.com europe-north1 https://pubsub.europe-north1.rep.googleapis.com europe-north2 https://pubsub.europe-north2.rep.googleapis.com europe-southwest1 https://pubsub.europe-southwest1.rep.googleapis.com europe-west1 https://pubsub.europe-west1.rep.googleapis.com europe-west2 https://pubsub.europe-west2.rep.googleapis.com europe-west3 https://pubsub.europe-west3.rep.googleapis.com europe-west4 https://pubsub.europe-west4.rep.googleapis.com europe-west6 https://pubsub.europe-west6.rep.googleapis.com europe-west8 https://pubsub.europe-west8.rep.googleapis.com europe-west9 https://pubsub.europe-west9.rep.googleapis.com europe-west10 https://pubsub.europe-west10.rep.googleapis.com europe-west12 https://pubsub.europe-west12.rep.googleapis.com me-central1 https://pubsub.me-central1.rep.googleapis.com me-central2 https://pubsub.me-central2.rep.googleapis.com me-west1 https://pubsub.me-west1.rep.googleapis.com northamerica-northeast1 https://pubsub.northamerica-northeast1.rep.googleapis.com northamerica-northeast2 https://pubsub.northamerica-northeast2.rep.googleapis.com northamerica-south1 https://pubsub.northamerica-south1.rep.googleapis.com southamerica-east1 https://pubsub.southamerica-east1.rep.googleapis.com southamerica-west1 https://pubsub.southamerica-west1.rep.googleapis.com us-central1 https://pubsub.us-central1.rep.googleapis.com us-east1 https://pubsub.us-east1.rep.googleapis.com us-east4 https://pubsub.us-east4.rep.googleapis.com us-east5 https://pubsub.us-east5.rep.googleapis.com us-south1 https://pubsub.us-south1.rep.googleapis.com us-west1 https://pubsub.us-west1.rep.googleapis.com us-west2 https://pubsub.us-west2.rep.googleapis.com us-west3 https://pubsub.us-west3.rep.googleapis.com us-west4 https://pubsub.us-west4.rep.googleapis.com us-west8 https://pubsub.us-west8.rep.googleapis.com What's next Pub/Sub REST reference Pub/Sub RPC reference Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Choose an endpoint with data residency If you need strict data residency and isolation ( enforceInTransit: True ), then we recommended using a regional endpoint ( pubsub.",
+          "If both publishers and subscribers are outside of Google Cloud, configure them to use the same regional endpoint."
+        ]
+      },
+      {
+        "title": "\"Interface PublisherInterface (1.149.0) \\_|\\_ Java client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-pubsub/latest/com.google.cloud.pubsub.v1.PublisherInterface",
+        "source_id": "site-java-reference",
+        "final_score": 247,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "String message = \"my message\" ; ByteString data = ByteString . copyFromUtf8 ( message ); PubsubMessage pubsubMessage = PubsubMessage . newBuilder (). setData ( data ). build (); ApiFuture<String> messageIdFuture = publisher . publish ( pubsubMessage ); ApiFutures . addCallback ( messageIdFuture , new ApiFutureCallback<String> () { public void onSuccess ( String messageId ) { System . out . println ( \"published with message id: \" + messageId ); } public void onFailure ( Throwable t ) { System . out . println ( \"failed to publish: \" + t ); } }, MoreExecutors . directExecutor ()); Parameter Name Description message PubsubMessage the message to publish.",
+          "1.149.0 (latest) 1.148.0 1.147.0 1.145.0 1.143.1 1.142.0 1.141.5 1.140.2 1.139.4 1.138.0 1.137.1 1.136.1 1.135.0 1.134.2 1.133.1 1.132.2 1.131.0 1.130.0 1.129.6 1.127.3 1.126.6 1.125.13 1.123.18 1.122.2 1.121.1 1.120.24 1.119.1 1.118.0 1.117.0 1.116.4 1.115.5 public interface PublisherInterface An interface for a Cloud Pub/Sub publisher .",
+          "Methods publish(PubsubMessage message) public abstract ApiFuture<String> publish ( PubsubMessage message ) Schedules the publishing of a message."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Publish and receive messages in Pub/Sub by using the gcloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud",
+        "source_id": "site-docs-root",
+        "final_score": 247,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a topic Create a topic with the ID my-topic : gcloud pubsub topics create my-topic Create a subscription Create a subscription with the ID my-sub and attach it to my-topic : gcloud pubsub subscriptions create my-sub --topic = my-topic Publish messages Publish a message to my-topic : gcloud pubsub topics publish my-topic --message = \"hello\" Receive messages Receive the message from my-sub : gcloud pubsub subscriptions pull my-sub --auto-ack The gcloud CLI prints the message to the command line.",
+          "Publish and receive messages in Pub/Sub by using the gcloud CLI This page shows you how to do the following operations in Pub/Sub using the Google Cloud CLI: Create a topic and subscription.",
+          "To get the permissions that you need to complete this quickstart, ask your administrator to grant you the Pub/Sub Editor ( roles/pubsub.editor ) IAM role on your project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "central1.rep.googleapis.com",
+      "central2.rep.googleapis.com",
+      "com.google.cloud.pubsub.v1.PublisherInterface",
+      "east1.rep.googleapis.com",
+      "east2.rep.googleapis.com",
+      "east4.rep.googleapis.com",
+      "east5.rep.googleapis.com",
+      "north1.rep.googleapis.com",
+      "north2.rep.googleapis.com",
+      "northeast1.rep.googleapis.com",
+      "northeast2.rep.googleapis.com",
+      "northeast3.rep.googleapis.com",
+      "pubsub.africa",
+      "pubsub.asia",
+      "pubsub.australia",
+      "pubsub.editor",
+      "pubsub.europe",
+      "pubsub.googleapis.com",
+      "pubsub.me",
+      "pubsub.northamerica",
+      "pubsub.southamerica",
+      "pubsub.us",
+      "south1.rep.googleapis.com",
+      "south2.rep.googleapis.com",
+      "southeast1.rep.googleapis.com",
+      "southeast2.rep.googleapis.com",
+      "southeast3.rep.googleapis.com",
+      "southwest1.rep.googleapis.com",
+      "west1.rep.googleapis.com",
+      "west10.rep.googleapis.com",
+      "west12.rep.googleapis.com",
+      "west2.rep.googleapis.com",
+      "west3.rep.googleapis.com",
+      "west4.rep.googleapis.com",
+      "west6.rep.googleapis.com",
+      "west8.rep.googleapis.com",
+      "west9.rep.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/pubsub.editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "https://docs.cloud.google.com/pubsub/docs/reference/service_apis_overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-pubsub/latest/com.google.cloud.pubsub.v1.PublisherInterface",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "https://docs.cloud.google.com/pubsub/docs/reference/service_apis_overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-pubsub/latest/com.google.cloud.pubsub.v1.PublisherInterface",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "https://docs.cloud.google.com/pubsub/docs/reference/service_apis_overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-pubsub/latest/com.google.cloud.pubsub.v1.PublisherInterface",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:32.606Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub"
+}

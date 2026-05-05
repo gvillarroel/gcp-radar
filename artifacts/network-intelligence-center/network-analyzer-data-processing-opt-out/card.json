@@ -1,0 +1,144 @@
+{
+  "feature_name": "Network Analyzer data-processing opt-out",
+  "feature_slug": "network-analyzer-data-processing-opt-out",
+  "summary": "Network Analyzer integrates with Transparency and Control Center to let Google Cloud users opt out of analysis.",
+  "extended_definition": "Network Analyzer integrates with Transparency and Control Center to let Google Cloud users opt out of analysis.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Network Analyzer overview \\_|\\_ Network Intelligence Center - Network Analyzer\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "source_id": "site-docs-root",
+        "final_score": 284,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Opt out If you do not want to have projects in your organization analyzed by Network Analyzer, you can go to the Transparency and Control Center to opt out of the Network Analyzer data processing group.",
+          "Home Documentation Networking Network Intelligence Center Network Analyzer Guides Send feedback Network Analyzer overview Stay organized with collections Save and categorize content based on your preferences.",
+          "Network Analyzer automatically monitors your Virtual Private Cloud (VPC) network configurations and detects misconfigurations and suboptimal configurations."
+        ]
+      },
+      {
+        "title": "\"Flow Analyzer overview \\_|\\_ Network Intelligence Center - Flow Analyzer\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+        "source_id": "site-docs-root",
+        "final_score": 221,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In Flow Analyzer, you can do the following: Query logs reported by VPC Flow Logs Use SQL filters to refine your queries Sort query results by total traffic, aggregate packets, or latency View traffic for a specific time period View the top five flows with the highest traffic or latency, for the selected time period View resources with the highest traffic or latency, for the selected time period View traffic details for specific source and destination pairs in your query results How it works VPC Flow Logs samples packets in your VPC network to generate flow logs, which can be stored in Cloud Logging or routed to supported destinations, such as BigQuery or a third-party platform through Pub/Sub.",
+          "Home Documentation Networking Network Intelligence Center Flow Analyzer Guides Flow Analyzer overview Stay organized with collections Save and categorize content based on your preferences.",
+          "Flow Analyzer lets you quickly and efficiently understand your Virtual Private Cloud (VPC) traffic flows without the need to write complex SQL queries for analyzing VPC Flow Logs."
+        ]
+      },
+      {
+        "title": "Network Intelligence Center overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 171,
+        "relevance": "",
+        "evidence_snippets": [
+          "Flow Analyzer Flow Analyzer lets you quickly and efficiently understand your Virtual Private Cloud (VPC) traffic flows without the need to write complex SQL queries for analyzing VPC Flow Logs.",
+          "Network Analyzer Network Analyzer automatically monitors your Virtual Private Cloud (VPC) network configurations and detects misconfigurations and suboptimal configurations.",
+          "Flow Analyzer lets you perform opinionated network traffic analysis with 5-tuple granularity (source IP, destination IP, source port, destination port, and protocol)."
+        ]
+      },
+      {
+        "title": "\"Network Topology overview \\_|\\_ Network Intelligence Center - Network Topology\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "source_id": "site-docs-root",
+        "final_score": 170,
+        "relevance": "",
+        "evidence_snippets": [
+          "Metrics for the selected hour on the timeline include the following: Average hourly throughput available for most entities Average hourly packet loss available for traffic within Google Cloud regions and zones Hourly median latency (RTT) available for many entity types In the GKE Enterprise view available for GKE Enterprise projects, the metrics for the selected hour on the timeline also include the following: Average hourly throughput available for most entities Median latency available for traffic within Google Cloud regions and zones with GKE clusters Network verdict metrics displaying the GKE workloads with the most dropped and most forwarded traffic flows for the selected cluster You can also download the table of outliers in a CSV format for the High egress and Network verdict traffic insights.",
+          "Network Topology supports direct access of VMs to Google-managed services by using a default route with a next hop as the default-internet-gateway or Private Google Access .",
+          "For more information about viewing metrics, see Monitor your networking configuration with Network Topology ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataprocessing.admin"
+    ],
+    "missing_inventory_roles": [
+      "roles/dataprocessing.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:30.482Z",
+  "source_step08_card": "data/step-08/current/products/network-intelligence-center/card.json",
+  "product_name": "Network Intelligence Center",
+  "product_slug": "network-intelligence-center"
+}

@@ -1,0 +1,119 @@
+{
+  "feature_name": "Same-zone fast clone",
+  "feature_slug": "same-zone-fast-clone",
+  "summary": "Same-zone fast clone lets users create Cloud SQL for PostgreSQL clones quickly within the same zone.",
+  "extended_definition": "Same-zone fast clone lets users create Cloud SQL for PostgreSQL clones quickly within the same zone.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/clone-instance",
+      "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+      "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Clone instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/clone-instance",
+        "source_id": "site-iam-reference",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When fast clone is used Cloud SQL automatically uses fast clone when the following conditions are met: Same-zone operations: the clone operation must be initiated within the same zone as the source instance.",
+          "When you initiate a clone operation in the same zone as the source instance, fast clone takes an Instant Snapshot.",
+          "If you don't specify values for either the --preferred-zone or --preferred-secondary-zone parameters, then the cloned instance has the same primary and secondary zones as the source instance."
+        ]
+      },
+      {
+        "title": "Troubleshoot \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 160,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, openssl x509 -in server-cert.pem -noout -text grep 'DNS:' . ssl: { rejectUnauthorized: true, ca: fs.readFileSync ( \"/path/to/server/CA\" ) , servername: 'N-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx.us-central1.sql.goog' } Create instances Issue Troubleshooting Error message: The zone or region does not have sufficient resources to handle the request at the moment.",
+          "You're trying to use the Google Cloud console to clone an instance with a private IP address, but you didn't specify the allocated IP range that you want to use and the source instance isn't created with the specified range.",
+          "To resolve this issue, retry creating the instance in another zone or retry creating the instance in the same zone that received the error at a different time of day."
+        ]
+      },
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "Set the password for the postgres user: gcloud sql users set-password postgres \\ --instance = INSTANCE NAME \\ --password = PASSWORD Terraform To create an instance, use a Terraform resource . resource \"google sql database instance\" \"postgres pvp instance name\" { name = \"postgres-pvp-instance-name\" region = \"asia-northeast1\" database version = \"POSTGRES 14\" root password = \"abcABC123!\" settings { tier = \"db-custom-2-7680\" password validation policy { min length = 6 reuse interval = 2 complexity = \"COMPLEXITY DEFAULT\" disallow username substring = true password change interval = \"30s\" enable password policy = true } } set deletion protection to true, will ensure that one cannot accidentally delete this instance by use of Terraform whereas deletion protection enabled flag protects this instance at the GCP level. deletion protection = false } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.",
+          "Note: When you enable a password policy, statements that create users or change user passwords can cause additional latency due to password policy verification. minLength : Specifies the minimum number of characters that the password must have. complexity : Checks if the password is a combination of lowercase, uppercase, numeric, and non-alphanumeric characters.",
+          "Note: When you enable a password policy, statements that create users or change user passwords can cause additional latency due to password policy verification. minLength : Specifies the minimum number of characters that the password must have. complexity : Checks if the password is a combination of lowercase, uppercase, numeric, and non-alphanumeric characters."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "central1.sql.goog",
+      "cert.pem",
+      "fs.readFileSync",
+      "xxxxxxxx.us"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/clone-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/clone-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/clone-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/clone-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:39.896Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql"
+}

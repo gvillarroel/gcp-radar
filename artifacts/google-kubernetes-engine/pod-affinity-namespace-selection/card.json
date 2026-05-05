@@ -1,0 +1,188 @@
+{
+  "feature_name": "Pod affinity namespace selection",
+  "feature_slug": "pod-affinity-namespace-selection",
+  "summary": "Pod affinity rules can select namespaces by label selector instead of only by explicit namespace names.",
+  "extended_definition": "Pod affinity rules can select namespaces by label selector instead of only by explicit namespace names.",
+  "lifecycle": {
+    "latest_feature_date": "2021-10-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/deploy-elasticsearch",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate your MySQL data from Persistent Disk to Hyperdisk by using Backup\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke",
+        "source_id": "site-docs-root-2",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a restore plan by using these transformation rules: gcloud beta container backup-restore restore-plans create main-restore \\ --project = ${ PROJECT ID } \\ --location = us-central1 \\ --backup-plan = projects/ ${ PROJECT ID } /locations/us-central1/backupPlans/main-plan \\ --cluster = projects/ ${ PROJECT ID } /locations/ ${ ZONE } /clusters/ ${ TARGET CLUSTER PREFIX } -cluster \\ --namespaced-resource-restore-mode = merge-replace-on-conflict \\ --all-namespaces \\ --cluster-resource-conflict-policy = use-existing-version \\ --cluster-resource-scope-selected-group-kinds = cluster-resource-scope-all-group-kinds \\ --volume-data-restore-policy = restore-volume-data-from-backup \\ --transformation-rules-file = manifests/03-transformation-rule/volume.yaml Perform the restore: gcloud beta container backup-restore restores create first-restore \\ --project = ${ PROJECT ID } \\ --location = us-central1 \\ --restore-plan = main-restore \\ --backup = projects/ ${ PROJECT ID } /locations/us-central1/backupPlans/main-plan/backups/first-backup Verify the migration Verify that the applications are running on the new cluster and the data is intact.",
+          "This file defines how resources are modified during restore: transformationRules : - description : Change the StorageClass on PVCs from premium-rwo to balanced-storage resourceFilter : namespaces : [ \"namespace-a\" , \"namespace-b\" ] groupKinds : - resourceGroup : \"\" resourceKind : PersistentVolumeClaim fieldActions : - op : REPLACE path : \"/spec/storageClassName\" value : \"balanced-storage\" - description : Change node type from n2-standard-4 to n4-standard-4 resourceFilter : namespaces : [ \"namespace-a\" , \"namespace-b\" ] jsonPath : \".metadata[?(@.name == 'existing-mysql')]\" groupKinds : - resourceGroup : apps resourceKind : Deployment fieldActions : - op : REPLACE path : \"/spec/template/spec/affinity/nodeAffinity/preferredDuringSchedulingIgnoredDuringExecution/0/preference/matchExpressions/0/values/0\" value : \"n4-standard-4\" PVC transformation: changes the storageClassName to balanced-storage (Hyperdisk).",
+          "The root password is set to migration : apiVersion : v1 kind : Service metadata : name : mysql-b labels : app : mysql spec : ports : - port : 3306 selector : app : mysql clusterIP : None --- apiVersion : v1 kind : PersistentVolumeClaim metadata : name : mysql-b-pv-claim labels : app : mysql spec : accessModes : - ReadWriteOnce resources : requests : storage : 30Gi storageClassName : premium-rwo --- apiVersion : apps/v1 kind : Deployment metadata : name : existing-mysql-b labels : app : mysql spec : selector : matchLabels : app : mysql strategy : type : Recreate template : metadata : labels : app : mysql spec : containers : - image : mysql:8.0 name : mysql env : - name : MYSQL ROOT PASSWORD value : migration - name : MYSQL DATABASE value : mysql - name : MYSQL USER value : app - name : MYSQL PASSWORD value : migration ports : - containerPort : 3306 name : mysql-b volumeMounts : - name : mysql-persistent-storage mountPath : /var/lib/mysql affinity : nodeAffinity : preferredDuringSchedulingIgnoredDuringExecution : - weight : 1 preference : matchExpressions : - key : \"node.kubernetes.io/instance-type\" operator : In values : - \"n2-standard-4\" volumes : - name : mysql-persistent-storage persistentVolumeClaim : claimName : mysql-b-pv-claim Deploy a MySQL client Pod to upload sample datasets: kubectl apply -f manifests/02-mysql/mysql-client.yaml kubectl wait pods mysql-client --for condition = Ready --timeout = 300s The following manifest deploys a MySQL client Pod: apiVersion : v1 kind : Pod metadata : name : mysql-client spec : containers : - name : main image : mysql:8.0 command : [ \"sleep\" , \"360000\" ] resources : requests : memory : 1Gi cpu : 500m limits : memory : 1Gi cpu : \"1\" env : - name : MYSQL ROOT PASSWORD value : migration Connect to the client Pod: kubectl exec -it mysql-client -- bash Inside the Pod, download the Sakila and World sample datasets: curl --output dataset.tgz \"https://downloads.mysql.com/docs/sakila-db.tar.gz\" tar -xvzf dataset.tgz -C ./ curl --output world-db.tar.gz \"https://downloads.mysql.com/docs/world-db.tar.gz\" tar xvzf world-db.tar.gz -C ./ Import the Sakila dataset into the mysql-a database: mysql -u root -h mysql-a.namespace-a -p Enter password: migration SOURCE /sakila-db/sakila-schema.sql ; SOURCE /sakila-db/sakila-data.sql ; Verify the imported Sakila data: USE sakila ; SELECT table name , table rows FROM INFORMATION SCHEMA ."
+        ]
+      },
+      {
+        "title": "\"About custom ComputeClasses \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "source_id": "site-docs-reference-2",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "Default ComputeClasses for clusters and namespaces You can configure GKE to apply a ComputeClass by default to Pods that don't select a specific ComputeClass.",
+          "When you use ComputeClasses, update your workloads to remove the following labels from node selectors and configure the corresponding field in the ComputeClasses that you create: Node label ComputeClass field cloud.google.com/machine-family priorities.machineFamily cloud.google.com/machine-type priorities.machineType cloud.google.com/gke-spot priorities.spot cloud.google.com/gke-accelerator priorities.gpu.type cloud.google.com/gke-gpu-driver-version priorities.gpu.driverVersion cloud.google.com/reservation-name priorities.reservations.specific.name cloud.google.com/reservation-project priorities.reservations.specific.project cloud.google.com/reservation-affinity priorities.reservations.affinity cloud.google.com/gke-ephemeral-storage-local-ssd priorities.storage.localSSDCount cloud.google.com/gke-boot-disk priorities.storage.bootDiskType cloud.google.com/gke-boot-disk-size priorities.storage.bootDiskSize cloud.google.com/gke-node-pool-group-name nodePoolGroup.name cloud.google.com/gke-workload-type nodePoolConfig.workloadType node.kubernetes.io/instance-type priorities.machineType Limitations The name of your ComputeClass can't begin with gke or autopilot .",
+          "The following example shows a priority rule that uses machineType to provision n4-standard-32 machine types: priorities: - machineType: n4-standard-32 spot: true storage: bootDiskType: hyperdisk-balanced bootDiskSize: 250 localSSDCount: 2 bootDiskKMSKey: projects/example/locations/us-central1/keyRings/example/cryptoKeys/key-1 GPU configuration To select GPUs in your priority rules, specify the type, count, and driverVersion (optional) of the GPU in the gpu field of a priority rule."
+        ]
+      },
+      {
+        "title": "\"Deploy an Elasticsearch vector database on GKE \\_|\\_ Kubernetes Engine \\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/deploy-elasticsearch",
+        "source_id": "site-docs-root",
+        "final_score": 118,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create an Elastic Cloud on Kubernetes (ECK) Custom Resource Definition (CRD): kubectl apply -f https://download.elastic.co/downloads/eck/2.11.1/crds.yaml Deploy the ECK operator: kubectl apply -f https://download.elastic.co/downloads/eck/2.11.1/operator.yaml Create the namespace elastic for the database: kubectl create ns elastic Install the HighAvailabilityApplication (HAA) resource, which defines failover rules for Elasticsearch.. kubectl apply -n elastic -f manifests/01-regional-pd/ha-app.yaml The ha-app.yaml manifest describes the HighAvailabilityApplication resource: kind : HighAvailabilityApplication apiVersion : ha.gke.io/v1 metadata : name : elasticsearch-ha-es-main namespace : elastic spec : resourceSelection : resourceKind : StatefulSet policy : storageSettings : requireRegionalStorage : false failoverSettings : forceDeleteStrategy : AfterNodeUnreachable afterNodeUnreachable : afterNodeUnreachableSeconds : 20 # 60 seconds total Apply the manifest to create a regional persistent SSD disk StorageClass : kubectl apply -n elastic -f manifests/01-regional-pd/regional-pd.yaml The regional-pd.yaml manifest describes the persistent SSD disk StorageClass : apiVersion : storage.k8s.io/v1 kind : StorageClass allowVolumeExpansion : true metadata : name : ha-regional parameters : replication-type : regional-pd type : pd-ssd availability-class : regional-hard-failover provisioner : pd.csi.storage.gke.io reclaimPolicy : Retain volumeBindingMode : WaitForFirstConsumer Deploy the DaemonSet resource to set virtual memory in each node: kubectl apply -n elastic -f manifests/02-elasticsearch/mmap-count.yaml The mmap-count.yaml manifest describes the DaemonSet : apiVersion : apps/v1 kind : DaemonSet metadata : name : max-map-count-setter labels : k8s-app : max-map-count-setter spec : selector : matchLabels : name : max-map-count-setter template : metadata : labels : name : max-map-count-setter spec : initContainers : - name : max-map-count-setter image : docker.io/bash:5.2.21 resources : limits : cpu : 100m memory : 32Mi securityContext : privileged : true runAsUser : 0 command : [ '/usr/local/bin/bash' , '-e' , '-c' , 'echo 262144 > /proc/sys/vm/max map count' ] containers : - name : sleep image : docker.io/bash:5.2.21 command : [ 'sleep' , 'infinity' ] Apply the manifest to deploy Elasticsearch cluster: kubectl apply -n elastic -f manifests/02-elasticsearch/elasticsearch.yaml The elasticsearch.yaml manifest describes the Deployment: apiVersion : elasticsearch.k8s.elastic.co/v1 kind : Elasticsearch metadata : name : elasticsearch-ha spec : version : 8.11.4 nodeSets : - name : main count : 3 volumeClaimTemplates : - metadata : name : elasticsearch-data spec : accessModes : - ReadWriteOnce resources : requests : storage : 10Gi storageClassName : ha-regional config : podTemplate : metadata : labels : app.stateful/component : elasticsearch spec : initContainers : - name : max-map-count-check command : [ 'sh' , '-c' , \"while true; do mmc=$(cat /proc/sys/vm/max map count); if [ ${mmc} -eq 262144 ]; then exit 0; fi; sleep 1; done\" ] containers : - name : metrics image : quay.io/prometheuscommunity/elasticsearch-exporter:v1.7.0 command : - /bin/elasticsearch exporter - --es.ssl-skip-verify - --es.uri=https://$(ES USER):$(ES PASSWORD)@localhost:9200 securityContext : runAsNonRoot : true runAsGroup : 10000 runAsUser : 10000 resources : requests : memory : \"128Mi\" cpu : \"25m\" limits : memory : \"128Mi\" cpu : \"100m\" ports : - containerPort : 9114 env : - name : ES USER value : \"elastic\" - name : ES PASSWORD valueFrom : secretKeyRef : name : elasticsearch-ha-es-elastic-user key : elastic - name : elasticsearch resources : limits : memory : 4Gi cpu : 1 affinity : nodeAffinity : preferredDuringSchedulingIgnoredDuringExecution : - weight : 1 preference : matchExpressions : - key : app.stateful/component operator : In values : - elasticsearch podAntiAffinity : preferredDuringSchedulingIgnoredDuringExecution : - weight : 1 podAffinityTerm : labelSelector : matchLabels : app.stateful/component : elasticsearch topologyKey : topology.kubernetes.io/zone Wait for a few minutes for the Elasticsearch cluster to fully start.",
+          "Deploy an internal load balancer to access your Elasticsearch database that's running in the same VPC as your GKE cluster: kubectl apply -n elastic -f manifests/02-elasticsearch/ilb.yaml The ilb.yaml manifest describes the LoadBalancer Service: apiVersion : v1 kind : Service metadata : annotations : #cloud.google.com/neg: '{\"ingress\": true}' networking.gke.io/load-balancer-type : \"Internal\" labels : app.kubernetes.io/name : elasticsearch name : elastic-ilb spec : ports : - name : https port : 9200 protocol : TCP targetPort : 9200 selector : common.k8s.elastic.co/type : elasticsearch elasticsearch.k8s.elastic.co/cluster-name : elasticsearch-ha type : LoadBalancer To check if the failover rules are applied, describe the resource and confirm Status: Message: Application is protected . kubectl describe highavailabilityapplication elasticsearch-ha-es-main -n elastic The output is similar to following Status: Conditions: Last Transition Time: 2024-02-01T13:27:50Z Message: Application is protected Observed Generation: 1 Reason: ApplicationProtected Status: True Type: Protected Events: <none> Once GKE starts the workloads, verify that GKE has created the Elasticsearch workloads: kubectl get pod,svc,statefulset,pdb,secret,daemonset -n elastic The output is similar to the following: NAME READY STATUS RESTARTS AGE pod/elasticsearch-ha-es-main-0 2/2 Running 0 7m16s pod/elasticsearch-ha-es-main-1 2/2 Running 0 7m16s pod/elasticsearch-ha-es-main-2 2/2 Running 0 7m16s pod/max-map-count-setter-28wt9 1/1 Running 0 7m27s pod/max-map-count-setter-cflsw 1/1 Running 0 7m27s pod/max-map-count-setter-gzq9k 1/1 Running 0 7m27s NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE service/elasticsearch-ha-es-http ClusterIP 10.52.8.28 <none> 9200/TCP 7m18s service/elasticsearch-ha-es-internal-http ClusterIP 10.52.3.48 <none> 9200/TCP 7m18s service/elasticsearch-ha-es-main ClusterIP None <none> 9200/TCP 7m16s service/elasticsearch-ha-es-transport ClusterIP None <none> 9300/TCP 7m18s NAME READY AGE statefulset.apps/elasticsearch-ha-es-main 3/3 7m16s NAME MIN AVAILABLE MAX UNAVAILABLE ALLOWED DISRUPTIONS AGE poddisruptionbudget.policy/elasticsearch-ha-es-default 2 N/A 1 7m16s NAME TYPE DATA AGE secret/elasticsearch-ha-es-elastic-user Opaque 1 7m18s secret/elasticsearch-ha-es-file-settings Opaque 1 7m16s secret/elasticsearch-ha-es-http-ca-internal Opaque 2 7m17s secret/elasticsearch-ha-es-http-certs-internal Opaque 3 7m17s secret/elasticsearch-ha-es-http-certs-public Opaque 2 7m17s secret/elasticsearch-ha-es-internal-users Opaque 4 7m18s secret/elasticsearch-ha-es-main-es-config Opaque 1 7m16s secret/elasticsearch-ha-es-main-es-transport-certs Opaque 7 7m16s secret/elasticsearch-ha-es-remote-ca Opaque 1 7m16s secret/elasticsearch-ha-es-transport-ca-internal Opaque 2 7m16s secret/elasticsearch-ha-es-transport-certs-public Opaque 1 7m16s secret/elasticsearch-ha-es-xpack-file-realm Opaque 4 7m18s NAME DESIRED CURRENT READY UP-TO-DATE AVAILABLE NODE SELECTOR AGE daemonset.apps/max-map-count-setter 6 6 6 6 6 <none> 13m The following GKE resources are created for the Elasticsearch cluster: The Elasticsearch StatefulSet that controls three Pod replicas.",
+          "Enable the Backup for GKE feature for your cluster: gcloud container clusters update ${ KUBERNETES CLUSTER PREFIX } -cluster \\ --project = ${ PROJECT ID } \\ --location = ${ REGION } \\ --update-addons = BackupRestore = ENABLED Create a backup plan with a daily schedule for all namespaces within the cluster: gcloud beta container backup-restore backup-plans create ${ KUBERNETES CLUSTER PREFIX } -cluster-backup \\ --project = ${ PROJECT ID } \\ --location = ${ REGION } \\ --cluster = \"projects/ ${ PROJECT ID } /locations/ ${ REGION } /clusters/ ${ KUBERNETES CLUSTER PREFIX } -cluster\" \\ --all-namespaces \\ --include-secrets \\ --include-volume-data \\ --cron-schedule = \"0 3 \" \\ --backup-retain-days = 3 The command uses the relevant environment variables at runtime."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a.namespace",
+      "app.kubernetes.io",
+      "app.stateful",
+      "app.yaml",
+      "client.yaml",
+      "common.k8s.elastic.co",
+      "count.yaml",
+      "crds.yaml",
+      "daemonset.apps",
+      "data.sql",
+      "dataset.tgz",
+      "db.tar.gz",
+      "deployment.yaml",
+      "docker.io",
+      "download.elastic.co",
+      "downloads.mysql.com",
+      "elasticsearch.k8s.elastic.co",
+      "elasticsearch.yaml",
+      "es.ssl",
+      "es.uri",
+      "gke.1518000",
+      "ha.gke.io",
+      "ilb.yaml",
+      "monitoring.googleapis.com",
+      "monitoring.yaml",
+      "networking.gke.io",
+      "node.kubernetes.io",
+      "operator.yaml",
+      "pd.csi.storage.gke.io",
+      "pd.yaml",
+      "poddisruptionbudget.policy",
+      "priorities.gpu.driverVersion",
+      "priorities.gpu.type",
+      "priorities.machineFamily",
+      "priorities.machineType",
+      "priorities.reservations.affinity",
+      "priorities.reservations.specific.name",
+      "priorities.reservations.specific.project",
+      "priorities.spot",
+      "priorities.storage.bootDiskSize",
+      "priorities.storage.bootDiskType",
+      "priorities.storage.localSSDCount",
+      "quay.io",
+      "schema.sql",
+      "statefulset.apps",
+      "storage.k8s.io",
+      "topology.kubernetes.io",
+      "v1.7.0",
+      "volume.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/deploy-elasticsearch"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/deploy-elasticsearch"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/deploy-elasticsearch"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/deploy-elasticsearch"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/deploy-elasticsearch"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/deploy-elasticsearch"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/deploy-elasticsearch"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:15.353Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

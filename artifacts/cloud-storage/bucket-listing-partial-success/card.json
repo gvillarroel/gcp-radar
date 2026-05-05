@@ -1,0 +1,211 @@
+{
+  "feature_name": "Bucket listing partial success",
+  "feature_slug": "bucket-listing-partial-success",
+  "summary": "Cloud Storage bucket listing supports partial success so available buckets can be returned even when some locations are temporarily unreachable.",
+  "extended_definition": "Cloud Storage bucket listing supports partial success so available buckets can be returned even when some locations are temporarily unreachable.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+      "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+      "https://docs.cloud.google.com/storage/docs/json_api",
+      "https://docs.cloud.google.com/storage/docs/json_api/v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Class Client (3.10.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "source_id": "site-python-reference",
+        "final_score": 186,
+        "relevance": "",
+        "evidence_snippets": [
+          "See: https://cloud.google.com/storage/docs/soft-delete return partial success bool (Optional) If True, the response will also contain a list of unreachable buckets if the buckets are unavailable.",
+          "Retry , , soft deleted = None , return partial success = None ) Get all buckets in the project associated to the client.",
+          "See the retry.py source code and docstrings in this package ( google.cloud.storage.retry ) for information on retry types and how to configure them. single shot download bool (Optional) If true, download the object in a single request. generate signed post policy v4 generate signed post policy v4 ( bucket name , blob name , expiration , conditions = None , fields = None , credentials = None , virtual hosted style = False , bucket bound hostname = None , scheme = \"http\" , service account email = None , access token = None , ) Generate a V4 signed policy object."
+        ]
+      },
+      {
+        "title": "\"Mount a Cloud Storage bucket using Cloud Storage FUSE \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "source_id": "site-iam-reference",
+        "final_score": 180,
+        "relevance": "",
+        "evidence_snippets": [
+          "Clean up To avoid incurring charges to your Google Cloud account for the resources used on this page, delete the resources by completing the following steps: Unmount the storage bucket from your Linux machine by using the fusermount tool: fusermount -u \"$HOME/mount-folder\" To delete the bucket and everything inside of it, use the gcloud storage rm command with the --recursive flag: gcloud storage rm gs:// BUCKET NAME --recursive Replace BUCKET NAME with the name of your bucket.",
+          "Make sure that you have the following role or roles on the project: Storage Admin ( roles/storage.admin ), Storage Bucket Viewer ( roles/storage.bucketViewer ) Check for the roles In the Google Cloud console, go to the IAM page.",
+          "Make sure that you have the following role or roles on the project: Storage Admin ( roles/storage.admin ), Storage Bucket Viewer ( roles/storage.bucketViewer ) Check for the roles In the Google Cloud console, go to the IAM page."
+        ]
+      },
+      {
+        "title": "Cloud Storage JSON API overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/json_api",
+        "source_id": "site-docs-reference",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The object also has an id, a name, generation, and many other fields, but this request only sends the metadata field, since that's the only field being modified: PATCH https://storage.googleapis.com/storage/v1/b/ BUCKET NAME /o/ OBJECT NAME Authorization: Bearer OAUTH2 TOKEN Content-Type: application/json { \"metadata\": {\" NEW KEY \" : \" NEW VALUE \"} } Response: 200 OK { \"id\" : \" OBJECT ID \" , \"name\" : \" OBJECT NAME \" , \"bucket\" : \" BUCKET NAME \" , \"metadata\" : { \" EXISTING KEY \" : \" EXISTING VALUE \" , \" NEW KEY \" : \" NEW VALUE \" }, ... } The server returns a 200 OK status code, along with the full representation of the updated resource.",
+          "However, by using the fields parameter in your request, you can significantly reduce the amount of data returned in the response: https://storage.googleapis.com/storage/v1/b/my-bucketT/o/my-object? fields=id,name,metadata/key1 Partial response: In response to the request above, the server sends back a response that contains only the kind information along with a pared-down items array that includes only the id, name, and the metadata/key property in each item, if present.",
+          "Here are some collection-level examples, which typically apply when listing resources such as buckets and objects: Example Effect items Returns all elements in the items array, including all fields in each element, but no other fields. etag,items Returns both the etag field and all elements in the items array. items/metadata/key Returns only the key field for all members of the metadata object, which is itself nested under the items array."
+        ]
+      },
+      {
+        "title": "\"Overview of resources and methods for the JSON API \\_|\\_ Cloud Storage \\_\\",
+        "url": "https://docs.cloud.google.com/storage/docs/json_api/v1",
+        "source_id": "site-docs-reference",
+        "final_score": 169,
+        "relevance": "",
+        "evidence_snippets": [
+          "This method supports patch semantics. relocate POST /b/ BUCKET /relocate Initiates the dry run or the initiate bucket relocation step of a bucket relocation operation . restore POST /b/ BUCKET /restore Restores a soft-deleted bucket. setIamPolicy PUT /b/ BUCKET /iam Updates an IAM policy for the specified bucket. testIamPermissions GET /b/ BUCKET /iam/testPermissions Tests a set of permissions on the given bucket to see which, if any, are held by the caller.",
+          "This method supports patch semantics. rewrite POST /b/ SOURCE BUCKET /o/ SOURCE OBJECT /rewriteTo /b/ DESTINATION BUCKET /o/ DESTINATION OBJECT Rewrites a source object to a destination object.",
+          "Method HTTP request Description cancel POST /b/ BUCKET /operations/ OPERATION ID /cancel Cancels a long-running operation. get GET /b/ BUCKET /operations/ OPERATION ID Gets a long-running operation. list GET /b/ BUCKET /operations Lists long-running operations. advanceRelocateBucket POST /b/ BUCKET /operations/ OPERATION ID /advanceRelocateBucket Initiates the final synchronization step of a bucket relocation operation Projects.hmacKeys For Projects.hmacKeys Resource details, see the resource representation page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "retry.py",
+      "storage.admin",
+      "storage.bucketViewer",
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/storage.admin",
+      "roles/storage.bucketViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/storage/docs/json_api",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/storage/docs/json_api",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/storage/docs/json_api",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/storage/docs/json_api",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/storage/docs/json_api",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/storage/docs/json_api",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/storage/docs/json_api",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/storage/docs/json_api",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/storage/docs/json_api",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/storage/docs/json_api",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/storage/docs/json_api",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/storage/docs/json_api",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:43.359Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage"
+}

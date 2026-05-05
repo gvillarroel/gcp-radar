@@ -1,0 +1,240 @@
+{
+  "feature_name": "Cloud Service Mesh Kubernetes Gateway API configuration",
+  "feature_slug": "cloud-service-mesh-kubernetes-gateway-api-configuration",
+  "summary": "Cloud Service Mesh can be configured with the Kubernetes Gateway API for proxyless gRPC or Envoy proxy deployments; Cloud Service Mesh can be configured with the Kubernetes Gateway API for proxyless gRPC or Envoy proxy deployments.",
+  "extended_definition": "Cloud Service Mesh can be configured with the Kubernetes Gateway API for proxyless gRPC or Envoy proxy deployments; Cloud Service Mesh can be configured with the Kubernetes Gateway API for proxyless gRPC or Envoy proxy deployments.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh",
+      "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+      "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh",
+      "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Install Cloud Service Mesh for Kubernetes workloads off Google Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "source_id": "site-docs-reference",
+        "final_score": 293,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Private Set the current context to your user cluster: kubectl config use-context CLUSTER NAME Save the following YAML to a file called istio-operator-internal-lb.yaml : apiVersion: install.istio.io/v1alpha1 kind: IstioOperator spec: components: ingressGateways: - enabled: true k8s: serviceAnnotations: service.beta.kubernetes.io/aws-load-balancer-internal: \"true\" name: istio-ingressgateway Run asmcli install : ./asmcli install \\ --fleet id FLEET PROJECT ID \\ --kubeconfig KUBECONFIG FILE \\ --output dir DIR PATH \\ --platform multicloud \\ --enable all \\ --ca citadel \\ --ca cert FILE PATH \\ --ca key FILE PATH \\ --root cert FILE PATH \\ --cert chain FILE PATH --custom overlay istio-operator-internal-lb.yaml \\ --option stackdriver --fleet id The project ID of the fleet host project . --kubeconfig The full path to the kubeconfig file .",
+          "Private Set the current context to your user cluster: kubectl config use-context CLUSTER NAME Save the following YAML to a file called istio-operator-internal-lb.yaml : apiVersion: install.istio.io/v1alpha1 kind: IstioOperator spec: components: ingressGateways: - enabled: true k8s: serviceAnnotations: service.beta.kubernetes.io/aws-load-balancer-internal: \"true\" name: istio-ingressgateway Run asmcli install : ./asmcli install \\ --fleet id FLEET PROJECT ID \\ --kubeconfig KUBECONFIG FILE \\ --output dir DIR PATH \\ --platform multicloud \\ --enable all \\ --ca citadel \\ --ca cert FILE PATH \\ --ca key FILE PATH \\ --root cert FILE PATH \\ --cert chain FILE PATH --custom overlay istio-operator-internal-lb.yaml \\ --option stackdriver --fleet id The project ID of the fleet host project . --kubeconfig The full path to the kubeconfig file .",
+          "Private Set the current context to your user cluster: kubectl config use-context CLUSTER NAME Save the following YAML to a file called istio-operator-internal-lb.yaml : apiVersion: install.istio.io/v1alpha1 kind: IstioOperator spec: components: ingressGateways: - enabled: true k8s: serviceAnnotations: service.beta.kubernetes.io/aws-load-balancer-internal: \"true\" name: istio-ingressgateway Run asmcli install : ./asmcli install \\ --fleet id FLEET PROJECT ID \\ --kubeconfig KUBECONFIG FILE \\ --output dir DIR PATH \\ --platform multicloud \\ --enable all \\ --ca citadel \\ --ca cert FILE PATH \\ --ca key FILE PATH \\ --root cert FILE PATH \\ --cert chain FILE PATH \\ --custom overlay istio-operator-internal-lb.yaml --fleet id The project ID of the fleet host project . --kubeconfig The full path to the kubeconfig file ."
+        ]
+      },
+      {
+        "title": "\"Using Cloud Service Mesh egress gateways on GKE clusters: Tutorial \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 283,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a Sidecar resource for the team-y namespace: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : Sidecar metadata : name : default namespace : team-y spec : outboundTrafficPolicy : mode : REGISTRY ONLY egress : - hosts : - 'istio-egress/ ' - 'team-y/ ' EOF Deploy the test application to the team-y namespace: kubectl -n team-y create -f ./test.yaml Register a second external host and export it to the team-x and the team-y namespace: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : ServiceEntry metadata : name : httpbin-org-ext namespace : istio-egress labels : Show this service and its telemetry in the Cloud Service Mesh page of the Google Cloud console service.istio.io/canonical-name : httpbin.org spec : hosts : - httpbin.org ports : - number : 80 name : http protocol : HTTP - number : 443 name : tls protocol : TLS resolution : DNS location : MESH EXTERNAL exportTo : - 'istio-egress' - 'team-x' - 'team-y' EOF Create a virtual service to route traffic to httpbin.org through the egress gateway: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : VirtualService metadata : name : httpbin-org-through-egress-gateway namespace : istio-egress spec : hosts : - httpbin.org gateways : - istio-egress/egress-gateway - mesh http : - match : - gateways : - mesh port : 80 route : - destination : host : istio-egressgateway.istio-egress.svc.cluster.local subset : target-egress-gateway-mTLS port : number : 80 weight : 100 - match : - gateways : - istio-egress/egress-gateway port : 80 route : - destination : host : httpbin.org port : number : 80 weight : 100 exportTo : - 'istio-egress' - 'team-x' - 'team-y' EOF Run istioctl analyze to check for configuration errors: ${ ISTIOCTL } analyze -n istio-egress --revision REVISION You see: ✔ No validation issues found when analyzing namespace: istio-egress.",
+          "Create a service entry for the GKE metadata server: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : ServiceEntry metadata : name : metadata-google-internal namespace : istio-egress labels : Show this service and its telemetry in the Cloud Service Mesh page of the Google Cloud console service.istio.io/canonical-name : metadata.google.internal spec : hosts : - metadata.google.internal ports : - number : 80 name : http protocol : HTTP - number : 443 name : tls protocol : TLS resolution : DNS location : MESH EXTERNAL exportTo : - 'istio-egress' - 'team-x' EOF Also create a service entry for private.googleapis.com and storage.googleapis.com: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : ServiceEntry metadata : name : private-googleapis-com namespace : istio-egress labels : Show this service and its telemetry in the Cloud Service Mesh page of the Google Cloud console service.istio.io/canonical-name : googleapis.com spec : hosts : - private.googleapis.com - storage.googleapis.com ports : - number : 80 name : http protocol : HTTP - number : 443 name : tls protocol : TLS resolution : DNS location : MESH EXTERNAL exportTo : - 'istio-egress' - 'team-x' EOF Verify that the Kubernetes service account is correctly configured to act as the Google service account: kubectl -n team-x exec -it $( kubectl -n team-x get pod -l app = test \\ -o jsonpath ={ .items..metadata.name } ) -c test -- gcloud auth list You see the Google service account listed as the active and only identity.",
+          "The exportTo property controls which namespaces can use the virtual service. cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : VirtualService metadata : name : example-com-through-egress-gateway namespace : istio-egress spec : hosts : - example.com gateways : - istio-egress/egress-gateway - mesh http : - match : - gateways : - mesh port : 80 route : - destination : host : istio-egressgateway.istio-egress.svc.cluster.local subset : target-egress-gateway-mTLS port : number : 80 weight : 100 - match : - gateways : - istio-egress/egress-gateway port : 80 route : - destination : host : example.com port : number : 80 weight : 100 exportTo : - 'istio-egress' - 'team-x' EOF Run istioctl analyze to check for configuration errors: ${ ISTIOCTL } analyze -n istio-egress --revision REVISION The output is similar to the following: ✔ No validation issues found when analyzing namespace: istio-egress."
+        ]
+      },
+      {
+        "title": "\"Migrating from Istio on GKE to Cloud Service Mesh \\_|\\_ Cloud Service Mesh\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh",
+        "source_id": "site-docs-root",
+        "final_score": 273,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Because Cloud Service Mesh is based on Istio APIs, you can continue to use your Istio configurations when you migrate to Cloud Service Mesh.",
+          "Deploy Online Boutique to the GKE cluster: kpt pkg get \\ https://github.com/GoogleCloudPlatform/microservices-demo.git/release \\ online-boutique kubectl --context= ${ CLUSTER 1 CTX } create namespace online-boutique kubectl --context= ${ CLUSTER 1 CTX } label namespace online-boutique istio-injection=enabled kubectl --context= ${ CLUSTER 1 CTX } -n online-boutique apply -f online-boutique Wait until all Deployments are ready: kubectl -- context =$ { CLUSTER 1 CTX } - n online - boutique wait -- for = condition = available -- timeout = 5 m deployment adservice kubectl -- context =$ { CLUSTER 1 CTX } - n online - boutique wait -- for = condition = available -- timeout = 5 m deployment checkoutservice kubectl -- context =$ { CLUSTER 1 CTX } - n online - boutique wait -- for = condition = available -- timeout = 5 m deployment currencyservice kubectl -- context =$ { CLUSTER 1 CTX } - n online - boutique wait -- for = condition = available -- timeout = 5 m deployment emailservice kubectl -- context =$ { CLUSTER 1 CTX } - n online - boutique wait -- for = condition = available -- timeout = 5 m deployment frontend kubectl -- context =$ { CLUSTER 1 CTX } - n online - boutique wait -- for = condition = available -- timeout = 5 m deployment paymentservice kubectl -- context =$ { CLUSTER 1 CTX } - n online - boutique wait -- for = condition = available -- timeout = 5 m deployment productcatalogservice kubectl -- context =$ { CLUSTER 1 CTX } - n online - boutique wait -- for = condition = available -- timeout = 5 m deployment shippingservice kubectl -- context =$ { CLUSTER 1 CTX } - n online - boutique wait -- for = condition = available -- timeout = 5 m deployment cartservice kubectl -- context =$ { CLUSTER 1 CTX } - n online - boutique wait -- for = condition = available -- timeout = 5 m deployment loadgenerator kubectl -- context =$ { CLUSTER 1 CTX } - n online - boutique wait -- for = condition = available -- timeout = 5 m deployment recommendationservice Ensure that there are two containers per Pod—the application container and the Istio sidecar proxy that Istio on GKE automatically injects into the Pod: kubectl --context= ${ CLUSTER 1 CTX } -n online-boutique get pods The output is similar to the following: NAME READY STATUS RESTARTS AGE adservice-7cbc9bd9-t92k4 2/2 Running 0 3m21s cartservice-d7db78c66-5qfmt 2/2 Running 1 3m23s checkoutservice-784bfc794f-j8rl5 2/2 Running 0 3m26s currencyservice-5898885559-lkwg4 2/2 Running 0 3m23s emailservice-6bd8b47657-llvgv 2/2 Running 0 3m27s frontend-764c5c755f-9wf97 2/2 Running 0 3m25s loadgenerator-84cbcd768c-5pdbr 2/2 Running 3 3m23s paymentservice-6c676df669-s779c 2/2 Running 0 3m25s productcatalogservice-7fcf4f8cc-hvf5x 2/2 Running 0 3m24s recommendationservice-79f5f4bbf5-6st24 2/2 Running 0 3m26s redis-cart-74594bd569-pfhkz 2/2 Running 0 3m22s shippingservice-b5879cdbf-5z7m5 2/2 Running 0 3m22s You can also check the sidecar Envoy proxy version from any one of the Pods to confirm that you have Istio on GKE v1.4 Envoy proxies deployed: export FRONTEND POD =$ ( kubectl get pod - n online - boutique - l app = frontend -- context =$ { CLUSTER 1 CTX } - o jsonpath = '{.items[0].metadata.name}' ) kubectl -- context =$ { CLUSTER 1 CTX } get pods $ { FRONTEND POD } - n online - boutique - o json jq '.status.containerStatuses[].image' The output is similar to the following: \"gke.gcr.io/istio/proxyv2:1.4.10-gke.8\" \"gcr.io/google-samples/microservices-demo/frontend:v0.3.4\" Access the application by navigating to the IP address of the istio-ingressgateway Service IP address: kubectl -- context =$ { CLUSTER 1 CTX } - n istio - system get service istio - ingressgateway - o jsonpath = '{.status.loadBalancer.ingress[0].ip}' Frequently asked questions This section describes frequently asked questions and related answers about migrating from Istio on GKE to Cloud Service Mesh.",
+          "Check the sidecar Envoy proxy version from any one of the Pods from any Deployment in the namespace to confirm that you now have Cloud Service Mesh Envoy proxies deployed: export POD NAME= NAME OF ANY POD IN NAMESPACE kubectl --context=${CLUSTER 1 CTX} get pods ${POD NAME} -n ${NAMESPACE} -o json jq '.status.containerStatuses[].image' The output is similar to the following: \"gcr.io/gke-release/asm/proxyv2:1.11.5-asm.3\" \"appContainerImage\" Verify and test your applications after restarting. kubectl --context=${CLUSTER 1 CTX} -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}' (Optional) If you want Google to manage upgrades of the proxies, enable the Google-managed data plane View migration status Run the following command to view the status of the migration: kubectl get cm/asm-addon-migration-state -n istio-system -ojsonpath={.data} The output indicates whether the migrations is complete, pending, or failed: {\"migrationStatus\":\"SUCCESS\"} {\"migrationStatus\":\"PENDING\"} {\"migrationStatus\":\"MIGRATION CONFIG ERROR\"} {\"migrationStatus\":\"CONTROLPLANE PROVISION ERROR\"} If migrationStatus outputs SUCCESS , the control plane has successfully upgraded to Cloud Service Mesh."
+        ]
+      },
+      {
+        "title": "\"Resolving managed Cloud Service Mesh issues \\_|\\_ Cloud Service Mesh v1.21\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh",
+        "source_id": "site-iam-reference",
+        "final_score": 273,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Filter this message using the following query: resource.type=\"istio control plane\" resource.labels.project id=[ PROJECT ID ] resource.labels.location=[ REGION ] severity=ERROR jsonPayload.message= \"Connect Gateway API has not been used in project\" In the meantime, sidecar injection and deploying any Cloud Service Mesh related Kubernetes custom resources will also fail and Cloud Logging will display the following warning message: Error creating: Internal error occurred: failed calling webhook \"rev.namespace.sidecar-injector.istio.io\": failed to call webhook: an error on the server (\"unknown\") has prevented the request from succeeding.",
+          "The error can occur if you did not enable Workload Identity on your Kubernetes cluster, which you can do by using the following command: export CLUSTER NAME = ... export PROJECT ID = ... export LOCATION = ... gcloud container clusters update $CLUSTER NAME --zone $LOCATION \\ --workload-pool = $PROJECT ID .svc.id.goog Managed data plane state The following command displays the state of the managed data plane : gcloud container fleet mesh describe --project PROJECT ID The following table lists all possible managed data plane states: State Code Description ACTIVE OK The managed data plane is running normally.",
+          "Filter this message using the following query: resource.type=\"k8s cluster\" resource.labels.project id=[ PROJECT ID ] resource.labels.location=[ REGION ] resource.labels.cluster name=[ CLUSTER NAME ] severity=WARNING jsonPayload.message= \"Internal error occurred: failed calling webhook\" To resolve the issue: Enable the required connectgateway API: gcloud services enable connectgateway.googleapis.com --project =[ PROJECT ID ] Re-install managed Cloud Service Mesh ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "asm.3",
+      "connectgateway.googleapis.com",
+      "demo.git",
+      "deployment.apps",
+      "egress.svc.cluster.local",
+      "egressgateway.istio",
+      "example.com",
+      "gcr.io",
+      "github.com",
+      "gke.1000",
+      "gke.8",
+      "gke.gcr.io",
+      "googleapis.com",
+      "httpbin.org",
+      "injector.istio.io",
+      "install.istio.io",
+      "items..metadata.name",
+      "job.batch",
+      "kubernetes.io",
+      "lb.yaml",
+      "metadata.google.internal",
+      "metadata.name",
+      "networking.istio.io",
+      "networking.k8s.io",
+      "networksecurity.googleapis.com",
+      "networkservices.googleapis.com",
+      "private.googleapis.com",
+      "resource.labels.cluster",
+      "resource.labels.location",
+      "resource.labels.project",
+      "resource.type",
+      "rev.namespace.sidecar",
+      "service.beta.kubernetes.io",
+      "service.istio.io",
+      "status.containerStatuses",
+      "status.loadBalancer.ingress",
+      "storage.googleapis.com",
+      "svc.id.goog",
+      "test.yaml",
+      "trafficdirector.googleapis.com",
+      "v0.3.4",
+      "v1.20",
+      "v1.21",
+      "v1.26",
+      "v1.4"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:25.671Z",
+  "source_step08_card": "data/step-08/current/products/managed-cloud-service-mesh/card.json",
+  "product_name": "Managed Cloud Service Mesh",
+  "product_slug": "managed-cloud-service-mesh"
+}

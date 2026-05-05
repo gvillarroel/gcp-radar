@@ -1,0 +1,43 @@
+# Buildpacks
+
+Service card: [card.json](./card.json)
+
+Generated from Step 08 card: `data/step-08/current/products/buildpacks/card.json`
+
+## Summary
+
+- Promoted features: 11
+- Step 07 product status: PASS
+- Corpus health: healthy
+- Latest feature date: 2026-03-13
+- Official source links: 13
+
+## Official Service Evidence
+
+- [https://docs.cloud.google.com/docs/buildpacks/base-images](https://docs.cloud.google.com/docs/buildpacks/base-images)
+- [https://docs.cloud.google.com/docs/buildpacks/build-application](https://docs.cloud.google.com/docs/buildpacks/build-application)
+- [https://docs.cloud.google.com/docs/buildpacks/build-function](https://docs.cloud.google.com/docs/buildpacks/build-function)
+- [https://docs.cloud.google.com/docs/buildpacks/builders](https://docs.cloud.google.com/docs/buildpacks/builders)
+- [https://docs.cloud.google.com/docs/buildpacks/go](https://docs.cloud.google.com/docs/buildpacks/go)
+- [https://docs.cloud.google.com/docs/buildpacks/java](https://docs.cloud.google.com/docs/buildpacks/java)
+- [https://docs.cloud.google.com/docs/buildpacks/nodejs](https://docs.cloud.google.com/docs/buildpacks/nodejs)
+- [https://docs.cloud.google.com/docs/buildpacks/osonly](https://docs.cloud.google.com/docs/buildpacks/osonly)
+- [https://docs.cloud.google.com/docs/buildpacks/python](https://docs.cloud.google.com/docs/buildpacks/python)
+- [https://docs.cloud.google.com/docs/buildpacks/runtime-support](https://docs.cloud.google.com/docs/buildpacks/runtime-support)
+- [https://docs.cloud.google.com/docs/buildpacks/service-specific-configs](https://docs.cloud.google.com/docs/buildpacks/service-specific-configs)
+- [https://docs.cloud.google.com/docs/buildpacks/stacks](https://docs.cloud.google.com/docs/buildpacks/stacks)
+- [https://docs.cloud.google.com/docs/buildpacks/use-a-specific-builder](https://docs.cloud.google.com/docs/buildpacks/use-a-specific-builder)
+
+## Features
+
+- [Go modules dependency management requirement](./go-modules-dependency-management-requirement/README.md)
+- [Java runtime Maven wrapper support](./java-runtime-maven-wrapper-support/README.md)
+- [Node.js buildpack Bun package manager support](./node-js-buildpack-bun-package-manager-support/README.md)
+- [Node.js runtime pnpm package manager support](./node-js-runtime-pnpm-package-manager-support/README.md)
+- [osonly24 runtime](./osonly24-runtime/README.md)
+- [pyproject.toml dependency management support](./pyproject-toml-dependency-management-support/README.md)
+- [Python buildpack ADK default entrypoint detection](./python-buildpack-adk-default-entrypoint-detection/README.md)
+- [Python buildpack default entrypoint detection from requirements.txt](./python-buildpack-default-entrypoint-detection-from-requirements-txt/README.md)
+- [Python buildpack modern web framework support](./python-buildpack-modern-web-framework-support/README.md)
+- [Ubuntu 24 builder](./ubuntu-24-builder/README.md)
+- [Ubuntu 24 LTS base image support for source deployment](./ubuntu-24-lts-base-image-support-for-source-deployment/README.md)

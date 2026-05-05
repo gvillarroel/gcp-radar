@@ -1,0 +1,116 @@
+{
+  "feature_name": "TLS 1.1 and earlier support",
+  "feature_slug": "tls-1-1-and-earlier-support",
+  "summary": "App Engine flexible environment previously supported TLS 1.1 and earlier for application settings; deprecated on March 2025.",
+  "extended_definition": "App Engine flexible environment previously supported TLS 1.1 and earlier for application settings; deprecated on March 2025.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-07",
+    "deprecation_date": "March 2025",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/flexible/ruby",
+      "https://docs.cloud.google.com/appengine/docs/flexible/ruby/runtime",
+      "https://docs.cloud.google.com/appengine/docs/flexible/ruby/securing-custom-domains-with-ssl"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Secure custom domains with SSL \\_|\\_ App Engine flexible environment \\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/ruby/securing-custom-domains-with-ssl",
+        "source_id": "site-docs-reference-2",
+        "final_score": 59,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Secure custom domains with SSL Stay organized with collections Save and categorize content based on your preferences.",
+          "After mapping a custom domain to your application and updating your DNS records , App Engine provisions a managed SSL certificate, renews the certificate, and revokes it when you remove the custom domain from your application.",
+          "To obtain a certificate for use with your App Engine app: Generate your private key and a certificate signing request (CSR) by using the openssl tool: Run the following command from a directory where you want to create the server.csr file: openssl req - nodes - newkey rsa : 2048 - keyout [ MY PRIVATE KEY ] . key - out [ MY CSR ] . csr where: [MY PRIVATE KEY].key is the generated file where your private key is stored."
+        ]
+      },
+      {
+        "title": "\"The Ruby runtime \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/ruby",
+        "source_id": "site-docs-reference-2",
+        "final_score": 55,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback The Ruby runtime Stay organized with collections Save and categorize content based on your preferences.",
+          "The Ruby runtime is the software stack responsible for installing your application code and dependencies, and then running that application in the flexible environment.",
+          "Metadata server Each instance of your application can use the Compute Engine metadata server to query information about the instance, including its hostname, external IP address, instance ID, custom metadata, and service account information."
+        ]
+      },
+      {
+        "title": "\"The Ruby runtime \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/ruby/runtime",
+        "source_id": "site-docs-reference-2",
+        "final_score": 55,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback The Ruby runtime Stay organized with collections Save and categorize content based on your preferences.",
+          "The Ruby runtime is the software stack responsible for installing your application code and dependencies, and then running that application in the flexible environment.",
+          "Metadata server Each instance of your application can use the Compute Engine metadata server to query information about the instance, including its hostname, external IP address, instance ID, custom metadata, and service account information."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "server.csr"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/securing-custom-domains-with-ssl",
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby",
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/runtime"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/securing-custom-domains-with-ssl",
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby",
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/runtime"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/securing-custom-domains-with-ssl",
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby",
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/runtime"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/securing-custom-domains-with-ssl",
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby",
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/runtime"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:09.715Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-ruby/card.json",
+  "product_name": "App Engine flexible environment Ruby",
+  "product_slug": "app-engine-flexible-environment-ruby"
+}

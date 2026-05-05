@@ -1,0 +1,85 @@
+{
+  "feature_name": "Vertex AI Vector Search create-empty-index",
+  "feature_slug": "vertex-ai-vector-search-create-empty-index",
+  "summary": "Adds support for creating a Vector Search index without embedding data at creation time for both batch and streaming use cases.",
+  "extended_definition": "Adds support for creating a Vector Search index without embedding data at creation time for both batch and streaming use cases.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featureview",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+      "https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Vector Search quickstart \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart",
+        "source_id": "site-docs-reference-2",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see an example of getting started with Vertex AI Vector Search, run the \"Get started with Vertex AI Vector Search\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub In the Vertex AI Vector Search quickstart, learn how to create an index out of a sample dataset from a fictitious ecommerce clothing site.",
+          "BUCKET URI = f \"gs:// { PROJECT ID } -vs-quickstart- { UID } \" ! gcloud storage buckets create $ BUCKET URI -- location = $ LOCATION -- project = $ PROJECT ID ! gcloud storage cp \"gs://github-repo/data/vs-quickstart/product-embs.json\" $ BUCKET URI For using Vector Search to run queries, you also need to copy the embedding file to local directory: ! gcloud storage cp \"gs://github-repo/data/vs-quickstart/product-embs.json\" . # for query tests Build and deploy a Vector Search index Learn how to create an index, create an index endpoint, and then deploy your index to the endpoint.",
+          "The APIs are available under the aiplatform package of the SDK. init the aiplatform package from google.cloud import aiplatform aiplatform . init ( project = PROJECT ID , location = LOCATION ) Create a MatchingEngineIndex with its create tree ah index function (Matching Engine is the previous name of Vector Search). create Index my index = aiplatform ."
+        ]
+      },
+      {
+        "title": "Create a feature view instance \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featureview",
+        "source_id": "site-docs-reference-3",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "To specify multiple entity ID columns, specify the column names in the following format: [\"entity id column 1 name\", \"entity id column 2 name\", ...] . embedding column : The name of the column containing the source data to create the index for vector search.",
+          "EMBEDDING COLUMN : The name of the column containing the source data to create the index for vector search.",
+          "EMBEDDING COLUMN : The name of the column containing the source data to create the index for vector search."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "source_id": "site-api-reference-2",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Using a blurred baseline instead of zero (black image) is motivated by the BlurIG approach explained here: https://arxiv.org/abs/2004.03383 Examples JSON representation { \"gcsSource\" : { object ( GcsSource ) } , \"neighborCount\" : integer , // Union field source can be only one of the following: \"exampleGcsSource\" : { object ( ExampleGcsSource ) } // End of list of possible types for union field source . // Union field config can be only one of the following: \"nearestNeighborSearchConfig\" : value , \"presets\" : { object ( Presets ) } // End of list of possible types for union field config . } Fields gcsSource object ( GcsSource ) The Cloud Storage locations that contain the instances to be indexed for approximate nearest neighbor search. neighborCount integer The number of neighbors to return when querying for examples.",
+          "Union field config . config can be only one of the following: nearestNeighborSearchConfig value ( Value format) The full configuration for the generated index, the semantics are the same as metadata and should match NearestNeighborSearchConfig . presets object ( Presets ) Simplified preset configuration, which automatically sets configuration values based on the desired query speed-precision trade-off and modality.",
+          "Tool: create endpoint Creates a Vertex AI Endpoint resource within a Google Cloud project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "arxiv.org",
+      "embs.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:42.435Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai"
+}

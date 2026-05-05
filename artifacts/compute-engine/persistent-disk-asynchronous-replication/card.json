@@ -1,0 +1,83 @@
+{
+  "feature_name": "Persistent Disk Asynchronous Replication",
+  "feature_slug": "persistent-disk-asynchronous-replication",
+  "summary": "Persistent Disk Asynchronous Replication asynchronously replicates Persistent Disk data to a secondary region for disaster recovery.",
+  "extended_definition": "Persistent Disk Asynchronous Replication asynchronously replicates Persistent Disk data to a secondary region for disaster recovery.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/compute/docs/disks/persistent-disks",
+      "https://docs.cloud.google.com/compute/docs/disks/persistent-disks",
+      "https://docs.cloud.google.com/python/docs/reference/compute/latest/google.cloud.compute_v1.services.disks.DisksClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class DisksClient (1.41.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/compute/latest/google.cloud.compute_v1.services.disks.DisksClient",
+        "source_id": "site-python-reference",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google Compute Engine has two Disk resources: \\ Zonal \\ Regional Persistent disks are required for running your VM instances.",
+          "ExtendedOperation Stops asynchronous replication for a consistency group of disks.",
+          "Operation Stops asynchronous replication for a consistency group of disks."
+        ]
+      },
+      {
+        "title": "Persistent Disk \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/disks/persistent-disks",
+        "source_id": "site-docs-root",
+        "final_score": 197,
+        "relevance": "",
+        "evidence_snippets": [
+          "About synchronous disk replication When you create a new Persistent Disk, you can either create the disk in one zone, or replicate it across two zones within the same region.",
+          "There is a very small risk of data loss occurring with a regional Persistent Disk volume due to its internal data encodings and replication.",
+          "Reliability Compute Engine replicates data of your regional Persistent Disk to the zones you selected when you created your disks."
+        ]
+      },
+      {
+        "title": "Persistent Disk \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://developers.google.com/compute/docs/disks/persistent-disks",
+        "source_id": "site-docs-root-3",
+        "final_score": 197,
+        "relevance": "",
+        "evidence_snippets": [
+          "About synchronous disk replication When you create a new Persistent Disk, you can either create the disk in one zone, or replicate it across two zones within the same region.",
+          "There is a very small risk of data loss occurring with a regional Persistent Disk volume due to its internal data encodings and replication.",
+          "Reliability Compute Engine replicates data of your regional Persistent Disk to the zones you selected when you created your disks."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:45.884Z",
+  "source_step08_card": "data/step-08/current/products/compute-engine/card.json",
+  "product_name": "Compute Engine",
+  "product_slug": "compute-engine"
+}

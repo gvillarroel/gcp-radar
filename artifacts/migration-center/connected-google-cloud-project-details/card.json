@@ -1,0 +1,118 @@
+{
+  "feature_name": "Connected Google Cloud project details",
+  "feature_slug": "connected-google-cloud-project-details",
+  "summary": "Migration Center now shows information about the connected Google Cloud project on the settings page.",
+  "extended_definition": "Migration Center now shows information about the connected Google Cloud project on the settings page.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migration-center/docs/get-started-with-migration-center",
+      "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.assets",
+      "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class MigrationCenterAsyncClient (0.4.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 252,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.migrationcenter v1.types.ReportAssetFramesResponse A response to a call to ReportAssetFrame. report config path report config path ( project : str , location : str , report config : str ) - > str Returns a fully-qualified report config string. report path report path ( project : str , location : str , report config : str , report : str ) - > str Returns a fully-qualified report string. run import job run import job ( request : typing .",
+          "Returns Type Description google.cloud.migrationcenter v1.types.AggregateAssetsValuesResponse A response to a request to aggregated assets values. asset path asset path ( project : str , location : str , asset : str ) - > str Returns a fully-qualified asset string. batch delete assets batch delete assets ( request : typing .",
+          "Returns Type Description google.cloud.migrationcenter v1.types.Source Source represents an object from which asset information is streamed to Migration Center. get transport class get transport class ( label : typing ."
+        ]
+      },
+      {
+        "title": "\"Class MigrationCenterClient (0.4.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "source_id": "site-python-reference",
+        "final_score": 252,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.migrationcenter v1.types.Source Source represents an object from which asset information is streamed to Migration Center. group path group path ( project : str , location : str , group : str ) - > str Returns a fully-qualified group string. import data file path import data file path ( project : str , location : str , import job : str , import data file : str ) - > str Returns a fully-qualified import data file string. import job path import job path ( project : str , location : str , import job : str ) - > str Returns a fully-qualified import job string. list assets list assets ( request : typing .",
+          "Returns Type Description google.cloud.migrationcenter v1.types.ReportAssetFramesResponse A response to a call to ReportAssetFrame. report config path report config path ( project : str , location : str , report config : str ) - > str Returns a fully-qualified report config string. report path report path ( project : str , location : str , report config : str , report : str ) - > str Returns a fully-qualified report string. run import job run import job ( request : typing .",
+          "Returns Type Description google.cloud.migrationcenter v1.types.AggregateAssetsValuesResponse A response to a request to aggregated assets values. asset path asset path ( project : str , location : str , asset : str ) - > str Returns a fully-qualified asset string. batch delete assets batch delete assets ( request : typing ."
+        ]
+      },
+      {
+        "title": "Get started with Migration Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/get-started-with-migration-center",
+        "source_id": "site-docs-root",
+        "final_score": 209,
+        "relevance": "",
+        "evidence_snippets": [
+          "Add users to your project To let other users access your Google Cloud project, for example if you want a Google customer engineer to help you with your assessment, grant them the permissions required to manage resources in Migration Center.",
+          "Grant access to Google customer engineers If you want to let Google Cloud customer engineers access your Migration Center project to help you with your migration, you must first give your consent by accepting the terms and conditions .",
+          "Activate Migration Center The first time you access Google Cloud Migration Center from a Google Cloud project in the Google Cloud console, you need to activate Migration Center."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.assets \\_|\\_ Migration Center \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.assets",
+        "source_id": "site-api-reference",
+        "final_score": 207,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Migration Migration Center Reference Send feedback REST Resource: projects.locations.assets Stay organized with collections Save and categorize content based on your preferences.",
+          "Methods aggregate Values Aggregates the requested fields based on provided function. batch Delete Deletes list of Assets. batch Update Updates the parameters of a list of assets. delete Deletes an asset. get Gets the details of an asset. list Lists all the assets in a given project and location. patch Updates the parameters of an asset. report Asset Frames Reports a set of frames.",
+          "In case message code is not yet known by the client defaultMessage will be the message to be used instead. additional Information[] string Output only."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.assets",
+      "v1.types.AggregateAssetsValuesResponse",
+      "v1.types.ReportAssetFramesResponse",
+      "v1.types.Source"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/get-started-with-migration-center",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.assets"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/get-started-with-migration-center",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.assets"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:28.580Z",
+  "source_step08_card": "data/step-08/current/products/migration-center/card.json",
+  "product_name": "Migration Center",
+  "product_slug": "migration-center"
+}

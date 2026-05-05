@@ -1,0 +1,112 @@
+{
+  "feature_name": "App Engine standard environment error reporting",
+  "feature_slug": "app-engine-standard-environment-error-reporting",
+  "summary": "Error Reporting is generally available for the Google App Engine standard environment.",
+  "extended_definition": "Error Reporting is generally available for the Google App Engine standard environment.",
+  "lifecycle": {
+    "latest_feature_date": "2016-07-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/error-reporting/docs/setup/app-engine-flexible-environment",
+      "https://docs.cloud.google.com/error-reporting/docs/setup/app-engine-standard-environment",
+      "https://docs.cloud.google.com/error-reporting/docs/setup/ruby"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Setting up on App Engine standard environment \\_|\\_ Error Reporting \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/error-reporting/docs/setup/app-engine-standard-environment",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 162,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Observability Error Reporting Guides Send feedback Setting up on App Engine standard environment Stay organized with collections Save and categorize content based on your preferences.",
+          "App Engine standard environment is configured to use Error Reporting automatically, but you might need to complete additional setup instructions, depending on your language .",
+          "Note : If you see the message \"Set up Error Reporting\" on the Error Reporting page, then your Google Cloud project has no error groups to display."
+        ]
+      },
+      {
+        "title": "\"Setting up on App Engine flexible environment \\_|\\_ Error Reporting \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/error-reporting/docs/setup/app-engine-flexible-environment",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Observability Error Reporting Guides Send feedback Setting up on App Engine flexible environment Stay organized with collections Save and categorize content based on your preferences.",
+          "Error Reporting is automatically enabled for App Engine flexible environment applications.",
+          "Examples using the instrumentation libraries If you'd like to customize the error information being sent to Error Reporting, you can use the instrumentation libraries available for a number of languages: Go Java Node.js PHP Python Ruby .NET Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Instrument Ruby apps for Error Reporting \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/error-reporting/docs/setup/ruby",
+        "source_id": "site-docs-root",
+        "final_score": 90,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To enable Error Reporting in development mode, add the following: Add this to config/environments/development.rb Rails . application . configure do config config . google cloud . use error reporting = true end Using instrumentation configuration interface To use the Error Reporting library for Ruby in other Rack-based applications, provide the parameters through the configuration interface: require \"google/cloud/error reporting\" Google :: Cloud . configure do config Stackdriver Error Reporting specific parameters config . error reporting . project id = \"YOUR-PROJECT-ID\" config . error reporting . keyfile = \"/path/to/service-account.json\" end You can also set shared configuration for all Google Cloud Observability gems using the following: require \"stackdriver\" Google :: Cloud . configure do config Stackdriver Shared parameters config . project id = \"YOUR-PROJECT-ID\" config . keyfile = \"/path/to/service-account.json\" end App Engine flexible environment App Engine grants the Error Reporting Writer role ( roles/errorreporting.writer ) to your default service account automatically.",
+          "Reporting errors manually You can manually report an error by calling the report method, as seen in the following example: require \"google/cloud/error reporting\" begin raise \"Something went wrong\" rescue StandardError = > e Google :: Cloud :: ErrorReporting . report e end Run apps in a local development environment To use the Error Reporting library for Ruby in a local development environment, such as running the library on your own workstation, you must provide your Error Reporting library for Ruby with the local application default credentials.",
+          "Error Reporting is automatically enabled for App Engine flexible environment applications."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.json",
+      "development.rb",
+      "errorreporting.writer"
+    ],
+    "missing_inventory_roles": [
+      "roles/errorreporting.writer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/error-reporting/docs/setup/app-engine-standard-environment",
+        "https://docs.cloud.google.com/error-reporting/docs/setup/app-engine-flexible-environment",
+        "https://docs.cloud.google.com/error-reporting/docs/setup/ruby"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/error-reporting/docs/setup/app-engine-standard-environment",
+        "https://docs.cloud.google.com/error-reporting/docs/setup/app-engine-flexible-environment",
+        "https://docs.cloud.google.com/error-reporting/docs/setup/ruby"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/error-reporting/docs/setup/app-engine-standard-environment",
+        "https://docs.cloud.google.com/error-reporting/docs/setup/app-engine-flexible-environment",
+        "https://docs.cloud.google.com/error-reporting/docs/setup/ruby"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:04.849Z",
+  "source_step08_card": "data/step-08/current/products/error-reporting/card.json",
+  "product_name": "Error Reporting",
+  "product_slug": "error-reporting"
+}

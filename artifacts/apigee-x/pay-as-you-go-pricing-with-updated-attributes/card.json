@@ -1,0 +1,162 @@
+{
+  "feature_name": "Pay-as-you-go pricing with updated attributes",
+  "feature_slug": "pay-as-you-go-pricing-with-updated-attributes",
+  "summary": "Apigee offers an updated Pay-as-you-go pricing model with new attributes for lower entry cost and usage-based sizing; Apigee offers an updated Pay-as-you-go pricing model with new attributes for lower entry cost and usage-based sizing.",
+  "extended_definition": "Apigee offers an updated Pay-as-you-go pricing model with new attributes for lower entry cost and usage-based sizing; Apigee offers an updated Pay-as-you-go pricing model with new attributes for lower entry cost and usage-based sizing.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+      "https://docs.cloud.google.com/apigee/docs/apihub/audit-logging-apihub",
+      "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage attributes \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "source_id": "site-docs-reference-2",
+        "final_score": 95,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following example shows the API call update the API Visibility user defined attribute. curl -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -d '{\"name\": \"projects/test-15/locations/us-central1/attributes/API Visibility\", display name\" : \"API Visibility Updated\", \"allowedValues\": [ { \"id\": \"internal\", \"displayName\": \"Internal\", \"description\": \"The API is visible internally in an organization\" }, { \"id\": \"external\", \"displayName\": \"External\", \"description\": \"The API is visible externally in an organization\" }, { \"id\": \"public\", \"displayName\": \"Public\", \"description\": \"The API is visible public in an organization\" } ]}' \\ -X PATCH https://autopush-apihub.sandbox.googleapis.com/v1/projects/common-dev-15/locations/us-central1/attributes/API Visibility?update mask=display name,allowed values It's important to understand how API hub interprets the request payload for the UpdateAttribute API.",
+          "The following example shows the API call to create the attribute-01 user defined attribute. curl -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -d '{ \"display name\" : \"custom attribute\", \"description\" : \"custom attribute details\", \"definition type\" : \"USER DEFINED\", \"scope\" : \"API\", \"data type\" : \"ENUM\", \"allowed values\" : [ { \"id\" : \"value-1\", \"display name\" : \"Value 1\", \"description\" : \"Value 1 test description\", \"immutable\" : false, }, { \"id\" : \"value-2\", \"display name\" : \"Value 2\", \"description\" : \"Value 2 test description\", \"immutable\" : false, }, ], \"cardinality\" : 4, \"mandatory\" : false }' \\ -X POST https://apihub.googleapis.com/v1/projects/test-15/locations/us-central1/attributes?attribute id=attribute-01 Edit a user defined attribute Caution: Avoid adding sensitive data to user defined attributes.",
+          "The following example shows the API call to update the values of the Business unit attribute. curl -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -d '{\"allowed values\": [ { \"id\": \"bu1\", \"display name\": \"Business unit 1\", \"description\": \"The API can be used by business unit 1\" }, { \"id\": \"bu2\", \"display name\": \"Business unit 2\", \"description\": \"The API can be used by business unit 2\" }, { \"id\": \"bu3\", \"display name\": \"Business unit 3\", \"description\": \"The API can be used by business unit 3\" }]}' \\ -X PATCH https://apihub.googleapis.com/v1/projects/test-15/locations/us-central1/attributes/system-business-unit?update mask=allowed values It's important to understand how API hub interprets the request payload for the UpdateAttribute API."
+        ]
+      },
+      {
+        "title": "Audit logging for API hub \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/audit-logging-apihub",
+        "source_id": "site-docs-reference-2",
+        "final_score": 78,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ google.cloud.apihub.v1.ApiHubPlugin.GetPlugin google.cloud.apihub.v1.Provisioning.LookupApiHubInstance google.cloud.apihub.v1.RuntimeProjectAttachmentService.ListRuntimeProjectAttachments google.cloud.apihub.v1.RuntimeProjectAttachmentService.LookupRuntimeProjectAttachment ADMIN WRITE google.cloud.apihub.v1.ApiHubPlugin.DisablePlugin google.cloud.apihub.v1.ApiHubPlugin.EnablePlugin google.cloud.apihub.v1.HostProjectRegistrationService.CreateHostProjectRegistration google.cloud.apihub.v1.Provisioning.CreateApiHubInstance (LRO) google.cloud.apihub.v1.RuntimeProjectAttachmentService.CreateRuntimeProjectAttachment DATA READ google.cloud.apihub.v1.ApiHub.GetApi google.cloud.apihub.v1.ApiHub.GetAttribute google.cloud.apihub.v1.ApiHub.GetDeployment google.cloud.apihub.v1.ApiHub.GetExternalApi google.cloud.apihub.v1.ApiHub.GetSpec google.cloud.apihub.v1.ApiHub.GetSpecContents google.cloud.apihub.v1.ApiHub.GetVersion google.cloud.apihub.v1.ApiHub.ListApis google.cloud.apihub.v1.ApiHub.ListAttributes google.cloud.apihub.v1.ApiHub.ListDeployments google.cloud.apihub.v1.ApiHub.ListExternalApis google.cloud.apihub.v1.ApiHub.ListSpecs google.cloud.apihub.v1.ApiHub.ListVersions DATA WRITE google.cloud.apihub.v1.ApiHub.CreateApi google.cloud.apihub.v1.ApiHub.CreateAttribute google.cloud.apihub.v1.ApiHub.CreateDeployment google.cloud.apihub.v1.ApiHub.CreateExternalApi google.cloud.apihub.v1.ApiHub.CreateSpec google.cloud.apihub.v1.ApiHub.CreateVersion google.cloud.apihub.v1.ApiHub.DeleteApi google.cloud.apihub.v1.ApiHub.DeleteAttribute google.cloud.apihub.v1.ApiHub.DeleteDeployment google.cloud.apihub.v1.ApiHub.DeleteExternalApi google.cloud.apihub.v1.ApiHub.DeleteSpec google.cloud.apihub.v1.ApiHub.DeleteVersion google.cloud.apihub.v1.ApiHub.UpdateApi google.cloud.apihub.v1.ApiHub.UpdateAttribute google.cloud.apihub.v1.ApiHub.UpdateDeployment google.cloud.apihub.v1.ApiHub.UpdateExternalApi google.cloud.apihub.v1.ApiHub.UpdateSpec google.cloud.apihub.v1.ApiHub.UpdateVersion API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for API hub. google.cloud.apihub.v1.ApiHub The following audit logs are associated with methods belonging to google.cloud.apihub.v1.ApiHub .",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.apihub.v1.ApiHub.UpdateDeployment\" UpdateExternalApi Method : google.cloud.apihub.v1.ApiHub.UpdateExternalApi Audit log type : Data access Permissions : apihub.externalApis.update - DATA WRITE Method is a long-running or streaming operation : No."
+        ]
+      },
+      {
+        "title": "Get started with the Apigee Extension Processor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "source_id": "site-docs-reference",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "Update Multiple Attributes (Global LB) To update the extensions and extensionProcessor attributes simultaneously, use the following command: curl -X PATCH -H \"Authorization: Bearer $TOKEN \" \\ https://apigee.googleapis.com/v1/organizations/ $ORG NAME /apimServiceExtensions/ TRAFFIC EXT NAME ?updateMask = extensions,extensionProcessor \\ -H \"Content-Type:application/json\" -d \\ '{ \"extensions\": [ { \"name\": \" TARGET PROXY NAME \", \"matchCondition\": \" NEW CEL EXPRESSION \", \"failOpen\": NEW FAIL OPEN , \"hostname\": \" NEW ENV GROUP HOSTNAME \", \"supportedEvents\": [ \"REQUEST HEADERS\", \"RESPONSE HEADERS\" ] } ], \"extensionProcessor\": \" NEW TARGET PROXY NAME \" }' Where: TRAFFIC EXT NAME is the name of the Extension Processor traffic extension to update.",
+          "Update extensions To update the extensions attributes, use the following command: curl -X PATCH -H \"Authorization: Bearer $TOKEN \" \\ https://apigee.googleapis.com/v1/organizations/ $ORG NAME /apimServiceExtensions/ TRAFFIC EXT NAME ?updateMask = extensions \\ -H \"Content-Type:application/json\" -d \\ '{ \"extensions\": [ { \"name\": \" TARGET PROXY NAME \", \"matchCondition\": \" NEW CEL EXPRESSION \", \"failOpen\": NEW FAIL OPEN \"hostname\": \" NEW ENV GROUP HOSTNAME \", \"supportedEvents\": [ \"REQUEST HEADERS\", \"RESPONSE HEADERS\" ] } ] }' Where: TRAFFIC EXT NAME is the name of the Extension Processor traffic extension to update.",
+          "Here are some examples: Update networkConfigs (Global LB) To update the networkConfigs attributes, use the following command: curl -X PATCH -H \"Authorization: Bearer $TOKEN \" \\ https://apigee.googleapis.com/v1/organizations/ $ORG NAME /apimServiceExtensions/ TRAFFIC EXT NAME ?updateMask = networkConfigs \\ -H \"Content-Type:application/json\" -d \\ '{ \"networkConfigs\": [ { \"region\": \" REGION \", \"subnet\": \"projects/$PROJECT/regions/ REGION /subnetworks/ SUBNET \" } ] }' Where: TRAFFIC EXT NAME is the name of the Extension Processor traffic extension to update."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "apihub.deployments.update",
+      "apihub.externalApis.update",
+      "apihub.googleapis.com",
+      "apihub.sandbox.googleapis.com",
+      "attributes.projects",
+      "values.values"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "https://docs.cloud.google.com/apigee/docs/apihub/audit-logging-apihub",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "https://docs.cloud.google.com/apigee/docs/apihub/audit-logging-apihub",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "https://docs.cloud.google.com/apigee/docs/apihub/audit-logging-apihub",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "https://docs.cloud.google.com/apigee/docs/apihub/audit-logging-apihub",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "https://docs.cloud.google.com/apigee/docs/apihub/audit-logging-apihub",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "https://docs.cloud.google.com/apigee/docs/apihub/audit-logging-apihub",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "https://docs.cloud.google.com/apigee/docs/apihub/audit-logging-apihub",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "https://docs.cloud.google.com/apigee/docs/apihub/audit-logging-apihub",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "https://docs.cloud.google.com/apigee/docs/apihub/audit-logging-apihub",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:06.675Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x"
+}

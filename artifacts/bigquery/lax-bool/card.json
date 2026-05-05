@@ -1,0 +1,190 @@
+{
+  "feature_name": "LAX_BOOL",
+  "feature_slug": "lax-bool",
+  "summary": "LAX_BOOL attempts to convert a JSON value to a SQL BOOL value.",
+  "extended_definition": "LAX_BOOL attempts to convert a JSON value to a SQL BOOL value.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/json-data",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "JSON functions | BigQuery | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 344,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Otherwise, returns TRUE . other type or null NULL Return type BOOL Examples Example with input that's a JSON boolean: SELECT LAX_BOOL ( JSON 'true' ) AS result ; /*--------+ | result | +--------+ | true | +--------*/ Examples with inputs that are JSON strings: SELECT LAX_BOOL ( JSON '\"true\"' ) AS result ; /*--------+ | result | +--------+ | TRUE | +--------*/ SELECT LAX_BOOL ( JSON '\"true \"' ) AS result ; /*--------+ | result | +--------+ | NULL | +--------*/ SELECT LAX_BOOL ( JSON '\"foo\"' ) AS result ; /*--------+ | result | +--------+ | NULL | +--------*/ Examples with inputs that are JSON numbers: SELECT LAX_BOOL ( JSON '10' ) AS result ; /*--------+ | result | +--------+ | TRUE | +--------*/ SELECT LAX_BOOL ( JSON '0' ) AS result ; /*--------+ | result | +--------+ | FALSE | +--------*/ SELECT LAX_BOOL ( JSON '0.0' ) AS result ; /*--------+ | result | +--------+ | FALSE | +--------*/ SELECT LAX_BOOL ( JSON '-1.1' ) AS result ; /*--------+ | result | +--------+ | TRUE | +--------*/ LAX_FLOAT64 LAX_FLOAT64 ( json_expr ) Description Attempts to convert a JSON value to a SQL FLOAT64 value.",
+          "SELECT JSON_VALUE_ARRAY ( '[\"world\", 1, null]' ) AS result ; LAX_BOOL LAX_BOOL ( json_expr ) Description Attempts to convert a JSON value to a SQL BOOL value.",
+          "LAX_BOOL Attempts to convert a JSON value to a SQL BOOL value."
+        ]
+      },
+      {
+        "title": "Working with JSON data in GoogleSQL | BigQuery | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/json-data",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 160,
+        "relevance": "",
+        "evidence_snippets": [
+          "SELECT LAX_INT64 ( JSON '\"10\"' ) AS id ; +----+ | id | +----+ | 10 | +----+ In addition to LAX_INT64 , you can convert to other SQL types flexibly to JSON with the following functions: LAX_STRING LAX_BOOL LAX_INT64 LAX_FLOAT64 Extract arrays from JSON JSON can contain JSON arrays, which are not directly equivalent to an ARRAY<JSON> type in BigQuery.",
+          "WITH Fruits AS ( SELECT 0 AS id , 'color' AS k , 'Red' AS v UNION ALL SELECT 0 , 'fruit' , 'apple' UNION ALL SELECT 1 , 'fruit' , 'banana' UNION ALL SELECT 1 , 'ripe' , 'true' ) SELECT JSON_OBJECT ( ARRAY_AGG ( k ), ARRAY_AGG ( v )) AS json_data FROM Fruits GROUP BY id The result is the following: +----------------------------------+ | json_data | +----------------------------------+ | {\"color\":\"Red\",\"fruit\":\"apple\"} | | {\"fruit\":\"banana\",\"ripe\":\"true\"} | +----------------------------------+ Convert a SQL type to JSON type The following example converts a SQL STRUCT value to a JSON value by using the TO_JSON function: SELECT TO_JSON ( STRUCT ( 1 AS id , [ 10 , 20 ] AS coordinates )) AS pt ; The result is the following: +--------------------------------+ | pt | +--------------------------------+ | {\"coordinates\":[10,20],\"id\":1} | +--------------------------------+ Ingest JSON data You can ingest JSON data into a BigQuery table in the following ways: Use a batch load job to load into JSON columns from the following formats.",
+          "Create a JSON value The following example inserts JSON values into a table: INSERT INTO mydataset . table1 VALUES ( 1 , JSON '{\"name\": \"Alice\", \"age\": 30}' ), ( 2 , JSON_ARRAY ( 10 , [ 'foo' , 'bar' ] , [ 20 , 30 ] )), ( 3 , JSON_OBJECT ( 'foo' , 10 , 'bar' , [ 'a' , 'b' ] )); Convert a STRING type to JSON type The following example converts a JSON-formatted STRING value by using the PARSE_JSON function."
+        ]
+      },
+      {
+        "title": "\"Legacy SQL Syntax, Functions and Operators \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "source_id": "site-docs-reference",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "Here we present the full grammar of SELECT statements in a compact form with links back to the individual sections. query : SELECT { field path . expression } [ [ AS ] alias ] [ , ... ] [ FROM from body [ WHERE bool expression ] [ OMIT RECORD IF bool expression ] [ GROUP [ EACH ] BY [ ROLLUP ] { field name or alias } [ , ... ] ] [ HAVING bool expression ] [ ORDER BY field name or alias [ { DESC ASC } ] [, ... ] ] [ LIMIT n ] ]; from body : { from item [, ...] # Warning : Comma means UNION ALL here from item [ join type ] JOIN [ EACH ] from item [ ON join predicate ] ( FLATTEN ( { table name ( query ) } , field name or alias )) table wildcard function } from item : { table name ( query ) } [ [ AS ] alias ] join type : { INNER [ FULL ] [ OUTER ] RIGHT [ OUTER ] LEFT [ OUTER ] CROSS } join predicate : field from one side of the join = field from the other side of the join [ AND ...] expression : { literal value field name or alias function call } bool expression : { expression which results in a boolean value bool expression AND bool expression bool expression OR bool expression NOT bool expression } Notation: Square brackets \"[ ]\" indicate optional clauses.",
+          "Examples: PARSE PACKED IP('48.49.50.51') returns 'MDEyMw==' PARSE PACKED IP('3031:3233:3435:3637:3839:4041:4243:4445') returns 'MDEyMzQ1Njc4OUBBQkNERQ==' JSON functions BigQuery's JSON functions give you the ability to find values within your stored JSON data, by using JSONPath -like expressions.",
+          "RADIANS( numeric expr ) Returns numeric expr , converted from degrees to radians. (Note that π radians equals 180 degrees.) RAND([ int32 seed ]) Returns a random float value in the range 0.0 <= value < 1.0."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "organizations.locations.dataExchanges",
+      "projects.dataSources",
+      "projects.locations",
+      "projects.locations.capacityCommitments",
+      "projects.locations.connections",
+      "projects.locations.dataExchanges",
+      "projects.locations.dataExchanges.listings",
+      "projects.locations.dataExchanges.queryTemplates",
+      "projects.locations.dataPolicies",
+      "projects.locations.dataSources",
+      "projects.locations.reservationGroups",
+      "projects.locations.reservations",
+      "projects.locations.reservations.assignments",
+      "projects.locations.subscriptions",
+      "projects.locations.transferConfigs",
+      "projects.locations.transferConfigs.runs",
+      "projects.locations.transferConfigs.runs.transferLogs",
+      "projects.locations.transferConfigs.transferResources",
+      "projects.locations.workflows",
+      "projects.locations.workflows.subtasks",
+      "projects.transferConfigs",
+      "projects.transferConfigs.runs",
+      "projects.transferConfigs.runs.transferLogs",
+      "projects.transferConfigs.transferResources"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/json-data"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/json-data"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/json-data"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/json-data"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/json-data"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/json-data"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/json-data"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/json-data"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/json-data"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/json-data"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/json-data"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/json-data"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

@@ -1,0 +1,101 @@
+{
+  "feature_name": "Parallel worker node pool upgrades",
+  "feature_slug": "parallel-worker-node-pool-upgrades",
+  "summary": "Lets worker node pools be upgraded in parallel.",
+  "extended_definition": "Lets worker node pools be upgraded in parallel.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/add-remove-node-pools",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/upgrade",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cluster configuration field reference \\_|\\_ Google Distributed Cloud (software\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "source_id": "site-docs-root",
+        "final_score": 211,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you set concurrentNodePools to 0 , every worker node pool in the cluster upgrades in parallel. apiVersion : baremetal.cluster.gke.io/v1 kind : Cluster metadata : name : cluster1 namespace : cluster-cluster1 spec : ... nodePoolUpgradeStrategy : concurrentNodePools : 0 ...",
+          "You can configure worker node pools so that multiple nodes upgrade in parallel when you upgrade your cluster.",
+          "This section contains settings for configuring parallel node upgrades for a worker node pool."
+        ]
+      },
+      {
+        "title": "\"Upgrade clusters \\_|\\_ Google Distributed Cloud (software only) for bare\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/upgrade",
+        "source_id": "site-docs-root",
+        "final_score": 203,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If multiple worker node pools are selected for upgrade, the value of spec.nodePoolUpgradeStrategy.concurrentNodePools in the cluster spec determines how many node pools are upgraded in parallel, if any.",
+          "In an upgrade, nodes upgrade 5 at a time and at least 4 nodes must remain available for the upgrade to proceed: apiVersion : baremetal.cluster.gke.io/v1 kind : NodePool metadata : name : np1 namespace : cluster-cluster1 spec : clusterName : cluster1 nodes : - address : 10.200.0.1 - address : 10.200.0.2 - address : 10.200.0.3 - address : 10.200.0.4 - address : 10.200.0.5 - address : 10.200.0.6 - address : 10.200.0.7 - address : 10.200.0.8 - address : 10.200.0.9 - address : 10.200.0.10 upgradeStrategy : parallelUpgrade : concurrentNodes : 5 minimumAvailableNodes : 4 Node pool upgrade strategy You can configure a cluster so that multiple worker node pools upgrade in parallel.",
+          "The following table lists the parallel upgrade fields and their default values: Field Default value Meaning nodePoolUpgradeStrategy.concurrentNodePools (Cluster spec) 1 Upgrade worker node pools sequentially, one after the other. upgradeStrategy.parallelUpgrade.concurrentNodes (NodePool spec) 1 Upgrade nodes sequentially, one after the other. upgradeStrategy.parallelUpgrade.minimumAvailableNodes (NodePool spec) The default minimumAvailableNodes value depends on the value of concurrentNodes ."
+        ]
+      },
+      {
+        "title": "\"Manage node pools in a cluster \\_|\\_ Google Distributed Cloud (software\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/add-remove-node-pools",
+        "source_id": "site-docs-reference",
+        "final_score": 199,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You also use kubectl to manage node pools for all cluster types that can contain worker node pools (hybrid, standalone, and user clusters).",
+          "What's next If your workload requirements change after you create node pools, you can update a worker node pool to add or remove nodes.",
+          "There are three kinds of node pools in a Google Distributed Cloud cluster: control plane, load balancer, and worker node pools."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "baremetal.cluster.gke.io",
+      "spec.nodePoolUpgradeStrategy.concurrentNodePools"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/upgrade",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/add-remove-node-pools"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/upgrade",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/add-remove-node-pools"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:14.869Z",
+  "source_step08_card": "data/step-08/current/products/google-distributed-cloud-software-only-for-bare-metal/card.json",
+  "product_name": "Google Distributed Cloud (software only) for bare metal",
+  "product_slug": "google-distributed-cloud-software-only-for-bare-metal"
+}

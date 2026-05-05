@@ -1,0 +1,143 @@
+{
+  "feature_name": "and tag",
+  "feature_slug": "and-tag",
+  "summary": "Media CDN can invalidate cached content by host, path, or tag, with tag-based invalidation supporting status codes, MIME type, and origin.",
+  "extended_definition": "Media CDN can invalidate cached content by host, path, or tag, with tag-based invalidation supporting status codes, MIME type, and origin.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+      "https://docs.cloud.google.com/media-cdn/docs/caching",
+      "https://docs.cloud.google.com/media-cdn/docs/origins",
+      "https://docs.cloud.google.com/media-cdn/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Invalidate cached content \\_|\\_ Media CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "source_id": "site-docs-root",
+        "final_score": 334,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Media CDN supports multiple ways of selecting content to be invalidated, as follows: Host and URL path URL prefix (wildcard) Cache tags, including built-in tags for status , origin , and content-type You can combine these invalidation parameters to target specific cached responses and minimize origin load on the subsequent cache fill.",
+          "For example: gcloud edge-cache services invalidate-cache SERVICE NAME \\ --tags=\"status=404,content-type=text/plain\" Invalidation latency Cache invalidation across Media CDN's thousands of locations typically completes within one minute globally.",
+          "Home Documentation Networking Media CDN Guides Send feedback Invalidate cached content Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Configure caching behavior \\_|\\_ Media CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "source_id": "site-docs-root",
+        "final_score": 244,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To maximize client performance and origin offload, Media CDN can serve the requested individual byte ranges from its cache, consolidating them into a single response with an HTTP 206 Partial Response status code to the client with the Content-Type set to multipart/byteranges .",
+          "Routes without an explicit cdnPolicy configured behave as if they have the following configuration: cdnPolicy : cacheMode : CACHE ALL STATIC defaultTtl : 3600s cacheKeyPolicy : includeProtocol : false excludeHost : false excludeQueryString : false signedRequestMode : DISABLED negativeCaching : false Cacheable responses A cacheable response is an HTTP response that Media CDN can store and quickly retrieve, thus allowing for faster load times.",
+          "Static content MIME types The CACHE ALL STATIC cache mode allows Media CDN to automatically cache common static content such as video, audio, images, and common web assets based on the MIME type returned in the Content-Type HTTP response header."
+        ]
+      },
+      {
+        "title": "Media CDN overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 212,
+        "relevance": "",
+        "evidence_snippets": [
+          "Media CDN supports the following ways of invalidating content: By host and URL path By URL prefix and wildcard By cache tags, including built-in tags for status, origin, and media type You can combine the invalidation parameters to target specific cached responses and to minimize origin load on the subsequent cache fill.",
+          "You can use Media CDN with your existing origin infrastructure, whether the content is hosted within Cloud Storage, in another cloud, or within your on-premises infrastructure.",
+          "Home Documentation Networking Media CDN Guides Send feedback Media CDN overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Origins overview \\_|\\_ Media CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/media-cdn/docs/origins",
+        "source_id": "site-docs-root",
+        "final_score": 198,
+        "relevance": "",
+        "evidence_snippets": [
+          "By configuring a flexible shielding region in the same geographical region as your centralized origin, you can optimize the following: Cache hit rate at the shield layer Origin offload Latency for cache misses and uncacheable content Performance stability Flexible shielding is compatible with any origin type configured in Media CDN.",
+          "Best practices for origin failover When configuring multiple origins for failover or load balancing, verify that your media content and Vary , ETag , and Last-Modified header behaviors are consistent between your origins.",
+          "Home Documentation Networking Media CDN Guides Send feedback Origins overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "funny.mp4",
+      "media.example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/origins"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/origins"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/origins"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/origins"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/origins"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:26.045Z",
+  "source_step08_card": "data/step-08/current/products/media-cdn/card.json",
+  "product_name": "Media CDN",
+  "product_slug": "media-cdn"
+}

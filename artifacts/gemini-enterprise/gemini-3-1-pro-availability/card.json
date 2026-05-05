@@ -1,0 +1,171 @@
+{
+  "feature_name": "Gemini 3.1 Pro availability",
+  "feature_slug": "gemini-3-1-pro-availability",
+  "summary": "Gemini Enterprise adds Gemini 3.1 Pro in Preview and replaces Gemini 3 Pro in Preview.",
+  "extended_definition": "Gemini Enterprise adds Gemini 3.1 Pro in Preview and replaces Gemini 3 Pro in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/enterprise/docs/access-traces-and-spans",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/quickstart-gemini-enterprise"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access traces and spans in Trace Explorer \\_|\\_ Gemini Enterprise \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/access-traces-and-spans",
+        "source_id": "site-docs-root",
+        "final_score": 266,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This includes a user asking a question from the Gemini Enterprise assistant, the Gemini Enterprise assistant responding, and any subsequent actions triggered by the answer, such as sending an email.",
+          "Home Documentation AI and ML Gemini Enterprise Send feedback Access traces and spans in Trace Explorer Stay organized with collections Save and categorize content based on your preferences.",
+          "In your Gemini Enterprise app configurations, enable the Enable instrumentation of OpenTelemetry traces and logs observability setting."
+        ]
+      },
+      {
+        "title": "Get started with Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/quickstart-gemini-enterprise",
+        "source_id": "site-docs-root",
+        "final_score": 266,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Get started with Gemini Enterprise To see an example of how to get started with Gemini Enterprise, run the \"Intro to Gemini Enterprise\" notebook in one of the following environments: Open in Colab View on GitHub Gemini Enterprise brings together the power of deep information retrieval, state-of-the-art natural language processing, and the latest in large language processing to understand user intent and return the most relevant results for the user.",
+          "If you created a new project to learn about Gemini Enterprise and you no longer need the project, delete the project .",
+          "Home Documentation AI and ML Gemini Enterprise Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Configure identity provider \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "source_id": "site-docs-root",
+        "final_score": 262,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, if your organization uses both email and principal name as user identifiers across different applications, and the principal name is set as the preferred username in your third-party identity provider, you can map it to Gemini Enterprise using the Workforce Identity Federation attribute mapping (for example, attribute.as user identifier 1=assertion.preferred username ).",
+          "Third-party identity provider When you only connect Gemini Enterprise to third-party data sources, and you are already using a third-party identity provider that supports OIDC or SAML 2.0, such as Microsoft Entra ID, Active Directory Federation Services (AD FS), Okta, and others, you must use Workforce Identity Federation.",
+          "Connect identity provider To specify an identity provider for Gemini Enterprise and turn on data source access control, follow these steps: In the Google Cloud console, go to the Gemini Enterprise page."
+        ]
+      },
+      {
+        "title": "\"Connect to data from AlloyDB for PostgreSQL (Preview) \\_|\\_ Gemini Enterprise\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data",
+        "source_id": "site-docs-root",
+        "final_score": 258,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: CREATE ROLE USER NAME WITH LOGIN PASSWORD ' PASSWORD ' ; GRANT SELECT ON TABLE \"public\" . \" TABLE NAME 1 \" TO USER NAME ; GRANT SELECT ON TABLE \"public\" . \" TABLE NAME 2 \" TO USER NAME ; When linking Gemini Enterprise with AlloyDB, provide the username and password in the User and Password fields of alloydbConnectionConfig .",
+          "Home Documentation AI and ML Gemini Enterprise Send feedback Connect to data from AlloyDB for PostgreSQL (Preview) Stay organized with collections Save and categorize content based on your preferences.",
+          "The following example: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -H \"X-Goog-User-Project: PROJECT ID \" \\ \"https://discoveryengine.googleapis.com/v1alpha/projects/ PROJECT ID /locations/ LOCATION /collections/default collection/dataStores?dataStoreId= DATA STORE ID \" -d '{ \"displayName\": \" DATA STORE NAME \", \"federatedSearchConfig\": { \"alloyDbConfig\": { \"alloydbConnectionConfig\": { \"instance\": \" INSTANCE PATH \", \"database\": \" DATABASE NAME \", \"user\": \" DATABASE USER NAME \", \"password\": \" DATABASE USER PASSWORD \", \"authMode\": \"AUTH MODE SERVICE ACCOUNT\" }, \"alloydb ai nl config\": { \"nlConfigId\": \" NL CONFIG ID \" } } }, \"industryVertical\": \"GENERIC\", \"solutionTypes\": [\"SOLUTION TYPE SEARCH\"] }' Replace the following: PROJECT ID : the ID of your project where you use Gemini Enterprise."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "assertion.preferred",
+      "attribute.as",
+      "discoveryengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/access-traces-and-spans",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/quickstart-gemini-enterprise",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/access-traces-and-spans",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/quickstart-gemini-enterprise",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/access-traces-and-spans",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/quickstart-gemini-enterprise",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/access-traces-and-spans",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/quickstart-gemini-enterprise",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/access-traces-and-spans",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/quickstart-gemini-enterprise",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/access-traces-and-spans",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/quickstart-gemini-enterprise",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/access-traces-and-spans",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/quickstart-gemini-enterprise",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/access-traces-and-spans",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/quickstart-gemini-enterprise",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/connect-alloydb-data"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:09.587Z",
+  "source_step08_card": "data/step-08/current/products/gemini-enterprise/card.json",
+  "product_name": "Gemini Enterprise",
+  "product_slug": "gemini-enterprise"
+}

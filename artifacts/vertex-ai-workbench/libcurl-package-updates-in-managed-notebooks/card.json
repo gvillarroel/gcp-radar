@@ -1,0 +1,128 @@
+{
+  "feature_name": "libcurl package updates in managed notebooks",
+  "feature_slug": "libcurl-package-updates-in-managed-notebooks",
+  "summary": "Vertex AI Workbench managed notebooks include minor bug fixes to the libcurl package in the M120 release.",
+  "extended_definition": "Vertex AI Workbench managed notebooks include minor bug fixes to the libcurl package in the M120 release.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/access-control",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Vertex AI Workbench managed notebooks access control \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/access-control",
+        "source_id": "site-docs-reference-2",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, you can grant users roles/notebooks.viewer permissions at the project level so that they can view all Vertex AI Workbench resources in the project, and then you can grant each user roles/notebooks.admin permissions on a specific managed notebooks instance so that they have all of the admin abilities to administer that instance.",
+          "This page describes how to use Identity and Access Management (IAM) and an access mode to manage access to Vertex AI Workbench managed notebooks resources.",
+          "Vertex AI Workbench uses IAM to manage access to managed notebooks instances and an access mode to manage access to each instance's JupyterLab interface."
+        ]
+      },
+      {
+        "title": "\"Vertex AI Workbench user-managed notebooks access control \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "source_id": "site-docs-reference-2",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, you can grant users roles/notebooks.viewer permissions at the project level so that they can view all Vertex AI Workbench resources in the project, and then you can grant each user roles/notebooks.admin permissions on a specific user-managed notebooks instance so that they have all of the admin abilities to administer that instance.",
+          "This page describes how to use Identity and Access Management (IAM) and an access mode to manage access to Vertex AI Workbench user-managed notebooks resources.",
+          "Vertex AI Workbench uses IAM to manage access to user-managed notebooks instances and an access mode to manage access to each instance's JupyterLab interface."
+        ]
+      },
+      {
+        "title": "\"Manage access to a Vertex AI Workbench managed notebooks instance \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access",
+        "source_id": "site-docs-reference-2",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "To continue using Vertex AI Workbench, we recommend that you migrate your managed notebooks instances to Vertex AI Workbench instances .",
+          "This guide describes how you can grant access to a specific Vertex AI Workbench managed notebooks instance.",
+          "Manage access to a managed notebooks instance Vertex AI Workbench managed notebooks is deprecated ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "notebooks.admin",
+      "notebooks.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/notebooks.admin",
+      "roles/notebooks.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:45.074Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-workbench/card.json",
+  "product_name": "Vertex AI Workbench",
+  "product_slug": "vertex-ai-workbench"
+}

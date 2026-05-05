@@ -1,0 +1,172 @@
+{
+  "feature_name": "Cloud Armor verbose request logging",
+  "feature_slug": "cloud-armor-verbose-request-logging",
+  "summary": "Cloud Armor can emit verbose request logs that explain why a particular rule was triggered.",
+  "extended_definition": "Cloud Armor can emit verbose request logs that explain why a particular rule was triggered.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/armor/docs/best-practices",
+      "https://docs.cloud.google.com/armor/docs/content-parsing",
+      "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+      "https://docs.cloud.google.com/armor/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Armor best practices \\_|\\_ Google Cloud Armor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/armor/docs/best-practices",
+        "source_id": "site-iam-reference",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Because verbose logging can cause end-user request content to be logged in Cloud Logging, there is a chance that you accumulate end-user PII in your logs.",
+          "Verbose logging provides details from requests that trigger particular rules, including a snippet of the offending portion of the request, which is helpful for troubleshooting and tuning Cloud Armor.",
+          "Choose a Cloud Logging sampling rate Cloud Armor per-request logs use the global external Application Load Balancer or the classic Application Load Balancer's logging infrastructure."
+        ]
+      },
+      {
+        "title": "\"Troubleshoot Cloud Armor issues \\_|\\_ Google Cloud Armor \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/armor/docs/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Check for the following fields and make sure that they match the rule that you configured to deny the traffic: configuredAction must match the action configured in the rule. name must match the name of the Cloud Armor security policy attached to this backend service. outcome must match configuredAction . priority must match the priority number of the rule. httpRequest: remoteIp: 104.133.0.95 requestMethod: GET requestSize: '801' requestUrl: http://74.125.67.38/ responseSize: '246' serverIp: 10.132.0.4 status: 200 userAgent: curl/7.35.0 insertId: ajvis5ev4i60 internalId: projectNumber: '895280006100' jsonPayload: '@type': type.googleapis.com/google.cloud.loadbalancing.type.LoadBalancerLogEntry enforcedSecurityPolicy: configuredAction: ACCEPT name: mydev-policy-log-test1 outcome: ACCEPT priority: 2147483647 statusDetails: response sent by backend logName: projects/mydev-staging/logs/requests resource: labels: backend service name: BACKEND SERVICE NAME forwarding rule name: FORWARDING RULE NAME project id: PROJECT ID target proxy name: TARGET HTTP PROXY NAME url map name: URL MAP NAME zone: global type: http load balancer severity: INFO timestamp: '2017-04-18T18:57:05.845960288Z' This output includes the following values: BACKEND SERVICE NAME : the name of the backend service FORWARDING RULE NAME : the name of the forwarding rule PROJECT ID : the ID of your project TARGET HTTP PROXY NAME : the name of the target HTTP proxy URL MAP NAME : the name of the URL map Review the hierarchy of rules to ensure that the correct rule is matched.",
+          "Adaptive Protection is enabled for a security policy but there are no logs in Cloud Logging Adaptive Protection logs are generated separately from Cloud Armor request logs and appear under a different resource in Cloud Logging.",
+          "Cache hits are served even if the downstream Cloud Armor security policy can prevent that request from reaching the CDN origin server."
+        ]
+      },
+      {
+        "title": "Security policy overview \\_|\\_ Google Cloud Armor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "source_id": "site-docs-root",
+        "final_score": 211,
+        "relevance": "",
+        "evidence_snippets": [
+          "Alternatively, by using the Cloud Armor custom rules language reference , you can create custom conditions that match on various attributes of the incoming traffic, such as the URL path, request method, or request header values.",
+          "Cloud Armor logs are generated based on the first (highest priority) rule that matches an incoming request, whether or not the security policy is in preview mode.",
+          "External Application Load Balancer request logging Each HTTP(S) request that is evaluated against a Cloud Armor security policy is logged through Cloud Logging."
+        ]
+      },
+      {
+        "title": "\"Request body content parsing \\_|\\_ Google Cloud Armor \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/armor/docs/content-parsing",
+        "source_id": "site-iam-reference",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The example updates the security policy POLICY NAME to enable JSON parsing, and specifies the content types application/json , application/vnd.api+json , application/vnd.collection+json , and application/vnd.hyper+json : gcloud compute security-policies update POLICY NAME \\ --json-parsing STANDARD \\ --json-custom-content-types \"application/json,application/vnd.api+json,application/vnd.collection+json,application/vnd.hyper+json\" Use GraphQL parsing To configure GraphQL parsing, update your security policy to set the --json-parsing flag to STANDARD WITH GRAPHQL : gcloud compute security-policies update POLICY NAME \\ --json-parsing STANDARD WITH GRAPHQL Logging Each HTTP(S) request that is evaluated against a Cloud Armor security policy is logged through Cloud Logging.",
+          "This page contains information about configuring request body content parsing, an optional feature that you can use with your Cloud Armor security policies.",
+          "To avoid noise and reduce the risk of false positives, we recommend that you configure Cloud Armor to enable alternative parsing for any supported content type if your protected workloads do the following: Serve REST APIs Use GraphQL Receive any requests with JSON encoded content."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "type.googleapis.com",
+      "vnd.api",
+      "vnd.collection",
+      "vnd.hyper"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/best-practices",
+        "https://docs.cloud.google.com/armor/docs/troubleshooting",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/content-parsing"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/best-practices",
+        "https://docs.cloud.google.com/armor/docs/troubleshooting",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/content-parsing"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/best-practices",
+        "https://docs.cloud.google.com/armor/docs/troubleshooting",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/content-parsing"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/best-practices",
+        "https://docs.cloud.google.com/armor/docs/troubleshooting",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/content-parsing"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/best-practices",
+        "https://docs.cloud.google.com/armor/docs/troubleshooting",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/content-parsing"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/best-practices",
+        "https://docs.cloud.google.com/armor/docs/troubleshooting",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/content-parsing"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/best-practices",
+        "https://docs.cloud.google.com/armor/docs/troubleshooting",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/content-parsing"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/best-practices",
+        "https://docs.cloud.google.com/armor/docs/troubleshooting",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/armor/docs/content-parsing"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:12.438Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-armor/card.json",
+  "product_name": "Google Cloud Armor",
+  "product_slug": "google-cloud-armor"
+}

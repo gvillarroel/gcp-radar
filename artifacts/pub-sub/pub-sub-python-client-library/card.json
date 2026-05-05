@@ -1,0 +1,207 @@
+{
+  "feature_name": "Pub/Sub Python client library",
+  "feature_slug": "pub-sub-python-client-library",
+  "summary": "The Python client library provides Pub/Sub access from Python applications.",
+  "extended_definition": "The Python client library provides Pub/Sub access from Python applications.",
+  "lifecycle": {
+    "latest_feature_date": "2019-08-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/access-control",
+      "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library",
+      "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/google.cloud.pubsub_v1.publisher.client.Client",
+      "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/google.cloud.pubsub_v1.subscriber.client.Client"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access control with Identity and Access Management \\_|\\_ Pub/Sub \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 315,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see the Pub/Sub Node.js API reference documentation . / TODO(developer): Uncomment this variable before running the sample. / // const subscriptionNameOrId = 'YOUR SUBSCRIPTION NAME OR ID'; // Imports the Google Cloud client library const { PubSub } = require ( ' @google-cloud/pubsub ' ); // Creates a client; cache this for further use const pubSubClient = new PubSub (); async function setSubscriptionPolicy ( subscriptionNameOrId ) { // The new IAM policy const newPolicy = { bindings : [ { // Add a group as editors role : 'roles/pubsub.editor' , members : [ 'group:cloud-logs@google.com' ], }, { // Add all users as viewers role : 'roles/pubsub.viewer' , members : [ 'allUsers' ], }, ], }; // Updates the IAM policy for the subscription const [ updatedPolicy ] = await pubSubClient . subscription ( subscriptionNameOrId ) . iam . setPolicy ( newPolicy ); console . log ( 'Updated policy for subscription: %j' , updatedPolicy . bindings ); } PHP use Google\\Cloud\\PubSub\\PubSubClient; / Adds a user to the policy for a Pub/Sub subscription. @param string $projectId The Google project ID. @param string $subscriptionName The Pub/Sub subscription name. @param string $userEmail The user email to add to the policy. / function set subscription policy($projectId, $subscriptionName, $userEmail) { $pubsub = new PubSubClient([ 'projectId' => $projectId, ]); $subscription = $pubsub->subscription($subscriptionName); $policy = $subscription->iam()->policy(); $policy['bindings'][] = [ 'role' => 'roles/pubsub.subscriber', 'members' => ['user:' . $userEmail] ]; $subscription->iam()->setPolicy($policy); printf( 'User %s added to policy for %s' .",
+          "For more information, see the Pub/Sub Node.js API reference documentation . / TODO(developer): Uncomment this variable before running the sample. / // const topicNameOrId = 'YOUR TOPIC NAME OR ID'; // Imports the Google Cloud client library const { PubSub } = require ( ' @google-cloud/pubsub ' ); // Creates a client; cache this for further use const pubSubClient = new PubSub (); async function setTopicPolicy ( topicNameOrId ) { // The new IAM policy const newPolicy = { bindings : [ { // Add a group as editors role : 'roles/pubsub.editor' , members : [ 'group:cloud-logs@google.com' ], }, { // Add all users as viewers role : 'roles/pubsub.viewer' , members : [ 'allUsers' ], }, ], }; // Updates the IAM policy for the topic const [ updatedPolicy ] = await pubSubClient . topic ( topicNameOrId ) . iam . setPolicy ( newPolicy ); console . log ( 'Updated policy for topic: %j' , updatedPolicy . bindings ); } PHP use Google\\Cloud\\PubSub\\PubSubClient; / Adds a user to the policy for a Pub/Sub topic. @param string $projectId The Google project ID. @param string $topicName The Pub/Sub topic name. @param string $userEmail The user email to add to the policy. / function set topic policy($projectId, $topicName, $userEmail) { $pubsub = new PubSubClient([ 'projectId' => $projectId, ]); $topic = $pubsub->topic($topicName); $policy = $topic->iam()->policy(); $policy['bindings'][] = [ 'role' => 'roles/pubsub.publisher', 'members' => ['user:' . $userEmail] ]; $topic->iam()->setPolicy($policy); printf( 'User %s added to policy for %s' .",
+          "For more information, see the Pub/Sub Node.js API reference documentation . / TODO(developer): Uncomment this variable before running the sample. / // const subscriptionNameOrId = 'YOUR SUBSCRIPTION NAME OR ID'; // Imports the Google Cloud client library const { PubSub } = require ( ' @google-cloud/pubsub ' ); // Creates a client; cache this for further use const pubSubClient = new PubSub (); async function testSubscriptionPermissions ( subscriptionNameOrId ) { const permissionsToTest = [ 'pubsub.subscriptions.consume' , 'pubsub.subscriptions.update' , ]; // Tests the IAM policy for the specified subscription const [ permissions ] = await pubSubClient . subscription ( subscriptionNameOrId ) . iam . testPermissions ( permissionsToTest ); console . log ( 'Tested permissions for subscription: %j' , permissions ); } PHP Before trying this sample, follow the PHP setup instructions in Quickstart: Using Client Libraries ."
+        ]
+      },
+      {
+        "title": "Class Client (2.35.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/google.cloud.pubsub_v1.publisher.client.Client",
+        "source_id": "site-python-reference",
+        "final_score": 315,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google import pubsub v1 def sample list topic subscriptions(): Create a client client = pubsub v1.PublisherClient() Initialize request argument(s) request = pubsub v1.ListTopicSubscriptionsRequest( topic=\"topic value\", ) Make the request page result = client.list topic subscriptions(request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[google.pubsub v1.types.ListTopicSubscriptionsRequest, dict] The request object.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google import pubsub v1 def sample list topic snapshots(): Create a client client = pubsub v1.PublisherClient() Initialize request argument(s) request = pubsub v1.ListTopicSnapshotsRequest( topic=\"topic value\", ) Make the request page result = client.list topic snapshots(request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[google.pubsub v1.types.ListTopicSnapshotsRequest, dict] The request object.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google import pubsub v1 def sample update topic(): Create a client client = pubsub v1.PublisherClient() Initialize request argument(s) topic = pubsub v1.Topic() topic.name = \"name value\" request = pubsub v1.UpdateTopicRequest( topic=topic, ) Make the request response = client.update topic(request=request) Handle the response print(response) Parameters Name Description request Union[google.pubsub v1.types.UpdateTopicRequest, dict] The request object."
+        ]
+      },
+      {
+        "title": "Class Client (2.35.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/google.cloud.pubsub_v1.subscriber.client.Client",
+        "source_id": "site-python-reference",
+        "final_score": 311,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google import pubsub v1 def sample streaming pull(): Create a client client = pubsub v1.SubscriberClient() Initialize request argument(s) request = pubsub v1.StreamingPullRequest( subscription=\"subscription value\", stream ack deadline seconds=2813, ) This method expects an iterator which contains 'pubsub v1.StreamingPullRequest' objects Here we create a generator that yields a single request for demonstrative purposes. requests = [request] def request generator(): for request in requests: yield request Make the request stream = client.streaming pull(requests=request generator()) Handle the response for response in stream: print(response) Parameters Name Description requests Iterator[google.pubsub v1.types.StreamingPullRequest] The request object iterator.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google import pubsub v1 def sample update subscription(): Create a client client = pubsub v1.SubscriberClient() Initialize request argument(s) subscription = pubsub v1.Subscription() subscription.name = \"name value\" subscription.topic = \"topic value\" request = pubsub v1.UpdateSubscriptionRequest( subscription=subscription, ) Make the request response = client.update subscription(request=request) Handle the response print(response) Parameters Name Description request Union[google.pubsub v1.types.UpdateSubscriptionRequest, dict] The request object.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google import pubsub v1 def sample modify ack deadline(): Create a client client = pubsub v1.SubscriberClient() Initialize request argument(s) request = pubsub v1.ModifyAckDeadlineRequest( subscription=\"subscription value\", ack ids=['ack ids value1', 'ack ids value2'], ack deadline seconds=2066, ) Make the request client.modify ack deadline(request=request) Parameters Name Description request Union[google.pubsub v1.types.ModifyAckDeadlineRequest, dict] The request object."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Publish and receive messages in Pub/Sub by using a client library\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library",
+        "source_id": "site-docs-root",
+        "final_score": 305,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Install the client libraries The following samples show you how to install the client libraries: Python For more on setting up your Python development environment, refer to Python Development Environment Setup Guide . ensure that you are using virtualenv # as described in the python dev setup guide pip install --upgrade google-cloud-pubsub C++ For more information about installing the C++ library, see the GitHub README C# Install-Package Google.Cloud.PubSub.V1 -Pre Go go get cloud.google.com/go/pubsub Java If you are using Maven , add the following to your pom.xml file.",
+          "MINUTES ); } } } } Node.js / TODO(developer): Uncomment these variables before running the sample. / // const topicNameOrId = 'YOUR TOPIC NAME OR ID'; // const data = JSON.stringify({foo: 'bar'}); // Imports the Google Cloud client library const { PubSub } = require ( ' @google-cloud/pubsub ' ); // Creates a client; cache this for further use const pubSubClient = new PubSub (); async function publishMessage ( topicNameOrId , data ) { // Publishes the message as a string, e.g. \"Hello, world!\" or JSON.stringify(someObject) const dataBuffer = Buffer . from ( data ); // Cache topic objects (publishers) and reuse them. const topic = pubSubClient . topic ( topicNameOrId ); try { const messageId = await topic . publishMessage ({ data : dataBuffer }); console . log ( Message ${ messageId } published. ); } catch ( error ) { console . error ( Received error while publishing: ${ error . message } ); process . exitCode = 1 ; } } Node.js / TODO(developer): Uncomment these variables before running the sample. / // const topicNameOrId = 'YOUR TOPIC NAME OR ID'; // const data = JSON.stringify({foo: 'bar'}); // Imports the Google Cloud client library import { PubSub } from '@google-cloud/pubsub' ; // Creates a client; cache this for further use const pubSubClient = new PubSub (); async function publishMessage ( topicNameOrId : string , data : string ) { // Publishes the message as a string, e.g. \"Hello, world!\" or JSON.stringify(someObject) const dataBuffer = Buffer . from ( data ); // Cache topic objects (publishers) and reuse them. const topic = pubSubClient . topic ( topicNameOrId ); try { const messageId = await topic . publishMessage ({ data : dataBuffer }); console . log ( Message ${ messageId } published. ); } catch ( error ) { console . error ( Received error while publishing: ${ ( error as Error ). message } , ); process . exitCode = 1 ; } } PHP use Google\\Cloud\\PubSub\\MessageBuilder; use Google\\Cloud\\PubSub\\PubSubClient; / Publishes a message for a Pub/Sub topic. @param string $projectId The Google project ID. @param string $topicName The Pub/Sub topic name. @param string $message The message to publish. / function publish message($projectId, $topicName, $message) { $pubsub = new PubSubClient([ 'projectId' => $projectId, ]); $topic = $pubsub->topic($topicName); $topic->publish((new MessageBuilder)->setData($message)->build()); print('Message published' .",
+          "Stop receiving messages. subscriber . stopAsync (); } } } Node.js / TODO(developer): Uncomment these variables before running the sample. / // const subscriptionNameOrId = 'YOUR SUBSCRIPTION NAME OR ID'; // const timeout = 60; // Imports the Google Cloud client library const { PubSub } = require ( ' @google-cloud/pubsub ' ); // Creates a client; cache this for further use const pubSubClient = new PubSub (); function listenForMessages ( subscriptionNameOrId , timeout ) { // References an existing subscription; if you are unsure if the // subscription will exist, try the optimisticSubscribe sample. const subscription = pubSubClient . subscription ( subscriptionNameOrId ); // Create an event handler to handle messages let messageCount = 0 ; const messageHandler = message = > { console . log ( Received message ${ message . id } : ); console . log ( \\tData: ${ message . data } ); console . log ( \\tAttributes: ${ message . attributes } ); messageCount += 1 ; // \"Ack\" (acknowledge receipt of) the message message . ack (); }; // Listen for new messages until timeout is hit subscripti on . on ( 'message' , messageHandler ); // Wait a while for the subscription to run. (Part of the sample only.) setTimeout (() = > { subscription . removeListener ( 'message' , messageHandler ); console . log ( ${ messageCount } message(s) received. ); }, timeout 1000 ); } PHP use Google\\Cloud\\PubSub\\PubSubClient; / Pulls all Pub/Sub messages for a subscription. @param string $projectId The Google project ID. @param string $subscriptionName The Pub/Sub subscription name. / function pull messages($projectId, $subscriptionName) { $pubsub = new PubSubClient([ 'projectId' => $projectId, ]); $subscription = $pubsub->subscription($subscriptionName); foreach ($subscription->pull() as $message) { printf('Message: %s' ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "client.detach",
+      "client.list",
+      "client.modify",
+      "client.streaming",
+      "client.update",
+      "com.google.cloud",
+      "e.g",
+      "googleapis.dev",
+      "options.html",
+      "pom.xml",
+      "publisher.client",
+      "pubsub.editor",
+      "pubsub.publisher",
+      "pubsub.subscriber",
+      "pubsub.subscriptions.consume",
+      "pubsub.subscriptions.update",
+      "pubsub.topics.attachSubscription",
+      "pubsub.topics.publish",
+      "pubsub.topics.update",
+      "pubsub.viewer",
+      "subscription.name",
+      "subscription.topic",
+      "topic.name",
+      "v1.DetachSubscriptionRequest",
+      "v1.ListSubscriptionsRequest",
+      "v1.ListTopicSnapshotsRequest",
+      "v1.ListTopicSubscriptionsRequest",
+      "v1.ModifyAckDeadlineRequest",
+      "v1.PublisherClient",
+      "v1.StreamingPullRequest",
+      "v1.SubscriberClient",
+      "v1.Subscription",
+      "v1.Topic",
+      "v1.types.DetachSubscriptionRequest",
+      "v1.types.ListSubscriptionsRequest",
+      "v1.types.ListTopicSnapshotsRequest",
+      "v1.types.ListTopicSubscriptionsRequest",
+      "v1.types.ModifyAckDeadlineRequest",
+      "v1.types.StreamingPullRequest",
+      "v1.types.UpdateSubscriptionRequest",
+      "v1.types.UpdateTopicRequest",
+      "v1.UpdateSubscriptionRequest",
+      "v1.UpdateTopicRequest"
+    ],
+    "missing_inventory_roles": [
+      "roles/pubsub.editor",
+      "roles/pubsub.publisher",
+      "roles/pubsub.subscriber",
+      "roles/pubsub.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/google.cloud.pubsub_v1.publisher.client.Client",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/google.cloud.pubsub_v1.subscriber.client.Client",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/google.cloud.pubsub_v1.publisher.client.Client",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/google.cloud.pubsub_v1.subscriber.client.Client",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/google.cloud.pubsub_v1.publisher.client.Client",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/google.cloud.pubsub_v1.subscriber.client.Client",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/google.cloud.pubsub_v1.publisher.client.Client",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/google.cloud.pubsub_v1.subscriber.client.Client",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/google.cloud.pubsub_v1.publisher.client.Client",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/google.cloud.pubsub_v1.subscriber.client.Client",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/google.cloud.pubsub_v1.publisher.client.Client",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/google.cloud.pubsub_v1.subscriber.client.Client",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/google.cloud.pubsub_v1.publisher.client.Client",
+        "https://docs.cloud.google.com/python/docs/reference/pubsub/latest/google.cloud.pubsub_v1.subscriber.client.Client",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:32.606Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub"
+}

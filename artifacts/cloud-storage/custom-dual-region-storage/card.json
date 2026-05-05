@@ -1,0 +1,184 @@
+{
+  "feature_name": "Custom dual-region storage",
+  "feature_slug": "custom-dual-region-storage",
+  "summary": "Custom dual-region storage lets users choose two regions within the same continent for a dual-region configuration.",
+  "extended_definition": "Custom dual-region storage lets users choose two regions within the same continent for a dual-region configuration.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+      "https://docs.cloud.google.com/storage/docs/availability-durability",
+      "https://docs.cloud.google.com/storage/docs/creating-buckets",
+      "https://docs.cloud.google.com/storage/docs/hosting-static-website"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Host a static website \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/hosting-static-website",
+        "source_id": "site-docs-root",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . def set bucket public iam bucket name : The ID of your GCS bucket bucket name = \"your-unique-bucket-name\" require \"google/cloud/storage\" storage = Google :: Cloud :: Storage . new bucket = storage . bucket bucket name bucket . policy do p p . add \"roles/storage.objectViewer\" , \"allUsers\" end puts \"Bucket #{ bucket name } is now publicly readable\" end Terraform Make bucket public by granting allUsers storage.objectViewer access resource \"google storage bucket iam member\" \"public rule\" { bucket = google storage bucket.static website.name role = \"roles/storage.objectViewer\" member = \"allUsers\" } REST APIs JSON API Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header.",
+          "For more information, see Set up authentication for client libraries . def upload file bucket name :, local file path :, file name : nil The ID of your GCS bucket bucket name = \"your-unique-bucket-name\" The path to your file to upload local file path = \"/local/path/to/file.txt\" The ID of your GCS object file name = \"your-file-name\" require \"google/cloud/storage\" storage = Google :: Cloud :: Storage . new bucket = storage . bucket bucket name , skip lookup : true file = bucket . create file local file path , file name puts \"Uploaded #{ local file path } as #{ file . name } in bucket #{ bucket name } \" end Terraform Upload a simple index.html page to the bucket resource \"google storage bucket object\" \"indexpage\" { name = \"index.html\" content = \"<html><body>Hello World!</body></html>\" content type = \"text/html\" bucket = google storage bucket.static website.id } Upload a simple 404 / error page to the bucket resource \"google storage bucket object\" \"errorpage\" { name = \"404.html\" content = \"<html><body>404!</body></html>\" content type = \"text/html\" bucket = google storage bucket.static website.id } REST APIs JSON API Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header.",
+          "For more information, see Set up authentication for client libraries . def define bucket website configuration bucket name :, main page suffix :, not found page : The ID of your static website bucket bucket name = \"www.example.com\" The index page for a static website bucket main page suffix = \"index.html\" The 404 page for a static website bucket not found page = \"404.html\" require \"google/cloud/storage\" storage = Google :: Cloud :: Storage . new bucket = storage . bucket bucket name bucket . update do b b . website main = main page suffix b . website 404 = not found page end puts \"Static website bucket #{ bucket name } is set up to use #{ main page suffix } as the index page and \" \\ \" #{ not found page } as the 404 page\" end REST APIs JSON API Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header."
+        ]
+      },
+      {
+        "title": "Create a bucket \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "source_id": "site-docs-root",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create new storage bucket in the US multi-region with coldline storage resource \"random id\" \"bucket prefix\" { byte length = 8 } resource \"google storage bucket\" \"static\" { name = \"${random id.bucket prefix.hex}-new-bucket\" location = \"US\" storage class = \"COLDLINE\" uniform bucket level access = true } REST APIs JSON API Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header.",
+          "Note: When creating a configurable dual-region , you must set the <LocationConstraint> element to be the location code associated with the underlying regions, and you must also include a <CustomPlacementConfig> element.",
+          "Note: When creating a configurable dual-region , you must set the location parameter to be the location code associated with the underlying regions, and you must also include a customPlacementConfig parameter."
+        ]
+      },
+      {
+        "title": "\"Data availability and durability \\_|\\_ Cloud Storage \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage/docs/availability-durability",
+        "source_id": "site-iam-reference",
+        "final_score": 170,
+        "relevance": "",
+        "evidence_snippets": [
+          "As a result, dual-region and multi-region buckets are designed to have a recovery time objective (RTO) of zero, and temporary regional failures are normally invisible to users; in the case of a regional outage, dual-region and multi-region buckets automatically continue serving all data that has been replicated across regions.",
+          "Redundancy across regions While traditional storage models often rely on an active-passive approach with \"primary\" and \"secondary\" geographic locations, Cloud Storage dual-regions and multi-regions provide an active-active architecture based on a single bucket with redundancy across regions.",
+          "Within the Google Cloud console, the Percent of minutes out of RPO graph lets you monitor the percentage of bad minutes during the past 30 days for your bucket when using default replication or turbo replication within dual-region or multi-region buckets."
+        ]
+      },
+      {
+        "title": "\"Create and manage access control lists (ACLs) \\_|\\_ Cloud Storage \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "source_id": "site-iam-reference",
+        "final_score": 169,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, to return the ACL for the object paris.jpg in the bucket example-travel-maps : curl -X GET -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ https://storage.googleapis.com/storage/v1/b/example-travel-maps/o/paris.jpg?projection=full You should see a response that looks like: { \"kind\": \"storage#object\", \"id\": \"example-travel-maps/paris.jpg/1412805837131000\", \"selfLink\": \"https://www.googleapis.com/storage/v1/b/example-travel-maps/o/paris.jpg\", \"name\": \"paris.jpg\", \"bucket\": \"example-travel-maps\", ... \"acl\": [ { ... \"entity\": \"project-owners-867489160491\", \"role\": \"OWNER\", \"projectTeam\": { \"projectNumber\": \"867489160491\", \"team\": \"owners\" }, ... }, { ... \"entity\": \"user-jeffersonloveshiking@gmail.com\", \"role\": \"OWNER\", \"email\": \"jeffersonloveshiking@gmail.com\", ... }, { ... \"entity\": \"group-gs-announce@googlegroups.com\", \"role\": \"READER\", \"email\": \"gs-announce@googlegroups.com\", ... } ], \"owner\": { \"entity\": \"user-jeffersonloveshiking@gmail.com\" }, ... } You can also use the objectAccessControls resource GET method to return individual entries in an object's ACL.",
+          "You can use // addAllUsers(), addDomain(), addProject(), addGroup(), and // addAllAuthenticatedUsers() to grant access to different types of entities. // You can also use \"readers\" and \"writers\" to grant different roles. await storage . bucket ( bucketName ). acl . default . owners . addUser ( userEmail ); console . log ( Added user ${ userEmail } as an owner on bucket ${ bucketName } . ); } addBucketDefaultOwner (). catch ( console . error ); The following sample deletes a default object ACL from a bucket: / TODO(developer): Uncomment the following lines before running the sample. / // The ID of your GCS bucket // const bucketName = 'your-unique-bucket-name'; // The email address of the user to remove // const userEmail = 'user-email-to-remove'; // Imports the Google Cloud client library const { Storage } = require ( ' @google-cloud/storage ' ); // Creates a client const storage = new Storage (); async function removeBucketDefaultOwner () { // Removes the user from the access control list of the bucket.",
+          "For example, to apply the predefined ACL bucket-owner-read while uploading an object paris.jpg to a bucket example-travel-maps : curl -X PUT --upload-file paris.jpg -H \"x-goog-acl: bucket-owner-read\" \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ https://storage.googleapis.com/example-travel-maps/paris.jpg On existing buckets or objects You can also apply a predefined ACL to an existing bucket or object, which is useful if you want to change from one predefined ACL to another, or you want to update custom ACLs to a predefined ACL."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bucket.static",
+      "com.google.cloud.storage",
+      "e.g",
+      "file.txt",
+      "gmail.com",
+      "googlegroups.com",
+      "id.bucket",
+      "index.html",
+      "paris.jpg",
+      "prefix.hex",
+      "storage.googleapis.com",
+      "storage.objectViewer",
+      "website.id",
+      "website.name"
+    ],
+    "missing_inventory_roles": [
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/hosting-static-website",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/storage/docs/availability-durability",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/hosting-static-website",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/storage/docs/availability-durability",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/hosting-static-website",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/storage/docs/availability-durability",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/hosting-static-website",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/storage/docs/availability-durability",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/hosting-static-website",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/storage/docs/availability-durability",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/hosting-static-website",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/storage/docs/availability-durability",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/hosting-static-website",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/storage/docs/availability-durability",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/hosting-static-website",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/storage/docs/availability-durability",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:43.359Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage"
+}

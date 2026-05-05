@@ -1,0 +1,85 @@
+{
+  "feature_name": "Go 1.8 runtime",
+  "feature_slug": "go-1-8-runtime",
+  "summary": "App Engine standard environment supports the Go 1.8 runtime and uses it as the default Go runtime.",
+  "extended_definition": "App Engine standard environment supports the Go 1.8 runtime and uses it as the default Go runtime.",
+  "lifecycle": {
+    "latest_feature_date": "2017-10-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref",
+      "https://docs.cloud.google.com/appengine/docs/standard/go/runtime",
+      "https://docs.cloud.google.com/appengine/docs/standard/go111"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Go runtime environment \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/runtime",
+        "source_id": "site-docs-reference",
+        "final_score": 65,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The Go runtime uses the latest stable release of the version that is specified in your app.yaml file.",
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Go runtime environment Stay organized with collections Save and categorize content based on your preferences.",
+          "The Go runtime for App Engine in the standard environment is declared in the app.yaml file: runtime : go VERSION Where VERSION is the Go MAJOR and MINOR version numbers."
+        ]
+      },
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref",
+        "source_id": "site-docs-reference-4",
+        "final_score": 55,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you are using a runtime that supports buildpacks , you can define build environment variables in your app.yaml file.",
+          "Example The following is an example of an app.yaml file: runtime : python314 instance class : F2 env variables : BUCKET NAME : \"example-gcs-bucket\" handlers : Matches requests to /images/... to files in static/images/... - url : /images static dir : static/images - url : /. secure : always redirect http response code : 301 script : auto The following table provides YAML examples of available fields in an app.yaml file: Runtime and app elements Element Description app engine apis Optional.",
+          "For Python, these variables are available in the os.environ dictionary: env variables : DJANGO SETTINGS MODULE : \"myapp.settings\" Also see the list of runtime environment variables that cannot be overwritten. error handlers Optional."
+        ]
+      },
+      {
+        "title": "\"Go runtime environment \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go111",
+        "source_id": "site-docs-reference-4",
+        "final_score": 55,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The Go runtime uses the latest stable release of the version that is specified in your app.yaml file.",
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Go runtime environment Stay organized with collections Save and categorize content based on your preferences.",
+          "The Go runtime for App Engine in the standard environment is declared in the app.yaml file: runtime : go VERSION Where VERSION is the Go MAJOR and MINOR version numbers."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "myapp.settings",
+      "os.environ"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:10.483Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-go/card.json",
+  "product_name": "App Engine standard environment Go",
+  "product_slug": "app-engine-standard-environment-go"
+}

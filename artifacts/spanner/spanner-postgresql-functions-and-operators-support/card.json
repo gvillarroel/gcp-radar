@@ -1,0 +1,98 @@
+{
+  "feature_name": "Spanner PostgreSQL functions and operators support",
+  "feature_slug": "spanner-postgresql-functions-and-operators-support",
+  "summary": "Spanner added support for 13 PostgreSQL-compatible functions and operators, expanding SQL compatibility for PostgreSQL syntax.",
+  "extended_definition": "Spanner added support for 13 PostgreSQL-compatible functions and operators, expanding SQL compatibility for PostgreSQL syntax.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+      "https://docs.cloud.google.com/spanner/docs/query-operators-binary",
+      "https://docs.cloud.google.com/spanner/docs/query-operators-unary"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Information schema for PostgreSQL-dialect databases \\_|\\_ Spanner \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "source_id": "site-docs-reference",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "Tables in information schema for PostgreSQL-dialect databases The tables and views in the information schema are compatible with the tables and views in the information schema of open source PostgreSQL.",
+          "Examples Return information about each table in the user's schema: SELECT t . table schema , t . table catalog , t . table name , t . parent table name FROM information schema . tables AS t WHERE t . table schema NOT IN ( 'pg catalog' , 'information schema' , 'SPANNER SYS' ) AND t . table type = 'BASE TABLE' ORDER BY t . table catalog , t . table schema , t . table name Return the name of all tables and views in the information schema for PostgreSQL-dialect databases: SELECT table name FROM information schema . tables WHERE table schema = \"information schema\" Return information about columns in the user table my table in the default schema: SELECT t . ordinal position , t . column name , t . data type , t . spanner type , t . is nullable FROM information schema . columns AS t WHERE t . table schema = 'public' AND t . table name = 'my table' ORDER BY t . ordinal position Return information about each index in the default schema in the current database: ## What's next {: #whats-next} + Learn about available Introspection tools to help you investigate database issues.",
+          "For PostgreSQL-dialect databases, the default is public . change stream name character varying The name of the change stream. option name character varying The name of the change stream option. option type character varying The data type of the change stream option. option value character varying The value of the change stream option. change stream privileges This row-filtered view lists all fine-grained access control privileges granted on all change streams to any database role, including public ."
+        ]
+      },
+      {
+        "title": "Unary operators \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/query-operators-unary",
+        "source_id": "site-docs-reference",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following operators are unary operators: Aggregate Apply mutations Create batch Compute Compute struct DataBlockToRowAdapter Filter Limit Local split union Random Id Assign RowToDataBlockAdapter Serialize result Sort TVF Union input PostgreSQL interface note: The examples in this topic are intended for GoogleSQL-dialect databases.",
+          "DataBlockToRowAdapter The Spanner query optimizer automatically inserts a DataBlockToRowAdapter operator between a pair of operators that operate using different execution methods.",
+          "RowToDataBlockAdapter The Spanner query optimizer automatically inserts a RowToDataBlockAdapter operator between a pair of operators that operate using different execution methods."
+        ]
+      },
+      {
+        "title": "Binary operators \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/query-operators-binary",
+        "source_id": "site-docs-reference",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following operators are binary operators: Apply join Cross apply Outer apply Semi apply Anti-Semi apply Hash join Merge join Recursive union PostgreSQL interface note: The examples in this topic are intended for GoogleSQL-dialect databases.",
+          "Consider another merge join example using the following query: SELECT a . albumtitle , s . songname FROM albums AS a join @{ join method = merge join } songs AS s ON a . albumid = s . albumid ; / -----------------------+--------------------------+ AlbumTitle SongName +-----------------------+--------------------------+ Total Junk The Second Time Total Junk Starting Again Total Junk Nothing Is The Same Total Junk Let's Get Back Together Total Junk I Knew You Were Magic Total Junk Blue Total Junk 42 Total Junk Not About The Guitar Green The Second Time Green Starting Again Green Nothing Is The Same Green Let's Get Back Together Green I Knew You Were Magic Green Blue Green 42 Green Not About The Guitar Nothing To Do With Me The Second Time Nothing To Do With Me Starting Again Nothing To Do With Me Nothing Is The Same Nothing To Do With Me Let's Get Back Together Nothing To Do With Me I Knew You Were Magic Nothing To Do With Me Blue Nothing To Do With Me 42 Nothing To Do With Me Not About The Guitar Play The Second Time Play Starting Again Play Nothing Is The Same Play Let's Get Back Together Play I Knew You Were Magic Play Blue Play 42 Play Not About The Guitar Terrified Fight Story +-----------------------+-------------------------- / The execution plan appears as follows: In the preceding execution plan, the query optimizer introduced additional sort operators to execute the merge join.",
+          "This also lets the merge join in this example operate without additional sort operators, because both table scans are already sorted by SingerId , AlbumId , which is the join condition."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "https://docs.cloud.google.com/spanner/docs/query-operators-unary",
+        "https://docs.cloud.google.com/spanner/docs/query-operators-binary"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "https://docs.cloud.google.com/spanner/docs/query-operators-unary",
+        "https://docs.cloud.google.com/spanner/docs/query-operators-binary"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:37.939Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

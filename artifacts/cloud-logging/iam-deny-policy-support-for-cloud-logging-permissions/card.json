@@ -1,0 +1,150 @@
+{
+  "feature_name": "IAM deny policy support for Cloud Logging permissions",
+  "feature_slug": "iam-deny-policy-support-for-cloud-logging-permissions",
+  "summary": "IAM deny policies can include supported Cloud Logging permissions.",
+  "extended_definition": "IAM deny policies can include supported Cloud Logging permissions.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/manage-policies-auto-install",
+      "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Policy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Install and manage the Ops Agent by using VM Extension Manager policies\\",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "source_id": "site-docs-root-2",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "Grant roles required to use VM Extension Manager To get the permissions that you need to create, view, modify, and delete VM extension policies, ask your administrator to grant you the following IAM roles on the project: To create extension policies: VM Extension Policy Admin ( roles/compute.vmExtensionPolicyAdmin ) To view extension policies: VM Extension Policy Viewer ( roles/compute.vmExtensionPolicyViewer ) VM Extension Policy Admin ( roles/compute.vmExtensionPolicyAdmin ) To modify extension policies: VM Extension Policy Admin ( roles/compute.vmExtensionPolicyAdmin ) To delete extension policies: VM Extension Policy Admin ( roles/compute.vmExtensionPolicyAdmin ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create, view, modify, and delete VM extension policies: To create extension policies: compute.vmExtensionPolicies.create To view extension policies: compute.vmExtensionPolicies.list To view details of an extension policy: compute.vmExtensionPolicies.get To modify extension policies: compute.vmExtensionPolicies.update To delete extension policies: compute.vmExtensionPolicies.delete You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Troubleshoot extension policies This section provides information about troubleshooting the use of extension policies to manage the Ops Agent: gcloud beta compute zone-vm-extension-policies commands fail The extension policy is created, but the Ops Agent status is \"not detected\" Linux systemctl and Windows Service Manager don't work with the Ops Agent For information about troubleshooting the Ops Agent, see Troubleshoot the Ops Agent . gcloud beta compute zone-vm-extension-policies commands fail When a gcloud beta compute zone-vm-extension-policies command fails, the response includes troubleshooting suggestions."
+        ]
+      },
+      {
+        "title": "\"Manage VMs covered by the Ops Agent OS policy \\_|\\_ Cloud Logging \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/manage-policies-auto-install",
+        "source_id": "site-docs-root-2",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required permissions for installing the Ops Agent during VM creation: serviceusage.services.get serviceusage.services.enable osconfig.osPolicyAssignments.get osconfig.osPolicyAssignments.create osconfig.projectFeatureSettings.update compute.instances.create Required permissions for installing Ops Agent on existing VMs: serviceusage.services.get serviceusage.services.enable osconfig.osPolicyAssignments.get osconfig.osPolicyAssignments.create osconfig.projectFeatureSettings.update compute.instances.setMetadata compute.instances.setLabels You can find corresponding roles that provide those permissions in the IAM basic and predefined roles reference .",
+          "INSTANCE ASSIGNMENT ID LOCATION UPDATE TIME SUMMARY instance-1 goog-ops-agent-v2-x86-template-1-0-0-us-east4-c us-east4-c 2023-04-28T02:11:15.118088Z 1/1 policies compliant instance-3 goog-ops-agent-v2-x86-template-1-0-0-us-east4-c us-east4-c 2023-04-28T02:11:15.118088Z 1/1 policies compliant Verify that a VM has an Ops Agent OS policy label To see which VMs in your Google Cloud project have the Ops Agent OS policy label, goog-ops-agent-policy , use either the Google Cloud console or the gcloud CLI.",
+          "Save your changes. gcloud To extend policy coverage to a VM without coverage, run the following commands: gcloud compute instances update VM NAME --zone= ZONE --update-labels=goog-ops-agent-policy:v2-x86-template- 1-0-0 gcloud compute instances add-metadata VM NAME --zone= ZONE --metadata=enable-osconfig=TRUE Permission Ops Agent installation uses VM Manager and requires permissions to activate the VM Manager API and create a policy."
+        ]
+      },
+      {
+        "title": "Policy \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Policy",
+        "source_id": "site-docs-reference",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This requirement applies to the following operations: Getting a policy that includes a conditional role binding Adding a conditional role binding to a policy Changing a conditional role binding in a policy Removing any role binding, with or without a condition, from a policy that includes conditions Important: If you use IAM Conditions, you must include the etag field whenever you call setIamPolicy .",
+          "Home Documentation Observability Cloud Logging Reference Send feedback Policy Stay organized with collections Save and categorize content based on your preferences.",
+          "If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.instances.create",
+      "compute.instances.setLabels",
+      "compute.instances.setMetadata",
+      "compute.vmExtensionPolicies.create",
+      "compute.vmExtensionPolicies.delete",
+      "compute.vmExtensionPolicies.get",
+      "compute.vmExtensionPolicies.list",
+      "compute.vmExtensionPolicies.update",
+      "compute.vmExtensionPolicyAdmin",
+      "compute.vmExtensionPolicyViewer",
+      "config.yaml",
+      "osconfig.osPolicyAssignments.create",
+      "osconfig.osPolicyAssignments.get",
+      "osconfig.projectFeatureSettings.update",
+      "serviceusage.services.enable",
+      "serviceusage.services.get"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.vmExtensionPolicyAdmin",
+      "roles/compute.vmExtensionPolicyViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/manage-policies-auto-install",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Policy"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/manage-policies-auto-install",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Policy"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/manage-policies-auto-install",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Policy"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/manage-policies-auto-install",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Policy"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/manage-policies-auto-install",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Policy"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/manage-policies-auto-install",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Policy"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:31.891Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging"
+}

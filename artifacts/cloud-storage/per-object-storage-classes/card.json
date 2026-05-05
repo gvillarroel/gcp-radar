@@ -1,0 +1,189 @@
+{
+  "feature_name": "Per-object storage classes",
+  "feature_slug": "per-object-storage-classes",
+  "summary": "Cloud Storage allows storage class assignment at the object level and lifecycle-based automatic class changes.",
+  "extended_definition": "Cloud Storage allows storage class assignment at the object level and lifecycle-based automatic class changes.",
+  "lifecycle": {
+    "latest_feature_date": "2016-10-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+      "https://docs.cloud.google.com/storage/docs/autoclass",
+      "https://docs.cloud.google.com/storage/docs/creating-buckets",
+      "https://docs.cloud.google.com/storage/docs/storage-classes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Storage classes \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/storage-classes",
+        "source_id": "site-docs-root",
+        "final_score": 276,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Pricing Storage classes affect the pricing model of objects and the operations you perform.",
+          "Storing your objects in the same zones as your compute resources enables significantly lower latency and higher throughput compared to other storage classes.",
+          "You can move your data from DRA to other storage classes by performing a storage transfer ."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.storage (2.64.0) \\_|\\_ Java client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "source_id": "site-java-reference",
+        "final_score": 244,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Instances of this class are used to create a new object in Google Cloud Storage or update the properties of an existing object.",
+          "Customer Encryption Objects of this class hold information on the customer-supplied encryption key, if the blob is encrypted using such a key. com. google. cloud. storage.",
+          "This allows callers to catch ApiException thrown in an async operation, while still maintaining the call site. com. google. cloud. storage."
+        ]
+      },
+      {
+        "title": "Autoclass \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/autoclass",
+        "source_id": "site-iam-reference",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Once an object becomes eligible to transition between storage classes, Cloud Storage performs the transition asynchronously, so there can be a lag between when an object is eligible for transition and when the transition actually occurs.",
+          "If the bucket is configured to use Archive storage as the terminal storage class, objects continue to transition to colder storage classes as follows: Any object that isn't accessed for 90 days transitions to Coldline storage.",
+          "Objects in a storage class other than Standard storage are handled as follows: Relocating objects in Nearline storage, Coldline storage, or Archive storage storage classes does not count as accessing them."
+        ]
+      },
+      {
+        "title": "Create a bucket \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "source_id": "site-docs-root",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . / TODO(developer): Uncomment the following lines before running the sample. / // The ID of your GCS bucket // const bucketName = 'your-unique-bucket-name'; // The name of a storage class // See the StorageClass documentation for other valid storage classes: // https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/storage/StorageClass.html // const storageClass = 'coldline'; // The name of a location // See this documentation for other valid locations: // http://g.co/cloud/storage/docs/locations#location-mr // const location = 'ASIA'; // Imports the Google Cloud client library const { Storage } = require ( ' @google-cloud/storage ' ); // Creates a client // The bucket in the sample below will be created in the project associated with this client. // For more information, please see https://cloud.google.com/docs/authentication/production or https://googleapis.dev/nodejs/storage/latest/Storage.html const storage = new Storage (); async function createBucketWithStorageClassAndLocation () { // For default values see: https://cloud.google.com/storage/docs/locations and // https://cloud.google.com/storage/docs/storage-classes const [ bucket ] = await storage . createBucket ( bucketName , { location , [ storageClass ] : true , }); console . log ( ${ bucket . name } created with ${ storageClass } class in ${ location } ); } createBucketWithStorageClassAndLocation (). catch ( console . error ); PHP For more information, see the Cloud Storage PHP API reference documentation .",
+          "For more information, see Set up authentication for client libraries . use Google\\Cloud\\Storage\\StorageClient; / Create a new bucket with a custom default storage class and location. @param string $bucketName The name of your Cloud Storage bucket. (e.g. 'my-bucket') / function create bucket class location(string $bucketName): void { $storage = new StorageClient(); $storageClass = 'COLDLINE'; $location = 'ASIA'; $bucket = $storage->createBucket($bucketName, [ 'storageClass' => $storageClass, 'location' => $location, ]); $objects = $bucket->objects([ 'encryption' => [ 'defaultKmsKeyName' => null, ] ]); printf('Created bucket %s in %s with storage class %s', $bucketName, $storageClass, $location); } Python For more information, see the Cloud Storage Python API reference documentation .",
+          "StorageOptions ; public class CreateBucketWithStorageClassAndLocation { public static void createBucketWithStorageClassAndLocation ( String projectId , String bucketName ) { // The ID of your GCP project // String projectId = \"your-project-id\"; // The ID to give your GCS bucket // String bucketName = \"your-unique-bucket-name\"; Storage storage = StorageOptions . newBuilder (). setProjectId ( projectId ). build (). getService (); // See the StorageClass documentation for other valid storage classes: // https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/storage/StorageClass.html StorageClass storageClass = StorageClass ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.storage",
+      "e.g",
+      "g.co",
+      "googleapis.dev",
+      "storage.buckets.create",
+      "storage.buckets.enableObjectRetention",
+      "storage.buckets.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/storage-classes",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/autoclass",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/storage-classes",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/autoclass",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/storage-classes",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/autoclass",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/storage-classes",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/autoclass",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/storage-classes",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/autoclass",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/storage-classes",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/autoclass",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/storage-classes",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/autoclass",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/storage-classes",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/autoclass",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:43.359Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage"
+}

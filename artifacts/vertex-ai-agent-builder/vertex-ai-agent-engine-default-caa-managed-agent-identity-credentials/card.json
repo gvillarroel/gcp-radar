@@ -1,0 +1,200 @@
+{
+  "feature_name": "Vertex AI Agent Engine default CAA-managed agent identity credentials",
+  "feature_slug": "vertex-ai-agent-engine-default-caa-managed-agent-identity-credentials",
+  "summary": "Vertex AI Agent Engine now secures agent identity credentials by default through a Google-managed Context-Aware Access (CAA) policy.",
+  "extended_definition": "Vertex AI Agent Engine now secures agent identity credentials by default through a Google-managed Context-Aware Access (CAA) policy.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use agent identity with Vertex AI Agent Engine \\_|\\_ Vertex AI Agent Builder\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "source_id": "site-docs-root",
+        "final_score": 368,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Restrict access to these credentials based on Agent ID (a principal identifier ): Create the secret container gcloud secrets create my-app-oauth-secret Add the actual client secret to Secret Manager gcloud secrets versions add my-app-oauth-secret --data-file=oauth-secret Grant agent identity access to the secret gcloud secrets add-iam-policy-binding my-app-oauth-secret \\ --role='roles/secretmanager.secretAccessor' \\ --member=\"principal://agents.global.org- ORGANIZATION ID .system.id.goog/resources/aiplatform/projects/ PROJECT NUMBER /locations/ LOCATION /reasoningEngines/ AGENT ENGINE ID \" \\ Once the secret is stored, the agent can access these credentials during runtime using its principal identifier and standard Google Cloud authentication library automatically as part of Application Default Credential.",
+          "The Agent Engine instance is created with a read-only, system attested agent identity (a principal identifier ): Agent identity Format principal:// TRUST DOMAIN / NAMESPACE / AGENT NAME Example agent identity principal://agents.global.org- ORGANIZATION ID .system.id.goog/resources/aiplatform/projects/ PROJECT NUMBER /locations/ LOCATION /reasoningEngines/ AGENT ENGINE ID The following parts are auto-provisioned to you as part of agent identity: TRUST DOMAIN : A trust domain is provisioned for you when you enable the Vertex AI API: If you have an organization, the trust domain is created at the organization level with the format agents.global.org- ORGANIZATION ID .system.id.goog .",
+          "Define the agent in your preferred framework: from google.adk.agents import Agent agent = Agent ( model = \"gemini-2.5-flash\" , name = \"minimal agent\" , instruction = \"You are a helpful assistant.\" , ) Then, deploy it: import vertexai from vertexai import types from vertexai.agent engines import AdkApp Initialize the Vertex AI client with v1beta1 API for agent identity support client = vertexai ."
+        ]
+      },
+      {
+        "title": "Deploy an agent \\_|\\_ Vertex AI Agent Builder \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "source_id": "site-docs-root",
+        "final_score": 270,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following is an example: labels = { \"author\" : \"username\" , \"version\" : \"latest\" } Configure a default agent identity You can provision agents you deploy to Vertex AI Agent Engine with a unique identity upon creating your agent.",
+          "Python Object To deploy the agent on Vertex AI, use client.agent engines.create to pass in the local agent object along with any optional configurations : remote agent = client . agent engines . create ( agent = local agent , # Optional. config = { \"requirements\" : requirements , # Optional. \"extra packages\" : extra packages , # Optional. \"gcs dir name\" : gcs dir name , # Optional. \"display name\" : display name , # Optional. \"description\" : description , # Optional. \"labels\" : labels , # Optional. \"env vars\" : env vars , # Optional. \"build options\" : build options , # Optional. \"identity type\" : identity type , # Optional. \"service account\" : service account , # Optional. \"min instances\" : min instances , # Optional. \"max instances\" : max instances , # Optional. \"resource limits\" : resource limits , # Optional. \"container concurrency\" : container concurrency , # Optional \"encryption spec\" : encryption spec , # Optional. \"agent framework\" : agent framework , # Optional. }, ) Deployment takes a few minutes, during which the following steps happen in the background: A bundle of the following artifacts are generated locally: .pkl a pickle file corresponding to local agent. requirements.txt a text file containing the package requirements . dependencies.tar.gz a tar file containing any extra packages .",
+          "The default value is 9 . remote agent = client . agent engines . create ( agent = local agent , config = { \"min instances\" : 1 , \"max instances\" : 10 , \"resource limits\" : { \"cpu\" : \"4\" , \"memory\" : \"8Gi\" }, \"container concurrency\" : 9 , ... other configs } ) For best practices on how to optimize runtime resources, see Optimize and scale Vertex AI Agent Engine Runtime ."
+        ]
+      },
+      {
+        "title": "\"Managing access for deployed agents \\_|\\_ Vertex AI Agent Builder \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+        "source_id": "site-docs-root",
+        "final_score": 266,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Service accounts If you used service accounts to set up the identity and permissions for your agent , agents that you deploy on Vertex AI Agent Engine run using either the AI Platform Reasoning Engine Service Agent or your custom service account.",
+          "Agent identity If you used agent identity to set up the identity and permissions for your agent , see Use agent identity with Vertex AI Agent Engine for information about how to manage access control to resources.",
+          "The service account has a Vertex AI Reasoning Engine Service Agent role ( roles/aiplatform.reasoningEngineServiceAgent ) that grants the default permissions required for deployed agents."
+        ]
+      },
+      {
+        "title": "\"Quickstart with Vertex AI Agent Engine SDK \\_|\\_ Vertex AI Agent Builder\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api",
+        "source_id": "site-docs-root",
+        "final_score": 258,
+        "relevance": "",
+        "evidence_snippets": [
+          "You must specify at least one of filter (applied to system fields) or filter groups (applied to metadata fields). operation = client . agent engines . memories . purge ( name = agent engine . api resource . name , Specify at least one of filter or filter groups. filter = \" FILTER STRING \" , filter groups = FILTER GROUPS , Set to false (default) if you want to stage but not execute the purge operation. force = True , config = { Set to false (default) if you want to purge memories asynchronously. \"wait for completion\" : True } ) Replace the following: FILTER STRING : A string using EBNF syntax for filtering against system fields.",
+          "To see an example of using Memory Bank with the Agent Engine SDK, run the \"Get started with Memory Bank\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub To see an example of using Memory Bank with LangGraph, run the \"Get started with Memory Bank - LangGraph\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Before you begin To complete the steps demonstrated in this tutorial, you must first follow the steps in Set up for Memory Bank .",
+          "Remove by resource name If you know exactly which memory resource you want to remove, you can delete a specific memory using its resource name: client . agent engines . memories . delete ( name = MEMORY NAME , config = { Set to false (default) if you want to delete the memory asynchronously. \"wait for completion\" : True } ) Replace the following: MEMORY NAME : The name of the Memory to delete."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "agents.global.org",
+      "aiplatform.reasoningEngineServiceAgent",
+      "bindings.members",
+      "bindings.role",
+      "client.agent",
+      "dependencies.tar.gz",
+      "engines.create",
+      "requirements.txt",
+      "secretmanager.secretAccessor",
+      "system.id.goog",
+      "vertexai.agent"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.reasoningEngineServiceAgent",
+      "roles/secretmanager.secretAccessor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:43.725Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-agent-builder/card.json",
+  "product_name": "Vertex AI Agent Builder",
+  "product_slug": "vertex-ai-agent-builder"
+}

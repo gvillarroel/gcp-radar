@@ -1,0 +1,219 @@
+{
+  "feature_name": "ComputeBackendBucket edge security policy",
+  "feature_slug": "computebackendbucket-edge-security-policy",
+  "summary": "The ComputeBackendBucket resource supports attaching an edge security policy through spec.edgeSecurityPolicy.",
+  "extended_definition": "The ComputeBackendBucket resource supports attaching an edge security policy through spec.edgeSecurityPolicy.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "IAMPolicy \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "source_id": "site-docs-root-2",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Kind Supports Conditions Supports Audit Configs AccessContextManagerAccessPolicy ApigeeEnvironment ArtifactRegistryRepository BigQueryTable Y BigtableInstance Y BigtableTable Y BillingAccount Y BinaryAuthorizationPolicy Y CloudFunctionsFunction Y ComputeBackendBucket ComputeDisk ComputeImage Y ComputeInstance Y ComputeSnapshot ComputeSubnetwork Y DNSManagedZone DataprocCluster Y Folder Y Y IAMServiceAccount Y IAMWorkforcePool Y KMSCryptoKey Y KMSKeyRing Y NetworkSecurityAuthorizationPolicy Y NetworkSecurityClientTLSPolicy Y NetworkSecurityServerTLSPolicy Y Organization Y Y Project Y Y PubSubSubscription PubSubTopic RunJob RunService SecretManagerSecret ServiceDirectoryNamespace ServiceDirectoryService SourceRepoRepository SpannerDatabase Y SpannerInstance StorageBucket Y Kind External Reference Formats AccessContextManagerAccessPolicy {{name}} ApigeeEnvironment organizations/{{apigee organization}}/environments/{{name}} ArtifactRegistryRepository projects/{{project}}/locations/{{location}}/repositories/{{repository id}} BigQueryTable projects/{{project}}/datasets/{{dataset id}}/tables/{{table id}} BigtableInstance projects/{{project}}/instances/{{name}} BigtableTable projects/{{project}}/instances/{{instance name}}/tables/{{name}} BillingAccount {{billing account id}} BinaryAuthorizationPolicy projects/{{project}}/policy CloudFunctionsFunction projects/{{project}}/locations/{{region}}/functions/{{name}} ComputeBackendBucket projects/{{project}}/global/backendBuckets/{{name}} ComputeDisk projects/{{project}}/regions/{{region}}/disks/{{name}} projects/{{project}}/zones/{{zone}}/disks/{{name}} ComputeImage projects/{{project}}/global/images/{{name}} ComputeInstance projects/{{project}}/zones/{{zone}}/instances/{{name}} ComputeSnapshot projects/{{project}}/global/snapshots/{{name}} ComputeSubnetwork projects/{{project}}/regions/{{region}}/subnetworks/{{name}} DNSManagedZone projects/{{project}}/managedZones/{{name}} DataprocCluster projects/{{project}}/regions/{{location}}/clusters/{{name}} Folder folders/{{folder id}} IAMServiceAccount projects/{{project}}/serviceAccounts/{{account id}}@{{project}}.iam.gserviceaccount.com IAMWorkforcePool locations/{{location}}/workforcePools/{{name}} KMSCryptoKey projects/{{project}}/locations/{{location}}/keyRings/{{key ring id}}/cryptoKeys/{{name}} KMSKeyRing projects/{{project}}/locations/{{location}}/keyRings/{{name}} NetworkSecurityAuthorizationPolicy projects/{{project}}/locations/{{location}}/authorizationPolicies/{{name}} NetworkSecurityClientTLSPolicy projects/{{project}}/locations/{{location}}/clientTlsPolicies/{{name}} NetworkSecurityServerTLSPolicy projects/{{project}}/locations/{{location}}/serverTlsPolicies/{{name}} Organization {{org id}} Project projects/{{project id}} PubSubSubscription projects/{{project}}/subscriptions/{{name}} PubSubTopic projects/{{project}}/topics/{{name}} RunJob projects/{{project}}/locations/{{location}}/jobs/{{name}} RunService projects/{{project}}/locations/{{location}}/services/{{name}} SecretManagerSecret projects/{{project}}/secrets/{{secret id}} ServiceDirectoryNamespace projects/{{project}}/locations/{{location}}/namespaces/{{namespace id}} ServiceDirectoryService {{namespace}}/services/{{service id}} SourceRepoRepository projects/{{project}}/repos/{{name}} SpannerDatabase projects/{{project}}/instances/{{instance}}/databases/{{name}} SpannerInstance projects/{{project}}/instances/{{name}} StorageBucket {{name}} Custom Resource Definition Properties Spec Schema auditConfigs : - auditLogConfigs : - exemptedMembers : - string logType : string service : string bindings : - condition : description : string expression : string title : string members : - string role : string resourceRef : apiVersion : string external : string kind : string name : string namespace : string Fields auditConfigs Optional list (object) Optional.",
+          "The GCP resource to set the IAM policy on (e.g. organization, project...) resourceRef.apiVersion Optional string APIVersion of the referenced resource resourceRef.external Optional string The external name of the referenced resource resourceRef.kind Required string Kind of the referenced resource resourceRef.name Optional string resourceRef.namespace Optional string Field is required when parent field is specified Status Schema conditions : - lastTransitionTime : string message : string reason : string status : string type : string observedGeneration : integer Fields conditions list (object) Conditions represent the latest available observations of the IAM policy's current state. conditions[] object conditions[].lastTransitionTime string Last time the condition transitioned from one status to another. conditions[].message string Human-readable message indicating details about last transition. conditions[].reason string Unique, one-word, CamelCase reason for the condition's last transition. conditions[].status string Status is the status of the condition.",
+          "This ensures that the Config Connector service account can continue to manage the referenced project. - \"serviceAccount:${GSA EMAIL?}\" role : roles/owner - members : - serviceAccount:iampolicy-dep-project@iampolicy-dep-project.iam.gserviceaccount.com role : roles/storage.admin auditConfigs : - service : allServices auditLogConfigs : - logType : DATA WRITE - logType : DATA READ exemptedMembers : - serviceAccount:iampolicy-dep-project@iampolicy-dep-project.iam.gserviceaccount.com - service : compute.googleapis.com auditLogConfigs : - logType : ADMIN READ --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : annotations : cnrm.cloud.google.com/project-id : iampolicy-dep-project name : iampolicy-dep-project --- apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project metadata : annotations : cnrm.cloud.google.com/auto-create-network : \"false\" name : iampolicy-dep-project spec : name : Config Connector Sample organizationRef : Replace \"${ORG ID?}\" with the numeric ID for your organization external : \"${ORG ID?}\" PubSub Admin Policy Copyright 2020 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License."
+        ]
+      },
+      {
+        "title": "IAMPartialPolicy \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "source_id": "site-docs-root-2",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Kind Supports Conditions AccessContextManagerAccessPolicy ApigeeEnvironment ArtifactRegistryRepository BigQueryTable Y BigtableInstance Y BigtableTable Y BillingAccount Y BinaryAuthorizationPolicy Y CloudFunctionsFunction Y ComputeBackendBucket ComputeDisk ComputeImage Y ComputeInstance Y ComputeSnapshot ComputeSubnetwork Y DNSManagedZone DataprocCluster Y Folder Y IAMServiceAccount Y IAMWorkforcePool Y KMSCryptoKey Y KMSKeyRing Y NetworkSecurityAuthorizationPolicy Y NetworkSecurityClientTLSPolicy Y NetworkSecurityServerTLSPolicy Y Organization Y Project Y PubSubSubscription PubSubTopic RunJob RunService SecretManagerSecret ServiceDirectoryNamespace ServiceDirectoryService SourceRepoRepository SpannerDatabase Y SpannerInstance StorageBucket Y Kind External Reference Formats AccessContextManagerAccessPolicy {{name}} ApigeeEnvironment organizations/{{apigee organization}}/environments/{{name}} ArtifactRegistryRepository projects/{{project}}/locations/{{location}}/repositories/{{repository id}} BigQueryTable projects/{{project}}/datasets/{{dataset id}}/tables/{{table id}} BigtableInstance projects/{{project}}/instances/{{name}} BigtableTable projects/{{project}}/instances/{{instance name}}/tables/{{name}} BillingAccount {{billing account id}} BinaryAuthorizationPolicy projects/{{project}}/policy CloudFunctionsFunction projects/{{project}}/locations/{{region}}/functions/{{name}} ComputeBackendBucket projects/{{project}}/global/backendBuckets/{{name}} ComputeDisk projects/{{project}}/regions/{{region}}/disks/{{name}} projects/{{project}}/zones/{{zone}}/disks/{{name}} ComputeImage projects/{{project}}/global/images/{{name}} ComputeInstance projects/{{project}}/zones/{{zone}}/instances/{{name}} ComputeSnapshot projects/{{project}}/global/snapshots/{{name}} ComputeSubnetwork projects/{{project}}/regions/{{region}}/subnetworks/{{name}} DNSManagedZone projects/{{project}}/managedZones/{{name}} DataprocCluster projects/{{project}}/regions/{{location}}/clusters/{{name}} Folder folders/{{folder id}} IAMServiceAccount projects/{{project}}/serviceAccounts/{{account id}}@{{project}}.iam.gserviceaccount.com IAMWorkforcePool locations/{{location}}/workforcePools/{{name}} KMSCryptoKey projects/{{project}}/locations/{{location}}/keyRings/{{key ring id}}/cryptoKeys/{{name}} KMSKeyRing projects/{{project}}/locations/{{location}}/keyRings/{{name}} NetworkSecurityAuthorizationPolicy projects/{{project}}/locations/{{location}}/authorizationPolicies/{{name}} NetworkSecurityClientTLSPolicy projects/{{project}}/locations/{{location}}/clientTlsPolicies/{{name}} NetworkSecurityServerTLSPolicy projects/{{project}}/locations/{{location}}/serverTlsPolicies/{{name}} Organization {{org id}} Project projects/{{project id}} PubSubSubscription projects/{{project}}/subscriptions/{{name}} PubSubTopic projects/{{project}}/topics/{{name}} RunJob projects/{{project}}/locations/{{location}}/jobs/{{name}} RunService projects/{{project}}/locations/{{location}}/services/{{name}} SecretManagerSecret projects/{{project}}/secrets/{{secret id}} ServiceDirectoryNamespace projects/{{project}}/locations/{{location}}/namespaces/{{namespace id}} ServiceDirectoryService {{namespace}}/services/{{service id}} SourceRepoRepository projects/{{project}}/repos/{{name}} SpannerDatabase projects/{{project}}/instances/{{instance}}/databases/{{name}} SpannerInstance projects/{{project}}/instances/{{name}} StorageBucket {{name}} Custom Resource Definition Properties Spec Schema bindings : - condition : description : string expression : string title : string members : - member : string memberFrom : bigQueryConnectionConnectionRef : name : string namespace : string type : string logSinkRef : name : string namespace : string serviceAccountRef : name : string namespace : string serviceIdentityRef : name : string namespace : string sqlInstanceRef : name : string namespace : string role : string resourceRef : apiVersion : string external : string kind : string name : string namespace : string Fields bindings Optional list (object) Optional.",
+          "The Google Cloud resource to set the IAM policy on for example organization or project, etc. resourceRef.apiVersion Optional string APIVersion of the referenced resource resourceRef.external Optional string The external name of the referenced resource resourceRef.kind Required string Kind of the referenced resource resourceRef.name Optional string resourceRef.namespace Optional string Field is required when parent field is specified Status Schema allBindings : - condition : description : string expression : string title : string members : - string role : string conditions : - lastTransitionTime : string message : string reason : string status : string type : string lastAppliedBindings : - condition : description : string expression : string title : string members : - string role : string observedGeneration : integer Fields allBindings list (object) AllBindings surfaces all IAM bindings for the referenced resource. allBindings[] object Specifies the members to bind to an IAM role. allBindings[].condition object Optional.",
+          "It will merge with the existing bindings on the project. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPartialPolicy metadata : name : iampartialpolicy-sample-project spec : resourceRef : kind : Project name : iampartialpolicy-dep-project bindings : - role : roles/storage.admin members : - member : serviceAccount:iampartialpolicy-dep-project@iampartialpolicy-dep-project.iam.gserviceaccount.com - role : roles/editor members : - memberFrom : serviceAccountRef : name : iampartialpolicy-dep-project --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : annotations : cnrm.cloud.google.com/project-id : iampartialpolicy-dep-project name : iampartialpolicy-dep-project --- apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project metadata : annotations : cnrm.cloud.google.com/auto-create-network : \"false\" name : iampartialpolicy-dep-project spec : name : Config Connector Sample organizationRef : Replace \"${ORG ID?}\" with the numeric ID for your organization external : \"${ORG ID?}\" PubSub Admin IAMPartialPolicy Copyright 2020 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License."
+        ]
+      },
+      {
+        "title": "IAMPolicyMember \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "source_id": "site-docs-root-2",
+        "final_score": 172,
+        "relevance": "",
+        "evidence_snippets": [
+          "Kind Supports Conditions AccessContextManagerAccessPolicy ApigeeEnvironment ArtifactRegistryRepository BigQueryTable Y BigtableInstance Y BigtableTable Y BillingAccount Y BinaryAuthorizationPolicy CloudFunctionsFunction ComputeBackendBucket ComputeDisk ComputeImage Y ComputeInstance Y ComputeSnapshot ComputeSubnetwork Y DNSManagedZone DataprocCluster Folder Y IAMServiceAccount Y IAMWorkforcePool KMSCryptoKey Y KMSKeyRing Y NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy Organization Y Project Y PubSubSubscription PubSubTopic RunJob RunService SecretManagerSecret ServiceDirectoryNamespace ServiceDirectoryService SourceRepoRepository SpannerDatabase Y SpannerInstance StorageBucket Y Kind External Reference Formats AccessContextManagerAccessPolicy {{name}} ApigeeEnvironment organizations/{{apigee organization}}/environments/{{name}} ArtifactRegistryRepository projects/{{project}}/locations/{{location}}/repositories/{{repository id}} BigQueryTable projects/{{project}}/datasets/{{dataset id}}/tables/{{table id}} BigtableInstance projects/{{project}}/instances/{{name}} BigtableTable projects/{{project}}/instances/{{instance name}}/tables/{{name}} BillingAccount {{billing account id}} BinaryAuthorizationPolicy projects/{{project}}/policy CloudFunctionsFunction projects/{{project}}/locations/{{region}}/functions/{{name}} ComputeBackendBucket projects/{{project}}/global/backendBuckets/{{name}} ComputeDisk projects/{{project}}/regions/{{region}}/disks/{{name}} projects/{{project}}/zones/{{zone}}/disks/{{name}} ComputeImage projects/{{project}}/global/images/{{name}} ComputeInstance projects/{{project}}/zones/{{zone}}/instances/{{name}} ComputeSnapshot projects/{{project}}/global/snapshots/{{name}} ComputeSubnetwork projects/{{project}}/regions/{{region}}/subnetworks/{{name}} DNSManagedZone projects/{{project}}/managedZones/{{name}} DataprocCluster projects/{{project}}/regions/{{location}}/clusters/{{name}} Folder folders/{{folder id}} IAMServiceAccount projects/{{project}}/serviceAccounts/{{account id}}@{{project}}.iam.gserviceaccount.com IAMWorkforcePool locations/{{location}}/workforcePools/{{name}} KMSCryptoKey projects/{{project}}/locations/{{location}}/keyRings/{{key ring id}}/cryptoKeys/{{name}} KMSKeyRing projects/{{project}}/locations/{{location}}/keyRings/{{name}} NetworkSecurityAuthorizationPolicy projects/{{project}}/locations/{{location}}/authorizationPolicies/{{name}} NetworkSecurityClientTLSPolicy projects/{{project}}/locations/{{location}}/clientTlsPolicies/{{name}} NetworkSecurityServerTLSPolicy projects/{{project}}/locations/{{location}}/serverTlsPolicies/{{name}} Organization {{org id}} Project projects/{{project id}} PubSubSubscription projects/{{project}}/subscriptions/{{name}} PubSubTopic projects/{{project}}/topics/{{name}} RunJob projects/{{project}}/locations/{{location}}/jobs/{{name}} RunService projects/{{project}}/locations/{{location}}/services/{{name}} SecretManagerSecret projects/{{project}}/secrets/{{secret id}} ServiceDirectoryNamespace projects/{{project}}/locations/{{location}}/namespaces/{{namespace id}} ServiceDirectoryService {{namespace}}/services/{{service id}} SourceRepoRepository projects/{{project}}/repos/{{name}} SpannerDatabase projects/{{project}}/instances/{{instance}}/databases/{{name}} SpannerInstance projects/{{project}}/instances/{{name}} StorageBucket {{name}} Custom Resource Definition Properties Spec Schema condition : description : string expression : string title : string member : string memberFrom : bigQueryConnectionConnectionRef : name : string namespace : string type : string logSinkRef : name : string namespace : string serviceAccountRef : name : string namespace : string serviceIdentityRef : name : string namespace : string sqlInstanceRef : name : string namespace : string resourceRef : apiVersion : string external : string kind : string name : string namespace : string role : string Fields condition Optional object Immutable.",
+          "See the License for the specific language governing permissions and limitations under the License. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPolicyMember metadata : name : iampolicymember-sample-bqccref spec : memberFrom : bigQueryConnectionConnectionRef : type : cloudSQL name : iampolicymember-dep-bqccref role : roles/editor resourceRef : kind : Project Replace ${PROJECT ID?} with your project ID external : projects/${PROJECT ID?} --- apiVersion : bigqueryconnection.cnrm.cloud.google.com/v1beta1 kind : BigQueryConnectionConnection metadata : name : iampolicymember-dep-bqccref spec : location : us-central1 projectRef : Replace ${PROJECT ID?} with your project ID external : ${PROJECT ID?} cloudSQL : instanceRef : name : iampolicymember-dep-bqccref databaseRef : name : iampolicymember-dep-bqccref type : \"MYSQL\" credential : secretRef : name : iampolicymember-dep-bqccref --- apiVersion : v1 kind : Secret metadata : name : iampolicymember-dep-bqccref type : kubernetes.io/basic-auth stringData : username : iampolicymember-dep-bqccref password : cGFzc3dvcmQ= --- apiVersion : sql.cnrm.cloud.google.com/v1beta1 kind : SQLDatabase metadata : name : iampolicymember-dep-bqccref spec : charset : utf8 instanceRef : name : iampolicymember-dep-bqccref --- apiVersion : sql.cnrm.cloud.google.com/v1beta1 kind : SQLInstance metadata : name : iampolicymember-dep-bqccref spec : databaseVersion : MYSQL 5 7 region : us-central1 settings : locationPreference : zone : us-central1-a tier : db-custom-1-3840 --- apiVersion : sql.cnrm.cloud.google.com/v1beta1 kind : SQLUser metadata : name : iampolicymember-dep-bqccref spec : instanceRef : name : iampolicymember-dep-bqccref host : foo password : valueFrom : secretKeyRef : name : iampolicymember-dep-bqccref key : password Policy Member With Member Reference Copyright 2020 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License.",
+          "Replace ${PROJECT ID?} and ${ORG ID?} below with your desired project and organization IDs respectively. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPolicyMember metadata : name : iampolicymember-sample-orgrole spec : member : serviceAccount:iampolicymember-dep-orgrole@${PROJECT ID?}.iam.gserviceaccount.com role : organizations/${ORG ID?}/roles/iampolicymemberdeporgrole resourceRef : kind : Project external : projects/${PROJECT ID?} --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMCustomRole metadata : annotations : Replace \"${ORG ID?}\" with your organization ID cnrm.cloud.google.com/organization-id : \"${ORG ID?}\" name : iampolicymemberdeporgrole spec : title : Example Organization-Level Custom Role description : This role only contains two permissions - publish and update permissions : - pubsub.topics.publish - pubsub.topics.update stage : GA --- Replace ${PROJECT ID?} below with your desired project ID. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : annotations : cnrm.cloud.google.com/project-id : ${PROJECT ID?} name : iampolicymember-dep-orgrole Policy Member With BigQueryConnectionConnection Reference Copyright 2024 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigqueryconnection.cnrm.cloud.google.com",
+      "cloudkms.admin",
+      "cnrm.cloud.google.com",
+      "compute.googleapis.com",
+      "e.g",
+      "iam.cnrm.cloud.google.com",
+      "iam.gserviceaccount.com",
+      "kms.cnrm.cloud.google.com",
+      "kubernetes.io",
+      "project.iam.gserviceaccount.com",
+      "pubsub.cnrm.cloud.google.com",
+      "pubsub.topics.publish",
+      "pubsub.topics.update",
+      "request.time",
+      "resourcemanager.cnrm.cloud.google.com",
+      "spec.edgeSecurityPolicy",
+      "sql.cnrm.cloud.google.com",
+      "storage.admin"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.admin",
+      "roles/editor",
+      "roles/iampolicymemberdeporgrole",
+      "roles/owner",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:47.576Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector"
+}

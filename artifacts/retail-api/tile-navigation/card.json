@@ -1,0 +1,117 @@
+{
+  "feature_name": "Tile navigation",
+  "feature_slug": "tile-navigation",
+  "summary": "Tile navigation shows tiles for likely useful dynamic facets to help users narrow search results faster.",
+  "extended_definition": "Tile navigation shows tiles for likely useful dynamic facets to help users narrow search results faster.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/retail/docs/a-b-monitor",
+      "https://docs.cloud.google.com/retail/docs/conversational-commerce-ux-guide",
+      "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide",
+      "https://docs.cloud.google.com/retail/docs/retail-api-tutorials"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Monitor and analyze A/B experiments \\_|\\_ Vertex AI Search for commerce\\",
+        "url": "https://docs.cloud.google.com/retail/docs/a-b-monitor",
+        "source_id": "site-docs-reference",
+        "final_score": 117,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The requests and user events configurations would be: Variant arm name Traffic destination event.experimentIds event.attributionToken Traffic % Head queries control In-house CONTROL N/A 50% of head queries Head queries dynamic facets ON experiment Google Vertex AI Search for Retail API EXP DF ON Attribution token from search response 25% of head queries Head queries dynamic facets OFF experiment Google Vertex AI Search for Retail API EXP DF OFF Attribution token from search response 25% of head queries Non-head queries and other holdouts Google Vertex AI Search for Retail API N/A Depends on engine used N/A To set up monitoring for this example experiment, you would create corresponding variant arms in the console for each experiment group.",
+          "Variant arm name Traffic destination User event experiment ID Intended traffic % Example control arm External CONTROL 50% Example experiment arm 1 Google Vertex AI Search for Retail API EXP DF ON 25% Example experiment arm 2 Google Vertex AI Search for Retail API EXP DF OFF 25% Traffic metrics An experiment's Monitoring page shows if there are unintended traffic splits for the following metrics: Search/Browse event count per date Search/Browse visitor count per date Search/Browse event count per category When unintended traffic splits occur for one of these metrics, its card at the top of the Monitoring page shows the dates on which the unintended traffic split occurred.",
+          "Variant arm name Traffic destination User event experiment ID Intended traffic % Example control arm External CONTROL 50% Example experiment arm Google Vertex AI Search for Retail API EXPERIMENT 50% Example 2: Three variant arms In this example, assume that you plan to conduct an A/B experiment on the head queries (high-frequency queries) and include both turning on and off dynamic facets."
+        ]
+      },
+      {
+        "title": "\"Conversational filtering developer's guide \\_|\\_ Vertex AI Search for commerce\\",
+        "url": "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "Applying a filter using conversational multiple choice is identical to applying the same filter using dynamic facets or tiles.",
+          "The starting (neutral) state is a landing page, likely with a search bar, recommendations, or marketing campaigns, depending on your Vertex AI Search for commerce application.",
+          "Conversational API request { query : \"dress\" co n versa t io n id : \"c154d073-87f5-4edb-accd-587eabe014ff\" co n versa t io nal search spec { \"mode\" : \"CONVERSATIONAL FILTER ONLY\" user a ns wer { selec te d a ns wer { produc t a ttr ibu te value { na me : \"colors\" value : \"yellow\" } } } } } The response from the Conversational API then looks like this: Conversational API response { co n versa t io n id : \"c154d073-87f5-4edb-accd-587eabe014ff\" re f i ne d query : \"dress\" co n versa t io nal f il ter i n g resul t { addi t io nal f il ter { produc t a ttr ibu te value { na me : \"colors\" , value : \"yellow\" } } f ollowup ques t io n { f ollowup ques t io n : \"What is the occasion?\" sugges te d a ns wers { produc t a ttr ibu te value { na me : \"attribute.occasion\" , value : \"wedding\" } } sugges te d a ns wers { produc t a ttr ibu te value { na me : \"attribute.occasion\" , value : \"party\" } } } } } What you should do with the response: The Google response is basically identical to the response to the first query, except the additional filter field can be used to check off the filter box for color = yellow and should be added to any other filters that the user has selected."
+        ]
+      },
+      {
+        "title": "\"Conversational Commerce agent user experience guide \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/retail/docs/conversational-commerce-ux-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 91,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Indicate support for natural language input Suggested prompts : Show me red sneakers for under $100 Dynamic placeholder text : Ask a question Microcopy : Try searching in full sentences!",
+          "This minor detail aligns with the Conversational Commerce agent goals of making search more intuitive and reducing navigation effort and friction.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "\"Interactive tutorials \\_|\\_ Vertex AI Search for commerce \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/retail/docs/retail-api-tutorials",
+        "source_id": "site-docs-reference",
+        "final_score": 89,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create/Get/Update/Delete product tutorial This tutorial shows you how to use API methods, which perform the following actions: Create a product Get a product Update a product Delete a product To follow step-by-step guidance for this task directly in the Cloud Shell Editor, click Guide me : Guide me Create product tutorial This tutorial shows you how to create a single product.",
+          "The following Product fields are considered inventory fields: Product.price info Product.availability Product.available quantity Product.fulfillment info Add fulfillment tutorial This tutorial shows how to update product fulfillment information using the AddFulfillmentPlaces method.",
+          "To follow step-by-step guidance for this task directly in the Cloud Shell Editor, click Guide me : Guide me Set inventory tutorial This tutorial shows how to push inventory updates using the SetInventory method instead of updating the entire product."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "attribute.occasion",
+      "event.attributionToken",
+      "event.experimentIds"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/a-b-monitor",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-ux-guide",
+        "https://docs.cloud.google.com/retail/docs/retail-api-tutorials"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/a-b-monitor",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-ux-guide",
+        "https://docs.cloud.google.com/retail/docs/retail-api-tutorials"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:34.794Z",
+  "source_step08_card": "data/step-08/current/products/retail-api/card.json",
+  "product_name": "Retail API",
+  "product_slug": "retail-api"
+}

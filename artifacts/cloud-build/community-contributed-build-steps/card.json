@@ -1,0 +1,109 @@
+{
+  "feature_name": "Community-contributed build steps",
+  "feature_slug": "community-contributed-build-steps",
+  "summary": "Cloud Build added support for community-contributed build steps.",
+  "extended_definition": "Cloud Build added support for community-contributed build steps.",
+  "lifecycle": {
+    "latest_feature_date": "2017-11-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/configuring-builds/create-basic-configuration",
+      "https://docs.cloud.google.com/build/docs/create-custom-build-steps",
+      "https://docs.cloud.google.com/build/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Using community-contributed builders and custom builders \\_|\\_ Cloud Build\\",
+        "url": "https://docs.cloud.google.com/build/docs/create-custom-build-steps",
+        "source_id": "site-docs-root",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Remove the repository from your root directory: rm - rf cloud - builders - community / In your Cloud Build config file, use the builder in a build step: YAML steps : - name : 'gcr.io/ project-id / builder-name ' args : [ ' arg1 ' , ' arg2 ' , ... ] ...",
+          "Using community-contributed builders Prebuilt images are not available for community-contributed builders; to use these builders in a Cloud Build config file, you must first build the image and push it to Artifact Registry in your project.",
+          "Creating a custom builder If the task you want to perform requires capabilities that are not provided by a public image, a supported builder, or a community-contributed builder , you can build your own image and use it in a build step."
+        ]
+      },
+      {
+        "title": "Overview of Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 107,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Community-contributed build steps : The Cloud Build user community has provided open-source build steps .",
+          "You can either use the build steps provided by Cloud Build and the Cloud Build community, or write your own custom build steps: Build steps provided by Cloud Build : Cloud Build has published a set of supported open-source build steps for common languages and tasks.",
+          "Build security Cloud Build provides several features to secure your builds including: Automated Builds An automated build or scripted build defines all build steps in build script or build configuration, including steps to retrieve source code and steps to build the code."
+        ]
+      },
+      {
+        "title": "Create a build configuration file \\_|\\_ Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/configuring-builds/create-basic-configuration",
+        "source_id": "site-docs-root",
+        "final_score": 60,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the following example, the gcr.io/google.com/cloudsdktool/cloud-sdk build step times out after 240 seconds. { \"name\" : \"gcr.io/google.com/cloudsdktool/cloud-sdk\" , \"entrypoint\" : \"gcloud\" , \"timeout\" : \"240s\" , \"args\" : [ \"compute\" , \"instances\" , \"create-with-container\" , \"my-vm-name\" , \"--container-image\" , \"us-central1-docker.pkg.dev/${PROJECT ID}/my-docker-repo/myimage\" ], \"env\" : [ \"CLOUDSDK COMPUTE REGION=us-central1\" , \"CLOUDSDK COMPUTE ZONE=us-central1-a\" ] } See the following snippet for the complete example of a basic build config file: { \"steps\" : [ { \"name\" : \"gcr.io/cloud-builders/docker\" , \"args\" : [ \"build\" , \"-t\" , \"us-central1-docker.pkg.dev/${PROJECT ID}/my-docker-repo/myimage\" , \".\" ] }, { \"name\" : \"gcr.io/cloud-builders/docker\" , \"args\" : [ \"push\" , \"us-central1-docker.pkg.dev/${PROJECT ID}/my-docker-repo/myimage\" ] }, { \"name\" : \"gcr.io/google.com/cloudsdktool/cloud-sdk\" , \"entrypoint\" : \"gcloud\" , \"timeout\" : \"240s\" , \"args\" : [ \"compute\" , \"instances\" , \"create-with-container\" , \"my-vm-name\" , \"--container-image\" , \"us-central1-docker.pkg.dev/${PROJECT ID}/my-docker-repo/myimage\" ], \"env\" : [ \"CLOUDSDK COMPUTE REGION=us-central1\" , \"CLOUDSDK COMPUTE ZONE=us-central1-a\" ] } ] } In the example, container images are stored in Artifact Registry.",
+          "In the following example, the gcr.io/google.com/cloudsdktool/cloud-sdk build step times out after 240 seconds. - name : 'gcr.io/google.com/cloudsdktool/cloud-sdk' entrypoint : 'gcloud' timeout : 240s args : [ 'compute' , 'instances' , 'create-with-container' , 'my-vm-name' , '--container-image' , 'us-central1-docker.pkg.dev/${PROJECT ID}/my-docker-repo/my-image' ] env : - 'CLOUDSDK COMPUTE REGION=us-central1' - 'CLOUDSDK COMPUTE ZONE=us-central1-a' See the following snippet for the complete example of a basic build config file: steps : Docker Build - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , 'us-central1-docker.pkg.dev/${PROJECT ID}/my-docker-repo/myimage' , '.' ] Docker Push - name : 'gcr.io/cloud-builders/docker' args : [ 'push' , 'us-central1-docker.pkg.dev/${PROJECT ID}/my-docker-repo/myimage' ] Entrypoint, timeout and environment variables - name : 'gcr.io/google.com/cloudsdktool/cloud-sdk' entrypoint : 'gcloud' timeout : 240s args : [ 'compute' , 'instances' , 'create-with-container' , 'my-vm-name' , '--container-image' , 'us-central1-docker.pkg.dev/${PROJECT ID}/my-docker-repo/myimage' ] env : - 'CLOUDSDK COMPUTE REGION=us-central1' - 'CLOUDSDK COMPUTE ZONE=us-central1-a' In the example, container images are stored in Artifact Registry.",
+          "The build step uses the default substitution for project ID, therefore this value is automatically substituted at build time. . is the location of the source code, which indicates the source code is in the current working directory. { \"steps\" : [ { \"name\" : \"gcr.io/cloud-builders/docker\" , \"args\" : [ \"build\" , \"-t\" , \"us-central1-docker.pkg.dev/${PROJECT ID}/my-docker-repo/myimage\" , \".\" ] } ] } Add more steps ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "docker.pkg.dev",
+      "gcr.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/create-custom-build-steps",
+        "https://docs.cloud.google.com/build/docs/overview",
+        "https://docs.cloud.google.com/build/docs/configuring-builds/create-basic-configuration"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/create-custom-build-steps",
+        "https://docs.cloud.google.com/build/docs/overview",
+        "https://docs.cloud.google.com/build/docs/configuring-builds/create-basic-configuration"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/create-custom-build-steps",
+        "https://docs.cloud.google.com/build/docs/overview",
+        "https://docs.cloud.google.com/build/docs/configuring-builds/create-basic-configuration"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:27.705Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build"
+}

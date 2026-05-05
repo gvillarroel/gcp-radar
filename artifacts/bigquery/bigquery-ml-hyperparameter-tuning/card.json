@@ -1,0 +1,88 @@
+{
+  "feature_name": "BigQuery ML hyperparameter tuning",
+  "feature_slug": "bigquery-ml-hyperparameter-tuning",
+  "summary": "BigQuery ML hyperparameter tuning searches for optimal hyperparameters when training models with CREATE MODEL statements.",
+  "extended_definition": "BigQuery ML hyperparameter tuning searches for optimal hyperparameters when training models with CREATE MODEL statements.",
+  "lifecycle": {
+    "latest_feature_date": "2022-02-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/arima-multiple-time-series-forecasting-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/hyperparameter-tuning-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Improve model performance with hyperparameter tuning \\_|\\_ BigQuery \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/hyperparameter-tuning-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "TRIAL INFO ( MODEL bqml tutorial.hp taxi tip model ) ORDER BY is optimal DESC ; The results look similar to the following: +----------+-------------------------------------+-----------------------------------+--------------------+--------------------+-----------+---------------+------------+ trial id hyperparameters hparam tuning evaluation metrics training loss eval loss status error message is optimal +----------+-------------------------------------+-----------------------------------+--------------------+--------------------+-----------+---------------+------------+ 7 {\"l1 reg\":\"4.999999999999985\"} {\"r2 score\":\"0.653653627638174\"} 4.4677841296238165 4.478469742512195 SUCCEEDED NULL true 2 {\"l1 reg\":\"2.402163664510254E-11\"} {\"r2 score\":\"0.6532493667964732\"} 4.457692508421795 4.483697081650438 SUCCEEDED NULL false 3 {\"l1 reg\":\"1.2929452948742316E-7\"} {\"r2 score\":\"0.653249366811995\"} 4.45769250849513 4.483697081449748 SUCCEEDED NULL false 4 {\"l1 reg\":\"2.5787102060628228E-5\"} {\"r2 score\":\"0.6532493698925899\"} 4.457692523040582 4.483697041615808 SUCCEEDED NULL false ... ... ... ... ... ... ... ... +----------+-------------------------------------+-----------------------------------+--------------------+--------------------+-----------+---------------+------------+ The is optimal column value indicates that trial 7 is the optimal model returned by the tuning.",
+          "Go to BigQuery In the query editor, paste in the following query and click Run : CREATE OR REPLACE TABLE bqml tutorial.taxi tip input AS SELECT EXCEPT ( tip amount ), tip amount AS label FROM bigquery-public-data.new york taxi trips.tlc yellow trips 2018 WHERE tip amount IS NOT NULL LIMIT 100000 ; Create a baseline linear regression model Create a linear regression model without hyperparameter tuning and train it on the taxi tip input table data.",
+          "The other hyperparameter tuning options supported by the model use their default values, as follows: L1 REG : 0 HPARAM TUNING ALGORITHM : 'VIZIER DEFAULT' HPARAM TUNING OBJECTIVES : ['R2 SCORE'] Follow these steps to create the model: In the Google Cloud console, go to the BigQuery page."
+        ]
+      },
+      {
+        "title": "The CREATE MODEL statement \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+        "source_id": "site-docs-root",
+        "final_score": 90,
+        "relevance": "",
+        "evidence_snippets": [
+          "Linear & logistic regression , Boosted trees , Random forest , DNN , Wide & Deep , Kmeans , Matrix factorization , Autoencoder HPARAM TUNING ALGORITHM Specifies the algorithm used to tune the hyperparameters when you are running hyperparameter tuning.",
+          "Linear & logistic regression , Boosted trees , Random forest , DNN , Wide & Deep , Kmeans , Matrix factorization , Autoencoder DATA SPLIT METHOD The method to split input data into training and evaluation sets when not running hyperparameter tuning, or into training, evaluation, and test sets when running hyperparameter tuning.",
+          "Linear & logistic regression , Boosted trees , Random forest , DNN , Wide & Deep , Kmeans , Matrix factorization , Autoencoder MAX PARALLEL TRIALS Specifies the maximum number of trials to run at the same time when you are running hyperparameter tuning."
+        ]
+      },
+      {
+        "title": "\"Forecast multiple time series with an ARIMA_PLUS univariate model \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/arima-multiple-time-series-forecasting-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "This shrinks the search space of hyperparameter tuning in the auto.ARIMA algorithm. auto arima max order = 5 , ) df = bpd . read gbq ( \"bigquery-public-data.new york.citibike trips\" ) This query creates twelve time series models, one for each of the twelve Citi Bike start stations in the input data.",
+          "The summary() function shows you the evaluation metrics of all the candidate models evaluated during the process of automatic hyperparameter tuning. summary = model . summary () print ( summary . peek ()) Expected output: start station name non seasonal p non seasonal d non seasonal q has drift log likelihood AIC variance ...",
+          "Go to BigQuery In the query editor, paste in the following query and click Run : SELECT EXTRACT ( DATE from starttime ) AS date , COUNT ( ) AS num trips FROM bigquery-public-data.new york.citibike trips GROUP BY date ; When the query completes, click Open in > Data Studio ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "auto.ARIMA",
+      "data.new",
+      "trips.tlc",
+      "tutorial.hp",
+      "tutorial.taxi",
+      "york.citibike"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

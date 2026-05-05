@@ -1,0 +1,144 @@
+{
+  "feature_name": "Log view management in Google Cloud console",
+  "feature_slug": "log-view-management-in-google-cloud-console",
+  "summary": "The Google Cloud console can create and manage log views.",
+  "extended_definition": "The Google Cloud console can create and manage log views.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+      "https://docs.cloud.google.com/logging/docs/buckets",
+      "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and analyze logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "source_id": "site-docs-root",
+        "final_score": 192,
+        "relevance": "",
+        "evidence_snippets": [
+          "Highlight search terms, monitor and download your logs There are various options to analyze your logs data by selecting the Actions menu of the Query results toolbar: ink highlighter Highlight in results : Enter text to be highlighted in your query results. add chart Create metric : Set up a log-based metric . call merge Create sink : Create a log sink that auto-populates the sink's inclusion filter with the current query expression. add alert Create log alert : Set up a log-based alerting policy . edit Manage alerts : View and manage alerting policies. download Download : Download your logs in CSV or JSON format.",
+          "For more information about investigations, see the following documentation: Troubleshoot issues with Gemini Cloud Assist investigations Create a Gemini Cloud Assist investigation Manage Gemini Cloud Assist investigations View similar log entries You can view log entries that are similar to a selected log entry, which lets you focus on logs of interest.",
+          "For example, if the toolbar displays N log view , then the manage search Analyze results button is shown when the log bucket for at least one of the selected log views is upgraded to use Observability Analytics."
+        ]
+      },
+      {
+        "title": "\"Install and manage the Ops Agent by using VM Extension Manager policies\\",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "source_id": "site-docs-root-2",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Grant roles required to use VM Extension Manager To get the permissions that you need to create, view, modify, and delete VM extension policies, ask your administrator to grant you the following IAM roles on the project: To create extension policies: VM Extension Policy Admin ( roles/compute.vmExtensionPolicyAdmin ) To view extension policies: VM Extension Policy Viewer ( roles/compute.vmExtensionPolicyViewer ) VM Extension Policy Admin ( roles/compute.vmExtensionPolicyAdmin ) To modify extension policies: VM Extension Policy Admin ( roles/compute.vmExtensionPolicyAdmin ) To delete extension policies: VM Extension Policy Admin ( roles/compute.vmExtensionPolicyAdmin ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "The following sections show how to manage the Ops Agent to do the following: Update the pinned version of the agent on all VMs Modify the configuration of the Ops Agent on all VMs Update the pinned version of the Ops Agent on all VMs in a zone To change the pinned version of the Ops Agent on all VMs in a zone, do the following: Console To create a zonal policy, you can use the Google Cloud console.",
+          "Install the Google Cloud CLI You can create and manage VM extension policies by using the Google Cloud console or the Google Cloud CLI, gcloud."
+        ]
+      },
+      {
+        "title": "Configure log buckets \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/buckets",
+        "source_id": "site-docs-root",
+        "final_score": 158,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After creating a bucket, create a sink to route log entries to your bucket and configure log views to control who can access the logs in your new bucket and which logs are accessible to them.",
+          "This document describes how to create and manage Cloud Logging buckets using the Google Cloud console, the Google Cloud CLI , and the Logging API .",
+          "Your Identity and Access Management role includes the permissions that let you create a linked dataset ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.vmExtensionPolicyAdmin",
+      "compute.vmExtensionPolicyViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.vmExtensionPolicyAdmin",
+      "roles/compute.vmExtensionPolicyViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/buckets"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/buckets"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/buckets"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/buckets"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/buckets"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/buckets"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "https://docs.cloud.google.com/logging/docs/buckets"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:31.891Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging"
+}

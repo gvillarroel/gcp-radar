@@ -1,0 +1,140 @@
+{
+  "feature_name": "Oracle multi-tenant architecture support",
+  "feature_slug": "oracle-multi-tenant-architecture-support",
+  "summary": "Datastream supports Oracle multi-tenant CDB and PDB architecture.",
+  "extended_definition": "Datastream supports Oracle multi-tenant CDB and PDB architecture.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+      "https://docs.cloud.google.com/datastream/docs/configure-your-source-oracle-database",
+      "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+      "https://docs.cloud.google.com/datastream/docs/faq"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure a pluggable Oracle database for CDC \\_|\\_ Datastream \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+        "source_id": "site-docs-root-2",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Datastream supports Oracle multi-tenant architecture, where a single container database (CDB) contains one or more pluggable databases (PDBs).",
+          "To connect to a container in a multi-tenant architecture setup, or to switch between container sessions, use the following command: ALTER SESSION SET CONTAINER = CONTAINER NAME ; Replace CONTAINER NAME with the name of your container, for example your pluggable database or the CDB$ROOT container.",
+          "Define a data retention policy for your database by running the following Oracle Recovery Manager (RMAN) command from the CDB$ROOT container: CONFIGURE RETENTION POLICY TO RECOVERY WINDOW OF 4 DAYS ; The command defines the data retention policy for all pluggable databases in your container database."
+        ]
+      },
+      {
+        "title": "FAQ \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/faq",
+        "source_id": "site-docs-root",
+        "final_score": 213,
+        "relevance": "",
+        "evidence_snippets": [
+          "Yes, Datastream supports Oracle multi-tenant architecture (CDB/PDB), however, you can only replicate a single pluggable database in a stream.",
+          "Does Datastream support Oracle multi-tenant architecture, specifically Container Databases (CDBs) and Pluggable Databases (PDBs)?",
+          "Datastream supports streaming data from Oracle, MySQL, PostgreSQL, AlloyDB for PostgreSQL, SQL Server, Salesforce, and MongoDB sources, both cloud-hosted and self-managed."
+        ]
+      },
+      {
+        "title": "Configure a source Oracle database \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/configure-your-source-oracle-database",
+        "source_id": "site-docs-root-2",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Datastream Guides Send feedback Configure a source Oracle database Stay organized with collections Save and categorize content based on your preferences.",
+          "However, this method supports most data types and Oracle database features.",
+          "This method is multithreaded and supports low-latency CDC."
+        ]
+      },
+      {
+        "title": "Create a stream \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/create-a-stream",
+        "source_id": "site-docs-root",
+        "final_score": 159,
+        "relevance": "",
+        "evidence_snippets": [
+          "Oracle user permissions Datastream verifies that the user which it uses to connect to the source database has all of the necessary permissions to retrieve schemas, tables, and data from the database so that Datastream can stream this information into the destination.",
+          "Configure an Oracle source database In the Select objects to include section, use the Objects to include drop-down menu to specify the tables and schemas in the source database that Datastream can transfer into the destination.",
+          "This is because change streams are divided into partitions, and limiting concurrency prevents Datastream from reading multiple partitions simultaneously."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/configure-your-source-oracle-database",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/configure-your-source-oracle-database",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/configure-your-source-oracle-database",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/configure-your-source-oracle-database",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/configure-your-source-oracle-database",
+        "https://docs.cloud.google.com/datastream/docs/create-a-stream"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:56.901Z",
+  "source_step08_card": "data/step-08/current/products/datastream/card.json",
+  "product_name": "Datastream",
+  "product_slug": "datastream"
+}

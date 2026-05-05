@@ -1,0 +1,170 @@
+{
+  "feature_name": "Navigation points",
+  "feature_slug": "navigation-points",
+  "summary": "Navigation points is an experimental feature that returns a list of points useful for navigating to a place.",
+  "extended_definition": "Navigation points is an experimental feature that returns a list of points useful for navigating to a place.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/geocoding/geocoding-v4-migrate",
+      "https://developers.google.com/maps/documentation/geocoding/navigation-point-tokens",
+      "https://developers.google.com/maps/documentation/geocoding/reference/rest/v4/geocode.destinations/searchDestinations",
+      "https://developers.google.com/maps/documentation/geocoding/search-for-destinations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Method: geocode.destinations.searchDestinations \\_|\\_ Geocoding API \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/geocoding/reference/rest/v4/geocode.destinations/searchDestinations",
+        "source_id": "site-api-reference",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: compared to the SubDestination returned by the Places API, this list of sub-destinations is more exhaustive, and each sub-destination contains more information. landmarks[] object ( Landmark ) Landmarks that can be used to communicate where the destination is or help with arrival. entrances[] object ( Entrance ) Entrances for this destination. navigationPoints[] object ( NavigationPoint ) Navigation points for this destination.",
+          "HTTP request Request body JSON representation Response body JSON representation Authorization scopes SearchDestinationsRequest.AddressQuery JSON representation SearchDestinationsRequest.LocationQuery JSON representation SearchDestinationsRequest.LocationQuery.PlaceFilter JSON representation PlaceView.StructureType SearchDestinationsRequest.LocationQuery.PlaceFilter.Addressability NavigationPoint.TravelMode Destination JSON representation PlaceView JSON representation Landmark JSON representation Landmark.Tag Entrance JSON representation Entrance.Tag NavigationPoint JSON representation NavigationPoint.Usage This method performs a destination lookup and returns a list of destinations.",
+          "JSON representation { \"primary\" : { object ( PlaceView ) } , \"containingPlaces\" : [ { object ( PlaceView ) } ] , \"subDestinations\" : [ { object ( PlaceView ) } ] , \"landmarks\" : [ { object ( Landmark ) } ] , \"entrances\" : [ { object ( Entrance ) } ] , \"navigationPoints\" : [ { object ( NavigationPoint ) } ] } Fields primary object ( PlaceView ) The primary place identified by the primary query in the request. containingPlaces[] object ( PlaceView ) The less precise places that the primary place is contained by."
+        ]
+      },
+      {
+        "title": "Search for destinations \\_|\\_ Geocoding API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/geocoding/search-for-destinations",
+        "source_id": "site-docs-root",
+        "final_score": 176,
+        "relevance": "",
+        "evidence_snippets": [
+          "GROUNDS A large area that typically contains multiple buildings, such as a university campus, an apartment complex, or a shopping mall. navigationPoints The navigationPoints field within the Geocoding response contains a list of points that are useful for navigating to the place.",
+          "Response format SearchDestinations returns a SearchDestinationsResponse of the following JSON form: { \"destinations\" : [ { \"primary\" : { \"place\" : \"places/ChIJY8sv5-i2j4AR S6BlDDR42w\" , \"displayName\" : { \"text\" : \"Arby's\" , \"languageCode\" : \"en\" }, \"primaryType\" : \"fast food restaurant\" , \"types\" : [ \"fast food restaurant\" , \"sandwich shop\" , \"deli\" , \"meal takeaway\" , \"food delivery\" , \"american restaurant\" , \"restaurant\" , \"food store\" , \"store\" , \"food\" , \"point of interest\" , \"establishment\" ], \"formattedAddress\" : \"Arby's, 601 S Bernardo Ave, Sunnyvale, CA 94087, USA\" , \"postalAddress\" : { \"regionCode\" : \"US\" , \"languageCode\" : \"en\" , \"postalCode\" : \"94087\" , \"administrativeArea\" : \"CA\" , \"locality\" : \"Sunnyvale\" , \"addressLines\" : [ \"601 S Bernardo Ave\" ] }, \"structureType\" : \"BUILDING\" , \"location\" : { \"latitude\" : 37.3734545 , \"longitude\" : -122.05693269999998 }, \"displayPolygon\" : { \"type\" : \"Polygon\" , \"coordinates\" : [ [ [ -122.056930138027 , 37.3735253692531 ], [ -122.056960139391 , 37.3735372663597 ], [ -122.056994129366 , 37.3734828786847 ], [ -122.056969677395 , 37.3734731161089 ], [ -122.057061762447 , 37.3733261309656 ], [ -122.056979388817 , 37.3732935577128 ], [ -122.056798860285 , 37.3735818838642 ], [ -122.056875858081 , 37.3736121235316 ], [ -122.056930138027 , 37.3735253692531 ] ] ] } }, \"containingPlaces\" : [ { \"place\" : \"places/ChIJYfdAFum2j4ARIcL2tjME3Sw\" , \"displayName\" : { \"text\" : \"Cherry Chase Shopping Center\" , \"languageCode\" : \"en\" }, \"primaryType\" : \"shopping mall\" , \"types\" : [ \"shopping mall\" , \"point of interest\" , \"establishment\" ], \"formattedAddress\" : \"Cherry Chase Shopping Center, 663 S Bernardo Ave, Sunnyvale, CA 94087, USA\" , \"postalAddress\" : { \"regionCode\" : \"US\" , \"languageCode\" : \"en\" , \"postalCode\" : \"94087-1020\" , \"administrativeArea\" : \"CA\" , \"locality\" : \"Sunnyvale\" , \"addressLines\" : [ \"663 S Bernardo Ave\" ] }, \"structureType\" : \"GROUNDS\" , \"location\" : { \"latitude\" : 37.3731231 , \"longitude\" : -122.0578211 }, \"displayPolygon\" : { \"type\" : \"Polygon\" , \"coordinates\" : [ [ [ -122.057112227103 , 37.3714618008523 ], [ -122.057076849821 , 37.3715743611411 ], [ -122.056963607756 , 37.3719081793948 ], [ -122.056865279559 , 37.3722026053835 ], [ -122.056687872374 , 37.3727258358476 ], [ -122.056580005889 , 37.3730511370747 ], [ -122.056498845827 , 37.3732994782583 ], [ -122.056338259713 , 37.3737878663325 ], [ -122.056618678291 , 37.373887693582 ], [ -122.056912102521 , 37.3740010327191 ], [ -122.057532418159 , 37.3742476426462 ], [ -122.057673926626 , 37.3742441740031 ], [ -122.057735663106 , 37.3742328516943 ], [ -122.057766531332 , 37.3742220604378 ], [ -122.057797572967 , 37.37420520725 ], [ -122.057828267759 , 37.3741852342085 ], [ -122.058060299297 , 37.3740060842535 ], [ -122.058199726081 , 37.3737861673422 ], [ -122.05836707267 , 37.373524542556 ], [ -122.058569622393 , 37.3732018598683 ], [ -122.0587638478 , 37.3728890198039 ], [ -122.058934661823 , 37.3726036257774 ], [ -122.059164956851 , 37.3722498383629 ], [ -122.058997784906 , 37.3721804442035 ], [ -122.057936479838 , 37.3717605636234 ], [ -122.057495827092 , 37.3715860151634 ], [ -122.057112227103 , 37.3714618008523 ] ] ] } } ], \"landmarks\" : [ { \"place\" : { \"place\" : \"places/ChIJXXTe7Oi2j4ARoMTA-D6Hjpg\" , \"displayName\" : { \"text\" : \"Chase Bank\" , \"languageCode\" : \"en\" }, \"primaryType\" : \"bank\" , \"types\" : [ \"bank\" , \"atm\" , \"finance\" , \"point of interest\" , \"establishment\" ], \"formattedAddress\" : \"Chase Bank, 1234 W El Camino Real, Sunnyvale, CA 94087, USA\" , \"postalAddress\" : { \"regionCode\" : \"US\" , \"languageCode\" : \"en\" , \"postalCode\" : \"94087\" , \"administrativeArea\" : \"CA\" , \"locality\" : \"Sunnyvale\" , \"addressLines\" : [ \"1234 W El Camino Real\" ] }, \"structureType\" : \"POINT\" , \"location\" : { \"latitude\" : 37.373579 , \"longitude\" : -122.05752700000001 } }, \"relationalDescription\" : { \"text\" : \"Near Chase Bank\" , \"languageCode\" : \"en\" }, \"tags\" : [ \"ARRIVAL\" , \"ADDRESS\" ], \"straightLineDistanceMeters\" : 61.182193756103516 , \"travelDistanceMeters\" : 63.075645446777344 }, { \"place\" : { \"place\" : \"places/ChIJteQ0Fum2j4ARGi3tqK4Zm14\" , \"displayName\" : { \"text\" : \"Safeway\" , \"languageCode\" : \"en\" }, \"primaryType\" : \"grocery store\" , \"types\" : [ \"grocery store\" , \"butcher shop\" , \"florist\" , \"deli\" , \"supermarket\" , \"bakery\" , \"food delivery\" , \"market\" , \"manufacturer\" , \"food store\" , \"store\" , \"food\" , \"service\" , \"point of interest\" , \"establishment\" ], \"formattedAddress\" : \"Safeway, 639 S Bernardo Ave, Sunnyvale, CA 94087, USA\" , \"postalAddress\" : { \"regionCode\" : \"US\" , \"languageCode\" : \"en\" , \"postalCode\" : \"94087\" , \"administrativeArea\" : \"CA\" , \"locality\" : \"Sunnyvale\" , \"addressLines\" : [ \"639 S Bernardo Ave\" ] }, \"structureType\" : \"POINT\" , \"location\" : { \"latitude\" : 37.3727912 , \"longitude\" : -122.0581172 } }, \"relationalDescription\" : { \"text\" : \"Around the corner from Safeway\" , \"languageCode\" : \"en\" }, \"tags\" : [ \"ARRIVAL\" , \"ADDRESS\" ], \"straightLineDistanceMeters\" : 158.65606689453125 , \"travelDistanceMeters\" : 131.1669921875 }, { \"place\" : { \"place\" : \"places/ChIJu-PSYui2j4ARNiwOwBApGqk\" , \"displayName\" : { \"text\" : \"Oil Changers\" , \"languageCode\" : \"en\" }, \"types\" : [ \"car repair\" , \"service\" , \"point of interest\" , \"establishment\" ], \"formattedAddress\" : \"Oil Changers, 1240 W El Camino Real, Sunnyvale, CA 94087, USA\" , \"postalAddress\" : { \"regionCode\" : \"US\" , \"languageCode\" : \"en\" , \"postalCode\" : \"94087\" , \"administrativeArea\" : \"CA\" , \"locality\" : \"Sunnyvale\" , \"addressLines\" : [ \"1240 W El Camino Real\" ] }, \"structureType\" : \"POINT\" , \"location\" : { \"latitude\" : 37.3743054 , \"longitude\" : -122.0584272 } }, \"relationalDescription\" : { \"text\" : \"Down the road from Oil Changers\" , \"languageCode\" : \"en\" }, \"tags\" : [ \"ARRIVAL\" ], \"straightLineDistanceMeters\" : 140.52459716796875 , \"travelDistanceMeters\" : 143.24220275878906 }, { \"place\" : { \"place\" : \"places/ChIJKRbl5oG3j4ARwuvPGUmtCj0\" , \"displayName\" : { \"text\" : \"Apni Mandi Farmers Market Sunnyvale\" , \"languageCode\" : \"en\" }, \"primaryType\" : \"grocery store\" , \"types\" : [ \"grocery store\" , \"cake shop\" , \"supermarket\" , \"asian grocery store\" , \"indian restaurant\" , \"meal takeaway\" , \"bakery\" , \"manufacturer\" , \"wholesaler\" , \"restaurant\" , \"food store\" , \"store\" , \"food\" , \"point of interest\" , \"establishment\" ], \"formattedAddress\" : \"Apni Mandi Farmers Market Sunnyvale, 1111 W El Camino Real, Sunnyvale, CA 94087, USA\" , \"postalAddress\" : { \"regionCode\" : \"US\" , \"languageCode\" : \"en\" , \"postalCode\" : \"94087-1056\" , \"administrativeArea\" : \"CA\" , \"locality\" : \"Sunnyvale\" , \"addressLines\" : [ \"1111 W El Camino Real\" ] }, \"structureType\" : \"POINT\" , \"location\" : { \"latitude\" : 37.3737199 , \"longitude\" : -122.0522958 } }, \"relationalDescription\" : { \"text\" : \"Near Apni Mandi Farmers Market Sunnyvale\" , \"languageCode\" : \"en\" }, \"tags\" : [ \"ADDRESS\" ], \"straightLineDistanceMeters\" : 410.37435913085938 , \"travelDistanceMeters\" : 479.49893188476562 }, { \"place\" : { \"place\" : \"places/ChIJ8enMlui2j4AR2xXK5EHDhBs\" , \"displayName\" : { \"text\" : \"Starbird Chicken\" , \"languageCode\" : \"en\" }, \"primaryType\" : \"chicken restaurant\" , \"types\" : [ \"chicken restaurant\" , \"fast food restaurant\" , \"restaurant\" , \"food\" , \"point of interest\" , \"establishment\" ], \"formattedAddress\" : \"Starbird Chicken, 1241 W El Camino Real, Sunnyvale, CA 94087, USA\" , \"postalAddress\" : { \"regionCode\" : \"US\" , \"languageCode\" : \"en\" , \"postalCode\" : \"94087-1028\" , \"administrativeArea\" : \"CA\" , \"locality\" : \"Sunnyvale\" , \"addressLines\" : [ \"1241 W El Camino Real\" ] }, \"structureType\" : \"BUILDING\" , \"location\" : { \"latitude\" : 37.3746764 , \"longitude\" : -122.05708860000001 }, \"displayPolygon\" : { \"coordinates\" : [ [ [ -122.057003840785 , 37.3747648209809 ], [ -122.057136852459 , 37.3747919153144 ], [ -122.057205005705 , 37.3745815131859 ], [ -122.057071994114 , 37.3745544186944 ], [ -122.057003840785 , 37.3747648209809 ] ] ], \"type\" : \"Polygon\" } }, \"relationalDescription\" : { \"text\" : \"Near Starbird Chicken\" , \"languageCode\" : \"en\" }, \"tags\" : [ \"ADDRESS\" ], \"straightLineDistanceMeters\" : 87.348007202148438 , \"travelDistanceMeters\" : 214.08084106445312 } ], \"entrances\" : [ { \"location\" : { \"latitude\" : 37.3735328 , \"longitude\" : -122.05694879999999 }, \"tags\" : [ \"PREFERRED\" ], \"place\" : \"places/ChIJY8sv5-i2j4AR S6BlDDR42w\" } ], \"navigationPoints\" : [ { \"navigationPointToken\" : \"ChIJeMt61tqvQkARWT2716SDXsASEgljyy n6LaPgBH9LoGUMNHjbBoSCWPLL-foto-AEf0ugZQw0eNsIhIJhf5y6ei2j4ARz7yBW5KAPI4\" , \"location\" : { \"latitude\" : 37.3738659 , \"longitude\" : -122.05693620000001 }, \"travelModes\" : [ \"DRIVE\" , \"WALK\" ], \"usages\" : [ \"PARKING\" ] } ] } ] } Required parameters One of the following 3 parameters must be in the API request, which specifies the address, place, or location to search for a destination: addressQuery - the address to search for. place - the place ID of the place to search for. locationQuery - the latitude and longitude coordinates of the location to search for.",
+          "For example, the below request will return only the entrances, navigation points, and place ID of the primary destination. curl -X POST -d '{\"place\": \"places/ChIJG3kh4hq6j4AR XuFQnV0 t8\"}' \\ -H \"X-Goog-Api-Key: API KEY \" \\ -H \"Content-Type: application/json\" \\ -H \"X-Goog-FieldMask: destinations.entrances,destinations.navigationPoints,destinations.primary.place\" \\ https://geocode.googleapis.com/v4/geocode/destinations There is no default list of returned fields in the response."
+        ]
+      },
+      {
+        "title": "Migrate from Geocoding v3 to v4 \\_|\\_ Geocoding API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/geocoding/geocoding-v4-migrate",
+        "source_id": "site-docs-root",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "Each navigation point in destination.navigationPoints has the following fields: displayName - this is a new optional field that will have a human readable name for the navigation point, for example \"5th Ave\". location - this is a location of type LatLng , which is different from the format used in the Geocoding API v3. travelModes - this is similar to the restrictedTravelModes field of the navigation points from the Geocoding API v3.",
+          "Note that most navigation points will have an UNKNOWN usage, but that does not necessarily mean the navigation point's usage is restricted in any way.",
+          "For example, the following API request sets the field mask to receive all fields required to get the entrances, navigation points, building outlines, and grounds of a destination: curl -X POST -d '{\"place\": \"places/ChIJG3kh4hq6j4AR XuFQnV0 t8\"}' \\ -H \"X-Goog-Api-Key: API KEY \" \\ -H \"Content-Type: application/json\" \\ -H \"X-Goog-FieldMask: destinations.entrances,destinations.navigationPoints,destinations.primary,destinations.containingPlaces,destinations.subDestinations\" \\ https://geocode.googleapis.com/v4/geocode/destinations Security considerations The Geocoding API v4 is designed as a server-to-server API."
+        ]
+      },
+      {
+        "title": "\"Route using navigation point tokens \\_|\\_ Geocoding API \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/geocoding/navigation-point-tokens",
+        "source_id": "site-docs-root",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "When a consumer opens the consumer app, the app calls the Destinations method of the Geocoding API and provides the consumer with a selection of potential navigation points: The user chooses their preferred point, which is one in the array of navigationPoints in the response body of a SearchDestinations request: \"navigationPoints\" : [ { \"navigationPointToken\" : < e n coded na viga t io n poi nt t oke n > , \"displayName\" : \"South Entrance\" , \"travelModes\" : [ \"DRIVE\" ], \"usages\" : [ \"PICKUP\" , \"DROPOFF\" ], \"location\" : { \"lat\" : 37.3940894 , \"lng\" : -122.0788389 } } ] The navigation point token from the response is passed to a mobile driver app that uses the Navigation SDK for Android or iOS to create a waypoint to route the driver to the correct pickup point.",
+          "To create and pass a navigation point token, use the Destinations method of the Geocoding API to allow your users to select a preferred location from a list of navigation points .",
+          "You can then pass the navigation point token, which contains both the destination coordinates as well as contextual information, to the Navigation SDK for Android or the Navigation SDK for iOS , where a waypoint is created for precise routing."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "destination.navigationPoints",
+      "destinations.containingPlaces",
+      "destinations.entrances",
+      "destinations.navigationPoints",
+      "destinations.primary",
+      "destinations.primary.place",
+      "destinations.subDestinations",
+      "developers.google.com",
+      "geocode.destinations",
+      "geocode.destinations.searchDestinations",
+      "geocode.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/geocoding/reference/rest/v4/geocode.destinations/searchDestinations",
+        "https://developers.google.com/maps/documentation/geocoding/search-for-destinations",
+        "https://developers.google.com/maps/documentation/geocoding/geocoding-v4-migrate",
+        "https://developers.google.com/maps/documentation/geocoding/navigation-point-tokens"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/geocoding/reference/rest/v4/geocode.destinations/searchDestinations",
+        "https://developers.google.com/maps/documentation/geocoding/search-for-destinations",
+        "https://developers.google.com/maps/documentation/geocoding/geocoding-v4-migrate",
+        "https://developers.google.com/maps/documentation/geocoding/navigation-point-tokens"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/geocoding/reference/rest/v4/geocode.destinations/searchDestinations",
+        "https://developers.google.com/maps/documentation/geocoding/search-for-destinations",
+        "https://developers.google.com/maps/documentation/geocoding/geocoding-v4-migrate",
+        "https://developers.google.com/maps/documentation/geocoding/navigation-point-tokens"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/geocoding/reference/rest/v4/geocode.destinations/searchDestinations",
+        "https://developers.google.com/maps/documentation/geocoding/search-for-destinations",
+        "https://developers.google.com/maps/documentation/geocoding/geocoding-v4-migrate",
+        "https://developers.google.com/maps/documentation/geocoding/navigation-point-tokens"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/geocoding/reference/rest/v4/geocode.destinations/searchDestinations",
+        "https://developers.google.com/maps/documentation/geocoding/search-for-destinations",
+        "https://developers.google.com/maps/documentation/geocoding/geocoding-v4-migrate",
+        "https://developers.google.com/maps/documentation/geocoding/navigation-point-tokens"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/geocoding/reference/rest/v4/geocode.destinations/searchDestinations",
+        "https://developers.google.com/maps/documentation/geocoding/search-for-destinations",
+        "https://developers.google.com/maps/documentation/geocoding/geocoding-v4-migrate",
+        "https://developers.google.com/maps/documentation/geocoding/navigation-point-tokens"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/geocoding/reference/rest/v4/geocode.destinations/searchDestinations",
+        "https://developers.google.com/maps/documentation/geocoding/search-for-destinations",
+        "https://developers.google.com/maps/documentation/geocoding/geocoding-v4-migrate",
+        "https://developers.google.com/maps/documentation/geocoding/navigation-point-tokens"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:11.809Z",
+  "source_step08_card": "data/step-08/current/products/geocoding-api/card.json",
+  "product_name": "Geocoding API",
+  "product_slug": "geocoding-api"
+}

@@ -1,0 +1,96 @@
+{
+  "feature_name": "Detailed Disbursements report in BigQuery",
+  "feature_slug": "detailed-disbursements-report-in-bigquery",
+  "summary": "The Detailed Disbursements ISV report is now available in BigQuery for analysis and reporting.",
+  "extended_definition": "The Detailed Disbursements ISV report is now available in BigQuery for analysis and reporting.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/choose-pricing",
+      "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/update-ai-agent-listing",
+      "https://docs.cloud.google.com/marketplace/docs/partners/container-updates",
+      "https://docs.cloud.google.com/marketplace/docs/partners/reporting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Update existing AI agent listings for enhanced discovery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/update-ai-agent-listing",
+        "source_id": "site-iam-reference",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]",
+          "Previous arrow back AI agent listing requirements and metadata Next Add pricing information arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "If you have pre-existing AI agent listings on Google Cloud Marketplace, including Agent as a Service (AaaS) or Professional Services (ProServ), you must update your product details to include the new mandatory metadata fields."
+        ]
+      },
+      {
+        "title": "\"Updating, deprecating, and deleting container image products \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/container-updates",
+        "source_id": "site-iam-reference",
+        "final_score": 157,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]",
+          "Tag your image using Docker with the tag of the existing version you'd like to update (or with a new tag if you want the image under a new version): docker tag {image name} {staging repo path}:{tag} For example, docker tag test-image gcr.io/testpartner/testsolution:latest Push your image using gcloud : gcloud docker push {staging repo path}:{tag} Repeat for any additional tags you'd like to add or update to your staging repository.",
+          "Remember that pushing an image to your staging repository doesn't automatically make it visible to users (even if you use a tag that is already associated with a version); this only happens after you update the version in Producer Portal and your product is published."
+        ]
+      },
+      {
+        "title": "\"Add your AI agent's pricing information \\_|\\_ Google Cloud Marketplace Partners\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/ai-agents/choose-pricing",
+        "source_id": "site-iam-reference",
+        "final_score": 154,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For each metric that you add, you must enter a Display name , a Reporting unit , and a Display unit , and then click either Done or Add another metric .",
+          "For each metric that you add, you must enter a Display name , a Reporting unit , and a Display unit , and then click either Done or Add another metric .",
+          "The Reporting unit specifies how your metric tracks usage for billing, while the Display unit specifies how your metric's pricing is displayed."
+        ]
+      },
+      {
+        "title": "\"Reports for your Cloud Marketplace products \\_|\\_ Google Cloud Marketplace\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/reporting",
+        "source_id": "site-docs-root",
+        "final_score": 150,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google provides reports about the products you have published to Google Cloud Marketplace that are relevant to different parts of your organization, such as finance, marketing, sales, or product management.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]",
+          "If you set up any automated processing of your reports, you should configure it so that it operates based on the names of the columns, and doesn't depend on the total number of columns staying the same."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcr.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:14.243Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-marketplace-partners/card.json",
+  "product_name": "Google Cloud Marketplace Partners",
+  "product_slug": "google-cloud-marketplace-partners"
+}

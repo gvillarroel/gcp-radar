@@ -1,0 +1,108 @@
+{
+  "feature_name": "Index advisor",
+  "feature_slug": "index-advisor",
+  "summary": "Index advisor recommends database indexes to improve AlloyDB query performance; Index advisor is a fully managed recommendation feature that tracks recurring database queries.",
+  "extended_definition": "Index advisor recommends database indexes to improve AlloyDB query performance; Index advisor is a fully managed recommendation feature that tracks recurring database queries.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/reference/extensions",
+      "https://docs.cloud.google.com/alloydb/docs/reference/index-advisor-flags",
+      "https://docs.cloud.google.com/alloydb/docs/reference/indexing-strategies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Index advisor flags \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/index-advisor-flags",
+        "source_id": "site-api-reference",
+        "final_score": 226,
+        "relevance": "",
+        "evidence_snippets": [
+          "Requires the google ml integration extension to be enabled. google db advisor.enabled Type Boolean Default on Restart required Yes Controls whether the AlloyDB index advisor is enabled. google db advisor.max index width Type Integer Default 2 Restart required No The maximum number of columns that a recommended index can contain. google db advisor.max num indexable columns Type Integer Default 1000 Restart required No The maximum number of indexable columns that index advisor tracks. google db advisor.max statement length Type Integer Default 102400 Restart required No The maximum length, in bytes, of queries that the index advisor tracks. google db advisor.max storage size in mb Type Integer Default 0 Restart required No The maximum total size, in megabytes, of the indexes that the index advisor recommends.",
+          "If set to 0 , then AlloyDB uses the current database size as the upper limit on the total size of recommended indexes. google db advisor.recommend indexes on partitions Type Boolean Default off Restart required No Controls whether to enable recommending indexes on individual table partitions. google db advisor.recommendation max time in seconds Type Integer Default 600 Restart required No The maximum time, in seconds, that the index advisor spends running an analysis of its tracked queries. google db advisor.top k slowest statements Type Integer Default 100 Restart required No The index advisor bases its recommendations on the slowest-executing statements out of all the queries it tracks.",
+          "The value is a single-quoted string of the format 'EVERY N UNITS ' , where N is an integer, and UNITS is either HOURS or DAYS . google db advisor.enable auto advisor Type Boolean Default on Restart required No If on , then AlloyDB runs the index advisor's analysis on an automated schedule, with a frequency set by the separate google db advisor.auto advisor schedule flag. google db advisor.enable vector index advisor ( Preview ) Type Boolean Default off Restart required No Recommends ScaNN vector indexes depending on the workload."
+        ]
+      },
+      {
+        "title": "\"AlloyDB database indexing strategies \\_|\\_ AlloyDB for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/indexing-strategies",
+        "source_id": "site-api-reference",
+        "final_score": 192,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can also run the advisor manually at any time by altering the search path in the session and following these steps: Given the following table with 10m rows in it and no indexes: Table \"idx advisor.user test\" + ------------------+--------------------------------+-----------+----------+---------+---------+-------- Column Type Collation Nullable Default Storage + ------------------+--------------------------------+-----------+----------+---------+---------+-------- id integer not null plain value numeric main user id integer plain product id integer plain product meas val integer plain effective date timestamp ( 3 ) without time zone plain + ------------------+--------------------------------+-----------+----------+---------+---------+-------- Access method : heap Run a query that could possibly benefit from an index: SELECT from idx advisor . user test where id = 500533 ; + ------------------------------------------------------------------------------------------------------- QUERY PLAN + ------------------------------------------------------------------------------------------------------- Gather ( cost = 1000 .",
+          "To check parallelism during an index build, issue the following query: SELECT query , leader pid , array agg ( pid ) filter ( WHERE leader pid != pid ) AS members FROM pg stat activity WHERE leader pid IS NOT NULL GROUP BY query , leader pid ; To determine the complete status of an index build, issue the following query: SELECT FROM pg stat progress create index ; Build partitioned indexes in parallel All the same principles of building indexes in parallel also work against partitions.",
+          "919 ) Test the index: EXPLAIN ( analyze , verbose , columnar engine , costs , settings , buffers , wal , timing , summary , format text ) SELECT from idx advisor . user test where id = 500533 ; + ------------------------------------------------------------------------------------------------------- QUERY PLAN + ------------------------------------------------------------------------------------------------------- Index Scan using user test id idx on idx advisor . user test ( cost = 0 ."
+        ]
+      },
+      {
+        "title": "\"Supported database extensions \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/extensions",
+        "source_id": "site-api-reference",
+        "final_score": 174,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Important: Before you can use CREATE EXTENSION to enable this extension, you must first set the database flag google columnar engine.enabled to the value on in the AlloyDB instance where you want to use the extension. google db advisor Provides the index advisor feature of AlloyDB, which recommends indexes to speed up query processing. google ml integration Provides functions you use to register model endpoints and generate embeddings or invoke predictions in SQL. google plan management Provides functions you use to manage your query plans using query plan management for consistent query plan selection.",
+          "This extension is used along with the vector extension to enhance vector search capabilities and provides support for storing and querying vector embeddings. bloom Provides an index access method based on Bloom filters. btree gin Provides sample GIN operator classes that implement B-tree equivalent behavior. btree gist Provides GiST index operator classes that implement B-tree equivalent behavior. citext Provides a case-insensitive character string type citext . cube Implements a data type cube for representing multidimensional cubes. dblink Provides functions to connect to PostgreSQL databases from within a database session. dict int An add-on dictionary template for full-text search that controls the indexing of integers. earthdistance Provides two approaches to calculating great circle distances on the surface of the Earth. fuzzystrmatch Provides several functions to determine similarities and distance between strings. google columnar engine Provides the columnar engine feature of AlloyDB, which handles HTAP (hybrid transactional analytical processing) and OLAP (online analytical processing) workloads very efficiently.",
+          "RUM indexes improve upon standard GIN indexes by storing positional information directly in the index, letting you perform faster phrase searches and relevance ranking without accessing the table data. sslinfo Provides information about the SSL certificate that the current client provided when it connected to the instance. tablefunc Provides various functions that return tables (multiple rows). tcn Provides a trigger function that notifies listeners of changes to the content of database tables. tds fdw Provides a foreign data wrapper ( fdw ) for accessing databases that use the Tabular Data Stream (TDS) protocol, such as Microsoft SQL Server or Sybase. temporal tables Provides support for temporal tables."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "advisor.auto",
+      "advisor.enable",
+      "advisor.enabled",
+      "advisor.max",
+      "advisor.recommend",
+      "advisor.recommendation",
+      "advisor.top",
+      "advisor.user",
+      "engine.enabled"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/index-advisor-flags",
+        "https://docs.cloud.google.com/alloydb/docs/reference/indexing-strategies",
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/index-advisor-flags",
+        "https://docs.cloud.google.com/alloydb/docs/reference/indexing-strategies",
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:04.004Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb"
+}

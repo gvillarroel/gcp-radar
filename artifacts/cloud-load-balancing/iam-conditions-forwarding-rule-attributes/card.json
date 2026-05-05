@@ -1,0 +1,168 @@
+{
+  "feature_name": "IAM Conditions forwarding rule attributes",
+  "feature_slug": "iam-conditions-forwarding-rule-attributes",
+  "summary": "IAM Conditions supports forwarding rule attributes to control which types of forwarding rules a member can create; IAM Conditions supports forwarding rule attributes to control which types of forwarding rules a member can create.",
+  "extended_definition": "IAM Conditions supports forwarding rule attributes to control which types of forwarding rules a member can create; IAM Conditions supports forwarding rule attributes to control which types of forwarding rules a member can create.",
+  "lifecycle": {
+    "latest_feature_date": "2020-03-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/access-control/iam-conditions",
+      "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts",
+      "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Forwarding rules overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Internal forwarding rules are used by the following Google Cloud load balancers: Internal Application Load Balancer Internal proxy Network Load Balancer Internal passthrough Network Load Balancer Internal Application Load Balancer The internal Application Load Balancer supports IPv4 traffic using either the HTTP, HTTPS, or HTTP/2 protocols.",
+          "IP address and forwarding rule requirements change depending on the Network Service Tier: In Premium Tier, global external proxy Network Load Balancers and classic proxy Network Load Balancers use a global external IP address, which can be either IPv4 or IPv6, and a global external forwarding rule.",
+          "IP address and forwarding rule requirements change depending on the Network Service Tier: In Premium Tier, global external Application Load Balancers and classic Application Load Balancers use a global external IP address, which can be either IPv4 or IPv6, and a global external forwarding rule."
+        ]
+      },
+      {
+        "title": "\"IAM Conditions for forwarding rules \\_|\\_ Cloud Load Balancing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/access-control/iam-conditions",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 215,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If that IAM principal attempts to create a forwarding rule for an external load balancer, Google Cloud denies the action and returns an error like the following: ERROR: (gcloud.compute.forwarding-rules.create) Could not fetch resource: - Required 'compute.forwardingRules.create' permission for 'projects/ PROJECT ID /regions/ REGION /forwardingRules/ FORWARDING RULE NAME ' Using IAM Conditions on Google Cloud load balancers The load balancing scheme of a forwarding rule determines which type or types of load balancer can use the forwarding rule.",
+          "IAM Conditions supports a condition expression to check the load balancing scheme of a forwarding rule .",
+          "Using this conditional grant, the GKE service account can only create new internal forwarding rules, but can manage all existing forwarding rules. { \"bindings\" : [ { \"role\" : \"roles/container.serviceAgent\" , \"members\" : [ \"serviceAccount:service-<var>PROJECT ID</var>@container-engine-robot.iam.gserviceaccount.com\" ], \"condition\" : { \"title\" : \"only internal lb schemes\" , \"description\" : \"Internal LB Creation Only Permitted\" , \"expression\" : \"( compute.isForwardingRuleCreationOperation() && compute.matchLoadBalancingSchemes(['INTERNAL', 'INTERNAL MANAGED']) ) !compute.isForwardingRuleCreationOperation() \" } } ] } Absent other grants, attempting to create a new GKE Service of type LoadBalancer, without the annotation for an internal passthrough Network Load Balancer , results in an error message like the following: Error creating load balancer (will retry): failed to ensure load balancer for service default/SERVICE-NAME: failed to create forwarding rule for load balancer (a01d427111c7011ea96e142010a80006(default/SERVICE-NAME)): googleapi: Error 403: Required 'compute.forwardingRules.create' permission for 'projects/ PROJECT ID /regions/[region]/forwardingRules/ FORWARDING RULE NAME ', forbidden Also, without other grants, attempting to create a new Ingress object causes a similar error message because the Cloud Load Balancing Ingress controller needs to create an external Application Load Balancer ."
+        ]
+      },
+      {
+        "title": "\"Internal Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "source_id": "site-docs-root",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you create the forwarding rule, you're required to specify the subnet from which the internal IP address is taken.",
+          "The load balancer's IP address is defined by its internal managed forwarding rule, which is described below.",
+          "Load balancer mode Load balancer type Access type Region Cross-region internal Application Load Balancer Application Internal Regional internal Application Load Balancer Application Internal Specifies a region gcloud To determine the mode of a load balancer, run the following command: gcloud compute forwarding-rules describe FORWARDING RULE NAME In the command output, check the load balancing scheme, region, and network tier."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "addresses.insert",
+      "compute.forwardingRules.create",
+      "compute.isForwardingRuleCreationOperation",
+      "compute.loadBalancerAdmin",
+      "compute.matchLoadBalancingSchemes",
+      "container.serviceAgent",
+      "example.com",
+      "gcloud.compute.forwarding",
+      "robot.iam.gserviceaccount.com",
+      "rules.create"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.loadBalancerAdmin",
+      "roles/container.serviceAgent"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/access-control/iam-conditions",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/access-control/iam-conditions",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/access-control/iam-conditions",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/access-control/iam-conditions",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/access-control/iam-conditions",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/access-control/iam-conditions",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/access-control/iam-conditions",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/access-control/iam-conditions",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/access-control/iam-conditions",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:31.148Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing"
+}

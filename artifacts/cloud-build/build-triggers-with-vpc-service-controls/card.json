@@ -1,0 +1,103 @@
+{
+  "feature_name": "Build triggers with VPC Service Controls",
+  "feature_slug": "build-triggers-with-vpc-service-controls",
+  "summary": "Cloud Build build triggers can run inside VPC Service Controls perimeters.",
+  "extended_definition": "Cloud Build build triggers can run inside VPC Service Controls perimeters.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts",
+      "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersFixedSizeCollection"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Deploying to Cloud Run using Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts",
+        "source_id": "site-docs-root",
+        "final_score": 73,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a build trigger with the config file created in the previous step: Open the Triggers page: Go to the Triggers page Click Create Trigger .",
+          "Continuous deployment You can automate the deployment of your software to Cloud Run by creating Cloud Build triggers.",
+          "If you're using VPC Service Controls, then set up a private pool in the VPC Service Controls perimeter ."
+        ]
+      },
+      {
+        "title": "Deploying to Cloud Run using Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run",
+        "source_id": "site-docs-root",
+        "final_score": 73,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a build trigger with the config file created in the previous step: Open the Triggers page: Go to the Triggers page Click Create Trigger .",
+          "Continuous deployment You can automate the deployment of your software to Cloud Run by creating Cloud Build triggers.",
+          "If you're using VPC Service Controls, then set up a private pool in the VPC Service Controls perimeter ."
+        ]
+      },
+      {
+        "title": "\"Class CloudBuildClient.ListBuildTriggersFixedSizeCollection (3.90.0) \\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersFixedSizeCollection",
+        "source_id": "site-java-reference",
+        "final_score": 69,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ListBuildTriggersFixedSizeCollection > Inheritance java.lang.Object > AbstractFixedSizeCollection > CloudBuildClient.ListBuildTriggersFixedSizeCollection Inherited Members AbstractFixedSizeCollection.createCollection(List<PageT>,int) AbstractFixedSizeCollection.getCollectionSize() AbstractFixedSizeCollection.getNextCollection() AbstractFixedSizeCollection.getNextPageToken() AbstractFixedSizeCollection.getValues() AbstractFixedSizeCollection.hasNextCollection() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createCollection(List<CloudBuildClient.ListBuildTriggersPage> pages, int collectionSize) protected CloudBuildClient .",
+          "ListBuildTriggersPage > pages , int collectionSize ) Parameters Name Description pages List < ListBuildTriggersPage > collectionSize int Returns Type Description CloudBuildClient.ListBuildTriggersFixedSizeCollection Overrides AbstractFixedSizeCollection<RequestT,ResponseT,ResourceT,PageT,CollectionT>.createCollection(List<PageT> pages, int collectionSize) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Developer tools Java Client libraries Send feedback Class CloudBuildClient.ListBuildTriggersFixedSizeCollection (3.90.0) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersFixedSizeCollection",
+      "com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersPage",
+      "com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersPagedResponse",
+      "java.lang.Object"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts",
+        "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersFixedSizeCollection"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts",
+        "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersFixedSizeCollection"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:27.705Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build"
+}

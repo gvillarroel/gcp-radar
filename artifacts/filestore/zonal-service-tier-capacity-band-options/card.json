@@ -1,0 +1,175 @@
+{
+  "feature_name": "Zonal service tier capacity band options",
+  "feature_slug": "zonal-service-tier-capacity-band-options",
+  "summary": "The Filestore zonal service tier supports higher or lower capacity band options in preview.",
+  "extended_definition": "The Filestore zonal service tier supports higher or lower capacity band options in preview.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/filestore/docs/creating-instances",
+      "https://docs.cloud.google.com/filestore/docs/csi-driver",
+      "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+      "https://docs.cloud.google.com/filestore/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access Filestore instances with the Filestore CSI driver \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/filestore/docs/csi-driver",
+        "source_id": "site-docs-root",
+        "final_score": 237,
+        "relevance": "",
+        "evidence_snippets": [
+          "Service tier Share type GKE minimum version for NFSv3 GKE minimum version for NFSv4.1 Enterprise Single share, multishare 1.25 1.33 (single share only) Zonal (1 TiB - 9.75 TiB) Single share 1.31 1.33 Zonal (10 TiB - 100 TiB) Single share 1.27 1.33 Regional Single share 1.33.4-gke.1172000 1.33.4-gke.1172000 Basic HDD (100 GiB - 63.9 TiB) Single share 1.33 Not supported Basic HDD Single share 1.21 Not supported Basic SSD Single share 1.21 Not supported Filestore uses the NFSv3 file system protocol on the Filestore instance by default and supports any NFSv3-compatible client.",
+          "Create a volume using the Filestore CSI driver The following sections describe the typical process for using a Kubernetes volume backed by a Filestore CSI driver in GKE: Create a StorageClass Use a PersistentVolumeClaim to access the volume Create a Deployment that consumes the volume Create a StorageClass After you enable the Filestore CSI driver, GKE automatically installs the following StorageClasses for provisioning Filestore instances: zonal-rwx , using the Filestore zonal tier . enterprise-rwx , using the Filestore enterprise tier , where each Kubernetes PersistentVolume maps to a Filestore instance. enterprise-multishare-rwx , using the Filestore enterprise tier , where each Kubernetes PersistentVolume maps to a share of a given Filestore instance.",
+          "The following example manifest shows how to specify the configuration: apiVersion : storage.k8s.io/v1 kind : StorageClass metadata : name : filestore-example provisioner : filestore.csi.storage.gke.io volumeBindingMode : Immediate allowVolumeExpansion : true parameters : tier : \"enterprise\" nfs-export-options-on-create : '[ { \"accessMode\": \"READ WRITE\", \"ipRanges\": [ \"10.0.0.0/24\" ], \"squashMode\": \"ROOT SQUASH\", \"anonUid\": \"1003\", \"anonGid\": \"1003\" }, { \"accessMode\": \"READ WRITE\", \"ipRanges\": [ \"10.0.0.0/28\" ], \"squashMode\": \"NO ROOT SQUASH\" } ]' Note: Use the node primary IP range instead of the Pod IP in the nfs-export-options-on-create parameter."
+        ]
+      },
+      {
+        "title": "Filestore overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 221,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Filestore supports the following file system protocols: Protocol Supported service tiers Highlights NFSv3 All service tiers Supports bidirectional communication between the client and server.",
+          "NFSv4.1 zonal, regional, and enterprise service tiers Supports client and server authentication, message integrity checks, and in-transit data encryption.",
+          "Networking For information related to Filestore networking requirements, see the following resources: Filestore networking and IP resource requirements Configure NFS ports on client VMs Configure firewall rules Create an instance on a Shared VPC network in service projects Supported file system protocols Performance Custom performance lets you define the performance settings for your Filestore instances independently of the specified capacity."
+        ]
+      },
+      {
+        "title": "\"Mounting file shares on Compute Engine clients \\_|\\_ Filestore \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "source_id": "site-docs-root",
+        "final_score": 201,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For specific service tiers, we recommend specifying the following number of connections between the client and server: Tier Capacity Number of connections Regional, zonal 1-9.75 TiB nconnect=2 Regional, zonal 10-100 TiB nconnect=7 Enterprise - nconnect=2 High scale SSD - nconnect=7 In general, the larger the file share capacity and the fewer the connecting client VMs, the more performance you gain by specifying additional connections with nconnect . ip-address is the IP address for the Filestore instance. file-share is the name of the file share on the instance.",
+          "For specific service tiers, we recommend specifying the following number of connections between the client and server: Tier Capacity Number of connections Regional, zonal 1-9.75 TiB nconnect=2 Regional, zonal 10-100 TiB nconnect=7 Enterprise - nconnect=2 High scale SSD - nconnect=7 In general, the larger the file share capacity and the fewer the connecting client VMs, the more performance you gain by specifying additional connections with nconnect .",
+          "For specific service tiers, we recommend specifying the following number of connections between the client and server: Tier Capacity Number of connections Regional, zonal 1-9.75 TiB nconnect=2 Regional, zonal 10-100 TiB nconnect=7 Enterprise - nconnect=2 High scale SSD - nconnect=7 In general, the larger the file share capacity and the fewer the connecting client VMs, the more performance you gain by specifying additional connections with nconnect ."
+        ]
+      },
+      {
+        "title": "Create an instance \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "source_id": "site-docs-root",
+        "final_score": 201,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table summarizes capabilities available by service tier: Capabilities of Filestore service tiers Capability Basic HDD and Basic SSD Zonal Regional Enterprise Capacity 1 TiB to 63.9 TiB 1 TiB to 100 TiB 100 GiB or 1 TiB to 100 TiB 1 TiB to 10 TiB Scalability Basic HDD (1 TiB to 63.9 TiB) : Scales up in increments of 1 GiB Basic SSD (2.5 TiB to 63.9 TiB) : Scales up only in increments of 1 GiB Zonal (1 TiB to 9.75 TiB) : Scales up or down in increments of 256 GiB Zonal (10 TiB to 100 TiB) : Scales up or down in increments of 2.5 TiB Regional Depending on the access to the small instances feature , you can use one of the following options: Users with access to small instances feature: 100 GiB to 10,239 GiB .",
+          "A justification for the deletion protection setting is provided. gcloud filestore instances create render1 \\ --project=myproject \\ --region=us-central1 \\ --tier=REGIONAL \\ --performance=max-iops-per-tb=17000 \\ --network=name=\"default\",reserved-ip-range=\"10.0.7.0/29\" \\ --flags-file=nfs-export-options.json \\ --deletion-protection \\ --deletion-protection-reason=\"All genomics data must adhere to current organization policies.\" nfs-export-options.json file contents: { \"--file-share\": { \"capacity\": \"2048\", \"name\": \"my vol\", \"nfs-export-options\": [ { \"access-mode\": \"READ WRITE\", \"ip-ranges\": [ \"10.0.0.0/29\", \"10.2.0.0/29\" ], \"squash-mode\": \"ROOT SQUASH\", \"anon uid\": 1003, \"anon gid\": 1003 }, { \"access-mode\": \"READ ONLY\", \"ip-ranges\": [ \"192.168.0.0/26\" ], \"squash-mode\": \"NO ROOT SQUASH\" } ] } } REST API Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header.",
+          "The following table shows the instance sizes available for each tier: Tier Minimum size Maximum size Incremental step size Zonal 1 TiB 9.75 TiB 256 GiB Zonal 10 TiB 100 TiB 2.5 TiB Regional 100 GiB or 1 TiB 10,239 GiB or 9.75 TiB 1 GiB or 256 GiB Regional 10 TiB 100 TiB 2.5 TiB Basic HDD 1 TiB 63.9 TiB 1 GiB Basic SSD 2.5 TiB 63.9 TiB 1 GiB Enterprise 1 TiB 10 TiB 256 GiB Depending on the access to the small capacity instances feature, the lower capacity range for Filestore regional instances can be either 100 GiB to 10,239 GiB or 1 TiB to 9.75 TiB."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+      "file.googleapis.com",
+      "filestore.csi.storage.gke.io",
+      "gke.1172000",
+      "options.json",
+      "projects.locations.instances",
+      "storage.k8s.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/csi-driver",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/csi-driver",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/csi-driver",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/csi-driver",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/csi-driver",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/csi-driver",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/csi-driver",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/csi-driver",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:05.302Z",
+  "source_step08_card": "data/step-08/current/products/filestore/card.json",
+  "product_name": "Filestore",
+  "product_slug": "filestore"
+}

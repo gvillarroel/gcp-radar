@@ -1,0 +1,208 @@
+{
+  "feature_name": "Apps API end_user.phone parameter",
+  "feature_slug": "apps-api-end-user-phone-parameter",
+  "summary": "The Apps API accepts an optional end_user.phone parameter during chat creation to enable CRM lookup by phone number and display the end user's name in the chat adapter.",
+  "extended_definition": "The Apps API accepts an optional end_user.phone parameter during chat creation to enable CRM lookup by phone number and display the end user's name in the chat adapter.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-end-user",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-sms",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Mid-Session authentication by API \\_|\\_ Google Cloud Contact Center as a\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 96,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "123-456-7890 API samples Sample API response Success response sample: 202 Accepted { \"message\" : \"accepted\" } Failure response samples Missing Parameters 400 { \"message\" : \"param is missing or the value is empty: comm type\" } 400 { \"message\" : \"param is missing or the value is empty: identifier\" } Referencing a comm type other than call or chat 404 { \"message\" : \"Not Found\" } Session not active 400 { \"message\" : \"Call is already ended\" } 400 { \"message\" : \"Chat is already ended\" } Unsupported CRM request 400 { \"message\" : \"Unsupported CRM request\" } Duplicate request 400 { \"message\" : \"Duplicate request: Please wait for the interval to expire\" } API request sample Call Comm Type POST https://<subdomain>.<domain>/apps/api/v1/calls/:call id/end user Content-Type: application/json Authorization: Bearer <your access token> { \"identifier\" : \"unique external id\" , \"name\" : \"John Doe\" , \"email\" : \"johndoe@example.com\" , \"phone\" : \"123-456-7890\" } Chat Comm Type POST https://<subdomain>.<domain>/apps/api/v1/chats/:chat id/end user Content-Type: application/json Authorization: Bearer <your access token> { \"identifier\" : \"unique external id\" , \"name\" : \"Jane Smith\" , \"email\" : \"janesmith@example.com\" , \"phone\" : \"098-765-4321\" } Apps API Documentation For additional apps API endpoints, see Apps API Publication .",
+          "For the call comm type: POST https://&lt;subdomain>.&lt;domain>//apps/api/v1/calls/:call id/end user For the chat comm type: POST https://&lt;subdomain>.&lt;domain>//apps/api/v1/chats/:chat id/end user API operations Parameters The body of the API request should have the following fields: ID Field name Type Required?",
+          "Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback Mid-Session authentication by API Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"SMS endpoints \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-sms",
+        "source_id": "site-docs-reference-required-9",
+        "final_score": 96,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Outbound SMS Parameter Required Data Type Definition chat type TRUE String Chat type to create. \"Messaging (API)\", \"SMS\" (deprecated) are available for now Messaging (API) end user number TRUE String Number the text message is to be sent to {end user number} outbound number TRUE String Outbound phone number to be used for sending the SMS message {outbound number} message TRUE String SMS message to be sent to consumer {message} ticket id FALSE String CRM ticket ID that will be associated with session {ticket id} Endpoint: Method: POST Type: RAW URL: https:// { ​ { subdomain } ​ } . { ​ { domain } ​ } /apps/api/v1/sms Headers: Key Value Description Content-Type application/json Body: { \"chat type\" : \"Messaging (SMS)\" , \"end user number\" : \"+1 415-555-0100\" , \"outbound number\" : \"+1 628-555-0199\" , \"message\" : \"lorem ipsum\" , \"ticket id\" : \"5006x00000XXxxxXXX\" } Example requests and responses The following sections provide example requests to the endpoint.",
+          "Request Headers: Key Value Description Content-Type application/json Body: { \"chat type\" : \"Messaging (SMS)\" , \"end user number\" : \"+1 415-555-0100\" , \"outbound number\" : \"+82 000-000-0000\" , \"message\" : \"lorem ipsum\" , \"ticket id\" : \"5006x00000XXxxxXXX\" } Response: Error : Non-US phone number not allowed { \"message\" : \"Non-US phone number not allowed\" } Status Code: 400 Error : Outbound number is required This example demonstrates the failure scenario where the outbound number was not provided but is required.",
+          "Request Headers: Key Value Description Content-Type application/json Body: { \"chat type\" : \"Messaging (SMS)\" , \"end user number\" : \"12345\" , \"outbound number\" : \"+1 628-555-0199\" , \"message\" : \"lorem ipsum\" , \"ticket id\" : \"5006x00000XXxxxXXX\" } Response: Error : end user number is invalid { \"message\" : \"end user number is invalid\" } Status Code: 400 Error : Non-US phone number not allowed This example demonstrates the failure scenario where the provided number is not a US phone number and is prohibited."
+        ]
+      },
+      {
+        "title": "End users endpoints | Google Cloud Contact Center as a Service | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-end-user",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 90,
+        "relevance": "",
+        "evidence_snippets": [
+          "End users endpoints | Google Cloud Contact Center as a Service | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Indonesia Italiano Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Google Cloud CCaaS Start free Overview User Guides Resources Technology areas More Overview User Guides Resources Cross-product tools More Console Tutorials Get started with CCaaS (CCAI Platform) Configure a sample contact center Migrate a voice-channel support center Interactive Virtual Assistant (IVA) guide Basic configuration Deployment schedules Hours of operation Customizing languages, recordings and messages Users, agents, and teams Add, view, and edit users Add, view, and edit teams User roles and permissions Update an agent's status Deactivate and activate users Agent aliases Bulk user management Bulk user sync tool User inactivity timeout Custom and default user avatars Single sign-on (SSO) SSO Overview Standard SAML configuration Azure SSO configuration Idaptive SSO configuration Okta SSO configuration OneLogin SSO configuration Ping SSO configuration Google Workspace SSO configuration Agent status Agent statuses Agent unresponsive status Queues and menus Queue and menu setup Access queue menu settings Queue groups Routing Multicast and deltacast Direct access points Twinning Configure percent allocation Cascade groups Queue priority Automatic redirection First in first out queue routing Auto answer Post-session transfer Virtual agent to virtual agent transfers Channels Voice calling Call settings Call recording Call waiting Contact lists Configure the caller experience Bring your own carrier (BYOC) BYOC Guide BYOC IP allow list SIP URIs Direct phone numbers Mobile and web Mobile and web chat Pre-session Smart Actions Call and chat capabilities Call and chat settings Barge Transfer history and queue information in the agent adapter SMS Overview SMS chat settings Wait time SMS In call SMS App download SMS Direct SMS numbers Consumer privacy Email channel Overview Configure the email channel Assigned agent tags Transfer email sessions to a queue Prevent email reassignment Configure your email channel for OAuth with Google Cloud Configure your email channel for OAuth with Microsoft Conversational AI Virtual agents About virtual agents Create and integrate CX Agent Studio agents Create and integrate Dialogflow agents Create virtual agents Assign virtual agents to queues Virtual agents for SMS Virtual agents with CRMs Create virtual task assistants Wait-time virtual agents for calls Virtual agent aliases Pass data parameters Custom payloads Custom events Play pre-recorded audio Get the record ID in Dialogflow Post events for virtual task assistants Virtual agent language mapping Call companion Agent Assist Customer Experience Insights Customer Experience Insights Setup Guide Customer Experience Insights audio redaction Disposition codes and lists External storage Customer satisfaction ratings Calls Mobile and web Customer abandoned details Remove end-user data Block phone numbers Advanced configuration Control access VPC Service Controls Private Service Connect Overview Set up private ingress Set up private egress Custom constraints Outbound campaigns Campaign management Predictive campaign Progressive campaign Preview campaign Alvaria advanced list management Session data export Send SDK custom data Raw data export Raw data export Raw data export dictionary Raw data export JSON schema Alvaria Workforce integration QM, SIPREC, and WFM integration QM session event data QM chat session event data QM call session event data Verint integration External session events Screen Share Secure payments Microsoft Teams Workforce management (WFM) Introduction to WFM Configuration Forecasting Scheduling Reporting Alvaria WFM metrics and calculations Agent adapters Getting started for agents Configure the agent experience Chat adapter Handle a chat Transfer a chat Check spelling and grammar Use data collection forms User profile flags for chat View previous chats and download chat transcripts View agent chat statistics Live translation in the chat adapter Configure SMS chat Call adapter Receive and make calls In-call interface Menus and settings Transfer calls Use contacts Listen to voicemail messages Emergency and special services calling Add a third party to a call End a call User profile flags for calls Send SMS to launch SmartActions Agent extensions Email adapter Agent adapter configuration Workstation and software requirements Domain-based access control IP allow list Citrix Workspace Use Screen Share Data collection forms Troubleshooting Setting internet time protocol Handling payments Localized languages Display session data in the agent adapter Agent desktop Agent desktop General desktop settings Create desktop layouts Session data feed Configure custom panels Configure desktop layouts for agents Configure announcements Use the agent desktop Reporting and analytics Data dictionary and references Target metrics Session type terminology Session metadata Session metadata Call session metadata Chat session metadata Chat transcript metadata View log entries Understanding log entries Reason codes and statuses Real-time dashboards and monitoring pages Audit log dashboard Standard reports Creating and viewing Agents and teams data sets Interactions data sets Queue data sets Supervisory monitoring data set Virtual agent data sets Voicemail details data set Campaign data sets Advanced reporting dashboards Advanced reporting dashboards Dashboards Performance overview Real-time channel performance Queue monitoring Agent monitoring Connected calls status Connected chats status Channel interval Transfer Queue group Queue performance Queue interval All interactions Failed sessions Abandons Screen Share Agent performance Agent availability Agent activity timeline Virtual agent Email Campaigns CSAT Deflections Dispositions Missed interactions Voicemails Use dashboards Real-time operationas and monitoring Historical analysis and service level deep-dives Advanced capabilities Advanced capabilities Looks Manage Looks Save a Look to a dashboard Link a Look to a dashboard Create a dashboard Create a dashboard from a Look Create a dashboard from an existing metrics tile Edit a dashboard Add metrics tiles to a dashboard Rename a metrics tile Manage folders CRM integrations Custom CRM Custom CRM guide EspoCRM reference implementation Freshdesk HubSpot HubSpot Hubspot mobile phone number lookup HubSpot lookup against company profiles Kustomer Kustomer Kustomer integration guide Microsoft Dynamics Oracle Salesforce Salesforce installation guide Salesforce integration guide Schedule calls with Salesforce Encryption Enable encryption on standard properties Enable exact search queries for encrypted phone fields App setup Salesforce package changelog ServiceNow Zendesk Integration guide Installation guide App setup CRM integration features CRM record creation CRM default administrator Set up external storage for CRMs Session metadata Rate limits Skip CRM account and record creation CRM custom field mapping Session data mapping by CRM Priority user segments API and references API credentials Authentication context Manager API Overview Agent endpoints Agent activity endpoints Campaign endpoints Call endpoints Chat endpoints Email endpoints Menu endpoints Team endpoints User status endpoints Pagination and tailing Apps API Overview Agent status endpoints Bulk user management endpoints Call endpoints Campaign endpoints Chat endpoints Screen Share endpoint Company Do Not Call list endpoints Contact data endpoints End users endpoints Force agent logout endpoints Queue operation statuses endpoint SMS endpoints Wait time endpoints Get user configuration data Mid-Session Authentication by API Add a third party to a call Reporting API Chat Platform API Chat platform API guide Webhooks for the chat API platform Agent file attachments with the chat platform API Use virtual task assistants with the chat API platform Resume a chat Chat platform API endpoints SMS API Callback call API Bulk user management API Developer resources SDK guides Mobile SDK Overview Android Android SDK Flutter for Android React Native for Android iOS iOS SDK Flutter for iOS React Native for iOS Chat customization guide Web SDK v3 Web SDK v3 guide Getting started Authenticate Supported features Theme customization Customize messages and translations API reference Web SDK v3 strings guide Web SDK v3 examples Upgrade from web SDK v2 to v3 Web SDK v2 Installation guide API reference Events String reference Headless web SDK Guide Methods Events End user authentication Troubleshoot and FAQs FAQs Troubleshooting Contact center terms glossary Audit logging AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback End users endpoints Stay organized with collections Save and categorize content based on your preferences.",
+          "The following are the call API endpoints: Update end-user Get end-user Update end-user This endpoint lets you update an end-user details including: email address name phone number { \"identifier\" : \"string\" , \"email\" : \"string\" , \"name\" : \"string\" , \"phone\" : \"string\" } Endpoint: Method: POST Type: RAW URL: https:// { subdomain } . { domain } /apps/api/v1/end_users Headers: Key Value Description Content-Type application/json Accept application/json Body: { \"identifier\" : \"abc123\" , \"email\" : \"joe@mydomain.com\" , \"name\" : \"Joe Smith\" , \"phone\" : \"+16171231234\" } Example request and responses The following sections provide example requests to the endpoint.",
+          "Endpoint: Method: GET Type: URL: https:// { subdomain } . { domain } /apps/api/v1/end_users Headers: Key Value Description Content-Type application/json Query: Key Value Description id integer Internal ID for the End User identifier string External identifier for the End User Example request and responses The following sections provide example requests to the endpoint."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "foo.com",
+      "foobar.com",
+      "john.doe",
+      "mydomain.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-sms",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-end-user"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-sms",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-end-user"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-sms",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-end-user"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-sms",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-end-user"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-sms",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-end-user"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-sms",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-end-user"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-sms",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-end-user"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-sms",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-end-user"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-sms",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-end-user"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-sms",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-end-user"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-sms",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-end-user"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-sms",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-end-user"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-sms",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-end-user"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-sms",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-end-user"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-sms",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/mid-session-authentication-apps-api",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-end-user"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:12.756Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service"
+}

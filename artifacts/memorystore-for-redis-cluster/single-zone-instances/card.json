@@ -1,0 +1,122 @@
+{
+  "feature_name": "Single-zone instances",
+  "feature_slug": "single-zone-instances",
+  "summary": "Single-zone instances are generally available on Memorystore for Redis Cluster; Memorystore for Redis Cluster supports single-zone instances in Preview.",
+  "extended_definition": "Single-zone instances are generally available on Memorystore for Redis Cluster; Memorystore for Redis Cluster supports single-zone instances in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/general-best-practices",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/single-zone-instances"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Single-zone instances \\_|\\_ Memorystore for Redis Cluster \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/single-zone-instances",
+        "source_id": "site-docs-root",
+        "final_score": 353,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Memorystore Memorystore for Redis Cluster Guides Send feedback Single-zone instances Stay organized with collections Save and categorize content based on your preferences.",
+          "This page gives an overview of single-zone instances for Memorystore for Redis Cluster.",
+          "Although we recommend provisioning a multi-zone instance with High Availability , you should use the following recommendations for single-zone instances if they apply to you: If you you choose to provision a single-zone instance, you should enable replicas."
+        ]
+      },
+      {
+        "title": "\"High availability and replicas \\_|\\_ Memorystore for Redis Cluster \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+        "source_id": "site-docs-root",
+        "final_score": 253,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Multi-zone instances HA instances: If a zone has an outage, the entire keyspace is available for reads and writes, but since some read replicas are unavailable, the read capacity is reduced.",
+          "Recommended configurations We recommend creating highly available multi-zone instances as opposed to single-zone instances because of the better reliability they provide.",
+          "Single-zone instances Both HA and Non-HA instances: If the zone that the instance is provisioned in has an outage, the cluster is unavailable and data is flushed."
+        ]
+      },
+      {
+        "title": "\"Create instances \\_|\\_ Memorystore for Redis Cluster \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "source_id": "site-docs-root",
+        "final_score": 241,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you create a cluster with replicas, and a single zone of the region where you want the cluster to be created is unavailable, then Memorystore for Redis Cluster creates the cluster in the available zones of the region.",
+          "If you create a cluster without replicas and a single zone is unavailable, then Memorystore for Redis Cluster fails to create the cluster.",
+          "Click Create cluster . gcloud To create a single-zone instance, run the create command: gcloud redis clusters create INSTANCE ID \\ --region= REGION ID \\ --network= NETWORK \\ --replica-count= REPLICA COUNT \\ --node-type= NODE TYPE \\ --shard-count= SHARD COUNT \\ --zone-distribution-mode= ZONE DISTRIBUTION MODE \\ --zone= ZONE Replace the following: INSTANCE ID is the ID of the Memorystore for Redis Cluster instance you're creating."
+        ]
+      },
+      {
+        "title": "Best practices for Memorystore for Redis Cluster \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/general-best-practices",
+        "source_id": "site-docs-root",
+        "final_score": 221,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Here's why: Cost and performance If minimizing your cost and having peak performance for your clients that are located in the same region are your primary drivers, then we recommend that you choose a single-zone cluster.",
+          "There's a 33% chance that the zone where your cluster is located goes down, as opposed to a 100% chance that nodes, which are located in the unavailable zone, are impacted.",
+          "Rapid recovery If a zonal outage occurs for a single-zone cluster, then Memorystore for Redis Cluster streamlines the recovery of your data."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/single-zone-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/general-best-practices"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/single-zone-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/general-best-practices"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/single-zone-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/general-best-practices"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:26.516Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis-cluster/card.json",
+  "product_name": "Memorystore for Redis Cluster",
+  "product_slug": "memorystore-for-redis-cluster"
+}

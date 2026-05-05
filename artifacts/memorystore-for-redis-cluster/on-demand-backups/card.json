@@ -1,0 +1,142 @@
+{
+  "feature_name": "On-demand backups",
+  "feature_slug": "on-demand-backups",
+  "summary": "The service supports on-demand backups.",
+  "extended_definition": "The service supports on-demand backups.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/cluster/about-cmek",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/about-in-transit-encryption",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/backups"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Backups overview \\_|\\_ Memorystore for Redis Cluster \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/backups",
+        "source_id": "site-iam-reference",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Automated and on-demand backups You can initiate backups in two different ways: Automated backups (Recommended): you can configure a backup schedule for a cluster that initiates periodic backups.",
+          "On-demand backups : you can initiate a backup operation that begins immediately.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "\"About customer-managed encryption keys (CMEK) \\_|\\_ Memorystore for Redis\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/about-cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable or restore the primary CMEK key version If you enable or restore the primary key version of your CMEK, then the following conditions apply for backups and persistence: You can create on-demand and automated backups again.",
+          "Rotate the primary CMEK key version If you rotate the primary key version of your CMEK and create a new primary key version, then the following conditions apply for backups and persistence: The latest primary key version of your CMEK encrypts new backups.",
+          "Persistence : Memorystore for Redis Cluster supports two types of persistence: RDB persistence: The Redis database (RDB) feature protects your data by saving snapshots of your data on durable storage."
+        ]
+      },
+      {
+        "title": "\"About cross-region replication \\_|\\_ Memorystore for Redis Cluster \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "source_id": "site-docs-root",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "Settings that a secondary cluster copies from the primary cluster When you create a secondary cluster, this cluster copies the following settings from the primary cluster: Shard count IAM authentication mode In-transit encryption mode Cluster configurations Redis version Node type Persistence mode Override default settings When you create a secondary cluster, you can use the following settings to override the default settings: Zone distribution configuration Replica count Maintenance windows Deletion protection Automated backups Update cluster settings When you update the settings for your cluster in Memorystore for Redis Cluster, you can change some settings only on the primary cluster.",
+          "Shard count Cluster configurations Persistence mode Redis version Node type Configure local settings You configure the following settings locally: Deletion protection Replica count Maintenance windows Cluster endpoints Automated backups Best practices for switching primary and secondary clusters When you perform a switchover , we recommend that you follow the instructions in this section.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "\"About in-transit encryption \\_|\\_ Memorystore for Redis Cluster \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/about-in-transit-encryption",
+        "source_id": "site-docs-root",
+        "final_score": 124,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In-transit encryption prerequisites To use in-transit encryption with Memorystore for Redis Cluster, you need the following: A Redis client that supports TLS or a third-party TLS sidecar.",
+          "In addition to Memorystore for Redis Cluster conducting a weekly server-side certificate rotation, for the customer-managed CA mode, you can rotate the certificates on-demand.",
+          "Memorystore for Redis Cluster supports the TLS protocol, versions 1.2 and later."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "redis.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/backups",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-in-transit-encryption"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/backups",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-in-transit-encryption"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/backups",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-in-transit-encryption"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/backups",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-in-transit-encryption"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/backups",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-in-transit-encryption"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:26.516Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis-cluster/card.json",
+  "product_name": "Memorystore for Redis Cluster",
+  "product_slug": "memorystore-for-redis-cluster"
+}

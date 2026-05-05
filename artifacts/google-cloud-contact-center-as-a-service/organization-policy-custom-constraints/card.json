@@ -1,0 +1,166 @@
+{
+  "feature_name": "Organization Policy custom constraints",
+  "feature_slug": "organization-policy-custom-constraints",
+  "summary": "Organization Policy custom constraints provide centralized, programmatic control over restricted fields in CCAI Platform resources.",
+  "extended_definition": "Organization Policy custom constraints provide centralized, programmatic control over restricted fields in CCAI Platform resources.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-configure-widgets",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/headless-web-guide",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Headless web SDK guide \\_|\\_ Google Cloud Contact Center as a Service \\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/headless-web-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 94,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Install the headless web SDK To install the headless web SDK, use the following code snippet in your project: npm install @ujet/websdk-headless --save Use the headless web SDK To use the headless Web SDK, you can follow the example code provided: import { Client } from \"@ujet/websdk-headless\" const client = new Client ({ ... }) async function authenticate () { const resp = await fetch ( \"/your-auth-endpoint\" ) const data = await resp . json () return { token : data . token } } const client = new Client ({ companyId : \"YOUR-COMPANY-ID\" , tenant : \"YOUR-TENANT-NAME\" , authenticate : authenticate , }) // const company = await client.getCompany() // const menus = await client.getMenus() The Client class accepts several options (you can customize according to your requirements): interface ClientOption { companyId : string ; authenticate : () = > Promise<TokenResponse> ; tenant ?: string ; host ?: string ; lang ?: string ; bridge ?: string ; cobrowse ?: { enabled : boolean ; messages ?: CobrowseMessages ; api ?: string ; license ?: string ; trustedOrigins ?: string []; capabilities ?: string []; registration ?: boolean ; redactedViews ?: string []; unredactedViews ?: string []; }; } Enable logging During implementation and testing it might be necessary to gather additional information in the console log.",
+          "Here's the default template: <button class=\"cobrowse-end js-cobrowse-end\">$end</button> Messages The following message variables are used in Custom templates : $title $content $allow $deny The following example shows how these variables are applied: { confirmSessionTitle : string ; // $title confirmSessionContent : string ; // $content confirmRemoteControlTitle : string ; // $title confirmRemoteControlContent : string ; // $content confirmFullDeviceTitle : string ; // $title confirmFullDeviceContent : string ; // $content allowText : string ; // $allow denyText : string ; // $deny endSessionText : string ; // $end } The following example shows the default English variable values: { \"confirmSessionTitle\" : \"Screen Share Session Request\" , \"confirmSessionContent\" : \"Do you want to share your current screen with the agent?\" , \"endSessionText\" : \"End Screen Share Session\" , \"confirmRemoteControlTitle\" : \"Remote Access Request\" , \"confirmRemoteControlContent\" : \"The agent would like to have access to your currently shared screen to further assist you.",
+          "The following code sample shows you how to enable Screen Share: new Client ({ // ... cobrowse: { enabled: true, license: 'YOUR SCREEN SHARE LICENSE' } }) The following code sample show the options for Screen Share: interface CobrowseOption { enabled : boolean template? : string confirmSessionTemplate? : string confirmRemoteControlTemplate? : string confirmFullDeviceTemplate? : string sessionControlsTemplate? : string root? : Element messages ?: { confirmSessionTitle : string ; confirmSessionContent : string ; confirmRemoteControlTitle : string ; confirmRemoteControlContent : string ; confirmFullDeviceTitle : string ; confirmFullDeviceContent : string ; allowText : string ; denyText : string ; endSessionText : string ; } api? : string license? : string trustedOrigins? : string [] capabilities? : string [] registration? : boolean redactedViews? : string [] unredactedViews? : string [] } Custom template You can customize the Screen Share dialog template using the template option from the preceding code sample."
+        ]
+      },
+      {
+        "title": "\"Configure custom panels \\_|\\_ Google Cloud Contact Center as a Service \\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-configure-widgets",
+        "source_id": "site-docs-reference",
+        "final_score": 87,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dynamically control the custom-panel language You can use the {AGENT LOCATION LANGUAGE} or the {AGENT LANGUAGE} variable in your custom URL to dynamically control the language for a custom panel: Agent location language : Add the {AGENT LOCATION LANGUAGE} variable to your URL to display the custom panel in the language of the agent's assigned location.",
+          "Optional: To dynamically control the custom-panel language based on the agent's assigned location or language selection, see Dynamically control the custom-panel language .",
+          "Optional: To dynamically control the custom-panel language based on the agent's assigned location or language selection, see Dynamically control the custom-panel language ."
+        ]
+      },
+      {
+        "title": "\"Salesforce installation guide \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 80,
+        "relevance": "",
+        "evidence_snippets": [
+          "The installation consists of these steps: Locate Org ID and Org Name and add to the portal Install the app in Salesforce Enter connected app consumer key and secret into the portal Create a connected app Place connected app consumer key and secret in the portal Manage the configuration in Salesforce Manage the call center Data required to perform installation Field Name Where to Find Where to Enter Organization Id Salesforce Developer Settings in Portal Organization Name Salesforce Developer Settings in Portal Connected App Consumer Key Salesforce Developer Settings in Portal Connected App Consumer Secret Salesforce Developer Settings in Portal Tenant name Admin Portal <companyName>.<domain> Custom Settings in SFDC Customer Key Developer Settings Custom Settings in SFDC Secret Developer Settings Custom Settings in SFDC Connected App Salesforce Connected App Custom Settings in SFDC Locate Org ID and Org Name and Add to the Portal In this section, you will set up an initial connection between the CCAI Platform portal and Salesforce by finding the required org information and adding it into the CCAI Platform portal.",
+          "Note: Domain-based access control provides the ability to define and control which domains can display the CCAI Platform agent adapter.",
+          "Create a custom permission set and apply to all agents In this section, you will create a custom permission set (with the minimum requirements needed for integration), update it with case and contact permissions, and apply it to all agents who use the CCAI Platform portal."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "client.createChat",
+      "client.getCompany",
+      "client.getMenus"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/headless-web-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-configure-widgets",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/headless-web-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-configure-widgets",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/headless-web-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-configure-widgets",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/headless-web-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-configure-widgets",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/headless-web-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-configure-widgets",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/headless-web-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-configure-widgets",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/headless-web-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-configure-widgets",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/headless-web-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-configure-widgets",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/headless-web-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-configure-widgets",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/headless-web-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-configure-widgets",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:12.756Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service"
+}

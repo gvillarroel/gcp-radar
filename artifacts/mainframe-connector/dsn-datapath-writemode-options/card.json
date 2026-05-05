@@ -1,0 +1,142 @@
+{
+  "feature_name": "DSN DataPath writemode options",
+  "feature_slug": "dsn-datapath-writemode-options",
+  "summary": "DSN DataPaths can be configured with writemode values OLD, MOD, or SHR.",
+  "extended_definition": "DSN DataPaths can be configured with writemode values OLD, MOD, or SHR.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/installation",
+      "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding",
+      "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Mainframe Connector command-line reference \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "For all other DataPaths , the default output format is ORC . --parallelism = COUNT (Optional) Specify the number of processing threads.",
+          "For all other DataPaths , the default output format is ORC . --parallelism = COUNT (Optional) Specify the number of processing threads.",
+          "You can change the DSN write mode by adding writemode=OLD/MOD/SHR to the DSN."
+        ]
+      },
+      {
+        "title": "Run Mainframe Connector in standalone mode \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode",
+        "source_id": "site-docs-root-2",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "Mainframe Connector provides two ways in which you can export BigQuery table: Using qsam commands (release 5.16.0 and later) Using the bq export command Use qsam commands environmentVariables: - name: \"QUERY\" value: \" QUERY PATH \" - name: \"OUTFILE\" value: \" OUTFILE \" - name: \"COPYBOOK\" value: \" COPYBOOK PATH \" - name: \"TRANSCODE CONFIGURATION\" value: \" TRANSCODE CONFIGURATION PATH \" - name: \"PROJECT ID\" value: \" PROJECT ID \" - name: \"LOCATION\" value: \" LOCATION \" - name: \"LOG PROJECT\" value: \" LOG PROJECT \" - name: \"IBM JAVA OPTIONS\" value: \"-XX:+UseContainerSupport\" command: qsam encode \\ $QUERY $OUTFILE --copybook ${COPYBOOK PATH} --transcode-configuration ${TRANSCODE CONFIGURATION PATH} --input-format=BIGQUERY \\ --input-parameter project id=${PROJECT ID} \\ --input-parameter location=${LOCATION} Replace the following: QUERY PATH : The SQL query to execute.",
+          "In the following sample, we use the Cloud Storage DataPath for INFILE , OUTFILE , COPYBOOK , and TRANSCODE CONFIGURATION . environmentVariables: - name: \"INFILE\" value: \" INFILE \" - name: \"OUTFILE\" value: \" OUTFILE \" - name: \"COPYBOOK\" value: \" COPYBOOK \" - name: \"TRANSCODE CONFIGURATION\" value: \" TRANSCODE CONFIGURATION \" - name: \"LOG PROJECT\" value: \" LOG PROJECT \" - name: \"IBM JAVA OPTIONS\" value: \"-XX:+UseContainerSupport\" command: qsam decode $INFILE $OUTFILE --copybook $COPYBOOK --transcode-configuration ${TRANSCODE CONFIGURATION} --output-format orc --parallelism 8 --chunk-size \"512Mib\" Replace the following: INFILE : The name of the input file.",
+          "In the following sample, read the data from the INFILE dataset , and the record layout from the COPYBOOK DD . environmentVariables: - name: \"INFILE\" value: \" INFILE \" - name: \"INFILE DSN\" value: \" INFILE DSN \" - name: \"GCSDSNURI\" value: \" INFILE DSN FILEPATH \" - name: \"COPYBOOK\" value: \" COPYBOOK FILEPATH \" - name: \"LOG PROJECT\" value: \" LOG PROJECT \" - name: \"IBM JAVA OPTIONS\" value: \"-XX:+UseContainerSupport\" command: gsutil cp gs://outputbucket/output --parallelism 8 --maxChunkSize \"512Mib\" --parser type=copybook Replace the following: INFILE : The name of the input file."
+        ]
+      },
+      {
+        "title": "\"Move data transcoded locally on the mainframe to Google Cloud \\_|\\_ Mainframe\\",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding",
+        "source_id": "site-docs-root",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can modify the default behavior of the Mainframe Connector transcoding process by providing a transcoder configuration file using the --transcode-configuration argument. //STEP04 EXEC BQSH //OUTFILE DD DSN=<HLQ>.DATA.FILENAME,DISP=SHR //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.CPY //CONFIG DD DISP=SHR,DSN=<HLQ>.CONFIG.SETTINGS //QUERY DD DSN=<HLQ>.QUERY.FILENAME,DISP=SHR //STDIN DD PROJECT=PROJECT NAME qsam encode \\ dd:QUERY dd:OUTFILE --copybook dd:COPYBOOK --transcode-configuration dd:CONFIG --input-format=BIGQUERY \\ --input-parameter project id= PROJECT NAME \\ --input-parameter location= LOCATION / / Replace the following: PROJECT NAME : the name of the project in which you want to execute the query.",
+          "The input dataset must be a Queued Sequential Access Method (QSAM) file with fixed or variable record length. //STEP01 EXEC BQSH //INFILE DD DSN=<HLQ>.DATA.FILENAME,DISP=SHR //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.FILENAME //STDIN DD BUCKET= BUCKET NAME gsutil cp --replace gs://$BUCKET/tablename.orc / Replace BUCKET NAME with the name of the Cloud Storage bucket to which you want to copy mainframe data.",
+          "You can modify the default behavior of the Mainframe Connector transcoding process by providing a transcoder configuration file using the --transcode-configuration argument."
+        ]
+      },
+      {
+        "title": "Install Mainframe Connector on your mainframe \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/installation",
+        "source_id": "site-docs-root",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, create new JAR file, use a different IBM Java version, or change the JSON key file using environment statements. #BQSH PROC ENV=DEV // // // // Copyright 2022 Google LLC All Rights Reserved // // Licensed under the Apache License, Version 2.0 (the \"License\"); // you may not use this file except in compliance with the License. // You may obtain a copy of the License at // http://www.apache.org/licenses/LICENSE-2.0 // Unless required by applicable law or agreed to in writing , software // distributed under the License is distributed on as \"AS IS\" BASIS, // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express of impl. // See the license for the specific language governing permissions and // limitations under the License. // // //BQSH EXEC PGM=JVMLDM86,REGION=0M, // PARM='/+I com.google.cloud.bqsh.Bqsh' //SYSPRINT DD SYSOUT = //SYSOUT DD SYSOUT = //STDOUT DD SYSOUT = //STDERR DD SYSOUT = //CEEDUMP DD SYSOUT = //ABNLIGNR DD DUMMY //STDIN DD DUMMY //QUERY DD DUMMY //INFILE DD DUMMY //COPYBOOK DD DUMMY //KEYFILE DD DUMMY //STDENV DD DISP=SHR,DSN=SYSP.PARMLIB(EDW&ENV) // DD ,SYMBOLS=EXECSYS Do not modify the 3 lines below Collect system symbols from JES export JOBNAME=&JOBNAME export JOBDATE=&YYMMDD export JOBTIME=&HHMMSS The following is an example of the DEV PARMLIB member showing how the JSON key file and the Mainframe Connector software JAR file are referenced.",
+          "This is strongly recommended when processing high volumes of data. #export SRVREMOTE= #export SRVPORT= Native Libraries JL=\"$JH/lib\" LP=\"/lib:/usr/lib:$JH/bin:$JL/s390x:$JL/s390x/j9vm:$JH/bin/classic\" export LIBPATH=\"$LP:/usr/lib/java runtime64\" Java Classpath CP=\"$JL:$JL/ext:/usr/include/java classes/ \" export CLASSPATH=\"$CP:$GOOGLE CLASSPATH\" JVM options IJO=\"-Xms512m -Xmx512m -Xcompressedrefs -Djava.net.preferIPv4Stack=true\" export IBM JAVA OPTIONS=\"$IJO\" export JZOS MAIN ARGS=\"\" / // PEND To configure Mainframe Connector to work with a TLS intercepting proxy, set the following Java system properties in the BQSH JCL procedure. javax.net.ssl.trustStore javax.net.ssl.trustStorePassword https.proxyHost https.proxyUser https.proxyPassword The BQSH JCL procedure before adding the Java system properties for IBM JAVA OPTIONS is as follows.",
+          "The certificate trust store can be stored in the following formats: PKCS12 (.p12): May contain many certificates and requires a password JKS (.jks): May contain many certificates and requires a password PEM (.pem): May contain many certificates encoded as base64 Binary (.der): Contains one certificate per file If the trustStore system property is the path to a directory, the directory is scanned and all certificates with the .pem and .der format found in the directory are added as trusted certificates."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.bqsh.Bqsh",
+      "copybook.cpy",
+      "https.proxyHost",
+      "https.proxyPassword",
+      "https.proxyUser",
+      "input.dat",
+      "javax.net.ssl.trustStore",
+      "javax.net.ssl.trustStorePassword",
+      "net.preferIPv4Stack",
+      "tablename.orc"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode",
+        "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding",
+        "https://docs.cloud.google.com/mainframe-connector/docs/installation"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode",
+        "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding",
+        "https://docs.cloud.google.com/mainframe-connector/docs/installation"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode",
+        "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding",
+        "https://docs.cloud.google.com/mainframe-connector/docs/installation"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode",
+        "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding",
+        "https://docs.cloud.google.com/mainframe-connector/docs/installation"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:25.319Z",
+  "source_step08_card": "data/step-08/current/products/mainframe-connector/card.json",
+  "product_name": "Mainframe Connector",
+  "product_slug": "mainframe-connector"
+}

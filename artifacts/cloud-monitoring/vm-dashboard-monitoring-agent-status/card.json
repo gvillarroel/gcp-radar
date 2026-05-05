@@ -1,0 +1,140 @@
+{
+  "feature_name": "VM dashboard monitoring agent status",
+  "feature_slug": "vm-dashboard-monitoring-agent-status",
+  "summary": "The Monitoring VM Instances dashboard inventory table includes a Monitoring Agent Status column.",
+  "extended_definition": "The Monitoring VM Instances dashboard inventory table includes a Monitoring Agent Status column.",
+  "lifecycle": {
+    "latest_feature_date": "2020-08-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/monitoring/installation",
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies",
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/installation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Installing the Ops Agent on individual VMs \\_|\\_ Cloud Monitoring \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/installation",
+        "source_id": "site-iam-reference",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This sets the HTTP PROXY and HTTPS PROXY environment variables so that the agent can send data using outbound HTTPS: setx HTTP PROXY http:// proxy-ip : proxy-port /m setx HTTPS PROXY http:// proxy-ip : proxy-port /m setx no proxy \"metadata.google.internal,169.254.169.254\" /m Determine the agent version To determine the version of the Ops Agent on your system, run the following commands on your VM instance: Google Cloud console To see the version of your Ops Agent on a VM: Locate the entry for the VM in the Instances table in the Monitoring VM Instances page.",
+          "However, the status might be inaccurate if the VM lacks necessary access scopes or if the associated service account has insufficient IAM roles. gcpdiag : gcpdiag provides more reliable and robust information about agent status than the VM Instances dashboard, verifying both agent installation and transmission of telemetry from the VM.",
+          "The List view on the Inventory tab on the dashboard lists all VMs and includes a status column for your agent, as shown in the following screenshot: The Agent column reports the following values: Not detected : Either you don't have an agent installed or it is not running."
+        ]
+      },
+      {
+        "title": "\"Install and manage the Ops Agent by using VM Extension Manager policies\\",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies",
+        "source_id": "site-iam-reference",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you haven't done so already, install the beta component of the gcloud CLI by running the following command: gcloud components install beta To check if you have the beta component installed, run the following command: gcloud components list If you previously installed the beta component, verify that have the latest version: gcloud components update Uninstall any observability agents Before creating a VM Extension Manager policy to manage the Ops Agent on a VM, ensure that there are no instances of the Ops Agent or the legacy Monitoring agent and Logging agent already on the VM.",
+          "Verify the installation of the Ops Agent This section describes how to do the following: Verify the status or version of an Ops Agent installation Verify that the Ops Agent is collecting telemetry Verify the status or version of an Ops Agent installation To determine the status or version of the Ops Agent, use one of the following Google Cloud console pages: Compute Engine In the Google Cloud console, go to the VM instances page: Go to VM instances If you use the search bar to find this page, then select the result whose subheading is Compute Engine .",
+          "These policies can't manage versions of the Ops Agent earlier than version 2.58.0, Ops Agent instances installed by using other means, or any version of the legacy Monitoring agent or Logging agent ."
+        ]
+      },
+      {
+        "title": "\"Installing the Cloud Monitoring agent on individual VMs \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/monitoring/agent/monitoring/installation",
+        "source_id": "site-iam-reference",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "Viewing agent information by using the Google Cloud console You can find status information about the agent on the pre-configured Monitoring VM Instances dashboard.",
+          "The List view on the Inventory tab on the dashboard lists all VMs and includes a status column for your agent, as shown in the following screenshot: The Agent column reports the following values: Not detected : Either you don't have an agent installed or it is not running.",
+          "This sets the HTTP PROXY and HTTPS PROXY environment variables so that the agent can send data using outbound HTTPS: setx HTTP PROXY http:// proxy-ip : proxy-port /m setx HTTPS PROXY http:// proxy-ip : proxy-port /m setx no proxy 169.254.169.254 /m Determine the agent version To determine the version of the Monitoring agent on your system, run the following commands on your VM instance: DEBIAN / UBUNTU Run the following command on Debian or Ubuntu: dpkg-query --show --showformat ' ${ Package } ${ Version } ${ Architecture } ${ Status } \\n' stackdriver-agent SLES / SUSE Run the following command on SUSE: rpm --query --queryformat '%{NAME} %{VERSION} %{RELEASE} %{ARCH}\\n' stackdriver-agent WINDOWS There is presently no way to determine the version of the Monitoring agent running on Windows."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "metadata.google.internal"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/monitoring/agent/monitoring/installation",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/monitoring/agent/monitoring/installation",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/monitoring/agent/monitoring/installation",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/monitoring/agent/monitoring/installation",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/monitoring/agent/monitoring/installation",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/monitoring/agent/monitoring/installation",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/monitoring/agent/monitoring/installation",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:33.032Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring"
+}

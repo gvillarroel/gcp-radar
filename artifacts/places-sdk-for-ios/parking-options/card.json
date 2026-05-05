@@ -1,0 +1,106 @@
+{
+  "feature_name": "Parking options",
+  "feature_slug": "parking-options",
+  "summary": "Place attributes now include parking options; Place attributes now include parking options.",
+  "extended_definition": "Place attributes now include parking options; Place attributes now include parking options.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/places/ios-sdk/reference",
+      "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes",
+      "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlace",
+      "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlaceAccessibilityOptions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"GooglePlaces Framework Reference \\_|\\_ Places SDK for iOS \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlace",
+        "source_id": "site-docs-reference",
+        "final_score": 174,
+        "relevance": "",
+        "evidence_snippets": [
+          "Declaration Swift var parkingOptions : GMSPlaceParkingOptions ? { get } Objective-C @property ( nonatomic , readonly , nullable ) GMSPlaceParkingOptions parkingOptions ; evChargeAmenitySummary Returns this place’s EV charge amenity summary.",
+          "Declaration Swift var evChargeOptions : GMSPlaceEVChargeOptions ? { get } Objective-C @property ( nonatomic , readonly , nullable ) GMSPlaceEVChargeOptions evChargeOptions ; parkingOptions Returns this place’s parking options.",
+          "Additionally, it includes attributes about dining options (like takeout, delivery, dine-in), service offerings (serves breakfast, lunch, etc.), and accessibility features."
+        ]
+      },
+      {
+        "title": "\"GooglePlaces Framework Reference \\_|\\_ Places SDK for iOS \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/places/ios-sdk/reference",
+        "source_id": "site-docs-reference",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "Declaration Swift class GMSPlacePagination : NSObject Objective-C @interface GMSPlacePagination : NSObject GMSPlaceParkingOptions This class represents the parking options for a place.",
+          "Declaration Swift class GMSPlaceParkingOptions : NSObject Objective-C @interface GMSPlaceParkingOptions : NSObject GMSPlacePaymentOptions Payment options at a place.",
+          "Declaration Swift class GMSPlaceEVChargeAmenitySummary : NSObject , GMSPlaceAISummary Objective-C @interface GMSPlaceEVChargeAmenitySummary : NSObject < GMSPlaceAISummary > GMSPlaceEVChargeOptions A class that represents a place’s EV charging options."
+        ]
+      },
+      {
+        "title": "\"GooglePlaces Framework Reference \\_|\\_ Places SDK for iOS \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes",
+        "source_id": "site-docs-reference",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "Declaration Swift class GMSPlacePagination : NSObject Objective-C @interface GMSPlacePagination : NSObject GMSPlaceParkingOptions This class represents the parking options for a place.",
+          "Declaration Swift class GMSPlaceParkingOptions : NSObject Objective-C @interface GMSPlaceParkingOptions : NSObject GMSPlacePaymentOptions Payment options at a place.",
+          "Declaration Swift class GMSPlaceEVChargeAmenitySummary : NSObject , GMSPlaceAISummary Objective-C @interface GMSPlaceEVChargeAmenitySummary : NSObject < GMSPlaceAISummary > GMSPlaceEVChargeOptions A class that represents a place’s EV charging options."
+        ]
+      },
+      {
+        "title": "\"GooglePlaces Framework Reference \\_|\\_ Places SDK for iOS \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlaceAccessibilityOptions",
+        "source_id": "site-docs-reference",
+        "final_score": 124,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "GMSPlaceAccessibilityOptions @interface GMSPlaceAccessibilityOptions : NSObject Information about the accessibility options a place offers. wheelchairAccessibleParking Returns the GMSBooleanPlaceAttribute for a wheelchair accessible parking.",
+          "Declaration Swift var wheelchairAccessibleParking : GMSBooleanPlaceAttribute { get } Objective-C @property ( nonatomic , readonly ) GMSBooleanPlaceAttribute wheelchairAccessibleParking ; wheelchairAccessibleEntrance Returns the GMSBooleanPlaceAttribute for a wheelchair accessible entrance.",
+          "Declaration Swift var wheelchairAccessibleSeating : GMSBooleanPlaceAttribute { get } Objective-C @property ( nonatomic , readonly ) GMSBooleanPlaceAttribute wheelchairAccessibleSeating ; Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlace",
+        "https://developers.google.com/maps/documentation/places/ios-sdk/reference",
+        "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes",
+        "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlaceAccessibilityOptions"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:31.900Z",
+  "source_step08_card": "data/step-08/current/products/places-sdk-for-ios/card.json",
+  "product_name": "Places SDK for iOS",
+  "product_slug": "places-sdk-for-ios"
+}

@@ -1,0 +1,111 @@
+{
+  "feature_name": "Web SDK exited event",
+  "feature_slug": "web-sdk-exited-event",
+  "summary": "The web SDK now provides an exited event that triggers when an end user leaves a chat session after the agent ends it.",
+  "extended_definition": "The web SDK now provides an exited event that triggers when an end user leaves a chat session after the agent ends it.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Queue_Data_Sets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Chat Settings and Features \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+        "source_id": "site-docs-reference",
+        "final_score": 103,
+        "relevance": "",
+        "evidence_snippets": [
+          "For When the transfer count exceeds the limit , select one of the following: Disable all transfer options : when the limit is reached, this prevents an agent from making additional transfers Allow one final transfer to the queue : when the limit is reached, this lets an agent do a final transfer to a queue that you specify.",
+          "Proactive Web SDK Triggers Overview When triggers are configured, and the trigger conditions are met, the Web SDK window will appear expanded on the page, prompting the consumer to make a selection from choices dictated by the trigger configuration.",
+          "Triggers can be set for: Time spent on a page Keywords are/are not in the URL Returning or new visitor to the page Visited page number of times Setting up Proactive Triggers There are four steps to follow when setting up a new Proactive Trigger."
+        ]
+      },
+      {
+        "title": "\"Android SDK guide \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 93,
+        "relevance": "",
+        "evidence_snippets": [
+          "Log.i ( \"CCAI Platform Event Type\" , eventType.getValue ()) ; StringBuilder builder = new StringBuilder () ; for ( Map.Entry<String, Object> entry : eventData.entrySet ()) { builder.append ( entry.getKey ()) .append ( \" : \" ) .append ( entry.getValue ()) .append ( \"\\n\" ) ; } Log.i ( \"CCAI Platform Event Data\" , builder.toString ()) ; } }) ; Event type Description Data included in event EmailClicked Triggers when the end-user clicks the email channel.",
+          "Log.i ( \"CCAI Platform Event Type\" , eventType.getValue ()) ; StringBuilder builder = new StringBuilder () ; for ( Map.Entry<String, Object> entry : eventData.entrySet ()) { builder.append ( entry.getKey ()) .append ( \" : \" ) .append ( entry.getValue ()) .append ( \"\\n\" ) ; } Log.i ( \"CCAI Platform Event Data\" , builder.toString ()) ; } }) ; App permissions The app requires the following permissions and requests these permissions of user when required.",
+          "Queue menu data, session created data, session ended data SdkTerminated Triggers when the SDK is closed, including when it's closed unexpectedly."
+        ]
+      },
+      {
+        "title": "\"Standard Reports: Queue Data Sets \\_|\\_ Google Cloud Contact Center as a\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Queue_Data_Sets",
+        "source_id": "site-docs-reference",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "For the queue interactions for each date, the report provides a breakdown of how the interactions exited the queue.",
+          "For the queue entries for each date, the report provides a breakdown of how those interactions exited the queue.",
+          "This report provides insights to configured SLAs including thresholds and service level event status."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "builder.append",
+      "builder.toString",
+      "entry.getKey",
+      "entry.getValue"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Queue_Data_Sets"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Queue_Data_Sets"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Queue_Data_Sets"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:12.756Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service"
+}

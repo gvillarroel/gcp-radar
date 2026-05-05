@@ -1,0 +1,271 @@
+{
+  "feature_name": "Cloud Pub/Sub notifications for Cloud Storage",
+  "feature_slug": "cloud-pub-sub-notifications-for-cloud-storage",
+  "summary": "Cloud Storage can send object change notifications to Cloud Pub/Sub with configurable event types and payload information.",
+  "extended_definition": "Cloud Storage can send object change notifications to Cloud Pub/Sub with configurable event types and payload information.",
+  "lifecycle": {
+    "latest_feature_date": "2017-03-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+      "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+      "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+      "https://docs.cloud.google.com/storage/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"IAM permissions for gcloud storage commands \\_|\\_ Cloud Storage \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "source_id": "site-docs-reference",
+        "final_score": 271,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Command Flag Required IAM Permissions batch-operations jobs create storagebatchoperations.jobs.create batch-operations jobs cancel storagebatchoperations.jobs.cancel batch-operations jobs delete storagebatchoperations.jobs.delete batch-operations jobs get storagebatchoperations.jobs.get batch-operations jobs list storagebatchoperations.jobs.list buckets add-iam-policy-binding storage.buckets.get storage.buckets.getIamPolicy storage.buckets.setIamPolicy storage.buckets.update buckets anywhere-caches create storage.anywhereCaches.create buckets anywhere-caches describe storage.anywhereCaches.get buckets anywhere-caches list storage.anywhereCaches.list buckets anywhere-caches update storage.anywhereCaches.update buckets anywhere-caches pause storage.anywhereCaches.pause buckets anywhere-caches resume storage.anywhereCaches.resume buckets anywhere-caches disable storage.anywhereCaches.disable buckets create storage.buckets.create storage.buckets.setIpFilter 15 buckets delete storage.buckets.delete buckets describe storage.buckets.get storage.buckets.getIamPolicy 1 storage.buckets.getIpFilter 16 buckets get-iam-policy storage.buckets.get storage.buckets.getIamPolicy buckets list storage.buckets.list storage.buckets.getIamPolicy 1 buckets notifications create storage.buckets.get storage.buckets.update pubsub.topics.get (for the project containing the Pub/Sub topic) pubsub.topics.create 3 (for the project containing the Pub/Sub topic) pubsub.topics.getIamPolicy (for Pub/Sub topic receiving notifications) pubsub.topics.setIamPolicy 3 (for Pub/Sub topic receiving notifications) buckets notifications create --skip-topic-setup storage.buckets.get storage.buckets.update buckets notifications delete storage.buckets.get storage.buckets.update buckets notifications describe storage.buckets.get buckets notifications list storage.buckets.get buckets relocate storage.buckets.relocate buckets remove-iam-policy-binding storage.buckets.get storage.buckets.getIamPolicy storage.buckets.setIamPolicy storage.buckets.update buckets set-iam-policy storage.buckets.setIamPolicy storage.buckets.update buckets update storage.buckets.update storage.buckets.setIpFilter 15 buckets update --no-requester-pays storage.buckets.update resourcemanager.projects.createBillingAssignment 2 buckets update --recovery-point-objective --rpo --[no-]uniform-bucket-level-access storage.buckets.get storage.buckets.update buckets update --clear-pap --clear-public-access-prevention --[no-]pap --[no-]public-access-prevention storage.buckets.get storage.buckets.update storage.buckets.setIamPolicy cat storage.objects.get storage.objects.list 13 cp storage.objects.get (for the source objects) storage.objects.create (for the destination bucket) storage.objects.list 4 (for the destination bucket) storage.objects.delete 5 (for the destination bucket) storage.buckets.get 12 (for the destination bucket) du storage.objects.list folders create storage.folders.create folders delete storage.folders.delete folders describe storage.folders.get folders list storage.folders.list folders rename storage.folders.rename (for the source bucket) storage.folders.create (for the destination bucket) hash storage.objects.get hmac create storage.hmacKeys.create hmac delete storage.hmacKeys.delete hmac describe storage.hmacKeys.get hmac list storage.hmacKeys.list hmac update storage.hmacKeys.update insights dataset-configs create storageinsights.datasetConfigs.create insights dataset-configs create-link storageinsights.datasetConfigs.linkDataset insights dataset-configs delete storageinsights.datasetConfigs.delete insights dataset-configs delete-link storageinsights.datasetConfigs.unlinkDataset insights dataset-configs describe storageinsights.datasetConfigs.get insights dataset-configs list storageinsights.datasetConfigs.list insights dataset-configs update storageinsights.datasetConfigs.update insights inventory-reports create storageinsights.reportConfigs.create insights inventory-reports delete storageinsights.reportConfigs.delete insights inventory-reports details list storageinsights.reportDetails.list insights inventory-reports details describe storageinsights.reportDetails.get insights inventory-reports list storageinsights.reportConfigs.list insights inventory-reports update storageinsights.reportConfigs.get storageinsights.reportConfigs.update ls (for bucket listing) storage.buckets.list storage.buckets.getIamPolicy 6 ls (for object listing) storage.objects.get 7 storage.objects.list storage.objects.getIamPolicy 8 ls --buckets storage.buckets.get storage.buckets.getIamPolicy 6 storage intelligence-config enable storage.intelligenceConfigs.update storage-intelligence disable storage.intelligenceConfigs.update storage-intelligence describe storage.intelligenceConfigs.get storage-intelligence update storage.intelligenceConfigs.update mv storage.objects.get (for the source objects) storage.objects.delete (for the source bucket) storage.objects.create (for the destination bucket) storage.objects.list 4 (for the destination bucket) storage.objects.delete 5 (for the destination bucket) storage.buckets.get 12 (for the destination bucket) objects compose storage.objects.get storage.objects.create storage.objects.delete 9 objects describe storage.objects.get storage.objects.getIamPolicy 8 objects list storage.objects.list storage.objects.getIamPolicy 8 objects update storage.objects.get storage.objects.list storage.objects.update objects update --storage-class --encryption-key --clear-encryption-key storage.objects.get storage.objects.list storage.objects.create storage.objects.delete objects update --retention-mode --retain-until --clear-retention storage.objects.get storage.objects.list storage.objects.update storage.objects.setRetention storage.objects.overrideUnlockedRetention 11 operations cancel storage.bucketOperations.cancel operations describe storage.bucketOperations.get operations list storage.bucketOperations.list restore storage.objects.create storage.objects.delete 9 storage.objects.restore restore --async storage.objects.create storage.objects.delete 14 storage.objects.restore storage.buckets.restore rm storage.buckets.delete storage.objects.delete storage.objects.list rsync storage.objects.list (for the source bucket) storage.objects.get (for the source objects) storage.objects.list (for the destination bucket) storage.objects.get (for the destination bucket) storage.objects.create (for the destination bucket) storage.objects.delete 10 (for the destination bucket) storage.buckets.get 12 (for the destination bucket) rsync --dry-run storage.objects.list (for the source and destination buckets) service-agent resourceManager.projects.get sign-url None; however, the service account whose key is used as part of this command must have permission to perform the request being encoded into the signed URL.",
+          "Home Documentation Storage Cloud Storage Reference Send feedback IAM permissions for gcloud storage commands Stay organized with collections Save and categorize content based on your preferences.",
+          "If you use the --recursive flag, you must have storage.objects.list permission for the relevant bucket, in addition to the permissions required for the specific command you are using."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.storage (2.64.0) \\_|\\_ Java client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "source_id": "site-java-reference",
+        "final_score": 241,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Notification The class representing Pub/Sub notifications for the Storage.",
+          "See pubsub-notifications for details. com. google. cloud. storage.",
+          "Instances of PostPolicyV4 include a URL and a map of fields that can be specified in an HTML form to submit a POST request to upload an object."
+        ]
+      },
+      {
+        "title": "Troubleshooting \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 235,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you have the storage.buckets.setIamPolicy permission or the storage.objects.setIamPolicy permission and you still get an error, your bucket might be subject to public access prevention , which doesn't allow access to allUsers or allAuthenticatedUsers .",
+          "StorageOptions ; import java.io.IOException ; import java.nio.ByteBuffer ; import static java.nio.charset.StandardCharsets.UTF 8 ; public class Example { public void main ( String args [] ) throws IOException { HeaderProvider headerProvider = FixedHeaderProvider . create ( \"custom-header\" , \"custom-value\" ); Storage storage = StorageOptions . getDefaultInstance () . toBuilder () . setHeaderProvider ( headerProvider ) . build (). getService (); String bucketName = \"example-bucket\" ; String blobName = \"test-custom-header\" ; // Use client with custom header BlobInfo blob = BlobInfo . newBuilder ( bucketName , blobName ). build (); byte [] stringBytes ; try ( WriteChannel writer = storage . writer ( blob )) { stringBytes = \"hello world\" . getBytes ( UTF 8 ); writer . write ( ByteBuffer . wrap ( stringBytes )); } } } Node.js const storage = new Storage (); storage . interceptors . push ({ request : requestConfig = > { Object . assign ( requestConfig . headers , { 'X-Custom-Header' : 'value' , }); return requestConfig ; }, }); PHP All method calls which trigger http requests accept an optional $restOptions argument as the last argument.",
+          "403: Forbidden Issue : I should have permission to access a certain bucket or object, but when I attempt to do so, I get a 403 - Forbidden error with a message that is similar to: example@email.com doesn't have storage.objects.get access to the Google Cloud Storage object ."
+        ]
+      },
+      {
+        "title": "Make data public \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+        "source_id": "site-iam-reference",
+        "final_score": 234,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "StorageRoles ; public class MakeBucketPublic { public static void makeBucketPublic ( String projectId , String bucketName ) { // The ID of your GCP project // String projectId = \"your-project-id\"; // The ID of your GCS bucket // String bucketName = \"your-unique-bucket-name\"; Storage storage = StorageOptions . newBuilder (). setProjectId ( projectId ). build (). getService (); Policy originalPolicy = storage . getIamPolicy ( bucketName ); storage . setIamPolicy ( bucketName , originalPolicy . toBuilder () . addIdentity ( StorageRoles . objectViewer (), Identity . allUsers ()) // All users can view . build ()); System . out . println ( \"Bucket \" + bucketName + \" is now publicly readable\" ); } } Node.js For more information, see the Cloud Storage Node.js API reference documentation .",
+          "For more information, see Set up authentication for client libraries . def set bucket public iam bucket name : The ID of your GCS bucket bucket name = \"your-unique-bucket-name\" require \"google/cloud/storage\" storage = Google :: Cloud :: Storage . new bucket = storage . bucket bucket name bucket . policy do p p . add \"roles/storage.objectViewer\" , \"allUsers\" end puts \"Bucket #{ bucket name } is now publicly readable\" end Terraform You can use a Terraform resource to make all objects in a bucket public.",
+          "For more information, see Set up authentication for client libraries . use Google\\Cloud\\Storage\\StorageClient; / Update the specified bucket's IAM configuration to make it publicly accessible. @param string $bucketName The name of your Cloud Storage bucket. (e.g. 'my-bucket') / function set bucket public iam(string $bucketName): void { $storage = new StorageClient(); $bucket = $storage->bucket($bucketName); $policy = $bucket->iam()->policy(['requestedPolicyVersion' => 3]); $policy['version'] = 3; $role = 'roles/storage.objectViewer'; $members = ['allUsers']; $policy['bindings'][] = [ 'role' => $role, 'members' => $members ]; $bucket->iam()->setPolicy($policy); printf('Bucket %s is now public', $bucketName); } Python For more information, see the Cloud Storage Python API reference documentation ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.storage",
+      "e.g",
+      "email.com",
+      "example.com",
+      "java.io.IOException",
+      "java.nio.ByteBuffer",
+      "java.nio.charset.StandardCharsets.UTF",
+      "projects.get",
+      "pubsub.topics.create",
+      "pubsub.topics.get",
+      "pubsub.topics.getIamPolicy",
+      "pubsub.topics.setIamPolicy",
+      "resourcemanager.projects.createBillingAssignment",
+      "storage.admin",
+      "storage.anywhereCaches.create",
+      "storage.anywhereCaches.disable",
+      "storage.anywhereCaches.get",
+      "storage.anywhereCaches.list",
+      "storage.anywhereCaches.pause",
+      "storage.anywhereCaches.resume",
+      "storage.anywhereCaches.update",
+      "storage.bucketOperations.cancel",
+      "storage.bucketOperations.get",
+      "storage.bucketOperations.list",
+      "storage.buckets.create",
+      "storage.buckets.delete",
+      "storage.buckets.get",
+      "storage.buckets.getIamPolicy",
+      "storage.buckets.getIpFilter",
+      "storage.buckets.list",
+      "storage.buckets.relocate",
+      "storage.buckets.restore",
+      "storage.buckets.setIamPolicy",
+      "storage.buckets.setIpFilter",
+      "storage.buckets.update",
+      "storage.folders.create",
+      "storage.folders.delete",
+      "storage.folders.get",
+      "storage.folders.list",
+      "storage.folders.rename",
+      "storage.hmacKeys.create",
+      "storage.hmacKeys.delete",
+      "storage.hmacKeys.get",
+      "storage.hmacKeys.list",
+      "storage.hmacKeys.update",
+      "storage.intelligenceConfigs.get",
+      "storage.intelligenceConfigs.update",
+      "storage.objectAdmin",
+      "storage.objectCreator",
+      "storage.objects.create",
+      "storage.objects.delete",
+      "storage.objects.get",
+      "storage.objects.getIamPolicy",
+      "storage.objects.list",
+      "storage.objects.overrideUnlockedRetention",
+      "storage.objects.restore",
+      "storage.objects.setIamPolicy",
+      "storage.objects.setRetention",
+      "storage.objects.update",
+      "storage.objectViewer",
+      "storagebatchoperations.jobs.cancel",
+      "storagebatchoperations.jobs.create",
+      "storagebatchoperations.jobs.delete",
+      "storagebatchoperations.jobs.get",
+      "storagebatchoperations.jobs.list",
+      "storageinsights.datasetConfigs.create",
+      "storageinsights.datasetConfigs.delete",
+      "storageinsights.datasetConfigs.get",
+      "storageinsights.datasetConfigs.linkDataset",
+      "storageinsights.datasetConfigs.list",
+      "storageinsights.datasetConfigs.unlinkDataset",
+      "storageinsights.datasetConfigs.update",
+      "storageinsights.reportConfigs.create",
+      "storageinsights.reportConfigs.delete",
+      "storageinsights.reportConfigs.get",
+      "storageinsights.reportConfigs.list",
+      "storageinsights.reportConfigs.update",
+      "storageinsights.reportDetails.get",
+      "storageinsights.reportDetails.list"
+    ],
+    "missing_inventory_roles": [
+      "roles/owner",
+      "roles/storage.admin",
+      "roles/storage.objectAdmin",
+      "roles/storage.objectCreator",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:43.359Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage"
+}

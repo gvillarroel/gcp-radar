@@ -1,0 +1,102 @@
+{
+  "feature_name": "App Hub global infrastructure resource support for global applications",
+  "feature_slug": "app-hub-global-infrastructure-resource-support-for-global-applications",
+  "summary": "App Hub now supports global infrastructure resources for global applications in Preview.",
+  "extended_definition": "App Hub now supports global infrastructure resources for global applications in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/app-hub/docs/global-regional-applications",
+      "https://docs.cloud.google.com/app-hub/docs/quickstart-create-application",
+      "https://docs.cloud.google.com/app-hub/docs/register-resources"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Global and regional applications \\_|\\_ App Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/global-regional-applications",
+        "source_id": "site-docs-root-2",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "App Hub is available in supported locations to help you organize global or regional Google Cloud infrastructure resources in App Hub applications.",
+          "If your application components are necessarily distributed across multiple regions or rely on global Google Cloud resources, opt for global applications.",
+          "Compare global and regional applications The following table highlights the key differences and considerations to help you choose between global and regional applications: Global application Regional application Recommended use case Best for applications with components that are inherently global or distributed across multiple regions."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create an application from existing resources \\_|\\_ App Hub\\",
+        "url": "https://docs.cloud.google.com/app-hub/docs/quickstart-create-application",
+        "source_id": "site-docs-root",
+        "final_score": 153,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This quickstart supports users who want to use their existing infrastructure to gain visibility and operational control by grouping Google Cloud resources into logical applications.",
+          "When the application is created, the Applications page displays its details, including the resources you registered as services. gcloud Create the application: gcloud apphub applications create my-global-app \\ --location = global \\ --display-name = \"My Global Application\" \\ --project = ${ PROJECT ID } Discover the IDs for the forwarding rule and the Cloud Run service in the appropriate region: gcloud apphub discovered-services list \\ --location = global \\ --project = ${ PROJECT ID } gcloud apphub discovered-services list \\ --location = ${ REGION } \\ --project = ${ PROJECT ID } Note the ID of the forwarding rule and the Cloud Run service.",
+          "Add the following code to application.tf to discover your deployed resources: Discover the forwarding rule data \"google apphub discovered service\" \"frontend service\" { location = \"global\" service uri = \"//compute.googleapis.com/${google compute global forwarding rule.default.id}\" } Discover the Cloud Run service data \"google apphub discovered service\" \"backend service\" { location = \" REGION \" service uri = \"//run.googleapis.com/${google cloud run v2 service.default.id}\" } The google apphub discovered service data sources find the resource names of your existing infrastructure based on their URIs."
+        ]
+      },
+      {
+        "title": "\"Register existing resources to an application \\_|\\_ App Hub \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/app-hub/docs/register-resources",
+        "source_id": "site-docs-root-2",
+        "final_score": 143,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "List the registered workloads in your application: gcloud apphub applications workloads list \\ --application = APPLICATION NAME --project = PROJECT ID \\ --location = REGION You must obtain an output similar to the following for each registered workload: ID DISPLAY NAME WORKLOAD REFERENCE CREATE TIME WORKLOAD NAME WORKLOAD DISPLAY NAME { 'uri' : '//compute.googleapis.com/projects/ PROJECT NUMBER /regions/ REGION /instanceGroups/mig-name' } 2023 -11-01T21:38:08 Terraform To use Terraform to register Google Cloud resources within your application management boundary as services or workloads in an application, use the google apphub discovered service and google apphub discovered workload data sources to dynamically retrieve information about the resources you want to register.",
+          "List the applications in your project: gcloud apphub applications list \\ --project = PROJECT ID \\ --location = REGION You must obtain an output similar to the following: ID DISPLAY NAME CREATE TIME APPLICATION NAME DISPLAY NAME 2023 -10-31T18:33:48 Terraform To create an application with Terraform, use the google apphub application resource .",
+          "In the Application resources tab, browse through infrastructure resources and select the checkboxes of the resources you want to register as services and workloads of the application."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "application.tf",
+      "compute.googleapis.com",
+      "group.serverless",
+      "main.tf",
+      "map.default.id",
+      "neg.id",
+      "proxy.default.id",
+      "rule.default.id",
+      "run.googleapis.com",
+      "service.default.id",
+      "service.default.name"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/global-regional-applications",
+        "https://docs.cloud.google.com/app-hub/docs/quickstart-create-application",
+        "https://docs.cloud.google.com/app-hub/docs/register-resources"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:14.406Z",
+  "source_step08_card": "data/step-08/current/products/app-hub/card.json",
+  "product_name": "App Hub",
+  "product_slug": "app-hub"
+}

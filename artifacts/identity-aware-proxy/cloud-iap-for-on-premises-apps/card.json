@@ -1,0 +1,194 @@
+{
+  "feature_name": "Cloud IAP for on-premises apps",
+  "feature_slug": "cloud-iap-for-on-premises-apps",
+  "summary": "Cloud IAP can manage access to HTTP-based applications outside Google Cloud, including on-premises and other-cloud deployments.",
+  "extended_definition": "Cloud IAP can manage access to HTTP-based applications outside Google Cloud, including on-premises and other-cloud deployments.",
+  "lifecycle": {
+    "latest_feature_date": "2019-02-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iap/docs/cloud-iap-for-on-prem-apps-overview",
+      "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+      "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto",
+      "https://docs.cloud.google.com/iap/docs/managing-access"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Overview of IAP for on-premises apps \\_|\\_ Identity-Aware Proxy \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/iap/docs/cloud-iap-for-on-prem-apps-overview",
+        "source_id": "site-docs-root",
+        "final_score": 340,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The On-Prem Connector uses a Cloud Deployment Manager template to create the resources needed to host and deploy the IAP On-Prem Connector into an IAP-enabled Google Cloud project, forwarding authenticated and authorized requests to on-premises apps.",
+          "When the IAP on-prem connector is deployed and IAP is enabled for the newly created on-prem connector backend service, IAP secures your app with identity and context based Identity and Access Management (IAM) access policies.",
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Overview of IAP for on-premises apps Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Enabling IAP for on-premises apps \\_|\\_ Identity-Aware Proxy \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto",
+        "source_id": "site-docs-root",
+        "final_score": 324,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Enabling IAP for on-premises apps Stay organized with collections Save and categorize content based on your preferences.",
+          "Manage a connector for an on-premises app To add more apps to your deployment, click Connect new application and then Connect via on-prem connector .",
+          "After the deployment is complete, your on-premises connector apps appear in the Applications table and you can enable IAP."
+        ]
+      },
+      {
+        "title": "\"Manage access to IAP-secured resources \\_|\\_ Identity-Aware Proxy \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/iap/docs/managing-access",
+        "source_id": "site-iam-reference",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following is an example of an IAM deny policy to deny access to the getSettings API to a principal at an organization and its descendants. { \"name\" : \"policies/cloudresourcemanager.googleapis.com%2Forganizations%2F253519172624/denypolicies/testpolicyid\" , \"uid\" : \"06ccd2eb-d2a5-5dd1-a746-eaf4c6g3f816\" , \"kind\" : \"DenyPolicy\" , \"displayName\" : \"Only project admins can delete projects.\" , \"etag\" : \"MTc1MTkzMjY0MjUyMTExODMxMDQ=\" , \"createTime\" : \"2021-09-07T23:15:35.258319Z\" , \"updateTime\" : \"2021-09-07T23:15:35.258319Z\" , \"rules\" : [ { \"denyRule\" : { \"deniedPrincipals\" : [ \"principalSet://goog/public:all\" ], \"deniedPermissions\" : [ \"iap.googleapis.com/iap.organizations.getSettings\" , \"iap.googleapis.com/iap.folders.getSettings\" , \"iap.googleapis.com/iap.projects.getSettings\" , \"iap.googleapis.com/iap.web.getSettings\" , \"iap.googleapis.com/iap.webTypes.getSettings\" , \"iap.googleapis.com/iap.webServices.getSettings\" , \"iap.googleapis.com/iap.webServicesVersions.getSettings\" , ], } } ] } Instead of specifying all granular permissions, the following is an example of the IAM deny policy with only one permission: .getSettings . { \"name\" : \"policies/cloudresourcemanager.googleapis.com%2Forganizations%2F253519172624/denypolicies/testpolicyid\" , \"uid\" : \"06ccd2eb-d2a5-5dd1-a746-eaf4c6g3f816\" , \"kind\" : \"DenyPolicy\" , \"displayName\" : \"Only project admins can delete projects.\" , \"etag\" : \"MTc1MTkzMjY0MjUyMTExODMxMDQ=\" , \"createTime\" : \"2021-09-07T23:15:35.258319Z\" , \"updateTime\" : \"2021-09-07T23:15:35.258319Z\" , \"rules\" : [ { \"denyRule\" : { \"deniedPrincipals\" : [ \"principalSet://goog/public:all\" ], \"deniedPermissions\" : [ \"iap.googleapis.com/ .getSettings\" , ], } } ] } The following are some simpler ways to create an IAM deny policy without having to specify all of the granular permissions.",
+          "Each IAP resource has its own getIamPolicy and setIamPolicy permission that grants the ability to manage access policies for that resource and its children.",
+          "For App Engine apps, individual versions and services can have different access policies applied."
+        ]
+      },
+      {
+        "title": "IAP reauthentication \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "source_id": "site-docs-root",
+        "final_score": 251,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "IAP reauthentication lets service and application owners or Google Cloud administrators require authenticated end users to reauthenticate after a specified time when accessing an IAP-protected service or application and limit how long a user can access a IAP-protected service or application before authentication is required.",
+          "For example, mobile and desktop applications cannot reauthenticate users because the resources that require reauthentication are inaccessible to these applications.",
+          "IAP reauthentication (or, reauth) is designed to enforce reauthentication policies for IAP-protected services and applications (or, apps)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudresourcemanager.googleapis.com",
+      "iap.admin",
+      "iap.folders.getSettings",
+      "iap.googleapis.com",
+      "iap.organizations.getSettings",
+      "iap.projects.getSettings",
+      "iap.tunnel.getIamPolicy",
+      "iap.tunnel.setIamPolicy",
+      "iap.tunnelInstances.getIamPolicy",
+      "iap.tunnelInstances.setIamPolicy",
+      "iap.tunnelZones.getIamPolicy",
+      "iap.tunnelZones.setIamPolicy",
+      "iap.web.getIamPolicy",
+      "iap.web.getSettings",
+      "iap.web.setIamPolicy",
+      "iap.webServices.getIamPolicy",
+      "iap.webServices.getSettings",
+      "iap.webServices.setIamPolicy",
+      "iap.webServicesVersions.getSettings",
+      "iap.webServiceVersions.getIamPolicy",
+      "iap.webServiceVersions.setIamPolicy",
+      "iap.webTypes.getIamPolicy",
+      "iap.webTypes.getSettings",
+      "iap.webTypes.setIamPolicy"
+    ],
+    "missing_inventory_roles": [
+      "roles/iap.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-for-on-prem-apps-overview",
+        "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-for-on-prem-apps-overview",
+        "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-for-on-prem-apps-overview",
+        "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-for-on-prem-apps-overview",
+        "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-for-on-prem-apps-overview",
+        "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-for-on-prem-apps-overview",
+        "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-for-on-prem-apps-overview",
+        "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-for-on-prem-apps-overview",
+        "https://docs.cloud.google.com/iap/docs/enabling-on-prem-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:22.305Z",
+  "source_step08_card": "data/step-08/current/products/identity-aware-proxy/card.json",
+  "product_name": "Identity-Aware Proxy",
+  "product_slug": "identity-aware-proxy"
+}

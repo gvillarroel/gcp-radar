@@ -1,0 +1,189 @@
+{
+  "feature_name": "API specification metadata editing in Cloud Console",
+  "feature_slug": "api-specification-metadata-editing-in-cloud-console",
+  "summary": "Users can now edit metadata for an uploaded API specification directly in the Cloud Console.",
+  "extended_definition": "Users can now edit metadata for an uploaded API specification directly in the Cloud Console.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+      "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+      "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Enrich API data with custom curation in API hub \\_|\\_ Apigee \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "source_id": "site-docs-reference-2",
+        "final_score": 129,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "It structures the provided specification content into a new spec object, identifies it as an OpenAPI YAML, and embeds it into a specMetadata object along with its modification timestamp.",
+          "This specMetadata is then integrated into the specs array of the API's first version within curatedAPIMetadata , effectively linking the API proxy with its detailed specification.",
+          "Click to download To upload the API specification files into your Cloud Storage bucket, do the following: In the Google Cloud console, go to the Cloud Storage Buckets page."
+        ]
+      },
+      {
+        "title": "\"Ingest Microsoft Azure API data into API hub \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+        "source_id": "site-docs-reference-2",
+        "final_score": 117,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For Each Parallel Task taskId: 19 For each API ID in $api id-list$ , runs a sub-integration ( api trigger/INTEGRATION NAME API 5 ) in parallel to gather detailed metadata for that API, including operations, revisions, specifications, and deployments.",
+          "Call REST Endpoint taskId: 37 Sends the transformed API data (including specification and metadata) to the API hub collectApiData endpoint using a POST request.",
+          "Make sure that you have the following role or roles on the project: API hub Admin ( roles/apihub.admin ) Application Integration Admin ( roles/integrations.admin ) Service Account Admin ( roles/iam.serviceAccountAdmin ) Service Usage Admin ( roles/serviceusage.serviceUsageAdmin ) Project IAM Admin ( roles/resourcemanager.projectIamAdmin ) Check for the roles In the Google Cloud console, go to the IAM page."
+        ]
+      },
+      {
+        "title": "Apigee known issues \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "source_id": "site-docs-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "N/A Integrated portal OPEN Portal admin Simultaneous portal updates (such as page, theme, CSS, or script edits) by multiple users is not supported at this time.",
+          "As a result, users cannot access the app's App Detail page in the console.",
+          "For example, from the helm-charts/ directory: ls apigee-org/templates/ Output: apigee-org-guardrails.yaml mart-sa.yaml apigee-proxy-chaining-certificate.yaml mint-task-scheduler-gsa-secret.yaml apigee-proxy-chaining-route.yaml mint-task-scheduler-sa.yaml ax-hash-salt-secret.yaml NOTES.txt connect-agent-gsa-secret.yaml organization.yaml connect-agent-sa.yaml udca-gsa-secret.yaml data-encryption-secret.yaml udca-sa.yaml encryption-keys-secret.yaml watcher-gsa-secret.yaml helpers.tpl watcher-sa.yaml mart-gsa-secret.yaml (Optional:) cp apigee-org/templates/mint-task-scheduler-gsa-secret.yaml /tmp/ cp apigee-org/templates/mint-task-scheduler-sa.yaml /tmp/ rm apigee-org/templates/mint-task-scheduler-gsa-secret.yaml rm apigee-org/templates/mint-task-scheduler-sa.yaml ls apigee-org/templates/ Output: apigee-org-guardrails.yaml mart-gsa-secret.yaml apigee-proxy-chaining-certificate.yaml mart-sa.yaml apigee-proxy-chaining-route.yaml NOTES.txt ax-hash-salt-secret.yaml organization.yaml connect-agent-gsa-secret.yaml udca-gsa-secret.yaml connect-agent-sa.yaml udca-sa.yaml data-encryption-secret.yaml watcher-gsa-secret.yaml encryption-keys-secret.yaml watcher-sa.yaml helpers.tpl 451375397 hybrid 1.14.3 FIXED in hybrid 1.15.1 The apigee-pull-push.sh script can return a No such image error message, for example: Error response from daemon: No such image: gcr.io/apigee-release/hybrid/apigee-stackdriver-logging-agent:latest Workaround: Edit the HELM CHARTS DIR /apigee-operator/etc/tools/apigee-pull-push.sh script to change line 114 in the docker tag() function from: docker tag \"${source}/$i\" \"${dest}/$i:${TAG}\" To: docker tag \"${source}/$i:${TAG}\" \"${dest}/$i:${TAG}\" 405936071 hybrid 1.15.0 FIXED in hybrid 1.15.1 When metrics.serviceAccountRef or metrics.serviceAccountSecretProviderClass is specified in the overrides.yaml file, the telemetry role will target the wrong service account."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apihub.admin",
+      "certificate.yaml",
+      "gateway.networking.k8s.io",
+      "gcp.workloadIdentity.enabled",
+      "gcr.io",
+      "guardrails.yaml",
+      "helpers.tpl",
+      "iam.serviceAccountAdmin",
+      "integration.sh",
+      "integrations.admin",
+      "metrics.serviceAccountRef",
+      "metrics.serviceAccountSecretProviderClass",
+      "organization.yaml",
+      "overrides.yaml",
+      "push.sh",
+      "resourcemanager.projectIamAdmin",
+      "route.yaml",
+      "sa.yaml",
+      "secret.yaml",
+      "serviceusage.serviceUsageAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/apihub.admin",
+      "roles/iam.serviceAccountAdmin",
+      "roles/integrations.admin",
+      "roles/resourcemanager.projectIamAdmin",
+      "roles/serviceusage.serviceUsageAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:05.893Z",
+  "source_step08_card": "data/step-08/current/products/apigee-api-hub/card.json",
+  "product_name": "Apigee API hub",
+  "product_slug": "apigee-api-hub"
+}

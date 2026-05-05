@@ -1,0 +1,135 @@
+{
+  "feature_name": "Gemini TTS streaming synthesis",
+  "feature_slug": "gemini-tts-streaming-synthesis",
+  "summary": "Gemini TTS now supports performing speech synthesis on streaming requests.",
+  "extended_definition": "Gemini TTS now supports performing speech synthesis on streaming requests.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/text-to-speech/docs/create-dialogue-with-multispeakers",
+      "https://docs.cloud.google.com/text-to-speech/docs/gemini-tts",
+      "https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Gemini-TTS \\_|\\_ Cloud Text-to-Speech \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/text-to-speech/docs/gemini-tts",
+        "source_id": "site-docs-reference-2",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "PROJECT ID = YOUR PROJECT ID curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ -H \"x-goog-user-project: $PROJECT ID \" \\ -H \"Content-Type: application/json\" \\ -d '{ \"contents\": { \"role\": \"user\", \"parts\": { \"text\": \"Say the following as a conversation between friends: Sam: Hi Bob, how are you?\\\\nBob: I am doing well, and you?\" } }, \"generation config\": { \"speech config\": { \"language code\": \"en-in\", \"multi speaker voice config\": { \"speaker voice configs\": [{ \"speaker\": \"Sam\", \"voice config\": { \"prebuilt voice config\": { \"voice name\": \"Aoede\" } } },{ \"speaker\": \"Bob\", \"voice config\": { \"prebuilt voice config\": { \"voice name\": \"Algieba\" } } }] } }, \"temperature\": 2.0, } }' \\ https://aiplatform.googleapis.com/v1beta1/projects/ $PROJECT ID /locations/us-central1/publishers/google/models/gemini-2.5-flash-tts:generateContent \\ jq -r '.candidates[0].content.parts[0].inlineData.data' \\ base64 -d ffmpeg -f s16le -ar 24k -ac 1 -i - output speech.wav Perform streaming multi-speaker synthesis In Vertex AI API, unidirectional streaming is supported, that is, the client sends a single request and receives a stream of responses.",
+          "PROJECT ID = YOUR PROJECT ID curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ -H \"x-goog-user-project: $PROJECT ID \" \\ -H \"Content-Type: application/json\" \\ -d '{ \"contents\": { \"role\": \"user\", \"parts\": { \"text\": \"Say the following in a curious way: OK, so... tell me about this [uhm] AI thing.\" } }, \"generation config\": { \"speech config\": { \"language code\": \"en-in\", \"voice config\": { \"prebuilt voice config\": { \"voice name\": \"kore\" } } }, \"temperature\": 2.0, } }' \\ https://aiplatform.googleapis.com/v1beta1/projects/ $PROJECT ID /locations/us-central1/publishers/google/models/gemini-2.5-flash-tts:generateContent \\ jq -r '.candidates[0].content.parts[0].inlineData.data' \\ base64 -d ffmpeg -f s16le -ar 24k -ac 1 -i - output speech.wav Perform streaming single-speaker synthesis In Vertex AI API, unidirectional streaming is supported, that is, the client sends a single request and receives a stream of responses.",
+          "PROJECT ID = YOUR PROJECT ID curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ -H \"x-goog-user-project: $PROJECT ID \" \\ -H \"Content-Type: application/json\" \\ -d '{ \"input\": { \"prompt\": \"Say the following in a curious way\", \"text\": \"OK, so... tell me about this [uhm] AI thing.\" }, \"voice\": { \"languageCode\": \"en-us\", \"name\": \"Kore\", \"model name\": \"gemini-2.5-flash-tts\" }, \"audioConfig\": { \"audioEncoding\": \"LINEAR16\" } }' \\ \"https://texttospeech.googleapis.com/v1/text:synthesize\" \\ jq -r '.audioContent' base64 -d ffplay - -autoexit Perform streaming single-speaker synthesis Streaming synthesis is suitable for real-time applications where fast response is critical for the user experience."
+        ]
+      },
+      {
+        "title": "Gemini-TTS \\_|\\_ Cloud Text-to-Speech \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/text-to-speech/docs/create-dialogue-with-multispeakers",
+        "source_id": "site-docs-reference-2",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "PROJECT ID = YOUR PROJECT ID curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ -H \"x-goog-user-project: $PROJECT ID \" \\ -H \"Content-Type: application/json\" \\ -d '{ \"contents\": { \"role\": \"user\", \"parts\": { \"text\": \"Say the following as a conversation between friends: Sam: Hi Bob, how are you?\\\\nBob: I am doing well, and you?\" } }, \"generation config\": { \"speech config\": { \"language code\": \"en-in\", \"multi speaker voice config\": { \"speaker voice configs\": [{ \"speaker\": \"Sam\", \"voice config\": { \"prebuilt voice config\": { \"voice name\": \"Aoede\" } } },{ \"speaker\": \"Bob\", \"voice config\": { \"prebuilt voice config\": { \"voice name\": \"Algieba\" } } }] } }, \"temperature\": 2.0, } }' \\ https://aiplatform.googleapis.com/v1beta1/projects/ $PROJECT ID /locations/us-central1/publishers/google/models/gemini-2.5-flash-tts:generateContent \\ jq -r '.candidates[0].content.parts[0].inlineData.data' \\ base64 -d ffmpeg -f s16le -ar 24k -ac 1 -i - output speech.wav Perform streaming multi-speaker synthesis In Vertex AI API, unidirectional streaming is supported, that is, the client sends a single request and receives a stream of responses.",
+          "PROJECT ID = YOUR PROJECT ID curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ -H \"x-goog-user-project: $PROJECT ID \" \\ -H \"Content-Type: application/json\" \\ -d '{ \"contents\": { \"role\": \"user\", \"parts\": { \"text\": \"Say the following in a curious way: OK, so... tell me about this [uhm] AI thing.\" } }, \"generation config\": { \"speech config\": { \"language code\": \"en-in\", \"voice config\": { \"prebuilt voice config\": { \"voice name\": \"kore\" } } }, \"temperature\": 2.0, } }' \\ https://aiplatform.googleapis.com/v1beta1/projects/ $PROJECT ID /locations/us-central1/publishers/google/models/gemini-2.5-flash-tts:generateContent \\ jq -r '.candidates[0].content.parts[0].inlineData.data' \\ base64 -d ffmpeg -f s16le -ar 24k -ac 1 -i - output speech.wav Perform streaming single-speaker synthesis In Vertex AI API, unidirectional streaming is supported, that is, the client sends a single request and receives a stream of responses.",
+          "PROJECT ID = YOUR PROJECT ID curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ -H \"x-goog-user-project: $PROJECT ID \" \\ -H \"Content-Type: application/json\" \\ -d '{ \"input\": { \"prompt\": \"Say the following in a curious way\", \"text\": \"OK, so... tell me about this [uhm] AI thing.\" }, \"voice\": { \"languageCode\": \"en-us\", \"name\": \"Kore\", \"model name\": \"gemini-2.5-flash-tts\" }, \"audioConfig\": { \"audioEncoding\": \"LINEAR16\" } }' \\ \"https://texttospeech.googleapis.com/v1/text:synthesize\" \\ jq -r '.audioContent' base64 -d ffplay - -autoexit Perform streaming single-speaker synthesis Streaming synthesis is suitable for real-time applications where fast response is critical for the user experience."
+        ]
+      },
+      {
+        "title": "\"Package google.cloud.texttospeech.v1 \\_|\\_ Cloud Text-to-Speech \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1",
+        "source_id": "site-docs-reference-2",
+        "final_score": 112,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Index TextToSpeech (interface) TextToSpeechLongAudioSynthesize (interface) AdvancedVoiceOptions (message) AudioConfig (message) AudioEncoding (enum) CustomPronunciationParams (message) CustomPronunciationParams.PhoneticEncoding (enum) CustomPronunciations (message) CustomVoiceParams (message) CustomVoiceParams.ReportedUsage (enum) ListVoicesRequest (message) ListVoicesResponse (message) MultiSpeakerMarkup (message) MultiSpeakerMarkup.Turn (message) MultiSpeakerVoiceConfig (message) MultispeakerPrebuiltVoice (message) SsmlVoiceGender (enum) StreamingAudioConfig (message) StreamingSynthesisInput (message) StreamingSynthesizeConfig (message) StreamingSynthesizeRequest (message) StreamingSynthesizeResponse (message) SynthesisInput (message) SynthesizeLongAudioMetadata (message) SynthesizeLongAudioRequest (message) SynthesizeLongAudioResponse (message) SynthesizeSpeechRequest (message) SynthesizeSpeechResponse (message) Voice (message) VoiceCloneParams (message) VoiceSelectionParams (message) TextToSpeech Service that implements Google Cloud Text-to-Speech API.",
+          "StreamingSynthesize rpc StreamingSynthesize( StreamingSynthesizeRequest ) returns ( StreamingSynthesizeResponse ) Performs bidirectional streaming speech synthesis: receives audio while sending text.",
+          "The request to be sent, either a StreamingSynthesizeConfig or StreamingSynthesisInput. streaming request can be only one of the following: streaming config StreamingSynthesizeConfig StreamingSynthesizeConfig to be used in this streaming attempt."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "content.parts",
+      "speech.wav",
+      "texttospeech.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/gemini-tts",
+        "https://docs.cloud.google.com/text-to-speech/docs/create-dialogue-with-multispeakers",
+        "https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/gemini-tts",
+        "https://docs.cloud.google.com/text-to-speech/docs/create-dialogue-with-multispeakers",
+        "https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/gemini-tts",
+        "https://docs.cloud.google.com/text-to-speech/docs/create-dialogue-with-multispeakers",
+        "https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/gemini-tts",
+        "https://docs.cloud.google.com/text-to-speech/docs/create-dialogue-with-multispeakers",
+        "https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/gemini-tts",
+        "https://docs.cloud.google.com/text-to-speech/docs/create-dialogue-with-multispeakers",
+        "https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/gemini-tts",
+        "https://docs.cloud.google.com/text-to-speech/docs/create-dialogue-with-multispeakers",
+        "https://docs.cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:41.307Z",
+  "source_step08_card": "data/step-08/current/products/text-to-speech/card.json",
+  "product_name": "Text-to-Speech",
+  "product_slug": "text-to-speech"
+}

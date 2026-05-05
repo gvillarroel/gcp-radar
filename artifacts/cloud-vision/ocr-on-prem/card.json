@@ -1,0 +1,122 @@
+{
+  "feature_name": "OCR On-Prem",
+  "feature_slug": "ocr-on-prem",
+  "summary": "OCR On-Prem brings Google image text recognition capabilities to on-premises environments.",
+  "extended_definition": "OCR On-Prem brings Google image text recognition capabilities to on-premises environments.",
+  "lifecycle": {
+    "latest_feature_date": "2020-12-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-vision/latest/com.google.cloud.vision.v1.AnnotateImageResponse",
+      "https://docs.cloud.google.com/vision/docs/fulltext-annotations",
+      "https://docs.cloud.google.com/vision/docs/ocr",
+      "https://docs.cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Detect and extract text from images \\_|\\_ Cloud Vision API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vision/docs/ocr",
+        "source_id": "site-docs-root",
+        "final_score": 214,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Optical Character Recognition (OCR) The Cloud Vision API lets you use optical character recognition (OCR) capabilities for text detection from images.",
+          "Cloud Vision API provides two annotation features that support optical character recognition (OCR): TEXT DETECTION detects and extracts text from any image .",
+          "As a best practice, don't depend on externally-hosted images for production applications . gcloud To perform text detection, use the gcloud ml vision detect-text command: gcloud ml vision detect-text gs://cloud-samples-data/vision/ocr/sign.jpg REST Before using any of the request data, make the following replacements: CLOUD STORAGE IMAGE URI : the path to a valid image file in a Cloud Storage bucket."
+        ]
+      },
+      {
+        "title": "AnnotateImageResponse \\_|\\_ Cloud Vision API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse",
+        "source_id": "site-api-reference",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This annotation provides the structural hierarchy for the OCR detected text. safeSearchAnnotation object ( SafeSearchAnnotation ) If present, safe-search annotation has completed successfully. imagePropertiesAnnotation object ( ImageProperties ) If present, image properties were extracted successfully. cropHintsAnnotation object ( CropHintsAnnotation ) If present, crop hints have completed successfully. webDetection object ( WebDetection ) If present, web detection has completed successfully. productSearchResults object ( ProductSearchResults ) If present, product search has completed successfully. error object ( Status ) If set, represents the error message for the operation.",
+          "For example: when the text is horizontal it might look like: 0----1 3----2 when it's rotated 180 degrees around the top-left corner it becomes: 2----3 1----0 and the vertex order will still be (0, 1, 2, 3). paragraphs[] object ( Paragraph ) List of paragraphs in this block (if this blocks is of type text). blockType enum ( BlockType ) Detected block type (text, image etc) for this block. confidence number Confidence of the OCR results on the block.",
+          "For images (including TIFFs) the unit is pixels. blocks[] object ( Block ) List of blocks of text, images etc on this page. confidence number Confidence of the OCR results on the page."
+        ]
+      },
+      {
+        "title": "\"Dense document text detection tutorial \\_|\\_ Cloud Vision API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vision/docs/fulltext-annotations",
+        "source_id": "site-docs-root",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Annotating an image using Document Text OCR This tutorial walks you through a basic Vision API application that makes a DOCUMENT TEXT DETECTION request , then processes the fullTextAnnotation response .",
+          "ArgumentParser () parser . add argument ( \"detect file\" , help = \"The image for text detection.\" ) parser . add argument ( \"-out file\" , help = \"Optional output file\" , default = 0 ) args = parser . parse args () render doc text ( args . detect file , args . out file ) This simple application performs the following tasks: Imports the libraries necessary to run the application Takes three arguments passes it to the main() function: image file — the input image file to be annotated output file —the output filename into which Cloud Vision will generate an output image with polyboxes drawn Creates an ImageAnnotatorClient instance to interact with the service Sends the request and returns a response Creates an output image with boxes drawn around the text A closer look at the code Importing libraries import argparse from enum import Enum from google.cloud import vision from PIL import Image , ImageDraw We import standard libraries: argparse to allow the application to accept input file names as arguments enum for the FeatureType enumeration io for File I/O Other imports: The ImageAnnotatorClient class within the google.cloud.vision library for accessing the Vision API.",
+          "Image ( content = content ) response = client . document text detection ( image = image ) document = response . full text annotation Collect specified feature bounds by enumerating all document features for page in document . pages : for block in page . blocks : for paragraph in block . paragraphs : for word in paragraph . words : for symbol in word . symbols : if feature == FeatureType ."
+        ]
+      },
+      {
+        "title": "\"Class AnnotateImageResponse (3.86.0) \\_|\\_ Java client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-vision/latest/com.google.cloud.vision.v1.AnnotateImageResponse",
+        "source_id": "site-java-reference",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This will be sorted descending by confidence score. repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized object annotations = 22; Returns Type Description List < ? extends com.google.cloud.vision.v1.LocalizedObjectAnnotationOrBuilder > getLogoAnnotations(int index) public EntityAnnotation getLogoAnnotations ( int index ) If present, logo detection has completed successfully. repeated .google.cloud.vision.v1.EntityAnnotation logo annotations = 3; Parameter Name Description index int Returns Type Description EntityAnnotation getLogoAnnotationsCount() public int getLogoAnnotationsCount () If present, logo detection has completed successfully. repeated .google.cloud.vision.v1.EntityAnnotation logo annotations = 3; Returns Type Description int getLogoAnnotationsList() public List<EntityAnnotation> getLogoAnnotationsList () If present, logo detection has completed successfully. repeated .google.cloud.vision.v1.EntityAnnotation logo annotations = 3; Returns Type Description List < EntityAnnotation > getLogoAnnotationsOrBuilder(int index) public EntityAnnotationOrBuilder getLogoAnnotationsOrBuilder ( int index ) If present, logo detection has completed successfully. repeated .google.cloud.vision.v1.EntityAnnotation logo annotations = 3; Parameter Name Description index int Returns Type Description EntityAnnotationOrBuilder getLogoAnnotationsOrBuilderList() public List < ? extends EntityAnnotationOrBuilder > getLogoAnnotationsOrBuilderList () If present, logo detection has completed successfully. repeated .google.cloud.vision.v1.EntityAnnotation logo annotations = 3; Returns Type Description List < ? extends com.google.cloud.vision.v1.EntityAnnotationOrBuilder > getParserForType() public Parser<AnnotateImageResponse> getParserForType () Returns Type Description Parser < AnnotateImageResponse > Overrides GeneratedMessage.getParserForType() getProductSearchResults() public ProductSearchResults getProductSearchResults () If present, product search has completed successfully. .google.cloud.vision.v1.ProductSearchResults product search results = 14; Returns Type Description ProductSearchResults The productSearchResults. getProductSearchResultsOrBuilder() public ProductSearchResultsOrBuilder getProductSearchResultsOrBuilder () If present, product search has completed successfully. .google.cloud.vision.v1.ProductSearchResults product search results = 14; Returns Type Description ProductSearchResultsOrBuilder getSafeSearchAnnotation() public SafeSearchAnnotation getSafeSearchAnnotation () If present, safe-search annotation has completed successfully. .google.cloud.vision.v1.SafeSearchAnnotation safe search annotation = 6; Returns Type Description SafeSearchAnnotation The safeSearchAnnotation. getSafeSearchAnnotationOrBuilder() public SafeSearchAnnotationOrBuilder getSafeSearchAnnotationOrBuilder () If present, safe-search annotation has completed successfully. .google.cloud.vision.v1.SafeSearchAnnotation safe search annotation = 6; Returns Type Description SafeSearchAnnotationOrBuilder getSerializedSize() public int getSerializedSize () Returns Type Description int Overrides GeneratedMessage.getSerializedSize() getTextAnnotations(int index) public EntityAnnotation getTextAnnotations ( int index ) If present, text (OCR) detection has completed successfully. repeated .google.cloud.vision.v1.EntityAnnotation text annotations = 5; Parameter Name Description index int Returns Type Description EntityAnnotation getTextAnnotationsCount() public int getTextAnnotationsCount () If present, text (OCR) detection has completed successfully. repeated .google.cloud.vision.v1.EntityAnnotation text annotations = 5; Returns Type Description int getTextAnnotationsList() public List<EntityAnnotation> getTextAnnotationsList () If present, text (OCR) detection has completed successfully. repeated .google.cloud.vision.v1.EntityAnnotation text annotations = 5; Returns Type Description List < EntityAnnotation > getTextAnnotationsOrBuilder(int index) public EntityAnnotationOrBuilder getTextAnnotationsOrBuilder ( int index ) If present, text (OCR) detection has completed successfully. repeated .google.cloud.vision.v1.EntityAnnotation text annotations = 5; Parameter Name Description index int Returns Type Description EntityAnnotationOrBuilder getTextAnnotationsOrBuilderList() public List < ? extends EntityAnnotationOrBuilder > getTextAnnotationsOrBuilderList () If present, text (OCR) detection has completed successfully. repeated .google.cloud.vision.v1.EntityAnnotation text annotations = 5; Returns Type Description List < ? extends com.google.cloud.vision.v1.EntityAnnotationOrBuilder > getWebDetection() public WebDetection getWebDetection () If present, web detection has completed successfully. .google.cloud.vision.v1.WebDetection web detection = 13; Returns Type Description WebDetection The webDetection. getWebDetectionOrBuilder() public WebDetectionOrBuilder getWebDetectionOrBuilder () If present, web detection has completed successfully. .google.cloud.vision.v1.WebDetection web detection = 13; Returns Type Description WebDetectionOrBuilder hasContext() public boolean hasContext () If present, contextual information is needed to understand where this image comes from. .google.cloud.vision.v1.ImageAnnotationContext context = 21; Returns Type Description boolean Whether the context field is set. hasCropHintsAnnotation() public boolean hasCropHintsAnnotation () If present, crop hints have completed successfully. .google.cloud.vision.v1.CropHintsAnnotation crop hints annotation = 11; Returns Type Description boolean Whether the cropHintsAnnotation field is set. hasError() public boolean hasError () If set, represents the error message for the operation.",
+          "This annotation provides the structural hierarchy for the OCR detected text. .google.cloud.vision.v1.TextAnnotation full text annotation = 12; Returns Type Description TextAnnotationOrBuilder getImagePropertiesAnnotation() public ImageProperties getImagePropertiesAnnotation () If present, image properties were extracted successfully. .google.cloud.vision.v1.ImageProperties image properties annotation = 8; Returns Type Description ImageProperties The imagePropertiesAnnotation. getImagePropertiesAnnotationOrBuilder() public ImagePropertiesOrBuilder getImagePropertiesAnnotationOrBuilder () If present, image properties were extracted successfully. .google.cloud.vision.v1.ImageProperties image properties annotation = 8; Returns Type Description ImagePropertiesOrBuilder getLabelAnnotations(int index) public EntityAnnotation getLabelAnnotations ( int index ) If present, label detection has completed successfully. repeated .google.cloud.vision.v1.EntityAnnotation label annotations = 4; Parameter Name Description index int Returns Type Description EntityAnnotation getLabelAnnotationsCount() public int getLabelAnnotationsCount () If present, label detection has completed successfully. repeated .google.cloud.vision.v1.EntityAnnotation label annotations = 4; Returns Type Description int getLabelAnnotationsList() public List<EntityAnnotation> getLabelAnnotationsList () If present, label detection has completed successfully. repeated .google.cloud.vision.v1.EntityAnnotation label annotations = 4; Returns Type Description List < EntityAnnotation > getLabelAnnotationsOrBuilder(int index) public EntityAnnotationOrBuilder getLabelAnnotationsOrBuilder ( int index ) If present, label detection has completed successfully. repeated .google.cloud.vision.v1.EntityAnnotation label annotations = 4; Parameter Name Description index int Returns Type Description EntityAnnotationOrBuilder getLabelAnnotationsOrBuilderList() public List < ? extends EntityAnnotationOrBuilder > getLabelAnnotationsOrBuilderList () If present, label detection has completed successfully. repeated .google.cloud.vision.v1.EntityAnnotation label annotations = 4; Returns Type Description List < ? extends com.google.cloud.vision.v1.EntityAnnotationOrBuilder > getLandmarkAnnotations(int index) public EntityAnnotation getLandmarkAnnotations ( int index ) If present, landmark detection has completed successfully. repeated .google.cloud.vision.v1.EntityAnnotation landmark annotations = 2; Parameter Name Description index int Returns Type Description EntityAnnotation getLandmarkAnnotationsCount() public int getLandmarkAnnotationsCount () If present, landmark detection has completed successfully. repeated .google.cloud.vision.v1.EntityAnnotation landmark annotations = 2; Returns Type Description int getLandmarkAnnotationsList() public List<EntityAnnotation> getLandmarkAnnotationsList () If present, landmark detection has completed successfully. repeated .google.cloud.vision.v1.EntityAnnotation landmark annotations = 2; Returns Type Description List < EntityAnnotation > getLandmarkAnnotationsOrBuilder(int index) public EntityAnnotationOrBuilder getLandmarkAnnotationsOrBuilder ( int index ) If present, landmark detection has completed successfully. repeated .google.cloud.vision.v1.EntityAnnotation landmark annotations = 2; Parameter Name Description index int Returns Type Description EntityAnnotationOrBuilder getLandmarkAnnotationsOrBuilderList() public List < ? extends EntityAnnotationOrBuilder > getLandmarkAnnotationsOrBuilderList () If present, landmark detection has completed successfully. repeated .google.cloud.vision.v1.EntityAnnotation landmark annotations = 2; Returns Type Description List < ? extends com.google.cloud.vision.v1.EntityAnnotationOrBuilder > getLocalizedObjectAnnotations(int index) public LocalizedObjectAnnotation getLocalizedObjectAnnotations ( int index ) If present, localized object detection has completed successfully.",
+          "Note that filled-in image annotations are guaranteed to be correct, even when error is set. .google.rpc.Status error = 9; Returns Type Description com.google.rpc.StatusOrBuilder getFaceAnnotations(int index) public FaceAnnotation getFaceAnnotations ( int index ) If present, face detection has completed successfully. repeated .google.cloud.vision.v1.FaceAnnotation face annotations = 1; Parameter Name Description index int Returns Type Description FaceAnnotation getFaceAnnotationsCount() public int getFaceAnnotationsCount () If present, face detection has completed successfully. repeated .google.cloud.vision.v1.FaceAnnotation face annotations = 1; Returns Type Description int getFaceAnnotationsList() public List<FaceAnnotation> getFaceAnnotationsList () If present, face detection has completed successfully. repeated .google.cloud.vision.v1.FaceAnnotation face annotations = 1; Returns Type Description List < FaceAnnotation > getFaceAnnotationsOrBuilder(int index) public FaceAnnotationOrBuilder getFaceAnnotationsOrBuilder ( int index ) If present, face detection has completed successfully. repeated .google.cloud.vision.v1.FaceAnnotation face annotations = 1; Parameter Name Description index int Returns Type Description FaceAnnotationOrBuilder getFaceAnnotationsOrBuilderList() public List < ? extends FaceAnnotationOrBuilder > getFaceAnnotationsOrBuilderList () If present, face detection has completed successfully. repeated .google.cloud.vision.v1.FaceAnnotation face annotations = 1; Returns Type Description List < ? extends com.google.cloud.vision.v1.FaceAnnotationOrBuilder > getFullTextAnnotation() public TextAnnotation getFullTextAnnotation () If present, text (OCR) detection or document (OCR) text detection has completed successfully."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.vision.v1.AnnotateImageResponse",
+      "com.google.cloud.vision.v1.AnnotateImageResponse.Builder",
+      "com.google.cloud.vision.v1.AnnotateImageResponseOrBuilder",
+      "com.google.cloud.vision.v1.EntityAnnotationOrBuilder",
+      "com.google.cloud.vision.v1.FaceAnnotationOrBuilder",
+      "com.google.cloud.vision.v1.LocalizedObjectAnnotationOrBuilder",
+      "com.google.rpc.StatusOrBuilder",
+      "sign.jpg"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/ocr",
+        "https://docs.cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse",
+        "https://docs.cloud.google.com/vision/docs/fulltext-annotations",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-vision/latest/com.google.cloud.vision.v1.AnnotateImageResponse"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/ocr",
+        "https://docs.cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse",
+        "https://docs.cloud.google.com/vision/docs/fulltext-annotations",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-vision/latest/com.google.cloud.vision.v1.AnnotateImageResponse"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:44.908Z",
+  "source_step08_card": "data/step-08/current/products/cloud-vision/card.json",
+  "product_name": "Cloud Vision",
+  "product_slug": "cloud-vision"
+}

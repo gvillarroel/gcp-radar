@@ -1,0 +1,121 @@
+{
+  "feature_name": "Cloud Profiler service",
+  "feature_slug": "cloud-profiler-service",
+  "summary": "Cloud Profiler analyzes application performance using continuous profiling; Cloud Profiler analyzes application performance using continuous profiling.",
+  "extended_definition": "Cloud Profiler analyzes application performance using continuous profiling; Cloud Profiler analyzes application performance using continuous profiling.",
+  "lifecycle": {
+    "latest_feature_date": "2019-03-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/profiler/docs/concepts-profiling",
+      "https://docs.cloud.google.com/profiler/docs/profiling-go",
+      "https://docs.cloud.google.com/profiler/docs/profiling-java",
+      "https://docs.cloud.google.com/profiler/docs/profiling-python"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Profiling Python applications \\_|\\_ Cloud Profiler \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/profiler/docs/profiling-python",
+        "source_id": "site-docs-root",
+        "final_score": 221,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported environments: Compute Engine Google Kubernetes Engine (GKE) App Engine flexible environment App Engine standard environment (requires Python 3 runtime environment ) Outside of Google Cloud (For information on the additional configuration requirements, see Profiling applications running outside of Google Cloud .) Enabling the Profiler API Before you use the profiling agent, ensure that the underlying Profiler API is enabled.",
+          "To log all messages, set verbose to 3 when starting the agent: googlecloudprofiler . start ( service = 'service name' , verbose = 3 ) Troubleshooting This section lists limitations, exceptions, and known issues that are specific to profiling Python applications.",
+          "If your application can't safely run when signals are lost, then we recommend that you stop using Cloud Profiler."
+        ]
+      },
+      {
+        "title": "Profiling concepts \\_|\\_ Cloud Profiler \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/profiler/docs/concepts-profiling",
+        "source_id": "site-docs-root",
+        "final_score": 215,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Profiler is a continuous profiling tool that is designed for applications running on Google Cloud: It's a statistical, or sampling, profiler that has low overhead and is suitable for production environments.",
+          "Profile collection The role of the profiler agent is to capture profile data from your application and to transmit this data to the Profiler backend using the Profiler API.",
+          "After your application is deployed, the profiling agent runs periodically to gather performance data and then sends that data to your Google Cloud project."
+        ]
+      },
+      {
+        "title": "Profiling Go applications \\_|\\_ Cloud Profiler \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/profiler/docs/profiling-go",
+        "source_id": "site-docs-root",
+        "final_score": 201,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported environments: Compute Engine Google Kubernetes Engine (GKE) App Engine flexible environment App Engine standard environment (requires Go 1.11 or higher) Outside of Google Cloud (For information on the additional configuration requirements, see Profiling applications running outside of Google Cloud .) Enabling the Profiler API Before you use the profiling agent, ensure that the underlying Profiler API is enabled.",
+          "To enable agent logging, set the DebugLogging option to true when starting the agent: profiler.Start(profiler.Config{..., DebugLogging: true}); Troubleshooting This section lists issues that are specific to profiling Go applications.",
+          "Using Cloud Profiler In all of the supported environments, you use the Profiler by importing the package in your application and then initializing the Profiler as early as possible in your application."
+        ]
+      },
+      {
+        "title": "Profiling Java applications \\_|\\_ Cloud Profiler \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/profiler/docs/profiling-java",
+        "source_id": "site-docs-root",
+        "final_score": 201,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Standard Environment Java 21 runtime environment If you don't use legacy bundled services, enable the profiler collection by modifying the app.yaml file to specify the agentpath flag using either of the following methods: Set the JAVA TOOL OPTIONS environment variable: runtime: java21 env variables: JAVA TOOL OPTIONS: \"-agentpath:/opt/cprof/profiler java agent.so=-logtostderr,-cprof enable heap sampling=true\" Specify the agentpath using the entrypoint element: runtime: java21 entrypoint: java \\ -agentpath:/opt/cprof/profiler java agent.so = -logtostderr,-cprof enable heap sampling = true \\ Main.java If you use legacy bundled services, enable the profiler collection by modifying the appengine-web.xml file to specify the agentpath flag using either of the following methods: Set the JAVA USER OPTS environment variable: <?xml version=\"1.0\" encoding=\"utf-8\"?> <appengine-web-app xmlns=\"http://appengine.google.com/ns/1.0\"> <env-variables> <env-var name=\"JAVA USER OPTS\" value=\"-agentpath:/opt/cprof/profiler java agent.so=-logtostderr,-cprof enable heap sampling=true\" /> </env-variables> </appengine-web-app> Set the CPROF ENABLE environment variable: <?xml version=\"1.0\" encoding=\"utf-8\"?> <appengine-web-app xmlns=\"http://appengine.google.com/ns/1.0\"> <env-variables> <env-var name=\"CPROF ENABLE\" value=\"-agentpath:/opt/cprof/profiler java agent.so=-logtostderr,-cprof enable heap sampling=true\" /> </env-variables> </appengine-web-app> Specify the agentpath using the entrypoint element: <?xml version=\"1.0\" encoding=\"utf-8\"?> <appengine-web-app xmlns=\"http://appengine.google.com/ns/1.0\"> <entrypoint> java -agentpath:/opt/cprof/profiler java agent.so=-logtostderr,-cprof enable heap sampling=true </entrypoint> </appengine-web-app> If a new profile type is configured for collection, ensure that you specify a new service version when you deploy your application.",
+          "Supported environments: Compute Engine Google Kubernetes Engine (GKE) App Engine flexible environment App Engine standard environment (requires App Engine SDK version 1.9.64 or later) Managed Service for Apache Spark (For information, see Configuring Cloud Profiler for Managed Service for Apache Spark Spark and Hadoop jobs .) Outside of Google Cloud (For information on the additional configuration requirements, see Profiling applications running outside of Google Cloud .) Enabling the Profiler API Before you use the profiling agent, ensure that the underlying Profiler API is enabled.",
+          "For example, to enable logging of error and fatal messages to standard error, append -logtostderr and ‑minloglevel=2 to the -agentpath configuration: java - agentpath : / opt / cprof / profiler java agent . so =- cprof service = myapp , - logtostderr , - minloglevel = 2 \\ - jar myApp . jar Troubleshooting This section lists issues that are specific to profiling Java applications."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "agent.so",
+      "app.yaml",
+      "appengine.google.com",
+      "profiler.Config",
+      "profiler.Start",
+      "signal.set",
+      "web.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/profiler/docs/profiling-python",
+        "https://docs.cloud.google.com/profiler/docs/concepts-profiling",
+        "https://docs.cloud.google.com/profiler/docs/profiling-go",
+        "https://docs.cloud.google.com/profiler/docs/profiling-java"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/profiler/docs/profiling-python",
+        "https://docs.cloud.google.com/profiler/docs/concepts-profiling",
+        "https://docs.cloud.google.com/profiler/docs/profiling-go",
+        "https://docs.cloud.google.com/profiler/docs/profiling-java"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:35.207Z",
+  "source_step08_card": "data/step-08/current/products/cloud-profiler/card.json",
+  "product_name": "Cloud Profiler",
+  "product_slug": "cloud-profiler"
+}

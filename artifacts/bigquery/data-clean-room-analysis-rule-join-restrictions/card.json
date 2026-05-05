@@ -1,0 +1,122 @@
+{
+  "feature_name": "Data clean room analysis rule join restrictions",
+  "feature_slug": "data-clean-room-analysis-rule-join-restrictions",
+  "summary": "BigQuery data clean rooms can enforce join restrictions through analysis rules.",
+  "extended_definition": "BigQuery data clean rooms can enforce join restrictions through analysis rules.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analysis-rules",
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Restrict data access using analysis rules \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analysis-rules",
+        "source_id": "site-docs-reference-2",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can define a differential privacy analysis rule for a view in a data clean room or with the CREATE VIEW statement: CREATE OR REPLACE VIEW VIEW NAME OPTIONS ( privacy policy = ' '' { \"differential privacy policy\": { \"privacy unit column\": \" PRIVACY UNIT COLUMN \", \"max epsilon per query\": MAX EPSILON PER QUERY , \"epsilon budget\": EPSILON BUDGET , \"delta per query\": DELTA PER QUERY , \"delta budget\": DELTA BUDGET , \"max groups contributed\": MAX GROUPS CONTRIBUTED }, \"join restriction policy\": { \"join condition\": \" JOIN CONDITION \", \"join allowed columns\": JOIN ALLOWED COLUMNS } } '' ' ) AS QUERY ; Definitions: differential privacy policy : The differential privacy policy for the differential privacy analysis rule.",
+          "Define an aggregation threshold analysis rule for a view You can define an aggregation threshold analysis rule for a view in a data clean room or with the CREATE VIEW statement: CREATE OR REPLACE VIEW VIEW NAME OPTIONS ( privacy policy = ' '' { \"aggregation threshold policy\": { \"threshold\" : THRESHOLD , \"privacy unit column\": \" PRIVACY UNIT COLUMN \" }, \"join restriction policy\": { \"join condition\": \" JOIN CONDITION \", \"join allowed columns\": JOIN ALLOWED COLUMNS } } '' ' ) AS QUERY ; Definitions: aggregation threshold policy : The aggregation threshold policy for the aggregation threshold analysis rule.",
+          "ExamTable ); Update a list overlap analysis rule for a view You can change the list overlap analysis rule for a view with a data clean room or with the ALTER VIEW statement: ALTER VIEW VIEW NAME SET OPTIONS ( privacy policy = ' '' { \"join restriction policy\": { \"join condition\": \" JOIN CONDITION \", \"join allowed columns\": JOIN ALLOWED COLUMNS } } '' ' ) For more information about the values you can set for the privacy policy in the preceding syntax, see Define a list overlap analysis rule for a view ."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "This can be used with all analysis rules except for the list overlap analysis rule . join allowed columns : A list of columns that can be part of a join operation. value is a JSON array.",
+          "The constant expression cannot contain: A reference to a table Subqueries or SQL statements such as SELECT , CREATE , or UPDATE User-defined functions, aggregate functions, or analytic functions The following scalar functions: ARRAY TO STRING REPLACE REGEXP REPLACE RAND FORMAT LPAD RPAD REPEAT SESSION USER GENERATE ARRAY GENERATE DATE ARRAY If VALUE evaluates to NULL , the corresponding option NAME in the CREATE VIEW statement is ignored. privacy policy The following policies are available in the privacy policy view option to create analysis rules .",
+          "Note: Time travel is disabled on any view that has an analysis rule. tags <ARRAY<STRUCT<STRING, STRING>>> An array of IAM tags for the view, expressed as key-value pairs."
+        ]
+      },
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner references BigQuery Service Connector Connecting to BigQuery BigQuery Writeback Connector Partner Advantage page Direct link Dreamdata Solution Dreamdata digital analytics Category BI, ML, & Advanced Analytics Description Dreamdata gathers, joins and cleans all revenue-related data to present transparent, actionable analysis of what drives B2B revenue.",
+          "Partner references Talend Cloud with BigQuery BigQuery connector guide Partner Advantage page Direct link Trifacta Solution Dataprep by Trifacta Category ETL & Data Integration Description Dataprep by Trifacta is an intelligent data service for visually exploring, cleaning, and preparing structured and unstructured data for analysis, reporting, and machine learning.",
+          "Partner references Bytek integrates with BigQuery and joins Cloud Ready program Carto Solution CARTO spatial analytics platform Category BI, ML, & Advanced Analytics Description CARTO is the spatial analysis (or GIS) platform of choice for market-leading location data and visualization, built for the cloud."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analysis-rules",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analysis-rules",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analysis-rules",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analysis-rules",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analysis-rules",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

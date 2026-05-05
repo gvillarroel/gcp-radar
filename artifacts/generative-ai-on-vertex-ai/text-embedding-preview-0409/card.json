@@ -1,0 +1,150 @@
+{
+  "feature_name": "text-embedding-preview-0409",
+  "feature_slug": "text-embedding-preview-0409",
+  "summary": "This text embedding model is available in Preview and supports dynamic embedding sizes.",
+  "extended_definition": "This text embedding model is available in Preview and supports dynamic embedding sizes.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/task-types"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Get multimodal embeddings \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 223,
+        "relevance": "",
+        "evidence_snippets": [
+          "EmbedContentConfig ( output dimensionality = 128 ), ) Normalize the output embedding. embedding values np = np . array ( response . embeddings [ 0 ] . values ) normed embedding = embedding values np / np . linalg . norm ( embedding values np ) print ( f \"Normed embedding length: { len ( normed embedding ) } \" ) print ( f \"Norm of normed embedding: { np . linalg . norm ( normed embedding ) : .6f } \" ) # Should be very close to 1 Get multimodal embeddings REST PROJECT ID = \"YOUR PROJECT ID\" LOCATION = \"us-central1\" curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https:// ${ LOCATION } -aiplatform.googleapis.com/v1/projects/ ${ PROJECT ID } /locations/ ${ LOCATION } /publishers/google/models/gemini-embedding-2-preview:embedContent\" \\ -d '{ \"content\": { \"parts\": [ { \"text\": \"Whats this\" }, { \"file data\": { \"mime type\": \"video/mp4\", \"file uri\": \"gs://cloud-samples-data/generative-ai/video/pixel8.mp4\" } } ] } }' Python from google import genai from google.genai import types Initialize the client. client = genai .",
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample.\\ (Not necessary if passing values as arguments) / // const project = 'YOUR PROJECT ID'; // const location = 'YOUR PROJECT LOCATION'; // const baseImagePath = 'YOUR BASE IMAGE PATH'; // const textPrompt = 'YOUR TEXT PROMPT'; const aiplatform = require ( ' @google-cloud/aiplatform ' ); // Imports the Google Cloud Prediction service client const { PredictionServiceClient } = aiplatform . v1 ; // Import the helper module for converting arbitrary protobuf.Value objects. const { helpers } = aiplatform ; // Specifies the location of the api endpoint const clientOptions = { apiEndpoint : 'us-central1-aiplatform.googleapis.com' , }; const publisher = 'google' ; const model = 'multimodalembedding@001' ; // Instantiates a client const predictionServiceClient = new PredictionServiceClient ( clientOptions ); async function predictImageFromImageAndText () { // Configure the parent resource const endpoint = projects/ ${ project } /locations/ ${ location } /publishers/ ${ publisher } /models/ ${ model } ; const fs = require ( 'fs' ); const imageFile = fs . readFileSync ( baseImagePath ); // Convert the image data to a Buffer and base64 encode it. const encodedImage = Buffer . from ( imageFile ). toString ( 'base64' ); const prompt = { text : textPrompt , image : { bytesBase64Encoded : encodedImage , }, }; const instanceValue = helpers . toValue ( prompt ); const instances = [ instanceValue ]; const parameter = { sampleCount : 1 , }; const parameters = helpers . toValue ( parameter ); const request = { endpoint , instances , parameters , }; // Predict request const [ response ] = await predictionServiceClient . predict ( request ); console . log ( 'Get image embedding response' ); const predictions = response . predictions ; console . log ( '\\tPredictions :' ); for ( const prediction of predictions ) { console . log ( \\t\\tPrediction : ${ JSON . stringify ( prediction ) } ); } } await predictImageFromImageAndText (); Java Before trying this sample, follow the Java setup instructions in the Vertex AI quickstart using client libraries .",
+          "For more information, see the Python API reference documentation . import vertexai from vertexai.vision models import Image , MultiModalEmbeddingModel , Video from vertexai.vision models import VideoSegmentConfig TODO(developer): Update & uncomment line below PROJECT ID = \"your-project-id\" vertexai . init ( project = PROJECT ID , location = \"us-central1\" ) model = MultiModalEmbeddingModel . from pretrained ( \"multimodalembedding@001\" ) image = Image . load from file ( \"gs://cloud-samples-data/vertex-ai/llm/prompts/landmark1.png\" ) video = Video . load from file ( \"gs://cloud-samples-data/vertex-ai-vision/highway vehicles.mp4\" ) embeddings = model . get embeddings ( image = image , video = video , video segment config = VideoSegmentConfig ( end offset sec = 1 ), contextual text = \"Cars on Highway\" , ) print ( f \"Image Embedding: { embeddings . image embedding } \" ) Video Embeddings are segmented based on the video segment config. print ( \"Video Embeddings:\" ) for video embedding in embeddings . video embeddings : print ( f \"Video Segment: { video embedding . start offset sec } - { video embedding . end offset sec } \" ) print ( f \"Embedding: { video embedding . embedding } \" ) print ( f \"Text Embedding: { embeddings . text embedding } \" ) Example response: Image Embedding: [-0.0123144267, 0.0727186054, 0.000201397663, ...] Video Embeddings: Video Segment: 0.0 - 1.0 Embedding: [-0.0206376351, 0.0345234685, ...] Text Embedding: [-0.0207006838, -0.00251058186, ...] Go Before trying this sample, follow the Go setup instructions in the Vertex AI quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "\"Get text embeddings \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 202,
+        "relevance": "",
+        "evidence_snippets": [
+          "Response { \"predictions\": [ { \"embeddings\": { \"statistics\": { \"truncated\": false, \"token count\": 6 }, \"values\": [ ... ] } } ] } Example curl command MODEL ID= \"gemini-embedding-001\" PROJECT ID= PROJECT ID curl \\ - X POST \\ - H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ - H \"Content-Type: application/json\" \\ h tt ps : //us-central1-aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/us-central1/publishers/google/models/${MODEL ID}:predict -d \\ $' { \"instances\" : [ { \"content\" : \"What is life?\" } ], } ' Supported models The following tables show the available Google and open text embedding models.",
+          "HTTP method and URL: POST https://us-central1-aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/us-central1/publishers/google/models/gemini-embedding-001:predict Request JSON body: { \"instances\": [ { \"content\": \" TEXT \"} ], \"parameters\": { \"autoTruncate\": AUTO TRUNCATE } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Read our Tech Report for more detail. up to 3072 2048 tokens Supported text languages text-embedding-005 Specialized in English and code tasks. up to 768 2048 tokens English text-multilingual-embedding-002 Specialized in multilingual tasks. up to 768 2048 tokens Supported text languages For superior embedding quality, gemini-embedding-001 is our large model designed to provide the highest performance."
+        ]
+      },
+      {
+        "title": "\"Choose an embeddings task type \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/task-types",
+        "source_id": "site-docs-root",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Using this function to calculate the embedding for query. texts = [ \"def func(a, b): return a + b\" , \"def func(a, b): return a - b\" , \"def func(a, b): return (a 2 + b 2) 0.5\" , ] task = \"RETRIEVAL DOCUMENT\" code query embeddings = embed text ( texts = texts , task = task , model name = MODEL NAME , dimensionality = DIMENSIONALITY ) Assess text similarity If you want to use embeddings to assess text similarity, use the SEMANTIC SIMILARITY task type.",
+          "Using this function to calculate the embedding for corpus. texts = [ \"Retrieve a function that adds two numbers\" ] task = \"CODE RETRIEVAL QUERY\" code block embeddings = embed text ( texts = texts , task = task , model name = MODEL NAME , dimensionality = DIMENSIONALITY ) Embeds code retrieval with a pre-trained, foundational model.",
+          "For more information, see the Python API reference documentation . from vertexai.language models import TextEmbeddingInput , TextEmbeddingModel MODEL NAME = \"gemini-embedding-001\" DIMENSIONALITY = 3072 def embed text ( texts : list [ str ] = [ \"Retrieve a function that adds two numbers\" ], task : str = \"CODE RETRIEVAL QUERY\" , model name : str = \"gemini-embedding-001\" , dimensionality : int None = 3072 , ) - > list [ list [ float ]]: \"\"\"Embeds texts with a pre-trained, foundational model.\"\"\" model = TextEmbeddingModel . from pretrained ( model name ) kwargs = dict ( output dimensionality = dimensionality ) if dimensionality else {} embeddings = [] gemini-embedding-001 takes one input at a time for text in texts : text input = TextEmbeddingInput ( text , task ) embedding = model . get embeddings ([ text input ], kwargs ) print ( embedding ) Example response: [[0.006135190837085247, -0.01462465338408947, 0.004978656303137541, ...]] embeddings . append ( embedding [ 0 ] . values ) return embeddings if name == \" main \" : Embeds code block with a pre-trained, foundational model."
+        ]
+      },
+      {
+        "title": "\"Get batch text embeddings inferences \\_|\\_ Generative AI on Vertex AI \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 184,
+        "relevance": "",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://us-central1-aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/us-central1/batchPredictionJobs\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/123456789012/locations/us-central1/batchPredictionJobs/1234567890123456789\", \"displayName\": \"BP sample publisher BQ 20230712 134650\", \"model\": \"projects/{PROJECT ID}/locations/us-central1/models/textembedding-gecko\", \"inputConfig\": { \"instancesFormat\": \"bigquery\", \"bigquerySource\": { \"inputUri\": \"bq://project name.dataset name.text input\" } }, \"modelParameters\": {}, \"outputConfig\": { \"predictionsFormat\": \"bigquery\", \"bigqueryDestination\": { \"outputUri\": \"bq://project name.llm dataset.embedding out BP sample publisher BQ 20230712 134650\" } }, \"state\": \"JOB STATE PENDING\", \"createTime\": \"2023-07-12T20:46:52.148717Z\", \"updateTime\": \"2023-07-12T20:46:52.148717Z\", \"labels\": { \"owner\": \"sample owner\", \"product\": \"llm\" }, \"modelVersionId\": \"1\", \"modelMonitoringStatus\": {} } The response includes a unique identifier for the batch job.",
+          "Batches . html let job = await client . batches . create ({ model : 'text-embedding-005' , // Source link : https : // storage . cloud . google . com / cloud - samples - data / batch / prompt for batch gemini predict . jsonl src : 'gs://cloud-samples-data/generative-ai/embeddings/embeddings input.jsonl' , config : { dest : outputUri , }, }); console . log ( Job name : $ { job . name } ); console . log ( Job state : $ { job . state } ); // Example response : // Job name : projects /% PROJECT ID %/ locations / us - central1 / batchPredictionJobs / 9876453210000000000 // Job state : JOB STATE PENDING const completedStates = new Set ([ 'JOB STATE SUCCEEDED' , 'JOB STATE FAILED' , 'JOB STATE CANCELLED' , 'JOB STATE PAUSED' , ]); while ( ! completedStates . has ( job . state )) { await new Promise ( resolve = > setTimeout ( resolve , 30000 )); job = await client . batches . get ({ name : job . name }); console . log ( Job state : $ { job . state } ); } // Example response : // Job state : JOB STATE PENDING // Job state : JOB STATE RUNNING // Job state : JOB STATE RUNNING // ... // Job state : JOB STATE SUCCEEDED return job . state ; } Java Learn how to install or update the Java .",
+          "Client ( http options = HttpOptions ( api version = \"v1\" )) TODO(developer): Update and un-comment below line output uri = \"gs://your-bucket/your-prefix\" See the documentation: https://googleapis.github.io/python-genai/genai.html#genai.batches.Batches.create job = client . batches . create ( model = \"text-embedding-005\" , Source link: https://storage.cloud.google.com/cloud-samples-data/generative-ai/embeddings/embeddings input.jsonl src = \"gs://cloud-samples-data/generative-ai/embeddings/embeddings input.jsonl\" , config = CreateBatchJobConfig ( dest = output uri ), ) print ( f \"Job name: { job . name } \" ) print ( f \"Job state: { job . state } \" ) Example response: Job name: projects/.../locations/.../batchPredictionJobs/9876453210000000000 Job state: JOB STATE PENDING See the documentation: https://googleapis.github.io/python-genai/genai.html#genai.types.BatchJob completed states = { JobState ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "dataset.embedding",
+      "genai.batches.Batches.create",
+      "genai.html",
+      "genai.types.BatchJob",
+      "googleapis.github.io",
+      "input.jsonl",
+      "landmark1.png",
+      "name.dataset",
+      "name.llm",
+      "name.text",
+      "pixel8.mp4",
+      "protobuf.Value",
+      "request.json",
+      "storage.cloud.google.com",
+      "vehicles.mp4",
+      "vertexai.language",
+      "vertexai.vision"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/task-types",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/task-types",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/task-types",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/task-types",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:10.639Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai"
+}

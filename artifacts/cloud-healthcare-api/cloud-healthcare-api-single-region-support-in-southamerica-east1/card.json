@@ -1,0 +1,90 @@
+{
+  "feature_name": "Cloud Healthcare API single-region support in southamerica-east1",
+  "feature_slug": "cloud-healthcare-api-single-region-support-in-southamerica-east1",
+  "summary": "The Cloud Healthcare API added single-region support in the southamerica-east1 (Osasco, Brazil) region.",
+  "extended_definition": "The Cloud Healthcare API added single-region support in the southamerica-east1 (Osasco, Brazil) region.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/best-practices-quota-management",
+      "https://docs.cloud.google.com/healthcare-api/docs/concepts/regions",
+      "https://docs.cloud.google.com/healthcare-api/docs/requirements"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Regions \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/concepts/regions",
+        "source_id": "site-docs-root-2",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Cloud Healthcare API is available in the following regions: Regional locations Region name Region description Americas northamerica-northeast1 Montréal northamerica-northeast2 Toronto us-central1 Iowa us-east1 South Carolina us-east4 North Virginia us-west1 Oregon us-west2 Los Angeles us-west3 Salt Lake City southamerica-east1 São Paulo Asia Pacific asia-east1 Taiwan asia-east2 Hong Kong asia-northeast1 Tokyo asia-northeast2 Osaka asia-northeast3 Seoul asia-south1 Mumbai asia-southeast1 Singapore asia-southeast2 Jakarta australia-southeast1 Sydney australia-southeast2 Melbourne Europe europe-north1 Finland europe-west2 London europe-west3 Frankfurt europe-west4 Netherlands europe-west6 Zurich Middle East me-west1 Tel Aviv me-central1 Doha me-central2 Dammam Multi-regional locations Multi-region name Multi-region description us Data centers in the United States eu Data centers within member states of the European Union Location quota requests You can request a quota increase for the Cloud Healthcare API in a specific region , or in a multi-region location .",
+          "Home Documentation Industry solutions Cloud Healthcare API Guides Send feedback Regions Stay organized with collections Save and categorize content based on your preferences.",
+          "Available regions The Cloud Healthcare API supports a subset of the full list of Google Cloud locations ."
+        ]
+      },
+      {
+        "title": "\"Quota management best practices \\_|\\_ Cloud Healthcare API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/best-practices-quota-management",
+        "source_id": "site-docs-root-2",
+        "final_score": 73,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The us multi-regional location consists of the following subregions: us-central1 us-east1 us-west1 If you already have Cloud Healthcare API traffic using quota in any of the us- subregions, ensure that you take the existing traffic in those subregions into account when making a quota increase request for the us multi-region.",
+          "If your Cloud Healthcare API dataset is in the us multi-regional location, and you want to request additional quota, state in your quota request that the quota is for the \"US meta region\".",
+          "Anticipate per-region usage Cloud Healthcare API measures quotas at a per-Google Cloud-project and per-region basis."
+        ]
+      },
+      {
+        "title": "Requirements \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/requirements",
+        "source_id": "site-docs-reference-2",
+        "final_score": 73,
+        "relevance": "",
+        "evidence_snippets": [
+          "Regions and versions Cloud regions Only these Google Cloud regions are available: Regional locations Region name Region description Americas northamerica-northeast1 Montréal northamerica-northeast2 Toronto us-central1 Iowa us-east1 South Carolina us-east4 North Virginia us-west1 Oregon us-west2 Los Angeles us-west3 Salt Lake City southamerica-east1 São Paulo Asia Pacific asia-east1 Taiwan asia-east2 Hong Kong asia-northeast1 Tokyo asia-northeast2 Osaka asia-northeast3 Seoul asia-south1 Mumbai asia-southeast1 Singapore asia-southeast2 Jakarta australia-southeast1 Sydney australia-southeast2 Melbourne Europe europe-north1 Finland europe-west2 London europe-west3 Frankfurt europe-west4 Netherlands europe-west6 Zurich Middle East me-west1 Tel Aviv me-central1 Doha me-central2 Dammam Multi-regional locations Multi-region name Multi-region description us Data centers in the United States eu Data centers in Europe Google Cloud CLI Cloud Healthcare API requires version 236.0.0 or higher of the Google Cloud CLI .",
+          "Home Documentation Industry solutions Cloud Healthcare API Resources Send feedback Requirements Stay organized with collections Save and categorize content based on your preferences.",
+          "Permitted characters and size requirements Resources in the Cloud Healthcare API are limited to certain characters and might be limited to certain lengths."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/regions",
+        "https://docs.cloud.google.com/healthcare-api/docs/requirements",
+        "https://docs.cloud.google.com/healthcare-api/docs/best-practices-quota-management"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:29.484Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api"
+}

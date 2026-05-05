@@ -1,0 +1,263 @@
+{
+  "feature_name": "Cross-cluster security policies",
+  "feature_slug": "cross-cluster-security-policies",
+  "summary": "Anthos Service Mesh supports cross-cluster security policies for multi-cluster meshes on GKE in beta; Anthos Service Mesh supports cross-cluster security policies for multi-cluster meshes on GKE in beta.",
+  "extended_definition": "Anthos Service Mesh supports cross-cluster security policies for multi-cluster meshes on GKE in beta; Anthos Service Mesh supports cross-cluster security policies for multi-cluster meshes on GKE in beta.",
+  "lifecycle": {
+    "latest_feature_date": "2020-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+      "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+      "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz",
+      "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Service Mesh security overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "source_id": "site-docs-root",
+        "final_score": 242,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For this integration, all workloads in Cloud Service Mesh are granted two IAM roles: privateca.workloadCertificateRequester privateca.auditor Identity-aware access control (firewall) policies With Cloud Service Mesh, you can configure network security policies that are based on the mTLS identity versus the IP address of the peer.",
+          "Certificate Authority Service As an alternative to Cloud Service Mesh certificate authority, you can configure Cloud Service Mesh to use Certificate Authority Service, which is suitable for the following use cases: If you need different certificate authorities to sign workload certificates on different clusters.",
+          "What's next Cloud Service Mesh security best practices Configure transport security Update your authorization policies Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Configuring audit policies for your services \\_|\\_ Cloud Service Mesh \\_\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "source_id": "site-docs-reference",
+        "final_score": 231,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configuring audit policies for your services Note: This guide only supports Cloud Service Mesh with Istio APIs and does not support Google Cloud APIs.",
+          "Turn on RBAC debug logging with the following command: kubectl exec POD NAME -n NAMESPACE -c istio-proxy -- pilot-agent request POST 'logging?rbac=debug' Send some requests, and then check logs for the Pod with the kubectl logs command: kubectl logs POD NAME -n NAMESPACE -c istio-proxy What's next Learn about security in Cloud Service Mesh Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "After applying the following policy, you see audit logs for requests to both ProductPage and Ratings. kubectl apply -f - << EOF apiVersion: \"security.istio.io/v1beta1\" kind: \"AuthorizationPolicy\" metadata: name: \"audit-ratings\" namespace: default spec: action: AUDIT rules: - from: - source: principals: [\"cluster.local/ns/default/sa/bookinfo-ratings\"] to: - operation: methods: [\"GET\"] EOF The new audit policy has to propagate first before it takes effect."
+        ]
+      },
+      {
+        "title": "Security bulletins \\_|\\_ Cloud Service Mesh \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "source_id": "site-docs-root",
+        "final_score": 226,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following is an example of vulnerable policy that uses \"DENY action + paths field\" pattern: apiVersion: security.istio.io/v1beta1 kind: AuthorizationPolicy metadata: name: deny-path-admin spec: action: DENY rules: - to: - operation: paths: [\"/admin\"] The following is another example of vulnerable policy that uses \"ALLOW action + notPaths field\" pattern: apiVersion: security.istio.io/v1beta1 kind: AuthorizationPolicy metadata: name: allow-path-not-admin spec: action: ALLOW rules: - to: - operation: notPaths: [\"/admin\"] Your cluster is not impacted by this vulnerability if: You don't have authorization policies.",
+          "Check if your clusters are impacted Your cluster is impacted if it uses an in-cluster Cloud Service Mesh patch version earlier than: 1.27.4-asm.1 1.26.7-asm.1 1.25.6-asm.1 Your cluster is impacted if it uses a managed Cloud Service Mesh version earlier than: 1.21.6-asm.7 1.20.8-asm.59 1.19.10-asm.54 Mitigation For in-cluster Cloud Service Mesh, upgrade your cluster to one of the following patched versions: 1.27.4-asm.1 1.26.7-asm.1 1.25.6-asm.1 If you're using Cloud Service Mesh v1.24 or earlier, your release has reached end of life and is no longer supported.",
+          "Mitigation If you are running standalone Cloud Service Mesh , upgrade your cluster to one of the following patched versions: If you're using Anthos Service Mesh 1.14, upgrade to v1.14.4-asm.2 If you're using Anthos Service Mesh 1.13, upgrade to v1.13.8-asm.4 If you're using Anthos Service Mesh 1.12, upgrade to v1.12.9-asm.3 If you are running managed Cloud Service Mesh , your system will be automatically updated within the next few days."
+        ]
+      },
+      {
+        "title": "Cloud Service Mesh by example: Authorization \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz",
+        "source_id": "site-docs-reference",
+        "final_score": 212,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the following command, REVISION LABEL is the value of the istiod revision label that you noted in the previous step. kubectl label namespace asm-ingress \\ istio-injection- istio.io/rev = REVISION LABEL --overwrite Deploy the example gateway in the anthos-service-mesh-samples repository: kubectl apply -n asm-ingress \\ -f docs/shared/asm-ingress-gateway Expected output: serviceaccount/asm-ingressgateway configured service/asm-ingressgateway configured deployment.apps/asm-ingressgateway configured gateway.networking.istio.io/asm-ingressgateway configured Deploy the Online Boutique sample application If you haven't, set the current context for kubectl to the cluster: gcloud container clusters get-credentials CLUSTER NAME \\ --project= PROJECT ID \\ --zone= CLUSTER LOCATION Create the namespace for the sample application: kubectl create namespace onlineboutique Label the onlineboutique namespace to automatically inject Envoy proxies: kubectl label namespace onlineboutique \\ istio.io/rev- istio-injection=enabled --overwrite Deploy the sample app, the VirtualService for the frontend, and service accounts for the workloads.",
+          "In Cloud Shell, delete the project: gcloud projects delete PROJECT ID Delete the resources If you want to keep your cluster and remove the Online Boutique sample: Delete the application namespaces: kubectl delete namespace onlineboutique Expected output: namespace \"onlineboutique\" deleted Delete the Ingress Gateway namespace: kubectl delete namespace asm-ingress Expected output: namespace \"asm-ingress\" deleted If you want to prevent additional charges, delete the cluster: gcloud container clusters delete CLUSTER NAME \\ --project= PROJECT ID \\ --zone= CLUSTER LOCATION What's next For a general guide on configuring PeerAuthentication policies, see Configuring transport security .",
+          "There are various supported setup methods: Fleet API and a managed control plane on Google Cloud asmcli and an unmanaged, in-cluster control plane off Google Cloud Clone the repo: git clone https://github.com/GoogleCloudPlatform/anthos-service-mesh-samples cd anthos-service-mesh-samples Deploy an ingress gateway Set the current context for kubectl to the cluster: Note: Use --region instead of --zone , if the cluster is a regional cluster. gcloud container clusters get-credentials CLUSTER NAME \\ --project= PROJECT ID \\ --zone= CLUSTER LOCATION Create a namespace for your ingress gateway: kubectl create namespace asm-ingress Enable the namespace for injection."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "asm.1",
+      "asm.14",
+      "asm.17",
+      "asm.2",
+      "asm.24",
+      "asm.3",
+      "asm.4",
+      "asm.54",
+      "asm.59",
+      "asm.7",
+      "cluster.local",
+      "deployment.apps",
+      "gateway.networking.istio.io",
+      "github.com",
+      "istio.io",
+      "privateca.auditor",
+      "privateca.workloadCertificateRequester",
+      "security.istio.io",
+      "v1.12.9",
+      "v1.13.8",
+      "v1.14.4",
+      "v1.20",
+      "v1.24"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:37.462Z",
+  "source_step08_card": "data/step-08/current/products/cloud-service-mesh/card.json",
+  "product_name": "Cloud Service Mesh",
+  "product_slug": "cloud-service-mesh"
+}

@@ -1,0 +1,227 @@
+{
+  "feature_name": "API operation management without valid specifications",
+  "feature_slug": "api-operation-management-without-valid-specifications",
+  "summary": "The Operations entity now supports adding, editing, and deleting operations for an API version even without a valid or parseable specification file.",
+  "extended_definition": "The Operations entity now supports adding, editing, and deleting operations for an API version even without a valid or parseable specification file.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+      "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+      "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Apigee known issues \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "source_id": "site-docs-reference",
+        "final_score": 151,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Workaround: Manually create an egress rule, such as the following: -egressTo: operations: -serviceName: \"iamcredentials.googleapis.com\" methodSelectors: -method: resources: -projects/608305225983 egressFrom: identityType: ANY IDENTITY 247540503 hybrid 1.7.0 and later hybrid 1.8.0 and later FIXED A race condition with encryption key lookup can cause KVM lookup failures.",
+          "432315283 Apigee OPEN When updating a keystore or truststore without creating a new keystore or truststore, runtime updates may fail and cause the following intermittent error: {\"fault\":{\"faultstring\":\"SSL Handshake failed sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target\",\"detail\":{\"errorcode\":\"messaging.adaptors.http.flow.SslHandshakeFailed\"}}} The error is intermittent because the keystore or truststore update may fail on one runtime pod but succeed on other pods.",
+          "392135466 hybrid 1.14.0 OPEN Proxy chaining with mTLS is not supported when using Enhanced per-environment proxy limits 383334511 Apigee OPEN KVM entry created with unexpected name When a KeyValueMapOperations policy is used with apiproxy scope, and the policy's <Put> operation is called in a shared flow via a flow hook, the KVM entry is created under the shared flow name."
+        ]
+      },
+      {
+        "title": "Get started with the Apigee Extension Processor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 129,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Follow the steps in Operations to add an API operation set to the API product, according to the following specifications: Source: In the Google Cloud console, go to the Apigee > Distribution > API Products page.",
+          "Go to the VPC Networks page in the Google Cloud console: Go to VPC Networks Required roles To get the permissions that you need to install the Apigee Extension Processor, ask your administrator to grant you the following IAM roles: Create and manage service accounts: Service Account Admin ( roles/iam.serviceAccountAdmin ) on organization Create and manage service extensions: Service Extensions Admin ( roles/networkservices.serviceExtensionsAdmin ) on organization Create and manage network endpoint groups (NEGs): Compute Instance Admin ( roles/compute.instanceAdmin ) on organization Create and manage networking resources: Compute Network Admin ( roles/compute.networkAdmin ) on organization Create and manage backend services: Compute Load Balancer Admin ( roles/compute.loadBalancerAdmin ) on organization Create and manage Apigee resources: Apigee Org Admin ( roles/apigee.admin ) on organization Create and manage traffic extensions: Apigee APIM Service Extension Admin ( roles/apigee.apimServiceExtensionAdmin ) on organization View traffic extensions: Apigee APIM Service Extension Viewer ( roles/apigee.apimServiceExtensionViewer ) on organization Manage long-running operations: Apigee APIM Service Extension Service Agent ( roles/apigee.apimServiceExtensionServiceAgent ) on the service agent in the Google Cloud project For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Add the AssignMessage policy for Google authentication If you want to use your Extension Processor to provide API management for a Google-authenticated service, you can inject a Google access token or Google ID token into requests sent to the backend service using the AssignMessage policy ."
+        ]
+      },
+      {
+        "title": "Manage MCP tools \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 106,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The parser doesn't strictly define their content.\" } }, \"required\" : [ \"tools\" ], \"additionalProperties\" : false } Example The following example shows a valid MCP specification file using the sample JSON schema. { \"tools\" : [ { \"name\" : \"get-weather\" , \"title\" : \"Get Weather\" , \"description\" : \"Fetches the current weather for a given location.\" , \"inputSchema\" : { \"type\" : \"object\" , \"properties\" : { \"location\" : { \"type\" : \"string\" , \"description\" : \"The city and state, e.g., San Francisco, CA\" } }, \"required\" : [ \"location\" ] }, \"outputSchema\" : { \"type\" : \"object\" , \"properties\" : { \"temperature\" : { \"type\" : \"number\" }, \"unit\" : { \"type\" : \"string\" }, \"description\" : { \"type\" : \"string\" } } }, \"annotations\" : { \"title\" : \"Weather Tool\" , \"readOnlyHint\" : true , \"destructiveHint\" : false , \"idempotentHint\" : true , \"openWorldHint\" : true , \"additionalHints\" : { \"apiProvider\" : \"Some Weather API\" } } }, { \"name\" : \"send-email\" , \"title\" : \"Send Email\" , \"description\" : \"Sends an email.\" }, { \"name\" : \"tool with spaces and Upper\" } ], \"resources\" : [], \"prompts\" : [], \"errors\" : [] } What's next See the API reference documentation for the Operations API.",
+          "Example curl --location 'https://apihub.googleapis.com/v1/projects/apihub-test-api/locations/us-central1/apis/apihub-test-api/versions/1/operations?api operation id=get-weather' \\ --header \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ --header 'Content-Type: application/json; charset=utf-8' \\ --data '{ \"details\": { \"description\": \"Fetches the current weather for a given location.\", \"documentation\": { \"externalUri\": \"https://www.example.com/weather\" }, \"deprecated\": false, \"mcpTool\": { \"name\": \"get-weather\", \"title\": \"Get Weather\", \"description\": \"Fetches the current weather for a given location.\", \"annotations\": { \"title\": \"Weather Tool\", \"readOnlyHint\": true, \"destructiveHint\": false, \"idempotentHint\": true, \"openWorldHint\": true, \"additionalHints\": { \"apiProvider\": \"Some Weather API\" } }, \"inputSchema\": { \"jsonSchema\": { \"type\": \"object\", \"properties\": { \"location\": { \"type\": \"string\", \"description\": \"The city and state, e.g., San Francisco, CA\" } }, \"required\": [ \"location\" ] } }, \"outputSchema\": { \"jsonSchema\": { \"type\": \"object\", \"properties\": { \"temperature\": { \"type\": \"number\" }, \"unit\": { \"type\": \"string\" }, \"description\": { \"type\": \"string\" } } } } } } }' Extract MCP tools from Apigee MCP proxies Private Preview — MCP in Apigee This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "Add MCP tools using the API REST To add a MCP tool to an API version, use the Create operations API. curl --location 'https://apihub.googleapis.com/v1/projects/ PROJECT /locations/ LOCATION /apis/ API ID /versions/ VERSION ID /operations?api operation id= TOOL ID ' \\ --header \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ --header 'Content-Type: application/json; charset=utf-8' \\ --data '{ \"details\": { \"description\": \" DESCRIPTION \", \"documentation\": { \"externalUri\": \" EXTERNAL URI \" }, \"deprecated\": false, \"mcpTool\": { \"name\": \" TOOL NAME \", \"title\": \" TOOL TITLE \", \"description\": \" TOOL DESCRIPTION \", \"annotations\": { \"title\": \" TOOL ANNOTATION TITLE \", \"readOnlyHint\": false, \"destructiveHint\": false, \"idempotentHint\": true, \"openWorldHint\": false, \"additionalHints\": { \"custom hint\": \" TOOL ANNOTATION CUSTOM HINT \" } }, \"inputSchema\": { \"jsonSchema\": { \"type\": \"object\", \"properties\": { \"input param\": { \"type\": \"string\" } } } }, \"outputSchema\": { \"jsonSchema\": { \"type\": \"object\", \"properties\": { \"output result\": { \"type\": \"string\" } } } } } } }' Replace the following: PROJECT : your Google Cloud project ID."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.admin",
+      "apigee.apimServiceExtensionAdmin",
+      "apigee.apimServiceExtensionServiceAgent",
+      "apigee.apimServiceExtensionViewer",
+      "apihub.googleapis.com",
+      "compute.instanceAdmin",
+      "compute.loadBalancerAdmin",
+      "compute.networkAdmin",
+      "e.g",
+      "iam.serviceAccountAdmin",
+      "iamcredentials.googleapis.com",
+      "messaging.adaptors.http.flow.SslHandshakeFailed",
+      "networkservices.serviceExtensionsAdmin",
+      "sun.security.provider.certpath.SunCertPathBuilderException"
+    ],
+    "missing_inventory_roles": [
+      "roles/apigee.admin",
+      "roles/apigee.apimServiceExtensionAdmin",
+      "roles/apigee.apimServiceExtensionServiceAgent",
+      "roles/apigee.apimServiceExtensionViewer",
+      "roles/compute.instanceAdmin",
+      "roles/compute.loadBalancerAdmin",
+      "roles/compute.networkAdmin",
+      "roles/iam.serviceAccountAdmin",
+      "roles/networkservices.serviceExtensionsAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:05.893Z",
+  "source_step08_card": "data/step-08/current/products/apigee-api-hub/card.json",
+  "product_name": "Apigee API hub",
+  "product_slug": "apigee-api-hub"
+}

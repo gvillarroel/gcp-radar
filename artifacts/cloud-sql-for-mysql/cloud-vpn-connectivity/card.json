@@ -1,0 +1,146 @@
+{
+  "feature_name": "Cloud VPN connectivity",
+  "feature_slug": "cloud-vpn-connectivity",
+  "summary": "Cloud SQL can be used with Cloud VPN for network connectivity.",
+  "extended_definition": "Cloud SQL can be used with Cloud VPN for network connectivity.",
+  "lifecycle": {
+    "latest_feature_date": "2019-12-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+      "https://docs.cloud.google.com/sql/docs/error-messages",
+      "https://docs.cloud.google.com/sql/docs/mysql/configure-private-service-connect"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Debugging connection issues \\_|\\_ Cloud SQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "source_id": "site-docs-root",
+        "final_score": 90,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Test with Connectivity Test Connectivity Test is a diagnostics tool that lets you check connectivity between endpoints in your network.",
+          "To get a thread count, you can use: mysql> SHOW STATUS WHERE Variable name = 'Threads connected' ; You get output similar to the following: +-------------------+-------+ Variable name Value +-------------------+-------+ Threads connected 7 +-------------------+-------+ 1 row in set (0.08 sec) Connections timeout (from Compute Engine) Connections with a Compute Engine instance timeout after 10 minutes of inactivity, which can affect long-lived unused connections between your Compute Engine instance and your Cloud SQL instance.",
+          "The following section includes examples of questions you can ask yourself to help further narrow down the issue: Connection issues checklist Connecting Private IP Have you enabled the Service Networking API for your project?"
+        ]
+      },
+      {
+        "title": "\"Connect to an instance using Private Service Connect \\_|\\_ Cloud SQL for\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/configure-private-service-connect",
+        "source_id": "site-docs-reference-3",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID \", \"status\": \"PENDING\", \"user\": USER , \"insertTime\": \"2025-05-13T20:44:23.064Z\", \"operationType\": \"UPDATE\", \"targetId\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \",\" } Test connectivity To test inbound connectivity to a Cloud SQL instance with Private Service Connect enabled, set the IP address of the Private Service Connect endpoint to be the destination IP address. gcloud To create a connectivity test for a Cloud SQL instance with Private Service Connect enabled, use the gcloud network-management connectivity-tests create command: gcloud network-management connectivity-tests create CONNECTIVITY TEST NAME \\ --source-instance = SOURCE INSTANCE \\ --destination-cloud-sql-instance = DESTINATION CLOUD SQL INSTANCE \\ --destination-network = DESTINATION NETWORK \\ --destination-port = DESTINATION PORT \\ --protocol = tcp Make the following replacements: CONNECTIVITY TEST NAME : the name of the connectivity test.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://networkconnectivity.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /serviceConnectionPolicies?serviceConnectionPolicyId= POLICY NAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /locations/ REGION /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.networkconnectivity.v1.OperationMetadata\", \"createTime\": \"2023-08-15T16:59:29.236110917Z\", \"target\": \"projects/ PROJECT ID /locations/ REGION /serviceConnectionPolicies/ POLICY NAME \", \"verb\": \"create\", \"requestedCancellation\": false, \"apiVersion\": \"v1\" }, \"done\": false } Create a Cloud SQL instance You can create an instance with Private Service Connect enabled for the instance and configure the instance to create endpoints automatically by using gcloud CLI or the API.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://networkmanagement.googleapis.com/v1beta/projects/ PROJECT ID /locations/global/connectivityTests?testId= CONNECTIVITY TEST NAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /locations/global/operations/operation- OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.networkmanagement.v1.OperationMetadata\", \"createTime\": \"2024-05-23T16:43:49.313981473Z\", \"target\": \"projects/ PROJECT ID /locations/global/connectivityTests/ CONNECTIVITY TEST NAME \", \"verb\": \"create\", \"cancelRequested\": false, \"apiVersion\": \"v1\" }, \"done\": false } Note: In addition to testing connectivity, you can restrict connectivity to Private Service Connect endpoints from service consumers in a VPC network."
+        ]
+      },
+      {
+        "title": "Cloud SQL error messages \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/error-messages",
+        "source_id": "site-docs-root",
+        "final_score": 79,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After expanding an existing IP range, update the vpc peering with following command: gcloud services vpc-peerings update \\ --service = servicenetworking.googleapis.com --ranges = RESERVED RANGE NAME \\ --network = VPC NETWORK \\ --project = PROJECT ID \\ --force Error message Troubleshooting (gcloud.sql.connect) It seems your client does not have ipv6 connectivity and the database instance does not have an ipv4 address.",
+          "Authorized Networks are configured for public IP addresses in the Connectivity section of the Google Cloud console, and cloning isn't permitted due to security considerations .",
+          "It can also be caused by intermittent connectivity issues."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcloud.sql.connect",
+      "networkconnectivity.googleapis.com",
+      "networkmanagement.googleapis.com",
+      "request.json",
+      "servicenetworking.googleapis.com",
+      "sqladmin.googleapis.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-service-connect"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-service-connect"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-service-connect"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-service-connect"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-service-connect"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-service-connect"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-service-connect"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:38.345Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql"
+}

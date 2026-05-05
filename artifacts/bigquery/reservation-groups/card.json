@@ -1,0 +1,131 @@
+{
+  "feature_name": "Reservation groups",
+  "feature_slug": "reservation-groups",
+  "summary": "Reservation groups let related reservations prioritize idle slot sharing within the group before sharing with other reservations in the project.",
+  "extended_definition": "Reservation groups let related reservations prioritize idle slot sharing within the group before sharing with other reservations in the project.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/reservations",
+      "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rest",
+      "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "BigQuery Reservation API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rest",
+        "source_id": "site-api-reference-required-3",
+        "final_score": 156,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1.projects.locations.reservations.assignments Methods create POST /v1/{parent=projects/ /locations/ /reservations/ }/assignments Creates an assignment object which allows the given project to submit jobs of a certain type using slots from the specified reservation. delete DELETE /v1/{name=projects/ /locations/ /reservations/ /assignments/ } Deletes a assignment. getIamPolicy GET /v1/{resource=projects/ /locations/ /reservations/ /assignments/ }:getIamPolicy Gets the access control policy for a resource. list GET /v1/{parent=projects/ /locations/ /reservations/ }/assignments Lists assignments. move POST /v1/{name=projects/ /locations/ /reservations/ /assignments/ }:move Moves an assignment under a new reservation. patch PATCH /v1/{assignment.name=projects/ /locations/ /reservations/ /assignments/ } Updates an existing assignment. setIamPolicy POST /v1/{resource=projects/ /locations/ /reservations/ /assignments/ }:setIamPolicy Sets an access control policy for a resource. testIamPermissions POST /v1/{resource=projects/ /locations/ /reservations/ /assignments/ }:testIamPermissions Gets your permissions on a resource.",
+          "REST Resource: v1.projects.locations REST Resource: v1.projects.locations.capacityCommitments REST Resource: v1.projects.locations.reservationGroups REST Resource: v1.projects.locations.reservations REST Resource: v1.projects.locations.reservations.assignments Service: bigqueryreservation.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "REST Resource: v1.projects.locations.reservations Methods create POST /v1/{parent=projects/ /locations/ }/reservations Creates a new reservation resource. delete DELETE /v1/{name=projects/ /locations/ /reservations/ } Deletes a reservation. failoverReservation POST /v1/{name=projects/ /locations/ /reservations/ }:failoverReservation Fail over a reservation to the secondary location. get GET /v1/{name=projects/ /locations/ /reservations/ } Returns information about the reservation. getIamPolicy GET /v1/{resource=projects/ /locations/ /reservations/ }:getIamPolicy Gets the access control policy for a resource. list GET /v1/{parent=projects/ /locations/ }/reservations Lists all the reservations for the project in the specified location. patch PATCH /v1/{reservation.name=projects/ /locations/ /reservations/ } Updates an existing reservation resource. setIamPolicy POST /v1/{resource=projects/ /locations/ /reservations/ }:setIamPolicy Sets an access control policy for a resource. testIamPermissions POST /v1/{resource=projects/ /locations/ /reservations/ }:testIamPermissions Gets your permissions on a resource."
+        ]
+      },
+      {
+        "title": "BigQuery Reservation API Client Libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/reservations",
+        "source_id": "site-docs-reference",
+        "final_score": 143,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ListReservationsRequest ( parent = client . common location path ( project id , location ) ) total reservations = 0 for reservation in client . list reservations ( request = req ): print ( f \" \\t Reservation { reservation . name } \" f \"has { reservation . slot capacity } slot capacity.\" ) total reservations = total reservations + 1 print ( f \" \\n { total reservations } reservations processed.\" ) if name == \" main \" : parser = argparse .",
+          "GetSlotCapacity ()) totalReservations ++ } fmt .",
+          "String projectId = \"YOUR PROJECT ID\" ; String location = \"LOCATION\" ; quickStartSample ( projectId , location ); } public static void quickStartSample ( String projectId , String location ) throws IOException { try ( ReservationServiceClient client = ReservationServiceClient . create ()) { // list reservations in the project String parent = String . format ( \"projects/%s/locations/%s\" , projectId , location ); client . listReservations ( parent ) . iterateAll () . forEach ( res - > System . out . println ( \"Reservation resource name: \" + res . getName ())); // list capacity commitments in the project client . listCapacityCommitments ( parent ) . iterateAll () . forEach ( commitment - > System . out . println ( \"Capacity commitment resource name: \" + commitment . getName ())); } } } Node.js // Imports the Google Cloud client library const { ReservationServiceClient , } = require ( ' @google-cloud/bigquery-reservation ' ); // Creates a client const client = new ReservationServiceClient (); // project = 'my-project' // Project to list reservations for. // location = 'US' // BigQuery location. async function listReservations () { const [ reservations ] = await client . listReservations ({ parent : projects/ ${ project } /locations/ ${ location } , }); console . info ( found ${ reservations . length } reservations ); console . info ( reservations ); } async function listCapacityCommitments () { const [ commitments ] = await client . listCapacityCommitments ({ parent : projects/ ${ project } /locations/ ${ location } , }); console . info ( found ${ commitments . length } commitments ); console . info ( commitments ); } listReservations (); listCapacityCommitments (); Python import argparse from google.cloud import bigquery reservation v1 def main ( project id : str = \"your-project-id\" , location : str = \"US\" , transport : str = \"grpc\" ) - > None : Constructs the client for interacting with the service. client = bigquery reservation v1 ."
+        ]
+      },
+      {
+        "title": "BigQuery Reservation API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rpc",
+        "source_id": "site-docs-reference",
+        "final_score": 140,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Service: bigqueryreservation.googleapis.com The Service name bigqueryreservation.googleapis.com is needed to create RPC client stubs. google.cloud.bigquery.reservation.v1.ReservationService Methods CreateAssignment Creates an assignment object which allows the given project to submit jobs of a certain type using slots from the specified reservation.",
+          "ListReservationGroups Lists all the reservation groups for the project in the specified location.",
+          "ListReservations Lists all the reservations for the project in the specified location."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "assignment.name",
+      "bigqueryreservation.googleapis.com",
+      "reservation.name",
+      "v1.projects.locations",
+      "v1.projects.locations.capacityCommitments",
+      "v1.projects.locations.reservationGroups",
+      "v1.projects.locations.reservations",
+      "v1.projects.locations.reservations.assignments"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rest",
+        "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rpc",
+        "https://docs.cloud.google.com/bigquery/docs/reference/reservations"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rest",
+        "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rpc",
+        "https://docs.cloud.google.com/bigquery/docs/reference/reservations"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rest",
+        "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rpc",
+        "https://docs.cloud.google.com/bigquery/docs/reference/reservations"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rest",
+        "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rpc",
+        "https://docs.cloud.google.com/bigquery/docs/reference/reservations"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rest",
+        "https://docs.cloud.google.com/bigquery/docs/reference/reservations/rpc",
+        "https://docs.cloud.google.com/bigquery/docs/reference/reservations"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

@@ -1,0 +1,117 @@
+{
+  "feature_name": "Vertex AI Prediction Private Service Connect endpoints",
+  "feature_slug": "vertex-ai-prediction-private-service-connect-endpoints",
+  "summary": "Vertex AI Prediction now offers Private Service Connect (PSC-E) endpoints for secure private access to model prediction services.",
+  "extended_definition": "Vertex AI Prediction now offers Private Service Connect (PSC-E) endpoints for secure private access to model prediction services.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials",
+      "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "source_id": "site-api-reference-2",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "DeployedModel JSON representation { \"id\" : string , \"model\" : string , \"gdcConnectedModel\" : string , \"modelVersionId\" : string , \"displayName\" : string , \"createTime\" : string , \"explanationSpec\" : { object ( ExplanationSpec ) } , \"disableExplanations\" : boolean , \"serviceAccount\" : string , \"enableContainerLogging\" : boolean , \"disableContainerLogging\" : boolean , \"enableAccessLogging\" : boolean , \"privateEndpoints\" : { object ( PrivateEndpoints ) } , \"fasterDeploymentConfig\" : { object ( FasterDeploymentConfig ) } , \"rolloutOptions\" : { object ( RolloutOptions ) } , \"status\" : { object ( Status ) } , \"systemLabels\" : { string : string , ... } , \"checkpointId\" : string , \"speculativeDecodingSpec\" : { object ( SpeculativeDecodingSpec ) } , // Union field prediction resources can be only one of the following: \"dedicatedResources\" : { object ( DedicatedResources ) } , \"automaticResources\" : { object ( AutomaticResources ) } , \"sharedResources\" : string , \"fullFineTunedResources\" : { object ( FullFineTunedResources ) } // End of list of possible types for union field prediction resources . } Fields id string Immutable.",
+          "Format: https://{endpoint id}.{region}-{uid}.prediction.vertexai.goog . clientConnectionConfig object ( ClientConnectionConfig ) Configurations that are applied to the endpoint for online prediction. satisfiesPzs boolean Output only.",
+          "This field is used by Online Inference(Prediction) only. enableSecurePrivateServiceConnect boolean Optional."
+        ]
+      },
+      {
+        "title": "\"Vertex Explainable AI notebook tutorials \\_|\\_ Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials",
+        "source_id": "site-docs-reference-2",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "Send a prediction request to a Private Endpoint Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Language Models Vertex AI LLM and streaming prediction .",
+          "Tutorial steps Colab Colab Enterprise GitHub Vertex AI Workbench Private Endpoints Get started with Vertex AI Private Endpoints .",
+          "Tutorial steps Installation of required libraries Reading the dataset from a Cloud Storage bucket Performing exploratory analysis on the dataset Preprocessing the dataset Training a random forest model using scikitlearn Saving the model to a Cloud Storage bucket Creating a Vertex AI model resource and deploying to an endpoint Running the WhatIf Tool on test data Undeploying the model and cleaning up the model resources Colab GitHub Vertex AI Workbench Vertex AI Workbench BigQuery ML Churn prediction for game developers using Google Analytics 4 and BigQuery ML ."
+        ]
+      },
+      {
+        "title": "\"Vertex ML Metadata notebook tutorials \\_|\\_ Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials",
+        "source_id": "site-docs-reference-2",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "Send a prediction request to a Private Endpoint Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Language Models Vertex AI LLM and streaming prediction .",
+          "Tutorial steps Colab Colab Enterprise GitHub Vertex AI Workbench Private Endpoints Get started with Vertex AI Private Endpoints .",
+          "Tutorial steps Installation of required libraries Reading the dataset from a Cloud Storage bucket Performing exploratory analysis on the dataset Preprocessing the dataset Training a random forest model using scikitlearn Saving the model to a Cloud Storage bucket Creating a Vertex AI model resource and deploying to an endpoint Running the WhatIf Tool on test data Undeploying the model and cleaning up the model resources Colab GitHub Vertex AI Workbench Vertex AI Workbench BigQuery ML Churn prediction for game developers using Google Analytics 4 and BigQuery ML ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "prediction.vertexai.goog"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:42.435Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai"
+}

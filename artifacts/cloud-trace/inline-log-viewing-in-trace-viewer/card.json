@@ -1,0 +1,167 @@
+{
+  "feature_name": "Inline log viewing in Trace Viewer",
+  "feature_slug": "inline-log-viewing-in-trace-viewer",
+  "summary": "Trace Viewer shows associated log entries inline with trace spans and links to VM logs for load balancer spans.",
+  "extended_definition": "Trace Viewer shows associated log entries inline with trace spans and links to VM logs for load balancer spans.",
+  "lifecycle": {
+    "latest_feature_date": "2017-08-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+      "https://docs.cloud.google.com/trace/docs/setup/go",
+      "https://docs.cloud.google.com/trace/docs/setup/go-ot",
+      "https://docs.cloud.google.com/trace/docs/setup/java-ot"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View application telemetry \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "source_id": "site-iam-reference",
+        "final_score": 225,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This is the project that you use to view your application's telemetry data: To get the permissions that you need to view log and metric data, and to create alerting policies and customize dashboards, ask your administrator to grant you the following IAM roles: Logs Viewer ( roles/logging.viewer ) on your App Hub host project or management project and any other projects listed in its default log scope.",
+          "View aggregated telemetry To view log, metric, trace, and incidents information for your application, on the dashboard for the application, select the Dashboards tab.",
+          "Use dashboard options to explore telemetry The Application Monitoring dashboards display log, metric, trace, and incident information."
+        ]
+      },
+      {
+        "title": "Go instrumentation sample \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/setup/go-ot",
+        "source_id": "site-docs-root",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To get the permissions that you need to have the sample application to write log, metric, and trace data, ask your administrator to grant you the following IAM roles on your project: Logs Writer ( roles/logging.logWriter ) Monitoring Metric Writer ( roles/monitoring.metricWriter ) Cloud Telemetry Traces Writer ( roles/telemetry.tracesWriter ) To get the permissions that you need to view your log, metric, and trace data, ask your administrator to grant you the following IAM roles on your project: Logs Viewer ( roles/logging.viewer ) Monitoring Viewer ( roles/monitoring.viewer ) Cloud Trace User ( roles/cloudtrace.user ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "These attributes can then be used to correlate a log with a trace: logging.googleapis.com/trace : Resource name of the trace associated with the log entry. logging.googleapis.com/spanId : The span ID with the trace that is associated with the log entry. logging.googleapis.com/trace sampled : The value of this field must be true or false .",
+          "View your logs From the Logs Explorer, you can inspect your logs, and you can also view associated traces, when they exist."
+        ]
+      },
+      {
+        "title": "Go instrumentation sample \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/setup/go",
+        "source_id": "site-docs-root-2",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To get the permissions that you need to have the sample application to write log, metric, and trace data, ask your administrator to grant you the following IAM roles on your project: Logs Writer ( roles/logging.logWriter ) Monitoring Metric Writer ( roles/monitoring.metricWriter ) Cloud Telemetry Traces Writer ( roles/telemetry.tracesWriter ) To get the permissions that you need to view your log, metric, and trace data, ask your administrator to grant you the following IAM roles on your project: Logs Viewer ( roles/logging.viewer ) Monitoring Viewer ( roles/monitoring.viewer ) Cloud Trace User ( roles/cloudtrace.user ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "These attributes can then be used to correlate a log with a trace: logging.googleapis.com/trace : Resource name of the trace associated with the log entry. logging.googleapis.com/spanId : The span ID with the trace that is associated with the log entry. logging.googleapis.com/trace sampled : The value of this field must be true or false .",
+          "View your logs From the Logs Explorer, you can inspect your logs, and you can also view associated traces, when they exist."
+        ]
+      },
+      {
+        "title": "Java instrumentation sample \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/setup/java-ot",
+        "source_id": "site-docs-root",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To get the permissions that you need to have the sample application to write log, metric, and trace data, ask your administrator to grant you the following IAM roles on your project: Logs Writer ( roles/logging.logWriter ) Monitoring Metric Writer ( roles/monitoring.metricWriter ) Cloud Telemetry Traces Writer ( roles/telemetry.tracesWriter ) To get the permissions that you need to view your log, metric, and trace data, ask your administrator to grant you the following IAM roles on your project: Logs Viewer ( roles/logging.viewer ) Monitoring Viewer ( roles/monitoring.viewer ) Cloud Trace User ( roles/cloudtrace.user ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "These attributes can then be used to correlate a log with a trace: logging.googleapis.com/trace : Resource name of the trace associated with the log entry. logging.googleapis.com/spanId : The span ID with the trace that is associated with the log entry. logging.googleapis.com/trace sampled : The value of this field must be true or false .",
+          "View your logs From the Logs Explorer, you can inspect your logs, and you can also view associated traces, when they exist."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudtrace.user",
+      "layout.html",
+      "log4j2.xml",
+      "logging.apache.org",
+      "logging.googleapis.com",
+      "logging.logWriter",
+      "logging.viewer",
+      "monitoring.metricWriter",
+      "monitoring.viewer",
+      "telemetry.tracesWriter"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudtrace.user",
+      "roles/logging.logWriter",
+      "roles/logging.viewer",
+      "roles/monitoring.metricWriter",
+      "roles/monitoring.viewer",
+      "roles/telemetry.tracesWriter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/trace/docs/setup/go-ot",
+        "https://docs.cloud.google.com/trace/docs/setup/go",
+        "https://docs.cloud.google.com/trace/docs/setup/java-ot"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/trace/docs/setup/go-ot",
+        "https://docs.cloud.google.com/trace/docs/setup/go",
+        "https://docs.cloud.google.com/trace/docs/setup/java-ot"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/trace/docs/setup/go-ot",
+        "https://docs.cloud.google.com/trace/docs/setup/go",
+        "https://docs.cloud.google.com/trace/docs/setup/java-ot"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/trace/docs/setup/go-ot",
+        "https://docs.cloud.google.com/trace/docs/setup/go",
+        "https://docs.cloud.google.com/trace/docs/setup/java-ot"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/trace/docs/setup/go-ot",
+        "https://docs.cloud.google.com/trace/docs/setup/go",
+        "https://docs.cloud.google.com/trace/docs/setup/java-ot"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/trace/docs/setup/go-ot",
+        "https://docs.cloud.google.com/trace/docs/setup/go",
+        "https://docs.cloud.google.com/trace/docs/setup/java-ot"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:44.599Z",
+  "source_step08_card": "data/step-08/current/products/cloud-trace/card.json",
+  "product_name": "Cloud Trace",
+  "product_slug": "cloud-trace"
+}

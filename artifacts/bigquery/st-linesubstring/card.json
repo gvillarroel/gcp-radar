@@ -1,0 +1,193 @@
+{
+  "feature_name": "ST_LINESUBSTRING",
+  "feature_slug": "st-linesubstring",
+  "summary": "The ST_LINESUBSTRING geography function returns a segment of a linestring between specified fractions.",
+  "extended_definition": "The ST_LINESUBSTRING geography function returns a segment of a linestring between specified fractions.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Geography functions | BigQuery | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "source_id": "feature-recovery-http",
+        "final_score": 343,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example The following query returns the second half of the linestring: WITH data AS ( SELECT ST_GEOGFROMTEXT ( 'LINESTRING(20 70, 70 60, 10 70, 70 70)' ) AS geo1 ) SELECT ST_LINESUBSTRING ( geo1 , 0.5 , 1 ) AS segment FROM data ; /*-------------------------------------------------------------+ | segment | +-------------------------------------------------------------+ | LINESTRING(49.4760661523471 67.2419539103851, 10 70, 70 70) | +-------------------------------------------------------------*/ The following query returns a linestring that only contains one point: WITH data AS ( SELECT ST_GEOGFROMTEXT ( 'LINESTRING(20 70, 70 60, 10 70, 70 70)' ) AS geo1 ) SELECT ST_LINESUBSTRING ( geo1 , 0.5 , 0.5 ) AS segment FROM data ; /*------------------------------------------+ | segment | +------------------------------------------+ | POINT(49.4760661523471 67.2419539103851) | +------------------------------------------*/ ST_MAKELINE ST_MAKELINE ( geography_1 , geography_2 ) ST_MAKELINE ( array_of_geography ) Description Creates a GEOGRAPHY with a single linestring by concatenating the point or line vertices of each of the input GEOGRAPHY s in the order they are given.",
+          "Return Type FLOAT64 Examples WITH geos AS ( SELECT ST_GEOGPOINT ( 0 , 0 ) AS point UNION ALL SELECT ST_GEOGPOINT ( 1 , 0 ) UNION ALL SELECT ST_GEOGPOINT ( 1 , 1 ) UNION ALL SELECT ST_GEOGPOINT ( 2 , 2 ) UNION ALL SELECT ST_GEOGPOINT ( 3 , 3 ) UNION ALL SELECT ST_GEOGPOINT ( 4 , 4 ) UNION ALL SELECT ST_GEOGPOINT ( 5 , 5 ) UNION ALL SELECT ST_GEOGPOINT ( 6 , 5 ) UNION ALL SELECT NULL ) SELECT point AS input_point , ST_LINELOCATEPOINT ( ST_GEOGFROMTEXT ( 'LINESTRING(1 1, 5 5)' ), point ) AS percentage_from_beginning FROM geos /*-------------+---------------------------+ | input_point | percentage_from_beginning | +-------------+---------------------------+ | POINT(0 0) | 0 | | POINT(1 0) | 0 | | POINT(1 1) | 0 | | POINT(2 2) | 0.25015214685147907 | | POINT(3 3) | 0.5002284283637185 | | POINT(4 4) | 0.7501905913884388 | | POINT(5 5) | 1 | | POINT(6 5) | 1 | | NULL | NULL | +-------------+---------------------------*/ ST_LINESUBSTRING ST_LINESUBSTRING ( linestring_geography , start_fraction , end_fraction ); Description Gets a segment of a linestring at a specific starting and ending fraction.",
+          "ST_LINESUBSTRING Gets a segment of a single linestring at a specific starting and ending fraction."
+        ]
+      },
+      {
+        "title": "String functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/string_functions",
+        "source_id": "site-docs-root",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": [
+          "Return type INT64 Examples SELECT 'banana' AS value , 'an' AS subvalue , 1 AS position , 1 AS occurrence , INSTR ( 'banana' , 'an' , 1 , 1 ) AS instr ; / --------------+--------------+----------+------------+-------+ value subvalue position occurrence instr +--------------+--------------+----------+------------+-------+ banana an 1 1 2 +--------------+--------------+----------+------------+------- / SELECT 'banana' AS value , 'an' AS subvalue , 1 AS position , 2 AS occurrence , INSTR ( 'banana' , 'an' , 1 , 2 ) AS instr ; / --------------+--------------+----------+------------+-------+ value subvalue position occurrence instr +--------------+--------------+----------+------------+-------+ banana an 1 2 4 +--------------+--------------+----------+------------+------- / SELECT 'banana' AS value , 'an' AS subvalue , 1 AS position , 3 AS occurrence , INSTR ( 'banana' , 'an' , 1 , 3 ) AS instr ; / --------------+--------------+----------+------------+-------+ value subvalue position occurrence instr +--------------+--------------+----------+------------+-------+ banana an 1 3 0 +--------------+--------------+----------+------------+------- / SELECT 'banana' AS value , 'an' AS subvalue , 3 AS position , 1 AS occurrence , INSTR ( 'banana' , 'an' , 3 , 1 ) AS instr ; / --------------+--------------+----------+------------+-------+ value subvalue position occurrence instr +--------------+--------------+----------+------------+-------+ banana an 3 1 4 +--------------+--------------+----------+------------+------- / SELECT 'banana' AS value , 'an' AS subvalue , - 1 AS position , 1 AS occurrence , INSTR ( 'banana' , 'an' , - 1 , 1 ) AS instr ; / --------------+--------------+----------+------------+-------+ value subvalue position occurrence instr +--------------+--------------+----------+------------+-------+ banana an -1 1 4 +--------------+--------------+----------+------------+------- / SELECT 'banana' AS value , 'an' AS subvalue , - 3 AS position , 1 AS occurrence , INSTR ( 'banana' , 'an' , - 3 , 1 ) AS instr ; / --------------+--------------+----------+------------+-------+ value subvalue position occurrence instr +--------------+--------------+----------+------------+-------+ banana an -3 1 4 +--------------+--------------+----------+------------+------- / SELECT 'banana' AS value , 'ann' AS subvalue , 1 AS position , 1 AS occurrence , INSTR ( 'banana' , 'ann' , 1 , 1 ) AS instr ; / --------------+--------------+----------+------------+-------+ value subvalue position occurrence instr +--------------+--------------+----------+------------+-------+ banana ann 1 1 0 +--------------+--------------+----------+------------+------- / SELECT 'helloooo' AS value , 'oo' AS subvalue , 1 AS position , 1 AS occurrence , INSTR ( 'helloooo' , 'oo' , 1 , 1 ) AS instr ; / --------------+--------------+----------+------------+-------+ value subvalue position occurrence instr +--------------+--------------+----------+------------+-------+ helloooo oo 1 1 5 +--------------+--------------+----------+------------+------- / SELECT 'helloooo' AS value , 'oo' AS subvalue , 1 AS position , 2 AS occurrence , INSTR ( 'helloooo' , 'oo' , 1 , 2 ) AS instr ; / --------------+--------------+----------+------------+-------+ value subvalue position occurrence instr +--------------+--------------+----------+------------+-------+ helloooo oo 1 2 6 +--------------+--------------+----------+------------+------- / LEFT LEFT ( value , length ) Description Returns a STRING or BYTES value that consists of the specified number of leftmost characters or bytes from value .",
+          "Due to regular expression operator precedence, it's good practice to use parentheses around everything between ^ and $ . googlesql SELECT 'a@foo.com' AS email , REGEXP CONTAINS ( 'a@foo.com' , r '^([ \\ w.+-]+@foo \\ .com [ \\ w.+-]+@bar \\ .org)$' ) AS valid email address , REGEXP CONTAINS ( 'a@foo.com' , r '^[ \\ w.+-]+@foo \\ .com [ \\ w.+-]+@bar \\ .org$' ) AS without parentheses ; / ----------------+---------------------+---------------------+ email valid email address without parentheses +----------------+---------------------+---------------------+ a@foo.com true true +----------------+---------------------+--------------------- / SELECT 'a@foo.computer' AS email , REGEXP CONTAINS ( 'a@foo.computer' , r '^([ \\ w.+-]+@foo \\ .com [ \\ w.+-]+@bar \\ .org)$' ) AS valid email address , REGEXP CONTAINS ( 'a@foo.computer' , r '^[ \\ w.+-]+@foo \\ .com [ \\ w.+-]+@bar \\ .org$' ) AS without parentheses ; / ----------------+---------------------+---------------------+ email valid email address without parentheses +----------------+---------------------+---------------------+ a@foo.computer false true +----------------+---------------------+--------------------- / SELECT 'b@bar.org' AS email , REGEXP CONTAINS ( 'b@bar.org' , r '^([ \\ w.+-]+@foo \\ .com [ \\ w.+-]+@bar \\ .org)$' ) AS valid email address , REGEXP CONTAINS ( 'b@bar.org' , r '^[ \\ w.+-]+@foo \\ .com [ \\ w.+-]+@bar \\ .org$' ) AS without parentheses ; / ----------------+---------------------+---------------------+ email valid email address without parentheses +----------------+---------------------+---------------------+ b@bar.org true true +----------------+---------------------+--------------------- / SELECT '!b@bar.org' AS email , REGEXP CONTAINS ( '!b@bar.org' , r '^([ \\ w.+-]+@foo \\ .com [ \\ w.+-]+@bar \\ .org)$' ) AS valid email address , REGEXP CONTAINS ( '!b@bar.org' , r '^[ \\ w.+-]+@foo \\ .com [ \\ w.+-]+@bar \\ .org$' ) AS without parentheses ; / ----------------+---------------------+---------------------+ email valid email address without parentheses +----------------+---------------------+---------------------+ !b@bar.org false true +----------------+---------------------+--------------------- / SELECT 'c@buz.net' AS email , REGEXP CONTAINS ( 'c@buz.net' , r '^([ \\ w.+-]+@foo \\ .com [ \\ w.+-]+@bar \\ .org)$' ) AS valid email address , REGEXP CONTAINS ( 'c@buz.net' , r '^[ \\ w.+-]+@foo \\ .com [ \\ w.+-]+@bar \\ .org$' ) AS without parentheses ; / ----------------+---------------------+---------------------+ email valid email address without parentheses +----------------+---------------------+---------------------+ c@buz.net false false +----------------+---------------------+--------------------- / REGEXP EXTRACT REGEXP EXTRACT ( value , regexp [ , position [ , occurrence ]] ) Description Returns the substring in value that matches the re2 regular expression , regexp .",
+          "SELECT CODE POINTS TO BYTES ( ARRAY AGG ( ( SELECT CASE WHEN chr BETWEEN b 'a' and b 'z' THEN TO CODE POINTS ( b 'a' ) [ offset ( 0 ) ] + MOD ( code + 13 - TO CODE POINTS ( b 'a' ) [ offset ( 0 ) ] , 26 ) WHEN chr BETWEEN b 'A' and b 'Z' THEN TO CODE POINTS ( b 'A' ) [ offset ( 0 ) ] + MOD ( code + 13 - TO CODE POINTS ( b 'A' ) [ offset ( 0 ) ] , 26 ) ELSE code END FROM ( SELECT code , CODE POINTS TO BYTES ( [ code ] ) chr ) ) ORDER BY OFFSET )) AS encoded string FROM UNNEST ( TO CODE POINTS ( b 'Test String!' )) code WITH OFFSET ; -- Note that the result of CODE POINTS TO BYTES is of type BYTES, displayed as a base64-encoded string. -- In BYTES format, b'Grfg Fgevat!' is the result. / ------------------+ encoded string +------------------+ R3JmZyBGZ2V2YXQh +------------------ / CODE POINTS TO STRING CODE POINTS TO STRING ( unicode code points ) Description Takes an array of Unicode code points as ARRAY<INT64> and returns a STRING ."
+        ]
+      },
+      {
+        "title": "The CREATE MODEL statement \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+        "source_id": "site-docs-root",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can view specific CREATE MODEL statements by clicking the MODEL TYPE name in the following list, in the table of contents in the left panel, or in the create model link in the End-to-end user journey for each model . { CREATE MODEL CREATE MODEL IF NOT EXISTS CREATE OR REPLACE MODEL } model name [TRANSFORM ( select list )] [INPUT ( field name field type ) OUTPUT ( field name field type )] [REMOTE WITH CONNECTION { connection name DEFAULT}] [OPTIONS( model option list )] [ AS { query statement ( training data AS ( query statement ), custom holiday AS ( holiday statement ) )}] model option list: MODEL TYPE = { 'LINEAR REG' 'LOGISTIC REG' 'KMEANS' 'MATRIX FACTORIZATION' 'PCA' 'AUTOENCODER' 'AUTOML CLASSIFIER' 'AUTOML REGRESSOR' 'BOOSTED TREE CLASSIFIER' 'BOOSTED TREE REGRESSOR' 'RANDOM FOREST CLASSIFIER' 'RANDOM FOREST REGRESSOR' 'DNN CLASSIFIER' 'DNN REGRESSOR' 'DNN LINEAR COMBINED CLASSIFIER' 'DNN LINEAR COMBINED REGRESSOR' 'ARIMA PLUS' 'ARIMA PLUS XREG' 'TENSORFLOW' 'TENSORFLOW LITE' 'ONNX' 'XGBOOST' 'CONTRIBUTION ANALYSIS' } [, MODEL REGISTRY = { 'VERTEX AI' } ] [, VERTEX AI MODEL ID = string value ] [, VERTEX AI MODEL VERSION ALIASES = string array ] [, INPUT LABEL COLS = string array ] [, MAX ITERATIONS = int64 value ] [, EARLY STOP = { TRUE FALSE } ] [, MIN REL PROGRESS = float64 value ] [, DATA SPLIT METHOD = { 'AUTO SPLIT' 'RANDOM' 'CUSTOM' 'SEQ' 'NO SPLIT' } ] [, DATA SPLIT EVAL FRACTION = float64 value ] [, DATA SPLIT TEST FRACTION = float64 value ] [, DATA SPLIT COL = string value ] [, OPTIMIZE STRATEGY = { 'AUTO STRATEGY' 'BATCH GRADIENT DESCENT' 'NORMAL EQUATION' } ] [, L1 REG = float64 value ] [, L2 REG = float64 value ] [, LEARN RATE STRATEGY = { 'LINE SEARCH' 'CONSTANT' } ] [, LEARN RATE = float64 value ] [, LS INIT LEARN RATE = float64 value ] [, WARM START = { TRUE FALSE } ] [, AUTO CLASS WEIGHTS = { TRUE FALSE } ] [, CLASS WEIGHTS = struct array ] [, INSTANCE WEIGHT COL = string value ] [, NUM CLUSTERS = int64 value ] [, KMEANS INIT METHOD = { 'RANDOM' 'KMEANS++' 'CUSTOM' } ] [, KMEANS INIT COL = string value ] [, DISTANCE TYPE = { 'EUCLIDEAN' 'COSINE' } ] [, STANDARDIZE FEATURES = { TRUE FALSE } ] [, MODEL PATH = string value ] [, BUDGET HOURS = float64 value ] [, OPTIMIZATION OBJECTIVE = { string value struct value } ] [, FEEDBACK TYPE = {'EXPLICIT' 'IMPLICIT'} ] [, NUM FACTORS = int64 value ] [, USER COL = string value ] [, ITEM COL = string value ] [, RATING COL = string value ] [, WALS ALPHA = float64 value ] [, BOOSTER TYPE = { 'gbtree' 'dart'} ] [, NUM PARALLEL TREE = int64 value ] [, DART NORMALIZE TYPE = { 'tree' 'forest'} ] [, TREE METHOD = { 'auto' 'exact' 'approx' 'hist'} ] [, MIN TREE CHILD WEIGHT = float64 value ] [, COLSAMPLE BYTREE = float64 value ] [, COLSAMPLE BYLEVEL = float64 value ] [, COLSAMPLE BYNODE = float64 value ] [, MIN SPLIT LOSS = float64 value ] [, MAX TREE DEPTH = int64 value ] [, SUBSAMPLE = float64 value ] [, ACTIVATION FN = { 'RELU' 'RELU6' 'CRELU' 'ELU' 'SELU' 'SIGMOID' 'TANH' } ] [, BATCH SIZE = int64 value ] [, DROPOUT = float64 value ] [, HIDDEN UNITS = int array ] [, OPTIMIZER = { 'ADAGRAD' 'ADAM' 'FTRL' 'RMSPROP' 'SGD' } ] [, TIME SERIES TIMESTAMP COL = string value ] [, TIME SERIES DATA COL = string value ] [, TIME SERIES ID COL = { string value string array } ] [, HORIZON = int64 value ] [, AUTO ARIMA = { TRUE FALSE } ] [, AUTO ARIMA MAX ORDER = int64 value ] [, AUTO ARIMA MIN ORDER = int64 value ] [, NON SEASONAL ORDER = (int64 value, int64 value, int64 value) ] [, DATA FREQUENCY = { 'AUTO FREQUENCY' 'PER MINUTE' 'HOURLY' 'DAILY' 'WEEKLY' ... } ] [, FORECAST LIMIT LOWER BOUND = float64 value ] [, FORECAST LIMIT UPPER BOUND = float64 value ] [, INCLUDE DRIFT = { TRUE FALSE } ] [, HOLIDAY REGION = { 'GLOBAL' 'NA' 'JAPAC' 'EMEA' 'LAC' 'AE' ... } ] [, CLEAN SPIKES AND DIPS = { TRUE FALSE } ] [, ADJUST STEP CHANGES = { TRUE FALSE } ] [, DECOMPOSE TIME SERIES = { TRUE FALSE } ] [, HIERARCHICAL TIME SERIES COLS = { string array } ] [, ENABLE GLOBAL EXPLAIN = { TRUE FALSE } ] [, APPROX GLOBAL FEATURE CONTRIB = { TRUE FALSE }] [, INTEGRATED GRADIENTS NUM STEPS = int64 value ] [, CALCULATE P VALUES = { TRUE FALSE } ] [, FIT INTERCEPT = { TRUE FALSE } ] [, CATEGORY ENCODING METHOD = { 'ONE HOT ENCODING' 'DUMMY ENCODING' 'LABEL ENCODING' 'TARGET ENCODING' } ] [, { ENDPOINT = string value HUGGING FACE MODEL ID = string value MODEL GARDEN MODEL NAME = string value } ] [, HUGGING FACE TOKEN = string value ] [, MACHINE TYPE = string value ] [, MIN REPLICA COUNT = int64 value ] [, MAX REPLICA COUNT = int64 value ] [, RESERVATION AFFINITY TYPE = { 'NO RESERVATION' 'ANY RESERVATION' 'SPECIFIC RESERVATION' } ] [, RESERVATION AFFINITY KEY = string value ] [, RESERVATION AFFINITY VALUES = string array ] [, ENDPOINT IDLE TTL = interval value ] [, REMOTE SERVICE TYPE = { 'CLOUD AI VISION V1' 'CLOUD AI NATURAL LANGUAGE V1' 'CLOUD AI TRANSLATE V3' } ] [, XGBOOST VERSION = { '0.9' '1.1' } ] [, TF VERSION = { '1.15' '2.8.0' '2.17.0' } ] [, NUM TRIALS = int64 value , ] [, MAX PARALLEL TRIALS = int64 value ] [, HPARAM TUNING ALGORITHM = { 'VIZIER DEFAULT' 'RANDOM SEARCH' 'GRID SEARCH' } ] [, HPARAM TUNING OBJECTIVES = { 'R2 SCORE' 'ROC AUC' ... } ] [, NUM PRINCIPAL COMPONENTS = int64 value ] [, PCA EXPLAINED VARIANCE RATIO = float64 value ] [, SCALE FEATURES = { TRUE FALSE } ] [, PCA SOLVER = { 'FULL' 'RANDOMIZED' 'AUTO' } ] [, TIME SERIES LENGTH FRACTION = float64 value ] [, MIN TIME SERIES LENGTH = int64 value ] [, MAX TIME SERIES LENGTH = int64 value ] [, TREND SMOOTHING WINDOW SIZE = int64 value ] [, SEASONALITIES = string array ] [, PROMPT COL = string value ] [, LEARNING RATE MULTIPLIER = float64 value ] [, ACCELERATOR TYPE = { 'GPU' 'TPU' } ] [, EVALUATION TASK = { 'TEXT GENERATION' 'CLASSIFICATION' 'SUMMARIZATION' 'QUESTION ANSWERING' 'UNSPECIFIED' } ] [, DOCUMENT PROCESSOR = string value ] [, SPEECH RECOGNIZER = string value ] [, KMS KEY NAME = string value ] [, CONTRIBUTION METRIC = string value ] [, DIMENSION ID COLS = string array ] [, IS TEST COL = string value ] [, MIN APRIORI SUPPORT = float64 value ] [, PRUNING METHOD = {'NO PRUNING', 'PRUNE REDUNDANT INSIGHTS'} ] [, TOP K INSIGHTS BY APRIORI SUPPORT = int64 value ] CREATE MODEL Creates and trains a new model in the specified dataset.",
+          "Linear & logistic regression , Boosted trees , DNN , Wide & Deep , Kmeans , Matrix factorization , Autoencoder EARLY STOP Whether training should stop after the first iteration in which the relative loss improvement is less than the value specified for MIN REL PROGRESS.",
+          "Boosted trees , Random forest INTEGRATED GRADIENTS NUM STEPS Specifies the number of steps to sample between the example being explained and its baseline for approximating the integral in integrated gradients attribution methods."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bar.org",
+      "buz.net",
+      "foo.com",
+      "foo.computer",
+      "organizations.locations.dataExchanges",
+      "projects.dataSources",
+      "projects.locations",
+      "projects.locations.capacityCommitments",
+      "projects.locations.connections",
+      "projects.locations.dataExchanges",
+      "projects.locations.dataExchanges.listings",
+      "projects.locations.dataExchanges.queryTemplates",
+      "projects.locations.dataPolicies",
+      "projects.locations.dataSources",
+      "projects.locations.reservationGroups",
+      "projects.locations.reservations",
+      "projects.locations.reservations.assignments",
+      "projects.locations.subscriptions",
+      "projects.locations.transferConfigs",
+      "projects.locations.transferConfigs.runs",
+      "projects.locations.transferConfigs.runs.transferLogs",
+      "projects.locations.transferConfigs.transferResources",
+      "projects.locations.workflows",
+      "projects.locations.workflows.subtasks",
+      "projects.transferConfigs",
+      "projects.transferConfigs.runs",
+      "projects.transferConfigs.runs.transferLogs",
+      "projects.transferConfigs.transferResources"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

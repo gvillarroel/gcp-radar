@@ -1,0 +1,108 @@
+{
+  "feature_name": "Backup and restore rate limiting",
+  "feature_slug": "backup-and-restore-rate-limiting",
+  "summary": "Cloud SQL limits the rate of backup and restore operations on the data disk.",
+  "extended_definition": "Cloud SQL limits the rate of backup and restore operations on the data disk.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options",
+      "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore",
+      "https://docs.cloud.google.com/sql/docs/mysql/quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Restore an instance overview \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore",
+        "source_id": "site-docs-reference-3",
+        "final_score": 188,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Each backup (Backup1, Backup2, and Backup3) has its own bucket of tokens for restore operations that target different instances in Project 1 in Region A (Bucket11A, Bucket21A, and Bucket31A).",
+          "Restore rate limitations You are allowed a maximum of three restore operations every 30 minutes per instance per region per project.",
+          "This snapshot is later converted to a standard backup in the background to support restore operations."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/quotas",
+        "source_id": "site-docs-root",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Fixed limits IOPS IOPS are the number of input/output operations (or read/write) operations that your disk can process per second.",
+          "SqlBackupRunsService.Get SqlDatabasesService.Get SqlInstancesService.Get SqlOperationsService.Get SqlSslCertsService.Get SqlUsersService.Get 500 List sqladmin.googleapis.com/list The number of requests that are made per minute per user per region to use the APIs in this category.",
+          "Note: Creating or increasing storage capacity to 64 TB might increase latency of common operations, such as backups, dependent on your workload."
+        ]
+      },
+      {
+        "title": "Choose your backup option \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Backup rate limitations Cloud SQL limits the rate for backup operations on the data disk.",
+          "The following table provides an overview of the key features available with each backup option: Features Standard backups Enhanced backups Centralized backup management across projects - ✔ Backup vault - ✔ Automated backup schedule Daily Hourly, daily, weekly, monthly, yearly On-demand backups ✔ ✔ Multi-region backups ✔ ✔ Final backup in instance deletion ✔ ✔ Backup retention period 1 year 10 years Retain all backups on instance deletion ✔ ✔ Retain backups on project deletion - ✔ Enforced retention with retention lock - ✔ Point-in-time recovery using logs ✔ ✔ Point-in-time recovery after instance deletion ✔ ✔ Cross-region backup and restore ✔ - CMEK support ✔ - For detailed information about these backup options, see Standard backups and Enhanced backups .",
+          "What's next Cloud SQL backups overview Restore from a backup Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore",
+        "https://docs.cloud.google.com/sql/docs/mysql/quotas"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:38.345Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql"
+}

@@ -1,0 +1,94 @@
+{
+  "feature_name": "SAP HANA TCP internal load balancer VIP deployment template for SLES",
+  "feature_slug": "sap-hana-tcp-internal-load-balancer-vip-deployment-template-for-sles",
+  "summary": "Google Cloud now supports automating SAP HANA deployment in SLES high-availability clusters with the recommended TCP internal load balancer virtual IP implementation.",
+  "extended_definition": "Google Cloud now supports automating SAP HANA deployment in SLES high-availability clusters with the recommended TCP internal load balancer virtual IP implementation.",
+  "lifecycle": {
+    "latest_feature_date": "2020-11-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sap/docs/sap-hana-guides",
+      "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+      "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Deployment Manager: SAP HANA scale-up high-availability cluster configuration\\",
+        "url": "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 200,
+        "relevance": "",
+        "evidence_snippets": [
+          "The guide uses Cloud Deployment Manager to deploy two Compute Engine virtual machines (VMs), two SAP HANA scale up systems, a virtual IP address (VIP) with an internal passthrough Network Load Balancer implementation, and an OS-based HA cluster, all according to the best practices from Google Cloud, SAP, and the OS vendor.",
+          "This guide shows you how to automate the deployment of SAP HANA in a Red Hat Enterprise Linux (RHEL) or SUSE Linux Enterprise Server (SLES) high-availability (HA) cluster that uses an internal passthrough Network Load Balancer to manage the virtual IP (VIP) address.",
+          "To fix your deployments to a specific release of the scripts, comment out the type property above and uncomment the type property below. type: https://storage.googleapis.com/cloudsapdeploy/deploymentmanager/ yyyymmddhhmm /dm-templates/sap hana ha ilb/sap hana ha.py properties: primaryInstanceName: example-ha-vm1 secondaryInstanceName: example-ha-vm2 primaryZone: us-central1-a secondaryZone: us-central1-c instanceType: n2-highmem-32 network: example-network subnetwork: example-subnet-us-central1 linuxImage: family/sles-15-sp1-sap linuxImageProject: suse-sap-cloud SAP HANA parameters sap hana deployment bucket: my-hana-bucket sap hana sid: HA1 sap hana instance number: 00 sap hana sidadm password: TempPa55word sap hana system password: TempPa55word VIP parameters sap vip: 10.0.0.100 primaryInstanceGroupName: ig-example-ha-vm1 secondaryInstanceGroupName: ig-example-ha-vm2 loadBalancerName: lb-ha1 Additional optional properties networkTag: hana-ha-ntwk-tag serviceAccount: sap-deploy-example@example-project-123456.iam.gserviceaccount.com Create the instances: $ gcloud deployment-manager deployments create deployment-name --config template-name .yaml The above command invokes the Deployment Manager, which sets up the Google Cloud infrastructure and then hands control over to a script that installs and configures SAP HANA and the HA cluster."
+        ]
+      },
+      {
+        "title": "All SAP HANA Guides \\_|\\_ SAP on Google Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sap/docs/sap-hana-guides",
+        "source_id": "site-docs-root",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Migrating a VIP from alias IP to an internal load balancer Migrating a VIP to an internal load balancer in an SAP HANA HA cluster on RHEL Provides instructions for migrating a VIP in a RHEL HA cluster to an internal load balancer implementation.",
+          "Migrating a VIP to an internal load balancer in an SAP HANA HA cluster on SLES Provides instructions for migrating a VIP in a SLES HA cluster to an internal load balancer implementation.",
+          "Deploying an SAP HANA scale-out system with host auto-failover Terraform: SAP HANA scale-out system with host auto-failover deployment guide Provides Terraform specific instructions for the automated deployment of an SAP HANA scale-out system that includes the SAP HANA host auto-failover fault-recovery solution."
+        ]
+      },
+      {
+        "title": "\"HA scale-up cluster configuration guide for SAP HANA on SLES \\_|\\_ SAP on\\",
+        "url": "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "This guide includes the steps for: Configuring an internal passthrough Network Load Balancer to reroute traffic in the event of a failure Configuring a Pacemaker cluster on SLES to manage the SAP systems and other resources during a failover This guide also includes steps for configuring SAP HANA system replication, but refer to the SAP documentation for the definitive instructions.",
+          "Configure the Cloud Load Balancing failover support for the secondary host The internal passthrough Network Load Balancer service with failover support routes traffic to the secondary host in an SAP HANA cluster based on a health check service.",
+          "Configure the Cloud Load Balancing failover support The internal passthrough Network Load Balancer service with failover support routes traffic to the active host in an SAP HANA cluster based on a health check service."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ha.py",
+      "iam.gserviceaccount.com",
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-guides",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:35.195Z",
+  "source_step08_card": "data/step-08/current/products/sap-on-google-cloud/card.json",
+  "product_name": "SAP on Google Cloud",
+  "product_slug": "sap-on-google-cloud"
+}

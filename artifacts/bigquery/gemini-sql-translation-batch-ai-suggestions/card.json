@@ -1,0 +1,118 @@
+{
+  "feature_name": "Gemini SQL translation batch AI suggestions",
+  "feature_slug": "gemini-sql-translation-batch-ai-suggestions",
+  "summary": "Batch SQL translations can generate AI suggestions using Gemini based on a configuration YAML file.",
+  "extended_definition": "Batch SQL translations can generate AI suggestions using Gemini based on a configuration YAML file.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/api-sql-translator",
+      "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+      "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Transform SQL translations using configuration YAML files \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "source_id": "site-docs-reference-5",
+        "final_score": 171,
+        "relevance": "",
+        "evidence_snippets": [
+          "This configuration converts numeric types to either NUMERIC or BIGNUMERIC depending on the input precision, instead of the default of INT64 . type : optimizer transformations : - name : REWRITE ZERO SCALE NUMERIC AS INTEGER enabled : false A SQL translation with this optimization might look like the following: snowflake-input.sql CREATE TABLE numbers ( i INTEGER , n NUMERIC ( 10 , 0 )); bq-output.sql CREATE TABLE numbers ( i BIGNUMERIC ( 38 ), n NUMERIC ( 29 )); Create a Gemini-based configuration YAML file Note: The Translation service can call Gemini model to generate suggestions to your translated SQL query based on your AI configuration YAML file.",
+          "Note: For API-based translations, we recommend using the BigQuery Migration API instead of the batch SQL translation API or client.",
+          "Examples The following examples create Gemini-based configuration YAML files which you can use with your SQL translations."
+        ]
+      },
+      {
+        "title": "\"Migrate code with the batch SQL translator \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "source_id": "site-docs-reference-5",
+        "final_score": 155,
+        "relevance": "",
+        "evidence_snippets": [
+          "Migrate code with the batch SQL translator Note: For API-based translations, including new batch translations, we recommend that you use the BigQuery Migration API to translate your SQL scripts.",
+          "Create configuration YAML files You can optionally create and use configuration configuration YAML files to customize your batch translations.",
+          "Batch translation client Note: We recommend that new translations use the BigQuery Migration API instead of the batch translation client."
+        ]
+      },
+      {
+        "title": "\"Translate SQL queries with the translation API \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/api-sql-translator",
+        "source_id": "site-docs-reference-5",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example batch translation with AI suggestions Preview This product or feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "Note: The translation API can call Gemini using BigQuery Vertex AI integration to generate suggestions to your translated SQL query based on your AI configuration YAML file.",
+          "The following example translates the Teradata SQL scripts located in the gs://my data bucket/teradata/input/ Cloud Storage directory and stores results in the Cloud Storage directory gs://my data bucket/teradata/output/ with additional AI suggestion: { \"tasks\" : { \"task name\" : { \"type\" : \"Teradata2BigQuery Translation\" , \"translation details\" : { \"target base uri\" : \"gs://my data bucket/teradata/output/\" , \"source target mapping\" : { \"source spec\" : { \"base uri\" : \"gs://my data bucket/teradata/input/\" } }, \"target types\" : \"suggestion\" , } } } } Note: To generate AI suggestions, the Cloud Storage source directory must contain at least one configuration YAML file with a suffix of .ai config.yaml ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.yaml",
+      "input.sql",
+      "output.sql"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "https://docs.cloud.google.com/bigquery/docs/api-sql-translator"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "https://docs.cloud.google.com/bigquery/docs/api-sql-translator"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "https://docs.cloud.google.com/bigquery/docs/api-sql-translator"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "https://docs.cloud.google.com/bigquery/docs/api-sql-translator"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

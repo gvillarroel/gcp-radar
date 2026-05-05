@@ -1,0 +1,265 @@
+{
+  "feature_name": "Secret tags for conditional access",
+  "feature_slug": "secret-tags-for-conditional-access",
+  "summary": "Tags can be attached to secrets to conditionally grant or deny access based on tag presence.",
+  "extended_definition": "Tags can be attached to secrets to conditionally grant or deny access based on tag presence.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/secret-manager/docs/access-control",
+      "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+      "https://docs.cloud.google.com/secret-manager/docs/create-and-manage-tags",
+      "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create and manage tags \\_|\\_ Secret Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secret-manager/docs/create-and-manage-tags",
+        "source_id": "site-iam-reference",
+        "final_score": 273,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud resource-manager tags bindings list \\ --parent = RESOURCE ID Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud resource-manager tags bindings list --parent = RESOURCE ID Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud resource-manager tags bindings list ^ --parent = RESOURCE ID You should receive a response similar to the following: name: tagBindings/%2F%2Fcloudresourcemanager.googleapis.com%2Fprojects%2F7890123456/tagValues/567890123456 tagValue: tagValues/567890123456 resource: //secretmanager.googleapis.com/projects/project-abc/secrets/secret-xyz Detach tags from resources You can detach tags that have been directly attached to a secret.",
+          "Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets create SECRET ID --tags = TAG KEY = TAG VALUE Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets create SECRET ID --tags = TAG KEY = TAG VALUE Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets create SECRET ID --tags = TAG KEY = TAG VALUE REST Before using any of the request data, make the following replacements: PROJECT ID : the ID of the project SECRET ID : the unique identifier of the secret TAGKEY NAME : the permanent ID or namespaced name of the tag key that's attached—for example, tagKeys/567890123456 .",
+          "TagBinding ( parent = f \"//secretmanager.googleapis.com/ { secret response . name } \" , tag value = f \" { tag value } \" , ), ) Create the tag binding operation = resource manager client . create tag binding ( request = request ) Wait for the operation to complete response = operation . result () Print the tag binding print ( f \"Created tag binding: { response . name } \" ) return response List tags attached to resources You can view a list of tag bindings directly attached to or inherited by the secret."
+        ]
+      },
+      {
+        "title": "Add labels to secrets \\_|\\_ Secret Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "source_id": "site-iam-reference",
+        "final_score": 259,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This client only needs to be created // once, and can be reused for multiple requests. try ( SecretManagerServiceClient client = SecretManagerServiceClient . create ()) { // Build the name.",
+          "This client only needs to be created // once, and can be reused for multiple requests. try ( SecretManagerServiceClient client = SecretManagerServiceClient . create ()) { // Build the name.",
+          "This client only needs to be created // once, and can be reused for multiple requests. try ( SecretManagerServiceClient client = SecretManagerServiceClient . create ()) { // Build the name."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Secret Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secret-manager/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In Secret Manager, you can enforce conditional access based on the following attributes: Date/time attributes : Use to set expirable, scheduled, or limited-duration access to Secret Manager resources.",
+          "For example, you can allow a user to manage secret versions only on secrets that begin with a specific prefix, or allow a user to access only a specific secret version.",
+          "Lowest-level resources where you can grant this role: Secret cloudkms.keyHandles. cloudkms.keyHandles.create cloudkms.keyHandles.get cloudkms.keyHandles.list cloudkms.operations.get cloudkms. projects. showEffectiveAutokeyConfig resourcemanager.projects.get resourcemanager.projects.list secretmanager. secretmanager.locations.get secretmanager.locations.list secretmanager.secrets.create secretmanager. secrets. createTagBinding secretmanager.secrets.delete secretmanager. secrets. deleteTagBinding secretmanager.secrets.get secretmanager. secrets. getIamPolicy secretmanager.secrets.list secretmanager. secrets. listEffectiveTags secretmanager. secrets. listTagBindings secretmanager. secrets. setIamPolicy secretmanager.secrets.update secretmanager.versions.access secretmanager.versions.add secretmanager.versions.destroy secretmanager.versions.disable secretmanager.versions.enable secretmanager.versions.get secretmanager.versions.list Secret Manager Secret Accessor ( roles/ secretmanager.secretAccessor ) Allows accessing the payload of secrets."
+        ]
+      },
+      {
+        "title": "\"Set an expiration date for a secret \\_|\\_ Secret Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets",
+        "source_id": "site-iam-reference",
+        "final_score": 216,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can also set up a conditional IAM binding to grant the service account the Secret Accessor role for 45 days.",
+          "Update the expiration date and time, and click Update secret . gcloud Update a secret's expiration using a timestamp Before using any of the command data below, make the following replacements: SECRET ID : the ID of the secret TIMESTAMP : the expiration time in RFC 3339 format, for example 2100-01-01T09:00:00-05:00 Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID \\ --expire-time \" TIMESTAMP \" Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID --expire-time \" TIMESTAMP \" Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID ^ --expire-time \" TIMESTAMP \" Update a secret's expiration using a duration Before using any of the command data below, make the following replacements: SECRET ID : the ID of the secret DURATION : the expiration duration in seconds, for example 86400s Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID \\ --ttl \" DURATION \" Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID --ttl \" DURATION \" Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID ^ --ttl \" DURATION \" REST Update a secret's expiration using a timestamp Before using any of the request data, make the following replacements: PROJECT ID : the Google Cloud project ID SECRET ID : the ID of the secret TOKEN : your own Oauth2.0 access token TIMESTAMP : the expiration time in RFC 3339 format, for example 2100-01-01T09:00:00-05:00 HTTP method and URL: PATCH https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=expire time Request JSON body: {\"expire time\": \" TIMESTAMP \"} To send your request, choose one of these options: curl Save the request body in a file named request.json , and execute the following command: curl -X PATCH \\ -H \"Authorization: Bearer TOKEN \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=expire time\" PowerShell Save the request body in a file named request.json , and execute the following command: $headers = @{ \"Authorization\" = \"Bearer TOKEN \" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=expire time\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /secrets/ SECRET ID \", \"createTime\": \"2024-09-04T03:58:38.200877Z\", \"expireTime\": \"2024-09-04T09:25:39Z\", \"etag\": \"\\\"162143305d282d\\\"\" } Update a secret's expiration using a duration Before using any of the request data, make the following replacements: PROJECT ID : the Google Cloud project ID SECRET ID : the ID of the secret DURATION : the expiration duration in seconds, for example 86400s HTTP method and URL: PATCH https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=ttl Request JSON body: {\"ttl\": \" DURATION \"} To send your request, choose one of these options: curl Save the request body in a file named request.json , and execute the following command: curl -X PATCH \\ -H \"Authorization: Bearer TOKEN \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=ttl\" PowerShell Save the request body in a file named request.json , and execute the following command: $headers = @{ \"Authorization\" = \"Bearer TOKEN \" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=ttl\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /secrets/ SECRET ID \", \"createTime\": \"2024-09-04T03:58:38.200877Z\", \"expireTime\": \"2024-09-04T09:25:39Z\", \"etag\": \"\\\"162143305d282d\\\"\" } Remove a secret's expiration date To remove the secret's expiration date and time, use one of the following methods: Console In the Google Cloud console, go to the Secret Manager page.",
+          "Clear the Set expiration date checkbox, and then click Update secret . gcloud Before using any of the command data below, make the following replacements: SECRET ID : the ID of the secret Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID \\ --remove-expiration Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID --remove-expiration Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID ^ --remove-expiration REST Before using any of the request data, make the following replacements: PROJECT ID : the Google Cloud project ID SECRET ID : the ID of the secret TOKEN : your own Oauth2.0 access token HTTP method and URL: PATCH https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=expire time Request JSON body: {} To send your request, choose one of these options: curl Save the request body in a file named request.json , and execute the following command: curl -X PATCH \\ -H \"Authorization: Bearer TOKEN \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=expire time\" PowerShell Save the request body in a file named request.json , and execute the following command: $headers = @{ \"Authorization\" = \"Bearer TOKEN \" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=expire time\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /secrets/ SECRET ID \", \"createTime\": \"2024-09-04T03:58:38.200877Z\", \"etag\": \"\\\"162143305d282d\\\"\" } Expiration logging Cloud Audit Logs are not produced when a secret automatically expires."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.keyHandles",
+      "cloudkms.keyHandles.create",
+      "cloudkms.keyHandles.get",
+      "cloudkms.keyHandles.list",
+      "cloudkms.operations.get",
+      "cmd.exe",
+      "com.google.cloud.secretmanager.v1.AccessSecretVersionRequest",
+      "com.google.cloud.secretmanager.v1.AccessSecretVersionResponse",
+      "googleapis.com",
+      "request.json",
+      "secretmanager.googleapis.com",
+      "secretmanager.locations",
+      "secretmanager.locations.get",
+      "secretmanager.locations.list",
+      "secretmanager.secretAccessor",
+      "secretmanager.secrets.create",
+      "secretmanager.secrets.delete",
+      "secretmanager.secrets.get",
+      "secretmanager.secrets.list",
+      "secretmanager.secrets.update",
+      "secretmanager.secretVersionAdder",
+      "secretmanager.versions.access",
+      "secretmanager.versions.add",
+      "secretmanager.versions.destroy",
+      "secretmanager.versions.disable",
+      "secretmanager.versions.enable",
+      "secretmanager.versions.get",
+      "secretmanager.versions.list",
+      "secretmanager.viewer"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/create-and-manage-tags",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/access-control",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/create-and-manage-tags",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/access-control",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/create-and-manage-tags",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/access-control",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/create-and-manage-tags",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/access-control",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/create-and-manage-tags",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/access-control",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/create-and-manage-tags",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/access-control",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/create-and-manage-tags",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/access-control",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/create-and-manage-tags",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/access-control",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/create-and-manage-tags",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/access-control",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/create-and-manage-tags",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/access-control",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/create-and-manage-tags",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/access-control",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/create-and-manage-tags",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/access-control",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/create-and-manage-tags",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/access-control",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:35.355Z",
+  "source_step08_card": "data/step-08/current/products/secret-manager/card.json",
+  "product_name": "Secret Manager",
+  "product_slug": "secret-manager"
+}

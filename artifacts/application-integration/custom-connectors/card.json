@@ -1,0 +1,112 @@
+{
+  "feature_name": "Custom connectors",
+  "feature_slug": "custom-connectors",
+  "summary": "Application Integration now supports custom connectors based on the OpenAPI specification so custom integrations can be built with non-standard connectors.",
+  "extended_definition": "Application Integration now supports custom connectors based on the OpenAPI specification so custom integrations can be built with non-standard connectors.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini",
+      "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+      "https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Connectors task \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+        "source_id": "site-docs-reference-2",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "Configure task input and output variables The Connectors task configuration pane displays Task Input and Task Output variables that are automatically generated based on the Entity and Operation or Action selected in the Configure connector task dialog.",
+          "Action: Execute custom SQL query To create a custom query, follow these steps: Follow the detailed instructions to add a connectors task .",
+          "If the connector supports custom SQL queries, you can select the Execute custom query option from the Actions list."
+        ]
+      },
+      {
+        "title": "\"Build integrations with Gemini Code Assist \\_|\\_ Application Integration\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini",
+        "source_id": "site-docs-reference-2",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: Gemini provides connector- and API Hub-based recommendations or suggestions for your integrations using the configured connections in Integration Connectors and APIs in Apigee API Hub .",
+          "Supported tasks and triggers Gemini can assist you to add the following tasks and triggers: Triggers Tasks API trigger Cloud Pub/Sub trigger Salesforce trigger Jira Cloud ServiceNow Zendesk Cloud Scheduler trigger Data mapper task Approval task Suspend task Javascript task Cloud Run functions Timer task Return task Send email task Connectors task Call REST endpoint task Doc AI - Process task Gemini also assists you to create the following control flow tasks but can't generate sub-integrations: For Each Loop task For Each Parallel task While Loop task Call Integration task Create an integration Gemini assists you to create and build integrations using your natural language statements (or prompts ) as input.",
+          "Configure Call REST API tasks If you have API Hub enabled in your project, then Gemini in Application Integration can assist you in providing contextually appropriate Call REST Endpoint task and task configuration recommendations based on the logical flow of your existing integration."
+        ]
+      },
+      {
+        "title": "SAP ERP trigger \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger",
+        "source_id": "site-docs-reference-2",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "Call API method: connectors.projects.locations.connections.listenEvent CALL METHOD lo client->listen event connections EXPORTING iv p projects id = lv p projects id iv p locations id = lv p locations id iv p connections id = lv p connections id is input = ls input IMPORTING es raw = es output = DATA(ls output) ev ret code = DATA(lv ret code) ev err text = DATA(lv err text) es err resp = DATA(ls err resp).",
+          "The ls event payload field changes based on your requirements: &--------------------------------------------------------------------- & Report ZR TEST INT CONNECTOR &--------------------------------------------------------------------- & &--------------------------------------------------------------------- REPORT zr test int connector.",
+          "Before you begin If you plan to create or configure a new connection for the SAP ERP trigger , make sure that you have the following IAM role on the project: Connector Admin ( roles/connectors.admin ) For information about granting roles, see Manage access ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "connectors.admin",
+      "connectors.projects.locations.connections.listenEvent",
+      "test.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/connectors.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:14.803Z",
+  "source_step08_card": "data/step-08/current/products/application-integration/card.json",
+  "product_name": "Application Integration",
+  "product_slug": "application-integration"
+}

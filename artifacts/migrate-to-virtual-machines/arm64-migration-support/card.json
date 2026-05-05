@@ -1,0 +1,148 @@
+{
+  "feature_name": "ARM64 migration support",
+  "feature_slug": "arm64-migration-support",
+  "summary": "Migrates ARM virtual machine instances from AWS and Azure to ARM VM instances on Compute Engine.",
+  "extended_definition": "Migrates ARM virtual machine instances from AWS and Azure to ARM VM instances on Compute Engine.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import",
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Import machine images \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "source_id": "site-docs-root",
+        "final_score": 218,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can't create machine images from source VMs with any of the following: Attached disks greater than 200 TB A4, A3, C3D, H3, or Z3 machine types Machine image import process To import a machine image to Compute Engine machine image using Migrate to Virtual Machines, use the following steps: Prepare a machine image file for import Choose a target project Import a machine image to Compute Engine Prepare a machine file for import To import a machine image to a Compute Engine image, you must first prepare the machine image file for import.",
+          "POST https://vmmigration.googleapis.com/v1/projects/ HOST PROJECT ID /locations/ REGION ID /imageImports?imageImportId= IMPORT NAME { \"cloudStorageUri\": \" SOURCE FILE \", \"machineImageTargetDefaults\": { \"imageName\": \" IMAGE NAME \", \"targetProject\": \"projects/ HOST PROJECT ID /locations/global/targetProjects/ TARGET PROJECT \", ... } } Replace the following: HOST PROJECT ID : the name of the host project from which you want to migrate the machine image.",
+          "Role Permissions required Description Storage Object Viewer roles/storage.objectViewer Grant the default Migrate to Virtual Machines service account in the host project ( service- HOST PROJECT NUMBER @gcp-sa-vmmigration.iam.gserviceaccount.com ) the roles/storage.objectViewer role on the bucket where the image you want to import resides."
+        ]
+      },
+      {
+        "title": "\"Import machine images \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "source_id": "site-docs-root-2",
+        "final_score": 218,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can't create machine images from source VMs with any of the following: Attached disks greater than 200 TB A4, A3, C3D, H3, or Z3 machine types Machine image import process To import a machine image to Compute Engine machine image using Migrate to Virtual Machines, use the following steps: Prepare a machine image file for import Choose a target project Import a machine image to Compute Engine Prepare a machine file for import To import a machine image to a Compute Engine image, you must first prepare the machine image file for import.",
+          "POST https://vmmigration.googleapis.com/v1/projects/ HOST PROJECT ID /locations/ REGION ID /imageImports?imageImportId= IMPORT NAME { \"cloudStorageUri\": \" SOURCE FILE \", \"machineImageTargetDefaults\": { \"imageName\": \" IMAGE NAME \", \"targetProject\": \"projects/ HOST PROJECT ID /locations/global/targetProjects/ TARGET PROJECT \", ... } } Replace the following: HOST PROJECT ID : the name of the host project from which you want to migrate the machine image.",
+          "Role Permissions required Description Storage Object Viewer roles/storage.objectViewer Grant the default Migrate to Virtual Machines service account in the host project ( service- HOST PROJECT NUMBER @gcp-sa-vmmigration.iam.gserviceaccount.com ) the roles/storage.objectViewer role on the bucket where the image you want to import resides."
+        ]
+      },
+      {
+        "title": "\"Import virtual disk images \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import",
+        "source_id": "site-docs-root",
+        "final_score": 208,
+        "relevance": "",
+        "evidence_snippets": [
+          "POST https://vmmigration.googleapis.com/v1/projects/ HOST PROJECT ID /locations/ REGION ID /imageImports?imageImportId= IMPORT NAME { \"cloudStorageUri\": \" SOURCE FILE \", \"diskImageTargetDefaults\": { \"imageName\": \" IMAGE NAME \", \"targetProject\": \"projects/ HOST PROJECT ID /locations/global/targetProjects/ TARGET PROJECT \", ... } } Replace the following: HOST PROJECT ID : the name of the host project from which you want to migrate the virtual disk image.",
+          "Role Permissions required Description Storage Object Viewer roles/storage.objectViewer Grant the default Migrate to Virtual Machines service account in the host project ( service- HOST PROJECT NUMBER @gcp-sa-vmmigration.iam.gserviceaccount.com ) the roles/storage.objectViewer role on the bucket where the image you want to import resides.",
+          "VM Migration Service Account roles/vmmigration.serviceAgent Grant the default Migrate to Virtual Machines service account in the host project ( service- HOST PROJECT NUMBER @gcp-sa-vmmigration.iam.gserviceaccount.com ) the roles/vmmigration.serviceAgent role on the target project."
+        ]
+      },
+      {
+        "title": "\"Import virtual disk images \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import",
+        "source_id": "site-docs-root-2",
+        "final_score": 208,
+        "relevance": "",
+        "evidence_snippets": [
+          "POST https://vmmigration.googleapis.com/v1/projects/ HOST PROJECT ID /locations/ REGION ID /imageImports?imageImportId= IMPORT NAME { \"cloudStorageUri\": \" SOURCE FILE \", \"diskImageTargetDefaults\": { \"imageName\": \" IMAGE NAME \", \"targetProject\": \"projects/ HOST PROJECT ID /locations/global/targetProjects/ TARGET PROJECT \", ... } } Replace the following: HOST PROJECT ID : the name of the host project from which you want to migrate the virtual disk image.",
+          "Role Permissions required Description Storage Object Viewer roles/storage.objectViewer Grant the default Migrate to Virtual Machines service account in the host project ( service- HOST PROJECT NUMBER @gcp-sa-vmmigration.iam.gserviceaccount.com ) the roles/storage.objectViewer role on the bucket where the image you want to import resides.",
+          "VM Migration Service Account roles/vmmigration.serviceAgent Grant the default Migrate to Virtual Machines service account in the host project ( service- HOST PROJECT NUMBER @gcp-sa-vmmigration.iam.gserviceaccount.com ) the roles/vmmigration.serviceAgent role on the target project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "storage.objectViewer",
+      "vmmigration.googleapis.com",
+      "vmmigration.iam.gserviceaccount.com",
+      "vmmigration.serviceAgent"
+    ],
+    "missing_inventory_roles": [
+      "roles/storage.objectViewer",
+      "roles/vmmigration.serviceAgent"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:28.107Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-virtual-machines/card.json",
+  "product_name": "Migrate to Virtual Machines",
+  "product_slug": "migrate-to-virtual-machines"
+}

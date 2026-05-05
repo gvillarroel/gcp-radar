@@ -1,0 +1,223 @@
+{
+  "feature_name": "Microsoft OneDrive @mentions",
+  "feature_slug": "microsoft-onedrive-mentions",
+  "summary": "Users can mention and reference files in connected Microsoft OneDrive data sources using the @ symbol in chats.",
+  "extended_definition": "Users can mention and reference files in connected Microsoft OneDrive data sources using the @ symbol in chats.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Chat with the assistant \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "source_id": "site-docs-root-2",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "File formats and size limitations The following table lists the file formats and size limitations for files that you can upload to the assistant: File type Description Images Maximum image size: 30 MB Supported file extensions: .png , .jpeg , .svg Documents Maximum document size: .pdf : 100 MB .xlsx : 50 MB The .xlsx limit applies to the size of the file after it's decompressed. .csv : 7 MB .docx : 3 MB .pptx : 100 MB .txt : 7 MB .md : 2 MB .json : 1 MB .js : 1 MB .html : 0.5 MB .css : 1 MB .java : 1 MB .py : 2 MB Supported file extensions: .pdf , .xlsx , .csv , .docx , .pptx , .txt , .md , .json , .js , .html , .css , .java , .py Video Maximum document size: 200 MB Supported file extensions: .mp4 Audio Maximum document size: 200 MB Supported file extensions: .mp3 Add context with mentions You can mention an agent, person, or uploaded file in your chat with the assistant by typing @ in the chat box.",
+          "If you try to upload a file without this consent, you may encounter an error when signing in to Microsoft Entra ID: \"Please ask an admin to grant permission to this app before you can use it.\" If you encounter this error, copy the URL from your browser's address bar and share it with your administrator, so that they can provide consent on behalf of your organization.",
+          "You can also provide your own context by uploading files for the assistant to analyze, or by mentioning specific people and documents in your prompt."
+        ]
+      },
+      {
+        "title": "Configure identity provider \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "source_id": "site-docs-root",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "Entra ID with OIDC protocol This example uses the email to uniquely identify users. google.subject=assertion.email.lowerAscii() google.groups=assertion.groups google.display name=assertion.given name Entra ID with SAML protocol This example uses the email to uniquely identify users. google . subject = assertion . attributes [ ' http : //schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'][0].lowerAscii() google . groups = assertion . attributes [ ' http : //schemas.microsoft.com/ws/2008/06/identity/claims/groups'] google . display name = assertion . attributes [ ' http : //schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname'][0] Okta with OIDC protocol This example uses the email to uniquely identify users. google.subject=assertion.email.lowerAscii() google.groups=assertion.groups Okta with SAML protocol This example uses the subject assertion of the JWT to uniquely identify users. google.subject=assertion.subject.lowerAscii() google.groups=assertion.attributes['groups'] Optional: Verify Workforce Identity Federation setup To verify successful sign-ins and correct attribute mapping using the Workforce Identity Federation audit logging feature, do the following: Enable audit logs for the Data Access activity's Security Token Service API.",
+          "Configure Workforce Identity Federation with Microsoft Entra ID and sign in users Configure Workforce Identity Federation with Microsoft Entra ID and a large number of groups Note: To fetch a large number of groups from Entra ID for Gemini Enterprise, you must configure SCIM.",
+          "When you are ready to share the app with your users, you can turn on the app and share the URL with your user."
+        ]
+      },
+      {
+        "title": "Configure autocomplete \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "source_id": "site-docs-root",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example command and result curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\$ curl -X PATCH \\ -H \"X-Goog-User-Project: my-project-123\" \\t-access-token)\" \\ https://discoveryengine.googleapis.com/v1alpha/projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig?updateMask=queryFrequencyThreshold \\ -d '{ \"name\": \"projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig\", \"queryFrequencyThreshold\": 30 }' { \"name\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/completionConfig\", \"matchingOrder\": \"exact-prefix\", \"maxSuggestions\": 20, \"minPrefixLength\": 1, \"queryModel\": \"automatic\", \"enableMode\": \"AUTOMATIC\", \"queryFrequencyThreshold\": 30 } Update the CompletionConfig.numUniqueUsersThreshold field: curl -X PATCH \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -H \"X-Goog-User-Project: PROJECT ID \" \\ https://discoveryengine.googleapis.com/v1alpha/projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /completionConfig?updateMask = numUniqueUsersThreshold \\ -d '{ \"name\": \"projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /completionConfig\", \"numUniqueUsersThreshold\": UNIQUE USERS }' Replace UNIQUE USERS with an integer value that represents the minimum number of unique users who must enter a given search query before it can be returned as an autocomplete suggestion.",
+          "If you use the search history or user events model and there is a likelihood of your users typing PII into the search bar, then you can reduce PII leaks by adjusting the following parameters: queryFrequencyThreshold : Before a query can be returned as an autocomplete suggestion, it must have been entered this many times. numUniqueUsersThreshold : Before a query can be returned as an autocomplete suggestion, it must have been entered by this many unique users.",
+          "Example command and result curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -H \"X-Goog-User-Project: my-project-123\" \\ https://discoveryengine.googleapis.com/v1alpha/projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig?updateMask=numUniqueUsersThreshold \\ -d '{ \"name\": \"projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig\", \"numUniqueUsersThreshold\": 6 }' { \"name\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/completionConfig\", \"matchingOrder\": \"exact-prefix\", \"maxSuggestions\": 20, \"minPrefixLength\": 1, \"queryModel\": \"automatic\", \"enableMode\": \"AUTOMATIC\", \"numUniqueUsersThreshold\": 6, \"queryFrequencyThreshold\": 30 } Update completable field annotations in schema To turn on autocomplete for fields in structured data schema, follow these steps: Console In the Google Cloud console, go to the Gemini Enterprise page."
+        ]
+      },
+      {
+        "title": "\"Connect a third-party data source \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source",
+        "source_id": "site-docs-root-2",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "Generally Available Connect Confluence Cloud with data ingestion and federation Connect Dropbox with data federation Connect Jira Cloud with data ingestion and federation Connect Microsoft Entra ID Connect Microsoft Outlook with data ingestion and federation Connect Microsoft OneDrive with data ingestion and federation Connect Microsoft SharePoint Online with data ingestion and federation Connect ServiceNow with data ingestion Public preview Connect Box with data federation Connect Confluence Data Center with data federation Connect Docusign with data federation Connect GitHub with data federation Connect Hubspot with data federation Connect Jira Data Center with data federation Connect Linear with data federation Connect Microsoft Teams with data federation Connect Monday with data federation Connect Notion with data federation Connect ServiceNow with data federation Connect Shopify with data federation Connect Zendesk with data federation Private preview To connect data sources that are in private preview, contact your Google account team and request to be added to the allowlist.",
+          "Home Documentation AI and ML Gemini Enterprise Send feedback Connect a third-party data source Stay organized with collections Save and categorize content based on your preferences.",
+          "You need to provide the issue ID to identify it, and you can modify various fields such as the summary, description, and assignee."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "assertion.attributes",
+      "assertion.email.lowerAscii",
+      "assertion.given",
+      "assertion.groups",
+      "assertion.preferred",
+      "assertion.subject.lowerAscii",
+      "attribute.as",
+      "discoveryengine.googleapis.com",
+      "schemas.microsoft.com",
+      "schemas.xmlsoap.org"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:09.587Z",
+  "source_step08_card": "data/step-08/current/products/gemini-enterprise/card.json",
+  "product_name": "Gemini Enterprise",
+  "product_slug": "gemini-enterprise"
+}

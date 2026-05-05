@@ -1,0 +1,162 @@
+{
+  "feature_name": "Policy Analyzer for Organization Policy",
+  "feature_slug": "policy-analyzer-for-organization-policy",
+  "summary": "Policy Analyzer for Organization Policy is available in General Availability.",
+  "extended_definition": "Policy Analyzer for Organization Policy is available in General Availability.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/reference/rest/v1/folders/listAvailableOrgPolicyConstraints",
+      "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+      "https://docs.cloud.google.com/resource-manager/reference/rest/v1/Policy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"ListAvailableOrgPolicyConstraintsResponse \\_|\\_ Resource Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "source_id": "site-api-reference",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "Constraints can be configured by the organization's policy administrator to fit the needs of the organzation by setting Policies for Constraints at different locations in the organization's resource hierarchy.",
+          "JSON representation Constraint JSON representation ConstraintDefault ListConstraint JSON representation BooleanConstraint The response returned from the projects.listAvailableOrgPolicyConstraints method.",
+          "Home Technology areas Resource Manager Reference Send feedback ListAvailableOrgPolicyConstraintsResponse Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Method: folders.listAvailableOrgPolicyConstraints \\_|\\_ Resource Manager\\",
+        "url": "https://docs.cloud.google.com/resource-manager/reference/rest/v1/folders/listAvailableOrgPolicyConstraints",
+        "source_id": "site-api-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Technology areas Resource Manager Reference Send feedback Method: folders.listAvailableOrgPolicyConstraints Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request POST https://cloudresourcemanager.googleapis.com/v1/{resource=folders/ }:listAvailableOrgPolicyConstraints The URL uses gRPC Transcoding syntax.",
+          "Response body If successful, the response body contains an instance of ListAvailableOrgPolicyConstraintsResponse ."
+        ]
+      },
+      {
+        "title": "Policy \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/reference/rest/v1/Policy",
+        "source_id": "site-api-reference",
+        "final_score": 99,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example 10 (allowed and denied subtrees of Resource Manager hierarchy): Given the following resource hierarchy O1->{F1, F2}; F1->{P1}; F2->{P2, P3}, organizations/foo has a Policy with values: {allowedValues: \"under:organizations/O1\"} projects/bar has a Policy with: {allowedValues: \"under:projects/P3\"} {deniedValues: \"under:folders/F2\"} The accepted values at organizations/foo are organizations/O1 , folders/F1 , folders/F2 , projects/P1 , projects/P2 , projects/P3 .",
+          "The following examples demonstrate different possible layerings for projects/bar parented by organizations/foo : Example 1 (no inherited values): organizations/foo has a Policy with values: {allowedValues: \"E1\" allowedValues:\"E2\"} projects/bar has inheritFromParent false and values: {allowedValues: \"E3\" allowedValues: \"E4\"} The accepted values at organizations/foo are E1 , E2 .",
+          "Example 2 (inherited values): organizations/foo has a Policy with values: {allowedValues: \"E1\" allowedValues:\"E2\"} projects/bar has a Policy with values: {value: \"E3\" value: \"E4\" inheritFromParent: true} The accepted values at organizations/foo are E1 , E2 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudplatformfolders.readonly",
+      "cloudplatformorganizations.readonly",
+      "cloudplatformprojects.readonly",
+      "cloudresourcemanager.googleapis.com",
+      "folders.listAvailableOrgPolicyConstraints",
+      "platform.read",
+      "projects.listAvailableOrgPolicyConstraints"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/folders/listAvailableOrgPolicyConstraints",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/folders/listAvailableOrgPolicyConstraints",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/folders/listAvailableOrgPolicyConstraints",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/folders/listAvailableOrgPolicyConstraints",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/folders/listAvailableOrgPolicyConstraints",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/folders/listAvailableOrgPolicyConstraints",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/folders/listAvailableOrgPolicyConstraints",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/folders/listAvailableOrgPolicyConstraints",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/folders/listAvailableOrgPolicyConstraints",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/Policy"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:33.880Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager"
+}

@@ -1,0 +1,201 @@
+{
+  "feature_name": "Access control",
+  "feature_slug": "access-control",
+  "summary": "Cloud Run functions supports access control for managing permissions.",
+  "extended_definition": "Cloud Run functions supports access control for managing permissions.",
+  "lifecycle": {
+    "latest_feature_date": "2017-03-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/functions/docs/concepts/iam",
+      "https://docs.cloud.google.com/functions/docs/reference/iam/permissions",
+      "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud Functions IAM Permissions \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/functions/docs/reference/iam/permissions",
+        "source_id": "site-docs-reference-2",
+        "final_score": 29,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following tables list the Identity and Access Management (IAM) permissions that are associated with Cloud Functions.",
+          "For a reference of which IAM permissions are contained in each IAM role, see Cloud Functions IAM Roles .",
+          "Cloud Functions IAM Permissions Note: Cloud Functions (2nd gen) is now Cloud Run functions."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "source_id": "site-iam-reference",
+        "final_score": 26,
+        "relevance": "",
+        "evidence_snippets": [
+          "Here's a few of the notable permissions that the cloudfunctions.serviceAgent uses: Permission Description roles/artifactregistry.admin Manage repositories and store build images in Artifact Registry. roles/cloudbuild.builds.editor Required to use Cloud Build to perform builds in user project. roles/cloudbuild.customworkers.builder Create builds in Cloud Build custom workers. compute.globalOperations.get , compute.networks.access , vpcaccess.connectors.{get, use} Provision functions with access to the consumer projects VPC. roles/eventarc.developer Manage Eventarc triggers for functions. firebasedatabase.instances.{get, update} Create functions triggered by the Firebase Realtime Database. iam.serviceAccounts.{actAs, getAccessToken, signBlob} Ability to get runtime service account credentials. iam.serviceAccounts.getOpenIdToken Needed for the agent to get an OpenID token on a user-specified authority.",
+          "If you've created or deployed functions using Cloud Run, see Access control with IAM and Cloud Run roles for a detailed description of Cloud Run predefined roles, controlling access to individual services, making a service public, or configuring organization policy for the Cloud Run invoker IAM.",
+          "This page provides supplemental information for using Identity and Access Management (IAM) roles to set access controls at a project level, to determine the level of access to your Google Cloud project and functions created using gcloud functions commands or the Cloud Functions v2 API ."
+        ]
+      },
+      {
+        "title": "Authorize access with IAM \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
+        "source_id": "site-iam-reference",
+        "final_score": 24,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before you begin To get the permission that you need to control access for a specific function or all functions in a project, ask your administrator to grant you the Cloud Functions Admin ( roles/roles/cloudfunctions.admin ) IAM role on the function or the project.",
+          "This predefined role contains the cloudfunctions.functions.setIamPolicy permission, which is required to control access for a specific function or all functions in a project.",
+          "For information about IAM access for functions created with Cloud Run, see Access control with IAM ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "artifactregistry.admin",
+      "cloudbuild.builds.editor",
+      "cloudbuild.customworkers.builder",
+      "cloudfunctions.admin",
+      "cloudfunctions.functions.call",
+      "cloudfunctions.functions.create",
+      "cloudfunctions.functions.delete",
+      "cloudfunctions.functions.get",
+      "cloudfunctions.functions.getIamPolicy",
+      "cloudfunctions.functions.invoke",
+      "cloudfunctions.functions.list",
+      "cloudfunctions.functions.setIamPolicy",
+      "cloudfunctions.functions.sourceCodeGet",
+      "cloudfunctions.functions.sourceCodeSet",
+      "cloudfunctions.functions.update",
+      "cloudfunctions.serviceAgent",
+      "compute.globalOperations.get",
+      "compute.networks.access",
+      "eventarc.developer",
+      "firebasedatabase.instances",
+      "iam.serviceAccounts",
+      "iam.serviceAccounts.getOpenIdToken",
+      "vpcaccess.connectors"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.admin",
+      "roles/cloudbuild.builds.editor",
+      "roles/cloudbuild.customworkers.builder",
+      "roles/eventarc.developer",
+      "roles/roles"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/permissions"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/permissions"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/permissions"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/permissions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/permissions"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/permissions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/permissions"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/permissions"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/permissions"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/permissions"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:36.361Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run-functions/card.json",
+  "product_name": "Cloud Run functions",
+  "product_slug": "cloud-run-functions"
+}

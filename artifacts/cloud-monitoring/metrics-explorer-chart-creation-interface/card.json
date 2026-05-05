@@ -1,0 +1,110 @@
+{
+  "feature_name": "Metrics Explorer chart creation interface",
+  "feature_slug": "metrics-explorer-chart-creation-interface",
+  "summary": "Metrics Explorer offers a new interface for creating charts.",
+  "extended_definition": "Metrics Explorer offers a new interface for creating charts.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+      "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and manage metric usage \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "source_id": "site-docs-reference",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "Reads from Metrics Explorer or charts on custom dashboards are \"console\" reads, and API reads from other sources are \"other\".",
+          "To analyze any of these charts in more detail, click more vert More options and select View in Metrics Explorer .",
+          "For more information about using Metrics Explorer, see Create charts with Metrics Explorer ."
+        ]
+      },
+      {
+        "title": "Collect Prometheus metrics \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "source_id": "site-iam-reference",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "To filter for any metrics with an id label matching this pattern, use the following query: example value count{id= \"id. \"} For more information about using PromQL in Metrics Explorer and Cloud Monitoring charts, see PromQL in Cloud Monitoring .",
+          "For example, you can chart data by using Metrics Explorer , as described in Google Cloud console for Monitoring .",
+          "For information about creating dashboards, see Dashboards and charts ."
+        ]
+      },
+      {
+        "title": "\"Collect OpenTelemetry Protocol (OTLP) metrics and traces \\_|\\_ Cloud Monitoring\\",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+        "source_id": "site-iam-reference",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following tabs show the metric descriptor that each ingestion API creates: Prometheus API { \"name\": \"projects/ PROJECT ID /metricDescriptors/prometheus.googleapis.com/otlp test cumulative/counter\", \"labels\": [ { \"key\": \"instance name\" }, { \"key\": \"machine type\" } ], \"metricKind\": \"CUMULATIVE\", \"valueType\": \"DOUBLE\", \"type\": \"prometheus.googleapis.com/otlp test cumulative/counter\", \"monitoredResourceTypes\": [ \"prometheus target\" ] } Monitoring API { \"name\": \"projects/ PROJECT ID /metricDescriptors/workload.googleapis.com/otlp.test.cumulative\", \"labels\": [ { \"key\": \"instrumentation source\" } ], \"metricKind\": \"CUMULATIVE\", \"valueType\": \"DOUBLE\", \"type\": \"workload.googleapis.com/otlp.test.cumulative\", \"monitoredResourceTypes\": [ \"gce instance\", ...many other types deleted... ] } The following table summarizes some of the format differences imposed by the APIs used to ingest OTLP metrics: Prometheus API Monitoring API Metric domain prometheus.googleapis.com workload.googleapis.com OTLP metric name Modified during ingestion Used as provided Monitored resource prometheus target gce instance Ingestion formats and queries The metrics mode used in the OTLP receiver affects the way you query the resulting metrics in Cloud Monitoring when you build charts, dashboards, and alerting policies.",
+          "Cloud Monitoring supports the following tools for querying metric data: A query-builder based interface built into tools like Metrics Explorer, the dashboard-builder interface, and the alert-policy configuration interface.",
+          "After the Ops Agent has collected your metrics, you can use the features of Cloud Monitoring, including charts, dashboards, and alerting policies, to monitor your metrics."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "otlp.test.cumulative",
+      "prometheus.googleapis.com",
+      "workload.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:33.032Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring"
+}

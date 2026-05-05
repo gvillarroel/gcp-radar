@@ -1,0 +1,101 @@
+{
+  "feature_name": "Use env:true for new App Engine flexible applications",
+  "feature_slug": "use-env-true-for-new-app-engine-flexible-applications",
+  "summary": "New App Engine flexible applications are required to use env:true in app.yaml instead of vm:true, with existing applications expected to migrate later.",
+  "extended_definition": "New App Engine flexible applications are required to use env:true in app.yaml instead of vm:true, with existing applications expected to migrate later.",
+  "lifecycle": {
+    "latest_feature_date": "2016-12-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/appengine/docs/flexible/go/configuring-your-app-with-app-yaml",
+      "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/configuring-your-app-with-app-yaml",
+      "https://docs.cloud.google.com/appengine/docs/flexible/php"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"The PHP runtime \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/php",
+        "source_id": "site-docs-reference-2",
+        "final_score": 214,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "An empty string front controller file Default PHP file name for the directory access. index.php nginx conf http include Filename of a partial nginx config, which will be included in the http section in the main nginx config file. nginx-http.conf nginx conf include Filename of a partial nginx config which will be included in the server section in the main nginx config file. nginx-app.conf nginx conf override Filename of a user supplied nginx configuration file, which will be used as the nginx main configuration file. nginx.conf php fpm conf override Filename of a user supplied php-fpm configuration file, which will be included at the bottom of the [app] section so that it will override the existing configurations. php-fpm.conf php ini override Filename of a user supplied PHP configuration file. php.ini supervisord conf addition Filename of a user supplied supervisord config file, which will be included in the main supervisord config file. additional-supervisord.conf supervisord conf override Filename of a user supplied supervisord config file, which will override the main supervisord config file. supervisord.conf You can control whether Nginx serves static files for matching URIs by setting the NGINX SERVES STATIC FILES environment variable in the build env variables section of your app.yaml file: runtime : php env : flex runtime config : document root : \"web\" operating system : \"ubuntu24\" build env variables : NGINX SERVES STATIC FILES : true Configuring supervisord in the PHP runtime The App Engine flexible environment uses supervisord to manage processes.",
+          "You can change the filename in the runtime config section of your app.yaml file: runtime : php env : flex runtime config : operating system : \"ubuntu24\" document root : . front controller file : app.php For version 7.3 and earlier, the nginx-app.conf configuration file is included in the server section of the main NGINX configuration file.",
+          "Declare the document root for your application in the app.yaml file: runtime : php env : flex runtime config : operating system : \"ubuntu24\" document root : \"web\" Although you can specify the project root ( . ) directory as the document root, we recommend that you use a subdirectory for the document root setting."
+        ]
+      },
+      {
+        "title": "\"Configuring your app with app.yaml \\_|\\_ App Engine flexible environment\\",
+        "url": "https://cloud.google.com/appengine/docs/flexible/go/configuring-your-app-with-app-yaml",
+        "source_id": "site-docs-root",
+        "final_score": 197,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see: https://cloud.google.com/appengine/docs/flexible/python/configuring-your-app-with-app-yaml manual scaling : instances : 1 resources : cpu : 1 memory gb : 0.5 disk size gb : 10 Depending on the complexity of your app's service, you might only need to define a few elements in the corresponding app.yaml file.",
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Configuring your app with app.yaml Stay organized with collections Save and categorize content based on your preferences.",
+          "For example, if you name your app.yaml file service-name-app.yaml or app.flexible.yaml , then you must deploy your app using either: gcloud app deploy service - name - app . yaml gcloud app deploy app . flexible . yaml To learn more about structuring multiple services and app.yaml files in your app, see Structuring web services ."
+        ]
+      },
+      {
+        "title": "\"Configuring your app with app.yaml \\_|\\_ App Engine flexible environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/configuring-your-app-with-app-yaml",
+        "source_id": "site-docs-reference",
+        "final_score": 193,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Configuring your app with app.yaml Stay organized with collections Save and categorize content based on your preferences.",
+          "For example, if you name your app.yaml file service-name-app.yaml or app.flexible.yaml , then you must deploy your app using either: gcloud app deploy service-name-app.yaml gcloud app deploy app.flexible.yaml To learn more about structuring multiple services and app.yaml files in your app, see Structuring web services .",
+          "The following example demonstrates what a simple .NET app might require in the flexible environment: You can specify a unique name for your app.yaml files, but then you must specify the file name with the deployment command as well."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.conf",
+      "app.flexible.yaml",
+      "app.php",
+      "app.yaml",
+      "fpm.conf",
+      "http.conf",
+      "index.php",
+      "nginx.conf",
+      "php.ini",
+      "supervisord.conf"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/php",
+        "https://cloud.google.com/appengine/docs/flexible/go/configuring-your-app-with-app-yaml",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/configuring-your-app-with-app-yaml"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:09.053Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-net/card.json",
+  "product_name": "App Engine flexible environment .NET",
+  "product_slug": "app-engine-flexible-environment-net"
+}

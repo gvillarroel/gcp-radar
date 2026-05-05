@@ -1,0 +1,107 @@
+{
+  "feature_name": "Hypercompute Cluster preview",
+  "feature_slug": "hypercompute-cluster-preview",
+  "summary": "Hypercompute Cluster entered preview, enabling large-scale provisioning of A3 Ultra accelerator-optimized machines with optimized placement, networking, workload placement, and maintenance controls.",
+  "extended_definition": "Hypercompute Cluster entered preview, enabling large-scale provisioning of A3 Ultra accelerator-optimized machines with optimized placement, networking, workload placement, and maintenance controls.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/ai-hypercomputer/docs/consumption-models",
+      "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-a-slurm-cluster-with-a4",
+      "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-slurm-cluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create an AI-optimized Slurm cluster \\_|\\_ AI Hypercomputer \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-slurm-cluster",
+        "source_id": "site-docs-root-required-2",
+        "final_score": 140,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If you want to enable your cluster to autoscale instead, use examples/machine-learning/a3-ultragpu-8g/a3ultra-slurm-blueprint.yaml file and edit the values of node count static and node count dynamic max to match the following: node count static: 0 node count dynamic max: $(vars.a3u cluster size) Spot To create your deployment file, use a text editor to create a YAML file named a3ultra-slurm-deployment.yaml and add the following content.",
+          "If you want to enable your cluster to autoscale instead, use examples/machine-learning/a4-highgpu-8g/a4high-slurm-blueprint.yaml file and edit the values of node count static and node count dynamic max to match the following: node count static: 0 node count dynamic max: $(vars.a4h cluster size) Spot To create your deployment file, use a text editor to create a YAML file named a4high-slurm-deployment.yaml and add the following content.",
+          "If you want to enable your cluster to autoscale instead, use examples/machine-learning/a3-megagpu-8g/a3mega-slurm-blueprint.yaml file and edit the values of node count static and node count dynamic max to match the following: node count static: 0 node count dynamic max: $(vars.a3m cluster size) Spot To create your deployment file, create a YAML file named a3mega-slurm-deployment.yaml and add the following content."
+        ]
+      },
+      {
+        "title": "\"Create an AI-optimized Slurm cluster with A4 VMs \\_|\\_ AI Hypercomputer\\",
+        "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-a-slurm-cluster-with-a4",
+        "source_id": "site-docs-root-required-2",
+        "final_score": 124,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "A4 accelerator-optimized machine types come with NVIDIA B200 GPUs attached and are specifically engineered for intensive AI computation to help your Slurm cluster efficiently handle large-scale model training and inference.",
+          "On Google Cloud, you can create a Cloud Storage bucket that has versioning enabled. gcloud storage buckets create gs://${GOOGLE CLOUD BUCKET NAME} \\ --project=${A4 RESERVATION PROJECT ID} \\ --default-storage-class=STANDARD \\ --location=${GOOGLE CLOUD BUCKET LOCATION} \\ --uniform-bucket-level-access gcloud storage buckets update gs://${GOOGLE CLOUD BUCKET NAME} --versioning Set up the Cluster Toolkit To create a Slurm cluster in a Google Cloud project, you can use Cluster Toolkit to handle deploying and provisioning the cluster.",
+          "Note: Provisioning the cluster can take up to an hour."
+        ]
+      },
+      {
+        "title": "Choose a consumption option \\_|\\_ AI Hypercomputer \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/consumption-models",
+        "source_id": "site-docs-root-required-2",
+        "final_score": 118,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Use future reservations in AI Hypercomputer To run long-running, large-scale distributed workloads that require densely allocated resources, you can request compute resources for a specific time in the future.",
+          "How to use future reservations in AI Hypercomputer To use future reservations to create VMs or clusters, you must complete the following steps: Request to reserve capacity .",
+          "Comparison of consumption options The following table summarizes the key differences between the consumption options: Consumption option Future reservations in AI Hypercomputer Future reservations for up to 90 days (in calendar mode) Flex-start Spot Supported machines A4X Max, A4X, A4, A3 Ultra, A3 Mega, or A3 High A4, A3 Ultra, A3 Mega, or A3 High with 8 GPUs Any GPU machine except A4X Max and A4X Any GPU machine except A4X Max and A4X Lifespan Unlimited Up to 90 days Up to 7 days Unlimited (but subject to preemption ) Preemptible Capacity assurance Very high ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "blueprint.yaml",
+      "deployment.yaml",
+      "github.com",
+      "linux.zip",
+      "vars.a3h",
+      "vars.a3m",
+      "vars.a3u",
+      "vars.a4h"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-slurm-cluster",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-a-slurm-cluster-with-a4",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/consumption-models"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-slurm-cluster",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-a-slurm-cluster-with-a4",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/consumption-models"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:03.956Z",
+  "source_step08_card": "data/step-08/current/products/ai-hypercomputer/card.json",
+  "product_name": "AI Hypercomputer",
+  "product_slug": "ai-hypercomputer"
+}

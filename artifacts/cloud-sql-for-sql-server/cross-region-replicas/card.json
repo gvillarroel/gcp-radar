@@ -1,0 +1,182 @@
+{
+  "feature_name": "cross-region replicas",
+  "feature_slug": "cross-region-replicas",
+  "summary": "Cloud SQL for SQL Server supports creating replicas in other regions.",
+  "extended_definition": "Cloud SQL for SQL Server supports creating replicas in other regions.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/feature_support",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restoring",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud SQL feature support by database engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/feature_support",
+        "source_id": "site-docs-root",
+        "final_score": 41,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud SQL features MySQL PostgreSQL SQL Server Data protection Backups ✓ ✓ ✓ Point-in-time recovery (PITR) ✓ ✓ ✓ High availability ✓ ✓ ✓ Cloning ✓ ✓ ✓ Disaster recovery ✓ ✓ ✓ Data migration Data migration to external servers ✓ Logs Instance logging ✓ ✓ ✓ Planned maintenance Maintenance windows ✓ ✓ ✓ Maintenance controls ✓ ✓ ✓ Self service maintenance ✓ ✓ ✓ Replication Read replicas ✓ ✓ ✓ Cross-region read replicas ✓ ✓ ✓ External read replicas ✓ ✓ ✓ Binary logging on read replicas ✓ Replication from an external server ✓ ✓ Read replica indexes stored procedures ✓ Logical replication ✓ Security Customer-managed encryption keys (CMEK) ✓ ✓ ✓ Cloud SQL Auth Proxy support ✓ ✓ ✓ Audit logging ✓ ✓ ✓ Connection organization policies ✓ ✓ ✓ IAM database authentication ✓ ✓ Access Transparency (AXT) ✓ ✓ ✓ Key Access Justification ✓ ✓ ✓ Private Service Connect ✓ ✓ ✓ Cloud Security Command Center Monitoring ✓ ✓ ✓ Cloud External Key Manager (EKM) ✓ ✓ ✓ VPC Service Controls ✓ ✓ ✓ Insights Query Insights ✓ ✓ Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "source_id": "site-docs-root",
+        "final_score": 41,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ListServerCas SqlOperationsService.List SqlSslCertsService.List SqlUsersService.List 500 Mutate sqladmin.googleapis.com/mutate The number of requests that are made per minute per user per region to use the APIs in this category.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]",
+          "CreateEphemeral SqlSslCertsService.Delete SqlSslCertsService.Insert SqlUsersService.Delete SqlUsersService.Insert SqlUsersService.Update 180 Default per region sqladmin.googleapis.com/ default per region The number of default regional requests that are made per minute per user per region to use the APIs in this category."
+        ]
+      },
+      {
+        "title": "\"Restore an instance using a backup \\_|\\_ Cloud SQL for SQL Server \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restoring",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 33,
+        "relevance": "",
+        "evidence_snippets": [
+          "To restore your instance using a backup to an instance in a different project or region, do the following: gcloud To restore a backup from a backup vault to an existing instance, do the following: If restoring to an existing instance, determine if the target instance has any read replicas using the gcloud sql instances describe command: gcloud sql instances describe TARGET INSTANCE NAME Replace the following: TARGET INSTANCE NAME : the name of the target instance you want to restore your backup to.",
+          "To restore your instance using a backup to an instance in a different project or region, do the following: gcloud If restoring to an existing instance, determine if the target instance has any read replicas using the gcloud sql instances describe command: gcloud sql instances describe TARGET INSTANCE NAME Replace the following: TARGET INSTANCE NAME : the name of the target instance you want to restore your backup to.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ TARGET INSTANCE ID /restoreBackup\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ TARGET INSTANCE ID \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-21T22:43:37.981Z\", \"operationType\": \"RESTORE BACKUP\", \"name\": \" OPERATION ID \", \"targetId\": \" TARGET INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } REST v1beta4 When restoring to an existing instance, all replicas must be deleted from your target instance prior to restoring."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "request.json",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restoring"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restoring"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restoring"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restoring"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restoring"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restoring"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restoring"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restoring"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restoring"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restoring"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restoring"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:41.951Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server"
+}

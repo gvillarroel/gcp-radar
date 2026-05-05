@@ -1,0 +1,174 @@
+{
+  "feature_name": "Config Sync Secure Source Manager Git repository support",
+  "feature_slug": "config-sync-secure-source-manager-git-repository-support",
+  "summary": "Config Sync can sync configuration from Secure Source Manager Git repositories.",
+  "extended_definition": "Config Sync can sync configuration from Secure Source Manager Git repositories.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-multi-repo"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Grant Config Sync access to your Git repository \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "source_id": "site-docs-root",
+        "final_score": 186,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Grant the IAM role to the Google service account, depending on the repository type that you're using: Secure Source Manager Grant the Secure Source Manager Instance Accessor ( roles/securesourcemanager.instanceAccessor ) and Secure Source Manager Repo Reader ( roles/securesourcemanager.repoReader ) IAM roles to the Google service account: Grant project-wide permission if the same permissions apply to all repositories in the project: gcloud projects add-iam-policy-binding PROJECT ID \\ --role = roles/securesourcemanager.instanceAccessor \\ --member = \"serviceAccount: GSA NAME @ PROJECT ID .iam.gserviceaccount.com\" gcloud projects add-iam-policy-binding PROJECT ID \\ --role = roles/securesourcemanager.repoReader \\ --member = \"serviceAccount: GSA NAME @ PROJECT ID .iam.gserviceaccount.com\" Replace the following: PROJECT ID : your project ID.",
+          "You can find instructions for some common Git hosting providers in the following list: Secure Source Manager Bitbucket GitHub GitLab Create the git-creds Secret with the private key: kubectl create ns config-management-system && \\ kubectl create secret generic git-creds \\ --namespace = config-management-system \\ --from-file = ssh = /path/to/KEYPAIR PRIVATE KEY FILENAME Note: If you need to use a proxy, pass the --from-literal=https proxy= HTTPS PROXY URL flag.",
+          "To grant Config Sync read-only access to your repository by using a Compute Engine default service account, grant the default service account the roles/source.reader role: gcloud projects add-iam-policy-binding PROJECT ID \\ --role = roles/source.reader \\ --member = \"serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com\" Replace the following: PROJECT ID : your project ID PROJECT NUMBER : with your project number."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Sync configs from a Git repository \\_|\\_ Config Sync \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-multi-repo",
+        "source_id": "site-docs-root",
+        "final_score": 181,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The package details page provides an overview of all synced resources, including the resource type and which namespace the resource is synced to. (Optional) Explore the sample repository The configurations applied to your cluster are defined in the /config-sync-quickstart/multirepo/ repository.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Config Sync Guides Send feedback Quickstart: Sync configs from a Git repository Stay organized with collections Save and categorize content based on your preferences.",
+          "In this example, the RepoSync object points to the config-sync-quickstart/multirepo/ namespaces/gamestore directory within the same repository, but in a real-world scenario, you could point to a different Git repository."
+        ]
+      },
+      {
+        "title": "Install Config Sync manually using kubectl \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "source_id": "site-docs-root",
+        "final_score": 168,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Google service account If your repository is in Cloud Source Repositories or in Secure Source Manager , and your cluster uses GKE Workload Identity Federation for GKE or fleet Workload Identity Federation for GKE , you can give Config Sync access to a repository in the same project as your managed cluster by using a Google service account.",
+          "If you are using a repository in Secure Source Manager, you must use the following format when you configure Config Sync and add the URL for your Git repository: https:// INSTANCE ID - PROJECT NUMBER -git.",
+          "Grant project-wide permission if the same permissions apply to all repositories in the project. gcloud projects add-iam-policy-binding PROJECT ID \\ --role = roles/source.reader \\ --member = \"serviceAccount: GSA NAME @ PROJECT ID .iam.gserviceaccount.com\" Grant repository-specific permission when you want service accounts to have different levels of access for each repository in your project. gcloud source repos set-iam-policy REPOSITORY POLICY FILE --project = PROJECT ID Secure Source Manager Grant the Secure Source Manager Instance Accessor ( roles/securesourcemanager.instanceAccessor ) and Secure Source Manager Repo Reader ( roles/securesourcemanager.repoReader ) IAM roles to the Google service account."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "configsync.gke.io",
+      "developer.gserviceaccount.com",
+      "iam.gserviceaccount.com",
+      "securesourcemanager.instanceAccessor",
+      "securesourcemanager.repoReader",
+      "source.reader",
+      "sync.yaml"
+    ],
+    "missing_inventory_roles": [
+      "roles/securesourcemanager.instanceAccessor",
+      "roles/securesourcemanager.repoReader",
+      "roles/source.reader"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-multi-repo",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-multi-repo",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-multi-repo",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-multi-repo",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-multi-repo",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-multi-repo",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-multi-repo",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-multi-repo",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-multi-repo",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-multi-repo",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:05.054Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management"
+}

@@ -1,0 +1,210 @@
+{
+  "feature_name": "Rehydration job completion time display in pending jobs",
+  "feature_slug": "rehydration-job-completion-time-display-in-pending-jobs",
+  "summary": "Transfer Appliance now displays the rehydration job time-to-completion in the Pending Jobs list.",
+  "extended_definition": "Transfer Appliance now displays the rehydration job time-to-completion in the Pending Jobs list.",
+  "lifecycle": {
+    "latest_feature_date": "2018-06-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/audit-logging",
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Enable or disable online transfer \\_|\\_ Transfer Appliance \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "source_id": "site-docs-root",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "Optional: change the transfer destination bucket and the job object prefix. ta online --bucket= BUCKET --object prefix= OBJECT PREFIX Replace BUCKET with the destination bucket and OBJECT PREFIX with the object prefix you are updating to.",
+          "Set to online mode Before enabling online transfer mode for the first time, follow the instructions to complete project setup .",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "Transfer Appliance audit logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/audit-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 61,
+        "relevance": "",
+        "evidence_snippets": [
+          "CreateAppliance Method : cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.CreateAppliance Audit log type : Admin activity Permissions : transferappliance.appliances.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.CreateAppliance\" CreateOrder Method : cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.CreateOrder Audit log type : Admin activity Permissions : transferappliance.orders.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.CreateOrder\" CreateSavedAddress Method : cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.CreateSavedAddress Audit log type : Admin activity Permissions : transferappliance.savedAddresses.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.CreateSavedAddress\" DeleteAppliance Method : cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.DeleteAppliance Audit log type : Admin activity Permissions : transferappliance.appliances.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.DeleteAppliance\" DeleteOrder Method : cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.DeleteOrder Audit log type : Admin activity Permissions : transferappliance.orders.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.DeleteOrder\" DeleteSavedAddress Method : cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.DeleteSavedAddress Audit log type : Admin activity Permissions : transferappliance.savedAddresses.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.DeleteSavedAddress\" ExportApplianceUserData Method : cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.ExportApplianceUserData Audit log type : Data access Permissions : transferappliance.appliances.get - ADMIN READ Method is a long-running or streaming operation : No.",
+          "Permission type Methods ADMIN READ cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.ExportApplianceUserData cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.GetAppliance cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.GetCredential cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.GetCredentialMetadata cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.GetDownloadLinks cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.GetOrder cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.GetSavedAddress cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.ListAppliances cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.ListOrders cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.ListSavedAddresses ADMIN WRITE cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.CreateAppliance cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.CreateOrder cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.CreateSavedAddress cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.DeleteAppliance cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.DeleteOrder cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.DeleteSavedAddress cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.SubmitOrder cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.UpdateAppliance cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.UpdateOrder cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.UpdateSavedAddress API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Transfer Appliance. cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance The following audit logs are associated with methods belonging to cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance .",
+          "Filter for this method : protoPayload.methodName=\"cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.ListSavedAddresses\" SubmitOrder Method : cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.SubmitOrder Audit log type : Admin activity Permissions : transferappliance.appliances.update - ADMIN WRITE transferappliance.orders.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.SubmitOrder\" UpdateAppliance Method : cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.UpdateAppliance Audit log type : Admin activity Permissions : transferappliance.appliances.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.UpdateAppliance\" UpdateOrder Method : cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.UpdateOrder Audit log type : Admin activity Permissions : transferappliance.orders.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.UpdateOrder\" UpdateSavedAddress Method : cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.UpdateSavedAddress Audit log type : Admin activity Permissions : transferappliance.savedAddresses.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.UpdateSavedAddress\" Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "High-level overview \\_|\\_ Transfer Appliance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "source_id": "site-docs-root",
+        "final_score": 57,
+        "relevance": "",
+        "evidence_snippets": [
+          "Sometimes, a cloud-ingest directory that is used to coordinate the data uploaded from the appliance to your destination Transfer Appliance bucket.",
+          "If the device was not tampered with during shipping, the credentials will be displayed in the Google Cloud console.",
+          "Data that's been transferred from your appliance is displayed in your Cloud Storage bucket."
+        ]
+      },
+      {
+        "title": "Known limitations \\_|\\_ Transfer Appliance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "source_id": "site-docs-reference",
+        "final_score": 52,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported file metadata Transfer Appliance preserves symlinks, numeric MODE and the last modified time ( mtime ) from Transfer Appliance file system to copy into the corresponding Cloud Storage destination object.",
+          "We recommend that you disable object versioning for the bucket you specified as the destination at the time of ordering your Transfer Appliance.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcr.io",
+      "oauth2.googleapis.com",
+      "pubsub.googleapis.com",
+      "storage.googleapis.com",
+      "storagetransfer.googleapis.com",
+      "transferappliance.appliances.create",
+      "transferappliance.appliances.delete",
+      "transferappliance.appliances.get",
+      "transferappliance.appliances.update",
+      "transferappliance.orders.create",
+      "transferappliance.orders.delete",
+      "transferappliance.orders.update",
+      "transferappliance.savedAddresses.create",
+      "transferappliance.savedAddresses.delete",
+      "transferappliance.savedAddresses.update"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/audit-logging",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/audit-logging",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/audit-logging",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/audit-logging",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/audit-logging",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/audit-logging",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/audit-logging",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/audit-logging",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/audit-logging",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/audit-logging",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/audit-logging",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:41.989Z",
+  "source_step08_card": "data/step-08/current/products/transfer-appliance/card.json",
+  "product_name": "Transfer Appliance",
+  "product_slug": "transfer-appliance"
+}

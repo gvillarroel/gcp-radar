@@ -1,0 +1,189 @@
+{
+  "feature_name": "Cloud CDN",
+  "feature_slug": "cloud-cdn",
+  "summary": "Cloud CDN became generally available as a Google Cloud service; Cloud CDN became available in beta.",
+  "extended_definition": "Cloud CDN became generally available as a Google Cloud service; Cloud CDN became available in beta.",
+  "lifecycle": {
+    "latest_feature_date": "2016-06-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cdn/docs/audit-logging",
+      "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+      "https://docs.cloud.google.com/cdn/docs/cdn-terraform-examples"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Logs and metrics for backend services \\_|\\_ Cloud CDN \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "source_id": "site-docs-root-2",
+        "final_score": 42,
+        "relevance": "",
+        "evidence_snippets": [
+          "This information is only available for global external Application Load Balancers using custom error responses . string Optional The cachePolicySource field holds the source of the caching policy that governs the caching behavior for a specific request: CACHE POLICY SOURCE ROUTE : A cache policy can be applied at different levels of the URL map, and that allows for more granular control over caching.",
+          "This information is only available for global external Application Load Balancers using custom error responses . string Required The errorBackendStatusDetails field holds the statusDetails of the final response served to the client.",
+          "This information is only available for global external Application Load Balancers using custom error responses . string Required The errorService field holds the backend service that provided the custom error response."
+        ]
+      },
+      {
+        "title": "Automate Cloud CDN setup with Terraform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/cdn-terraform-examples",
+        "source_id": "site-docs-root",
+        "final_score": 36,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "VPC resource \"google compute network\" \"default\" { name = \"l7-xlb-network\" provider = google-beta auto create subnetworks = false } backend subnet resource \"google compute subnetwork\" \"default\" { name = \"l7-xlb-subnet\" provider = google-beta ip cidr range = \"10.0.1.0/24\" region = \"us-central1\" network = google compute network.default.id } reserved IP address resource \"google compute global address\" \"default\" { provider = google-beta name = \"l7-xlb-static-ip\" } forwarding rule resource \"google compute global forwarding rule\" \"default\" { name = \"l7-xlb-forwarding-rule\" provider = google-beta ip protocol = \"TCP\" load balancing scheme = \"EXTERNAL\" port range = \"80\" target = google compute target http proxy.default.id ip address = google compute global address.default.id } http proxy resource \"google compute target http proxy\" \"default\" { name = \"l7-xlb-target-http-proxy\" provider = google-beta url map = google compute url map.default.id } url map resource \"google compute url map\" \"default\" { name = \"l7-xlb-url-map\" provider = google-beta default service = google compute backend service.default.id } backend service with custom request and response headers resource \"google compute backend service\" \"default\" { name = \"l7-xlb-backend-service\" provider = google-beta protocol = \"HTTP\" port name = \"my-port\" load balancing scheme = \"EXTERNAL\" timeout sec = 10 enable cdn = true custom request headers = [\"X-Client-Geo-Location: {client region subdivision}, {client city}\"] custom response headers = [\"X-Cache-Hit: {cdn cache status}\"] health checks = [google compute health check.default.id] backend { group = google compute instance group manager.default.instance group balancing mode = \"UTILIZATION\" capacity scaler = 1.0 } } instance template resource \"google compute instance template\" \"default\" { name = \"l7-xlb-mig-template\" provider = google-beta machine type = \"e2-small\" tags = [\"allow-health-check\"] network interface { network = google compute network.default.id subnetwork = google compute subnetwork.default.id access config { add external ip to fetch packages } } disk { source image = \"debian-cloud/debian-12\" auto delete = true boot = true } install nginx and serve a simple web page metadata = { startup-script = <<-EOF1 #! /bin/bash set -euo pipefail export DEBIAN FRONTEND=noninteractive apt-get update apt-get install -y nginx-light jq NAME=$(curl -H \"Metadata-Flavor: Google\" \"http://metadata.google.internal/computeMetadata/v1/instance/hostname\") IP=$(curl -H \"Metadata-Flavor: Google\" \"http://metadata.google.internal/computeMetadata/v1/instance/network-interfaces/0/ip\") METADATA=$(curl -f -H \"Metadata-Flavor: Google\" \"http://metadata.google.internal/computeMetadata/v1/instance/attributes/?recursive=True\" jq 'del(.[\"startup-script\"])') cat <<EOF > /var/www/html/index.html <pre> Name: $NAME IP: $IP Metadata: $METADATA </pre> EOF EOF1 } lifecycle { create before destroy = true } } health check resource \"google compute health check\" \"default\" { name = \"l7-xlb-hc\" provider = google-beta http health check { port specification = \"USE SERVING PORT\" } } MIG resource \"google compute instance group manager\" \"default\" { name = \"l7-xlb-mig1\" provider = google-beta zone = \"us-central1-c\" named port { name = \"http\" port = 8080 } version { instance template = google compute instance template.default.id name = \"primary\" } base instance name = \"vm\" target size = 2 } allow access from health check ranges resource \"google compute firewall\" \"default\" { name = \"l7-xlb-fw-allow-hc\" provider = google-beta direction = \"INGRESS\" network = google compute network.default.id source ranges = [\"130.211.0.0/22\", \"35.191.0.0/16\"] allow { protocol = \"tcp\" } target tags = [\"allow-health-check\"] } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Cloud Storage bucket resource \"random id\" \"bucket prefix\" { byte length = 8 } resource \"google storage bucket\" \"default\" { name = \"${random id.bucket prefix.hex}-my-bucket\" location = \"us-east1\" uniform bucket level access = true storage class = \"STANDARD\" // delete bucket and contents on destroy. force destroy = true // Assign specialty files website { main page suffix = \"index.html\" not found page = \"404.html\" } } make bucket public resource \"google storage bucket iam member\" \"default\" { bucket = google storage bucket.default.name role = \"roles/storage.objectViewer\" member = \"allUsers\" } resource \"google storage bucket object\" \"index page\" { name = \"index-page\" bucket = google storage bucket.default.name content = <<-EOT <html><body> <h1>Congratulations on setting up Google Cloud CDN with Storage backend!</h1> </body></html> EOT } resource \"google storage bucket object\" \"error page\" { name = \"404-page\" bucket = google storage bucket.default.name content = <<-EOT <html><body> <h1>404 Error: Object you are looking for is no longer available!</h1> </body></html> EOT } image object for testing, try to access http://<your lb ip address>/test.jpg resource \"google storage bucket object\" \"test image\" { name = \"test-object\" Uncomment and add valid path to an object. source = \"/path/to/an/object\" content type = \"image/jpeg\" Delete after uncommenting above source and content type attributes content = \"Data as string to be uploaded\" content type = \"text/plain\" bucket = google storage bucket.default.name } reserve IP address resource \"google compute global address\" \"default\" { name = \"example-ip\" } forwarding rule resource \"google compute global forwarding rule\" \"default\" { name = \"http-lb-forwarding-rule\" ip protocol = \"TCP\" load balancing scheme = \"EXTERNAL\" port range = \"80\" target = google compute target http proxy.default.id ip address = google compute global address.default.id } http proxy resource \"google compute target http proxy\" \"default\" { name = \"http-lb-proxy\" url map = google compute url map.default.id } url map resource \"google compute url map\" \"default\" { name = \"http-lb\" default service = google compute backend bucket.default.id } backend bucket with CDN policy with default ttl settings resource \"google compute backend bucket\" \"default\" { name = \"cat-backend-bucket\" description = \"Contains beautiful images\" bucket name = google storage bucket.default.name enable cdn = true cdn policy { cache mode = \"CACHE ALL STATIC\" client ttl = 3600 default ttl = 3600 max ttl = 86400 negative caching = true serve while stale = 86400 } } Using MIG and custom headers You can use Terraform resources to bring up an external HTTP load balancer with a Cloud CDN backend service and custom request and response headers ."
+        ]
+      },
+      {
+        "title": "Cloud CDN audit logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/audit-logging",
+        "source_id": "site-docs-root-2",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "Filter for this service: protoPayload . serviceName = \"compute.googleapis.com\" Methods by permission type For the following API methods, there is also a beta and alpha version available that is not listed here.",
+          "When the beta or alpha version of the API is called the method name will start with beta or alpha respectively."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "address.default.id",
+      "bucket.default.id",
+      "bucket.default.name",
+      "check.default.id",
+      "compute.googleapis.com",
+      "id.bucket",
+      "index.html",
+      "manager.default.instance",
+      "map.default.id",
+      "metadata.google.internal",
+      "network.default.id",
+      "prefix.hex",
+      "proxy.default.id",
+      "service.default.id",
+      "storage.objectViewer",
+      "subnetwork.default.id",
+      "template.default.id",
+      "test.jpg"
+    ],
+    "missing_inventory_roles": [
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/cdn-terraform-examples",
+        "https://docs.cloud.google.com/cdn/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/cdn-terraform-examples",
+        "https://docs.cloud.google.com/cdn/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/cdn-terraform-examples",
+        "https://docs.cloud.google.com/cdn/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/cdn-terraform-examples",
+        "https://docs.cloud.google.com/cdn/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/cdn-terraform-examples",
+        "https://docs.cloud.google.com/cdn/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/cdn-terraform-examples",
+        "https://docs.cloud.google.com/cdn/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/cdn-terraform-examples",
+        "https://docs.cloud.google.com/cdn/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/cdn-terraform-examples",
+        "https://docs.cloud.google.com/cdn/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/cdn-terraform-examples",
+        "https://docs.cloud.google.com/cdn/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/cdn-terraform-examples",
+        "https://docs.cloud.google.com/cdn/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/cdn-terraform-examples",
+        "https://docs.cloud.google.com/cdn/docs/audit-logging"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:28.192Z",
+  "source_step08_card": "data/step-08/current/products/cloud-cdn/card.json",
+  "product_name": "Cloud CDN",
+  "product_slug": "cloud-cdn"
+}

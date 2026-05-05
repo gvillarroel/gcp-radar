@@ -1,0 +1,200 @@
+{
+  "feature_name": "Classifier.explain()",
+  "feature_slug": "classifier-explain",
+  "summary": "Describes classifier training results, currently for Cart only.",
+  "extended_definition": "Describes classifier training results, currently for Cart only.",
+  "lifecycle": {
+    "latest_feature_date": "2015-09-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/apidocs/ee-classifier-explain",
+      "https://developers.google.com/earth-engine/guides/best_practices",
+      "https://developers.google.com/earth-engine/guides/classification"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "ee.Classifier.explain | Google Earth Engine | Google for Developers",
+        "url": "https://developers.google.com/earth-engine/apidocs/ee-classifier-explain",
+        "source_id": "feature-recovery-http",
+        "final_score": 254,
+        "relevance": "",
+        "evidence_snippets": [
+          "Classifier . smileRandomForest ( 10 ). train ({ features : trainingSample , classProperty : label , inputProperties : img . bandNames () }); // Get information about the trained classifier. print ( 'Results of trained classifier' , trainedClassifier . explain ()); // Get a confusion matrix and overall accuracy for the training sample. var trainAccuracy = trainedClassifier . confusionMatrix (); print ( 'Training error matrix' , trainAccuracy ); print ( 'Training overall accuracy' , trainAccuracy . accuracy ()); // Get a confusion matrix and overall accuracy for the validation sample. validationSample = validationSample . classify ( trainedClassifier ); var validationAccuracy = validationSample . errorMatrix ( label , 'classification' ); print ( 'Validation error matrix' , validationAccuracy ); print ( 'Validation accuracy' , validationAccuracy . accuracy ()); // Classify the reflectance image from the trained classifier. var imgClassified = img . classify ( trainedClassifier ); // Add the layers to the map. var classVis = { min : 0 , max : 10 , palette : [ '006400' , 'ffbb22' , 'ffff4c' , 'f096ff' , 'fa0000' , 'b4b4b4' , 'f0f0f0' , '0064c8' , '0096a0' , '00cf75' , 'fae6a0' ] }; Map . setCenter ( - 122.184 , 37.796 , 12 ); Map . addLayer ( img , { bands : [ 'B11' , 'B8' , 'B3' ], min : 100 , max : 3500 }, 'img' ); Map . addLayer ( lc , classVis , 'lc' ); Map . addLayer ( imgClassified , classVis , 'Classified' ); Map . addLayer ( roi , { color : 'white' }, 'ROI' , false , 0.5 ); Map . addLayer ( trainingSample , { color : 'black' }, 'Training sample' , false ); Map . addLayer ( validationSample , { color : 'white' }, 'Validation sample' , false ); راه اندازی پایتون برای اطلاعات در مورد API پایتون و استفاده از geemap برای توسعه تعاملی به صفحه محیط پایتون مراجعه کنید. import ee import geemap.core as geemap کولب (پایتون) # A Sentinel-2 surface reflectance image, reflectance bands selected, # serves as the source for training and prediction in this contrived example. img = ee .",
+          "Classifier . smileRandomForest ( 10 ) . train ( features = training_sample , classProperty = label , inputProperties = img . bandNames (), ) # Get information about the trained classifier. display ( 'Results of trained classifier' , trained_classifier . explain ()) # Get a confusion matrix and overall accuracy for the training sample. train_accuracy = trained_classifier . confusionMatrix () display ( 'Training error matrix' , train_accuracy ) display ( 'Training overall accuracy' , train_accuracy . accuracy ()) # Get a confusion matrix and overall accuracy for the validation sample. validation_sample = validation_sample . classify ( trained_classifier ) validation_accuracy = validation_sample . errorMatrix ( label , 'classification' ) display ( 'Validation error matrix' , validation_accuracy ) display ( 'Validation accuracy' , validation_accuracy . accuracy ()) # Classify the reflectance image from the trained classifier. img_classified = img . classify ( trained_classifier ) # Add the layers to the map. class_vis = { 'min' : 0 , 'max' : 10 , 'palette' : [ '006400' , 'ffbb22' , 'ffff4c' , 'f096ff' , 'fa0000' , 'b4b4b4' , 'f0f0f0' , '0064c8' , '0096a0' , '00cf75' , 'fae6a0' , ], } m = geemap .",
+          "Kernel اضافه کردن چبیشف دایره قطب نما متقاطع الماس اقلیدسی ثابت گاوسی معکوس kirsch لاپلاسی 4 لاپلاس 8 منهتن هشت ضلعی به علاوه پیش نمایش مستطیل رابرتز چرخاندن سوبل مربع ee.List ee.List اضافه کردن کنار گربه گربه شامل شامل همه متمایز برابر است ارزیابی کنید فیلتر صاف کردن فرکانس گرفتن getArray دریافت هندسه گرفتن اطلاعات getNumber getString indexOf indexOfSublist درج کنید تکرار کردن پیوستن lastIndexOfSubList طول نقشه كاهش دادن برداشتن حذف همه تکرار جایگزین کردن جایگزین همه معکوس چرخاندن دنباله سریال کردن تنظیم بر زدن اندازه تکه مرتب سازی اتصال مبادله از حالت فشرده خارج کنید زیپ ee.Model از VertexAi پیش بینی تصویر پیش بینی خواص ee.شماره ee.شماره عضلات شکم acos اضافه کردن و کنار asin قهوهای مایل به زرد آتان 2 bitCount bitwiseAnd bitwiseNot bitwiseOr bitwiseXor بایت cbrt سقف گیره cos cosh دیگاما تقسیم کنید دو برابر کردن معادله erf erfInv erfc erfcInv ارزیابی کنید انقضا اصطلاح اول، اول firstNonZero شناور کف قالب گاما gammainc گرفتن اطلاعات gt gte هیپوت بین المللی int16 int32 int64 int8 لانچوس سمت چپ Shift ورود به سیستم log10 طولانی آن lte حداکثر دقیقه مد تکثیر کردن نک نه یا تجزیه قدرت سمت راست Shift گرد سریال کردن کوتاه امضا گناه گناه sqrt تفریق کردن برنزه tanh به بایت به دوبل به شناور toInt toInt16 toInt32 toInt64 toInt8 به لانگ به کوتاه toUint16 toUint32 toUint8 تریگاما uint16 uint32 uint8 واحد مقیاس ee.PixelType ee.PixelType ابعاد دو برابر کردن شناور int16 int32 int64 int8 maxValue minValue دقت، درستی uint16 uint32 uint8 ee.Projection ee.Projection در مقیاس crs مقیاس اسمی مقیاس تبدیل ترجمه کردن wkt ee.Reducer allNonZero anyNonZero هیستوگرام خودکار bitwiseAnd bitwiseOr کوواریانس متمرکز مدور میانگین دایره ای Stddev واریانس دایره ای ترکیب کردن شمردن شمارش متمایز countDistinctNonNull شمارش هر countRuns کوواریانس تفکیک کردن اول، اول firstNonNull ثابت 2D هیستوگرام هیستوگرام ثابت برای هر کدام برای هر باند forEachElement هیستوگرام فرکانس geometricMedian خروجی ها گروه هیستوگرام intervalMean کندالز همبستگی کشیدگی آخر lastNonNull linearFit رگرسیون خطی حداکثر منظور داشتن میانه دقیقه minMax حالت pearsonCorrelation صدک تولید - محصول تکرار رگرسیون رگرسیون خطی قوی sampleStdDev نمونه واریانس sensSlope مجموعه خروجی ها کج کردن همبستگی spearmans تقسیم وزن stdDev مجموع به مجموعه toList بدون وزن واریانس ee.string ee.string کنار گربه گربه در مقایسه با رمزگشایی JSON encodeJSON برابر است ارزیابی کنید گرفتن اطلاعات فهرست مطالب طول همخوانی داشتن جایگزین کردن rindex سریال کردن تکه شکاف به حروف کوچک به حروف بزرگ کوتاه کردن ee. زمین جنبه fillMinima hill Shadow سایه تپه محصولات، محصولات شیب ee.apply ee.apply ee.call ee.call ee.data authenticateViaOauth authenticateViaPopup authenticateViaPrivateKey لغو عملیات مقدار محاسبه copyAsset ایجاد دارایی createAssetHome createFolder حذف دارایی getAsset getAssetAcl getAssetRootQuota getDownloadId getFeatureViewTilesKey getFilmstripThumbId getMapId getOperation getTableDownloadId getThumbId getTileUrl getVideoThumbId getWorkloadTag لیست دارایی ها listBuckets لیست ویژگی ها لیست تصاویر لیست عملیات makeDownloadUrl makeTableDownloadUrl makeThumbUrl newTaskId تغییر نام Asset بازنشانی WorkloadTag setAssetAcl setDefaultWorkloadTag setWorkloadTag شروع بلع شروع پردازش startTableIngestion updateAsset updateTask ee.initialize ee.initialize ee.reset ee.reset Export.classifier به دارایی صادرات.تصویر به دارایی toCloudStorage درایو صادرات. نقشه toCloudStorage صادرات.جدول به دارایی به BigQuery toCloudStorage درایو به FeatureView صادرات.ویدئو toCloudStorage درایو ویرایشگر کد ویرایشگر کد جاوا اسکریپت نقشه اضافه کردن addLayer centerObject روشن طراحی ابزار getBounds getCenter getScale دریافت زوم لایه ها onChangeBounds onChangeCenter onChangeZoom روی کلیک کنید در بیکار onTileLoaded برداشتن setCenter setControlVisibility setGestureHandling setLocked setOptions تنظیم زوم سبک گوش ندادن ویجت ها صادرات صادرات چاپ چاپ نیاز نیاز UI.Button UI.Button getDisabled getImageUrl getLabel روی کلیک کنید setDisabled setImageUrl setLabel سبک گوش ندادن ui.Chart ui.Chart آرایه. مقادیر feature.byFeature feature.byProperty ویژگی.گروه ها ویژگی.هیستوگرام getChartType getDataTable دریافت قابل دانلود getOptions getView image.byClass image.byRegion image.doySeries image.doySeriesByRegion image.doySeriesByYear تصویر.هیستوگرام تصویر.مناطق تصویر.سریال image.seriesByRegion روی کلیک کنید setChartType setDataTable مجموعه قابل دانلود setOptions setSeriesNames setView سبک گوش ندادن ui.Checkbox ui.Checkbox getDisabled getLabel getValue در تغییر setDisabled setLabel setValue سبک گوش ندادن ui.DateSlider ui.DateSlider getDisabled getEnd دریافت دوره شروع کنید getValue در تغییر setDisabled setEnd setPeriod setStart setValue سبک گوش ندادن ui.Label ui.Label getImageUrl getUrl getValue setImageUrl setUrl setValue سبک ui.Map ui.Map CloudStorageLayer CloudStorageLayer.getBucket CloudStorageLayer.getMaxZoom CloudStorageLayer.getName CloudStorageLayer.getOpacity CloudStorageLayer.getPath CloudStorageLayer.getShown CloudStorageLayer.getSuffix CloudStorageLayer.setBucket CloudStorageLayer.setMaxZoom CloudStorageLayer.setName CloudStorageLayer.setOpacity CloudStorageLayer.setPath CloudStorageLayer.setShown پسوند CloudStorageLayer.set DrawingTools DrawingTools.addLayer DrawingTools.clear DrawingTools.draw DrawingTools.edit DrawingTools.get DrawingTools.getDrawModes DrawingTools.getLinked DrawingTools.getMap DrawingTools.getSelected DrawingTools.getShape DrawingTools.getShown DrawingTools.layers DrawingTools.onDraw DrawingTools.onEdit DrawingTools.onErase DrawingTools.onLayerAdd DrawingTools.onLayerConfig DrawingTools.onLayerRemove DrawingTools.onLayerSelect DrawingTools.onSelect DrawingTools.onShapeChange DrawingTools.set DrawingTools.setDrawModes DrawingTools.setLinked DrawingTools.setSelected DrawingTools.setShape DrawingTools.setShown DrawingTools.stop DrawingTools.toFeatureCollection DrawingTools.unlisten FeatureViewLayer FeatureViewLayer.getAssetId FeatureViewLayer.getName FeatureViewLayer.getOpacity FeatureViewLayer.getShown FeatureViewLayer.getVisParams FeatureViewLayer.setAssetId FeatureViewLayer.setName FeatureViewLayer.setOpacity FeatureViewLayer.setShown FeatureViewLayer.setVisParams لایه هندسی GeometryLayer.fromGeometry GeometryLayer.geometries GeometryLayer.get GeometryLayer.getColor GeometryLayer.getEeObject GeometryLayer.getLocked GeometryLayer.getName GeometryLayer.getShown GeometryLayer.openConfigurationDialog GeometryLayer.set GeometryLayer.setColor GeometryLayer.setLocked GeometryLayer.setName GeometryLayer.setShown GeometryLayer.toGeometry لایه Layer.getEeObject Layer.getName Layer.getOpacity Layer.getShown Layer.getVisParams Layer.setEeObject Layer.setName Layer.setOpacity Layer.set نشان داده شده است Layer.setVisParams پیوند دهنده Linker.add Linker.forEach Linker.get Linker.getJsArray Linker.insert Linker.length Linker.remove Linker.reset Linker.set اضافه کردن addLayer centerObject روشن طراحی ابزار getBounds getCenter getScale دریافت زوم درج کنید لایه ها onChangeBounds onChangeCenter onChangeZoom روی کلیک کنید در بیکار onTileLoaded برداشتن setCenter setControlVisibility setGestureHandling setLocked setOptions تنظیم زوم سبک گوش ندادن ویجت ها ui.panel ui.panel Layout.absolute Layout.flow اضافه کردن روشن getLayout درج کنید برداشتن setLayout سبک ویجت ها ui.انتخاب کنید ui.انتخاب کنید getDisabled getPlaceholder getValue موارد در تغییر setDisabled setPlaceholder setValue سبک گوش ندادن ui.Slider ui.Slider getDisabled getMax getMin getStep getValue در تغییر onSlide setDisabled تنظیم حداکثر تنظیم دقیقه setStep setValue سبک گوش ندادن ui.SplitPanel ui.SplitPanel getFirstPanel getOrientation getPanel getSecondPanel getWipe setFirstPanel جهت گیری مجموعه setPanel setSecondPanel setWipe سبک گوش ندادن UI.Textbox UI.Textbox getDisabled getPlaceholder getValue در تغییر setDisabled setPlaceholder setValue سبک گوش ندادن ui.تصویر کوچک ui.تصویر کوچک getImage getParams روی کلیک کنید setImage setParams سبک گوش ندادن ui.data Active Dictionary ActiveDictionary.get ActiveDictionary.set ActiveList ActiveList.add ActiveList.forEach ActiveList.get ActiveList.getJsArray ActiveList.insert ActiveList.length ActiveList.remove ActiveList.reset ActiveList.set ui.root،ui.root اضافه کردن روشن getLayout درج کنید در تغییر اندازه برداشتن setKeyHandler setLayout ویجت ها ui.url گرفتن تنظیم ui.util روشن clearTimeout انحراف getCurrentPosition rateLimit setInterval setTimeout دریچه گاز REST API نمای کلی شروع سریع مثال‌ها تصاویر محاسبه شده جداول محاسبه شده ایجاد دارایی های پشتیبانی شده توسط Cloud GeoTIFF مرجع API نمای کلی v1 منابع REST پروژه ها نمای کلی getConfig لیست دارایی ها updateConfig پروژه ها.الگوریتم ها نمای کلی فهرست پروژه ها.دارایی ها نمای کلی کپی 🀄 ايجاد كردن حذف گرفتن getIamPolicy دریافت پیکسل لیست دارایی ها لیست ویژگی ها حرکت پچ setIamPolicy testIamPermissions پروژه ها.طبقه بندی نمای کلی صادرات projects.featureView نمای کلی ايجاد كردن projects.featureViews نمای کلی ايجاد كردن projects.featureViews.tiles نمای کلی گرفتن projects.filmstripThumbnails نمای کلی ايجاد كردن دریافت پیکسل پروژه ها.تصویر نمای کلی computePixels صادرات وارد كردن projects.imageCollection نمای کلی محاسبه تصاویر پروژه ها. مکان ها. دارایی ها نمای کلی ايجاد كردن projects.locations.filmstripTumbnails نمای کلی ايجاد كردن پروژه ها.موقعیت ها.نقشه ها نمای کلی ايجاد كردن پروژه ها.موقعیت ها.جدول نمای کلی ايجاد كردن پروژه ها. مکان ها. تصاویر کوچک نمای کلی ايجاد كردن projects.locations.videoTumbnails نمای کلی ايجاد كردن پروژه ها.نقشه نمای کلی صادرات پروژه ها. نقشه ها نمای کلی ايجاد كردن پروژه ها. نقشه ها. کاشی ها نمای کلی گرفتن پروژه ها.عملیات نمای کلی لغو حذف گرفتن فهرست صبر کن پروژه ها.جدول نمای کلی ویژگی های محاسبه صادرات وارد كردن پروژه ها.جدول نمای کلی ايجاد كردن دریافت ویژگی ها پروژه ها.عکس های کوچک نمای کلی ايجاد كردن دریافت پیکسل پروژه ها. ارزش نمای کلی محاسبه کنید پروژه ها.ویدئو نمای کلی صادرات projects.videoThumbnails نمای کلی ايجاد كردن دریافت پیکسل انواع AffineTransform CloudStorageDestination DoubleRange DriveDestination EarthEngineAssetView EarthEngineDestination بیان ویژگی ابعاد شبکه ImageFileExportOptions ImageFileFormat ListAssetsResponse PixelGrid ProjectConfig گزینه های تجسم v1beta منابع REST پروژه ها نمای کلی getConfig لیست دارایی ها updateConfig پروژه ها.الگوریتم ها نمای کلی فهرست پروژه ها.دارایی ها نمای کلی کپی 🀄 ايجاد كردن حذف گرفتن getIamPolicy دریافت پیکسل لیست دارایی ها لیست ویژگی ها حرکت پچ setIamPolicy testIamPermissions پروژه ها.طبقه بندی نمای کلی صادرات projects.featureView نمای کلی ايجاد كردن projects.featureViews نمای کلی ايجاد كردن projects.featureViews.tiles نمای کلی گرفتن projects.filmstripThumbnails نمای کلی ايجاد كردن دریافت پیکسل پروژه ها.تصویر نمای کلی computePixels صادرات وارد كردن projects.imageCollection نمای کلی محاسبه تصاویر پروژه ها. مکان ها. دارایی ها نمای کلی ايجاد كردن projects.locations.filmstripTumbnails نمای کلی ايجاد كردن پروژه ها.موقعیت ها.نقشه ها نمای کلی ايجاد كردن پروژه ها.موقعیت ها.جدول نمای کلی ايجاد كردن پروژه ها. مکان ها. تصاویر کوچک نمای کلی ايجاد كردن projects.locations.videoTumbnails نمای کلی ايجاد كردن پروژه ها.نقشه نمای کلی صادرات پروژه ها. نقشه ها نمای کلی ايجاد كردن پروژه ها. نقشه ها. کاشی ها نمای کلی گرفتن پروژه ها.عملیات نمای کلی لغو حذف گرفتن فهرست صبر کن پروژه ها.جدول نمای کلی ویژگی های محاسبه صادرات وارد كردن پروژه ها.جدول نمای کلی ايجاد كردن دریافت ویژگی ها پروژه ها.عکس های کوچک نمای کلی ايجاد كردن دریافت پیکسل پروژه ها. ارزش نمای کلی محاسبه کنید پروژه ها.ویدئو نمای کلی صادرات projects.videoThumbnails نمای کلی ايجاد كردن دریافت پیکسل انواع AffineTransform CloudStorageDestination DoubleRange DriveDestination EarthEngineAssetView EarthEngineDestination بیان ویژگی ابعاد شبکه ImageFileExportOptions ImageFileFormat ListAssetsResponse PixelGrid ProjectConfig گزینه های تجسم v1alpha منابع REST پروژه ها نمای کلی getConfig لیست دارایی ها updateConfig پروژه ها.الگوریتم ها نمای کلی فهرست پروژه ها.دارایی ها نمای کلی کپی 🀄 ايجاد كردن حذف گرفتن getIamPolicy دریافت پیکسل لیست دارایی ها لیست ویژگی ها لیست تصاویر حرکت پچ setIamPolicy testIamPermissions پروژه ها.طبقه بندی نمای کلی صادرات projects.featureView نمای کلی ايجاد كردن projects.featureViews نمای کلی ايجاد كردن projects.featureViews.tiles نمای کلی گرفتن projects.filmstripThumbnails نمای کلی ايجاد كردن دریافت پیکسل پروژه ها.تصویر نمای کلی computePixels صادرات وارد كردن واردات خارجی projects.imageCollection نمای کلی محاسبه تصاویر پروژه ها. مکان ها. دارایی ها نمای کلی ايجاد كردن projects.locations.filmstripTumbnails نمای کلی ايجاد كردن پروژه ها.موقعیت ها.نقشه ها نمای کلی ايجاد كردن پروژه ها.موقعیت ها.جدول نمای کلی ايجاد كردن پروژه ها. مکان ها. تصاویر کوچک نمای کلی ايجاد كردن projects.locations.videoTumbnails نمای کلی ايجاد كردن پروژه ها.نقشه نمای کلی صادرات پروژه ها. نقشه ها نمای کلی ايجاد كردن پروژه ها. نقشه ها. کاشی ها نمای کلی گرفتن پروژه ها.عملیات نمای کلی لغو حذف گرفتن فهرست صبر کن پروژه ها.جدول نمای کلی ویژگی های محاسبه صادرات وارد كردن پروژه ها.جدول نمای کلی ايجاد كردن دریافت ویژگی ها پروژه ها.عکس های کوچک نمای کلی ايجاد كردن دریافت پیکسل پروژه ها. ارزش نمای کلی محاسبه کنید پروژه ها.ویدئو نمای کلی صادرات projects.videoThumbnails نمای کلی ايجاد كردن دریافت پیکسل انواع AffineTransform CloudStorageDestination DoubleRange DriveDestination EarthEngineAssetView EarthEngineDestination بیان ویژگی GcsDestination ابعاد شبکه ImageFileExportOptions ImageFileFormat ImageManifest ListAssetsResponse PixelGrid ProjectConfig گزینه های تجسم مفاهیم شرایط API اضافی ابزار خط فرمان کاتالوگ داده ها کاتالوگ های داده های ناشر الگوریتم های لندست الگوریتم های Sentinel-1 راهنمای مهاجرت لندست C1 به C2 مجموعه داده های حذف شده دیگر یادداشت های انتشار واژه نامه شرایط خدمات Earth Engine در حال معرفی سطوح سهمیه‌بندی غیرتجاری برای محافظت از منابع محاسباتی مشترک و تضمین عملکرد قابل اعتماد برای همه است. همه پروژه‌های غیرتجاری باید تا ۲۷ آوریل ۲۰۲۶ یک سطح سهمیه‌بندی را انتخاب کنند یا به طور پیش‌فرض از سطح Community استفاده خواهند کرد. سهمیه‌بندی سطوح برای همه پروژه‌ها (صرف نظر از تاریخ انتخاب سطح) در ۲۷ آوریل ۲۰۲۶ اعمال خواهد شد. اطلاعات بیشتر. این صفحه به‌وسیله ‏Cloud Translation API‏ ترجمه شده است. صفحه اصلی محصولات Google Earth Engine مرجع ارسال بازخورد ee.Classifier.explain با مجموعه‌ها، منظم بمانید ذخیره و طبقه‌بندی محتوا براساس اولویت‌های شما. نتایج یک طبقه بندی کننده آموزش دیده را شرح دهید. استفاده برمی گرداند Classifier. explain () فرهنگ لغت استدلال تایپ کنید جزئیات این: classifier طبقه بندی کننده طبقه بندی کننده برای توصیف. نمونه ها ویرایشگر کد (جاوا اسکریپت) // A Sentinel-2 surface reflectance image, reflectance bands selected, // serves as the source for training and prediction in this contrived example. var img = ee ."
+        ]
+      },
+      {
+        "title": "Coding Best Practices \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/best_practices",
+        "source_id": "site-docs-root",
+        "final_score": 126,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Classifier . smileCart (). train ({ features : training , classProperty : 'landcover' , inputProperties : bands }); print ( classifier . explain ()); // Computed value is too large The better approach is to start with a moderate amount of data and tune the hyperparameters of the classifier to determine if you can achieve your desired accuracy: Tune hyperparameters! var l8raw = ee .",
+          "Classifier . smileCart ({ minLeafPopulation : p }) . train ({ features : training , classProperty : 'landcover' , inputProperties : bands }); return testing . classify ( classifier ) . errorMatrix ( 'landcover' , 'classification' ) . accuracy (); }); print ( ui .",
+          "Don't do this: labels = labels . map ( function ( f ) { return f . buffer ( 100000 , 1000 ); }); var bands = [ 'B2' , 'B3' , 'B4' , 'B5' , 'B6' , 'B7' ]; var training = composite . select ( bands ). sampleRegions ({ collection : labels , properties : [ 'landcover' ], scale : 30 }); var classifier = ee ."
+        ]
+      },
+      {
+        "title": "Supervised Classification \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/classification",
+        "source_id": "site-docs-root",
+        "final_score": 95,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Classifier . smileCart () . train ( training , label , bands ) Classify the image with the same bands used for training. classified = l8 image . select ( bands ) . classify ( trained ) Display the inputs and the results. m = geemap .",
+          "Classifier . smileCart (). train ( training , label , bands ); // Classify the image with the same bands used for training. var classified = image . select ( bands ). classify ( trained ); // Display the inputs and the results.",
+          "Classifier CLASSIFICATION REGRESSION PROBABILITY MULTIPROBABILITY RAW RAW REGRESSION ee.Classifier.amnhMaxent close close check circle close close close ee.Classifier.minimumDistance check circle check circle close close check circle close ee.Classifier.smileCart check circle check circle check circle check circle close close ee.Classifier.smileGradientTreeBoost check circle check circle check circle check circle close close ee.Classifier.smileKNN check circle close check circle close close close ee.Classifier.smileNaiveBayes check circle close check circle check circle close close ee.Classifier.smileRandomForest check circle check circle check circle check circle check circle check circle ee.Classifier.libsvm C SVC check circle close check circle check circle close close ee.Classifier.libsvm NU SVC check circle close check circle check circle close close ee.Classifier.libsvm ONE CLASS check circle close close close close close ee.Classifier.libsvm EPSILON SVR check circle close close close close close ee.Classifier.libsvm NU SVR close check circle close close close close Use setOutputMode() before training a classifier to define the output format."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "ee.apply",
+      "ee.Array",
+      "ee.Blob",
+      "ee.call",
+      "ee.Classifier",
+      "ee.Classifier.amnhMaxent",
+      "ee.Classifier.explain",
+      "ee.Classifier.libsvm",
+      "ee.Classifier.minimumDistance",
+      "ee.Classifier.smileCart",
+      "ee.Classifier.smileGradientTreeBoost",
+      "ee.Classifier.smileKNN",
+      "ee.Classifier.smileNaiveBayes",
+      "ee.Classifier.smileRandomForest",
+      "ee.Clusterer",
+      "ee.ConfusionMatrix",
+      "ee.data",
+      "ee.Date",
+      "ee.DateRange",
+      "ee.ErrorMargin",
+      "ee.FeatureCollection",
+      "ee.Filter",
+      "ee.ImageCollection",
+      "ee.initialize",
+      "ee.List",
+      "ee.Model",
+      "ee.PixelType",
+      "ee.Projection",
+      "ee.Reducer",
+      "ee.reset",
+      "ee.string",
+      "feature.byFeature",
+      "feature.byProperty",
+      "geemap.core",
+      "image.byClass",
+      "image.byRegion",
+      "image.doySeries",
+      "image.doySeriesByRegion",
+      "image.doySeriesByYear",
+      "image.seriesByRegion",
+      "projects.featureView",
+      "projects.featureViews",
+      "projects.featureViews.tiles",
+      "projects.filmstripThumbnails",
+      "projects.imageCollection",
+      "projects.locations.filmstripTumbnails",
+      "projects.locations.videoTumbnails",
+      "projects.videoThumbnails",
+      "ui.Chart",
+      "ui.Checkbox",
+      "ui.data",
+      "ui.DateSlider",
+      "ui.Label",
+      "ui.Map",
+      "ui.panel",
+      "ui.root",
+      "ui.Slider",
+      "ui.SplitPanel",
+      "ui.url",
+      "ui.util"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs/ee-classifier-explain",
+        "https://developers.google.com/earth-engine/guides/best_practices",
+        "https://developers.google.com/earth-engine/guides/classification"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs/ee-classifier-explain",
+        "https://developers.google.com/earth-engine/guides/best_practices",
+        "https://developers.google.com/earth-engine/guides/classification"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs/ee-classifier-explain",
+        "https://developers.google.com/earth-engine/guides/best_practices",
+        "https://developers.google.com/earth-engine/guides/classification"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs/ee-classifier-explain",
+        "https://developers.google.com/earth-engine/guides/best_practices",
+        "https://developers.google.com/earth-engine/guides/classification"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs/ee-classifier-explain",
+        "https://developers.google.com/earth-engine/guides/best_practices",
+        "https://developers.google.com/earth-engine/guides/classification"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs/ee-classifier-explain",
+        "https://developers.google.com/earth-engine/guides/best_practices",
+        "https://developers.google.com/earth-engine/guides/classification"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs/ee-classifier-explain",
+        "https://developers.google.com/earth-engine/guides/best_practices",
+        "https://developers.google.com/earth-engine/guides/classification"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:03.772Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server"
+}

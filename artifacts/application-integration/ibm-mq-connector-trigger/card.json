@@ -1,0 +1,118 @@
+{
+  "feature_name": "IBM MQ connector trigger",
+  "feature_slug": "ibm-mq-connector-trigger",
+  "summary": "Application Integration introduced an IBM MQ connector trigger in preview so integrations can be invoked by IBM MQ events.",
+  "extended_definition": "Application Integration introduced an IBM MQ connector trigger in preview so integrations can be invoked by IBM MQ events.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-integration/docs/configure-apache-kafka-trigger",
+      "https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger",
+      "https://docs.cloud.google.com/application-integration/docs/configure-hubspot-trigger"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Azure AD trigger \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger",
+        "source_id": "site-docs-root-2",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before you begin If you plan to create or configure a new connection for the Azure AD trigger , make sure that you have the following IAM role on the project: Connector Admin ( roles/connectors.admin ) For information about granting roles, see Manage access .",
+          "To configure the Azure AD trigger , you can either use an existing Azure AD connection available in Integration Connectors, or create a new Azure AD connection using the inline connection creation option.",
+          "Note that the Azure AD trigger is an Connector Event trigger , therefore you can only use an Azure AD connection with event subscription enabled to configure the trigger."
+        ]
+      },
+      {
+        "title": "HubSpot trigger \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-hubspot-trigger",
+        "source_id": "site-docs-reference-2",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before you begin If you plan to create or configure a new connection for the HubSpot trigger , make sure that you have the following Identity and Access Management (IAM) role on the project: Connector Admin ( roles/connectors.admin ) For information about granting roles, see Manage access .",
+          "The following image shows a sample layout of the HubSpot trigger configuration pane: Trigger output variable For each event, the HubSpot trigger generates a ConnectorEventPayload output variable which you can use in your downstream tasks.",
+          "To configure the HubSpot trigger , you can either use an existing HubSpot connection available in Integration Connectors, or create a new HubSpot connection using the inline connection creation option."
+        ]
+      },
+      {
+        "title": "Apache Kafka trigger \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-apache-kafka-trigger",
+        "source_id": "site-docs-reference-2",
+        "final_score": 96,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Before you begin If you plan to create or configure a new connection for the Apache Kafka trigger , make sure that you have the following Identity and Access Management (IAM) role on the project: Connector Admin ( roles/connectors.admin ) For information about granting roles, see Manage access .",
+          "To configure the Apache Kafka trigger , you can either use an existing Apache Kafka connection available in Integration Connectors, or create a new Apache Kafka connection using the inline connection creation option.",
+          "The Apache Kafka trigger is a Connector Event trigger that lets you invoke an integration based on the Apache Kafka events that you've subscribed to in your Apache Kafka connection."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "connectors.admin"
+    ],
+    "missing_inventory_roles": [
+      "roles/connectors.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/configure-hubspot-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/configure-apache-kafka-trigger"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/configure-hubspot-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/configure-apache-kafka-trigger"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/configure-hubspot-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/configure-apache-kafka-trigger"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/configure-hubspot-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/configure-apache-kafka-trigger"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:14.803Z",
+  "source_step08_card": "data/step-08/current/products/application-integration/card.json",
+  "product_name": "Application Integration",
+  "product_slug": "application-integration"
+}

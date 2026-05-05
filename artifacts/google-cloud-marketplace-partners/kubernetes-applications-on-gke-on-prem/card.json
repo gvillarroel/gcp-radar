@@ -1,0 +1,165 @@
+{
+  "feature_name": "Kubernetes applications on GKE On-Prem",
+  "feature_slug": "kubernetes-applications-on-gke-on-prem",
+  "summary": "Google Cloud Marketplace supports distributing Kubernetes applications that run on GKE On-Prem clusters.",
+  "extended_definition": "Google Cloud Marketplace supports distributing Kubernetes applications that run on GKE On-Prem clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+      "https://docs.cloud.google.com/marketplace/docs/partners/container-setup",
+      "https://docs.cloud.google.com/marketplace/docs/partners/get-started",
+      "https://docs.cloud.google.com/marketplace/docs/partners/kubernetes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure access control for Producer Portal users \\_|\\_ Google Cloud Marketplace\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you used the VM guided configuration to create your VM product's deployment package, grant your users the following roles for the Cloud Storage bucket where you store your product's deployment package: Storage Object Viewer Storage Object Creator Access control for previewing your products in Cloud Marketplace If you want users to be able to preview your product's listing as your customers see it in Cloud Marketplace, you must grant them the following role: Service Management Consumer Access control for creating and managing private offers in Producer Portal For users to create and manage private offers in the Private offers tab of Producer Portal, grant them the following roles: Commerce Price Management Private Offers Admin Commerce Producer Viewer Access control for viewing key events for private offers For users to view the history of an offer that your organization has published, grant them the Commerce Price Management Events Viewer role.",
+          "Access control for viewing which resellers are allowed to resell your products For users to view which resellers are allowed to resell your Cloud Marketplace products, or which resellers have been disallowed from reselling your products, grant them one of the following roles: Commerce Business Enablement Configuration Viewer ( roles/commercebusinessenablement.viewer ) Commerce Business Enablement Configuration Admin ( roles/commercebusinessenablement.admin ) Access control for managing which resellers are allowed to resell your products For users to manage which resellers are allowed to resell your Cloud Marketplace products, grant them the Commerce Business Enablement Configuration Admin ( roles/commercebusinessenablement.admin ) role.",
+          "Home Documentation Access and resource management Google Cloud Marketplace Partners Develop Send feedback Configure access control for Producer Portal users Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Offering Kubernetes apps \\_|\\_ Google Cloud Marketplace Partners \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/kubernetes",
+        "source_id": "site-docs-root",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: Starting January 20, 2025, Google Cloud Marketplace is requiring that all new or updated deployments of Google Kubernetes Engine app product listings contain an annotation in their image manifest that identifies the service name of the product.",
+          "Home Documentation Access and resource management Google Cloud Marketplace Partners Develop Send feedback Offering Kubernetes apps Stay organized with collections Save and categorize content based on your preferences.",
+          "If you already have a Kubernetes app on Cloud Marketplace and want to learn about maintaining it, see the guidelines for maintaining your app after it's live ."
+        ]
+      },
+      {
+        "title": "\"Requirements for Google Cloud Marketplace \\_|\\_ Google Cloud Marketplace\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/get-started",
+        "source_id": "site-docs-root",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Access and resource management Google Cloud Marketplace Partners Guides Send feedback Requirements for Google Cloud Marketplace Stay organized with collections Save and categorize content based on your preferences.",
+          "Note: Google offers a standard revenue share for products you sell through Cloud Marketplace that meet all of the listed requirements and pass a business case review during Google's internal product validation process.",
+          "Pattern 2: Your product's compute or data plane runs on Google Cloud, but smaller control planes or support infrastructure, such as logging or AI inference, run on-premises or on another cloud."
+        ]
+      },
+      {
+        "title": "\"Setting up the technical components \\_|\\_ Google Cloud Marketplace Partners\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/container-setup",
+        "source_id": "site-iam-reference",
+        "final_score": 136,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This page outlines how to create the key technical components required for distributing your container image product with Google Cloud Marketplace.",
+          "To create your product's Cloud Marketplace entry: Open Producer Portal in the Google Cloud console: https://console.cloud.google.com/producer-portal?project= YOUR PUBLIC PROJECT ID Replace YOUR PUBLIC PROJECT ID with the ID for the public project that you created for Cloud Marketplace—for example, my-organization-public .",
+          "Home Documentation Access and resource management Google Cloud Marketplace Partners Develop Send feedback Setting up the technical components Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "commercebusinessenablement.admin",
+      "commercebusinessenablement.viewer",
+      "console.cloud.google.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/commercebusinessenablement.admin",
+      "roles/commercebusinessenablement.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/partners/kubernetes",
+        "https://docs.cloud.google.com/marketplace/docs/partners/get-started",
+        "https://docs.cloud.google.com/marketplace/docs/partners/container-setup"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/partners/kubernetes",
+        "https://docs.cloud.google.com/marketplace/docs/partners/get-started",
+        "https://docs.cloud.google.com/marketplace/docs/partners/container-setup"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/partners/kubernetes",
+        "https://docs.cloud.google.com/marketplace/docs/partners/get-started",
+        "https://docs.cloud.google.com/marketplace/docs/partners/container-setup"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/partners/kubernetes",
+        "https://docs.cloud.google.com/marketplace/docs/partners/get-started",
+        "https://docs.cloud.google.com/marketplace/docs/partners/container-setup"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/partners/kubernetes",
+        "https://docs.cloud.google.com/marketplace/docs/partners/get-started",
+        "https://docs.cloud.google.com/marketplace/docs/partners/container-setup"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/partners/kubernetes",
+        "https://docs.cloud.google.com/marketplace/docs/partners/get-started",
+        "https://docs.cloud.google.com/marketplace/docs/partners/container-setup"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/partners/kubernetes",
+        "https://docs.cloud.google.com/marketplace/docs/partners/get-started",
+        "https://docs.cloud.google.com/marketplace/docs/partners/container-setup"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:14.243Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-marketplace-partners/card.json",
+  "product_name": "Google Cloud Marketplace Partners",
+  "product_slug": "google-cloud-marketplace-partners"
+}

@@ -1,0 +1,83 @@
+{
+  "feature_name": "DICOM tag size limit",
+  "feature_slug": "dicom-tag-size-limit",
+  "summary": "DICOM files now support a 4 GB per-tag limit, except for values that use undefined length; DICOM files now support a 4 GB per-tag limit, except for values that use undefined length.",
+  "extended_definition": "DICOM files now support a 4 GB per-tag limit, except for values that use undefined length; DICOM files now support a 4 GB per-tag limit, except for values that use undefined length.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+      "https://docs.cloud.google.com/healthcare-api/docs/dicom-store-metrics",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Using the DICOMweb standard \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "source_id": "site-docs-root",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "Storing a single DICOM instance : dcmweb \\ https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID /dicomWeb \\ store DCM FILE If the request is successful, the server returns a response similar to the following sample: TIMESTAMP -- DCM FILE .dcm uploaded as https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID /dicomWeb/studies/ STUDY INSTANCE UID /series/ SERIES INSTANCE UID TIMESTAMP -- INSTANCE UID TIMESTAMP -- Transferred SIZE in COUNT files Storing multiple files in parallel using wildcards : The following sample shows how to recursively store multiple DICOM files in parallel from the current working directory.",
+          "There are more samples available in the DICOMweb CLI GitHub repository . dcmweb \\ https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID /dicomWeb \\ retrieve If the request is successful, the server returns a response similar to the following and the DICOM files are written to your machine: TIMESTAMP -- Saving files into ./ TIMESTAMP -- Transferred SIZE in COUNT files Delete a study, series, or instance The Cloud Healthcare API implements a proprietary web service for deleting DICOM studies, series, and instances.",
+          "TIMESTAMP -- Transferred SIZE in COUNT files Search for DICOM data You can search for studies, series, instances, and frames."
+        ]
+      },
+      {
+        "title": "\"DICOM conformance statement \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "source_id": "site-api-reference",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "DICOM part 10 binary files The following Content-Types are supported: multipart/related; type=application/dicom application/dicom No coercing or replacing of attributes is done by the server.",
+          "The store transaction either accepts Part 10 DICOM binary files directly or it accepts splitting of a DICOM file into metadata (represented in JSON) and bulk data.",
+          "See Create DICOM instances from JSON metadata and JPEG files for the associated how-to guide."
+        ]
+      },
+      {
+        "title": "\"View DICOM store, DICOM study, and DICOM series metrics \\_|\\_ Cloud Healthcare\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/dicom-store-metrics",
+        "source_id": "site-docs-root-2",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "You should receive a JSON response similar to the following: Response { \"series\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID /dicomWeb/studies/ STUDY UID /series/ SERIES UID \", \"structuredStorageSizeBytes\": \" STRUCTURED STORAGE BYTES \", \"blobStorageSizeBytes\": \" BLOB STORAGE BYTES \", \"instanceCount\": \" INSTANCE COUNT \" } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "You should receive a JSON response similar to the following: Response { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID \", \"studyCount\": \" STUDY COUNT \", \"seriesCount\": \" SERIES COUNT \", \"instanceCount\": \" INSTANCE COUNT \", \"structuredStorageSizeBytes\": \" STRUCTURED STORAGE BYTES \", \"blobStorageSizeBytes\": \" BLOB STORAGE BYTES \", } View DICOM studies metrics The following samples show how to view DICOM studies metrics.",
+          "You should receive a JSON response similar to the following: Response { \"study\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID /dicomWeb/studies/ STUDY UID \", \"seriesCount\": \" SERIES COUNT \", \"instanceCount\": \" INSTANCE COUNT \", \"structuredStorageSizeBytes\": \" STRUCTURED STORAGE BYTES \", \"blobStorageSizeBytes\": \" BLOB STORAGE BYTES \" } View DICOM series metrics The following samples show how to view DICOM series metrics."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "healthcare.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:29.484Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api"
+}

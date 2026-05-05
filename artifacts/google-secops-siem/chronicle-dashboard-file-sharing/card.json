@@ -1,0 +1,226 @@
+{
+  "feature_name": "Chronicle dashboard file sharing",
+  "feature_slug": "chronicle-dashboard-file-sharing",
+  "summary": "Chronicle dashboards can be shared between instances or between users within the same instance without creating copies.",
+  "extended_definition": "Chronicle dashboards can be shared between instances or between users within the same instance without creating copies.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-dashboards",
+      "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, if you add the following to your search, it limits the results to a maximum of 25: limit: 25 Note: You can also add the limit keyword to custom dashboards.",
+          "Types of grouped UDM fields You can search across all of the following grouped UDM fields: Grouped field name Associated UDM fields domain about.administrative domain about.asset.network domain network.dns.questions.name network.dns domain principal.administrative domain principal.asset.network domain target.administrative domain target.asset.hostname target.asset.network domain target.hostname email intermediary.user.email addresses network.email.from network.email.to principal.user.email addresses security result.about.user.email addresses target.user.email addresses file path principal.file.full path principal.process.file.full path principal.process.parent process.file.full path target.file.full path target.process.file.full path target.process.parent process.file.full path hash about.file.md5 about.file.sha1 about.file.sha256 principal.process.file.md5 principal.process.file.sha1 principal.process.file.sha256 security result.about.file.sha256 target.file.md5 target.file.sha1 target.file.sha256 target.process.file.md5 target.process.file.sha1 target.process.file.sha256 hostname intermediary.hostname observer.hostname principal.asset.hostname principal.hostname src.asset.hostname src.hostname target.asset.hostname target.hostname ip intermediary.ip observer.ip principal.artifact.ip principal.asset.ip principal.ip src.artifact.ip src.asset.ip src.ip target.artifact.ip target.asset.ip target.ip namespace principal.namespace src.namespace target.namespace process id principal.process.parent process.pid principal.process.parent process.product specific process id principal.process.pid principal.process.product specific process id target.process.parent process.pid target.process.parent process.product specific process id target.process.pid target.process.product specific process id user about.user.userid observer.user.userid principal.user.user display name principal.user.userid principal.user.windows sid src.user.userid target.user.user display name target.user.userid target.user.windows sid Find a UDM field for search query While writing a search query, you may not know which UDM field to include.",
+          "The following examples show supported boolean operators ( AND , OR , and NOT ): A AND B A OR B Use parentheses ( ) to group expressions and control evaluation order: (A OR B) AND (B OR C) AND (C OR NOT D) Examples: Search for login events on the finance server: metadata.event type = \"USER LOGIN\" and target.hostname = \"finance-svr\" Use the operator (>) to search for connections where more than 10 MB of data was sent: metadata.event type = \"NETWORK CONNECTION\" and network.sent bytes > 10000000 Use multiple conditions to search for winword.exe launching cmd.exe or powershell.exe : metadata.event type = \"PROCESS LAUNCH\" and principal.process.file.full path = /winword/ and ( target.process.file.full path = /cmd.exe/ or target.process.file.full path = /powershell.exe/ ) Search key-value pairs in additional and labels fields: The additional and labels fields act as customizable containers for event data that doesn't map to standard UDM fields."
+        ]
+      },
+      {
+        "title": "\"Configure data RBAC for Dashboards \\_|\\_ Google Security Operations \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-dashboards",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configure data RBAC for Dashboards Supported in: Google secops SIEM This document explains how Google Security Operations administrators can assign scopes to dashboards.",
+          "Grant user access to Dashboards To grant a user or group access to Dashboards, follow these steps: In the Google Cloud console, click IAM > Grant Access .",
+          "The Dashboards feature of Google Security Operations is built from charts populated using YARA-L 2.0 properties."
+        ]
+      },
+      {
+        "title": "Data RBAC overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following permissions apply to Dashboards: chronicle.dashboards.list : Lets users see the list of available dashboards. chronicle.dashboards.get : Lets users open and view a dashboard content. chronicle.dashboards.create : Lets users create new dashboards. chronicle.dashboards.update : Lets users edit and save changes to existing dashboards. chronicle.dashboards.delete : Lets users delete custom dashboards.",
+          "Following are the most common predefined roles that give users access to dashboards: Access type Roles Description Viewer roles/chroniclesiem.viewer Grants read-only access.",
+          "Editor roles/chroniclesiem.editor Grants access to all data and all permissions, including the ability to create, edit, and delete custom dashboards."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "about.administrative",
+      "about.asset.network",
+      "about.file.md5",
+      "about.file.sha1",
+      "about.file.sha256",
+      "about.user.userid",
+      "chronicle.dashboards.create",
+      "chronicle.dashboards.delete",
+      "chronicle.dashboards.get",
+      "chronicle.dashboards.list",
+      "chronicle.dashboards.update",
+      "chroniclesiem.editor",
+      "chroniclesiem.viewer",
+      "cmd.exe",
+      "intermediary.hostname",
+      "intermediary.ip",
+      "intermediary.user.email",
+      "metadata.event",
+      "network.dns",
+      "network.dns.questions.name",
+      "network.email.from",
+      "network.email.to",
+      "network.sent",
+      "observer.hostname",
+      "observer.ip",
+      "observer.user.userid",
+      "powershell.exe",
+      "principal.administrative",
+      "principal.artifact.ip",
+      "principal.asset.hostname",
+      "principal.asset.ip",
+      "principal.asset.network",
+      "principal.file.full",
+      "principal.hostname",
+      "principal.ip",
+      "principal.namespace",
+      "principal.process.file.full",
+      "principal.process.file.md5",
+      "principal.process.file.sha1",
+      "principal.process.file.sha256",
+      "principal.process.parent",
+      "principal.process.pid",
+      "principal.process.product",
+      "principal.user.email",
+      "principal.user.user",
+      "principal.user.userid",
+      "principal.user.windows",
+      "process.file.full",
+      "process.pid",
+      "process.product",
+      "result.about.file.sha256",
+      "result.about.user.email",
+      "src.artifact.ip",
+      "src.asset.hostname",
+      "src.asset.ip",
+      "src.hostname",
+      "src.ip",
+      "src.namespace",
+      "src.user.userid",
+      "target.administrative",
+      "target.artifact.ip",
+      "target.asset.hostname",
+      "target.asset.ip",
+      "target.asset.network",
+      "target.file.full",
+      "target.file.md5",
+      "target.file.sha1",
+      "target.file.sha256",
+      "target.hostname",
+      "target.ip",
+      "target.namespace",
+      "target.process.file.full",
+      "target.process.file.md5",
+      "target.process.file.sha1",
+      "target.process.file.sha256",
+      "target.process.parent",
+      "target.process.pid",
+      "target.process.product",
+      "target.user.email",
+      "target.user.user",
+      "target.user.userid",
+      "target.user.windows",
+      "udm.additional",
+      "winword.exe"
+    ],
+    "missing_inventory_roles": [
+      "roles/chroniclesiem.editor",
+      "roles/chroniclesiem.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-dashboards",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-dashboards",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-dashboards",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-dashboards",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-dashboards",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-dashboards",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-dashboards",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:19.630Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem"
+}

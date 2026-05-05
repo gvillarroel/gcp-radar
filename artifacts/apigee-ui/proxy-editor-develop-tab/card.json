@@ -1,0 +1,102 @@
+{
+  "feature_name": "Proxy Editor Develop tab",
+  "feature_slug": "proxy-editor-develop-tab",
+  "summary": "The Proxy Editor includes a new Develop tab for editing and managing proxy configuration.",
+  "extended_definition": "The Proxy Editor includes a new Develop tab for editing and managing proxy configuration.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/develop/resource-files",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "API proxy configuration reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "source_id": "site-docs-reference-required-14",
+        "final_score": 162,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application development Apigee Reference Send feedback API proxy configuration reference Stay organized with collections Save and categorize content based on your preferences.",
+          "For example, in the following Flow configuration, any inbound request that does not include the path suffix /first or /second will cause the ThirdFlow to execute, enforcing the policy called Return404 . <Flows> <Flow name=\"FirstFlow\"> <Condition>proxy.pathsuffix MatchesPath \"/first\"</Condition> <Request> <Step><Name>FirstPolicy</Name></Step> </Request> </Flow> <Flow name=\"SecondFlow\"> <Condition>proxy.pathsuffix MatchesPath \"/second\"</Condition> <Request> <Step><Name>FirstPolicy</Name></Step> <Step><Name>SecondPolicy</Name></Step> </Request> </Flow> <Flow name=\"ThirdFlow\"> <Request> <Step><Name>Return404</Name></Step> </Request> </Flow> </Flows> Resources \"Resources\" (resource files for use in API proxies) are scripts, code, and XSL transformations that can be attached to Flows using policies.",
+          "The following is a sample ProxyEndpoint configuration: <ProxyEndpoint name=\"default\"> <Description/> <FaultRules/> <PreFlow name=\"PreFlow\"> <Request> <Step> <Name>my-set-integration-request-policy</Name> </Step> </Request> </PreFlow> <Flows/> <PostFlow name=\"PostFlow\"/> <HTTPProxyConnection> <BasePath>/integration-endpoint-test</BasePath> <Properties/> </HTTPProxyConnection> <RouteRule name=\"default\"> <IntegrationEndpoint>my-int-endpoint</IntegrationEndpoint> </RouteRule> </ProxyEndpoint> In the sample ProxyEndpoint configuration, Apigee performs the following tasks: In the PreFlow, executes the policy named my-set-integration-request-policy , which sets the integration request object and integration flow variables."
+        ]
+      },
+      {
+        "title": "\"Best practices for API proxy design and development with Apigee \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+        "source_id": "site-docs-reference-required-14",
+        "final_score": 159,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Development standards Comments and Documentation Provide inline comments in the ProxyEndpoint and TargetEndpoint configurations.",
+          "For more information on using response.payload.parse.limit or the request.payload.parse.limit properties to configure a maximum payload size up to 30MB for request or response flows, see the API proxy configuration reference .",
+          "Home Documentation Application development Apigee Guides Send feedback Best practices for API proxy design and development with Apigee Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Managing resources \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/develop/resource-files",
+        "source_id": "site-docs-reference-required-14",
+        "final_score": 136,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Upload the bundle using one of the following APIs: Create API proxy Update API proxy revision Create resources scoped to an environment using the API Create resources that are scoped to an environment using the API by issuing a POST request to the following resource: /organizations/ $ORG /environments/ $ENV /resourcefiles Pass the following information with your request: Set the name query parameter to the name of the resource Set the type query parameter to the required resource type Pass the contents of the resource file as application/octet-stream or multipart/form-data ) Note: When importing a resource file using the API, you might need to chmod the file's permissions so that your development tool (such as curl ) can upload it.",
+          "With hybrid, to delete a resource that is scoped to an API proxy using the API: Download the API proxy configuration bundle using the Get API proxy revision API with the following options: Set the format query parameter to bundle Set the Accept header to application/zip Delete the resource file from the API proxy configuration bundle .",
+          "To update a resource that is scoped to an API proxy revision using the API: Download the API proxy configuration bundle using the Get API proxy revision API with the following options: Set the format query parameter to bundle Set the Accept header to application/zip Update the resource file in the API proxy configuration bundle ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "proxy.pathsuffix",
+      "request.payload.parse.limit",
+      "response.payload.parse.limit"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/resource-files"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/resource-files"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:06.488Z",
+  "source_step08_card": "data/step-08/current/products/apigee-ui/card.json",
+  "product_name": "Apigee UI",
+  "product_slug": "apigee-ui"
+}

@@ -1,0 +1,81 @@
+{
+  "feature_name": "Cost Explorer",
+  "feature_slug": "cost-explorer",
+  "summary": "Cost Explorer lets you monitor and understand resource costs and utilization for a Google Cloud project or App Hub application.",
+  "extended_definition": "Cost Explorer lets you monitor and understand resource costs and utilization for a Google Cloud project or App Hub application.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+      "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+      "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and manage metric usage \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "source_id": "site-docs-reference",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following screenshot shows an example of the metrics table: Select the metrics to view To manage your costs, you need to understand which billable metrics are generating the most traffic.",
+          "Manage costs : Create rules to exclude unneeded metrics from being ingested into Cloud Monitoring.",
+          "View trends over time to understand the relative costs of your billable metrics."
+        ]
+      },
+      {
+        "title": "View application telemetry \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "source_id": "site-docs-reference-2",
+        "final_score": 161,
+        "relevance": "",
+        "evidence_snippets": [
+          "Detached : Services or workloads that have been registered to an application, but that App Hub can't manage or monitor because their underlying Google Cloud resources are no longer part of the application management boundary that you have defined.",
+          "Troubleshoot For information that might help you understand what data you are viewing, or why a dashboard doesn't display data, see Troubleshoot Application Monitoring .",
+          "List registered and discovered services and workloads App Hub lets you register infrastructure resources as services or workloads."
+        ]
+      },
+      {
+        "title": "Collect Prometheus metrics \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "source_id": "site-iam-reference",
+        "final_score": 158,
+        "relevance": "",
+        "evidence_snippets": [
+          "We recommend using the Ops Agent Prometheus receiver when the following are true: You have experience using Prometheus, rely on the Prometheus standard, and understand how factors like scraping interval and cardinality can affect your costs.",
+          "The simplest way to verify that your Prometheus data is being ingested is to use the Cloud Monitoring Metrics Explorer page in the Google Cloud console: In the Google Cloud console, go to the leaderboard Metrics explorer page: Go to Metrics explorer If you use the search bar to find this page, then select the result whose subheading is Monitoring .",
+          "If you keep the Ops Agent default sampling frequency of 60 seconds, the number of bytes ingested per day is 57,600 the number of hosts: 8 (bytes) 1440 (minutes per day) 5 (metrics) n (hosts), or 57,600 n (hosts) For more information about estimating costs, see Pricing examples based on bytes ingested ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:33.032Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring"
+}

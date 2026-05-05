@@ -1,0 +1,121 @@
+{
+  "feature_name": "Mainnet and Testnet selection for node creation",
+  "feature_slug": "mainnet-and-testnet-selection-for-node-creation",
+  "summary": "Node creation now allows selecting either Ethereum Mainnet or Testnet deployment.",
+  "extended_definition": "In Blockchain Node Engine, the node API/REST resource model includes explicit Ethereum network constants for testnet environments, including TESTNET SEPOLIA, TESTNET GOERLI PRATER, and TESTNET HOLESKY. This indicates that node creation supports selecting a testnet deployment option for those listed networks, while the provided excerpts do not show an explicit mainnet selection value.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+      "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Package google.cloud.blockchainnodeengine.v1 \\_|\\_ Blockchain Node Engine\\",
+        "url": "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "source_id": "site-api-reference",
+        "final_score": 52,
+        "relevance": "",
+        "evidence_snippets": [
+          "TESTNET SEPOLIA The Ethereum Testnet based on Sepolia/Bepolia protocol.",
+          "TESTNET GOERLI PRATER The Ethereum Testnet based on Goerli protocol.",
+          "TESTNET HOLESKY The Ethereum Testnet based on Holesky specification."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.blockchainNodes \\_|\\_ Blockchain Node\\",
+        "url": "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "source_id": "site-api-reference",
+        "final_score": 52,
+        "relevance": "",
+        "evidence_snippets": [
+          "TESTNET SEPOLIA The Ethereum Testnet based on Sepolia/Bepolia protocol.",
+          "TESTNET GOERLI PRATER The Ethereum Testnet based on Goerli protocol.",
+          "TESTNET HOLESKY The Ethereum Testnet based on Holesky specification."
+        ]
+      },
+      {
+        "title": "\"Resource attributes for IAM Conditions \\_|\\_ Identity and Access Management\\",
+        "url": "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "source_id": "site-iam-reference",
+        "final_score": 36,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "The cited RPC and REST documentation pages enumerate supported Ethereum TESTNET values for blockchain node resources, but the snippets do not document a corresponding mainnet option."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.blockchainNodes"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:25.982Z",
+  "source_step08_card": "data/step-08/current/products/blockchain-node-engine/card.json",
+  "product_name": "Blockchain Node Engine",
+  "product_slug": "blockchain-node-engine"
+}

@@ -1,0 +1,168 @@
+{
+  "feature_name": "southamerica-west1 region",
+  "feature_slug": "southamerica-west1-region",
+  "summary": "The southamerica-west1 Google Cloud region is available in Santiago, Chile.",
+  "extended_definition": "The southamerica-west1 Google Cloud region is available in Santiago, Chile.",
+  "lifecycle": {
+    "latest_feature_date": "2021-11-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/rollout-sequencing-custom-stages/about-rollout-sequencing",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Deploy a highly-available PostgreSQL database on GKE \\_|\\_ Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "source_id": "site-docs-root-2",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "Terraform creates a private cluster in the us-central1 region, and enables Backup for GKE for disaster recovery and Managed Service for Prometheus for cluster monitoring. module \"gke-db1\" { source = \"../modules/beta-private-cluster\" project id = var.project id name = \"cluster-db1\" regional = true region = \"us-central1\" network = module.network.network name subnetwork = module.network.primary subnet name ip range pods = \"ip-range-pods-db1\" ip range services = \"ip-range-svc-db1\" create service account = true enable private endpoint = false enable private nodes = true master ipv4 cidr block = \"172.16.0.0/28\" network policy = true cluster autoscaling = { \"autoscaling profile\" : \"OPTIMIZE UTILIZATION\" , \"enabled\" : true , \"gpu resources\" : [], \"min cpu cores\" : 36 , \"min memory gb\" : 144 , \"max cpu cores\" : 48 , \"max memory gb\" : 192 , } monitoring enable managed prometheus = true gke backup agent config = true node pools = [ { name = \"pool-sys\" autoscaling = true min count = 1 max count = 3 max surge = 1 max unavailable = 0 machine type = \"e2-standard-4\" node locations = \"us-central1-a,us-central1-b,us-central1-c\" auto repair = true }, { name = \"pool-db\" autoscaling = true max surge = 1 max unavailable = 0 machine type = \"e2-standard-8\" node locations = \"us-central1-a,us-central1-b,us-central1-c\" auto repair = true }, ] node pools labels = { all = {} pool-db = { \"app.stateful/component\" = \"postgresql\" } pool-sys = { \"app.stateful/component\" = \"postgresql-pgpool\" } } node pools taints = { all = [] pool-db = [ { key = \"app.stateful/component\" value = \"postgresql\" effect = \"NO SCHEDULE\" }, ], pool-sys = [ { key = \"app.stateful/component\" value = \"postgresql-pgpool\" effect = \"NO SCHEDULE\" }, ], } gce pd csi driver = true } Create a backup cluster in the us-west1 region for disaster recovery. module \"gke-db2\" { source = \"../modules/beta-private-cluster\" project id = var.project id name = \"cluster-db2\" regional = true region = \"us-west1\" network = module.network.network name subnetwork = module.network.secondary subnet name ip range pods = \"ip-range-pods-db2\" ip range services = \"ip-range-svc-db2\" create service account = false service account = module.gke-db1.service account enable private endpoint = false enable private nodes = true master ipv4 cidr block = \"172.16.0.16/28\" network policy = true cluster autoscaling = { \"autoscaling profile\" : \"OPTIMIZE UTILIZATION\" , \"enabled\" : true , \"gpu resources\" : [], \"min cpu cores\" : 10 , \"min memory gb\" : 144 , \"max cpu cores\" : 48 , \"max memory gb\" : 192 , } monitoring enable managed prometheus = true gke backup agent config = true node pools = [ { name = \"pool-sys\" autoscaling = true min count = 1 max count = 3 max surge = 1 max unavailable = 0 machine type = \"e2-standard-4\" node locations = \"us-west1-a,us-west1-b,us-west1-c\" auto repair = true }, { name = \"pool-db\" autoscaling = true max surge = 1 max unavailable = 0 machine type = \"e2-standard-8\" node locations = \"us-west1-a,us-west1-b,us-west1-c\" auto repair = true }, ] node pools labels = { all = {} pool-db = { \"app.stateful/component\" = \"postgresql\" } pool-sys = { \"app.stateful/component\" = \"postgresql-pgpool\" } } node pools taints = { all = [] pool-db = [ { key = \"app.stateful/component\" value = \"postgresql\" effect = \"NO SCHEDULE\" }, ], pool-sys = [ { key = \"app.stateful/component\" value = \"postgresql-pgpool\" effect = \"NO SCHEDULE\" }, ], } gce pd csi driver = true } Tip: To debug issues when running Terraform, you can capture debug output by setting the Terraform log level environment variable TF LOG .",
+          "To perform a backup and restore, follow these steps: Verify the status of ProtectedApplication on cluster-db1 . kubectl get ProtectedApplication -A The output looks similar to the following: NAMESPACE NAME READY TO BACKUP postgresql postgresql-ha true Create a backup plan for the ProtectedApplication. export NAMESPACE = postgresql export PROTECTED APP = $( kubectl get ProtectedApplication -n $NAMESPACE grep -v 'NAME' awk '{ print $1 }' ) gcloud beta container backup-restore backup-plans create $BACKUP PLAN NAME \\ --project = $PROJECT ID \\ --location = $DR REGION \\ --cluster = projects/ $PROJECT ID /locations/ $REGION /clusters/ $SOURCE CLUSTER \\ --selected-applications = $NAMESPACE / $PROTECTED APP \\ --include-secrets \\ --include-volume-data \\ --cron-schedule = \"0 3 \" \\ --backup-retain-days = 7 \\ --backup-delete-lock-days = 0 Manually create a backup. gcloud beta container backup-restore backups create $BACKUP NAME \\ --project = $PROJECT ID \\ --location = $DR REGION \\ --backup-plan = $BACKUP PLAN NAME \\ --wait-for-completion Set up a restore plan. gcloud beta container backup-restore restore-plans create $RESTORE PLAN NAME \\ --project = $PROJECT ID \\ --location = $DR REGION \\ --backup-plan = projects/ $PROJECT ID /locations/ $DR REGION /backupPlans/ $BACKUP PLAN NAME \\ --cluster = projects/ $PROJECT ID /locations/ $DR REGION /clusters/ $TARGET CLUSTER \\ --cluster-resource-conflict-policy = use-existing-version \\ --namespaced-resource-restore-mode = delete-and-restore \\ --volume-data-restore-policy = restore-volume-data-from-backup \\ --selected-applications = $NAMESPACE / $PROTECTED APP \\ --cluster-resource-scope-selected-group-kinds = \"storage.k8s.io/StorageClass\" , \"scheduling.k8s.io/PriorityClass\" Restore from the backup. gcloud beta container backup-restore restores create $RESTORE NAME \\ --project = $PROJECT ID \\ --location = $DR REGION \\ --restore-plan = $RESTORE PLAN NAME \\ --backup = projects/ $PROJECT ID /locations/ $DR REGION /backupPlans/ $BACKUP PLAN NAME /backups/ $BACKUP NAME \\ --wait-for-completion Verify that your cluster is restored To verify that the restored cluster has all the expected Pods, PersistentVolume, and StorageClass resources, follow these steps: Configure kubectl command line access to the backup cluster cluster-db2 . gcloud container clusters get-credentials $TARGET CLUSTER --location $DR REGION --project $PROJECT ID Verify that the StatefulSet is ready with 3/3 Pods. kubectl get all -n $NAMESPACE The output is similar to the following: NAME READY STATUS RESTARTS AGE pod/postgresql-postgresql-ha-pgpool-778798b5bd-k2q4b 1/1 Running 0 4m49s pod/postgresql-postgresql-ha-postgresql-0 2/2 Running 2 (4m13s ago) 4m49s pod/postgresql-postgresql-ha-postgresql-1 2/2 Running 0 4m49s pod/postgresql-postgresql-ha-postgresql-2 2/2 Running 0 4m49s NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE service/postgresql-postgresql-ha-pgpool ClusterIP 192.168.241.46 <none> 5432/TCP 4m49s service/postgresql-postgresql-ha-postgresql ClusterIP 192.168.220.20 <none> 5432/TCP 4m49s service/postgresql-postgresql-ha-postgresql-headless ClusterIP None <none> 5432/TCP 4m49s service/postgresql-postgresql-ha-postgresql-metrics ClusterIP 192.168.226.235 <none> 9187/TCP 4m49s NAME READY UP-TO-DATE AVAILABLE AGE deployment.apps/postgresql-postgresql-ha-pgpool 1/1 1 1 4m49s NAME DESIRED CURRENT READY AGE replicaset.apps/postgresql-postgresql-ha-pgpool-778798b5bd 1 1 1 4m49s NAME READY AGE statefulset.apps/postgresql-postgresql-ha-postgresql 3/3 4m49s Verify all Pods in the postgres namespace are running. kubectl get pods -n $NAMESPACE The output is similar to the following: postgresql-postgresql-ha-pgpool-569d7b8dfc-2f9zx 1/1 Running 0 7m56s postgresql-postgresql-ha-postgresql-0 2/2 Running 0 7m56s postgresql-postgresql-ha-postgresql-1 2/2 Running 0 7m56s postgresql-postgresql-ha-postgresql-2 2/2 Running 0 7m56s Verify the PersistentVolumes and StorageClass.",
+          "Understand the Terraform configuration The Terraform configuration files create the following resources to deploy your infrastructure: Create a Artifact Registry repository to store the Docker images. resource \"google artifact registry repository\" \"main\" { location = \"us\" repository id = \"main\" format = \"DOCKER\" project = var.project id } resource \"google artifact registry repository iam binding\" \"binding\" { provider = google-beta project = google artifact registry repository.main.project location = google artifact registry repository.main.location repository = google artifact registry repository.main.name role = \"roles/artifactregistry.reader\" members = [ \"serviceAccount:${module.gke-db1.service account}\" , ] } Create the VPC network and subnet for the VM's network interface. module \"gcp-network\" { source = \"terraform-google-modules/network/google\" version = \"< 8.0.0\" project id = var.project id network name = \"vpc-gke-postgresql\" subnets = [ { subnet name = \"snet-gke-postgresql-us-central1\" subnet ip = \"10.0.0.0/17\" subnet region = \"us-central1\" subnet private access = true }, { subnet name = \"snet-gke-postgresql-us-west1\" subnet ip = \"10.0.128.0/17\" subnet region = \"us-west1\" subnet private access = true }, ] secondary ranges = { ( \"snet-gke-postgresql-us-central1\" ) = [ { range name = \"ip-range-pods-db1\" ip cidr range = \"192.168.0.0/18\" }, { range name = \"ip-range-svc-db1\" ip cidr range = \"192.168.64.0/18\" }, ], ( \"snet-gke-postgresql-us-west1\" ) = [ { range name = \"ip-range-pods-db2\" ip cidr range = \"192.168.128.0/18\" }, { range name = \"ip-range-svc-db2\" ip cidr range = \"192.168.192.0/18\" }, ] } } output \"network name\" { value = module.gcp-network.network name } output \"primary subnet name\" { value = module.gcp-network.subnets names[0 ] } output \"secondary subnet name\" { value = module.gcp-network.subnets names[1 ] } Create a primary GKE cluster."
+        ]
+      },
+      {
+        "title": "\"About rollout sequencing with custom stages \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/rollout-sequencing-custom-stages/about-rollout-sequencing",
+        "source_id": "site-docs-reference-2",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "To implement this plan, the administrator applies the following labels to the clusters in the Production fleet: Clusters in us-west1 (lower traffic) are labeled with prod-region: us-west1 .",
+          "Production in region us-west1 : this stage targets the production fleet, but uses a label-selector to include only the clusters with the prod-region: us-west1 label.",
+          "Production in region europe-west1 : this stage includes the clusters in the production fleet that have the prod-region: europe-west1 label."
+        ]
+      },
+      {
+        "title": "\"Deploy a stateful MySQL cluster on GKE \\_|\\_ Kubernetes Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql",
+        "source_id": "site-docs-root-2",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "The output is similar to the following: gk3-gkemulti-west1-default-pool-eb354e2d-z6mv us-west1-b prepare-three-zone-ha-7885d77d9c-8f7qb gk3-gkemulti-west1-nap-25b73chq-739a9d40-4csr us-west1-c prepare-three-zone-ha-7885d77d9c-98fpn gk3-gkemulti-west1-default-pool-160c3578-bmm2 us-west1-a prepare-three-zone-ha-7885d77d9c-phmhj Standard In Cloud Shell, create a GKE Standard cluster in the us-west1 region. gcloud container clusters create $CLUSTER NAME \\ --location = $CONTROL PLANE LOCATION \\ --machine-type = \"e2-standard-2\" \\ --disk-type = \"pd-standard\" \\ --num-nodes = \"5\" Get the GKE cluster credentials. gcloud container clusters get-credentials $CLUSTER NAME \\ --location = $CONTROL PLANE LOCATION Deploy MySQL StatefulSets In this section, you deploy one MySQL StatefulSet.",
+          "To create a GKE cluster, follow these steps: Autopilot In Cloud Shell, create a GKE Autopilot cluster in the us-west1 region. gcloud container clusters create-auto $CLUSTER NAME \\ --location = $CONTROL PLANE LOCATION Get the GKE cluster credentials. gcloud container clusters get-credentials $CLUSTER NAME \\ --location = $CONTROL PLANE LOCATION Deploy a Service across three zones.",
+          "Figure 2 : Example multi-region ClusterSet architecture which contains one primary cluster and one replica cluster If the MySQL InnoDB Cluster primary instance is no longer available, you can promote a replica cluster in the ClusterSet to primary."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.stateful",
+      "artifactregistry.reader",
+      "db1.service",
+      "deployment.apps",
+      "module.gcp",
+      "module.gke",
+      "module.network.network",
+      "module.network.primary",
+      "module.network.secondary",
+      "network.network",
+      "network.subnets",
+      "replicaset.apps",
+      "repository.main.location",
+      "repository.main.name",
+      "repository.main.project",
+      "scheduling.k8s.io",
+      "statefulset.apps",
+      "storage.k8s.io",
+      "var.project"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.reader"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/rollout-sequencing-custom-stages/about-rollout-sequencing",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/rollout-sequencing-custom-stages/about-rollout-sequencing",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/rollout-sequencing-custom-stages/about-rollout-sequencing",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/rollout-sequencing-custom-stages/about-rollout-sequencing",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/rollout-sequencing-custom-stages/about-rollout-sequencing",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/rollout-sequencing-custom-stages/about-rollout-sequencing",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/rollout-sequencing-custom-stages/about-rollout-sequencing",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/rollout-sequencing-custom-stages/about-rollout-sequencing",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:15.353Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

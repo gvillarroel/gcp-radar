@@ -1,0 +1,113 @@
+{
+  "feature_name": "Translation API support for IBM DB2",
+  "feature_slug": "translation-api-support-for-ibm-db2",
+  "summary": "The translation API can translate IBM DB2 SQL, Greenplum SQL, and SQLite into GoogleSQL.",
+  "extended_definition": "The translation API can translate IBM DB2 SQL, Greenplum SQL, and SQLite into GoogleSQL.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/api-sql-translator",
+      "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+      "https://docs.cloud.google.com/bigquery/docs/remote-functions-translation-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Translate SQL queries with the translation API \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/api-sql-translator",
+        "source_id": "site-docs-reference-5",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported task types The translation API can translate the following SQL dialects into GoogleSQL: Amazon Redshift SQL - Redshift2BigQuery Translation Apache HiveQL and Beeline CLI - HiveQL2BigQuery Translation Apache Impala - Impala2BigQuery Translation Apache Spark SQL - SparkSQL2BigQuery Translation Azure Synapse T-SQL - AzureSynapse2BigQuery Translation GoogleSQL (BigQuery) - Bigquery2Bigquery Translation Greenplum SQL - Greenplum2BigQuery Translation IBM Db2 SQL - Db22BigQuery Translation IBM Netezza SQL and NZPLSQL - Netezza2BigQuery Translation MySQL SQL - MySQL2BigQuery Translation Oracle SQL, PL/SQL, Exadata - Oracle2BigQuery Translation PostgreSQL SQL - Postgresql2BigQuery Translation Presto or Trino SQL - Presto2BigQuery Translation Snowflake SQL - Snowflake2BigQuery Translation SQLite - SQLite2BigQuery Translation SQL Server T-SQL - SQLServer2BigQuery Translation Teradata and Teradata Vantage - Teradata2BigQuery Translation Vertica SQL - Vertica2BigQuery Translation Handling unsupported SQL functions with helper UDFs When translating SQL from a source dialect to BigQuery, some functions might not have a direct equivalent.",
+          "If the task succeeds, you will find the translated SQL in the response message: { \"name\" : \"projects/123456789/locations/us/workflows/12345678-9abc-def1-2345-6789abcdef00\" , \"tasks\" : { \"string\" : { \"id\" : \"0fedba98-7654-3210-1234-56789abcdef\" , \"type\" : \"HiveQL2BigQuery Translation\" , / ... / \"taskResult\" : { \"translationTaskResult\" : { \"translatedLiterals\" : [ { \"relativePath\" : \"sql/input file\" , \"literalString\" : \"-- Translation time: 2023-10-05T21:50:49.885839Z\\n-- Translation job ID: projects/123456789/locations/us/workflows/12345678-9abc-def1-2345-6789abcdef00\\n-- Source: input file\\n-- Translated from: Hive\\n-- Translated to: BigQuery\\n\\nSELECT\\n 1\\n;\\n\" } ], \"reportLogMessages\" : [ ... ] } }, / ... / } }, \"state\" : \"COMPLETED\" , \"createTime\" : \"2023-10-05T21:50:49.543221Z\" , \"lastUpdateTime\" : \"2023-10-05T21:50:50.462758Z\" } Explore the translation output After running the translation job, retrieve the results by specifying the translation job workflow ID using the following command: curl \\ -H \"Content-Type:application/json\" \\ -H \"Authorization:Bearer TOKEN \" -X GET https://bigquerymigration.googleapis.com/v2alpha/projects/ PROJECT ID /locations/ LOCATION /workflows/ WORKFLOW ID Replace the following: TOKEN : the token for authentication.",
+          "The following example translates the Teradata SQL scripts located in the gs://my data bucket/teradata/input/ Cloud Storage directory and stores results in the Cloud Storage directory gs://my data bucket/teradata/output/ with additional AI suggestion: { \"tasks\" : { \"task name\" : { \"type\" : \"Teradata2BigQuery Translation\" , \"translation details\" : { \"target base uri\" : \"gs://my data bucket/teradata/output/\" , \"source target mapping\" : { \"source spec\" : { \"base uri\" : \"gs://my data bucket/teradata/input/\" } }, \"target types\" : \"suggestion\" , } } } } Note: To generate AI suggestions, the Cloud Storage source directory must contain at least one configuration YAML file with a suffix of .ai config.yaml ."
+        ]
+      },
+      {
+        "title": "\"Remote functions and Translation API tutorial \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/remote-functions-translation-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 103,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Returns: a list of translated text. \"\"\" location = \"<your location>\" parent = f \"projects/ { project } /locations/ { location } \" Call the Translation API, passing a list of values and the target language response = translate client . translate text ( request = { \"parent\" : parent , \"contents\" : calls , \"target language code\" : target language code , \"mime type\" : \"text/plain\" , }, retry = Retry (), ) Convert the translated value to a list and return it return [ translation . translated text for translation in response . translations ] Update <your location> with us-central1 .",
+          "Args: job: full resource name of a BigQuery job, like \"//bigquery.googleapi.com/projects/<project>/jobs/<job id>\" Returns: project id which is contained in the full resource name of the job. \"\"\" path = job . split ( \"/\" ) return path [ 4 ] if len ( path ) > 4 else None def translate text ( calls : list [ str ], project : str , target language code : str ) - > list [ str ]: \"\"\"Translates the input text to specified language using Translation API.",
+          "For more information, see Set up authentication for client libraries . from future import annotations import flask import functions framework from google.api core.retry import Retry from google.cloud import translate Construct a Translation Client object translate client = translate ."
+        ]
+      },
+      {
+        "title": "\"Transform SQL translations using configuration YAML files \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "source_id": "site-docs-reference-5",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "Remove the upper function in the default translation output query translation rules : - instruction : \"Remove upper() function\" examples : - input : \"upper(X)\" output : \"X\" Create multiple translation rules to customize the translation output translation rules : - instruction : \"Remove upper() function\" suggestion type : QUERY CUSTOMIZATION rewrite target : TARGET SQL examples : - input : \"upper(X)\" output : \"X\" - instruction : \"Insert a comment at the head that explains each statement in detail. suggestion type: QUERY CUSTOMIZATION rewrite target: TARGET SQL Remove SQL comments from the translation input query translation rules : - instruction : \"Remove all the sql comments in the input sql query.\" suggestion type : QUERY CUSTOMIZATION rewrite target : SOURCE SQL Generate translation explanations using default LLM prompt This example uses the default LLM prompts provided by the translation service to generate text explanations: translation rules : - suggestion type : \"TRANSLATION EXPLANATION\" Generates translation explanations using your own natural language prompts translation rules : - suggestion type : \"TRANSLATION EXPLANATION\" instruction : \"Explain the syntax differences between the source Teradata query and the translated GoogleSQL query.\" Multiple suggestion types in a single configuration YAML file translation rules : - suggestion type : \"TRANSLATION EXPLANATION\" instruction : \"Explain the syntax differences between the source Teradata query and the translated GoogleSQL query.\" - instruction : \"Remove upper() function\" suggestion type : QUERY CUSTOMIZATION rewrite target : TARGET SQL examples : - input : \"upper(X)\" output : \"X\" - instruction : \"Remove all the sql comments in the input sql query.\" suggestion type : QUERY CUSTOMIZATION rewrite target : SOURCE SQL Applying multiple YAML configurations When specifying a configuration YAML file in a batch or interactive SQL translation, you can select multiple configuration YAML files in a single translation job to reflect multiple transformations.",
+          "The following configuration YAML changes the output names of all objects (database, schema, relation, and attributes) in the script according to the configured rules. type : experimental object rewriter global : outputName : regex : - match : '\\s' replaceWith : ' ' - match : '>=' replaceWith : 'gte' - match : '^[^a-zA-Z ]. ' replaceWith : ' $0' A SQL translation with this configuration YAML file might look like the following: teradata-input.sql create table \"test special chars >= 12\" ( \"42eid\" int , \"custom column\" varchar ( 10 )); bq-output.sql CREATE TABLE test special chars employees gte 12 ( 42eid INT64 , custom column STRING ) ; Optimize and improve the performance of translated SQL Optional transformations can be applied to translated SQL in order to introduce changes that can improve performance or cost.",
+          "This configuration converts numeric types to either NUMERIC or BIGNUMERIC depending on the input precision, instead of the default of INT64 . type : optimizer transformations : - name : REWRITE ZERO SCALE NUMERIC AS INTEGER enabled : false A SQL translation with this optimization might look like the following: snowflake-input.sql CREATE TABLE numbers ( i INTEGER , n NUMERIC ( 10 , 0 )); bq-output.sql CREATE TABLE numbers ( i BIGNUMERIC ( 38 ), n NUMERIC ( 29 )); Create a Gemini-based configuration YAML file Note: The Translation service can call Gemini model to generate suggestions to your translated SQL query based on your AI configuration YAML file."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.googleapi.com",
+      "bigquerymigration.googleapis.com",
+      "config.yaml",
+      "core.retry",
+      "input.sql",
+      "output.sql"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/api-sql-translator",
+        "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "https://docs.cloud.google.com/bigquery/docs/remote-functions-translation-tutorial"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/api-sql-translator",
+        "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "https://docs.cloud.google.com/bigquery/docs/remote-functions-translation-tutorial"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/api-sql-translator",
+        "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "https://docs.cloud.google.com/bigquery/docs/remote-functions-translation-tutorial"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

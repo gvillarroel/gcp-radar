@@ -1,0 +1,86 @@
+{
+  "feature_name": "Filter and userMetadata example parameters for data store tools",
+  "feature_slug": "filter-and-usermetadata-example-parameters-for-data-store-tools",
+  "summary": "Vertex AI Conversation data store tools support filter and userMetadata example parameters.",
+  "extended_definition": "Vertex AI Conversation data store tools support filter and userMetadata example parameters.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/performance",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/search-configure"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Data store tools \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler",
+        "source_id": "site-docs-root",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See the reference documentation for details. { \"toolUse\" : { \"tool\" : \"projects/PROJECT ID/locations/LOCATION ID/agents/AGENT ID/tools/TOOL ID\" , \"action\" : \"TOOL DISPLAY NAME\" , \"inputParameters\" : [ { \"name\" : \"TOOL DISPLAY NAME input\" , \"value\" : { \"query\" : \"QUERY\" } } ], \"outputParameters\" : [ { \"name\" : \"TOOL DISPLAY NAME output\" , \"value\" : { \"answer\" : \"ANSWER\" , \"snippets\" : [ { \"title\" : \"TITLE\" , \"text\" : \"TEXT FROM DATASTORE\" , \"uri\" : \"URI OF DATASTORE\" } ] } } ] } } (Playbooks-based agents only) Data store tool examples Note: Examples work with playbooks-based agents only.",
+          "When creating data store tool examples, the tool input parameter requestBody provides three optional inputs together with the required query string - a filter string, a userMetadata structured object, and a fallback string.",
+          "The following is a example of a userMetadata parameter value to refine search results relevant to a specific: \"userMetadata\": { \"favoriteColor\": \"blue\", ... } The fallback parameter provides an answer that the data store tool should respond with if there is no valid summarized answer for the query."
+        ]
+      },
+      {
+        "title": "Data store search configuration \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/search-configure",
+        "source_id": "site-docs-root",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON of this format { \"condition\" : \"uri: ANY(\\\"http://www.example.com/docs/$session.params.doc id\\\")\" , \"boost\" : 0.5 } Example API input: If you are calling the API directly, you must provide ConditionBoostSpecs in a full SearchConfig object.The following search configuration describes a boost spec: \"searchConfig\" : { \"boostSpecs\" : [ { \"dataStores\" : [ \"DATASTORE ID\" ], \"spec\" : [ { \"conditionBoostSpecs\" : { \"condition\" : \"CONDITION\" , \"boost\" : \"1.0\" } } ] } ] } Note: DATASTORE ID is the full name of the data store: projects/your project id/locations/your location/collections/your collection name/dataStores/your datastore name , CONDITION must follow the Vertex AI Search's filter expression syntax , and the boost value must be between -1.0 and 1.0.",
+          "In this example, the filter only returns documents with numeric field greater than or equal to the value of $session.params.min value AND where stock availability is \"IN STOCK\" . \"numeric field >= $session.params.min value AND stock availability: ANY(\\\"IN STOCK\\\")\" Example API filter configuration: If you are calling the API directly, you must provide filter strings in a full SearchConfig object: \"searchConfig\" : { \"filterSpecs\" : [ { \"dataStores\" : [ \"DATASTORE ID\" ], \"filter\" : \"CONDITION\" } ] } Note: DATASTORE ID is the full name of the data store: projects/your project id/locations/your location/collections/your collection name/dataStores/your datastore name , and CONDITION must follow the Vertex AI Search's filter expression syntax .",
+          "You can influence search results retrieved from Dialogflow CX data store tools by configuring boost and filter specifications."
+        ]
+      },
+      {
+        "title": "\"Data store performance improvements \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/performance",
+        "source_id": "site-docs-root",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Optimization of data store tools used by Playbooks This setting accelerates a data store's RAG response and improves latency by not rewriting the user query nor dynamically populating tool parameters.",
+          "This means that the user query is passed to the data store as-is and no filters or user metadata-related parameters are populated.",
+          "To accomplish data store filtering for product categories: Set session parameters to product categories."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2",
+      "object.The",
+      "session.params.doc",
+      "session.params.min"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:58.946Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

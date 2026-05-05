@@ -1,0 +1,149 @@
+{
+  "feature_name": "N2 standard machine type support",
+  "feature_slug": "n2-standard-machine-type-support",
+  "summary": "Cloud Workstations supports the n2-standard-8, n2-standard-16, and n2-standard-32 machine types for workstation configurations.",
+  "extended_definition": "Cloud Workstations supports the n2-standard-8, n2-standard-16, and n2-standard-32 machine types for workstation configurations.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+      "https://docs.cloud.google.com/workstations/docs/available-gpus",
+      "https://docs.cloud.google.com/workstations/docs/available-machine-types",
+      "https://docs.cloud.google.com/workstations/docs/customize-development-environment"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Available machine types \\_|\\_ Cloud Workstations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workstations/docs/available-machine-types",
+        "source_id": "site-docs-root-2",
+        "final_score": 273,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Workstation machine type Virtual CPUs Memory Confidential compute GPU acceleration Persistent Storage n1-standard-1 1 3.75 GB n1-standard-2 2 7.5 GB n1-standard-4 4 15 GB n1-standard-8 8 30 GB n1-standard-16 16 60 GB n1-standard-32 32 120 GB n1-standard-64 64 240 GB n1-standard-96 96 360 GB N2 machine types For more information, see the Compute Engine description of the N2 machine series .",
+          "Workstation machine type Virtual CPUs Memory Confidential compute GPU acceleration Persistent Storage n2d-standard-2 2 8 GB n2d-standard-4 4 16 GB n2d-standard-8 8 32 GB n2d-standard-16 16 64 GB n2d-standard-32 32 128 GB N2D high-mem machine types For more information, see the Compute Engine description of the N2D machine series and select N2D high-mem .",
+          "Workstation machine type Virtual CPUs Memory Confidential compute GPU acceleration Persistent Storage n2-standard-2 2 8 GB n2-standard-4 4 16 GB n2-standard-8 8 32 GB n2-standard-16 16 64 GB n2-standard-32 32 128 GB N2D standard machine types For more information, see the Compute Engine description of the N2D machine series ."
+        ]
+      },
+      {
+        "title": "Available GPUs \\_|\\_ Cloud Workstations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workstations/docs/available-gpus",
+        "source_id": "site-docs-root-2",
+        "final_score": 202,
+        "relevance": "",
+        "evidence_snippets": [
+          "For all other GPU models, run this command: gcloud beta workstations configs update \\ --project = PROJECT ID \\ --region = LOCATION \\ --cluster = CLUSTER NAME \\ CONFIG NAME \\ --machine-type = N1 MACHINE TYPE \\ --accelerator-type = ACCELERATOR TYPE \\ --accelerator-count = ACCELERATOR COUNT Replace the following: N1 MACHINE TYPE : the chosen machine type from the N1 series (for example, n1-standard-2 ).",
+          "Limitations A workstation configuration may specify GPUs, subject to the following limitations: Cloud Workstations only supports GPUs for configurations that specify machine types in the N1 machine series , the A2 machine series , or the A3 machine series .",
+          "Using Google Cloud Hyperdisk disk types is only supported on these following machine series: A3 C3 C4 G4 M3 N4 N4D Z3 Supported GPU models Cloud Workstations supports many of the GPU models that Compute Engine makes available."
+        ]
+      },
+      {
+        "title": "\"Customize your development environment \\_|\\_ Cloud Workstations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "source_id": "site-docs-root-2",
+        "final_score": 195,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information about machine types that Cloud Workstations supports, see the list of available machine types . serviceAccount string Optional.",
+          "For more information about machine types that Cloud Workstations supports, see the list of available machine types .",
+          "Machine Type : nested virtualization can only be enabled on workstation configurations that specify a machineType in the N1 or N2 machine series. shieldedInstanceConfig object ( GceShieldedInstanceConfig ) Optional."
+        ]
+      },
+      {
+        "title": "Authenticate to the Cloud Workstations API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "source_id": "site-docs-root-2",
+        "final_score": 171,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you're new to the Cloud Workstations API, make sure that you read the following sections first: Before you begin Access control with IAM Authenticate and setup API access within a workstation For more information about Google Cloud authentication, see the Authentication methods .",
+          "You can access the API in the following ways: Client libraries Google Cloud CLI REST Client libraries The Cloud Workstations client libraries provide high-level language support for authenticating to Cloud Workstations programmatically.",
+          "On Google Cloud To authenticate a workload running on Google Cloud, you use the credentials of the service account attached to the compute resource where your code is running, such as a Compute Engine virtual machine (VM) instance ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/available-machine-types",
+        "https://docs.cloud.google.com/workstations/docs/available-gpus",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/available-machine-types",
+        "https://docs.cloud.google.com/workstations/docs/available-gpus",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/available-machine-types",
+        "https://docs.cloud.google.com/workstations/docs/available-gpus",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/available-machine-types",
+        "https://docs.cloud.google.com/workstations/docs/available-gpus",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/available-machine-types",
+        "https://docs.cloud.google.com/workstations/docs/available-gpus",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/available-machine-types",
+        "https://docs.cloud.google.com/workstations/docs/available-gpus",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:45.212Z",
+  "source_step08_card": "data/step-08/current/products/cloud-workstations/card.json",
+  "product_name": "Cloud Workstations",
+  "product_slug": "cloud-workstations"
+}

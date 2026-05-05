@@ -1,0 +1,163 @@
+{
+  "feature_name": "config.kubernetes.io/depends-on annotation",
+  "feature_slug": "config-kubernetes-io-depends-on-annotation",
+  "summary": "This annotation lets users specify apply and delete ordering between resource objects.",
+  "extended_definition": "This annotation lets users specify apply and delete ordering between resource objects.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Declare dependencies between resource objects | Config Sync | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 321,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Add the depends-on annotation to an object To specify a dependency, add the config.kubernetes.io/depends-on annotation on the dependent object with a value that references the dependency objects.",
+          "For the Wordpress example, the annotation in Wordpress Deployment resembles the following: # deployment.yaml apiVersion : apps/v1 kind : Deployment metadata : name : wordpress namespace : default labels : app : wordpress annotations : config.kubernetes.io/depends-on : apps/namespaces/default/StatefulSet/wordpress-mysql When Config Sync applies the objects, it first applies the dependency, the object wordpress-mysql StatefulSet.",
+          "More details can be found in sigs.k8s.io/cli-utils With the depends-on annotation, Config Sync not only applies objects in the order that you want, it also verifies that the dependency object is reconciled before applying the dependent object."
+        ]
+      },
+      {
+        "title": "Manage existing cluster objects \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects",
+        "source_id": "site-docs-root",
+        "final_score": 96,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For objects you want Config Sync to ignore, add the config.kubernetes.io/local-config: \"true\" annotation to the object.",
+          "Name: myrole Labels: app.kubernetes.io/managed-by=configmanagement.gke.io configsync.gke.io/declared-version=v1 Annotations: config.k8s.io/owning-inventory: config-management-system root-sync configmanagement.gke.io/cluster-name: my-cluster configmanagement.gke.io/managed: enabled configmanagement.gke.io/source-path: config-sync-quickstart/multirepo/root/gamestore-myrole.yaml configmanagement.gke.io/token: 747b843a7ddbd945c0616034a935cf648b58e7b5 configsync.gke.io/declared-fields: {\"f:rules\":{}} configsync.gke.io/git-context: {\"repo\":\"https://github.com/GoogleCloudPlatform/anthos-config-management-samples\",\"branch\":\"main\",\"rev\":\"HEAD\"} configsync.gke.io/manager: :root configsync.gke.io/resource-id: rbac.authorization.k8s.io role gamestore myrole PolicyRule: Resources Non-Resource URLs Resource Names Verbs --------- ----------------- -------------- ----- pods [] [] [get list ] Stop managing a managed object This example shows how to stop managing an object that Config Sync is currently managing, such as the myrole Role in Start managing an existing object .",
+          "In addition to the configmanagement.gke.io/managed: enabled annotation and the configsync.gke.io/resource-id annotation, Config Sync applies the label app.kubernetes.io/managed-by: configmanagement.gke.io to all objects it manages."
+        ]
+      },
+      {
+        "title": "Use the nomos command-line tool \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "source_id": "site-docs-root",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: kubectl get clusterroles CLUSTER ROLE NAME -o yaml Replace CLUSTER ROLE NAME with the name of the cluster role you want to query. apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : annotations : configmanagement.gke.io/token : ed95b50dd918cf65d8908f7561cb8d8d1f179c2f nomos status flags To customize the nomos status command, add the following flags: Flag Description --contexts Accepts a comma-separated list of contexts to use in multi-cluster commands.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Config Sync Guides Send feedback Use the nomos command-line tool Stay organized with collections Save and categorize content based on your preferences.",
+          "However, not every resource in the cluster is affected by each commit; to see the most recent commit for a specific resource, query the specific resource and look at metadata.annotations.configmanagement.gke.io/token ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.kubernetes.io",
+      "config.k8s.io",
+      "config.kubernetes.io",
+      "configmanagement.gke.io",
+      "configsync.gke.io",
+      "deployment.yaml",
+      "github.com",
+      "metadata.annotations.configmanagement.gke.io",
+      "myrole.yaml",
+      "rbac.authorization.k8s.io",
+      "sigs.k8s.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:05.054Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management"
+}

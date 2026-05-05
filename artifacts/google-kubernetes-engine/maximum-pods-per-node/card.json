@@ -1,0 +1,126 @@
+{
+  "feature_name": "Maximum Pods per node",
+  "feature_slug": "maximum-pods-per-node",
+  "summary": "GKE increased the maximum number of Pods per node to 256 on supported versions.",
+  "extended_definition": "GKE increased the maximum number of Pods per node to 256 on supported versions.",
+  "lifecycle": {
+    "latest_feature_date": "2022-08-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-auto-provisioning",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About node pool auto-creation \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-auto-provisioning",
+        "source_id": "site-docs-reference-2",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "The node pool might contain any number of TPU nodes between zero and the maximum size of the node pool as determined by the --max-nodes and the --total-max-nodes autoscaling flags.",
+          "If the number of Pods in an auto-created node pool decreases, the cluster autoscaler gradually scales the node pool down.",
+          "When you create this example Deployment, GKE creates a node pool that contains a TPU v4 slice with a 2x2x2 topology and two ct4p-hightpu-4t machines. apiVersion: apps/v1 kind: Deployment metadata: name: tpu-workload labels: app: tpu-workload spec: replicas: 2 template: spec: nodeSelector: cloud.google.com/gke-tpu-accelerator: tpu-v4-podslice cloud.google.com/gke-tpu-topology: 2x2x2 containers: - name: tpu-job image: us-docker.pkg.dev/cloud-tpu-images/jax-ai-image/tpu:latest ports: - containerPort: 8431 # Port to export TPU runtime metrics, if supported. securityContext: privileged: true # Required for GKE versions earlier than 1.28 to access TPUs. command: - bash - -c - python -c 'import jax; print(\"Total TPU chips:\", jax.device count())' resources: requests: google.com/tpu: 4 limits: google.com/tpu: 4 ports: - containerPort: 80 In this manifest, the following fields define TPU configuration: cloud.google.com/gke-tpu-accelerator : the TPU version and type ."
+        ]
+      },
+      {
+        "title": "\"Node upgrade strategies \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies",
+        "source_id": "site-docs-reference-2",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Surge upgrade behavior is determined by the maxSurge and maxUnavailable settings, which determine how many nodes are upgraded at the same time in a rolling window with the described steps. maxSurge : GKE creates a new surge node before removing an existing one Set maxSurge to choose the maximum number of additional, surge nodes that can be added to the node pool during an upgrade, per zone, increasing the likelihood that workloads running on the existing node can migrate to a new node immediately.",
+          "For more information, see Resources for surge upgrades . maxUnavailable : GKE makes an existing node unavailable to recreate it Set maxUnavailable to choose the maximum number of nodes that can be simultaneously unavailable during an upgrade, per zone.",
+          "The maximum number of nodes that can be upgraded in parallel will be no higher than the sum of maxSurge plus maxUnavailable , and no higher than the number of nodes in the zone."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+        "source_id": "site-api-reference",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "Autoscaler is enabled only if a valid configuration is present. management object ( NodeManagement ) NodeManagement configuration for this NodePool. maxPodsConstraint object ( MaxPodsConstraint ) The constraint on the maximum number of pods that can be run simultaneously on a node in the node pool. conditions[] object ( StatusCondition ) Which conditions caused the current node pool state. podIpv4CidrSize integer Output only.",
+          "Union field max pods per node . max pods per node can be only one of the following: maxPodsPerNode object ( MaxPodsConstraint ) The maximum number of pods per node which use this pod network.",
+          "NodeKubeletConfig JSON representation { \"cpuManagerPolicy\" : string , \"topologyManager\" : { object ( TopologyManager ) } , \"memoryManager\" : { object ( MemoryManager ) } , \"cpuCfsQuota\" : boolean , \"cpuCfsQuotaPeriod\" : string , \"podPidsLimit\" : string , \"imageGcLowThresholdPercent\" : integer , \"imageGcHighThresholdPercent\" : integer , \"imageMinimumGcAge\" : string , \"imageMaximumGcAge\" : string , \"containerLogMaxSize\" : string , \"containerLogMaxFiles\" : integer , \"allowedUnsafeSysctls\" : [ string ] , \"evictionSoft\" : { object ( EvictionSignals ) } , \"evictionSoftGracePeriod\" : { object ( EvictionGracePeriod ) } , \"evictionMinimumReclaim\" : { object ( EvictionMinimumReclaim ) } , \"evictionMaxPodGracePeriodSeconds\" : integer , \"maxParallelImagePulls\" : integer , \"crashLoopBackOff\" : { object ( CrashLoopBackOffConfig ) } , // Union field insecure kubelet readonly port enabled can be only one of the // following: \"insecureKubeletReadonlyPortEnabled\" : boolean // End of list of possible types for union field // insecure kubelet readonly port enabled . // Union field single process oom kill can be only one of the following: \"singleProcessOomKill\" : boolean // End of list of possible types for union field single process oom kill . // Union field shutdown grace period seconds can be only one of the following: \"shutdownGracePeriodSeconds\" : integer // End of list of possible types for union field // shutdown grace period seconds . // Union field shutdown grace period critical pods seconds can be only one of // the following: \"shutdownGracePeriodCriticalPodsSeconds\" : integer // End of list of possible types for union field // shutdown grace period critical pods seconds . } Fields cpuManagerPolicy string Control the CPU management policy on the node."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "docker.pkg.dev",
+      "jax.device"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-auto-provisioning",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-auto-provisioning",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-auto-provisioning",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-auto-provisioning",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-auto-provisioning",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:15.353Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

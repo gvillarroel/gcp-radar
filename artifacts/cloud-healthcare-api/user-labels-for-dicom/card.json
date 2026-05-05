@@ -1,0 +1,168 @@
+{
+  "feature_name": "User labels for DICOM",
+  "feature_slug": "user-labels-for-dicom",
+  "summary": "User labels were added to DICOM, HL7v2, and FHIR stores to support resource filtering and billing charge views by label.",
+  "extended_definition": "User labels were added to DICOM, HL7v2, and FHIR stores to support resource filtering and billing charge views by label.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+      "https://docs.cloud.google.com/healthcare-api/docs/quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Creating and managing DICOM stores \\_|\\_ Cloud Healthcare API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "source_id": "site-docs-root",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following command in the terminal to create or overwrite this file in the current directory: cat > request.json PROJECT ID /topics/ PUBSUB TOPIC \" } ], \"labels\": { \" KEY 1 \": \" VALUE 1 \", \" KEY 2 \": \" VALUE 2 \" } } EOF Then execute the following command to send your REST request: curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID ?updateMask=notificationConfigs,labels\" PowerShell Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login .",
+          "Before using any of the request data, make the following replacements: PROJECT ID : the ID of your Google Cloud project LOCATION : the dataset location DATASET ID : the DICOM store's parent dataset DICOM STORE ID : the DICOM store ID PUBSUB TOPIC : a Pub/Sub topic to which messages are published when an event occurs in a data store KEY 1 : the first label key VALUE 1 : the first label value KEY 2 : the second label key VALUE 2 : the second label value Request JSON body: { \"notificationConfigs\": [ { \"pubsubTopic\": \"projects/ PROJECT ID /topics/ PUBSUB TOPIC \" } ], \"labels\": { \" KEY 1 \": \" VALUE 1 \", \" KEY 2 \": \" VALUE 2 \" } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"notificationConfigs\": [ { \"pubsubTopic\": \"projects/ PROJECT ID /topics/ PUBSUB TOPIC \" } ], \"labels\": { \" KEY 1 \": \" VALUE 1 \", \" KEY 2 \": \" VALUE 2 \" } } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID ?updateMask=notificationConfigs,labels\" Select-Object -Expand Content APIs Explorer Copy the request body and open the method reference page ."
+        ]
+      },
+      {
+        "title": "\"Creating and managing FHIR stores \\_|\\_ Cloud Healthcare API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following command in the terminal to create or overwrite this file in the current directory: cat > request.json PROJECT ID /topics/ PUBSUB TOPIC ID \" } ], \"labels\": { \" KEY1 \": \" VALUE1 \", \" KEY2 \": \" VALUE2 \" } } EOF Then execute the following command to send your REST request: curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID ?updateMask=notificationConfig,labels\" PowerShell Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login .",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"notificationConfigs\": [ { \"pubsubTopic\": \"projects/ PROJECT ID /topics/ PUBSUB TOPIC ID \" } ], \"labels\": { \" KEY1 \": \" VALUE1 \", \" KEY2 \": \" VALUE2 \" } } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID ?updateMask=notificationConfig,labels\" Select-Object -Expand Content APIs Explorer Copy the request body and open the method reference page .",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: cat > request.json BASE RESOURCE VALIDATION TYPE \": true } } EOF Then execute the following command to send your REST request: curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID ?updateMask=validationConfig\" PowerShell Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Store healthcare data with curl and PowerShell \\_|\\_ Cloud Healthcare\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Response { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.healthcare.v1.OperationMetadata\", \"apiMethodName\": \"google.cloud.healthcare.v1.dataset.DatasetService.CreateDataset\", \"createTime\": \" YYYY-MM-DDTHH:MM:SS+ZZ:ZZ \", \"endTime\": \" YYYY-MM-DDTHH:MM:SS+ZZ:ZZ \", \"logsUrl\": \"https://console.cloud.google.com/ CLOUD LOGGING URL \" \"counter\": { \"success\": \" SUCCESS COUNT \", // If there were any failures, they display in the failure field. \"failure\": \" FAILURE COUNT \" } }, \"done\": true, // The response field only displays if there were no errors. \"response\": { \"@type\": \"type.googleapis.com/google.cloud.healthcare.v1.dataset.Dataset\", \"name\": \"projects/ PROJECT ID /locations/us-central1/datasets/my-dataset\", }, // If there were any errors, an error field displays instead of a response field. // See Troubleshooting long-running operations for a list of response codes. \"error\": { \"code\": ERROR CODE , \"message\": \" DESCRIPTION \", \"details\": [ { \"@type\": \"...\", FIELD1 : ..., ... } ] } } To complete this quickstart, choose from one of the following sections: Store and view a DICOM instance Store and view FHIR resources Store and view an HL7v2 message Store and view a DICOM instance This section shows how to complete the following tasks: Create a DICOM store.",
+          "Run the following command once for each of the following IAM roles: roles/healthcare.datasetAdmin, roles/healthcare.fhirStoreAdmin, roles/healthcare.dicomStoreAdmin, roles/healthcare.hl7V2StoreAdmin gcloud projects add-iam-policy-binding PROJECT ID --member = \"user: USER IDENTIFIER \" --role = ROLE Replace the following: PROJECT ID : Your project ID.",
+          "Run the following command once for each of the following IAM roles: roles/healthcare.datasetAdmin, roles/healthcare.fhirStoreAdmin, roles/healthcare.dicomStoreAdmin, roles/healthcare.hl7V2StoreAdmin gcloud projects add-iam-policy-binding PROJECT ID --member = \"user: USER IDENTIFIER \" --role = ROLE Replace the following: PROJECT ID : Your project ID."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "console.cloud.google.com",
+      "healthcare.datasetAdmin",
+      "healthcare.dicomStoreAdmin",
+      "healthcare.fhirStoreAdmin",
+      "healthcare.googleapis.com",
+      "healthcare.hl7V2StoreAdmin",
+      "request.json",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/healthcare.datasetAdmin",
+      "roles/healthcare.dicomStoreAdmin",
+      "roles/healthcare.fhirStoreAdmin",
+      "roles/healthcare.hl7V2StoreAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/quickstart"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:29.484Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api"
+}

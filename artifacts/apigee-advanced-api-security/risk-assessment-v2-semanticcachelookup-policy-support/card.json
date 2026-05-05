@@ -1,0 +1,184 @@
+{
+  "feature_name": "Risk Assessment v2 SemanticCacheLookup policy support",
+  "feature_slug": "risk-assessment-v2-semanticcachelookup-policy-support",
+  "summary": "Risk Assessment v2 now supports the SemanticCacheLookup policy in assessments.",
+  "extended_definition": "Risk Assessment v2 now supports the SemanticCacheLookup policy in assessments.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-security",
+      "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+      "https://docs.cloud.google.com/apigee/docs/api-security/security-scores"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Risk assessment overview and UI \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 180,
+        "relevance": "",
+        "evidence_snippets": [
+          "Risk Assessment v2 concepts and scoring methodology Risk assessment security scores assess the security risk of your APIs based on the scoring of security assessments and weights in a security profile.",
+          "The potential severity values are high (0-50%), medium (51-90%), low (91-99%), and minimal (100%/no risk found based on the assessments in the assigned security profile).",
+          "Go to Risk assessment This displays the Risk Assessment page: The page has these sections: Environment : Select the environment on which to view assessments."
+        ]
+      },
+      {
+        "title": "Overview of Advanced API Security | Apigee | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "API MONITORING API Monitoring overview Compare API Monitoring with Apigee Analytics Using the Timeline view Using the Investigate view Using the Recent view Setting up alerts and notifications Examples of alerts Fault codes ADVANCED API SECURITY Overview of Advanced API Security Apigee and Apigee hybrid Overview Getting started Detection rules Best practices Security reports Overview Manage security reports in the UI Manage security reports using the API Risk assessment Risk assessment overview and UI Security scores and profiles API Abuse detection Abuse detection UI Security stats API Incidents API Security feedback API Security alerts Security actions Security actions overview and UI Security actions API Multi-gateway risk assessment Overview API OBSERVATION Overview of API Observation Shadow APIs Shadow API Discovery overview Shadow API Discovery management APIs Shadow API Discovery audit logging Application Integration Use Application Integration Application Integration and Apigee proxy Integration target Subscription entitlements Application Integration policies IntegrationCallout policy SetIntegrationRequest policy Connectors Overview Get started with connectors Release notes API HUB What is Apigee API hub?",
+          "Use Advanced API Security to perform risk assessments on multiple Apigee organizations and gateways You can use Advanced API Security to perform risk assessments across multiple Apigee organizations and gateways, including Apigee, Apigee hybrid, and Apigee Edge.",
+          "For details, see Use Advanced API Security to perform risk assessments on multiple Apigee organizations and gateways ."
+        ]
+      },
+      {
+        "title": "Security alerts \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 93,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example: Create a risk assessment monitoring condition monitoring alert (Risk Assessment v2) This example creates a new Cloud Monitoring alerting policy for a Risk Assessment monitoring condition that alerts if the security score on any of its monitored proxies falls below a certain threshold.",
+          "Current security score of a deployed resource based on a security profile. location, org, scope, resource, security profile Filters Filter Label Description location Location of the resource: global always. org Apigee organization name env Apigee environment name profile Apigee API Security profile name proxy Apigee API proxy name target server Apigee target server name detection rule Apigee API security detection rule name scope For Risk Assessment v2, identifier of the scope associated with the assessed resource. resource For Risk Assessment v2, identifier of the assessed resource. security profile For Risk Assessment v2, identifier of the security profile used to assess the resource.",
+          "This value is measured at least once every 3 hours. location, org, env, profile, target server Apigee API Security Profile Environment Association Security score of Apigee environment: apigee.googleapis.com/security/environment score Applies to Risk Assessment v1."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "projects.locations",
+      "projects.locations.addons",
+      "projects.locations.apiHubInstances",
+      "projects.locations.apis",
+      "projects.locations.apis.versions",
+      "projects.locations.apis.versions.definitions",
+      "projects.locations.apis.versions.operations",
+      "projects.locations.apis.versions.specs",
+      "projects.locations.attributes",
+      "projects.locations.curations",
+      "projects.locations.dependencies",
+      "projects.locations.deployments",
+      "projects.locations.discoveredApiObservations",
+      "projects.locations.discoveredApiObservations.discoveredApiOperations",
+      "projects.locations.externalApis",
+      "projects.locations.hostProjectRegistrations",
+      "projects.locations.operations",
+      "projects.locations.plugins",
+      "projects.locations.plugins.instances",
+      "projects.locations.plugins.styleGuide",
+      "projects.locations.runtimeProjectAttachments",
+      "v1.0.x",
+      "v1.1.x",
+      "v1.16",
+      "v1.2.x",
+      "v1.3.x",
+      "v1.4.x",
+      "v2.0.x"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:05.451Z",
+  "source_step08_card": "data/step-08/current/products/apigee-advanced-api-security/card.json",
+  "product_name": "Apigee Advanced API Security",
+  "product_slug": "apigee-advanced-api-security"
+}

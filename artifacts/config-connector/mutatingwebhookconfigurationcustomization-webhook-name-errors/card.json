@@ -1,0 +1,145 @@
+{
+  "feature_name": "MutatingWebhookConfigurationCustomization webhook name errors",
+  "feature_slug": "mutatingwebhookconfigurationcustomization-webhook-name-errors",
+  "summary": "Config Connector now reports invalid webhook name errors in the status of MutatingWebhookConfigurationCustomization resources.",
+  "extended_definition": "Config Connector now reports invalid webhook name errors in the status of MutatingWebhookConfigurationCustomization resources.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/how-to/advanced-install",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/install-namespaced"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure webhook timeout \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+        "source_id": "site-docs-reference",
+        "final_score": 113,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a file named configure-mutating-webhook-timeout.yaml and copy the following YAML into it: apiVersion : customize.core.cnrm.cloud.google.com/v1beta1 kind : MutatingWebhookConfigurationCustomization metadata : name : mutating-webhook spec : webhooks : - name : container-annotation-handler timeoutSeconds : 20 Note: when specifying the name of webhook configuration and the names of webhooks in the YAML file, don't include the .cnrm.cloud.google.com suffix.",
+          "Use kubectl apply to apply the webhook timeout customization to your cluster: kubectl apply -f configure-mutating-webhook-timeout.yaml Verify the successful configuration by running the following command: kubectl get mutatingwebhookconfigurationcustomizations mutating-webhook -o jsonpath='{.status.healthy}{\"\\n\"}' It should display status.healthy field set to true .",
+          "Create a file named configure-validating-webhook-timeout.yaml and copy the following YAML into it: apiVersion : customize.core.cnrm.cloud.google.com/v1beta1 kind : ValidatingWebhookConfigurationCustomization metadata : name : validating-webhook spec : webhooks : - name : deny-immutable-field-updates timeoutSeconds : 12 - name : deny-unknown-fields timeoutSeconds : 15 Note: when specifying the name of webhook configuration and the names of webhooks in the YAML file, don't include the .cnrm.cloud.google.com suffix."
+        ]
+      },
+      {
+        "title": "Install Config Connector manually \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/install-namespaced",
+        "source_id": "site-docs-root",
+        "final_score": 97,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following commands to remove Config Connector system non-CRD components: kubectl delete sts,deploy,po,svc,roles,clusterroles,clusterrolebindings --all-namespaces -l cnrm.cloud.google.com/system = true --wait = true kubectl delete validatingwebhookconfiguration abandon-on-uninstall.cnrm.cloud.google.com --ignore-not-found --wait = true kubectl delete validatingwebhookconfiguration validating-webhook.cnrm.cloud.google.com --ignore-not-found --wait = true kubectl delete mutatingwebhookconfiguration mutating-webhook.cnrm.cloud.google.com --ignore-not-found --wait = true Install Config Connector with the GKE add-on , or the operator .",
+          "To create a ConfigConnectorContext , complete the following steps: Create a manifest named configconnectorcontext.yaml with the following content: apiVersion : core.cnrm.cloud.google.com/v1beta1 kind : ConfigConnectorContext metadata : you need one ConfigConnectorContext per namespace name : configconnectorcontext.core.cnrm.cloud.google.com namespace : NAMESPACE spec : googleServiceAccount : \" NAMESPACE GSA @ HOST PROJECT ID .iam.gserviceaccount.com\" stateIntoSpec : Absent Apply the manifest to your cluster: kubectl apply -f configconnectorcontext.yaml Verify that the Config Connector operator created a Kubernetes service account for your namespace by running the following command: kubectl get serviceaccount/cnrm-controller-manager- NAMESPACE -n cnrm-system Verify that the Config Connector controller Pod is running for your namespace: kubectl wait -n cnrm-system \\ --for = condition = Ready pod \\ -l cnrm.cloud.google.com/component = cnrm-controller-manager \\ -l cnrm.cloud.google.com/scoped-namespace = NAMESPACE If the Config Connector controller is running, the output is similar to: cnrm-controller-manager-abcdefghijk-0 condition met.",
+          "Extract the tar file: tar zxvf release-bundle.tar.gz Install the Config Connector operator on your cluster: Autopilot kubectl apply -f operator-system/autopilot-configconnector-operator.yaml Standard kubectl apply -f operator-system/configconnector-operator.yaml To configure the Config Connector operator to run in namespaced mode, complete the following steps: Create a manifest named configconnector.yaml with the following content: apiVersion : core.cnrm.cloud.google.com/v1beta1 kind : ConfigConnector metadata : the name is restricted to ensure that there is only ConfigConnector resource installed in your cluster name : configconnector.core.cnrm.cloud.google.com spec : mode : namespaced stateIntoSpec : Absent Apply the manifest to your cluster: kubectl apply -f configconnector.yaml Install Config Connector in namespaced mode Note: You must perform these steps for every namespace that you want Config Connector to create resources from."
+        ]
+      },
+      {
+        "title": "Install Config Connector manually \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/advanced-install",
+        "source_id": "site-docs-reference",
+        "final_score": 87,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following commands to remove Config Connector system non-CRD components: kubectl delete sts,deploy,po,svc,roles,clusterroles,clusterrolebindings --all-namespaces -l cnrm.cloud.google.com/system = true --wait = true kubectl delete validatingwebhookconfiguration abandon-on-uninstall.cnrm.cloud.google.com --ignore-not-found --wait = true kubectl delete validatingwebhookconfiguration validating-webhook.cnrm.cloud.google.com --ignore-not-found --wait = true kubectl delete mutatingwebhookconfiguration mutating-webhook.cnrm.cloud.google.com --ignore-not-found --wait = true Install Config Connector with the GKE add-on , or the operator .",
+          "To create a ConfigConnectorContext , complete the following steps: Create a manifest named configconnectorcontext.yaml with the following content: apiVersion : core.cnrm.cloud.google.com/v1beta1 kind : ConfigConnectorContext metadata : you need one ConfigConnectorContext per namespace name : configconnectorcontext.core.cnrm.cloud.google.com namespace : NAMESPACE spec : googleServiceAccount : \" NAMESPACE GSA @ HOST PROJECT ID .iam.gserviceaccount.com\" stateIntoSpec : Absent Apply the manifest to your cluster: kubectl apply -f configconnectorcontext.yaml Verify that the Config Connector operator created a Kubernetes service account for your namespace by running the following command: kubectl get serviceaccount/cnrm-controller-manager- NAMESPACE -n cnrm-system Verify that the Config Connector controller Pod is running for your namespace: kubectl wait -n cnrm-system \\ --for = condition = Ready pod \\ -l cnrm.cloud.google.com/component = cnrm-controller-manager \\ -l cnrm.cloud.google.com/scoped-namespace = NAMESPACE If the Config Connector controller is running, the output is similar to: cnrm-controller-manager-abcdefghijk-0 condition met.",
+          "Extract the tar file: tar zxvf release-bundle.tar.gz Install the Config Connector operator on your cluster: Autopilot kubectl apply -f operator-system/autopilot-configconnector-operator.yaml Standard kubectl apply -f operator-system/configconnector-operator.yaml To configure the Config Connector operator to run in namespaced mode, complete the following steps: Create a manifest named configconnector.yaml with the following content: apiVersion : core.cnrm.cloud.google.com/v1beta1 kind : ConfigConnector metadata : the name is restricted to ensure that there is only ConfigConnector resource installed in your cluster name : configconnector.core.cnrm.cloud.google.com spec : mode : namespaced stateIntoSpec : Absent Apply the manifest to your cluster: kubectl apply -f configconnector.yaml Install Config Connector in namespaced mode Note: You must perform these steps for every namespace that you want Config Connector to create resources from."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bundle.tar.gz",
+      "cnrm.cloud.google.com",
+      "configconnector.core.cnrm.cloud.google.com",
+      "configconnector.yaml",
+      "configconnectorcontext.core.cnrm.cloud.google.com",
+      "configconnectorcontext.yaml",
+      "core.cnrm.cloud.google.com",
+      "customize.core.cnrm.cloud.google.com",
+      "fields.cnrm.cloud.google.com",
+      "iam.gserviceaccount.com",
+      "iam.workloadIdentityUser",
+      "monitoring.metricWriter",
+      "operator.yaml",
+      "status.healthy",
+      "svc.id.goog",
+      "timeout.yaml",
+      "uninstall.cnrm.cloud.google.com",
+      "updates.cnrm.cloud.google.com",
+      "webhook.cnrm.cloud.google.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.workloadIdentityUser",
+      "roles/monitoring.metricWriter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-namespaced",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/advanced-install"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-namespaced",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/advanced-install"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-namespaced",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/advanced-install"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-namespaced",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/advanced-install"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-namespaced",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/advanced-install"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:47.576Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector"
+}

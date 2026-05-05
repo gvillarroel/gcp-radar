@@ -1,0 +1,154 @@
+{
+  "feature_name": "Apache Kafka to BigQuery template",
+  "feature_slug": "apache-kafka-to-bigquery-template",
+  "summary": "This Google-provided template loads data from Apache Kafka into BigQuery.",
+  "extended_definition": "This Google-provided template loads data from Apache Kafka into BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/kafka-bigquery-performance",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/astradb-to-bigquery",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cassandra-to-bigtable"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Performance characteristics of Kafka to BigQuery pipelines \\_|\\_ Cloud Dataflow\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/kafka-bigquery-performance",
+        "source_id": "site-docs-root-2",
+        "final_score": 181,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BQ TABLE NAME dlq\" , \\ numStorageWriteApiStreams = 400 , \\ useStorageWriteApiAtLeastOnce = true Replace the following: JOB NAME : the Dataflow job name PROJECT ID : the project ID KAFKA BOOTSTRAP ADDRESS : the bootstrap address of the Apache Kafka cluster KAFKA TOPIC : the name of the Kafka topic BQ DATASET : the name of the BigQuery dataset BQ TABLE NAME : the name of the BigQuery table Generate test data To generate test data, use the following command to run the Streaming Data Generator template : gcloud dataflow flex-template run JOB NAME \\ --project = PROJECT ID \\ --template-file-gcs-location = gs://dataflow-templates-us-central1/latest/flex/Streaming Data Generator \\ --max-workers = 140 \\ --parameters \\ schemaLocation = SCHEMA LOCATION , \\ qps = 1000000 , \\ sinkType = KAFKA, \\ bootstrapServer = KAFKA BOOTSTRAP ADDRESS , \\ kafkaTopic = KAFKA TOPIC , \\ outputType = JSON Replace the following: JOB NAME : the Dataflow job name PROJECT ID : the project ID SCHEMA LOCATION : the path to a schema file in Cloud Storage KAFKA BOOTSTRAP ADDRESS : the bootstrap address of the Apache Kafka cluster KAFKA TOPIC : the name of the Kafka topic The Streaming Data Generator template uses a JSON Data Generator file to define the message schema.",
+          "A Dataflow streaming pipeline that used the Apache Kafka to BigQuery template .",
+          "BQ TABLE NAME dlq\" , \\ numStorageWriteApiStreams = 400 At-least-once mode gcloud dataflow flex-template run JOB NAME \\ --project = PROJECT ID \\ --template-file-gcs-location = gs://dataflow-templates-us-central1/latest/flex/Kafka to BigQuery Flex \\ --enable-streaming-engine \\ --additional-experiments = streaming mode at least once \\ --parameters \\ readBootstrapServerAndTopic = \" KAFKA BOOTSTRAP ADDRESS ; KAFKA TOPIC \" , \\ kafkaReadAuthenticationMode = APPLICATION DEFAULT CREDENTIALS, \\ messageFormat = JSON, \\ writeMode = SINGLE TABLE NAME, \\ outputTableSpec = \" PROJECT ID : BQ DATASET ."
+        ]
+      },
+      {
+        "title": "\"Apache Cassandra to Bigtable template \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cassandra-to-bigtable",
+        "source_id": "site-api-reference",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BATCH , displayName = \"Cassandra to Cloud Bigtable\" , description = { \"The Apache Cassandra to Cloud Bigtable template copies a table from Apache Cassandra to Cloud Bigtable. \" + \"This template requires minimal configuration and replicates the table structure in Cassandra as closely as possible in Cloud Bigtable.\" , \"The Apache Cassandra to Cloud Bigtable template is useful for the following:\\n\" + \"- Migrating Apache Cassandra database when short downtime is acceptable.\\n\" + \"- Periodically replicating Cassandra tables to Cloud Bigtable for global serving.\" }, optionsClass = Options . class , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cassandra-to-bigtable\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"The target Bigtable table must exist before running the pipeline.\" , \"Network connection between Dataflow workers and Apache Cassandra nodes.\" }) public final class CassandraToBigtable { / TODO - refactor to extend BigtableCommonOptions.WriteOptions. / public interface Options extends PipelineOptions { @TemplateParameter.Text ( order = 1 , groupName = \"Source\" , regexes = { \"^[a-zA-Z0-9\\\\.\\\\-,] $\" }, description = \"Cassandra Hosts\" , helpText = \"The hosts of the Apache Cassandra nodes in a comma-separated list.\" ) ValueProvider<String> getCassandraHosts (); @SuppressWarnings ( \"unused\" ) void setCassandraHosts ( ValueProvider<String> hosts ); @TemplateParameter.Integer ( order = 2 , groupName = \"Source\" , optional = true , description = \"Cassandra Port\" , helpText = \"The TCP port to use to reach Apache Cassandra on the nodes.",
+          "LOCATION : the region where you want to deploy your Dataflow job—for example, us-central1 BIGTABLE PROJECT ID : your project ID where Bigtable is located BIGTABLE INSTANCE ID : the Bigtable instance id BIGTABLE TABLE ID : the name of your Bigtable table name CASSANDRA HOSTS : the Apache Cassandra host list; if multiple hosts are provided, follow the instruction on how to escape commas CASSANDRA KEYSPACE : the Apache Cassandra keyspace where table is located CASSANDRA TABLE : the Apache Cassandra table that needs to be migrated Template source code Java / Copyright (C) 2019 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License.",
+          "REGION NAME : the region where you want to deploy your Dataflow job—for example, us-central1 BIGTABLE PROJECT ID : your project ID where Bigtable is located BIGTABLE INSTANCE ID : the Bigtable instance id BIGTABLE TABLE ID : the name of your Bigtable table name CASSANDRA HOSTS : the Apache Cassandra host list; if multiple hosts are provided, follow the instruction on how to escape commas CASSANDRA KEYSPACE : the Apache Cassandra keyspace where table is located CASSANDRA TABLE : the Apache Cassandra table that needs to be migrated API To run the template using the REST API, send an HTTP POST request."
+        ]
+      },
+      {
+        "title": "AstraDB to BigQuery template \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/astradb-to-bigquery",
+        "source_id": "site-api-reference",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DatasetInfo ; import com.google.cloud.teleport.metadata.Template ; import com.google.cloud.teleport.metadata.TemplateCategory ; import com.google.cloud.teleport.v2.astradb.options.AstraDbToBigQueryOptions ; import com.google.cloud.teleport.v2.astradb.transforms.AstraDbToBigQueryMappingFn ; import com.google.cloud.teleport.v2.common.UncaughtExceptionLogger ; import com.google.cloud.teleport.v2.utils.SecretManagerUtils ; import java.util.AbstractMap ; import org.apache.beam.sdk.Pipeline ; import org.apache.beam.sdk.coders.SerializableCoder ; import org.apache.beam.sdk.io.astra.db.AstraDbIO ; import org.apache.beam.sdk.io.astra.db.CqlSessionHolder ; import org.apache.beam.sdk.io.astra.db.mapping.AstraDbMapper ; import org.apache.beam.sdk.io.astra.db.mapping.BeamRowDbMapperFactoryFn ; import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO ; import org.apache.beam.sdk.io.gcp.bigquery.BigQueryUtils ; import org.apache.beam.sdk.options.PipelineOptions ; import org.apache.beam.sdk.options.PipelineOptionsFactory ; import org.apache.beam.sdk.transforms.SerializableFunction ; import org.apache.beam.sdk.values.Row ; import org.apache.commons.lang3.StringUtils ; import org.slf4j.Logger ; import org.slf4j.LoggerFactory ; / The {@link AstraDbToBigQuery} pipeline is a batch pipeline which ingests data from AstraDB and outputs the resulting records to BigQuery. <p>Check out <a href=\"https://github.com/GoogleCloudPlatform/DataflowTemplates/blob/main/v2/astradb-to-bigquery/README AstraDB to BigQuery.md\">README</a> for instructions on how to use or modify this template. / @Template ( name = \"AstraDB To BigQuery\" , category = TemplateCategory .",
+          "Options . class , flexContainerName = \"astradb-to-bigquery\" , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/astradb-to-bigquery\" , contactInformation = \"https://cloud.google.com/support\" , preview = true , requirements = { \"AstraDB account with a token\" }) public class AstraDbToBigQuery { / Logger for the class. / private static final Logger LOGGER = LoggerFactory . getLogger ( AstraDbToBigQuery . class ); / If not provided, it is the default token range value. / public static final int DEFAULT TOKEN RANGE = 18 ; / Options for the sample <p>Inherits standard configuration options. / public interface Options extends PipelineOptions , AstraDbToBigQueryOptions .",
+          "Read < ? > , TableSchema > bigQuerySchemaFactory = new AstraDbToBigQueryMappingFn ( options . getAstraKeyspace (), options . getAstraTable ()); LOGGER . debug ( \"Schema Mapper has been initialized\" ); // Map Cassandra Rows into (Apache) Beam Rows (DATA) SerializableFunction<CqlSession , AstraDbMapper<Row> > beamRowMapperFactory = new BeamRowDbMapperFactoryFn ( options . getAstraKeyspace (), options . getAstraTable ()); LOGGER . debug ( \"Row Mapper has been initialized\" ); // Distribute reads across all available Cassandra nodes int minimalTokenRangesCount = ( options . getMinTokenRangesCount () == null ) ?"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.teleport.metadata.Template",
+      "com.google.cloud.teleport.metadata.TemplateCategory",
+      "com.google.cloud.teleport.v2.astradb.options.AstraDbToBigQueryOptions",
+      "com.google.cloud.teleport.v2.astradb.transforms.AstraDbToBigQueryMappingFn",
+      "com.google.cloud.teleport.v2.common.UncaughtExceptionLogger",
+      "com.google.cloud.teleport.v2.utils.SecretManagerUtils",
+      "github.com",
+      "java.util.AbstractMap",
+      "org.apache.beam.sdk.coders.SerializableCoder",
+      "org.apache.beam.sdk.io.astra.db.AstraDbIO",
+      "org.apache.beam.sdk.io.astra.db.CqlSessionHolder",
+      "org.apache.beam.sdk.io.astra.db.mapping.AstraDbMapper",
+      "org.apache.beam.sdk.io.astra.db.mapping.BeamRowDbMapperFactoryFn",
+      "org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO",
+      "org.apache.beam.sdk.io.gcp.bigquery.BigQueryUtils",
+      "org.apache.beam.sdk.options.PipelineOptions",
+      "org.apache.beam.sdk.options.PipelineOptionsFactory",
+      "org.apache.beam.sdk.Pipeline",
+      "org.apache.beam.sdk.transforms.SerializableFunction",
+      "org.apache.beam.sdk.values.Row",
+      "org.apache.commons.lang3.StringUtils",
+      "org.slf4j.Logger",
+      "org.slf4j.LoggerFactory"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/kafka-bigquery-performance",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cassandra-to-bigtable",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/astradb-to-bigquery"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/kafka-bigquery-performance",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cassandra-to-bigtable",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/astradb-to-bigquery"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/kafka-bigquery-performance",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cassandra-to-bigtable",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/astradb-to-bigquery"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/kafka-bigquery-performance",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cassandra-to-bigtable",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/astradb-to-bigquery"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/kafka-bigquery-performance",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cassandra-to-bigtable",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/astradb-to-bigquery"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/kafka-bigquery-performance",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cassandra-to-bigtable",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/astradb-to-bigquery"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:53.762Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow"
+}

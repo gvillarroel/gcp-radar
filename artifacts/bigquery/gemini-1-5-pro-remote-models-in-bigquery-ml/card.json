@@ -1,0 +1,101 @@
+{
+  "feature_name": "Gemini 1.5 Pro remote models in BigQuery ML",
+  "feature_slug": "gemini-1-5-pro-remote-models-in-bigquery-ml",
+  "summary": "BigQuery ML supports creating remote models based on the Vertex AI gemini-1.5-pro foundation model.",
+  "extended_definition": "BigQuery ML supports creating remote models based on the Vertex AI gemini-1.5-pro foundation model.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/ai-application-overview",
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ml-remote-model-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Generate text by using a Gemini model and the AI.GENERATE_TEXT function\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemini",
+        "source_id": "site-docs-reference",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to BigQuery In the query editor, run the following statement: CREATE OR REPLACE MODEL bqml tutorial.gemini model REMOTE WITH CONNECTION LOCATION .",
+          "GENERATE TEXT ( MODEL bqml tutorial.gemini model , ( SELECT CONCAT ( \" \"\" Perform sentiment analysis on the following text and return one the following categories: positive, negative: \"\" \" , review ) AS prompt , FROM bigquery-public-data.imdb.reviews LIMIT 5 ), STRUCT ( 0.2 AS temperature , 100 AS max output tokens )); The output is similar to the following: +----------+----------+------------------------------------------------+ title result review +----------+----------+------------------------------------------------+ Quitting Positive This movie is amazing because the fact that...",
+          "CONNECTION ID OPTIONS ( ENDPOINT = 'gemini-2.5-flash' ); Replace the following: LOCATION : the connection location CONNECTION ID : the ID of your BigQuery connection When you view the connection details in the Google Cloud console, this is the value in the last section of the fully qualified connection ID that is shown in Connection ID , for example projects/myproject/locations/connection location/connections/ myconnection The query takes several seconds to complete, after which the model gemini model appears in the bqml tutorial dataset."
+        ]
+      },
+      {
+        "title": "\"Make predictions with remote models on Vertex AI \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ml-remote-model-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Data analytics BigQuery Guides Send feedback Make predictions with remote models on Vertex AI Stay organized with collections Save and categorize content based on your preferences.",
+          "You can use remote models when a model is too large to import into BigQuery.",
+          "Import the model to the Vertex AI Model Registry In this tutorial you use a pretrained TensorFlow model that is available in Cloud Storage at gs://cloud-samples-data/bigquery/ml/remote model tutorial/ ."
+        ]
+      },
+      {
+        "title": "Task-specific solutions overview \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/ai-application-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 105,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported tasks include the following: Natural language processing Machine translation Audio transcription Document processing Computer vision You access a Cloud AI API to perform one of these functions by creating a remote model in BigQuery ML that represents the API endpoint.",
+          "Workflow You can use remote models over Vertex AI models and remote models over Cloud AI services together with BigQuery ML functions in order to accomplish complex data analysis and generative AI tasks.",
+          "To perform document processing tasks, you can create a reference to the Document AI API by creating a remote model, specifying CLOUD AI DOCUMENT V1 for the REMOTE SERVICE TYPE value, and specifying a processor to use to process the document content."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.imdb.reviews",
+      "tutorial.gemini"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemini",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ml-remote-model-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/ai-application-overview"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemini",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ml-remote-model-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/ai-application-overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

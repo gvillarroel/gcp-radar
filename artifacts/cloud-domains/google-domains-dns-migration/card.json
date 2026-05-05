@@ -1,0 +1,104 @@
+{
+  "feature_name": "Google Domains DNS migration",
+  "feature_slug": "google-domains-dns-migration",
+  "summary": "Cloud Domains can migrate Google Domains DNS settings and export related domain and email-forwarding configurations.",
+  "extended_definition": "Cloud Domains can migrate Google Domains DNS settings and export related domain and email-forwarding configurations.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/domains/docs/export-dns-settings",
+      "https://docs.cloud.google.com/domains/docs/faq",
+      "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate your Google Domains DNS settings to Cloud DNS or another provider\\",
+        "url": "https://docs.cloud.google.com/domains/docs/export-dns-settings",
+        "source_id": "site-iam-reference",
+        "final_score": 324,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This page describes how to migrate your Google Domains DNS settings and export your domain and email forwarding configurations if you use Google Domains as your DNS provider.",
+          "Home Documentation Networking Cloud Domains Guides Send feedback Migrate your Google Domains DNS settings to Cloud DNS or another provider Stay organized with collections Save and categorize content based on your preferences.",
+          "If you don't use domain forwarding or email forwarding but use Google Domains as your DNS provider, you can Migrate your Google Domains DNS settings to Cloud DNS ."
+        ]
+      },
+      {
+        "title": "Squarespace purchase of Google Domains FAQ \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/domains/docs/faq",
+        "source_id": "site-docs-root",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To migrate your Google Domains DNS settings and export domain and email forwarding configurations, see Migrate Google Domains DNS settings .",
+          "After your domain registrations and related data are migrated to Squarespace, Cloud Domains continues to support searching and registering new domains, renewing existing domains, updating your contact, DNS settings, and transferring a registered domain to another registrar.",
+          "However, if you have already registered domains that use Google Domains, you can export your Google Domains DNS settings to Cloud DNS or another DNS provider."
+        ]
+      },
+      {
+        "title": "\"Class DomainsAsyncClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 229,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ConfigureDnsSettingsRequest ( registration=\"registration value\", ) Make the request operation = client. configure dns settings (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.domains v1.types.ConfigureDnsSettingsRequest , dict]] The request object.",
+          "ConfigureManagementSettingsRequest ( registration=\"registration value\", ) Make the request operation = client. configure management settings (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.domains v1.types.ConfigureManagementSettingsRequest , dict]] The request object.",
+          "ConfigureContactSettingsRequest ( registration=\"registration value\", ) Make the request operation = client. configure contact settings (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.domains v1.types.ConfigureContactSettingsRequest , dict]] The request object."
+        ]
+      },
+      {
+        "title": "\"Class DomainsClient (1.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/domains/latest/google.cloud.domains_v1.services.domains.DomainsClient",
+        "source_id": "site-python-reference",
+        "final_score": 229,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ConfigureDnsSettingsRequest ( registration=\"registration value\", ) Make the request operation = client. configure dns settings (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.domains v1.types.ConfigureDnsSettingsRequest , dict] The request object.",
+          "ConfigureManagementSettingsRequest ( registration=\"registration value\", ) Make the request operation = client. configure management settings (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.domains v1.types.ConfigureManagementSettingsRequest , dict] The request object.",
+          "ConfigureContactSettingsRequest ( registration=\"registration value\", ) Make the request operation = client. configure contact settings (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.domains v1.types.ConfigureContactSettingsRequest , dict] The request object."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.domains.v1",
+      "com.google.cloud.domains.v1.ConfigureDnsSettingsRequest",
+      "com.google.cloud.domains.v1.ConfigureDnsSettingsRequest.Builder",
+      "googleapis.dev",
+      "operation.result",
+      "options.html",
+      "v1.types.ConfigureContactSettingsRequest",
+      "v1.types.ConfigureDnsSettingsRequest",
+      "v1.types.ConfigureManagementSettingsRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:29.380Z",
+  "source_step08_card": "data/step-08/current/products/cloud-domains/card.json",
+  "product_name": "Cloud Domains",
+  "product_slug": "cloud-domains"
+}

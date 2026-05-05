@@ -1,0 +1,201 @@
+{
+  "feature_name": "SMS-based authentication flows in the reCAPTCHA Enterprise integration",
+  "feature_slug": "sms-based-authentication-flows-in-the-recaptcha-enterprise-integration",
+  "summary": "Identity Platform's reCAPTCHA Enterprise integration supports SMS-based authentication flows in Preview.",
+  "extended_definition": "Identity Platform's reCAPTCHA Enterprise integration supports SMS-based authentication flows in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/identity-platform/docs/how-to",
+      "https://docs.cloud.google.com/identity-platform/docs/install-admin-sdk",
+      "https://docs.cloud.google.com/identity-platform/docs/multi-tenancy-authentication",
+      "https://docs.cloud.google.com/identity-platform/docs/web/mfa"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Adding multi-factor authentication to your web app \\_|\\_ Identity Platform\\",
+        "url": "https://docs.cloud.google.com/identity-platform/docs/web/mfa",
+        "source_id": "site-docs-root",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Go to the MFA page In the box titled SMS-Based Multi-Factor Authentication , click Enable .",
+          "This will update the underlying tokens // and trigger ID token change listener. user . multiFactor . enroll ( multiFactorAssertion , 'My personal phone number' ); The code below shows a complete example of enrolling a second factor: Web version 9 import { multiFactor , PhoneAuthProvider , PhoneMultiFactorGenerator , RecaptchaVerifier , getAuth } from \"firebase/auth\" ; const recaptchaVerifier = new RecaptchaVerifier ( getAuth (), 'recaptcha-container-id' , undefined ); multiFactor ( user ). getSession () . then ( function ( multiFactorSession ) { // Specify the phone number and pass the MFA session. const phoneInfoOptions = { phoneNumber : phoneNumber , session : multiFactorSession }; const phoneAuthProvider = new PhoneAuthProvider ( auth ); // Send SMS verification code. return phoneAuthProvider . verifyPhoneNumber ( phoneInfoOptions , recaptchaVerifier ); }). then ( function ( verificationId ) { // Ask user for the verification code.",
+          "These values are contained in the resolver object passed to the auth/multi-factor-auth-required error: Web version 9 const phoneInfoOptions = { multiFactorHint : resolver . hints [ selectedIndex ], session : resolver . session }; Web version 8 var phoneInfoOptions = { multiFactorHint : resolver . hints [ selectedIndex ] , session : resolver . session } ; Send a verification message to the user's phone: Web version 9 // Send SMS verification code. const phoneAuthProvider = new PhoneAuthProvider ( auth ); phoneAuthProvider . verifyPhoneNumber ( phoneInfoOptions , recaptchaVerifier ) . then ( function ( verificationId ) { // verificationId will be needed for sign-in completion. }); Web version 8 var phoneAuthProvider = new firebase . auth ."
+        ]
+      },
+      {
+        "title": "Installing the Admin SDK \\_|\\_ Identity Platform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/identity-platform/docs/install-admin-sdk",
+        "source_id": "site-docs-root",
+        "final_score": 190,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Node.js // Initialize the default app admin . initializeApp ( defaultAppConfig ); // Initialize another app with a different config var otherApp = admin . initializeApp ( otherAppConfig , 'other' ); console . log ( admin . app (). name ); // '[DEFAULT]' console . log ( otherApp . name ); // 'other' // Use the shorthand notation to retrieve the default app's services var defaultAuth = admin . auth (); Java // Initialize the default app FirebaseApp defaultApp = FirebaseApp . initializeApp ( defaultOptions ); // Initialize another app with a different config FirebaseApp otherApp = FirebaseApp . initializeApp ( otherAppConfig , \"other\" ); System . out . println ( defaultApp . getName ()); // \"[DEFAULT]\" System . out . println ( otherApp . getName ()); // \"other\" // Use the shorthand notation to retrieve the default app's services FirebaseAuth defaultAuth = FirebaseAuth . getInstance (); FirebaseDatabase defaultDatabase = FirebaseDatabase . getInstance (); // Use the otherApp variable to retrieve the other app's services FirebaseAuth otherAuth = FirebaseAuth . getInstance ( otherApp ); FirebaseDatabase otherDatabase = FirebaseDatabase . getInstance ( otherApp ); FirebaseAppSnippets . java Python Initialize the default app default app = firebase admin . initialize app ( cred ) Initialize another app with a different config other app = firebase admin . initialize app ( cred , name = 'other' ) print ( default app . name ) # \"[DEFAULT]\" print ( other app . name ) # \"other\" Retrieve default services via the auth package... auth.create custom token(...) Use the app argument to retrieve the other app's services auth.create custom token(..., app=other app) index.py Go // Initialize the default app defaultApp , err := firebase .",
+          "Click Close . gcloud Set up authentication: Ensure that you have the Create Service Accounts IAM role ( roles/iam.serviceAccountCreator ) and the Project IAM Admin role ( roles/resourcemanager.projectIamAdmin ).",
+          "GetAuth ( otherApp ); FirebaseAppSnippets . cs Setting scopes If you're using a Compute Engine VM with Google Application Default Credentials for authentication, you''ll need to set the right access scopes ."
+        ]
+      },
+      {
+        "title": "How-to Guides \\_|\\_ Identity Platform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/identity-platform/docs/how-to",
+        "source_id": "site-api-reference",
+        "final_score": 145,
+        "relevance": "",
+        "evidence_snippets": [
+          "Managing Identity Platform projects Enable reCAPTCHA Enterprise Configure reCAPTCHA Enterprise to add another layer of security to your apps.",
+          "Enabling multi-factor authentication Adding multi-factor authentication to your web app Add multi-factor authentication to your web app.",
+          "Extending authentication with asynchronous functions Trigger an asynchronous function in response to Identity Platform events."
+        ]
+      },
+      {
+        "title": "\"Authenticating with multi-tenancy \\_|\\_ Identity Platform \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/identity-platform/docs/multi-tenancy-authentication",
+        "source_id": "site-docs-root",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Email link To initiate the authentication flow, display an interface prompting the user to provide their email address, then call sendSignInLinkToEmail to send them an authentication link.",
+          "The following example shows how to handle the error: Web version 9 import { signInWithRedirect , getRedirectResult , fetchSignInMethodsForEmail , linkWithCredential } from \"firebase/auth\" ; // Step 1. // User tries to sign in to SAML provider. auth . tenantId = 'TENANT ID' ; signInWithRedirect ( auth , samlProvider ); var pendingCred ; // Redirect back from SAML IDP. auth.tenantId is null after redirecting. getRedirectResult ( auth ). catch (( error ) = > { if ( error . code === 'auth/account-exists-with-different-credential' ) { // Step 2. // User's email already exists. const tenantId = error . tenantId ; // The pending SAML credential. pendingCred = error . credential ; // The provider account's email address. const email = error . customData . email ; // Need to set the tenant ID again as the page was reloaded and the // previous setting was reset. auth . tenantId = tenantId ; // Get sign-in methods for this email. fetchSignInMethodsForEmail ( auth , email ) . then (( methods ) = > { // Step 3. // Ask the user to sign in with existing Google account. if ( methods [ 0 ] == 'google.com' ) { signInWithRedirect ( auth , googleProvider ); } }); } }); // Redirect back from Google. auth.tenantId is null after redirecting. getRedirectResult ( auth ). then (( result ) = > { // Step 4 // Link the SAML AuthCredential to the existing user. // result.user.tenantId is 'TENANT ID'. linkWithCredential ( result . user , pendingCred ) . then (( linkResult ) = > { // SAML account successfully linked to the existing // user. goToApp (); }); }); multitenant account exists redirect . js Web version 8 // Step 1. // User tries to sign in to SAML provider. firebase . auth (). tenantId = 'TENANT ID' ; firebase . auth (). signInWithRedirect ( samlProvider ); var pendingCred ; // Redirect back from SAML IDP. auth.tenantId is null after redirecting. firebase . auth (). getRedirectResult (). catch (( error ) = > { if ( error . code === 'auth/account-exists-with-different-credential' ) { // Step 2. // User's email already exists. const tenantId = error . tenantId ; // The pending SAML credential. pendingCred = error . credential ; // The provider account's email address. const email = error . email ; // Need to set the tenant ID again as the page was reloaded and the // previous setting was reset. firebase . auth (). tenantId = tenantId ; // Get sign-in methods for this email. firebase . auth (). fetchSignInMethodsForEmail ( email ) . then (( methods ) = > { // Step 3. // Ask the user to sign in with existing Google account. if ( methods [ 0 ] == 'google.com' ) { firebase . auth (). signInWithRedirect ( googleProvider ); } }); } }); // Redirect back from Google. auth.tenantId is null after redirecting. firebase . auth (). getRedirectResult (). then (( result ) = > { // Step 4 // Link the SAML AuthCredential to the existing user. // result.user.tenantId is 'TENANT ID'. result . user . linkWithCredential ( pendingCred ) . then (( linkResult ) = > { // SAML account successfully linked to the existing // user. goToApp (); }); }); multi - tenancy . js Disabling end-user account creation and deletion There are situations where you want administrators to create user accounts instead of the accounts being created through user actions.",
+          "Web version 9 import { signInWithEmailAndPassword , onAuthStateChanged } from \"firebase/auth\" ; // Switch to TENANT ID1 auth . tenantId = 'TENANT ID1' ; // Sign in with tenant signInWithEmailAndPassword ( auth , email , password ) . then (( userCredential ) = > { // User is signed in. const user = userCredential . user ; // user.tenantId is set to 'TENANT ID1'. // Switch to 'TENANT ID2'. auth . tenantId = 'TENANT ID2' ; // auth.currentUser still points to the user. // auth.currentUser.tenantId is 'TENANT ID1'. }); // You could also get the current user from Auth state observer. onAuthStateChanged ( auth , ( user ) = > { if ( user ) { // User is signed in. // user.tenantId is set to 'TENANT ID1'. } else { // No user is signed in. } }); multitenant signin password demo . js Web version 8 // Switch to TENANT ID1 firebase . auth (). tenantId = 'TENANT ID1' ; // Sign in with tenant firebase . auth (). signInWithEmailAndPassword ( email , password ) . then (( result ) = > { const user = result . user ; // user.tenantId is set to 'TENANT ID1'. // Switch to 'TENANT ID2'. firebase . auth (). tenantId = 'TENANT ID2' ; // firebase.auth().currentUser still point to the user. // firebase.auth().currentUser.tenantId is 'TENANT ID1'. }); // You could also get the current user from Auth state observer. firebase . auth (). onAuthStateChanged (( user ) = > { if ( user ) { // User is signed in. // user.tenantId is set to 'TENANT ID1'. } else { // No user is signed in. } }); multi - tenancy . js Email/password accounts The following example shows how to register a new user: Web version 9 import { createUserWithEmailAndPassword } from \"firebase/auth\" ; auth . tenantId = 'TENANT ID' ; createUserWithEmailAndPassword ( auth , email , password ) . then (( userCredential ) = > { // User is signed in. // userCredential.user.tenantId is 'TENANT ID'. }). catch (( error ) = > { // Handle / display error. // ... }); multitenant signup password . js Web version 8 firebase . auth (). tenantId = 'TENANT ID' ; firebase . auth (). createUserWithEmailAndPassword ( email , password ) . then (( result ) = > { // result.user.tenantId is 'TENANT ID'. }). catch (( error ) = > { // Handle error. }); multi - tenancy . js To sign in an existing user: Web version 9 import { signInWithEmailAndPassword } from \"firebase/auth\" ; auth . tenantId = 'TENANT ID' ; signInWithEmailAndPassword ( auth , email , password ) . then (( userCredential ) = > { // User is signed in. // userCredential.user.tenantId is 'TENANT ID'. }). catch (( error ) = > { // Handle / display error. // ... }); multitenant signin password . js Web version 8 firebase . auth (). tenantId = 'TENANT ID' ; firebase . auth (). signInWithEmailAndPassword ( email , password ) . then (( result ) = > { // result.user.tenantId is 'TENANT ID'. }). catch (( error ) = > { // Handle error. }); multi - tenancy . js SAML To sign in with a SAML provider, instantiate a SAMLAuthProvider instance with the provider ID from the Google Cloud console: Web version 9 import { SAMLAuthProvider } from \"firebase/auth\" ; const provider = new SAMLAuthProvider ( \"saml.myProvider\" ); auth saml provider create . js Web version 8 const provider = new firebase . auth ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "auth.create",
+      "auth.currentUser",
+      "auth.currentUser.tenantId",
+      "auth.tenantId",
+      "error.tenantId",
+      "firebase.auth",
+      "iam.serviceAccountCreator",
+      "index.py",
+      "resourcemanager.projectIamAdmin",
+      "result.user.tenantId",
+      "saml.myProvider",
+      "user.tenantId"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.serviceAccountCreator",
+      "roles/resourcemanager.projectIamAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/identity-platform/docs/web/mfa",
+        "https://docs.cloud.google.com/identity-platform/docs/install-admin-sdk",
+        "https://docs.cloud.google.com/identity-platform/docs/how-to",
+        "https://docs.cloud.google.com/identity-platform/docs/multi-tenancy-authentication"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/identity-platform/docs/web/mfa",
+        "https://docs.cloud.google.com/identity-platform/docs/install-admin-sdk",
+        "https://docs.cloud.google.com/identity-platform/docs/how-to",
+        "https://docs.cloud.google.com/identity-platform/docs/multi-tenancy-authentication"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/identity-platform/docs/web/mfa",
+        "https://docs.cloud.google.com/identity-platform/docs/install-admin-sdk",
+        "https://docs.cloud.google.com/identity-platform/docs/how-to",
+        "https://docs.cloud.google.com/identity-platform/docs/multi-tenancy-authentication"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/identity-platform/docs/web/mfa",
+        "https://docs.cloud.google.com/identity-platform/docs/install-admin-sdk",
+        "https://docs.cloud.google.com/identity-platform/docs/how-to",
+        "https://docs.cloud.google.com/identity-platform/docs/multi-tenancy-authentication"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/identity-platform/docs/web/mfa",
+        "https://docs.cloud.google.com/identity-platform/docs/install-admin-sdk",
+        "https://docs.cloud.google.com/identity-platform/docs/how-to",
+        "https://docs.cloud.google.com/identity-platform/docs/multi-tenancy-authentication"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/identity-platform/docs/web/mfa",
+        "https://docs.cloud.google.com/identity-platform/docs/install-admin-sdk",
+        "https://docs.cloud.google.com/identity-platform/docs/how-to",
+        "https://docs.cloud.google.com/identity-platform/docs/multi-tenancy-authentication"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/identity-platform/docs/web/mfa",
+        "https://docs.cloud.google.com/identity-platform/docs/install-admin-sdk",
+        "https://docs.cloud.google.com/identity-platform/docs/how-to",
+        "https://docs.cloud.google.com/identity-platform/docs/multi-tenancy-authentication"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/identity-platform/docs/web/mfa",
+        "https://docs.cloud.google.com/identity-platform/docs/install-admin-sdk",
+        "https://docs.cloud.google.com/identity-platform/docs/how-to",
+        "https://docs.cloud.google.com/identity-platform/docs/multi-tenancy-authentication"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/identity-platform/docs/web/mfa",
+        "https://docs.cloud.google.com/identity-platform/docs/install-admin-sdk",
+        "https://docs.cloud.google.com/identity-platform/docs/how-to",
+        "https://docs.cloud.google.com/identity-platform/docs/multi-tenancy-authentication"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/identity-platform/docs/web/mfa",
+        "https://docs.cloud.google.com/identity-platform/docs/install-admin-sdk",
+        "https://docs.cloud.google.com/identity-platform/docs/how-to",
+        "https://docs.cloud.google.com/identity-platform/docs/multi-tenancy-authentication"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:22.488Z",
+  "source_step08_card": "data/step-08/current/products/identity-platform/card.json",
+  "product_name": "Identity Platform",
+  "product_slug": "identity-platform"
+}

@@ -1,0 +1,117 @@
+{
+  "feature_name": "FileUpload binary file upload",
+  "feature_slug": "fileupload-binary-file-upload",
+  "summary": "FileUpload supports uploading binary files.",
+  "extended_definition": "FileUpload supports uploading binary files.",
+  "lifecycle": {
+    "latest_feature_date": "2011-03-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/reference/add-ons-response-service/editor-file-scope-action-response",
+      "https://developers.google.com/apps-script/reference/add-ons-response-service/editor-file-scope-action-response-builder",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "Feature Binary files can be uploaded using FileUpload .",
+          "Fixed Fixed an issue where PDF documents uploaded and saved to Google Drive were being saved as blank files.",
+          "The editor's Find dialog now supports searching over all files in the project."
+        ]
+      },
+      {
+        "title": "\"Class EditorFileScopeActionResponseBuilder \\_|\\_ Apps Script \\_|\\_ Google\\",
+        "url": "https://developers.google.com/apps-script/reference/add-ons-response-service/editor-file-scope-action-response-builder",
+        "source_id": "site-docs-reference-3",
+        "final_score": 92,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Return EditorFileScopeActionResponse — A validated EditorFileScopeActionResponse . requestFileScopeForActiveDocument() Requests the drive.file scope for the current active Editor document. // Display a permissions dialog to the user, requesting drive.file scope for // the current document on behalf of this add-on.",
+          "AddOnsResponseService . newEditorFileScopeActionResponseBuilder () . requestFileScopeForActiveDocument () . build (); Note: To call this method, you must add the drive.file scope to the add-on's manifest.",
+          "Home Google Workspace Apps Script Reference Send feedback Class EditorFileScopeActionResponseBuilder Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Class EditorFileScopeActionResponse \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/add-ons-response-service/editor-file-scope-action-response",
+        "source_id": "site-docs-reference-3",
+        "final_score": 72,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Apps Script Reference Send feedback Class EditorFileScopeActionResponse Stay organized with collections Save and categorize content based on your preferences.",
+          "EditorFileScopeActionResponse Makes changes to an Editor, such as Google Docs, Sheets, or Slides in reaction to an action taken in the UI.",
+          "For example a request for drive.file scope for the current active document."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "drive.file"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/editor-file-scope-action-response-builder",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/editor-file-scope-action-response"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/editor-file-scope-action-response-builder",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/editor-file-scope-action-response"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/editor-file-scope-action-response-builder",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/editor-file-scope-action-response"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/editor-file-scope-action-response-builder",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/editor-file-scope-action-response"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:15.255Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script"
+}

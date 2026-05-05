@@ -1,0 +1,94 @@
+{
+  "feature_name": "H3",
+  "feature_slug": "h3",
+  "summary": "Migrates VMs to Compute Engine C3, H3, and M3 machine types that support NVMe and gVNIC.",
+  "extended_definition": "Migrates VMs to Compute Engine C3, H3, and M3 machine types that support NVMe and gVNIC.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/rest/v1/ComputeEngineBootOption",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/rest/v1/ComputeEngineDiskType"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"ComputeEngineBootOption \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/rest/v1/ComputeEngineBootOption",
+        "source_id": "site-iam-reference",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Migration Migrate to Virtual Machines Reference Send feedback ComputeEngineBootOption Stay organized with collections Save and categorize content based on your preferences.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-07-28 UTC.\"],[],[]]",
+          "Enums COMPUTE ENGINE BOOT OPTION UNSPECIFIED The boot option is unknown."
+        ]
+      },
+      {
+        "title": "\"Supported operating systems \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+        "source_id": "site-docs-reference",
+        "final_score": 177,
+        "relevance": "",
+        "evidence_snippets": [
+          "Support for Compute Engine machine series Migrate to Virtual Machines supports migrating virtual machine instances (VMs) to Compute Engine 1st, 2nd, 3rd, and 4th generation machine series .",
+          "OS Version Default license License option BIOS to UEFI conversion supported Arm supported AlmaLinux 8.3 - 8.10 N/A N/A Yes Yes 9.0 - 9.6 N/A N/A Yes Yes 10.0 N/A N/A No Yes CentOS Stream 8 N/A N/A Yes No Stream 9 N/A N/A Yes No Debian 11.0 - 11.6 N/A N/A Yes Yes 12 N/A N/A Yes Yes 13.0 - 13.2 N/A N/A Yes Yes RHEL 7.9 PAYG PAYG with ELS (see Append RHEL ELS licenses ) Yes No 8.0 - 8.10 PAYG PAYG Yes Yes 8.0 - 8.10 SAP PAYG PAYG No No 9.0 - 9.2 PAYG PAYG Yes Yes 9.0 - 9.2 SAP PAYG PAYG No No 9.3 - 9.4 PAYG PAYG No No 10.0 PAYG PAYG Yes Yes Rocky Linux 8.4 - 8.5 N/A N/A No Yes 9 N/A N/A Yes Yes SLES 12 SP5 PAYG PAYG Yes No 15 SP3 PAYG PAYG Yes No 15 SP5 PAYG PAYG Yes Yes Ubuntu 20.04.0 - 20.04.04 N/A N/A Yes Yes 22.04 N/A N/A Yes Yes 24.04 N/A N/A Yes Yes Windows Server (Essentials, Standard, and Datacenter) 2016 PAYG BYOL 1 Yes N/A 2019 PAYG BYOL 1 Yes N/A 2022 PAYG N/A Yes N/A 2025 PAYG N/A No N/A Image import You can import a virtual disk to Compute Engine using Migrate to Virtual Machines, if the VM is running an operating system that is listed in the following table.",
+          "In order to make sure that the guest environment functions properly, follow the steps in Loaded services for the guest environment and if needed, the Troubleshooting steps for Compute Engine ."
+        ]
+      },
+      {
+        "title": "\"Supported operating systems \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+        "source_id": "site-docs-root-2",
+        "final_score": 177,
+        "relevance": "",
+        "evidence_snippets": [
+          "Support for Compute Engine machine series Migrate to Virtual Machines supports migrating virtual machine instances (VMs) to Compute Engine 1st, 2nd, 3rd, and 4th generation machine series .",
+          "OS Version Default license License option BIOS to UEFI conversion supported Arm supported AlmaLinux 8.3 - 8.10 N/A N/A Yes Yes 9.0 - 9.6 N/A N/A Yes Yes 10.0 N/A N/A No Yes CentOS Stream 8 N/A N/A Yes No Stream 9 N/A N/A Yes No Debian 11.0 - 11.6 N/A N/A Yes Yes 12 N/A N/A Yes Yes 13.0 - 13.2 N/A N/A Yes Yes RHEL 7.9 PAYG PAYG with ELS (see Append RHEL ELS licenses ) Yes No 8.0 - 8.10 PAYG PAYG Yes Yes 8.0 - 8.10 SAP PAYG PAYG No No 9.0 - 9.2 PAYG PAYG Yes Yes 9.0 - 9.2 SAP PAYG PAYG No No 9.3 - 9.4 PAYG PAYG No No 10.0 PAYG PAYG Yes Yes Rocky Linux 8.4 - 8.5 N/A N/A No Yes 9 N/A N/A Yes Yes SLES 12 SP5 PAYG PAYG Yes No 15 SP3 PAYG PAYG Yes No 15 SP5 PAYG PAYG Yes Yes Ubuntu 20.04.0 - 20.04.04 N/A N/A Yes Yes 22.04 N/A N/A Yes Yes 24.04 N/A N/A Yes Yes Windows Server (Essentials, Standard, and Datacenter) 2016 PAYG BYOL 1 Yes N/A 2019 PAYG BYOL 1 Yes N/A 2022 PAYG N/A Yes N/A 2025 PAYG N/A No N/A Image import You can import a virtual disk to Compute Engine using Migrate to Virtual Machines, if the VM is running an operating system that is listed in the following table.",
+          "In order to make sure that the guest environment functions properly, follow the steps in Loaded services for the guest environment and if needed, the Troubleshooting steps for Compute Engine ."
+        ]
+      },
+      {
+        "title": "\"ComputeEngineDiskType \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/rest/v1/ComputeEngineDiskType",
+        "source_id": "site-iam-reference",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Migration Migrate to Virtual Machines Reference Send feedback ComputeEngineDiskType Stay organized with collections Save and categorize content based on your preferences.",
+          "COMPUTE ENGINE DISK TYPE BALANCED An alternative to SSD persistent disks that balance performance and cost.",
+          "COMPUTE ENGINE DISK TYPE STANDARD A Standard disk type."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:28.107Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-virtual-machines/card.json",
+  "product_name": "Migrate to Virtual Machines",
+  "product_slug": "migrate-to-virtual-machines"
+}

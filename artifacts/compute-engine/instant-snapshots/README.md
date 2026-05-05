@@ -1,0 +1,48 @@
+# Instant snapshots
+
+Product: Compute Engine
+Feature slug: `instant-snapshots`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Instant snapshots provide in-place disk backups that can be restored to new disks in under a minute within the same location.
+
+## Lifecycle
+
+- Latest feature date: 2024-08-01
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access (evidence: [https://developers.google.com/compute/docs/disks/data-protection](https://developers.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/disks/data-protection](https://docs.cloud.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines))
+- allow (evidence: [https://developers.google.com/compute/docs/disks/data-protection](https://developers.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/disks/data-protection](https://docs.cloud.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines))
+- audit (evidence: [https://developers.google.com/compute/docs/disks/data-protection](https://developers.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/disks/data-protection](https://docs.cloud.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines))
+- auth (evidence: [https://developers.google.com/compute/docs/disks/data-protection](https://developers.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/disks/data-protection](https://docs.cloud.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines))
+- certificate (evidence: [https://developers.google.com/compute/docs/disks/data-protection](https://developers.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/disks/data-protection](https://docs.cloud.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines))
+- confidential (evidence: [https://developers.google.com/compute/docs/disks/data-protection](https://developers.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/disks/data-protection](https://docs.cloud.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines))
+- constraint (evidence: [https://developers.google.com/compute/docs/disks/data-protection](https://developers.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/disks/data-protection](https://docs.cloud.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines))
+- credential (evidence: [https://developers.google.com/compute/docs/disks/data-protection](https://developers.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/disks/data-protection](https://docs.cloud.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines))
+- encrypt (evidence: [https://developers.google.com/compute/docs/disks/data-protection](https://developers.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/disks/data-protection](https://docs.cloud.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines))
+- iam (evidence: [https://developers.google.com/compute/docs/disks/data-protection](https://developers.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/disks/data-protection](https://docs.cloud.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines))
+- identity (evidence: [https://developers.google.com/compute/docs/disks/data-protection](https://developers.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/disks/data-protection](https://docs.cloud.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines))
+- key (evidence: [https://developers.google.com/compute/docs/disks/data-protection](https://developers.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/disks/data-protection](https://docs.cloud.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines))
+- kms (evidence: [https://developers.google.com/compute/docs/disks/data-protection](https://developers.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/disks/data-protection](https://docs.cloud.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines))
+- logging (evidence: [https://developers.google.com/compute/docs/disks/data-protection](https://developers.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/disks/data-protection](https://docs.cloud.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines))
+- permission (evidence: [https://developers.google.com/compute/docs/disks/data-protection](https://developers.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/disks/data-protection](https://docs.cloud.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines))
+- policy (evidence: [https://developers.google.com/compute/docs/disks/data-protection](https://developers.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/disks/data-protection](https://docs.cloud.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines))
+- private (evidence: [https://developers.google.com/compute/docs/disks/data-protection](https://developers.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/disks/data-protection](https://docs.cloud.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines))
+- role (evidence: [https://developers.google.com/compute/docs/disks/data-protection](https://developers.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/disks/data-protection](https://docs.cloud.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines))
+- security (evidence: [https://developers.google.com/compute/docs/disks/data-protection](https://developers.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/disks/data-protection](https://docs.cloud.google.com/compute/docs/disks/data-protection), [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines))
+
+## Official Evidence
+
+- [https://developers.google.com/compute/docs/disks/data-protection](https://developers.google.com/compute/docs/disks/data-protection)
+- [https://docs.cloud.google.com/compute/docs/disks/data-protection](https://docs.cloud.google.com/compute/docs/disks/data-protection)
+- [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines)

@@ -1,0 +1,128 @@
+{
+  "feature_name": "config-connector resource export",
+  "feature_slug": "config-connector-resource-export",
+  "summary": "The config-connector tool can export Google Cloud resources into Config Connector manifests.",
+  "extended_definition": "The config-connector tool can export Google Cloud resources into Config Connector manifests.",
+  "lifecycle": {
+    "latest_feature_date": "2020-06-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/organization-scoped-resources"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Bulk importing and exporting existing Google Cloud resources \\_|\\_ Config\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+        "source_id": "site-docs-reference",
+        "final_score": 206,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Bulk importing and exporting existing Google Cloud resources This page describes the config-connector bulk-export command and how to use it to export Google Cloud resources into Config Connector YAML files which you can subsequently import into Config Connector. config-connector bulk-export uses Cloud Asset Inventory 's Export functionality to discover existing Google Cloud resources.",
+          "For example, if you want to only import PubSubTopic assets from the file EXPORT FILE , run the following command: cat EXPORT FILE jq '. select( .asset type == \"pubsub.googleapis.com/Topic\" )' config-connector bulk-export Exporting an inventory with config-connector The config-connector bulk-export tool can export resources from a Google Cloud Resource hierarchy .",
+          "Save the topic asset's JSON structure into an environment variable: TOPIC ASSET = '{\"name\":\"//pubsub.googleapis.com/' \" ${ TOPIC RESOURCE NAME } \" '\",\"asset type\":\"pubsub.googleapis.com/Topic\"}' Pass the asset into config-connector bulk-export by running the following command: echo ${ TOPIC ASSET } config-connector bulk-export The output is a Config Connector resource in YAML format. --- apiVersion : pubsub.cnrm.cloud.google.com/v1beta1 kind : PubSubTopic metadata : annotations : cnrm.cloud.google.com/project-id : PROJECT ID name : sample-topic ..."
+        ]
+      },
+      {
+        "title": "Export and import resources to Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+        "source_id": "site-docs-reference",
+        "final_score": 198,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The output should resemble the following example: apiVersion : pubsub.cnrm.cloud.google.com/v1beta1 kind : PubSubTopic metadata : annotations : cnrm.cloud.google.com/project-id : my-example-project name : sample-topic Import a resource into Config Connector After you have the YAML file for the resource that you want Config Connector to acquire, complete the following steps: Pass your resource into Config Connector by running the following command: config-connector export RESOURCE ID kubectl apply -f - --namespace NAMESPACE Replace NAMESPACE with the namespace that Config Connector manages resources from.",
+          "After Config Connector acquires the resource, you can manage that resource by following the steps in Managing and deleting resources . config-connector CLI tool optional fields When running the config-connector export command, you can pass the following optional fields: config-connector export RESOURCE NAME \\ --output FILENAME \\ --oauth2-token TOKEN \\ --iam-format [policy policymember none] \\ --filter-deleted-iam-members [true false] \\ --verbose --output : An optional output path that disables standard output.",
+          "Export and import resources to Config Connector This page describes the config-connector export command and how to use it to export Google Cloud resources into YAML files, which you can subsequently import into Config Connector."
+        ]
+      },
+      {
+        "title": "\"Organization-scoped resources \\_|\\_ Config Connector \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/organization-scoped-resources",
+        "source_id": "site-docs-reference",
+        "final_score": 149,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: You must create the namespace and annotation before applying any resources into the namespace.",
+          "Here is an example of what a resource's YAML will look like with this annotation in it: apiVersion : foo.cnrm.cloud.google.com/v1beta1 kind : FooBar metadata : annotations : cnrm.cloud.google.com/organization-id : ORGANIZATION ID name : foobarname Annotate namespace configuration You can set a default organization ID for newly-created resources by annotating your Kubernetes namespace.",
+          "In order for Config Connector to determine where to create your resources, it first checks for a scope-defining field in your resource spec, if not found, then checks for a scope-defining annotation ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudasset.googleapis.com",
+      "cnrm.cloud.google.com",
+      "foo.cnrm.cloud.google.com",
+      "pubsub.cnrm.cloud.google.com",
+      "pubsub.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/organization-scoped-resources"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/organization-scoped-resources"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/organization-scoped-resources"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/organization-scoped-resources"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/organization-scoped-resources"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:47.576Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector"
+}

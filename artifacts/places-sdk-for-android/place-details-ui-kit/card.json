@@ -1,0 +1,134 @@
+{
+  "feature_name": "Place Details UI Kit",
+  "feature_slug": "place-details-ui-kit",
+  "summary": "The Place Details UI Kit provides UI components for displaying place details in an app; The Place Details UI Kit was available as an experimental UI component for displaying place details.",
+  "extended_definition": "The Place Details UI Kit provides UI components for displaying place details in an app; The Place Details UI Kit was available as an experimental UI component for displaying place details.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/places/android-sdk/details-place",
+      "https://developers.google.com/maps/documentation/places/android-sdk/place-details-ui-kit",
+      "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-custom-styling",
+      "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/place-details-ui-kit",
+        "source_id": "site-docs-root",
+        "final_score": 294,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Compact view Full view Place photo Lightbox enabled for full-screen photo enlargement Place address Rating and rating count Place type Price Accessible entrance information Open now status Place photo collage Place address Rating and rating count Place type Price Accessibility info Open now status Open hours Editorial summary Website Phone number Reviews rendered in dedicated tab Plus code Feature list, rendered in a dedicated tab Type-specific highlights, such as gas prices for gas stations Billing When using the Place Details UI Kit, you are billed for each time the .loadWithPlaceId() , .loadWithResourceName() , or loadWithCoordinates() method is called.",
+          "Select platform: Android iOS JavaScript Place Details component The Place Details component of the Places UI Kit lets you add an individual UI component that displays place details in your app.",
+          "LENGTH LONG ). show () moveToSydney () } } // enableEdgeToEdge() allows the app to draw behind the system bars for a more immersive experience. enableEdgeToEdge () binding = ActivityMainBinding . inflate ( layoutInflater ) setContentView ( binding . root ) binding . dismissButton . setOnClickListener { dismissPlaceDetails () } // --- Crucial: Initialize Places SDK --- // It&#39;s essential to initialize the Places SDK before making any other Places API calls. // This should ideally be done once, for example, in the Application&#39;s onCreate. val apiKey = BuildConfig ."
+        ]
+      },
+      {
+        "title": "Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-custom-styling",
+        "source_id": "site-docs-root",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Select platform: Android iOS JavaScript Customizeable style properties Visual customization examples You can customize the colors, typography, spacing, borders, and corners of these Places UI kit components and non-UI kit features: Place Details component Place Search component Basic Place Autocomplete component Non-UI Kit Place Autocomplete widget Places UI kit offers a design system approach to visual customization roughly based on Material Design (with some Google-Maps-specific modifications).",
+          "Any theme attributes that are not overridden use the default styles. < style name = \"CustomizedPlaceDetailsTheme\" parent = \"PlacesMaterialTheme\" > < item name = \"placesColorPrimary\" > @color / app primary color < / item > < item name = \"placesColorOnSurface\" > @color / app color on surface < / item > < item name = \"placesColorOnSurfaceVariant\" > @color / app color on surface < / item > < item name = \"placesTextAppearanceBodySmall\" > @style / app text appearence small < / item > < item name = \"placesCornerRadius\" > 20 dp < / item > < / style > Important: The Places UI Kit provides a dark theme by default, so you may need to customize both dark and light themes.",
+          "To create a dark theme, add an entry for the colors in values-night/colors.xml Customization tool Use this tool to visualize custom configurations in a Places UI Kit element."
+        ]
+      },
+      {
+        "title": "Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-overview",
+        "source_id": "site-docs-root",
+        "final_score": 244,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Places UI Kit provides the following components for rendering Places data: Place Details renders details for a selected place.",
+          "Similarly, a Places UI Kit Place Details request may return photos, price, and rating for a selected place, but you will only be billed for the Places UI Kit Place Details request.",
+          "Select platform: Android iOS JavaScript Places UI Kit The Places UI Kit component library lets you bring the familiar Google Maps user experience for Places to your apps and web pages, using the same data that powers the Places API."
+        ]
+      },
+      {
+        "title": "Place Details (New) \\_|\\_ Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/details-place",
+        "source_id": "site-docs-root",
+        "final_score": 235,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Place Details example The following example requests the ID , DISPLAY NAME , and FORMATTED ADDRESS fields for the Empire State Building in New York City. // Define a place ID. final String placeId = \"ChIJaXQRs6lZwokRY6EFpJnhNNE\" ; // Specify the list of fields to return. final List<Place .",
+          "The following fields trigger the Place Details Essentials SKU : Place.Field.ADDRESS COMPONENTS ADR FORMAT ADDRESS Place.Field.FORMATTED ADDRESS Use instead of Place.Field.ADDRESS (deprecated).",
+          "Place.Field.WEBSITE URI The following fields trigger the Place Details Enterprise Plus SKU : Place.Field.ALLOWS DOGS Place.Field.CURBSIDE PICKUP Place.Field.DELIVERY Place.Field.DINE IN Place.Field.EDITORIAL SUMMARY Place.Field.EV CHARGE OPTIONS Place.Field.FUEL OPTIONS Place.Field.GOOD FOR CHILDREN Place.Field.GOOD FOR GROUPS Place.Field.GOOD FOR WATCHING SPORTS Place.Field.LIVE MUSIC Place.Field.MENU FOR CHILDREN Place.Field.OUTDOOR SEATING Place.Field.PARKING OPTIONS Place.Field.PAYMENT OPTIONS Place.Field.RESERVABLE Place.Field.RESTROOM Place.Field.REVIEWS Place.Field.SERVES BEER Place.Field.SERVES BREAKFAST Place.Field.SERVES BRUNCH Place.Field.SERVES COCKTAILS Place.Field.SERVES COFFEE Place.Field.SERVES DESSERT Place.Field.SERVES DINNER Place.Field.SERVES LUNCH Place.Field.SERVES VEGETARIAN FOOD Place.Field.SERVES WINE Place.Field.TAKEOUT Optional parameters The optional parameters for FetchPlaceRequest are: Region code The region code used to format the response, specified as a two-character CLDR code value."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "colors.xml",
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/place-details-ui-kit",
+        "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-custom-styling",
+        "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-overview",
+        "https://developers.google.com/maps/documentation/places/android-sdk/details-place"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/place-details-ui-kit",
+        "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-custom-styling",
+        "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-overview",
+        "https://developers.google.com/maps/documentation/places/android-sdk/details-place"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/place-details-ui-kit",
+        "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-custom-styling",
+        "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-overview",
+        "https://developers.google.com/maps/documentation/places/android-sdk/details-place"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/place-details-ui-kit",
+        "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-custom-styling",
+        "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-overview",
+        "https://developers.google.com/maps/documentation/places/android-sdk/details-place"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:31.469Z",
+  "source_step08_card": "data/step-08/current/products/places-sdk-for-android/card.json",
+  "product_name": "Places SDK for Android",
+  "product_slug": "places-sdk-for-android"
+}

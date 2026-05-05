@@ -1,0 +1,184 @@
+{
+  "feature_name": "Gemini Code Assist admin feedback blocking",
+  "feature_slug": "gemini-code-assist-admin-feedback-blocking",
+  "summary": "Administrators can control whether developers can send Gemini Code Assist feedback.",
+  "extended_definition": "Administrators can control whether developers can send Gemini Code Assist feedback.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/configure-release-channels",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure Gemini Code Assist code customization \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "source_id": "site-docs-root",
+        "final_score": 285,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Gemini for Google Cloud Guides Send feedback Configure Gemini Code Assist code customization Stay organized with collections Save and categorize content based on your preferences.",
+          "Subset of the index You can create multiple repository groups and assign IAM roles to different IAM principals. data \"google iam policy\" \"foo\" { binding { role = \"roles/cloudaicompanion.repositoryGroupsUser\" members = [ \"test-user@example.com\" ] } } resource \"google gemini repository group iam policy\" \"foo\" { project = \" PROJECT ID \" location = \" REGION \" code repository index id = \" INDEX NAME \" repository group id = \" GROUP NAME \" policy data = data.google iam policy.foo.policy data } data \"google gemini repository group iam policy\" \"foo\" { project = \" PROJECT ID \" location = \" REGION \" code repository index id = \" INDEX NAME \" repository group id = \" GROUP NAME \" depends on = [ google gemini repository group iam policy.foo ] } You can also create a binding: resource \"google gemini repository group iam binding\" \"foo\" { project = \" PROJECT ID \" location = \" REGION \" code repository index id = \" INDEX NAME \" repository group id = \" GROUP NAME \" role = \"roles/cloudaicompanion.repositoryGroupsUser\" members = [ \"test-user@example.com\" ] } Replace the following: GROUP NAME : the repository group name you created in a preceding step to control access to your index using repository groups.",
+          "You also can create a repository group with repositories defined in a JSON (or YAML) file, formatted as follows: JSON [ { \"resource\" : \" REPOSITORY RESOURCE NAME \" , \"branchPattern\" : \"main dev\" }, { \"resource\" : \" REPOSITORY RESOURCE NAME \" , \"branchPattern\" : \"dev\" } ] YAML - resource : REPOSITORY RESOURCE NAME branchPattern : main dev - resource : REPOSITORY RESOURCE NAME branchPattern : dev To create a repository group based on a JSON or YAML file, in a shell environment, use the gemini code-repository-indexes repository-groups create command : JSON gcloud gemini code-repository-indexes repository-groups create REPOSITORY GROUP \\ --project = PROJECT ID \\ --location = REGION \\ --code-repository-index = INDEX NAME \\ --repositories = FILEPATH .json YAML gcloud gemini code-repository-indexes repository-groups create REPOSITORY GROUP \\ --project = PROJECT ID \\ --location = REGION \\ --code-repository-index = INDEX NAME \\ --repositories = FILEPATH .yaml If preferred, you can encrypt and control your data with a customer-managed encryption key (CMEK) through Cloud Key Management Service ."
+        ]
+      },
+      {
+        "title": "\"Set up Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 267,
+        "relevance": "",
+        "evidence_snippets": [
+          "After you set up Gemini Code Assist, you can view license assignments by navigating to the Admin for Gemini page, selecting your billing account, clicking Manage Gemini Code Assist Subscription , and then selecting the License management tab.",
+          "Before you can use services available to users with Gemini Code Assist Standard or Enterprise licenses, your team needs to perform the setup steps that are described in this document: Note: An administrator typically performs steps 1-4.",
+          "You can further configure your Gemini Code Assist installation by specifying your preferences using the top-level application taskbar: navigate to Code > Settings > Settings Extensions and search for Gemini Code Assist ."
+        ]
+      },
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "source_id": "site-docs-root-2",
+        "final_score": 266,
+        "relevance": "",
+        "evidence_snippets": [
+          "A successful check results in the following output: $ grpc-health-probe -addr cloudaicompanion.googleapis.com:443 -tls error: this server does not implement the grpc health protocol (grpc.health.v1.Health): GRPC target method can't be resolved An unsuccessful check results in the following output: timeout: failed to connect service \"cloudaicompanion.googleapis.com:443\" within 1s To obtain more details, run the following before grpc-health-probe : export GRPC GO LOG SEVERITY LEVEL=info IntelliJ There are no known issues for Gemini Code Assist for IntelliJ and other supported JetBrains IDEs.",
+          "Prompt Gemini Code Assist in a code file with a comment If you prefer, you can also prompt Gemini Code Assist in your code file with a comment by following these steps: VS Code On a new line, enter the comment Function to create a Cloud Storage bucket , and then press Enter (for Windows and Linux) or Return (for macOS).",
+          "This document describes how you can use Gemini Code Assist , an AI-powered collaborator in your IDE, to help you do the following in VS Code or IntelliJ and other supported JetBrains IDEs : Generate code for your project with code transformation."
+        ]
+      },
+      {
+        "title": "\"Configure Gemini Code Assist release channels \\_|\\_ Gemini for Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/configure-release-channels",
+        "source_id": "site-docs-root",
+        "final_score": 261,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions cloudaicompanion.releaseChannelSettings.create cloudaicompanion.releaseChannelSettings.delete cloudaicompanion.releaseChannelSettings.get cloudaicompanion.releaseChannelSettings.list cloudaicompanion.releaseChannelSettings.update cloudaicompanion.dataSharingWithGoogleSettings.create Configure release channels using an API: cloudaicompanion.settingBindings.releaseChannelSettingsCreate cloudaicompanion.settingBindings.releaseChannelSettingsDelete cloudaicompanion.settingBindings.releaseChannelSettingsGet cloudaicompanion.settingBindings.releaseChannelSettingsList cloudaicompanion.settingBindings.releaseChannelSettingsUpdate cloudaicompanion.settingBindings.releaseChannelSettingsUse Configure prompt and response sharing using an API: cloudaicompanion.settingBindings.dataSharingWithGoogleSettingsCreate cloudaicompanion.settingBindings.dataSharingWithGoogleSettingsUse View Gemini for Google Cloud administrator settings: cloudaicompanion.instances.queryEffectiveSetting cloudaicompanion.instances.queryEffectiveSettingBindings Configure Gemini Code Assist release channels Select one of the following options: Console In the Google Cloud console, go to the Admin for Gemini page.",
+          "Home Documentation AI and ML Gemini for Google Cloud Guides Send feedback Configure Gemini Code Assist release channels Stay organized with collections Save and categorize content based on your preferences.",
+          "Users in your organization who use Gemini Code Assist in their local IDE can use features and models based on the release channel configured for the project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaicompanion.dataSharingWithGoogleSettings.create",
+      "cloudaicompanion.googleapis.com",
+      "cloudaicompanion.instances.queryEffectiveSetting",
+      "cloudaicompanion.instances.queryEffectiveSettingBindings",
+      "cloudaicompanion.releaseChannelSettings.create",
+      "cloudaicompanion.releaseChannelSettings.delete",
+      "cloudaicompanion.releaseChannelSettings.get",
+      "cloudaicompanion.releaseChannelSettings.list",
+      "cloudaicompanion.releaseChannelSettings.update",
+      "cloudaicompanion.repositoryGroupsUser",
+      "cloudaicompanion.settingBindings.dataSharingWithGoogleSettingsCreate",
+      "cloudaicompanion.settingBindings.dataSharingWithGoogleSettingsUse",
+      "cloudaicompanion.settingBindings.releaseChannelSettingsCreate",
+      "cloudaicompanion.settingBindings.releaseChannelSettingsDelete",
+      "cloudaicompanion.settingBindings.releaseChannelSettingsGet",
+      "cloudaicompanion.settingBindings.releaseChannelSettingsList",
+      "cloudaicompanion.settingBindings.releaseChannelSettingsUpdate",
+      "cloudaicompanion.settingBindings.releaseChannelSettingsUse",
+      "data.google",
+      "example.com",
+      "grpc.health.v1.Health",
+      "policy.foo",
+      "policy.foo.policy"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudaicompanion.repositoryGroupsUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/configure-release-channels"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/configure-release-channels"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/configure-release-channels"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/configure-release-channels"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/configure-release-channels"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/configure-release-channels"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/configure-release-channels"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:07.404Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini"
+}

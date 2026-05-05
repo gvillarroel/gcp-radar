@@ -1,0 +1,118 @@
+{
+  "feature_name": "PLACES_COUNT_V2 function",
+  "feature_slug": "places-count-v2-function",
+  "summary": "A newer Place Count function that improves performance and supports batch processing of geographies.",
+  "extended_definition": "A newer Place Count function that improves performance and supports batch processing of geographies.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/function-queries",
+      "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/places-count",
+      "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/places-count-per-type-v2",
+      "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/places-count-v2"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "PLACES_COUNT_V2 function \\_|\\_ Places Insights \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/places-count-v2",
+        "source_id": "site-docs-reference",
+        "final_score": 382,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Output Table Schema The PLACES COUNT V2 function returns a table with the following columns: Column Name Data Type Description geo id STRING The unique identifier for the input geography, from the input geographies table. input geography GEOGRAPHY The original GEOGRAPHY object from the input geographies table. place count INTEGER The total number of places matching the filters. sample place ids ARRAY<STRING> An array of up to 250 Place IDs that match the criteria.",
+          "Home Products Google Maps Platform Documentation Web Services Places Insights Send feedback PLACES COUNT V2 function Stay organized with collections Save and categorize content based on your preferences.",
+          "The PLACES COUNT V2 function returns a BigQuery table containing place counts and sample Place IDs for multiple input geographies based on specified filters."
+        ]
+      },
+      {
+        "title": "\"PLACES_COUNT_PER_TYPE_V2 function \\_|\\_ Places Insights \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/places-count-per-type-v2",
+        "source_id": "site-docs-reference",
+        "final_score": 336,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Output Table Schema The PLACES COUNT PER TYPE V2 function returns a table with the following columns: Column Name Data Type Description geo id STRING The unique identifier for the input geography, from the input geographies table. input geography GEOGRAPHY The original GEOGRAPHY object from the input geographies table. place type STRING The place type from the target types array this row represents. place count INTEGER The number of places matching the place type and other filters within or near the geography. sample place ids ARRAY<STRING> An array of up to 250 Place IDs that match the criteria for this type and geography.",
+          "Benefits of Using PLACES COUNT PER TYPE V2 PLACES COUNT PER TYPE V2 offers several key advantages, particularly when compared to the older PLACES COUNT PER TYPE function: Batch Processing of Geographies: Unlike PLACES COUNT PER TYPE which processes one geography at a time, PLACES COUNT PER TYPE V2 accepts a TABLE of input geographies.",
+          "Home Products Google Maps Platform Documentation Web Services Places Insights Send feedback PLACES COUNT PER TYPE V2 function Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Query the dataset using Places Count functions \\_|\\_ Places Insights \\_\\",
+        "url": "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/function-queries",
+        "source_id": "site-docs-reference",
+        "final_score": 326,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Places Count function example The following example uses the PLACES COUNT V2 function with the custom input geography table my search area to return the number of operational restaurants within 1000 meters of the Empire State Building and Times Square in New York City: SELECT FROM PROJECT NAME .places insights us.PLACES COUNT V2 ( TABLE PROJECT NAME .",
+          "It is highly optimized for geospatial joins compared to PLACES COUNT and PLACES COUNT PER GEO functions. science PLACES COUNT PER TYPE V2 : Returns a table of place counts and sample Place IDs, categorized by place type.",
+          "In the next example, you apply filters to limit the search by minimum user rating, price level, business status, and whether the restaurant allows dogs, using the PLACES COUNT V2 function."
+        ]
+      },
+      {
+        "title": "PLACES_COUNT function \\_|\\_ Places Insights \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/places-count",
+        "source_id": "site-docs-reference",
+        "final_score": 293,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The route might be for a vehicle, a bicycle, or for a pedestrian: DECLARE geo GEOGRAPHY ; SET geo = ST GEOGFROMTEXT ( 'LINESTRING(-73.98903537033028 40.73655649223003,-73.93580216278471 40.80955538843361)' ); -- NYC line SELECT PROJECT NAME .places insights us.PLACES COUNT ( JSON OBJECT ( 'geography' , geo , -- line 'geography radius' , 100 , -- Radius around line 'types' , [ \"restaurant\" ] , 'min rating' , 1.0 , 'max rating' , 4.5 , 'min user rating count' , 1 , 'max user rating count' , 10000 , 'price level' , [ 'PRICE LEVEL INEXPENSIVE' , 'PRICE LEVEL MODERATE' ] , 'business status' , [ 'OPERATIONAL' ] , 'allows dogs' , TRUE ) ) as count ; The response for the line: Example: Combine the results of multiple calls You can combine the results of multiple calls to the PLACES COUNT function.",
+          "The next example uses filters to limit the search to only return a count of: Places of type restaurant with the minimum rating of 3 A price level of inexpensive or medium Currently operational Allows dogs SELECT PROJECT NAME .places insights us.PLACES COUNT ( JSON OBJECT ( 'geography' , ST GEOGPOINT ( - 73.9857 , 40.7484 ), -- Empire State Building 'geography radius' , 1000 , -- Radius in meters 'types' , [ \"restaurant\" ] , 'min rating' , 3 , 'price level' , [ 'PRICE LEVEL INEXPENSIVE' , 'PRICE LEVEL MODERATE' ] , 'business status' , [ 'OPERATIONAL' ] , 'allows dogs' , TRUE ) ) as count ; The filtered response: Remember that place dataset queries enforce a minimum count threshold of 5.",
+          "For example, you want a single result showing the number of restaurants for the following price levels within a specific area: PRICE LEVEL INEXPENSIVE PRICE LEVEL MODERATE PRICE LEVEL EXPENSIVE PRICE LEVEL VERY EXPENSIVE\" In this example, you create a loop to call the PLACES COUNT function for each price level, and insert the results of each call to a temporary table."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "boundaries.counties",
+      "data.geo",
+      "developers.google.com",
+      "us.PLACES"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/places-count-v2",
+        "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/places-count-per-type-v2",
+        "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/function-queries",
+        "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/places-count"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/places-count-v2",
+        "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/places-count-per-type-v2",
+        "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/function-queries",
+        "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/places-count"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:31.404Z",
+  "source_step08_card": "data/step-08/current/products/places-insights/card.json",
+  "product_name": "Places Insights",
+  "product_slug": "places-insights"
+}

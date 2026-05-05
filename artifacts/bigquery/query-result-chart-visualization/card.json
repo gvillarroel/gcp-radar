@@ -1,0 +1,106 @@
+{
+  "feature_name": "Query result chart visualization",
+  "feature_slug": "query-result-chart-visualization",
+  "summary": "BigQuery can visualize query results in the Chart tab of the query editor.",
+  "extended_definition": "BigQuery can visualize query results in the Chart tab of the query editor.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/arima-time-series-forecasting-with-limits-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+      "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Visualize geospatial analytics data using a Colab notebook \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter",
+        "source_id": "site-docs-root",
+        "final_score": 206,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This code uses the %%bigquery magic function to run the query and return the results in a DataFrame: Query the neighborhood name and geometry from the San Francisco neighborhoods dataset. %% bigquery gdf sanfrancisco neighborhoods -- project { GCP PROJECT ID } -- use geodataframe geometry SELECT neighborhood , neighborhood geom AS geometry FROM bigquery - public - data . san francisco neighborhoods . boundaries Click play circle filled Run cell .",
+          "This code uses the %%bigquery magic function to run the query and return the results in a DataFrame: Query the incident key and location data from the SFPD reports dataset. %% bigquery gdf incidents -- project { GCP PROJECT ID } -- use geodataframe location geography SELECT unique key , location geography FROM ( SELECT unique key , SAFE .",
+          "This code uses the %%bigquery magic function to run the query and return the results in a DataFrame: Query the station ID, station name, station short name, and station geometry from the bike share dataset."
+        ]
+      },
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 186,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner references Configuring BigQuery Data Transformation in BigQuery Partner Advantage page Direct link Databricks Solution Databricks Lakehouse Category BI, ML, & Advanced Analytics Description Databricks SQL provides an easy-to-use platform for analysts who want to run SQL queries on their data lake, create multiple visualization types to explore query results from different perspectives, and build and share dashboards.",
+          "Partner references BigQuery agent BigQuery Agent Example Partner Advantage page Direct link Vanna.ai Solution Vanna.ai Category BI, ML, & Advanced Analytics Description Vanni.ai is the Leading open source Python package to query large SQL databases in natural language at production scale with access control that's auditable, accurate, fast, and locally deployable so that code is transparent, results are useful and immediate, and data never leaves your premise.",
+          "Partner references BigQuery Integration Query Results Save Detection Google Cloud Monitoring Partner Advantage page Direct link Datafold Solution Datafold Category Data Quality, Observability, & FinOps Description Datafold is the unified platform for proactive data quality that combines automated data testing, data reconciliation, and observability to help data teams prevent data quality issues and accelerate their development velocity."
+        ]
+      },
+      {
+        "title": "\"Limit forecasted values for an ARIMA_PLUS time series model \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/arima-time-series-forecasting-with-limits-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 184,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the Query results pane, click the Visualization tab: The chart shows that the forecasted values for the daily total number of Citi Bike trips where start station id=79 are negative numbers, which isn't useful.",
+          "In the Query results pane, click the Visualization tab: The ARIMA PLUS model detects that the daily total number of Citi Bike trips where start station id=79 is decreasing.",
+          "The query results similar to the following: Use the Google Cloud console to chart the time series data."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter",
+        "https://docs.cloud.google.com/bigquery/docs/arima-time-series-forecasting-with-limits-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter",
+        "https://docs.cloud.google.com/bigquery/docs/arima-time-series-forecasting-with-limits-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter",
+        "https://docs.cloud.google.com/bigquery/docs/arima-time-series-forecasting-with-limits-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

@@ -1,0 +1,96 @@
+{
+  "feature_name": "Classic Certificates tab migration for load-balancer SSL certificates",
+  "feature_slug": "classic-certificates-tab-migration-for-load-balancer-ssl-certificates",
+  "summary": "Load Balancing SSL certificates are now available in the Certificate Manager page under the Classic Certificates tab.",
+  "extended_definition": "In Certificate Manager, Google Cloud now provides a **Classic Certificates** tab that lists certificates provisioned through Cloud Load Balancing, allowing users to view configured classic certificates for the selected project. The documented behavior is that these classic certificates are displayed in this tab but are not managed by Certificate Manager itself.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/certificate-manager/docs/certificates"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Deploy a global Google-managed certificate with load balancer authorization\\",
+        "url": "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-lb-auth",
+        "source_id": "site-docs-root",
+        "final_score": 60,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "Manage certificates \\_|\\_ Certificate Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/certificate-manager/docs/certificates",
+        "source_id": "site-docs-root",
+        "final_score": 59,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To see certificates provisioned through Cloud Load Balancing: In the Google Cloud console, go to the Classic Certificates tab on the Certificate Manager page.",
+          "Go to Certificate Manager On the Classic Certificates tab, you can view a list of all the configured classic certificates in the selected project.",
+          "Classic certificates aren't managed by Certificate Manager."
+        ]
+      },
+      {
+        "title": "\"Module pagers (1.12.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/certificatemanager/latest/google.cloud.certificate_manager_v1.services.certificate_manager.pagers",
+        "source_id": "site-python-reference",
+        "final_score": 54,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "The cited Certificate Manager certificates page documents the Classic Certificates tab location and scope, and explicitly states that classic certificates shown there are not managed by Certificate Manager."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/certificates"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/certificates"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/certificates"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/certificates"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:26.551Z",
+  "source_step08_card": "data/step-08/current/products/certificate-manager/card.json",
+  "product_name": "Certificate Manager",
+  "product_slug": "certificate-manager"
+}

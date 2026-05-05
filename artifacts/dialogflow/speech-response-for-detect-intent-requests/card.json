@@ -1,0 +1,92 @@
+{
+  "feature_name": "Speech Response for Detect Intent Requests",
+  "feature_slug": "speech-response-for-detect-intent-requests",
+  "summary": "Speech Response for detect intent requests returns spoken output alongside intent detection results.",
+  "extended_definition": "Speech Response for detect intent requests returns spoken output alongside intent detection results.",
+  "lifecycle": {
+    "latest_feature_date": "2018-07-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/ConversationTurn",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/DetectIntentResponse",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/DetectIntentResponseView"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "DetectIntentResponse \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/DetectIntentResponse",
+        "source_id": "site-docs-reference",
+        "final_score": 199,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A base64-encoded string. outputAudioConfig object ( OutputAudioConfig ) The config used by the speech synthesizer to generate the output audio. responseType enum ( ResponseType ) Response type. allowCancellation boolean Indicates whether the partial response can be cancelled when a later response arrives. e.g. if the agent specified some music as partial response, it can be cancelled.",
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Reference Send feedback DetectIntentResponse Stay organized with collections Save and categorize content based on your preferences.",
+          "JSON representation ResponseType The message returned from the DetectIntent method."
+        ]
+      },
+      {
+        "title": "DetectIntentResponseView \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/DetectIntentResponseView",
+        "source_id": "site-docs-reference",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DETECT INTENT RESPONSE VIEW BASIC Basic response view omits the following fields: - QueryResult.diagnostic info DETECT INTENT RESPONSE VIEW DEFAULT Default response view omits the following fields: - QueryResult.trace blocks Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Reference Send feedback DetectIntentResponseView Stay organized with collections Save and categorize content based on your preferences.",
+          "DETECT INTENT RESPONSE VIEW FULL Full response view includes all fields."
+        ]
+      },
+      {
+        "title": "ConversationTurn \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/ConversationTurn",
+        "source_id": "site-docs-reference",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The diagnostic [info][Session.DetectIntentResponse.QueryResult.diagnostic info] output for the turn.",
+          "JSON representation UserInput JSON representation QueryInput JSON representation TextInput JSON representation IntentInput JSON representation AudioInput JSON representation InputAudioConfig JSON representation AudioEncoding SpeechModelVariant BargeInConfig JSON representation EventInput JSON representation DtmfInput JSON representation ToolCallResult JSON representation Error JSON representation VirtualAgentOutput JSON representation TestRunDifference JSON representation DiffType One interaction between a human and virtual agent.",
+          "JSON representation { \"input\" : { object ( QueryInput ) } , \"injectedParameters\" : { object } , \"isWebhookEnabled\" : boolean , \"enableSentimentAnalysis\" : boolean } Fields input object ( QueryInput ) Supports text input , event input , dtmf input in the test case. injectedParameters object ( Struct format) Parameters that need to be injected into the conversation during intent detection. isWebhookEnabled boolean If webhooks should be allowed to trigger in response to the user utterance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/DetectIntentResponse",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/ConversationTurn",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/DetectIntentResponseView"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:58.946Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

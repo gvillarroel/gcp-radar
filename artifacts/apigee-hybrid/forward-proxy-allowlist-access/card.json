@@ -1,0 +1,210 @@
+{
+  "feature_name": "Forward proxy allowlist access",
+  "feature_slug": "forward-proxy-allowlist-access",
+  "summary": "Apigee Hybrid forward proxy now allows pass-through access to allowlisted URLs, requiring allowlists only for googleapis.com endpoints on the proxy server.",
+  "extended_definition": "Apigee Hybrid forward proxy now allows pass-through access to allowlisted URLs, requiring allowlists only for googleapis.com endpoints on the proxy server.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+      "https://docs.cloud.google.com/apigee/docs/hybrid/v1.12/allow-gcp-urls",
+      "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/forward-proxy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Cloud URLs to allow for Hybrid | Apigee | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.12/allow-gcp-urls",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 354,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see: Proxy and firewall rules for Anthos on-prem Proxy allowlist for Anthos multi-cloud Google Cloud URLs for data residency If you are using forward proxy with data residency , you must allowlist: CONTROL_PLANE_LOCATION -apigee.googleapis.com for each control plane location.",
+          "Tip: If your security protocols permit, you can allowlist *-apigee.googleapis.com Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "So the runtime needs to get an access token before making the call to apigee.googleapis.com. logging.googleapis.com This API is needed for the logging agent to send logs to Cloud Logging. monitoring.googleapis.com Cloud Monitoring service endpoint to export metrics. oauth2.googleapis.com Authentication and authorization pubsub.googleapis.com The runtime subscribes to a pubsub topic to learn when to initialize debug sessions. quay.io Container registry used by cert-manager ."
+        ]
+      },
+      {
+        "title": "Configure forward proxying for API proxies | Apigee | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/forward-proxy",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 316,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you only specify httpProxy , you must also ensure that *.googleapis.com is allowlisted for your Apigee Runtime pods to enable connectivity to these services.",
+          "This includes API proxy requests to Target Endpoints and communication with *.googleapis.com that the hybrid runtime makes for its debug and analytics pipeline and for policies like MessageLogging .",
+          "Logging Logging overview View logs Access logs Cassandra logs MART logs Runtime logs Synchronizer logs UDCA logs Metrics collection Metrics collection overview Configure metrics collection View metrics Other data collection Runtime Services Runtime service configuration overview Manage runtime plane components Cassandra Configure Cassandra for production StorageClass configuration Backup and recovery TLS configuration Scale down Environments About environments Managing environments Create environments Delete environments Base path routing Generate self-signed TLS certificates MART MART configuration Add the MART IP to an org Synchronizer Service accounts About service accounts Service account validation Obtain TLS credentials: An example Cluster Management Cluster requirements Overview GKE non-production GKE production Anthos GKE non-production Anthos GKE production Configure ports and set up firewalls Secure the runtime installation Data encryption Multi-region deployments on GKE and GKE on-prem Multi-region deployments on AKS Configure static IP addresses Scale and autoscale services Configure dedicated node pools Download signed runtime images Apigee deployment services Rolling updates Upgrading Apigee hybrid Configuration property reference Release notes LOGGING Audit logging Audit logging for Apigee Connect Logging Apigee access logs TEST Customer security testing requests Performance testing TROUBLESHOOT Troubleshooting the Apigee installation Logging Apigee access logs AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Application development Apigee Guides Send feedback Configure forward proxying for API proxies Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Configuration property reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "source_id": "site-docs-reference",
+        "final_score": 247,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "By default, it uses HTTPS . envs[].httpProxy.username Basic Introduced in version: 1.2.0 Default value: None Chart: apigee-env If the HTTP proxy requires basic authentication, then use this property to provide a username. envs[].httpProxy.password Basic Introduced in version: 1.2.0 Default value: None Chart: apigee-env If the HTTP proxy requires basic authentication, then use this property to provide a password. envs[].managementCallsSkipProxy Advanced Introduced in version: 1.15.1 Default value: false Chart: apigee-env If set to true for environment-level forward proxy, trace and analytics (which use googleapis.com ) will skip forward proxy.",
+          "The NO PROXY variable should be defined as a comma-separated string of host names, in the format: logger: ... envVars: NO PROXY: ' <comma-separated-values> ' for example: envVars: NO PROXY: 'kubernetes.default.svc,oauth2.googleapis.com,logging.googleapis.com' Use envVars: NO PROXY optionally when you have HTTP forward proxy enabled.",
+          "Targets in the proxy (including googleapis.com ) will be routed via the forward proxy."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "developers.apps.keys.create",
+      "environments.analytics.reports.dailysupp",
+      "gcr.io",
+      "googleapis.com",
+      "iamcredentials.googleapis.com",
+      "kubernetes.default.svc",
+      "logging.googleapis.com",
+      "monitoring.googleapis.com",
+      "oauth2.googleapis.com",
+      "pubsub.googleapis.com",
+      "quay.io",
+      "v1.10",
+      "v1.12",
+      "v1.14"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.12/allow-gcp-urls",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/forward-proxy",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.12/allow-gcp-urls",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/forward-proxy",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.12/allow-gcp-urls",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/forward-proxy",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.12/allow-gcp-urls",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/forward-proxy",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.12/allow-gcp-urls",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/forward-proxy",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.12/allow-gcp-urls",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/forward-proxy",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.12/allow-gcp-urls",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/forward-proxy",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.12/allow-gcp-urls",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/forward-proxy",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.12/allow-gcp-urls",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/forward-proxy",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.12/allow-gcp-urls",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/forward-proxy",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.12/allow-gcp-urls",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/forward-proxy",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.12/allow-gcp-urls",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/forward-proxy",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.12/allow-gcp-urls",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/forward-proxy",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.12/allow-gcp-urls",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/forward-proxy",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:06.056Z",
+  "source_step08_card": "data/step-08/current/products/apigee-hybrid/card.json",
+  "product_name": "Apigee hybrid",
+  "product_slug": "apigee-hybrid"
+}

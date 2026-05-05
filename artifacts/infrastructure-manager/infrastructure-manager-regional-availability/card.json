@@ -1,0 +1,198 @@
+{
+  "feature_name": "Infrastructure Manager regional availability",
+  "feature_slug": "infrastructure-manager-regional-availability",
+  "summary": "Infrastructure Manager became available in additional regions across Asia Pacific, Europe, and the Americas.",
+  "extended_definition": "Infrastructure Manager became available in additional regions across Asia Pacific, Europe, and the Americas.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/infrastructure-manager/docs/authentication",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/reference/libraries"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Deploy infrastructure using Infrastructure Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "source_id": "site-docs-root",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Infrastructure as code Infrastructure Manager Guides Send feedback Deploy infrastructure using Infrastructure Manager Stay organized with collections Save and categorize content based on your preferences.",
+          "ENFORCED : Enforce quota validation so that your deployment will fail if there isn't sufficient quota available for the infrastructure defined in your Terraform configuration file.",
+          "ENFORCED : Enforce quota validation so that your deployment will fail if there isn't sufficient quota available for the infrastructure defined in your Terraform configuration file."
+        ]
+      },
+      {
+        "title": "\"Manage Infrastructure Manager resources using custom constraints \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "source_id": "site-iam-reference",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Description Constraint syntax Disable importing existing resources for new deployments name : organizations/ ORGANIZATION ID /customConstraints/custom.disallowImportExistingResources resourceTypes : ‐ config.googleapis.com/Deployment methodTypes : ‐ CREATE condition : \"resource.importExistingResources == true\" actionType : DENY displayName : Reject existing resources description : New deployments disallow the import of existing resources Infrastructure Manager supported resources The following table lists the Infrastructure Manager resources that you can reference in custom constraints.",
+          "Home Documentation Infrastructure as code Infrastructure Manager Guides Send feedback Manage Infrastructure Manager resources using custom constraints Stay organized with collections Save and categorize content based on your preferences.",
+          "Test the policy Try to create a Infra Manager deployment that imports existing resources in the project: gcloud infra-manager deployments apply projects/ PROJECT ID /locations/us-central1/deployments/quickstart-deployment \\ --service-account = projects/ PROJECT ID /serviceAccounts/ SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com \\ --git-source-repo = https://github.com/terraform-google-modules/terraform-google-network \\ --git-source-directory = modules/vpc \\ --git-source-ref = main \\ --input-values = project id = PROJECT ID ,network name = quickstart-vpc The output is the following: Operation denied by custom org policies: [\"customConstraints/custom.disallowImportExistingResources\": \"New deployments disallow the import of existing resources.\"] Example custom organization policies for common use cases This table provides syntax examples for some common custom constraints."
+        ]
+      },
+      {
+        "title": "\"Authenticate to Infra Manager \\_|\\_ Infrastructure Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/authentication",
+        "source_id": "site-api-reference",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Infrastructure as code Infrastructure Manager Reference Send feedback Authenticate to Infra Manager Stay organized with collections Save and categorize content based on your preferences.",
+          "How you authenticate to Infrastructure Manager depends on the interface you use to access the API and the environment where your code is running.",
+          "Before you complete these instructions, you must complete the basic setup for Infra Manager, as described in Enable Infrastructure Manager ."
+        ]
+      },
+      {
+        "title": "\"Infra Manager client libraries \\_|\\_ Infrastructure Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/reference/libraries",
+        "source_id": "site-api-reference",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Infrastructure as code Infrastructure Manager Reference Send feedback Infra Manager client libraries Stay organized with collections Save and categorize content based on your preferences.",
+          "This page shows how to get started with the Cloud Client Libraries for the Infrastructure Manager API.",
+          "Additional resources C++ The following list contains links to more resources related to the client library for C++: API reference Client libraries best practices Issue tracker on Stack Overflow Source code C# The following list contains links to more resources related to the client library for C#: API reference Client libraries best practices Issue tracker on Stack Overflow Source code Go The following list contains links to more resources related to the client library for Go: API reference Client libraries best practices Issue tracker on Stack Overflow Source code Java The following list contains links to more resources related to the client library for Java: API reference Client libraries best practices Issue tracker on Stack Overflow Source code Node.js The following list contains links to more resources related to the client library for Node.js: API reference Client libraries best practices Issue tracker on Stack Overflow Source code PHP The following list contains links to more resources related to the client library for PHP: API reference Client libraries best practices Issue tracker on Stack Overflow Source code Python The following list contains links to more resources related to the client library for Python: API reference Client libraries best practices Issue tracker on Stack Overflow Source code Ruby The following list contains links to more resources related to the client library for Ruby: API reference Client libraries best practices Issue tracker on Stack Overflow Source code Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud",
+      "config.admin",
+      "config.googleapis.com",
+      "custom.disallowImportExistingResources",
+      "github.com",
+      "iam.gserviceaccount.com",
+      "orgpolicy.policyAdmin",
+      "pom.xml",
+      "resource.importExistingResources"
+    ],
+    "missing_inventory_roles": [
+      "roles/config.admin",
+      "roles/orgpolicy.policyAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/libraries"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/libraries"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/libraries"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/libraries"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/libraries"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/libraries"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/libraries"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/libraries"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/libraries"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/libraries"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:22.573Z",
+  "source_step08_card": "data/step-08/current/products/infrastructure-manager/card.json",
+  "product_name": "Infrastructure Manager",
+  "product_slug": "infrastructure-manager"
+}

@@ -1,0 +1,106 @@
+{
+  "feature_name": "Bigtable support in Database Center",
+  "feature_slug": "bigtable-support-in-database-center",
+  "summary": "Bigtable is now supported in Database Center, which surfaces Bigtable availability and data-protection health issues in a centralized AI-assisted dashboard.",
+  "extended_definition": "Bigtable is now supported in Database Center, which surfaces Bigtable availability and data-protection health issues in a centralized AI-assisted dashboard.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+      "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+      "https://docs.cloud.google.com/bigtable/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 96,
+        "relevance": "",
+        "evidence_snippets": [
+          "Nodes are given temporary responsibility for serving various ranges of data based on the operation load and the health of other nodes in the cluster. data center : similar to a Bigtable cluster, except some aspects of topology and replication strategy are configurable in Cassandra. rack : a grouping of nodes in a data center that influences replica placement. cluster : a group of nodes in the same geographic Google Cloud zone, colocated for latency and replication concerns. cluster : a Cassandra deployment consisting of a collection of data centers. instance : a group of Bigtable clusters in different Google Cloud zones or regions between which replication and connection routing occur. vnode : a fixed range of hash values assigned to a specific physical node.",
+          "The replication factor, which you configure for every keyspace, determines the number of data replicas that are stored in each data center in the cluster.",
+          "To help you compare Bigtable and Cassandra, this document does the following: Compares terminology, which can differ between the two databases."
+        ]
+      },
+      {
+        "title": "Migrate from DynamoDB to Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+        "source_id": "site-docs-reference-2",
+        "final_score": 90,
+        "relevance": "",
+        "evidence_snippets": [
+          "Invoice Payment row key Details 0680 0789 0123 {\"discount\": 0.10, \"sales tax usd\":\"8\", \"due date\":\"2023-10-03..\"} @ 2023-09-10T15:21:48 {\"amount usd\": 120, \"bill to\":\"John…\", \"address\":\"123 Abc St…\"} @ 2023-09-10T15:21:40 {\"amount usd\": 120, \"bill to\":\"Jane…\", \"address\":\"13 Xyz St…\"} @ 2023-09-10T15:21:31 row key Details 0275 0327 0124 {\"discount\": 0.20, \"sales tax usd\":\"11\", \"due date\":\"2023-10-03..\"} @ 2023-09-09T10:11:28 {\"amount usd\": 70, \"bill to\":\"Kate…\", \"address\":\"21 Zyx St…\"} @ 2023-09-09T10:11:03 {\"amount usd\": 180, \"bill to\":\"Bob…\", \"address\":\"321 Cba St…\"} @ 2023-09-09T10:11:10 As you can see in the previous examples, with the right schema design, Bigtable's wide-column model can be quite powerful and deliver many use cases that would require expensive multi-row transactions, secondary indexing, or on-delete cascade behavior in other databases.",
+          "Special effects are amazing. @ 2023-09-10T19:01:15 There seems to be an audio glitch at 1:05. @ 2023-09-10T16:30:42 0124 {\"480\": \"https://storage…\", \"720\":\"https://storage…\"} @2023-09-10T17:03:21 45 The style reminds me of a movie director but I can't put my finger on it. @2023-10-12T07:08:51 Adjacency list design pattern Consider a slightly different version of this design, which DynamoDB often refers to as the adjacency list design pattern.",
+          "25 https://storage… shoes#sneakers#brandA Step out in style and comfort with… 40 https://storage… shoes#sneakers#brandB Classic features with contemporary materials… 50 https://storage… Single table design pattern A single table design pattern brings together what would be multiple tables in a relational database into a single table in DynamoDB."
+        ]
+      },
+      {
+        "title": "Bigtable overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 76,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can also add clusters to replicate your data , which improves data availability and durability.",
+          "Bigtable architecture The following diagram shows a simplified version of Bigtable's overall architecture: As the diagram illustrates, all client requests go through a frontend server before they are sent to a Bigtable node. (In the original Bigtable paper , these nodes are called \"tablet servers.\") The nodes are organized into a Bigtable cluster, which belongs to a Bigtable instance, a container for the cluster.",
+          "Data durability When you use Bigtable, your data is stored on Colossus, a Google-developed, highly durable file system, using storage devices in Google Cloud's data centers."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+        "https://docs.cloud.google.com/bigtable/docs/overview"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+        "https://docs.cloud.google.com/bigtable/docs/overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+        "https://docs.cloud.google.com/bigtable/docs/overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:24.978Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable"
+}

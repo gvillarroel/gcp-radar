@@ -1,0 +1,113 @@
+{
+  "feature_name": "Partner Interconnect",
+  "feature_slug": "partner-interconnect",
+  "summary": "Partner Interconnect connects your network to Google's network through a supported service provider; Partner Interconnect connects your network to Google's network through a supported service provider.",
+  "extended_definition": "Partner Interconnect connects your network to Google's network through a supported service provider; Partner Interconnect connects your network to Google's network through a supported service provider.",
+  "lifecycle": {
+    "latest_feature_date": "2018-06-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-connectivity/docs/how-to/choose-product",
+      "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/interconnect/tutorials/partner-creating-999-availability",
+      "https://docs.cloud.google.com/network-connectivity/docs/interconnect/tutorials/partner-creating-9999-availability"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Establish 99.99% availability for Partner Interconnect \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/interconnect/tutorials/partner-creating-9999-availability",
+        "source_id": "site-iam-reference",
+        "final_score": 322,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The values of ipAddress and peerIpAddress of the BGP peer must match the values of cloudRouterIpAddress and customerRouterIpAddress of your attachment. gcloud compute routers describe router-central1 \\ --region us-central1 bgp: advertiseMode: DEFAULT asn: 16550 bgpPeers: — interfaceName: auto-ia-if-attachment-central-a-c2c53a710bd6c2e ipAddress: 169.254.67.201 managementType: MANAGED BY ATTACHMENT name: auto-ia-bgp-attachment-central-a-c2c53a710bd6c2e peerIpAddress: 169.254.67.202 creationTimestamp: '2018-01-25T07:14:43.068-08:00' description: 'test' id: '4370996577373014668' interfaces: — ipRange: 169.254.67.201/29 linkedInterconnectAttachment: https://www.googleapis.com/compute/alpha/projects/customer-project/regions/us-central1/interconnectAttachments/customer-attachment1-partner managementType: MANAGED BY ATTACHMENT name: auto-ia-if-attachment-central-a-c2c53a710bd6c2e kind: compute#router name: partner network: https://www.googleapis.com/compute/v1/projects/customer-project/global/networks/vpc1 region: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1 selfLink: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1/routers/router-central1 Update the BGP peer with your on-premises router's ASN: gcloud compute routers update-bgp-peer router-central1 \\ --peer-name auto-ia-bgp-attachment-central-a-c2c53a710bd6c2e \\ --peer-asn ON PREM ASN \\ --region us-central1 After the BGP sessions are established, you can pass between your VPC network and on-premises network through your service provider's network.",
+          "Retrieve the pairing keys for the attach-central-b , attach-east-a , and attach-east-b VLAN attachments. gcloud Retrieve the VLAN attachment pairing keys by describing each one; use these keys to request connections with your service provider: gcloud compute interconnects attachments describe attach-central-a \\ --region us-central1 The previous command outputs the following information: adminEnabled: false edgeAvailabilityDomain: AVAILABILITY DOMAIN 1 creationTimestamp: '2017-12-01T08:29:09.886-08:00' id: '7976913826166357434' kind: compute#interconnectAttachment labelFingerprint: 42WmSpB8rSM= name: attach-central-a pairingKey: 7e51371e-72a3-40b5-b844-2e3efefaee59/us-central1/1 region: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1 router: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1/routers/router-central1 selfLink: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1/interconnectAttachments/attach-central-a state: PENDING PARTNER type: PARTNER Record the value of the pairingKey for each VLAN attachment.",
+          "Repeat these steps to create another redundant pair of attachments for the us-east4 region. gcloud Create four attachments: gcloud compute interconnects attachments partner create attach-central-a \\ --router router-central1 \\ --region us-central1 \\ --edge-availability-domain availability-domain-1 gcloud compute interconnects attachments partner create attach-central-b \\ --router router-central1 \\ --region us-central1 \\ --edge-availability-domain availability-domain-2 gcloud compute interconnects attachments partner create attach-east-a \\ --router router-east4 \\ --region us-east4 \\ --edge-availability-domain availability-domain-1 gcloud compute interconnects attachments partner create attach-east-b \\ --router router-east4 \\ --region us-east4 \\ --edge-availability-domain availability-domain-2 Retrieve pairing keys After you create your VLAN attachments, Google Cloud generates pairing keys for each one."
+        ]
+      },
+      {
+        "title": "\"Establish 99.9% availability for Partner Interconnect \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/interconnect/tutorials/partner-creating-999-availability",
+        "source_id": "site-iam-reference",
+        "final_score": 314,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The values of ipAddress and peerIpAddress of the BGP peer must match the values of cloudRouterIpAddress and customerRouterIpAddress of your attachment. gcloud compute routers describe router-central \\ --region us-central1 bgp: advertiseMode: DEFAULT asn: 16550 bgpPeers: — interfaceName: auto-ia-if-attachment-central-a-c2c53a710bd6c2e ipAddress: 169.254.67.201 managementType: MANAGED BY ATTACHMENT name: auto-ia-bgp-attachment-central-a-c2c53a710bd6c2e peerIpAddress: 169.254.67.202 creationTimestamp: '2018-01-25T07:14:43.068-08:00' description: 'test' id: '4370996577373014668' interfaces: — ipRange: 169.254.67.201/29 linkedInterconnectAttachment: https://www.googleapis.com/compute/alpha/projects/customer-project/regions/us-central1/interconnectAttachments/customer-attachment1-partner managementType: MANAGED BY ATTACHMENT name: auto-ia-if-attachment-central-a-c2c53a710bd6c2e kind: compute#router name: partner network: https://www.googleapis.com/compute/v1/projects/customer-project/global/networks/vpc1 region: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1 selfLink: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1/routers/router-central Update the BGP peer with your on-premises router's ASN: gcloud compute routers update-bgp-peer router-central \\ --peer-name auto-ia-bgp-attachment-central-c2c53a710bd6c2e \\ --peer-asn ON PREM ASN \\ --region us-central1 After the BGP sessions are established, you can pass between your VPC network and on-premises network through your service provider's network.",
+          "Retrieve the pairing keys for the attach-central-b VLAN attachment. gcloud Retrieve the VLAN attachment pairing keys by describing each one; use these keys to request connections with your service provider: gcloud compute interconnects attachments describe attach-central-a \\ --region us-central1 The previous command outputs the following information: adminEnabled: false edgeAvailabilityDomain: AVAILABILITY DOMAIN 1 creationTimestamp: '2017-12-01T08:29:09.886-08:00' id: '7976913826166357434' kind: compute#interconnectAttachment labelFingerprint: 42WmSpB8rSM= name: attach-central-a pairingKey: 7e51371e-72a3-40b5-b844-2e3efefaee59/us-central1/1 region: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1 router: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1/routers/router-central selfLink: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1/interconnectAttachments/attach-central-a state: PENDING PARTNER type: PARTNER Record the value of the pairingKey for each VLAN attachment.",
+          "Go back to the VLAN attachments tab and activate the other attachment. gcloud Describe each VLAN attachment to verify whether your service provider completed configuring them: gcloud compute interconnects attachments describe attach-central-a \\ --region us-central1 \\ --router router-central \\ --format '(name,state,partnerMetadata)' gcloud compute interconnects attachments describe attach-central-b \\ --region us-central1 \\ --router router-central \\ --format '(name,state,partnerMetadata)' After your service provider configures your VLAN attachments, the state of your attachments changes from PENDING PARTNER to PENDING CUSTOMER ."
+        ]
+      },
+      {
+        "title": "Partner Interconnect overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-overview",
+        "source_id": "site-docs-root",
+        "final_score": 302,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Provisioning To provision a Partner Interconnect connection with a service provider, you start by selecting a partner and whether you want MACsec for Cloud Interconnect , and then connecting your on-premises network to a supported service provider.",
+          "Partner Interconnect provides connectivity between your on-premises network and your Virtual Private Cloud (VPC) network through a supported service provider.",
+          "To support IPv6 traffic in a Partner Interconnect connection, do the following: Configure your VPC networks to use either IPv4 and IPv6 (dual stack) or IPv6-only subnets ."
+        ]
+      },
+      {
+        "title": "Choosing a Network Connectivity product \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/how-to/choose-product",
+        "source_id": "site-iam-reference",
+        "final_score": 286,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see the following resources: Cloud Interconnect overview Dedicated Interconnect overview Partner Interconnect overview Topology for production-level applications overview Topology for non-critical applications overview Cross-Cloud Interconnect If you need to connect your Google Cloud VPC network to your network that's hosted by another cloud service provider, use Cross-Cloud Interconnect.",
+          "If you can't physically meet Google's network in a colocation facility to reach your VPC networks, you can use Partner Interconnect to connect to service providers that connect directly to Google: If you have high bandwidth needs, Dedicated Interconnect can be a cost-effective solution.",
+          "Your network traffic egressing from Google Cloud through one of these links benefits from the direct connectivity to supported CDN providers and is billed automatically with reduced pricing."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/tutorials/partner-creating-9999-availability",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/tutorials/partner-creating-999-availability",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/how-to/choose-product"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/tutorials/partner-creating-9999-availability",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/tutorials/partner-creating-999-availability",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/partner-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/how-to/choose-product"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:30.145Z",
+  "source_step08_card": "data/step-08/current/products/cloud-interconnect/card.json",
+  "product_name": "Cloud Interconnect",
+  "product_slug": "cloud-interconnect"
+}

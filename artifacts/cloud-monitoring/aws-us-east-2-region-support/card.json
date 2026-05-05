@@ -1,0 +1,88 @@
+{
+  "feature_name": "AWS US East 2 Region Support",
+  "feature_slug": "aws-us-east-2-region-support",
+  "summary": "Monitoring supports the AWS region us-east-2.",
+  "extended_definition": "Monitoring supports the AWS region us-east-2.",
+  "lifecycle": {
+    "latest_feature_date": "2016-11-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/docs/application-monitoring-services",
+      "https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring",
+      "https://docs.cloud.google.com/monitoring/docs/region-support"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Data regionality for Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/region-support",
+        "source_id": "site-docs-reference",
+        "final_score": 67,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Observability Cloud Monitoring Guides Send feedback Data regionality for Cloud Monitoring Stay organized with collections Save and categorize content based on your preferences.",
+          "To store a time series in a specific region , the monitored resource against which the time series is written must have one of the following labels and the value of the label must be valid: location zone region A time series is discarded when the monitored resource against which the time series is written has one of the previous labels and the value of the label isn't recognized or isn't specified.",
+          "Storage of time-series data Google agents, client-side code using libraries like OpenTelemetry, and third-party sources such as BindPlane , write time series by using the Cloud Monitoring API."
+        ]
+      },
+      {
+        "title": "Application Monitoring supported infrastructure \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/application-monitoring-services",
+        "source_id": "site-docs-reference",
+        "final_score": 50,
+        "relevance": "",
+        "evidence_snippets": [
+          "Vertex AI Agent Engine agents (Regional) Traffic : reasoning engine/request count Server error rate : Ratio of requests whose response status is at least 500 and no more than 599 to the total number of requests.",
+          "Compute Engine MIGs (Regional and zonal) Traffic : instance/network/received bytes count Saturation : instance/cpu/utilization Dataproc Metastore service (Regional and multi-regional) Traffic : The metric depends on whether the service is single- or multi-region: Single: service/request count .",
+          "The following status values indicate an error: DEADLINE EXCEEDED INTERNAL UNAVAILABLE UNIMPLEMENTED P95 latency : The metric depends on whether the service is single- or multi-region: Single: service/request latencies Multi: service/multi region/request latencies ."
+        ]
+      },
+      {
+        "title": "\"Instrument an application for Application Monitoring \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/monitoring/docs/instrument-for-application-monitoring",
+        "source_id": "site-docs-reference",
+        "final_score": 38,
+        "relevance": "",
+        "evidence_snippets": [
+          "The googlemanagedprometheus exporter converts the http.server.request.duration OpenTelemetry metric into a Prometheus metric that has the following properties: Name: prometheus/http server request duration seconds/histogram Metric: prometheus.googleapis.com/http server request duration seconds/histogram Resource types: prometheus target Unit: s Kind: CUMULATIVE Value type: DISTRIBUTION When your Google Cloud project contains the http server request duration seconds metric, then your Application Monitoring dashboards display the traffic level, server error rate and the latency for HTTP requests.",
+          "Verify metric labels To verify that your application is sending Prometheus metrics, to your project, do the following: Verify that your application is sending Prometheus metrics to your project: In the Google Cloud console, go to the leaderboard Metrics explorer page: Go to Metrics explorer If you use the search bar to find this page, then select the result whose subheading is Monitoring .",
+          "You must also attach the following attributes: gcp.gce.instance group manager.name gcp.gce.instance group manager.region or gcp.gce.instance group manager.zone Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcp.gce.instance",
+      "http.server.request.duration",
+      "manager.name",
+      "manager.region",
+      "manager.zone",
+      "prometheus.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:33.032Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring"
+}

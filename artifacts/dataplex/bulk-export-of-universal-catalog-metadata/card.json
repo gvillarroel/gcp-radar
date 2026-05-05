@@ -1,0 +1,334 @@
+{
+  "feature_name": "Bulk export of Universal Catalog metadata",
+  "feature_slug": "bulk-export-of-universal-catalog-metadata",
+  "summary": "Dataplex can export Universal Catalog metadata to Cloud Storage for downstream analysis and retrieval.",
+  "extended_definition": "Dataplex can export Universal Catalog metadata to Cloud Storage for downstream analysis and retrieval.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataplex/docs/audit-logging",
+      "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+      "https://docs.cloud.google.com/dataplex/docs/export-metadata",
+      "https://docs.cloud.google.com/dataplex/docs/use-data-profiling"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Export metadata \\_|\\_ Knowledge Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataplex/docs/export-metadata",
+        "source_id": "site-docs-root-2",
+        "final_score": 267,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This document explains how to export metadata from Knowledge Catalog (formerly Dataplex Universal Catalog) using a metadata export job for use in external systems.",
+          "HTTP method and URL: POST https://dataplex.googleapis.com/v1/projects/ JOB PROJECT /locations/ LOCATION ID /metadataJobs?metadataJobId= METADATA JOB ID Request JSON body: { \"type\": \"EXPORT\", \"export spec\": { \"output path\": \"gs:// BUCKET /\", \"scope\": { \"organizationLevel\": true, \"entry types\": [ \" ENTRY TYPE \", Additional entry types ], \"aspect types\": [ \" ASPECT TYPE \", Additional aspect types ] }, } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: POST https://dataplex.googleapis.com/v1/projects/ JOB PROJECT /locations/ LOCATION ID /metadataJobs?metadataJobId= METADATA JOB ID Request JSON body: { \"type\": \"EXPORT\", \"export spec\": { \"output path\": \"gs:// BUCKET /\", \"scope\": { \"projects\": [ \"projects/ METADATA SOURCE PROJECT \", Additional projects ], }, } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "\"Manage Dataplex Universal Catalog resources using custom constraints \\_\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "source_id": "site-docs-root-2",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource Field dataplex.googleapis.com/AspectType resource.authorization.alternateUsePermission resource.description resource.displayName resource.metadataTemplate.annotations.deprecated resource.metadataTemplate.annotations.description resource.metadataTemplate.annotations.displayName resource.metadataTemplate.annotations.displayOrder resource.metadataTemplate.annotations.stringType resource.metadataTemplate.annotations.stringValues resource.metadataTemplate.constraints.required resource.metadataTemplate.enumValues.deprecated resource.metadataTemplate.enumValues.index resource.metadataTemplate.enumValues.name resource.metadataTemplate.index resource.metadataTemplate.name resource.metadataTemplate.type resource.metadataTemplate.typeId resource.metadataTemplate.typeRef dataplex.googleapis.com/DataScan resource.data.entity resource.data.resource resource.dataDiscoverySpec.bigqueryPublishingConfig.connection resource.dataDiscoverySpec.bigqueryPublishingConfig.location resource.dataDiscoverySpec.bigqueryPublishingConfig.tableType resource.dataDiscoverySpec.storageConfig.csvOptions.delimiter resource.dataDiscoverySpec.storageConfig.csvOptions.encoding resource.dataDiscoverySpec.storageConfig.csvOptions.headerRows resource.dataDiscoverySpec.storageConfig.csvOptions.quote resource.dataDiscoverySpec.storageConfig.csvOptions.typeInferenceDisabled resource.dataDiscoverySpec.storageConfig.excludePatterns resource.dataDiscoverySpec.storageConfig.includePatterns resource.dataDiscoverySpec.storageConfig.jsonOptions.encoding resource.dataDiscoverySpec.storageConfig.jsonOptions.typeInferenceDisabled resource.dataProfileSpec.excludeFields.fieldNames resource.dataProfileSpec.includeFields.fieldNames resource.dataProfileSpec.postScanActions.bigqueryExport.resultsTable resource.dataProfileSpec.rowFilter resource.dataProfileSpec.samplingPercent resource.dataQualitySpec.postScanActions.bigqueryExport.resultsTable resource.dataQualitySpec.postScanActions.notificationReport.recipients.emails resource.dataQualitySpec.postScanActions.notificationReport.scoreThresholdTrigger.scoreThreshold resource.dataQualitySpec.rowFilter resource.dataQualitySpec.rules.column resource.dataQualitySpec.rules.description resource.dataQualitySpec.rules.dimension resource.dataQualitySpec.rules.ignoreNull resource.dataQualitySpec.rules.name resource.dataQualitySpec.rules.rangeExpectation.maxValue resource.dataQualitySpec.rules.rangeExpectation.minValue resource.dataQualitySpec.rules.rangeExpectation.strictMaxEnabled resource.dataQualitySpec.rules.rangeExpectation.strictMinEnabled resource.dataQualitySpec.rules.regexExpectation.regex resource.dataQualitySpec.rules.rowConditionExpectation.sqlExpression resource.dataQualitySpec.rules.setExpectation.values resource.dataQualitySpec.rules.sqlAssertion.sqlStatement resource.dataQualitySpec.rules.statisticRangeExpectation.maxValue resource.dataQualitySpec.rules.statisticRangeExpectation.minValue resource.dataQualitySpec.rules.statisticRangeExpectation.statistic resource.dataQualitySpec.rules.statisticRangeExpectation.strictMaxEnabled resource.dataQualitySpec.rules.statisticRangeExpectation.strictMinEnabled resource.dataQualitySpec.rules.suspended resource.dataQualitySpec.rules.tableConditionExpectation.sqlExpression resource.dataQualitySpec.rules.threshold resource.dataQualitySpec.samplingPercent resource.description resource.displayName resource.executionSpec.field resource.executionSpec.trigger.schedule.cron dataplex.googleapis.com/EntryGroup resource.description resource.displayName dataplex.googleapis.com/EntryType resource.authorization.alternateUsePermission resource.description resource.displayName resource.platform resource.requiredAspects.type resource.system resource.typeAliases dataplex.googleapis.com/MetadataJob resource.exportSpec.outputPath resource.exportSpec.scope.aspectTypes resource.exportSpec.scope.entryGroups resource.exportSpec.scope.entryTypes resource.exportSpec.scope.organizationLevel resource.exportSpec.scope.projects resource.importSpec.aspectSyncMode resource.importSpec.entrySyncMode resource.importSpec.logLevel resource.importSpec.scope.aspectTypes resource.importSpec.scope.entryGroups resource.importSpec.scope.entryTypes resource.importSpec.sourceCreateTime resource.importSpec.sourceStorageUri resource.type What's next Learn more about Organization Policy Service .",
+          "Description Constraint syntax Require a specific aspect type for entry types name : organizations/ ORGANIZATION ID /customConstraints/custom.requireAspectTypeForEntryType resourceTypes : - dataplex.googleapis.com/EntryType methodTypes : - CREATE - UPDATE condition : \"resource.requiredAspects.exists(value, value.type ==\" projects/ PROJECT ID /locations/ LOCATION /aspectTypes/exampleAspectType\") actionType : DENY displayName : All entry types require aspect type exampleAspectType description : All entry types require the aspect type exampleAspectType Require a minimum sampling rate for data profiling scans name : organizations/ ORGANIZATION ID /customConstraints/custom.minimumSamplingDataScans resourceTypes : - dataplex.googleapis.com/DataScan methodTypes : - CREATE - UPDATE condition : \"resource.dataProfileSpec.samplingPercent > = 20.0\" actionType : ALLOW displayName : Require minimum sampling for data profiling scans description : All data profiling scans need at least 20% sampling rate Dataplex Universal Catalog supported resources The following table lists the Dataplex Universal Catalog resources that you can reference in custom constraints.",
+          "As of April 10, 2026, Dataplex Universal Catalog is now called Knowledge Catalog."
+        ]
+      },
+      {
+        "title": "\"Create and use data profile scans \\_|\\_ Knowledge Catalog \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/use-data-profiling",
+        "source_id": "site-docs-root",
+        "final_score": 255,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Export table schema If you want to export the data profile scan results to an existing BigQuery table, make sure that it is compatible with the following table schema: Column name Column data type Sub field name (if applicable) Sub field data type Mode Example data profile scan struct/record resource name string nullable //dataplex.googleapis.com/projects/test-project/locations/europe-west2/datascans/test-datascan project id string nullable test-project location string nullable us-central1 data scan id string nullable test-datascan data source struct/record resource name string nullable Entity case: //dataplex.googleapis.com/projects/test-project/locations/europe-west2/lakes/test-lake/zones/test-zone/entities/test-entity Table case: //bigquery.googleapis.com/projects/test-project/datasets/test-dataset/tables/test-table dataplex entity project id string nullable test-project dataplex entity project number integer nullable 123456789012 dataplex lake id string nullable (Valid only if source is entity) test-lake dataplex zone id string nullable (Valid only if source is entity) test-zone dataplex entity id string nullable (Valid only if source is entity) test-entity table project id string nullable dataplex-table table project number int64 nullable 345678901234 dataset id string nullable (Valid only if source is table) test-dataset table id string nullable (Valid only if source is table) test-table data profile job id string nullable caeba234-cfde-4fca-9e5b-fe02a9812e38 data profile job configuration json trigger string nullable ondemand / schedule incremental boolean nullable true / false sampling percent float nullable (0-100) 20.0 (indicates 20%) row filter string nullable col1 >= 0 AND col2 column filter json nullable {\"include fields\":[\"col1\",\"col2\"], \"exclude fields\":[\"col3\"]} job labels json nullable {\"key1\":value1} job start time timestamp nullable 2023-01-01 00:00:00 UTC job end time timestamp nullable 2023-01-01 00:00:00 UTC job rows scanned integer nullable 7500 column name string nullable column-1 column type string nullable string column mode string nullable repeated percent null float nullable (0.0-100.0) 20.0 (indicates 20%) percent unique float nullable (0.0-100.0) 92.5 min string length integer nullable (Valid only if column type is string) 10 max string length integer nullable (Valid only if column type is string) 4 average string length float nullable (Valid only if column type is string) 7.2 min value float nullable (Valid only if column type is numeric - integer/float) max value float nullable (Valid only if column type is numeric - integer/float) average value float nullable (Valid only if column type is numeric - integer/float) standard deviation float nullable (Valid only if column type is numeric - integer/float) quartile lower integer nullable (Valid only if column type is numeric - integer/float) quartile median integer nullable (Valid only if column type is numeric - integer/float) quartile upper integer nullable (Valid only if column type is numeric - integer/float) top n struct/record - repeated value string nullable \"4009\" count integer nullable 20 percent float nullable 10 (indicates 10%) Export table setup When you export to BigQueryExport tables, follow these guidelines: For the field resultsTable , use the format: //bigquery.googleapis.com/projects/{project-id}/datasets/{dataset-id}/tables/{table-id} .",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create and manage data profile scans: Create, run, update, and delete data profile scans: dataplex.datascans.create on project dataplex.datascans.update on data scan dataplex.datascans.delete on data scan dataplex.datascans.run on data scan dataplex.datascans.get on data scan dataplex.datascans.list on project dataplex.dataScanJobs.get on data scan job dataplex.dataScanJobs.list on data scan View data profile scan results, jobs, and history: dataplex.datascans.getData on data scan dataplex.datascans.list on project dataplex.dataScanJobs.get on data scan job dataplex.dataScanJobs.list on data scan Publish data profile scan results to Knowledge Catalog: dataplex.entryGroups.useDataProfileAspect on entry group bigquery.tables.update on table dataplex.entries.update on entry View published data profile results for a table in BigQuery or Knowledge Catalog: bigquery.tables.get on table bigquery.tables.getData on table You might also be able to get these permissions with custom roles or other predefined roles .",
+          "User roles and permissions To get the permissions that you need to create and manage data profile scans, ask your administrator to grant you the following IAM roles: Create, run, update, and delete data profile scans: Dataplex DataScan Editor ( roles/dataplex.dataScanEditor ) on the project containing the data scan View data profile scan results, jobs, and history: Dataplex DataScan Viewer ( roles/dataplex.dataScanViewer ) on the project containing the data scan Publish data profile scan results to Knowledge Catalog: Dataplex Catalog Editor ( roles/dataplex.catalogEditor ) on the @bigquery entry group View published data profile scan results in BigQuery on the Data profile tab: BigQuery Data Viewer ( roles/bigquery.dataViewer ) on the table For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      },
+      {
+        "title": "\"Dataplex Universal Catalog audit logging \\_|\\_ Knowledge Catalog \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/audit-logging",
+        "source_id": "site-docs-root-2",
+        "final_score": 242,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ google.cloud.dataplex.v1.CatalogService.GetAspectType google.cloud.dataplex.v1.CatalogService.GetEntry google.cloud.dataplex.v1.CatalogService.GetEntryGroup google.cloud.dataplex.v1.CatalogService.GetEntryType google.cloud.dataplex.v1.CatalogService.GetMetadataJob google.cloud.dataplex.v1.CatalogService.ListAspectTypes google.cloud.dataplex.v1.CatalogService.ListEntries google.cloud.dataplex.v1.CatalogService.ListEntryGroups google.cloud.dataplex.v1.CatalogService.ListEntryTypes google.cloud.dataplex.v1.CatalogService.ListMetadataJobs google.cloud.dataplex.v1.CatalogService.LookupEntry google.cloud.dataplex.v1.ContentService.GetContent GetIamPolicy google.cloud.dataplex.v1.ContentService.ListContent google.cloud.dataplex.v1.DataScanService.ListDataScanJobs google.cloud.dataplex.v1.DataScanService.ListDataScans google.cloud.dataplex.v1.DataTaxonomyService.GetDataAttribute google.cloud.dataplex.v1.DataTaxonomyService.GetDataAttributeBinding google.cloud.dataplex.v1.DataTaxonomyService.GetDataTaxonomy google.cloud.dataplex.v1.DataTaxonomyService.ListDataAttributeBindings google.cloud.dataplex.v1.DataTaxonomyService.ListDataAttributes google.cloud.dataplex.v1.DataTaxonomyService.ListDataTaxonomies google.cloud.dataplex.v1.DataplexService.GetAsset google.cloud.dataplex.v1.DataplexService.GetEnvironment google.cloud.dataplex.v1.DataplexService.GetJob google.cloud.dataplex.v1.DataplexService.GetLake google.cloud.dataplex.v1.DataplexService.GetTask google.cloud.dataplex.v1.DataplexService.GetZone google.cloud.dataplex.v1.DataplexService.ListAssetActions google.cloud.dataplex.v1.DataplexService.ListAssets google.cloud.dataplex.v1.DataplexService.ListEnvironments google.cloud.dataplex.v1.DataplexService.ListJobs google.cloud.dataplex.v1.DataplexService.ListLakeActions google.cloud.dataplex.v1.DataplexService.ListLakes google.cloud.dataplex.v1.DataplexService.ListTasks google.cloud.dataplex.v1.DataplexService.ListZoneActions google.cloud.dataplex.v1.DataplexService.ListZones GetIamPolicy ADMIN WRITE google.cloud.dataplex.v1.CatalogService.CancelMetadataJob google.cloud.dataplex.v1.CatalogService.CreateAspectType (LRO) google.cloud.dataplex.v1.CatalogService.CreateEntry google.cloud.dataplex.v1.CatalogService.CreateEntryGroup (LRO) google.cloud.dataplex.v1.CatalogService.CreateEntryType (LRO) google.cloud.dataplex.v1.CatalogService.CreateMetadataJob (LRO) google.cloud.dataplex.v1.CatalogService.DeleteAspectType (LRO) google.cloud.dataplex.v1.CatalogService.DeleteEntry google.cloud.dataplex.v1.CatalogService.DeleteEntryGroup (LRO) google.cloud.dataplex.v1.CatalogService.DeleteEntryType (LRO) google.cloud.dataplex.v1.CatalogService.UpdateAspectType (LRO) google.cloud.dataplex.v1.CatalogService.UpdateEntry google.cloud.dataplex.v1.CatalogService.UpdateEntryGroup (LRO) google.cloud.dataplex.v1.CatalogService.UpdateEntryType (LRO) google.cloud.dataplex.v1.ContentService.CreateContent google.cloud.dataplex.v1.ContentService.DeleteContent SetIamPolicy google.cloud.dataplex.v1.ContentService.UpdateContent google.cloud.dataplex.v1.DataScanService.CreateDataScan (LRO) google.cloud.dataplex.v1.DataScanService.DeleteDataScan (LRO) google.cloud.dataplex.v1.DataScanService.RunDataScan google.cloud.dataplex.v1.DataScanService.UpdateDataScan (LRO) google.cloud.dataplex.v1.DataTaxonomyService.CreateDataAttribute (LRO) google.cloud.dataplex.v1.DataTaxonomyService.CreateDataAttributeBinding (LRO) google.cloud.dataplex.v1.DataTaxonomyService.CreateDataTaxonomy (LRO) google.cloud.dataplex.v1.DataTaxonomyService.DeleteDataAttribute (LRO) google.cloud.dataplex.v1.DataTaxonomyService.DeleteDataAttributeBinding (LRO) google.cloud.dataplex.v1.DataTaxonomyService.DeleteDataTaxonomy (LRO) google.cloud.dataplex.v1.DataTaxonomyService.UpdateDataAttribute (LRO) google.cloud.dataplex.v1.DataTaxonomyService.UpdateDataAttributeBinding (LRO) google.cloud.dataplex.v1.DataTaxonomyService.UpdateDataTaxonomy (LRO) google.cloud.dataplex.v1.DataplexService.CancelJob google.cloud.dataplex.v1.DataplexService.CreateAsset (LRO) google.cloud.dataplex.v1.DataplexService.CreateEnvironment google.cloud.dataplex.v1.DataplexService.CreateLake (LRO) google.cloud.dataplex.v1.DataplexService.CreateTask (LRO) google.cloud.dataplex.v1.DataplexService.CreateZone (LRO) google.cloud.dataplex.v1.DataplexService.DeleteAsset (LRO) google.cloud.dataplex.v1.DataplexService.DeleteEnvironment (LRO) google.cloud.dataplex.v1.DataplexService.DeleteLake (LRO) google.cloud.dataplex.v1.DataplexService.DeleteTask (LRO) google.cloud.dataplex.v1.DataplexService.DeleteZone (LRO) google.cloud.dataplex.v1.DataplexService.RunTask google.cloud.dataplex.v1.DataplexService.UpdateAsset (LRO) google.cloud.dataplex.v1.DataplexService.UpdateEnvironment google.cloud.dataplex.v1.DataplexService.UpdateLake (LRO) google.cloud.dataplex.v1.DataplexService.UpdateTask (LRO) google.cloud.dataplex.v1.DataplexService.UpdateZone (LRO) SetIamPolicy DATA READ google.cloud.dataplex.v1.DataScanService.GenerateDataQualityRules google.cloud.dataplex.v1.DataScanService.GetDataScan google.cloud.dataplex.v1.DataScanService.GetDataScanJob API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Dataplex Universal Catalog. google.cloud.dataplex.v1.CatalogService The following audit logs are associated with methods belonging to google.cloud.dataplex.v1.CatalogService .",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.dataplex.v1.CatalogService.CancelMetadataJob\" CreateAspectType Method : google.cloud.dataplex.v1.CatalogService.CreateAspectType Audit log type : Admin activity Permissions : dataplex.aspectTypes.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.dataplex.v1.CatalogService.CreateAspectType\" CreateEntry Method : google.cloud.dataplex.v1.CatalogService.CreateEntry Audit log type : Admin activity Permissions : See IAM documentation for permissions.",
+          "For more information about Cloud Audit Logs, see the following: Types of audit logs Audit log entry structure Storing and routing audit logs Cloud Logging pricing summary Enable Data Access audit logs Service name Dataplex Universal Catalog audit logs use the service name dataplex.googleapis.com ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.dataViewer",
+      "bigquery.googleapis.com",
+      "bigquery.jobs.create",
+      "bigquery.tables.create",
+      "bigquery.tables.get",
+      "bigquery.tables.getData",
+      "bigquery.tables.update",
+      "bigquery.tables.updateData",
+      "com.google.cloud.dataplex.v1",
+      "custom.minimumSamplingDataScans",
+      "custom.requireAspectTypeForEntryType",
+      "dataplex.aspectTypes.create",
+      "dataplex.catalogEditor",
+      "dataplex.dataScanEditor",
+      "dataplex.dataScanJobs.get",
+      "dataplex.dataScanJobs.list",
+      "dataplex.datascans.create",
+      "dataplex.datascans.delete",
+      "dataplex.datascans.get",
+      "dataplex.datascans.getData",
+      "dataplex.datascans.list",
+      "dataplex.datascans.run",
+      "dataplex.datascans.update",
+      "dataplex.dataScanViewer",
+      "dataplex.entries.update",
+      "dataplex.entryGroups.useDataProfileAspect",
+      "dataplex.googleapis.com",
+      "dataplex.metadataJobs.cancel",
+      "resource.authorization.alternateUsePermission",
+      "resource.data.entity",
+      "resource.data.resource",
+      "resource.dataDiscoverySpec.bigqueryPublishingConfig.connection",
+      "resource.dataDiscoverySpec.bigqueryPublishingConfig.location",
+      "resource.dataDiscoverySpec.bigqueryPublishingConfig.tableType",
+      "resource.dataDiscoverySpec.storageConfig.csvOptions.delimiter",
+      "resource.dataDiscoverySpec.storageConfig.csvOptions.encoding",
+      "resource.dataDiscoverySpec.storageConfig.csvOptions.headerRows",
+      "resource.dataDiscoverySpec.storageConfig.csvOptions.quote",
+      "resource.dataDiscoverySpec.storageConfig.csvOptions.typeInferenceDisabled",
+      "resource.dataDiscoverySpec.storageConfig.excludePatterns",
+      "resource.dataDiscoverySpec.storageConfig.includePatterns",
+      "resource.dataDiscoverySpec.storageConfig.jsonOptions.encoding",
+      "resource.dataDiscoverySpec.storageConfig.jsonOptions.typeInferenceDisabled",
+      "resource.dataProfileSpec.excludeFields.fieldNames",
+      "resource.dataProfileSpec.includeFields.fieldNames",
+      "resource.dataProfileSpec.postScanActions.bigqueryExport.resultsTable",
+      "resource.dataProfileSpec.rowFilter",
+      "resource.dataProfileSpec.samplingPercent",
+      "resource.dataQualitySpec.postScanActions.bigqueryExport.resultsTable",
+      "resource.dataQualitySpec.postScanActions.notificationReport.recipients.emails",
+      "resource.dataQualitySpec.postScanActions.notificationReport.scoreThresholdTrigger.scoreThreshold",
+      "resource.dataQualitySpec.rowFilter",
+      "resource.dataQualitySpec.rules.column",
+      "resource.dataQualitySpec.rules.description",
+      "resource.dataQualitySpec.rules.dimension",
+      "resource.dataQualitySpec.rules.ignoreNull",
+      "resource.dataQualitySpec.rules.name",
+      "resource.dataQualitySpec.rules.rangeExpectation.maxValue",
+      "resource.dataQualitySpec.rules.rangeExpectation.minValue",
+      "resource.dataQualitySpec.rules.rangeExpectation.strictMaxEnabled",
+      "resource.dataQualitySpec.rules.rangeExpectation.strictMinEnabled",
+      "resource.dataQualitySpec.rules.regexExpectation.regex",
+      "resource.dataQualitySpec.rules.rowConditionExpectation.sqlExpression",
+      "resource.dataQualitySpec.rules.setExpectation.values",
+      "resource.dataQualitySpec.rules.sqlAssertion.sqlStatement",
+      "resource.dataQualitySpec.rules.statisticRangeExpectation.maxValue",
+      "resource.dataQualitySpec.rules.statisticRangeExpectation.minValue",
+      "resource.dataQualitySpec.rules.statisticRangeExpectation.statistic",
+      "resource.dataQualitySpec.rules.statisticRangeExpectation.strictMaxEnabled",
+      "resource.dataQualitySpec.rules.statisticRangeExpectation.strictMinEnabled",
+      "resource.dataQualitySpec.rules.suspended",
+      "resource.dataQualitySpec.rules.tableConditionExpectation.sqlExpression",
+      "resource.dataQualitySpec.rules.threshold",
+      "resource.dataQualitySpec.samplingPercent",
+      "resource.description",
+      "resource.displayName",
+      "resource.executionSpec.field",
+      "resource.executionSpec.trigger.schedule.cron",
+      "resource.exportSpec.outputPath",
+      "resource.exportSpec.scope.aspectTypes",
+      "resource.exportSpec.scope.entryGroups",
+      "resource.exportSpec.scope.entryTypes",
+      "resource.exportSpec.scope.organizationLevel",
+      "resource.exportSpec.scope.projects",
+      "resource.importSpec.aspectSyncMode",
+      "resource.importSpec.entrySyncMode",
+      "resource.importSpec.logLevel",
+      "resource.importSpec.scope.aspectTypes",
+      "resource.importSpec.scope.entryGroups",
+      "resource.importSpec.scope.entryTypes",
+      "resource.importSpec.sourceCreateTime",
+      "resource.importSpec.sourceStorageUri",
+      "resource.metadataTemplate.annotations.deprecated",
+      "resource.metadataTemplate.annotations.description",
+      "resource.metadataTemplate.annotations.displayName",
+      "resource.metadataTemplate.annotations.displayOrder",
+      "resource.metadataTemplate.annotations.stringType",
+      "resource.metadataTemplate.annotations.stringValues",
+      "resource.metadataTemplate.constraints.required",
+      "resource.metadataTemplate.enumValues.deprecated",
+      "resource.metadataTemplate.enumValues.index",
+      "resource.metadataTemplate.enumValues.name",
+      "resource.metadataTemplate.index",
+      "resource.metadataTemplate.name",
+      "resource.metadataTemplate.type",
+      "resource.metadataTemplate.typeId",
+      "resource.metadataTemplate.typeRef",
+      "resource.platform",
+      "resource.requiredAspects.exists",
+      "resource.requiredAspects.type",
+      "resource.system",
+      "resource.type",
+      "resource.typeAliases",
+      "storage.buckets.get",
+      "storage.objects.get",
+      "value.type"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataViewer",
+      "roles/dataplex.catalogEditor",
+      "roles/dataplex.dataScanEditor",
+      "roles/dataplex.dataScanViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/export-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling",
+        "https://docs.cloud.google.com/dataplex/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/export-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling",
+        "https://docs.cloud.google.com/dataplex/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/export-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling",
+        "https://docs.cloud.google.com/dataplex/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/export-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling",
+        "https://docs.cloud.google.com/dataplex/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/export-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling",
+        "https://docs.cloud.google.com/dataplex/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/export-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling",
+        "https://docs.cloud.google.com/dataplex/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/export-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling",
+        "https://docs.cloud.google.com/dataplex/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/export-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling",
+        "https://docs.cloud.google.com/dataplex/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/export-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling",
+        "https://docs.cloud.google.com/dataplex/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/export-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling",
+        "https://docs.cloud.google.com/dataplex/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/export-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling",
+        "https://docs.cloud.google.com/dataplex/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/export-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling",
+        "https://docs.cloud.google.com/dataplex/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/export-metadata",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling",
+        "https://docs.cloud.google.com/dataplex/docs/audit-logging"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:54.992Z",
+  "source_step08_card": "data/step-08/current/products/dataplex/card.json",
+  "product_name": "Dataplex",
+  "product_slug": "dataplex"
+}

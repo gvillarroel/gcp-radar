@@ -1,0 +1,157 @@
+{
+  "feature_name": "Standard and extensible API proxies",
+  "feature_slug": "standard-and-extensible-api-proxies",
+  "summary": "Apigee supports standard and extensible API proxy types for Subscription 2021 organizations; Apigee supports standard and extensible API proxy types for organization use.",
+  "extended_definition": "Apigee supports standard and extensible API proxy types for Subscription 2021 organizations; Apigee supports standard and extensible API proxy types for organization use.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Understanding APIs and API proxies \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 167,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can visualize API proxies as shown by the graphic below: API proxy types Apigee supports two proxy types: Standard proxies include only standard policies .",
+          "Extensible proxies can include much more functionality than standard proxies.",
+          "Apigee provides several ways for you to create API proxies, including: Using the Apigee UI to define an API proxy in a Graphical User Interface (GUI)."
+        ]
+      },
+      {
+        "title": "Building a simple API proxy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 134,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Note that the URL map http1 backend is default. defaultService : projects /$ PROJECT ID / global / backendServices / YOUR BACKEND 1 name : matcher1 routeRules : - matchRules : - headerMatches : - headerName : Content - Type prefixMatch : application / grpc prefixMatch : / priority : 100 routeAction : weightedBackendServices : - backendService : projects /$ PROJECT ID / global / backendServices / YOUR BACKEND 2 weight : 100 Validate the URL map: gcloud compute url-maps validate --source /tmp/apigee-map.yaml --project $PROJECT ID Create the url map with header-based routing: gcloud compute url - maps import apigee - http1 - http2 \\ -- source / tmp / apigee - map . yaml \\ -- global -- project $ PROJECT ID Create a load balancing target HTTPS proxy gcloud compute target-https-proxies create apigee-envoy-https-proxy \\ --project $PROJECT ID --url-map apigee-envoy-proxy-map \\ --ssl-certificates $CERTIFICATE NAME Reserve an IPV4 External IP and create firewall rules for the load balancer gcloud compute addresses create lb - ipv4 - vip - 1 \\ -- project $ PROJECT ID \\ -- network - tier = PREMIUM \\ -- ip - version = IPV4 \\ -- global gcloud compute addresses describe lb - ipv4 - vip - 1 \\ -- project $ PROJECT ID -- format = \"get(address)\" -- global gcloud compute forwarding - rules create apigee - envoy - https - lb - rule \\ -- project $ PROJECT ID -- address lb - ipv4 - vip - 1 -- global \\ -- target - https - proxy apigee - envoy - https - proxy -- ports 443 Create a firewall rule gcloud compute firewall-rules create k8s-allow-lb-to-apigee-envoy \\ --description \"Allow incoming from GLB on TCP port 443 to Apigee Proxy\" \\ --project $PROJECT ID --network $VPC NAME --allow=tcp:443 \\ --source-ranges=130.211.0.0/22,35.191.0.0/16 --target-tags=gke-apigee-proxy Example gcloud CLI commands for creating routing for gRPC proxies for existing load balancers This section shows example commands for creating gRPC proxies using the gcloud CLI and an existing load balancer.",
+          "See Quotas . (Not available if Pass-through authorization is selected.) Using OpenAPI Specifications to generate proxies This section discusses the Use OpenAPI option that is available for generating from an OpenAPI Specification the following types of API proxies: reverse or no target.",
+          "For step-by-step instructions on creating proxies, see the following topics: Tutorial: Build your first API proxy Creating an API proxy Creating an API proxy using the UI The easiest way to create an API proxy is using the Create Proxy wizard."
+        ]
+      },
+      {
+        "title": "API proxy configuration reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "source_id": "site-api-reference",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, in the following Flow configuration, any inbound request that does not include the path suffix /first or /second will cause the ThirdFlow to execute, enforcing the policy called Return404 . <Flows> <Flow name=\"FirstFlow\"> <Condition>proxy.pathsuffix MatchesPath \"/first\"</Condition> <Request> <Step><Name>FirstPolicy</Name></Step> </Request> </Flow> <Flow name=\"SecondFlow\"> <Condition>proxy.pathsuffix MatchesPath \"/second\"</Condition> <Request> <Step><Name>FirstPolicy</Name></Step> <Step><Name>SecondPolicy</Name></Step> </Request> </Flow> <Flow name=\"ThirdFlow\"> <Request> <Step><Name>Return404</Name></Step> </Request> </Flow> </Flows> Resources \"Resources\" (resource files for use in API proxies) are scripts, code, and XSL transformations that can be attached to Flows using policies.",
+          "The following sample ProxyEndpoint configuration would be stored under /apiproxy/proxies : <ProxyEndpoint name=\"default\"> <PreFlow/> <Flows/> <PostFlow/> <HTTPProxyConnection> <BasePath>/weather</BasePath> <Properties/> </HTTPProxyConnection> <FaultRules/> <DefaultFaultRule/> <RouteRule name=\"default\"> <TargetEndpoint>default</TargetEndpoint> </RouteRule> </ProxyEndpoint> The required configuration elements in a basic proxy endpoint are: ProxyEndpoint configuration elements Name Description Default Required?",
+          "By defining conditional flows, you gain the ability to apply processing steps in an API proxy based on: Request URI HTTP verb ( GET / PUT / POST / DELETE ) Value of a query param, header, and form param Many other types of conditions For example, the following conditional flow specifies that it is executed only when the request resource path is /accesstoken ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "map.yaml",
+      "proxy.pathsuffix"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:06.675Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x"
+}

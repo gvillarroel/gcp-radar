@@ -1,0 +1,144 @@
+{
+  "feature_name": "Span annotations and message events in Trace Viewer",
+  "feature_slug": "span-annotations-and-message-events-in-trace-viewer",
+  "summary": "Trace Viewer displays span annotations and message events written with the Stackdriver Trace API v2.",
+  "extended_definition": "Trace Viewer displays span annotations and message events written with the Stackdriver Trace API v2.",
+  "lifecycle": {
+    "latest_feature_date": "2018-01-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/cloudtrace/latest/google.cloud.trace_v1.types.TraceSpan",
+      "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+      "https://docs.cloud.google.com/trace/docs/finding-traces",
+      "https://docs.cloud.google.com/trace/docs/trace-alerting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Find and explore traces \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "source_id": "site-docs-root",
+        "final_score": 273,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following screenshot illustrates how the Trace Explorer page renders text-based generative AI events that are attached to the spans: To learn about the sample application that generated the previous screenshot, see Instrument a LangGraph ReAct Agent with OpenTelemetry .",
+          "To learn about which remote Google Cloud MCP servers support trace generation and how to configure your application to instruct these servers to generate spans, see Investigate MCP calls using Trace .",
+          "View attributes, log entries, and events The Details flyout for a span contains a tab for each of the following: Attributes : This tab lists labels that are attached to spans."
+        ]
+      },
+      {
+        "title": "\"Monitor trace quota usage and spans ingested \\_|\\_ Cloud Trace \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/trace/docs/trace-alerting",
+        "source_id": "site-docs-root-2",
+        "final_score": 245,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Observability Cloud Trace Guides Send feedback Monitor trace quota usage and spans ingested Stay organized with collections Save and categorize content based on your preferences.",
+          "You can create alerting policies in Cloud Monitoring to monitor the number of Cloud Trace spans ingested per month, your quota usage, and your rate of span ingestion.",
+          "Filter service = cloudtrace.googleapis.com response code = 429 Across time series Time series aggregation sum Rolling window 1 m Rolling window function sum Configure alert trigger Field Value Condition type Threshold Alert trigger Any time series violates Threshold position Above threshold Threshold value 0 Retest window 1 minute Monitor monthly span ingestion To create an alerting policy that triggers when your monthly Cloud Trace spans ingested exceeds a user-defined limit, use the following settings."
+        ]
+      },
+      {
+        "title": "\"Collect and view multimodal prompts and responses \\_|\\_ Cloud Trace \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "source_id": "site-docs-root-2",
+        "final_score": 243,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "AllLogs > WHERE log name = 'projects/ PROJECT ID /logs/gen ai.client.inference.operation.details' AND timestamp > TIMESTAMP SUB ( CURRENT TIMESTAMP (), INTERVAL 1 DAY ) > SELECT insert id , timestamp , labels , trace , span id , STRING ( labels [ 'gen ai.input.messages ref' ]) AS messages ref uri -- Join completion log entries with the external table. > JOIN PROJECT ID .",
+          "AllLogs > WHERE log name = 'projects/ PROJECT ID /logs/gen ai.client.inference.operation.details' AND timestamp > TIMESTAMP SUB ( CURRENT TIMESTAMP (), INTERVAL 1 DAY ) > SELECT insert id , timestamp , labels , trace , span id , STRING ( labels [ 'gen ai.input.messages ref' ]) AS messages ref uri -- Join completion log entries with the external table. > JOIN PROJECT ID .",
+          "The following example shows part of a log entry that includes object references: { ... \"labels\" : { \"gen ai.system\" : \"vertex ai\" , \"event.name\" : \"gen ai.client.inference.operation.details\" , \"gen ai.output.messages ref\" : \"gs://my-bucket/eso9aP7NA GX2PgPkrOi-Qg output.jsonl\" , \"gen ai.system instructions ref\" : \"gs://my-bucket/eso9aP7NA GX2PgPkrOi-Qg system instructions.jsonl\" , \"gen ai.input.messages ref\" : \"gs://my-bucket/eso9aP7NA GX2PgPkrOi-Qg input.jsonl\" } , \"logName\" : \"projects/my-project/logs/gen ai.client.inference.operation.details\" , \"trace\" : \"projects/my-project/traces/963761020fc7713e4590cad89ad03229\" , \"spanId\" : \"1234512345123451\" , ... } In the log entry example, notice the following: The label \"event.name\": \"gen ai.client.inference.operation.details\" indicates that the log entry contains references to Cloud Storage objects."
+        ]
+      },
+      {
+        "title": "\"Class TraceSpan (1.19.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/cloudtrace/latest/google.cloud.trace_v1.types.TraceSpan",
+        "source_id": "site-python-reference",
+        "final_score": 221,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For the same executable and the same call point, a best practice is to use a consistent name, which makes it easier to correlate cross-trace spans. start time google.protobuf.timestamp pb2.Timestamp Start time of the span in nanoseconds from the UNIX epoch. end time google.protobuf.timestamp pb2.Timestamp End time of the span in nanoseconds from the UNIX epoch. parent span id int Optional.",
+          "Often, a trace contains a root span that describes the end-to-end latency of an operation and, optionally, one or more subspans for its suboperations.",
+          "The span name is sanitized and displayed in the Stackdriver Trace tool in the Google Cloud Platform Console."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ai.client.inference.operation.details",
+      "ai.input.messages",
+      "ai.output.messages",
+      "ai.system",
+      "cloudtrace.googleapis.com",
+      "e.g",
+      "event.name",
+      "foo.com",
+      "input.jsonl",
+      "instructions.jsonl",
+      "output.jsonl",
+      "pb2.Timestamp"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/trace-alerting",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtrace/latest/google.cloud.trace_v1.types.TraceSpan"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/trace-alerting",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtrace/latest/google.cloud.trace_v1.types.TraceSpan"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/trace-alerting",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtrace/latest/google.cloud.trace_v1.types.TraceSpan"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/trace-alerting",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtrace/latest/google.cloud.trace_v1.types.TraceSpan"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:44.599Z",
+  "source_step08_card": "data/step-08/current/products/cloud-trace/card.json",
+  "product_name": "Cloud Trace",
+  "product_slug": "cloud-trace"
+}

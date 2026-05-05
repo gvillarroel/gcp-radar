@@ -1,0 +1,193 @@
+{
+  "feature_name": "MongoDB connector document actions",
+  "feature_slug": "mongodb-connector-document-actions",
+  "summary": "The MongoDB connector supports InsertDocument, UpdateDocument, DeleteDocument, and GetDocument actions.",
+  "extended_definition": "The MongoDB connector supports InsertDocument, UpdateDocument, DeleteDocument, and GetDocument actions.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/docusign/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Couchbase \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 171,
+        "relevance": "",
+        "evidence_snippets": [
+          "Actions This connector supports execution of the following actions: User-defined stored procedures and functions.",
+          "SSL - Certificate connection type Field Name Details Region us-central1 Connector Couchbase Connector Version 1 Connector Name Couchbase-basic-auth-conn Service Account NAME-compute@developer.gserviceaccount.com Verbosity Level 5 Connection node settings: Min/Max number of nodes 2/50 SSL Configuration Enable SSL True Trust Store Private Custom Trust Store A full PEM Certificate (-----BEGIN CERTIFICATE----- MIIChTCCAe4CAQAwDQYJKoZIhv......Qw== -----END CERTIFICATE-----) Secret version 1 Host Address xx.1HOST NAME.cloud.couchbase.com:18xxx Authentication User Password Username username Password password versions 1 vConnection Mode Cloud DNS Server 192.0.2.0 OAuth scheme Basic Analytics Couchbase connection type Field Name Details Region us-central1 Connector Couchbase Connector Version 1 Connector Name Couchbase-basic-auth-Analytics-conn Service Account NAME-compute@developer.gserviceaccount.com Analytics Port 18095 Couchbase Service Analytics Verbosity Level 5 Connection node settings: Min/Max number of nodes 2/50 Host Address xx.1HOST NAME.cloud.couchbase.com:18095 Authentication User Password Username username Password password versions 1 vConnection Mode Cloud DNS Server 192.0.2.0 OAuth scheme Basic Entities, operations, and actions All the Integration Connectors provide a layer of abstraction for the objects of the connected application.",
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { \"Document\" : \"{\\\"ID\\\":10,\\\"Name\\\":\\\"TestDoc\\\"}\" , \"BucketName\" : \"CouchbaseTestBucket\" , \"ID\" : \"Test\" } If the action is successful, the AddDocument task's connectorOutputPayload response parameter will have a value similar to the following: [{ \"RowsAffected\" : \"1\" }] Example - Create a collection This example creates a collection."
+        ]
+      },
+      {
+        "title": "Asana \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 167,
+        "relevance": "",
+        "evidence_snippets": [
+          "Actions The Asana connector supports actions, such as the following: AddDependenciesToTask, AddDependentsToTask, AddFollowers, AddProjectToTask, AddTagsToTask, AddTaskToSection, DownloadAttachment, DuplicateProject, DuplicateTask, RemoveDependenciesFromTask, RemoveDependentsFromTask, RemoveFollowers, RemoveProjectsFromTask, RemoveTagsFromTask, SetParentofTask, and UploadAttachment.",
+          "Entities, operations, and actions All the Integration Connectors provide a layer of abstraction for the objects of the connected application.",
+          "System limitations The Asana connector can process 90 transactions per minute , per node , and throttles any transactions beyond this limit."
+        ]
+      },
+      {
+        "title": "Connectors API \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 167,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: v1.projects.locations REST Resource: v1.projects.locations.connections REST Resource: v1.projects.locations.connections.connectionSchemaMetadata REST Resource: v1.projects.locations.connections.eventSubscriptions REST Resource: v1.projects.locations.connections.runtimeActionSchemas REST Resource: v1.projects.locations.connections.runtimeEntitySchemas REST Resource: v1.projects.locations.customConnectors REST Resource: v1.projects.locations.customConnectors.customConnectorVersions REST Resource: v1.projects.locations.endpointAttachments REST Resource: v1.projects.locations.global REST Resource: v1.projects.locations.global.customConnectors REST Resource: v1.projects.locations.global.customConnectors.customConnectorVersions REST Resource: v1.projects.locations.global.managedZones REST Resource: v1.projects.locations.operations REST Resource: v1.projects.locations.providers REST Resource: v1.projects.locations.providers.connectors REST Resource: v1.projects.locations.providers.connectors.versions REST Resource: v1.projects.locations.providers.connectors.versions.eventtypes Service: connectors.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "This service provides the following discovery document: https://connectors.googleapis.com/$discovery/rest?version=v1 Service endpoint A service endpoint is a base URL that specifies the network address of an API service.",
+          "REST Resource: v1.projects.locations.global.customConnectors.customConnectorVersions Methods create POST /v1/{parent=projects/ /locations/global/customConnectors/ }/customConnectorVersions Creates a new CustomConnectorVersion in a given project and location. get GET /v1/{name=projects/ /locations/global/customConnectors/ /customConnectorVersions/ } Gets details of a single CustomConnectorVersion. list GET /v1/{parent=projects/ /locations/global/customConnectors/ }/customConnectorVersions List CustomConnectorVersions in a given project REST Resource: v1.projects.locations.global.managedZones Methods create POST /v1/{parent=projects/ /locations/global}/managedZones Creates a new ManagedZone in a given project and location. delete DELETE /v1/{name=projects/ /locations/global/managedZones/ } Deletes a single ManagedZone. get GET /v1/{name=projects/ /locations/global/managedZones/ } Gets details of a single ManagedZone. list GET /v1/{parent=projects/ /locations/global}/managedZones List ManagedZones in a given project patch PATCH /v1/{managedZone.name=projects/ /locations/global/managedZones/ } Updates the parameters of a single ManagedZone."
+        ]
+      },
+      {
+        "title": "DocuSign \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/docusign/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 163,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { \"EmailSubject\": \"Please Sign this Document\", \"FileName\": \"test.txt\\ntest.pdf\", \"SignersEmail\": \"cloudysanfrancisco@gmail.com\", \"SignersRecipientId\": \"53386460\", \"CcRecipientId\": \"67173451\", \"CcEmail\": \"baklavainthebalkans@gmail.com\", \"DocumentId\": \"1\", \"Status\": \"sent\", \"CustomFieldAggregate\": \"CustomFieldName\", \"ContentBytes\": \"abcd \", \"HasBytes\": true, \"SignersName\": \"\\\"test\\\"\", \"CcName\": \"\\\"test\\\"\", \"Content\": \"test content in file\" } If the action is successful, the connector task's connectorOutputPayload response parameter will have a value similar to the following: [{ \"Success\":\"true\", \"envelopeid\":\"542a77ff-b533-4b39-9d82-e397ef5a70c9\", \"uri\":\"/envelopes/542a77ff-b533-4b39-9d82-e397ef5a70c9\", \"statusdatetime\":\"2025-04-09T12:33:47.1130000Z\", \"status\":\"sent\", \"customfieldaggregate\": \"CustomFieldName\" }] Entity operation examples This section shows how to perform some of the entity operations in this connector.",
+          "OAUTH 2.0 - Authorization Code connection type Field name Details Location us-central1 Connector DocuSign Connector version 1 Connection Name gcp-docusign-new-auth Enable Cloud Logging No UseSandbox Yes Service Account 123456789012-compute@developer.gserviceaccount.com Authentication OAuth 2.0 - Authorization code Client Id 67dxxxxx-xxxx-xxxx-xxxx-xxxxxxxcb79 Scopes signature Client secret CLIENT SECRET Secret Version 1 Authorization URL https://account-d.docusign.com/oauth/auth OAuth 2.0 - JWT Bearer connection type Field name Details Location us-central1 Connector DocuSign Connector version 1 Connection Name gcp-docusign-token Enable Cloud Logging No UseSandbox Yes Service Account 123456789012-compute@developer.gserviceaccount.com Authentication OAuth 2.0 - JWT Bearer Connected App Consumer Key 67dxxxxx-xxxx-xxxx-xxxx-xxxxxxxcb79 Username USER NAME Private Key PRIVATE KEY Secret Version 1 Entities, operations, and actions All the Integration Connectors provide a layer of abstraction for the objects of the connected application.",
+          "System limitations The DocuSign connector can process 3 transactions per second, per node , and throttles any transactions beyond this limit."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "connectors.googleapis.com",
+      "d.docusign.com",
+      "developer.gserviceaccount.com",
+      "gmail.com",
+      "ntest.pdf",
+      "test.txt",
+      "v1.projects.locations",
+      "v1.projects.locations.connections",
+      "v1.projects.locations.connections.connectionSchemaMetadata",
+      "v1.projects.locations.connections.eventSubscriptions",
+      "v1.projects.locations.connections.runtimeActionSchemas",
+      "v1.projects.locations.connections.runtimeEntitySchemas",
+      "v1.projects.locations.customConnectors",
+      "v1.projects.locations.customConnectors.customConnectorVersions",
+      "v1.projects.locations.endpointAttachments",
+      "v1.projects.locations.global",
+      "v1.projects.locations.global.customConnectors",
+      "v1.projects.locations.global.customConnectors.customConnectorVersions",
+      "v1.projects.locations.global.managedZones",
+      "v1.projects.locations.operations",
+      "v1.projects.locations.providers",
+      "v1.projects.locations.providers.connectors",
+      "v1.projects.locations.providers.connectors.versions",
+      "v1.projects.locations.providers.connectors.versions.eventtypes",
+      "xx.1HOST"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/docusign/configure"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/docusign/configure"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/docusign/configure"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/docusign/configure"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/docusign/configure"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/docusign/configure"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/docusign/configure"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/docusign/configure"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:22.663Z",
+  "source_step08_card": "data/step-08/current/products/integration-connectors/card.json",
+  "product_name": "Integration Connectors",
+  "product_slug": "integration-connectors"
+}

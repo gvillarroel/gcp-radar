@@ -1,0 +1,162 @@
+{
+  "feature_name": "PostgreSQL 15 compatibility",
+  "feature_slug": "postgresql-15-compatibility",
+  "summary": "AlloyDB clusters can be created with PostgreSQL 15 compatibility.",
+  "extended_definition": "AlloyDB clusters can be created with PostgreSQL 15 compatibility.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+      "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+      "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connect from Google Kubernetes Engine (GKE) to AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "source_id": "site-docs-reference",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "Connect to your primary instance and create an AlloyDB database and user To create a database and a database user on your primary instance, complete the following steps: Console If you're not in your newly created cluster Overview page, then in the Google Cloud console, go to the Clusters page.",
+          "A new version of the Proxy is released monthly with bug fixes, security updates, and new features. image : gcr.io/alloydb-connectors/alloydb-auth-proxy:1.10.1 args : If you're connecting over public IP, enable this flag. - \"--public-ip\" If you're connecting with PSC, enable this flag: - \"--psc\" If you're using auto IAM authentication, enable this flag: - \"--auto-iam-authn\" Enable structured logging with Google's LogEntry format: - \"--structured-logs\" Listen on localhost:5432 by default. - \"--port=5432\" Specify your instance URI, e.g., \"projects/myproject/locations/us-central1/clusters/mycluster/instances/myinstance\" - \"<INSTANCE-URI>\" securityContext : The default AlloyDB Auth Proxy image runs as the \"nonroot\" user and group (uid: 65532) by default. runAsNonRoot : true You should use resource requests/limits as a best practice to prevent pods from consuming too many resources and affecting the execution of other pods.",
+          "To configure service access using the allocated IP range, run the following command: gcloud services vpc-peerings connect \\ --service = servicenetworking.googleapis.com \\ --ranges = IP RANGE NAME \\ --network = default To deploy the AlloyDB cluster, run the following command: gcloud alloydb clusters create CLUSTER ID \\ --database-version = POSTGRES VERSION \\ --password = CLUSTER PASSWORD \\ --network = default \\ --region = REGION \\ --project = PROJECT ID Replace the following: CLUSTER ID : the ID of the cluster that you are creating."
+        ]
+      },
+      {
+        "title": "\"Create a cluster and its primary instance \\_|\\_ AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "source_id": "site-docs-reference-2",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use curl to execute the request, as shown in the following example: curl -X POST -H \"Authorization: Bearer $(gcloud auth print-access-token)\" -H \"Content-Type: application/json\" https://alloydb.googleapis.com/v1alpha/projects/ PROJECT ID /locations/ LOCATION ID /clusters/ CLUSTER ID /instances?instance id= INSTANCE ID -d @instance request.json Clone an active cluster To create a clone of an active cluster, containing a copy of all the source cluster's data and running in the same region, perform a point-in-time recovery on that cluster .",
+          "Private services access gcloud alloydb clusters create CLUSTER ID \\ --database-version = POSTGRES VERSION \\ --password = PASSWORD \\ --region = REGION ID \\ --project = PROJECT ID \\ --network = NETWORK Private Service Connect gcloud alloydb clusters create CLUSTER ID \\ --database-version = POSTGRES VERSION \\ --password = PASSWORD \\ --region = REGION ID \\ --project = PROJECT ID \\ --enable-private-service-connect Replace the following: CLUSTER ID : the ID of the cluster that you are creating.",
+          "You can use the following curl to execute the preceding request: curl -X POST -H \"Authorization: Bearer $(gcloud auth print-access-token)\" -H \"Content-Type: application/json\" https://alloydb.googleapis.com/v1alpha/projects/ PROJECT ID /locations/ LOCATION ID /clusters?cluster id= CLUSTER ID -d @cluster request.json Create a primary instance This example creates a primary instance."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.clusters \\_|\\_ AlloyDB for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "source_id": "site-iam-reference",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Databases AlloyDB for PostgreSQL Reference Send feedback REST Resource: projects.locations.clusters Stay organized with collections Save and categorize content based on your preferences.",
+          "Methods create Creates a new Cluster in a given project and location. createsecondary Creates a cluster of type SECONDARY in the given location using the primary cluster as the source. delete Deletes a single Cluster. export Exports data from the cluster. get Gets details of a single Cluster. import Imports data to the cluster. list Lists Clusters in a given project and location. patch Updates the parameters of a single Cluster. promote Promotes a SECONDARY cluster. restore Creates a new Cluster in a given project and location, with a volume restored from the provided source, either a backup ID or a point-in-time and a source cluster. restoreFromCloudSQL Restores an AlloyDB cluster from a CloudSQL resource. switchover Switches the roles of PRIMARY and SECONDARY clusters without any data loss. upgrade Upgrades a single Cluster.",
+          "JSON representation { \"enabled\" : boolean } Fields enabled boolean This flag controls the integration of AlloyDB for PostgreSQL resources like databases, schemas, and tables with Dataplex."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.googleapis.com",
+      "deployment.yaml",
+      "e.g",
+      "gcr.io",
+      "projects.locations.clusters",
+      "request.json",
+      "servicenetworking.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:04.004Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb"
+}

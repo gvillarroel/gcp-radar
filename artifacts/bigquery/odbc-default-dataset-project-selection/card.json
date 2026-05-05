@@ -1,0 +1,113 @@
+{
+  "feature_name": "ODBC default dataset project selection",
+  "feature_slug": "odbc-default-dataset-project-selection",
+  "summary": "The BigQuery ODBC driver supports configuring a default project for datasets with dataset_project_id.",
+  "extended_definition": "The BigQuery ODBC driver supports configuring a default project for datasets with dataset_project_id.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+      "https://docs.cloud.google.com/bigquery/docs/reference/odbc-jdbc-drivers",
+      "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use the Simba ODBC and JDBC drivers for BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/odbc-jdbc-drivers",
+        "source_id": "site-docs-reference",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see a list of previous driver versions, expand the following section: Previous Simba ODBC driver versions 3.1.6.1026 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 3.1.5.1022 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 3.1.4.1020 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 3.1.2.1009 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 3.1.2.1004 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 3.0.7.1016 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 3.0.5.1011 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 3.0.4.1008 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 3.0.3.1006 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 3.0.2.1005 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 3.0.0.1001 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 2.5.2.1004 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 2.5.0.1001 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 2.4.6.1015 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 2.4.5.1014 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 2.4.3.1012 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 2.4.1.1009 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 2.4.0.1002 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 2.3.5.1009 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 2.3.3.1005 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 2.3.2.1003 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS Install and configure the Simba JDBC driver for BigQuery Note: As an alternative to the Simba JDBC driver, a Google-developed JDBC driver for BigQuery is available in Preview .",
+          "To see a list of previous driver versions, expand the following section: Previous Simba JDBC driver versions 1.6.5.1001 1.6.3.1004 1.6.2.1003 1.6.1.1002 1.5.4.1008 1.5.0.1001 1.3.3.1004 1.3.2.1003 1.3.0.1001 1.2.25.1029 1.2.23.1027 1.2.22.1026 1.2.21.1025 1.2.19.1023 1.2.18.1022 1.2.16.1020 1.2.14.1017 1.2.1.1001 (JDBC 4.2-compatible) 1.2.1.1001 (JDBC 4.1-compatible) Support Support for the Simba ODBC and JDBC drivers for BigQuery is available through standard Cloud Customer Care channels.",
+          "Install and configure the Simba ODBC driver for BigQuery Download the 3.1.6.3037 version of the driver for your operating system: Windows 32-bit ( .msi file) Windows 64-bit ( .msi file) Linux 32-bit and 64-bit ( .tar.gz file) macOS ( .dmg file) Follow the instructions in the insightsoftware installation and configuration guide ."
+        ]
+      },
+      {
+        "title": "Troubleshoot quota and limit errors \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "source_id": "site-docs-root",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "Your user exceeded quota for concurrent project.lists requests This error occurs when Microsoft Power BI jobs that communicate with BigQuery through a Simba ODBC driver or DataHub fail because they exceed the project.list API limit.",
+          "On the main setup screen for the Simba ODBC driver for BigQuery, fill the Catalog (Project) field with your specific Google Cloud project ID—for example, my-gcp-project-id .",
+          "Identify API calls Go to the Google Cloud navigation menu menu, and then select Logging > Logs Explorer : Go to the Logs Explorer Filter logs to view table operations by running the following query: resource.type=\"bigquery dataset\" protoPayload.resourceName=\"projects/my-project-id/datasets/my dataset/tables/my table\" (protoPayload.methodName=\"google.cloud.bigquery.v2.TableService.PatchTable\" OR protoPayload.methodName=\"google.cloud.bigquery.v2.TableService.UpdateTable\" OR protoPayload.methodName=\"google.cloud.bigquery.v2.TableService.InsertTable\") Identify jobs The following query returns a list of jobs that modify the affected table in the project within the past day."
+        ]
+      },
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "Access BigQuery like you would a database: read, write, and update datasets, tables, etc. through a standard ODBC driver interface.",
+          "Partner references Zing Data + BigQuery Configure Google BigQuery with Zing Data Partner Advantage page Direct link Connectors & Developer Tools CData Solution Google BigQuery ODBC Driver Category Connectors & Developer Tools Description The Google BigQuery ODBC Driver is a powerful tool that lets you connect with live BigQuery data directly from any applications that support ODBC connectivity.",
+          "Partner references Magnitude Simba Google BigQuery JDBC Data Connector: Installation and Configuration Guide Drivers for Google BigQuery Partner Advantage page Direct link Simba ODBC Driver Solution Simba ODBC Driver Category Connectors & Developer Tools Description Google has collaborated with Magnitude Simba to provide ODBC and JDBC drivers that leverage the power of BigQuery's GoogleSQL."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "project.list",
+      "project.lists",
+      "resource.type",
+      "status.code",
+      "status.message",
+      "tar.gz"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "https://docs.cloud.google.com/bigquery/docs/reference/odbc-jdbc-drivers",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "https://docs.cloud.google.com/bigquery/docs/reference/odbc-jdbc-drivers",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "https://docs.cloud.google.com/bigquery/docs/reference/odbc-jdbc-drivers",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

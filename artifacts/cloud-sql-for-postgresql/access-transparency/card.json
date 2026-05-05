@@ -1,0 +1,204 @@
+{
+  "feature_name": "Access Transparency",
+  "feature_slug": "access-transparency",
+  "summary": "Cloud SQL supports Access Transparency logs for Google staff actions that access customer data.",
+  "extended_definition": "Cloud SQL supports Access Transparency logs for Google staff actions that access customer data.",
+  "lifecycle": {
+    "latest_feature_date": "2019-11-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek",
+      "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+      "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data residency overview \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "source_id": "site-docs-root",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Access Approval complements the visibility provided by Access Transparency , which generates near-real-time audit logs when Google administrators interact with your data.",
+          "To learn more about how Google Cloud protects customer data throughout its lifecycle, and how Google Cloud provides customers with transparency and control over their data, see Trusting your data with Google Cloud .",
+          "Using IAM permissions, Access Approval, Access Transparency, and Key Access Justifications with Cloud KMS and Cloud EKM, you can deny Google the ability to decrypt your data."
+        ]
+      },
+      {
+        "title": "\"Create and manage users \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "source_id": "site-docs-root",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id /users\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#usersList\", \"items\": [ { \"kind\": \"sql#user\", \"etag\": \"--redacted--\", \"name\": \"sqlserver\", \"host\": \"\", \"instance\": \" instance-id \", \"project\": \" project-id \", \"sqlserverUserDetails\": { \"serverRoles\": [ \"CustomerDbRootRole\" ] } }, { \"kind\": \"sql#user\", \"etag\": \"--redacted--\", \"name\": \" user-id-1 \", \"host\": \"\", \"instance\": \" instance-id \", \"project\": \" project-id \", \"sqlserverUserDetails\": { \"serverRoles\": [ \"CustomerDbRootRole\" ] } }, { \"kind\": \"sql#user\", \"etag\": \"--redacted--\", \"name\": \" user-id-2 \", \"host\": \"\", \"instance\": \" instance-id \", \"project\": \" project-id \", \"sqlserverUserDetails\": { \"serverRoles\": [ \"CustomerDbRootRole\" ] } }, { ... }, { ... } ] } If a user password policy was set, the items section of the response includes a passwordPolicy section.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id /users\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#usersList\", \"items\": [ { \"kind\": \"sql#user\", \"etag\": \"--redacted--\", \"name\": \"sqlserver\", \"host\": \"\", \"instance\": \" instance-id \", \"project\": \" project-id \", \"sqlserverUserDetails\": { \"serverRoles\": [ \"CustomerDbRootRole\" ] } }, { \"kind\": \"sql#user\", \"etag\": \"--redacted--\", \"name\": \" user-id-1 \", \"host\": \"\", \"instance\": \" instance-id \", \"project\": \" project-id \", \"sqlserverUserDetails\": { \"serverRoles\": [ \"CustomerDbRootRole\" ] } }, { \"kind\": \"sql#user\", \"etag\": \"--redacted--\", \"name\": \" user-id-2 \", \"host\": \"\", \"instance\": \" instance-id \", \"project\": \" project-id \", \"sqlserverUserDetails\": { \"serverRoles\": [ \"CustomerDbRootRole\" ] } }, { ... }, { ... } ] } If a user password policy was set, the items section of the response includes a passwordPolicy section.",
+          "Before using any of the request data, make the following replacements: PROJECT ID : your project ID INSTANCE ID : the instance ID USER ID : the ID of the user PASSWORD : the password of the user FAILED ATTEMPTS CHECK : set to true to enable a check for the number of failed attempts to log in after which the account is locked NUMBER OF ATTEMPTS : the number of failed attempts to log in after which the account is locked PASSWORD EXPIRATION DURATION : the number of days after which the password expires and the user needs to create a new one HTTP method and URL: PUT https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID /users?name= USER ID Request JSON body: { \"name\": \" USER ID \", \"password\": \" PASSWORD \", \"data\": { \"passwordValidationUserPolicy\" : { { \"enableFailedAttemptsCheck\" : \" FAILED ATTEMPTS CHECK \", \"allowedFailedAttempts\" : \" NUMBER OF ATTEMPTS \", \"passwordExpirationDuration\" : \" PASSWORD EXPIRATION DURATION \" } }, } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "\"Use customer-managed encryption keys (CMEK) \\_|\\_ Cloud SQL for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 101,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID /reencrypt\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2023-06-28T21:19:09.503Z\", \"operationType\": \"REENCRYPT\", \"name\": \" operation-id \", \"targetId\": \" instance-id \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /operations/ operation-id \", \"targetProject\": \" project-id \" } REST v1beta4 To re-encrypt your instance or replica with your new key, run the following command: POST https://sqladmin.googleapis.com/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID /reencrypt Before using any of the request data, make the following replacements: PROJECT ID : The project ID INSTANCE ID : The instance ID HTTP method and URL: POST https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID /reencrypt To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "GO TO THE PROJECT IAM PAGE gcloud gcloud kms keys add-iam-policy-binding KMS KEY ID \\ --location = GCP REGION \\ --keyring = KMS KEYRING ID \\ --member = serviceAccount:service- PROJECT NUMBER @gcp-sa-cloud-sql.iam.gserviceaccount.com \\ --role = roles/cloudkms.cryptoKeyEncrypterDecrypter Terraform To grant access to the key, use a Terraform resource . resource \"google kms crypto key iam binding\" \"crypto key\" { provider = google-beta crypto key id = google kms crypto key.key.id role = \"roles/cloudkms.cryptoKeyEncrypterDecrypter\" members = [ \"serviceAccount:${google project service identity.gcp sa cloud sql.email}\", ] } Apply the Terraform configuration: terraform apply Create a Cloud SQL instance with CMEK Note: You can't enable customer-managed encryption keys on existing instances.",
+          "Read and acknowledge it to proceed further with instance creation. gcloud gcloud sql instances create INSTANCE NAME \\ --project = PROJECT ID \\ --disk-encryption-key = KMS KEY ID \\ --database-version = VERSION \\ --cpu = NUMBER CPUS \\ --memory = MEMORY SIZE \\ --region = REGION \\ --root-password = INSERT-PASSWORD-HERE Terraform To create an instance with CMEK, use a Terraform resource . resource \"google sql database instance\" \"postgres instance with cmek\" { name = \"postgres-instance-cmek\" provider = google-beta region = \"us-central1\" database version = \"POSTGRES 14\" encryption key name = google kms crypto key.key.id settings { tier = \"db-custom-2-7680\" } set deletion protection to true, will ensure that one cannot accidentally delete this instance by use of Terraform whereas deletion protection enabled flag protects this instance at the GCP level. deletion protection = false } Delete the changes To delete your changes, do the following: To disable deletion protection, in your Terraform configuration file set the deletion protection argument to false . deletion protection = \"false\" Apply the updated Terraform configuration by running the following command and entering yes at the prompt: terraform apply Remove resources previously applied with your Terraform configuration by running the following command and entering yes at the prompt: terraform destroy REST v1 To create an instance with customer-managed encryption keys, pass diskEncryptionConfiguration to the command."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "example.com",
+      "identity.gcp",
+      "key.key.id",
+      "sql.email",
+      "sql.iam.gserviceaccount.com",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-cmek"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:39.896Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql"
+}

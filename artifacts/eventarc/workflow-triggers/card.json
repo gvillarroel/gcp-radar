@@ -1,0 +1,240 @@
+{
+  "feature_name": "Workflow triggers",
+  "feature_slug": "workflow-triggers",
+  "summary": "Eventarc can create triggers for direct events from Workflows; Eventarc can create triggers for direct events from Workflows in Preview.",
+  "extended_definition": "Eventarc can create triggers for direct events from Workflows; Eventarc can create triggers for direct events from Workflows in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform",
+      "https://docs.cloud.google.com/eventarc/docs/retry-events",
+      "https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers",
+      "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a trigger using Terraform \\_|\\_ Eventarc Standard \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform",
+        "source_id": "site-docs-root",
+        "final_score": 284,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Verify the creation of resources Cloud Run Confirm that the service has been created: gcloud run services list --region us-central1 Confirm that the trigger has been created: gcloud eventarc triggers list --location us-central1 The output should be similar to the following: NAME: trigger-storage-cloudrun-tf TYPE: google.cloud.storage.object.v1.finalized DESTINATION: Cloud Run service: hello-events ACTIVE: Yes LOCATION: us-central1 GKE Confirm that the service has been created: kubectl get service hello-gke Confirm that the trigger has been created: gcloud eventarc triggers list --location us-central1 The output should be similar to the following: NAME: trigger-storage-gke-tf TYPE: google.cloud.storage.object.v1.finalized DESTINATION: GKE: hello-gke ACTIVE: Yes LOCATION: us-central1 Workflows Confirm that the workflow has been created: gcloud workflows list --location us-central1 Confirm that the Eventarc trigger has been created: gcloud eventarc triggers list --location us-central1 The output should be similar to the following: NAME: trigger-storage-workflows-tf TYPE: google.cloud.storage.object.v1.finalized DESTINATION: Workflows: storage-workflow-tf ACTIVE: Yes LOCATION: us-central1 Generate and view an event You can generate an event and confirm that the Eventarc trigger is working as expected.",
+          "Cloud Run Cloud Storage bucket names must be globally unique resource \"random id\" \"bucket name suffix\" { byte length = 4 } Create a Cloud Storage bucket resource \"google storage bucket\" \"default\" { name = \"trigger-cloudrun-${data.google project.project.name}-${random id.bucket name suffix.hex}\" location = google cloud run v2 service.default.location force destroy = true uniform bucket level access = true } Grant the Cloud Storage service account permission to publish pub/sub topics data \"google storage project service account\" \"gcs account\" {} resource \"google project iam member\" \"pubsubpublisher\" { project = data.google project.project.id role = \"roles/pubsub.publisher\" member = \"serviceAccount:${data.google storage project service account.gcs account.email address}\" depends on = [ data.google storage project service account.gcs account ] } GKE Cloud Storage bucket names must be globally unique resource \"random id\" \"bucket name suffix\" { byte length = 4 } Create a Cloud Storage bucket resource \"google storage bucket\" \"default\" { name = \"trigger-gke-${data.google project.project.name}-${random id.bucket name suffix.hex}\" location = \"us-central1\" force destroy = true uniform bucket level access = true } Grant the Cloud Storage service account permission to publish pub/sub topics data \"google storage project service account\" \"gcs account\" {} resource \"google project iam member\" \"pubsubpublisher\" { project = data.google project.project.id role = \"roles/pubsub.publisher\" member = \"serviceAccount:${data.google storage project service account.gcs account.email address}\" } Workflows Cloud Storage bucket names must be globally unique resource \"random id\" \"bucket name suffix\" { byte length = 4 } Create a Cloud Storage bucket resource \"google storage bucket\" \"default\" { name = \"trigger-workflows-${data.google project.project.name}-${random id.bucket name suffix.hex}\" location = google workflows workflow.default.region force destroy = true uniform bucket level access = true } Grant the Cloud Storage service account permission to publish Pub/Sub topics data \"google storage project service account\" \"gcs account\" {} resource \"google project iam member\" \"pubsubpublisher\" { project = data.google project.project.id role = \"roles/pubsub.publisher\" member = \"serviceAccount:${data.google storage project service account.gcs account.email address}\" } Create an event receiver to be the event target Create an event receiver using one of the following Terraform resources: google cloud run v2 service google container cluster google workflows workflow Cloud Run Create a Cloud Run service as an event destination for the Eventarc trigger: Deploy Cloud Run service resource \"google cloud run v2 service\" \"default\" { name = \"hello-events\" location = \"us-central1\" deletion protection = false # set to \"true\" in production template { containers { This container will log received events image = \"us-docker.pkg.dev/cloudrun/container/hello\" } service account = google service account.default.email } depends on = [ google project service.run ] } GKE To simplify this guide, create a Google Kubernetes Engine service as an event destination outside of Terraform, in between applying Terraform configurations.",
+          "This identity is created with: gcloud beta services identity create --service eventarc.googleapis.com This local variable is used for convenience locals { eventarc sa = \"serviceAccount:service-${data.google project.project.number}@gcp-sa-eventarc.iam.gserviceaccount.com\" } resource \"google project iam member\" \"computeViewer\" { project = data.google project.project.id role = \"roles/compute.viewer\" member = local.eventarc sa } resource \"google project iam member\" \"containerDeveloper\" { project = data.google project.project.id role = \"roles/container.developer\" member = local.eventarc sa } resource \"google project iam member\" \"serviceAccountAdmin\" { project = data.google project.project.id role = \"roles/iam.serviceAccountAdmin\" member = local.eventarc sa } Create the service account: Create a service account to be used by GKE trigger resource \"google service account\" \"eventarc gke trigger sa\" { account id = \"eventarc-gke-trigger-sa\" display name = \"Evenarc GKE Trigger Service Account\" } Grant permission to receive Eventarc events resource \"google project iam member\" \"eventreceiver\" { project = data.google project.project.id role = \"roles/eventarc.eventReceiver\" member = \"serviceAccount:${google service account.eventarc gke trigger sa.email}\" } Grant permission to subscribe to Pub/Sub topics resource \"google project iam member\" \"pubsubscriber\" { project = data.google project.project.id role = \"roles/pubsub.subscriber\" member = \"serviceAccount:${google service account.eventarc gke trigger sa.email}\" } Workflows Used to retrieve project information later data \"google project\" \"project\" {} Create a service account for Eventarc trigger and Workflows resource \"google service account\" \"eventarc\" { account id = \"eventarc-workflows-sa\" display name = \"Eventarc Workflows Service Account\" } Grant permission to invoke Workflows resource \"google project iam member\" \"workflowsinvoker\" { project = data.google project.project.id role = \"roles/workflows.invoker\" member = \"serviceAccount:${google service account.eventarc.email}\" } Grant permission to receive events resource \"google project iam member\" \"eventreceiver\" { project = data.google project.project.id role = \"roles/eventarc.eventReceiver\" member = \"serviceAccount:${google service account.eventarc.email}\" } Grant permission to write logs resource \"google project iam member\" \"logwriter\" { project = data.google project.project.id role = \"roles/logging.logWriter\" member = \"serviceAccount:${google service account.eventarc.email}\" } The Pub/Sub service agent is automatically created when the Pub/Sub API is enabled."
+        ]
+      },
+      {
+        "title": "\"Trigger Workflows with direct events from Cloud Storage (gcloud CLI) \\_\\",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage",
+        "source_id": "site-iam-reference",
+        "final_score": 272,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Grant the Eventarc Event Receiver role ( roles/eventarc.eventReceiver ) on the project to the Compute Engine default service account so that the Eventarc trigger can receive events from event providers. gcloud projects add-iam-policy-binding PROJECT ID \\ --member = serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com \\ --role = roles/eventarc.eventReceiver Grant the Workflows Invoker role ( roles/workflows.invoker ) on the project to the Compute Engine default service account so that the account has permission to trigger your workflow execution. gcloud projects add-iam-policy-binding PROJECT ID \\ --member = serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com \\ --role = roles/workflows.invoker Grant the Logging Logs Writer role ( roles/logging.logWriter ) on the project to the Compute Engine default service account so that the workflow can send logs to Cloud Logging. gcloud projects add-iam-policy-binding PROJECT ID \\ --member = serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com \\ --role = roles/logging.logWriter Before creating a trigger for direct events from Cloud Storage, grant the Pub/Sub Publisher role ( roles/pubsub.publisher ) to the Cloud Storage service agent: SERVICE ACCOUNT = \" $( gcloud storage service-agent --project = PROJECT ID ) \" gcloud projects add-iam-policy-binding PROJECT ID \\ --member = \"serviceAccount: ${ SERVICE ACCOUNT } \" \\ --role = 'roles/pubsub.publisher' If you enabled the Cloud Pub/Sub service agent on or before April 8, 2021, to support authenticated Pub/Sub push requests, grant the Service Account Token Creator role ( roles/iam.serviceAccountTokenCreator ) to the service agent.",
+          "To confirm storage-events-trigger was successfully created, run: gcloud eventarc triggers describe storage-events-trigger --location = ${ TRIGGER LOCATION } The output should be similar to the following listing the time of creation and trigger location: createTime: '2021-10-14T15:15:43.872360951Z' [...] name: projects/ PROJECT ID /locations/us-central1/triggers/storage-events-trigger Note: Although your trigger is created immediately, it can take up to two minutes for a trigger to be fully functional.",
+          "Create a trigger that filters Cloud Storage events: gcloud eventarc triggers create storage-events-trigger \\ --destination-workflow = ${ MY WORKFLOW } \\ --event-filters = \"type=google.cloud.storage.object.v1.finalized\" \\ --event-filters = \"bucket= ${ PROJECT ID } -bucket\" \\ --service-account = \" PROJECT NUMBER -compute@developer.gserviceaccount.com\" This creates a trigger called storage-events-trigger ."
+        ]
+      },
+      {
+        "title": "Retry events \\_|\\_ Eventarc Standard \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/eventarc/docs/retry-events",
+        "source_id": "site-docs-root-2",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "How retries work When you create an Eventarc trigger, the Pub/Sub transport topic and subscription are automatically created for you. (Events from Pub/Sub sources can use an existing Pub/Sub topic.) Any subscription ID automatically created by Eventarc will have a format that begins with eventarc- REGION - .",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://eventarc.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /triggers/ TRIGGER NAME \" Select-Object -Expand Content If successful, the response body contains an instance of Trigger similar to the following: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /triggers/ TRIGGER NAME \", \"uid\": \"d700773a-698b-47b2-a712-2ee10b690062\", \"createTime\": \"2022-12-06T22:44:04.744001514Z\", \"updateTime\": \"2022-12-06T22:44:09.116459550Z\", \"eventFilters\": [ { \"attribute\": \"type\", \"value\": \"google.cloud.pubsub.topic.v1.messagePublished\" } ], \"serviceAccount\": \" SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com\", \"destination\": { \"workflow\": \"projects/ PROJECT ID /locations/ LOCATION /workflows/ WORKFLOW NAME \" }, \"transport\": { \"pubsub\": { \"topic\": \"projects/ PROJECT ID /topics/ TOPIC ID \", \"subscription\": \"projects/ PROJECT ID /subscriptions/ SUBSCRIPTION ID \" } } } Update the subscription To update the Pub/Sub subscription retry policy associated with your Eventarc trigger, do the following: Console In the Google Cloud console, go to the Eventarc Triggers page.",
+          "This command returns information about the trigger that is similar to the following and that includes the subscription ID: createTime: '2023-03-16T13:40:44.889670204Z' destination: cloudRun: path: / region: us-central1 service: hello eventDataContentType: application/protobuf eventFilters: ... transport: pubsub: subscription: projects/ PROJECT ID /subscriptions/ SUBSCRIPTION ID topic: projects/ PROJECT ID /topics/ TOPIC ID Terraform To describe a google eventarc trigger Terraform resource, you can use the state show command. terraform state show google eventarc trigger.default The state show command returns information about the trigger that includes the subscription ID."
+        ]
+      },
+      {
+        "title": "\"Migrate Pub/Sub triggers from Events for Cloud Run for Anthos to Eventarc\\",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers",
+        "source_id": "site-iam-reference",
+        "final_score": 247,
+        "relevance": "",
+        "evidence_snippets": [
+          "All the arguments, including the destination service, cluster, and topic ID, should match that of the existing event trigger. gcloud eventarc triggers create EVENTARC TRIGGER NAME \\ --event-filters = \"type=google.cloud.pubsub.topic.v1.messagePublished\" \\ --location LOCATION \\ --destination-gke-service = DESTINATION SERVICE \\ --destination-gke-cluster = CLUSTER NAME \\ --destination-gke-location = CLUSTER LOCATION \\ --destination-gke-namespace = EVENTS NAMESPACE \\ --destination-gke-path = / \\ --service-account = $TRIGGER GSA @ $PROJECT ID .iam.gserviceaccount.com \\ --transport-topic = projects/ PROJECT ID /topics/ TOPIC ID Replace EVENTARC TRIGGER NAME with a name for the new Eventarc trigger and TOPIC ID with the Pub/Sub topic ID that you retrieved previously.",
+          "Confirm that the trigger was successfully created: gcloud eventarc triggers list The output is similar to the following: NAME TYPE DESTINATION RUN SERVICE DESTINATION RUN PATH ACTIVE eventarc-trigger-name google.cloud.pubsub.topic.v1.messagePublished Yes Test the migration and verifying the output Caution: Before moving to production, verify and validate that events are being delivered and received as expected by your GKE service.",
+          "The output is similar to the following: topic: topic-id type: google.cloud.pubsub.topic.v1.messagePublished name: cloud-run-service-name namespace: events Create an Eventarc trigger to replace the existing trigger Before creating the Eventarc trigger, set up a user-managed service account and grant it specific roles so that Eventarc can manage events for GKE destinations."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.default.email",
+      "account.email",
+      "account.eventarc",
+      "account.eventarc.email",
+      "account.gcs",
+      "cloudevents.Event",
+      "compute.viewer",
+      "container.developer",
+      "data.google",
+      "data.proto",
+      "developer.gserviceaccount.com",
+      "docker.pkg.dev",
+      "event.data.bucket",
+      "event.data.name",
+      "event.type",
+      "eventarc.eventReceiver",
+      "eventarc.googleapis.com",
+      "eventarc.iam.gserviceaccount.com",
+      "iam.gserviceaccount.com",
+      "iam.serviceAccountAdmin",
+      "iam.serviceAccountTokenCreator",
+      "id.bucket",
+      "link0.09767362059083662",
+      "local.eventarc",
+      "logging.logWriter",
+      "policy.maximum",
+      "policy.minimum",
+      "project.project.id",
+      "project.project.name",
+      "project.project.number",
+      "pubsub.googleapis.com",
+      "pubsub.publisher",
+      "pubsub.subscriber",
+      "raw.githubusercontent.com",
+      "request.json",
+      "sa.email",
+      "service.default.location",
+      "service.run",
+      "service.workflows",
+      "suffix.hex",
+      "sys.log",
+      "trigger.default",
+      "workflow.default.region",
+      "workflows.invoker"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.viewer",
+      "roles/container.developer",
+      "roles/eventarc.eventReceiver",
+      "roles/iam.serviceAccountAdmin",
+      "roles/iam.serviceAccountTokenCreator",
+      "roles/logging.logWriter",
+      "roles/pubsub.publisher",
+      "roles/pubsub.subscriber",
+      "roles/workflows.invoker"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage",
+        "https://docs.cloud.google.com/eventarc/docs/retry-events",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage",
+        "https://docs.cloud.google.com/eventarc/docs/retry-events",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage",
+        "https://docs.cloud.google.com/eventarc/docs/retry-events",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage",
+        "https://docs.cloud.google.com/eventarc/docs/retry-events",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage",
+        "https://docs.cloud.google.com/eventarc/docs/retry-events",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage",
+        "https://docs.cloud.google.com/eventarc/docs/retry-events",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage",
+        "https://docs.cloud.google.com/eventarc/docs/retry-events",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage",
+        "https://docs.cloud.google.com/eventarc/docs/retry-events",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage",
+        "https://docs.cloud.google.com/eventarc/docs/retry-events",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage",
+        "https://docs.cloud.google.com/eventarc/docs/retry-events",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:04.948Z",
+  "source_step08_card": "data/step-08/current/products/eventarc/card.json",
+  "product_name": "Eventarc",
+  "product_slug": "eventarc"
+}

@@ -1,0 +1,215 @@
+{
+  "feature_name": "Cloud Storage support",
+  "feature_slug": "cloud-storage-support",
+  "summary": "VPC Service Controls supports protecting Cloud Storage resources.",
+  "extended_definition": "VPC Service Controls supports protecting Cloud Storage resources.",
+  "lifecycle": {
+    "latest_feature_date": "2018-12-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported products and limitations \\_|\\_ VPC Service Controls \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "source_id": "site-docs-reference-2",
+        "final_score": 209,
+        "relevance": "",
+        "evidence_snippets": [
+          "Service name krmapihosting.googleapis.com Details To use Config Controller with VPC Service Controls, you must enable the following APIs inside your perimeter: Cloud Monitoring API ( monitoring.googleapis.com ) Container Registry API ( containerregistry.googleapis.com ) Google Cloud Observability API ( logging.googleapis.com ) Security Token Service API ( sts.googleapis.com ) Cloud Storage API ( storage.googleapis.com ) If you provision resources with Config Controller, you must enable the API for those resources in your service perimeter.",
+          "Therefore, while you can enable Storage Intelligence at the folder, organization, or project level, VPC Service Controls only protects project-level resources.",
+          "Limitations To fully protect your AI Platform Training training jobs, add all of the following APIs to the service perimeter: AI Platform Training and Prediction API ( ml.googleapis.com ) Pub/Sub API ( pubsub.googleapis.com ) Cloud Storage API ( storage.googleapis.com ) Google Kubernetes Engine API ( container.googleapis.com ) Container Registry API ( containerregistry.googleapis.com ) Cloud Logging API ( logging.googleapis.com ) Read more about setting up VPC Service Controls for AI Platform Training ."
+        ]
+      },
+      {
+        "title": "VPC accessible services \\_|\\_ VPC Service Controls \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+        "source_id": "site-docs-reference-2",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The VPC network in my-authorized-compute-project is now limited to accessing only resources for the Cloud Storage service.",
+          "However, you want your VPC network to only have access to Cloud Storage resources in my-authorized-gcs-project .",
+          "To limit the VPC network's access to only the storage service, you enable VPC accessible services and set storage.googleapis.com as an allowed service: gcloud access-context-manager perimeters update my-authorized-perimeter \\ --enable-vpc-accessible-services \\ --add-vpc-allowed-services = storage.googleapis.com Success!"
+        ]
+      },
+      {
+        "title": "Ingress and egress rules \\_|\\_ VPC Service Controls \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "source_id": "site-docs-reference",
+        "final_score": 177,
+        "relevance": "",
+        "evidence_snippets": [
+          "When an accessLevel or a resource for a source is set to a specific value instead of \" \" , VPC Service Controls evaluates both sources and identityType attributes. identityType or identities attribute resources attribute serviceName attribute Once you have finished configuring your ingress policy file, see Updating ingress and egress policies for instructions on applying your ingress policy file to your service perimeter.",
+          "VPC Service Controls evaluates accessLevel and resource attributes of the sources attribute as an OR condition. - resource: - (Use this attribute or the accessLevel attribute.) Specify one or more Google Cloud resources from the service perimeter that you want to allow to access data outside the perimeter.",
+          "Note: To allow ingress to resources, VPC Service Controls evaluates sources and identityType attributes as an AND condition and evaluates accessLevel and resource attributes of the sources attribute as an OR condition."
+        ]
+      },
+      {
+        "title": "\"Configure IAM roles in ingress and egress rules \\_|\\_ VPC Service Controls\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "source_id": "site-docs-reference",
+        "final_score": 171,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Storage storage.googleapis.com VPC Service Controls supports custom roles for Cloud Storage in the ingress and egress rules, but not the predefined Cloud Storage roles .",
+          "When you perform an insert object or write API request to projects protected by VPC Service Controls, you must configure ingress and egress rules allowing the storage.objects.delete and storage.objects.create permissions.",
+          "When you attempt to use a predefined Cloud Storage role in an ingress or egress rule, VPC Service Controls returns an INVALID ARGUMENT error."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "containerregistry.googleapis.com",
+      "krmapihosting.googleapis.com",
+      "logging.googleapis.com",
+      "ml.googleapis.com",
+      "monitoring.googleapis.com",
+      "pubsub.googleapis.com",
+      "storage.googleapis.com",
+      "storage.objects.create",
+      "storage.objects.delete",
+      "sts.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:47.928Z",
+  "source_step08_card": "data/step-08/current/products/vpc-service-controls/card.json",
+  "product_name": "VPC Service Controls",
+  "product_slug": "vpc-service-controls"
+}

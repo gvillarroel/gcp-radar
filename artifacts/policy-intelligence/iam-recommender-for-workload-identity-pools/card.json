@@ -1,0 +1,216 @@
+{
+  "feature_name": "IAM Recommender for workload identity pools",
+  "feature_slug": "iam-recommender-for-workload-identity-pools",
+  "summary": "IAM Recommender generates policy insights and role recommendations for identities in workload identity pools, workforce identity pools, and Google Kubernetes Engine Pods that use a specific Kubernetes service account.",
+  "extended_definition": "IAM Recommender generates policy insights and role recommendations for identities in workload identity pools, workforce identity pools, and Google Kubernetes Engine Pods that use a specific Kubernetes service account.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/policy-intelligence/docs/manage-identity-risks",
+      "https://docs.cloud.google.com/policy-intelligence/docs/organization-policy-recommendations-overview",
+      "https://docs.cloud.google.com/policy-intelligence/docs/reference/policysimulator/rest/Shared.Types/Binding",
+      "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Overview of role recommendations \\_|\\_ Policy Intelligence \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview",
+        "source_id": "site-docs-root",
+        "final_score": 215,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The principal that's granted the role needs to be one of the following principal types: User Service account Group allUsers allAuthenticatedUsers Cloud Storage convenience values BigQuery special group membership One of the following types of federated identities: All identities in a workload identity pool Single identity in a workload identity pool All identities in a workforce identity pool Single identity in a workforce identity pool All Google Kubernetes Engine Pods that use a specific Kubernetes service account Note: For the IAM recommender to generate policy insights for this principal type, the principal identifier must use the Kubernetes service account's name, not its UID.",
+          "Therefore, the IAM recommender generates a role recommendation suggesting that you revoke the Editor role and replace it with a combination of two other roles, which removes thousands of excess permissions: Console gcloud { \"associatedInsights\" : [ { \"insight\" : \"projects/123456789012/locations/global/insightTypes/google.iam.policy.Insight/insights/3d4ef3d6-bdf0-4330-975d-c65cb929c44d\" } ], \"content\" : { \"operationGroups\" : [ { \"operations\" : [ { \"action\" : \"add\" , \"path\" : \"/iamPolicy/bindings/ /members/-\" , \"pathFilters\" : { \"/iamPolicy/bindings/ /condition/expression\" : \"\" , \"/iamPolicy/bindings/ /role\" : \"roles/iam.serviceAccountUser\" }, \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" , \"resourceType\" : \"cloudresourcemanager.googleapis.com/Project\" , \"value\" : \"user:my-user@example.com\" }, { \"action\" : \"add\" , \"path\" : \"/iamPolicy/bindings/ /members/-\" , \"pathFilters\" : { \"/iamPolicy/bindings/ /condition/expression\" : \"\" , \"/iamPolicy/bindings/ /role\" : \"roles/storage.objectAdmin\" }, \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" , \"resourceType\" : \"cloudresourcemanager.googleapis.com/Project\" , \"value\" : \"user:my-user@example.com\" }, { \"action\" : \"remove\" , \"path\" : \"/iamPolicy/bindings/ /members/ \" , \"pathFilters\" : { \"/iamPolicy/bindings/ /condition/expression\" : \"\" , \"/iamPolicy/bindings/ /members/ \" : \"user:my-user@example.com\" , \"/iamPolicy/bindings/ /role\" : \"roles/editor\" }, \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" , \"resourceType\" : \"cloudresourcemanager.googleapis.com/Project\" } ] } ], \"overview\" : { \"addedRoles\" : [ \"roles/iam.serviceAccountUser\" , \"roles/storage.objectAdmin\" ], \"member\" : \"user:my-user@example.com\" , \"minimumObservationPeriodInDays\" : \"0\" , \"removedRole\" : \"roles/editor\" , \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" } }, \"description\" : \"Replace the current role with smaller predefined roles to cover the permissions needed.\" , \"etag\" : \"\\\"0da9a354c2a83d96\\\"\" , \"lastRefreshTime\" : \"2022-06-22T07:00:00Z\" , \"name\" : \"projects/123456789012/locations/global/recommenders/google.iam.policy.Recommender/recommendations/4637db3d-dba5-45eb-95ac-b4ee4b4cd14e\" , \"primaryImpact\" : { \"category\" : \"SECURITY\" , \"securityProjection\" : { \"details\" : { \"revokedIamPermissionsCount\" : 2998 } } }, \"priority\" : \"P2\" , \"recommenderSubtype\" : \"REPLACE ROLE\" , \"stateInfo\" : { \"state\" : \"ACTIVE\" } } REST { \"name\" : \"projects/123456789012/locations/global/recommenders/google.iam.policy.Recommender/recommendations/4637db3d-dba5-45eb-95ac-b4ee4b4cd14e\" , \"description\" : \"Replace the current role with smaller predefined roles to cover the permissions needed.\" , \"lastRefreshTime\" : \"2022-06-22T07:00:00Z\" , \"primaryImpact\" : { \"category\" : \"SECURITY\" , \"securityProjection\" : { \"details\" : { \"revokedIamPermissionsCount\" : 2998 } } }, \"content\" : { \"operationGroups\" : [ { \"operations\" : [ { \"action\" : \"add\" , \"resourceType\" : \"cloudresourcemanager.googleapis.com/Project\" , \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" , \"path\" : \"/iamPolicy/bindings/ /members/-\" , \"value\" : \"user:my-user@example.com\" , \"pathFilters\" : { \"/iamPolicy/bindings/ /condition/expression\" : \"\" , \"/iamPolicy/bindings/ /role\" : \"roles/iam.serviceAccountOwner\" } }, { \"action\" : \"add\" , \"resourceType\" : \"cloudresourcemanager.googleapis.com/Project\" , \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" , \"path\" : \"/iamPolicy/bindings/ /members/-\" , \"value\" : \"user:my-user@example.com\" , \"pathFilters\" : { \"/iamPolicy/bindings/ /condition/expression\" : \"\" , \"/iamPolicy/bindings/ /role\" : \"roles/storage.objectAdmin\" } }, { \"action\" : \"remove\" , \"resourceType\" : \"cloudresourcemanager.googleapis.com/Project\" , \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" , \"path\" : \"/iamPolicy/bindings/ /members/ \" , \"pathFilters\" : { \"/iamPolicy/bindings/ /condition/expression\" : \"\" , \"/iamPolicy/bindings/ /members/ \" : \"user:my-user@example.com\" , \"/iamPolicy/bindings/ /role\" : \"roles/editor\" } } ] } ], \"overview\" : { \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" , \"member\" : \"user:my-user@example.com\" , \"removedRole\" : \"roles/editor\" , \"addedRoles\" : [ \"roles/iam.serviceAccountUser\" , \"roles/storage.objectAdmin\" ], \"minimumObservationPeriodInDays\" : \"0\" } }, \"stateInfo\" : { \"state\" : \"ACTIVE\" }, \"etag\" : \"\\\"0da9a354c2a83d96\\\"\" , \"recommenderSubtype\" : \"REPLACE ROLE\" , \"associatedInsights\" : [ { \"insight\" : \"projects/123456789012/locations/global/insightTypes/google.iam.policy.Insight/insights/3d4ef3d6-bdf0-4330-975d-c65cb929c44d\" } ], \"priority\" : \"P2\" } Create a custom role The user my-user@example.com was granted the Cloud Trace Admin role ( roles/cloudtrace.admin ) on a project.",
+          "Therefore, the IAM recommender generates a role recommendation suggesting that you revoke the Browser role from my-user@example.com : Console gcloud { \"associatedInsights\" : [ { \"insight\" : \"projects/123456789012/locations/global/insightTypes/google.iam.policy.Insight/insights/86c14538-dcfd-4326-afe5-ee8ac921e06a\" } ], \"content\" : { \"operationGroups\" : [ { \"operations\" : [ { \"action\" : \"remove\" , \"path\" : \"/iamPolicy/bindings/ /members/ \" , \"pathFilters\" : { \"/iamPolicy/bindings/ /condition/expression\" : \"\" , \"/iamPolicy/bindings/ /members/ \" : \"user:my-user@example.com\" , \"/iamPolicy/bindings/ /role\" : \"roles/browser\" }, \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" , \"resourceType\" : \"cloudresourcemanager.googleapis.com/Project\" } ] } ], \"overview\" : { \"member\" : \"user:my-user@example.com\" , \"removedRole\" : \"roles/browser\" , \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" } }, \"description\" : \"This role has not been used during the observation window.\" , \"etag\" : \"\\\"9fc3241da8bfab51\\\"\" , \"lastRefreshTime\" : \"2022-05-20T07:00:00Z\" , \"name\" : \"projects/123456789012/locations/global/recommenders/google.iam.policy.Recommender/recommendations/fe512038-5455-49g1-8f9c-752e31c8c154\" , \"primaryImpact\" : { \"category\" : \"SECURITY\" , \"securityProjection\" : { \"details\" : { \"revokedIamPermissionsCount\" : 6 } } }, \"priority\" : \"P4\" , \"recommenderSubtype\" : \"REMOVE ROLE\" , \"stateInfo\" : { \"state\" : \"ACTIVE\" } } REST { \"name\" : \"projects/123456789012/locations/global/recommenders/google.iam.policy.Recommender/recommendations/fe512038-5455-49g1-8f9c-752e31c8c154\" , \"description\" : \"This role has not been used during the observation window.\" , \"lastRefreshTime\" : \"2022-05-20T07:00:00Z\" , \"primaryImpact\" : { \"category\" : \"SECURITY\" , \"securityProjection\" : { \"details\" : { \"revokedIamPermissionsCount\" : 6 } } }, \"content\" : { \"operationGroups\" : [ { \"operations\" : [ { \"action\" : \"remove\" , \"resourceType\" : \"cloudresourcemanager.googleapis.com/Project\" , \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" , \"path\" : \"/iamPolicy/bindings/ /members/ \" , \"pathFilters\" : { \"/iamPolicy/bindings/ /condition/expression\" : \"\" , \"/iamPolicy/bindings/ /members/ \" : \"user:my-user@example.com\" , \"/iamPolicy/bindings/ /role\" : \"roles/browser\" } } ] } ], \"overview\" : { \"resource\" : \"//cloudresourcemanager.googleapis.com/projects/123456789012\" , \"member\" : \"user:my-user@example.com\" , \"removedRole\" : \"roles/browser\" } }, \"stateInfo\" : { \"state\" : \"ACTIVE\" }, \"etag\" : \"\\\"9fc3241da8bfab51\\\"\" , \"recommenderSubtype\" : \"REMOVE ROLE\" , \"associatedInsights\" : [ { \"insight\" : \"projects/123456789012/locations/global/insightTypes/google.iam.policy.Insight/insights/86c14538-dcfd-4326-afe5-ee8ac921e06a\" } ], \"priority\" : \"P4\" } Replace an existing role A service account was granted the Editor role ( roles/editor ) on a project."
+        ]
+      },
+      {
+        "title": "\"Overview of organization policy recommendations \\_|\\_ Policy Intelligence\\",
+        "url": "https://docs.cloud.google.com/policy-intelligence/docs/organization-policy-recommendations-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 206,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If there are no created service account keys, Organization Policy recommender generates a recommendation to enforce the iam.managed.disableServiceAccountKeyCreation constraint and supporting details of the recommendation in the corresponding insights.",
+          "If there are no uploaded service account keys, Organization Policy recommender generates a recommendation to enforce the iam.managed.disableServiceAccountKeyUpload constraint and supporting details of the recommendation in the corresponding insights.",
+          "If there are no external protocol forwarding rules defined, Organization Policy recommender generates a recommendation to enforce the compute.managed.restrictProtocolForwardingCreationForTypes constraint and supporting details of the recommendation in the corresponding insights."
+        ]
+      },
+      {
+        "title": "Binding \\_|\\_ Policy Intelligence \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/policy-intelligence/docs/reference/policysimulator/rest/Shared.Types/Binding",
+        "source_id": "site-docs-reference",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, google.com or example.com . principal://iam.googleapis.com/locations/global/workforcePools/{pool id}/subject/{subject attribute value} : A single identity in a workforce identity pool. principalSet://iam.googleapis.com/locations/global/workforcePools/{pool id}/group/{groupId} : All workforce identities in a group. principalSet://iam.googleapis.com/locations/global/workforcePools/{pool id}/attribute.{attribute name}/{attribute value} : All workforce identities with a specific attribute value. principalSet://iam.googleapis.com/locations/global/workforcePools/{pool id}/ : All identities in a workforce identity pool. principal://iam.googleapis.com/projects/{projectNumber}/locations/global/workloadIdentityPools/{pool id}/subject/{subject attribute value} : A single identity in a workload identity pool. principalSet://iam.googleapis.com/projects/{projectNumber}/locations/global/workloadIdentityPools/{pool id}/group/{groupId} : A workload identity pool group. principalSet://iam.googleapis.com/projects/{projectNumber}/locations/global/workloadIdentityPools/{pool id}/attribute.{attribute name}/{attribute value} : All identities in a workload identity pool with a certain attribute. principalSet://iam.googleapis.com/projects/{projectNumber}/locations/global/workloadIdentityPools/{pool id}/ : All identities in a workload identity pool. deleted:user:{emailid}?uid={uniqueid} : An email address (plus unique identifier) representing a user that has been recently deleted.",
+          "If the group is recovered, this value reverts to group:{emailid} and the recovered group retains the role in the binding. deleted:principal://iam.googleapis.com/locations/global/workforcePools/{pool id}/subject/{subject attribute value} : Deleted single identity in a workforce identity pool.",
+          "For example, deleted:principal://iam.googleapis.com/locations/global/workforcePools/my-pool-id/subject/my-subject-attribute-value . condition object ( Expr ) The condition that is associated with this binding."
+        ]
+      },
+      {
+        "title": "\"Review and manage identity risks \\_|\\_ Policy Intelligence \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/policy-intelligence/docs/manage-identity-risks",
+        "source_id": "site-iam-reference",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before you begin To get the permissions that you need to review and manage identity risks, ask your administrator to grant you the following IAM roles on the organization, folder, or project that you want to review and manage identity risks for: Review identity risks: IAM Recommender Viewer ( roles/recommender.iamViewer ) Apply or dismiss recommendations: IAM Recommender Admin ( roles/recommender.iamAdmin ) Note: IAM basic roles might also contain permissions to review and manage identity risks.",
+          "The Security Insights dashboard displays the following widgets for the selected resource: Identity risk overview : Shows the total number of identities with one or more role bindings; the total number of risky identities across human, non-human, and group identities; and their respective severity levels.",
+          "Home Documentation Security Policy Intelligence Guides Send feedback Review and manage identity risks Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudresourcemanager.googleapis.com",
+      "cloudtrace.admin",
+      "compute.managed.restrictProtocolForwardingCreationForTypes",
+      "example.com",
+      "iam.googleapis.com",
+      "iam.managed.disableServiceAccountKeyCreation",
+      "iam.managed.disableServiceAccountKeyUpload",
+      "iam.serviceAccountOwner",
+      "iam.serviceAccountUser",
+      "recommender.iamAdmin",
+      "recommender.iamViewer",
+      "storage.objectAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/browser",
+      "roles/cloudtrace.admin",
+      "roles/editor",
+      "roles/iam.serviceAccountOwner",
+      "roles/iam.serviceAccountUser",
+      "roles/recommender.iamAdmin",
+      "roles/recommender.iamViewer",
+      "roles/storage.objectAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/organization-policy-recommendations-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/reference/policysimulator/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/policy-intelligence/docs/manage-identity-risks"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/organization-policy-recommendations-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/reference/policysimulator/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/policy-intelligence/docs/manage-identity-risks"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/organization-policy-recommendations-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/reference/policysimulator/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/policy-intelligence/docs/manage-identity-risks"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/organization-policy-recommendations-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/reference/policysimulator/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/policy-intelligence/docs/manage-identity-risks"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/organization-policy-recommendations-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/reference/policysimulator/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/policy-intelligence/docs/manage-identity-risks"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/organization-policy-recommendations-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/reference/policysimulator/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/policy-intelligence/docs/manage-identity-risks"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/organization-policy-recommendations-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/reference/policysimulator/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/policy-intelligence/docs/manage-identity-risks"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/organization-policy-recommendations-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/reference/policysimulator/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/policy-intelligence/docs/manage-identity-risks"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/organization-policy-recommendations-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/reference/policysimulator/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/policy-intelligence/docs/manage-identity-risks"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/organization-policy-recommendations-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/reference/policysimulator/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/policy-intelligence/docs/manage-identity-risks"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/policy-intelligence/docs/role-recommendations-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/organization-policy-recommendations-overview",
+        "https://docs.cloud.google.com/policy-intelligence/docs/reference/policysimulator/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/policy-intelligence/docs/manage-identity-risks"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:32.436Z",
+  "source_step08_card": "data/step-08/current/products/policy-intelligence/card.json",
+  "product_name": "Policy Intelligence",
+  "product_slug": "policy-intelligence"
+}

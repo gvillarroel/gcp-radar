@@ -1,0 +1,179 @@
+{
+  "feature_name": "Person detection",
+  "feature_slug": "person-detection",
+  "summary": "Person detection locates people in a video and identifies attributes and 2D landmarks.",
+  "extended_definition": "Person detection locates people in a video and identifies attributes and 2D landmarks.",
+  "lifecycle": {
+    "latest_feature_date": "2020-05-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+      "https://docs.cloud.google.com/video-intelligence/docs/feature-face-detection",
+      "https://docs.cloud.google.com/video-intelligence/docs/people-detection",
+      "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Detect people \\_|\\_ Video Intelligence API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/people-detection",
+        "source_id": "site-docs-root",
+        "final_score": 286,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "OperationFuture<AnnotateVideoResponse , AnnotateVideoProgress > future = videoIntelligenceServiceClient . annotateVideoAsync ( request ); System . out . println ( \"Waiting for operation to complete...\" ); AnnotateVideoResponse response = future . get (); // Gets annotations for video VideoAnnotationResults annotationResult = response . getAnnotationResultsList (). get ( 0 ); // Annotations for list of people detected, tracked and recognized in video. for ( PersonDetectionAnnotation personDetectionAnnotation : annotationResult . getPersonDetectionAnnotationsList ()) { System . out . print ( \"Person detected:\\n\" ); for ( Track track : personDetectionAnnotation . getTracksList ()) { VideoSegment segment = track . getSegment (); System . out . printf ( \"\\tStart: %d.%.0fs\\n\" , segment . getStartTimeOffset (). getSeconds (), segment . getStartTimeOffset (). getNanos () / 1e6 ); System . out . printf ( \"\\tEnd: %d.%.0fs\\n\" , segment . getEndTimeOffset (). getSeconds (), segment . getEndTimeOffset (). getNanos () / 1e6 ); // Each segment includes timestamped objects that include characteristic--e.g. clothes, // posture of the person detected.",
+          "VideoAnnotationResults annotationResult = response . getAnnotationResultsList (). get ( 0 ); // Annotations for list of people detected, tracked and recognized in video. for ( PersonDetectionAnnotation personDetectionAnnotation : annotationResult . getPersonDetectionAnnotationsList ()) { System . out . print ( \"Person detected:\\n\" ); for ( Track track : personDetectionAnnotation . getTracksList ()) { VideoSegment segment = track . getSegment (); System . out . printf ( \"\\tStart: %d.%.0fs\\n\" , segment . getStartTimeOffset (). getSeconds (), segment . getStartTimeOffset (). getNanos () / 1e6 ); System . out . printf ( \"\\tEnd: %d.%.0fs\\n\" , segment . getEndTimeOffset (). getSeconds (), segment . getEndTimeOffset (). getNanos () / 1e6 ); // Each segment includes timestamped objects that include characteristic--e.g. clothes, // posture of the person detected.",
+          "VideoIntelligenceServiceClient (); / TODO(developer): Uncomment the following line before running the sample. / // const path = 'Local file to analyze, e.g. ./my-file.mp4'; // Reads a local video file and converts it to base64 const file = fs . readFileSync ( path ); const inputContent = file . toString ( 'base64' ); async function detectPerson () { const request = { inputContent : inputContent , features : [ 'PERSON DETECTION' ], videoContext : { personDetectionConfig : { // Must set includeBoundingBoxes to true to get poses and attributes. includeBoundingBoxes : true , includePoseLandmarks : true , includeAttributes : true , }, }, }; // Detects faces in a video // We get the first result because we only process 1 video const [ operation ] = await video . annotateVideo ( request ); const results = await operation . promise (); console . log ( 'Waiting for operation to complete...' ); // Gets annotations for video const personAnnotations = results [ 0 ]. annotationResults [ 0 ]. personDetectionAnnotations ; for ( const { tracks } of personAnnotations ) { console . log ( 'Person detected:' ); for ( const { segment , timestampedObjects } of tracks ) { console . log ( \\tStart: ${ segment . startTimeOffset . seconds } + . ${ ( segment . startTimeOffset . nanos / 1e6 ). toFixed ( 0 ) } s ); console . log ( \\tEnd: ${ segment . endTimeOffset . seconds } . + ${ ( segment . endTimeOffset . nanos / 1e6 ). toFixed ( 0 ) } s ); // Each segment includes timestamped objects that // include characteristic--e.g. clothes, posture // of the person detected. const [ firstTimestampedObject ] = timestampedObjects ; // Attributes include unique pieces of clothing, poses (i.e., body // landmarks) of the person detected. for ( const { name , value } of firstTimestampedObject . attributes ) { console . log ( \\tAttribute: ${ name } ; Value: ${ value } ); } // Landmarks in person detection include body parts. for ( const { name , point } of firstTimestampedObject . landmarks ) { console . log ( \\tLandmark: ${ name } ; Vertex: ${ point . x } , ${ point . y } ); } } } } detectPerson (); Python To authenticate to Video Intelligence, set up Application Default Credentials."
+        ]
+      },
+      {
+        "title": "AnnotateVideoResponse \\_|\\_ Video Intelligence API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "source_id": "site-api-reference",
+        "final_score": 230,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation VideoAnnotationResults JSON representation LabelAnnotation JSON representation Entity JSON representation LabelSegment JSON representation LabelFrame JSON representation FaceAnnotation JSON representation FaceSegment JSON representation FaceFrame JSON representation NormalizedBoundingBox JSON representation FaceDetectionAnnotation JSON representation Track JSON representation TimestampedObject JSON representation DetectedAttribute JSON representation DetectedLandmark JSON representation NormalizedVertex JSON representation ExplicitContentAnnotation JSON representation ExplicitContentFrame JSON representation SpeechTranscription JSON representation SpeechRecognitionAlternative JSON representation WordInfo JSON representation TextAnnotation JSON representation TextSegment JSON representation TextFrame JSON representation NormalizedBoundingPoly JSON representation ObjectTrackingAnnotation JSON representation ObjectTrackingFrame JSON representation LogoRecognitionAnnotation JSON representation PersonDetectionAnnotation JSON representation Video annotation response.",
+          "Each will have list of frame information associated with it. objectAnnotations[] object ( ObjectTrackingAnnotation ) Annotations for list of objects detected and tracked in video. logoRecognitionAnnotations[] object ( LogoRecognitionAnnotation ) Annotations for list of logos detected, tracked and recognized in video. personDetectionAnnotations[] object ( PersonDetectionAnnotation ) Person detection annotations. error object ( Status ) If set, indicates an error.",
+          "JSON representation { \"inputUri\" : string , \"segment\" : { object ( VideoSegment ) } , \"segmentLabelAnnotations\" : [ { object ( LabelAnnotation ) } ] , \"segmentPresenceLabelAnnotations\" : [ { object ( LabelAnnotation ) } ] , \"shotLabelAnnotations\" : [ { object ( LabelAnnotation ) } ] , \"shotPresenceLabelAnnotations\" : [ { object ( LabelAnnotation ) } ] , \"frameLabelAnnotations\" : [ { object ( LabelAnnotation ) } ] , \"faceAnnotations\" : [ { object ( FaceAnnotation ) } ] , \"faceDetectionAnnotations\" : [ { object ( FaceDetectionAnnotation ) } ] , \"shotAnnotations\" : [ { object ( VideoSegment ) } ] , \"explicitAnnotation\" : { object ( ExplicitContentAnnotation ) } , \"speechTranscriptions\" : [ { object ( SpeechTranscription ) } ] , \"textAnnotations\" : [ { object ( TextAnnotation ) } ] , \"objectAnnotations\" : [ { object ( ObjectTrackingAnnotation ) } ] , \"logoRecognitionAnnotations\" : [ { object ( LogoRecognitionAnnotation ) } ] , \"personDetectionAnnotations\" : [ { object ( PersonDetectionAnnotation ) } ] , \"error\" : { object ( Status ) } } Fields inputUri string Video file location in Cloud Storage . segment object ( VideoSegment ) Video segment on which the annotation is run. segmentLabelAnnotations[] object ( LabelAnnotation ) Topical label annotations on video level or user-specified segment level."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Annotate a video by using the command line \\_|\\_ Video Intelligence\\",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+        "source_id": "site-api-reference",
+        "final_score": 225,
+        "relevance": "",
+        "evidence_snippets": [
+          "If the operation has completed, a done field is included and set to true : { \"name\" : \"projects/ PROJECT NUMBER /locations/ LOCATION ID /operations/ OPERATION ID \" , \"metadata\" : { \"@type\" : \"type.googleapis.com/google.cloud.videointelligence.v1.AnnotateVideoProgress\" , \"annotationProgress\" : [ { \"inputUri\" : \"/videointelligence-quickstart-bucket/ YOUR OBJECT \" , \"progressPercent\" : 100 , \"startTime\" : \"2020-04-01T22:13:17.978847Z\" , \"updateTime\" : \"2020-04-01T22:13:29.576004Z\" } ] }, \"done\" : true , ... } After about a minute, the request returns the annotation results.",
+          "The response includes the operation name: { \"name\" : \"projects/ PROJECT NUMBER /locations/ LOCATION ID /operations/ OPERATION ID \" } You can request information on the operation by calling the v1.operations endpoint, replacing OPERATION NAME in the example below with the name returned in the previous step: curl -X GET \\ -H \"Authorization: Bearer \" $( gcloud auth application-default print-access-token ) \\ https://videointelligence.googleapis.com/v1/ OPERATION NAME This command returns information related to your operation.",
+          "Clean up To avoid incurring charges to your Google Cloud account for the resources used on this page, do one of the following: If you want to continue using the project that you created, then use the gcloud storage rm command with the --recursive flag to delete the bucket and anything inside of it: gcloud storage rm gs://videointelligence-quickstart-bucket --recursive If you don't need the project that you created for this quickstart, then delete the project."
+        ]
+      },
+      {
+        "title": "Face detection \\_|\\_ Video Intelligence API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/feature-face-detection",
+        "source_id": "site-iam-reference",
+        "final_score": 214,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Video Intelligence API Face detection feature looks for faces in a video and returns: The video segment , or segments in which a face is detected, across all videos in the given request.",
+          "Home Documentation AI and ML Video Intelligence API Guides Send feedback Face detection Stay organized with collections Save and categorize content based on your preferences.",
+          "Does not include small objects that hold the hair (e.g., hair pins). frontal gaze Whether the person's eyes are looking directly into the camera as opposed to simply have both eyes visible. eyes visible The sclera (white of the eye) is visible for both eyes. glasses The person is wearing glasses on their face and over their eyes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g",
+      "file.mp4",
+      "i.e",
+      "serviceusage.serviceUsageConsumer",
+      "storage.admin",
+      "type.googleapis.com",
+      "v1.operations",
+      "videointelligence.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/serviceusage.serviceUsageConsumer",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/people-detection",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+        "https://docs.cloud.google.com/video-intelligence/docs/feature-face-detection"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/people-detection",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+        "https://docs.cloud.google.com/video-intelligence/docs/feature-face-detection"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/people-detection",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+        "https://docs.cloud.google.com/video-intelligence/docs/feature-face-detection"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/people-detection",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+        "https://docs.cloud.google.com/video-intelligence/docs/feature-face-detection"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/people-detection",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+        "https://docs.cloud.google.com/video-intelligence/docs/feature-face-detection"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/people-detection",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+        "https://docs.cloud.google.com/video-intelligence/docs/feature-face-detection"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/people-detection",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+        "https://docs.cloud.google.com/video-intelligence/docs/feature-face-detection"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/people-detection",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+        "https://docs.cloud.google.com/video-intelligence/docs/feature-face-detection"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:46.503Z",
+  "source_step08_card": "data/step-08/current/products/video-intelligence-api/card.json",
+  "product_name": "Video Intelligence API",
+  "product_slug": "video-intelligence-api"
+}

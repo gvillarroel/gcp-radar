@@ -1,0 +1,109 @@
+{
+  "feature_name": "ImportCustomer Method General Availability",
+  "feature_slug": "importcustomer-method-general-availability",
+  "summary": "Makes the ImportCustomer method generally available in Channel Services.",
+  "extended_definition": "Makes the ImportCustomer method generally available in Channel Services.",
+  "lifecycle": {
+    "latest_feature_date": "2021-08-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/channel/docs/concepts/workspace/products-skus",
+      "https://docs.cloud.google.com/channel/docs/guides/manage-entitlements",
+      "https://docs.cloud.google.com/channel/docs/reference/rpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage Google Workspace and Google Chrome entitlements \\_|\\_ Channel Services\\",
+        "url": "https://docs.cloud.google.com/channel/docs/guides/manage-entitlements",
+        "source_id": "site-docs-reference",
+        "final_score": 50,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "QueryEligibleBillingAccountsRequest { \"customer\" : \"accounts/123/customers/abc\" , \"skus\" : [ \"products/product id/skus/sku id1\" ] } QueryEligibleBillingAccountsResponse { \"skuPurchaseGroups\" : [ { \"skus\" : [ \"products/product id/skus/sku id1\" ], \"billingAccountPurchaseInfos\" : [ { \"billingAccount\" : { \"name\" : \"accounts/123/billingAccounts/billing account id1\" , \"displayName\" : \"Google Workspace USD US 1\" , \"currencyCode\" : \"USD\" , \"regionCode\" : \"US\" } }, { \"billingAccount\" : { \"name\" : \"accounts/123/billingAccounts/billing account id2\" , \"displayName\" : \"Google Workspace CAD CA 1\" , \"currencyCode\" : \"CAD\" , \"regionCode\" : \"CA\" } } ] } ] } With the selected PurchasableSku and BillingAccount, use the listPurchasableOffers method to find the available PurchasableOffer ListPurchasableOffersRequest { \"customer\": \"accounts/123/customers/abc\", \"createEntitlementPurchase\": { \"sku\": \"products/product id/skus/sku id1\", \"billingAccount\": \"accounts/123/billingAccounts/billing account id2\" } } ListPurchasableOffersResponse { \"purchasableOffers\": [ { \"offer\": { \"name\": \"accounts/123/offers/offer id1\", }, \"sku\": { \"name\": \"products/product id/skus/sku id1\", }, \"plan\": { \"paymentPlan\": \"FLEXIBLE\", \"paymentCycle\": { \"duration\": 1, \"periodType\": \"MONTH\" } }, \"priceReferenceId\": \"price reference id 123\" } ], } At this point you should have the BillingAccount that will pay for the Entitlement and the PurchasableOffer.",
+          "QueryEligibleBillingAccountsRequest { \"customer\" : \"accounts/123/customers/abc\" , \"skus\" : [ \"products/product id/skus/voice sku id1\" , \"products/product id/skus/google workspace sku id2\" , \"google workspace chrome sku id3\" ] } QueryEligibleBillingAccountsResponse { \"skuPurchaseGroups\" : [ { \"skus\" : [ \"products/product id/skus/voice sku id1\" ], \"billingAccountPurchaseInfos\" : [ { \"billingAccount\" : { \"name\" : \"accounts/123/billingAccounts/voice billing account id1\" , \"displayName\" : \"Google Workspace Voice USD US 1\" , \"currencyCode\" : \"USD\" , \"regionCode\" : \"US\" } } ] }, { \"skus\" : [ \"products/product id/skus/google workspace sku id2\" , \"google workspace chrome sku id3\" ], \"billingAccountPurchaseInfos\" : [ { \"billingAccount\" : { \"name\" : \"accounts/123/billingAccounts/gw billing account id1\" , \"displayName\" : \"Google Workspace USD US 1\" , \"currencyCode\" : \"USD\" , \"regionCode\" : \"US\" } }, { \"billingAccount\" : { \"name\" : \"accounts/123/billingAccounts/gw billing account id2\" , \"displayName\" : \"Google Workspace CAD CA 1\" , \"currencyCode\" : \"CAD\" , \"regionCode\" : \"CA\" } } ] } ] } ``` For each TransferableSku and BillingAccount pairs, use the listTransferableOffers method to find available TransferableOffers .",
+          "QueryEligibleBillingAccountsRequest { \"customer\" : \"accounts/123/customers/abc\" , \"skus\" : [ \"products/product id/skus/sku id1\" ] } QueryEligibleBillingAccountsResponse { \"skuPurchaseGroups\" : [ { \"skus\" : [ \"products/product id/skus/sku id1\" ], \"billingAccountPurchaseInfos\" : [ { \"billingAccount\" : { \"name\" : \"accounts/123/billingAccounts/billing account id1\" , \"displayName\" : \"Google Workspace USD US 1\" , \"currencyCode\" : \"USD\" , \"regionCode\" : \"US\" } }, { \"billingAccount\" : { \"name\" : \"accounts/123/billingAccounts/billing account id2\" , \"displayName\" : \"Google Workspace CAD CA 1\" , \"currencyCode\" : \"CAD\" , \"regionCode\" : \"CA\" } } ] } ] } With the Entitlement and BillingAccount, use the listPurchasableOffers method to find any PurchasableOffer."
+        ]
+      },
+      {
+        "title": "Cloud Channel API \\_|\\_ Channel Services \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/channel/docs/reference/rpc",
+        "source_id": "site-docs-root",
+        "final_score": 46,
+        "relevance": "",
+        "evidence_snippets": [
+          "RunReportJob (deprecated) Begins generation of data for a given report. google.cloud.channel.v1alpha1.CloudChannelService Methods ActivateEntitlement Activates a previously suspended entitlement.",
+          "RunReportJob (deprecated) Begins generation of data for a given report. google.cloud.channel.v1.CloudChannelService Methods ActivateEntitlement Activates a previously suspended entitlement.",
+          "UpdateOpportunity Updates an existing Opportunity resource. google.longrunning.Operations Methods CancelOperation Starts asynchronous cancellation on a long-running operation."
+        ]
+      },
+      {
+        "title": "\"Google Workspace products, SKUs, and plans \\_|\\_ Channel Services \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/channel/docs/concepts/workspace/products-skus",
+        "source_id": "site-docs-reference",
+        "final_score": 37,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Google Workspace includes the following core SKUs: Business Starter Business Standard Business Plus Enterprise Standard Enterprise Plus Enterprise Essentials (only available as an ANNUAL MONTHLY plan) Google Workspace also includes these add-on SKUs: Enterprise Archived User Google Drive Storage Google Vault Cloud Identity SKUs Cloud Identity is a unified identity, access, app, and endpoint management (IAM/EMM) platform.",
+          "Plans Several payment plans are available, including: Annual/Monthly: Annual commitment with monthly, post-paid payments Annual/Yearly: Annual commitment with yearly pre-payment Flexible: Non-commitment plan with post-paid monthly payments Perpetual: One-time, non-recurring payment Free trial plan Trial length is variable up to a maximum of 30 days.",
+          "It isn't possible to upgrade Annual/Yearly subscriptions, but you can switch to Flexible using the entitlements.changeRenewalSettings method, then perform an adjustment after the renewal event."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "entitlements.changeRenewalSettings",
+      "entitlements.create"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/guides/manage-entitlements",
+        "https://docs.cloud.google.com/channel/docs/reference/rpc",
+        "https://docs.cloud.google.com/channel/docs/concepts/workspace/products-skus"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/guides/manage-entitlements",
+        "https://docs.cloud.google.com/channel/docs/reference/rpc",
+        "https://docs.cloud.google.com/channel/docs/concepts/workspace/products-skus"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/guides/manage-entitlements",
+        "https://docs.cloud.google.com/channel/docs/reference/rpc",
+        "https://docs.cloud.google.com/channel/docs/concepts/workspace/products-skus"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:26.585Z",
+  "source_step08_card": "data/step-08/current/products/channel-services/card.json",
+  "product_name": "Channel Services",
+  "product_slug": "channel-services"
+}

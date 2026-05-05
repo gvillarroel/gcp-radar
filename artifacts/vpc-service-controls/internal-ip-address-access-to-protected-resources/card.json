@@ -1,0 +1,176 @@
+{
+  "feature_name": "Internal IP address access to protected resources",
+  "feature_slug": "internal-ip-address-access-to-protected-resources",
+  "summary": "Lets access to VPC Service Controls protected resources be allowed based on an internal IP address.",
+  "extended_definition": "Lets access to VPC Service Controls protected resources be allowed based on an internal IP address.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc-service-controls/docs/access-level-design",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/enable-internal-ip-access",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/use-access-levels",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/violation-analyzer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Allow access to protected resources from an internal IP address \\_|\\_ VPC\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/enable-internal-ip-access",
+        "source_id": "site-docs-reference",
+        "final_score": 339,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking VPC Service Controls Guides Send feedback Allow access to protected resources from an internal IP address Stay organized with collections Save and categorize content based on your preferences.",
+          "This feature lets you do the following tasks: Support basic access level conditions to allow internal IP address ranges of VPC networks.",
+          "Figure 1 shows an example setup that allows access to a specific protected service from an authorized internal IP address."
+        ]
+      },
+      {
+        "title": "\"Allow access to protected resources from outside a perimeter \\_|\\_ VPC Service\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/use-access-levels",
+        "source_id": "site-docs-root",
+        "final_score": 265,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud NAT has an integration with Private Google Access that automatically enables Private Google Access on the resource's subnet, and keeps the traffic to Google APIs and services internal, as opposed to routing it to the internet using the Cloud NAT gateway external IP address.",
+          "The following examples explain how to create an access level using different conditions: IP address User and service accounts (principals) Device policy Add access levels to service perimeters You can add access levels to a service perimeter when creating the perimeter, or to an existing perimeter: Read about adding access levels when you create a perimeter Read about adding access levels to an existing perimeter Manage access levels For information about listing, modifying, and deleting existing access levels, read Managing access levels .",
+          "Home Documentation Networking VPC Service Controls Guides Send feedback Allow access to protected resources from outside a perimeter Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Design access levels \\_|\\_ VPC Service Controls \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/access-level-design",
+        "source_id": "site-docs-reference",
+        "final_score": 221,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Then, run the following query: SELECT receiveTimestamp , # time of violation Resource . labels . service , # protected Google Cloud service being blocked protopayload auditlog . methodName , # method name being called resource . labels . project id as PROJECT , # protected project blocking the call protopayload auditlog . authenticationInfo . principalEmail , # caller identity protopayload auditlog . requestMetadata . callerIp , # caller IP JSON EXTRACT ( protopayload auditlog . metadataJson , '$.dryRun' ) as DRYRUN , # dry - run indicator JSON EXTRACT ( protopayload auditlog . metadataJson , '$.violationReason' ) as REASON , # reason for violation protopayload auditlog . metadataJson , # raw violation entry FROM BQ DATASOURCE NAME . cloudaudit googleapis com policy WHERE JSON EXTRACT ( protopayload auditlog . metadataJson , '$.dryRun' ) is null # exclude logs from a dry - run perimeter What's next Learn how to allow access to protected resources from outside the perimeter .",
+          "Cloud NAT has an integration with Private Google Access that automatically enables Private Google Access on the resource's subnet, and keeps the traffic to Google APIs and services internal, instead of routing it to the internet using the Cloud NAT gateway external IP address.",
+          "To allow perimeter access in this case, you need to configure an ingress rule to allow access based on other attributes such as the project or service account, instead of configuring an access level based on the external source IP address."
+        ]
+      },
+      {
+        "title": "\"Diagnose an access denial in violation analyzer \\_|\\_ VPC Service Controls\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/violation-analyzer",
+        "source_id": "site-docs-reference-2",
+        "final_score": 215,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Sensitive information redaction To protect sensitive data, the violation analyzer redacts the following information in the troubleshooting result: IP address: When an access request originates from a Google Cloud service inside an internal production network, the violation analyzer redacts the IP address of the access request as private .",
+          "When you don't have sufficient permissions to view the restricted resources, the Protected resources accessed section doesn't list the perimeter name and the Resources accessed column displays the involved project with a warning icon.",
+          "The Other resources accessed section lists all the other involved resources, grouped under one of the following states: State Description Unrestricted This state indicates that the resource is not protected by any service perimeter."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable-internal-ip-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/use-access-levels",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/access-level-design",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/violation-analyzer"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable-internal-ip-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/use-access-levels",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/access-level-design",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/violation-analyzer"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable-internal-ip-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/use-access-levels",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/access-level-design",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/violation-analyzer"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable-internal-ip-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/use-access-levels",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/access-level-design",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/violation-analyzer"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable-internal-ip-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/use-access-levels",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/access-level-design",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/violation-analyzer"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable-internal-ip-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/use-access-levels",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/access-level-design",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/violation-analyzer"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable-internal-ip-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/use-access-levels",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/access-level-design",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/violation-analyzer"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable-internal-ip-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/use-access-levels",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/access-level-design",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/violation-analyzer"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable-internal-ip-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/use-access-levels",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/access-level-design",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/violation-analyzer"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:47.928Z",
+  "source_step08_card": "data/step-08/current/products/vpc-service-controls/card.json",
+  "product_name": "VPC Service Controls",
+  "product_slug": "vpc-service-controls"
+}

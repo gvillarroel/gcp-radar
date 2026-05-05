@@ -1,0 +1,154 @@
+{
+  "feature_name": "Data clean room query templates",
+  "feature_slug": "data-clean-room-query-templates",
+  "summary": "BigQuery data clean rooms support query templates to predefine and restrict runnable queries.",
+  "extended_definition": "BigQuery data clean rooms support query templates to predefine and restrict runnable queries.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analysis-rules",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Restrict data access using analysis rules \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analysis-rules",
+        "source_id": "site-docs-reference-2",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Preview Parameter-driven privacy budgeting for differential privacy is in preview while differential privacy enforcement in BigQuery data clean rooms is now generally available (GA).",
+          "You can define a differential privacy analysis rule for a view in a data clean room or with the CREATE VIEW statement: CREATE OR REPLACE VIEW VIEW NAME OPTIONS ( privacy policy = ' '' { \"differential privacy policy\": { \"privacy unit column\": \" PRIVACY UNIT COLUMN \", \"max epsilon per query\": MAX EPSILON PER QUERY , \"epsilon budget\": EPSILON BUDGET , \"delta per query\": DELTA PER QUERY , \"delta budget\": DELTA BUDGET , \"max groups contributed\": MAX GROUPS CONTRIBUTED }, \"join restriction policy\": { \"join condition\": \" JOIN CONDITION \", \"join allowed columns\": JOIN ALLOWED COLUMNS } } '' ' ) AS QUERY ; Definitions: differential privacy policy : The differential privacy policy for the differential privacy analysis rule.",
+          "Define an aggregation threshold analysis rule for a view You can define an aggregation threshold analysis rule for a view in a data clean room or with the CREATE VIEW statement: CREATE OR REPLACE VIEW VIEW NAME OPTIONS ( privacy policy = ' '' { \"aggregation threshold policy\": { \"threshold\" : THRESHOLD , \"privacy unit column\": \" PRIVACY UNIT COLUMN \" }, \"join restriction policy\": { \"join condition\": \" JOIN CONDITION \", \"join allowed columns\": JOIN ALLOWED COLUMNS } } '' ' ) AS QUERY ; Definitions: aggregation threshold policy : The aggregation threshold policy for the aggregation threshold analysis rule."
+        ]
+      },
+      {
+        "title": "\"View and subscribe to listings and data exchanges \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "source_id": "site-docs-root-2",
+        "final_score": 160,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Subscribe to data exchanges : BigQuery User ( roles/bigquery.user ) To subscribe to data exchanges in the context of data clean room exchanges, you must also ask the BigQuery sharing exchange publisher to grant you the Analytics Hub Subscriber role ( roles/analyticshub.subscriber ) on the specific data clean room.",
+          "In the Filters section, you can filter data clean room exchanges based on the following fields: Listings : select the Clean rooms checkbox to view the data clean rooms shared with you.",
+          "Browse through the filtered data clean rooms."
+        ]
+      },
+      {
+        "title": "SCHEMATA_LINKS view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links",
+        "source_id": "site-docs-reference-3",
+        "final_score": 150,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The dataset name is also referred to as the datasetId . linked schema creation time TIMESTAMP The time when the linked dataset was created. linked schema org display name STRING The display name of the organization in which the linked dataset is created. shared asset id STRING The ID of the asset that is shared using data clean rooms.",
+          "Each of the following predefined IAM roles includes the permissions that you need in order to query the INFORMATION SCHEMA.SCHEMATA LINKS view: roles/bigquery.admin roles/bigquery.dataEditor roles/bigquery.dataOwner roles/bigquery.dataViewer For more information about BigQuery permissions, see Access control with IAM .",
+          "This view also contains individual resources, such as tables or views, in a project that is shared using data clean rooms ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "analyticshub.subscriber",
+      "analyticshub.viewer",
+      "bigquery.admin",
+      "bigquery.dataEditor",
+      "bigquery.dataOwner",
+      "bigquery.dataViewer",
+      "bigquery.user"
+    ],
+    "missing_inventory_roles": [
+      "roles/analyticshub.subscriber",
+      "roles/analyticshub.viewer",
+      "roles/bigquery.admin",
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.dataOwner",
+      "roles/bigquery.dataViewer",
+      "roles/bigquery.user"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analysis-rules",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analysis-rules",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analysis-rules",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analysis-rules",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analysis-rules",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analysis-rules",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analysis-rules",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

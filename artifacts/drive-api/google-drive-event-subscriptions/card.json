@@ -1,0 +1,203 @@
+{
+  "feature_name": "Google Drive event subscriptions",
+  "feature_slug": "google-drive-event-subscriptions",
+  "summary": "Google Drive events can now be subscribed to for file movement, edits, trash changes, and access proposal activity.",
+  "extended_definition": "Google Drive events can now be subscribed to for file movement, edits, trash changes, and access proposal activity.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/drive/api/guides/about-labels",
+      "https://developers.google.com/workspace/drive/api/guides/about-sdk",
+      "https://developers.google.com/workspace/drive/api/guides/events-overview",
+      "https://developers.google.com/workspace/drive/api/guides/handle-errors"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Work with events from Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/events-overview",
+        "source_id": "site-docs-root",
+        "final_score": 234,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Install needed dependencies $ npm install googleapis @google-cloud/local-auth axios To create a Drive subscription you use the Google Workspace Events API's subscriptions.create method to create a Subscription resource: // app.js const fs = require ( 'fs' ). promises ; const { authenticate } = require ( '@google-cloud/local-auth' ); const { google } = require ( 'googleapis' ); const axios = require ( 'axios' ); // Scopes for Google Drive API access. const SCOPES = [ ' SCOPES ' ]; / Authenticates the user running the script. @return {Promise<OAuth2Client>} The authorized client. / async function authorize () { const client = await authenticate ({ scopes : SCOPES , keyfilePath : 'credentials.json' , }); if ( client . credentials ) { const content = await fs . readFile ( 'credentials.json' ); const keys = JSON . parse ( content ); const { client id , client secret } = keys . installed keys . web ; const payload = JSON . stringify ({ type : 'authorized user' , client id , client secret , refresh token : client . credentials . refresh token , }); await fs . writeFile ( 'token.json' , payload ); return client ; } else { throw new Exception ( 'credentials.json did not have the Oauth client secret or it was not properly formatted' ); } } / Creates a subscription to Google Drive events. @param {OAuth2Client} authClient An authorized OAuth2 client. / async function createSubscription ( authClient ) { const url = 'https://workspaceevents.googleapis.com/v1/subscriptions' ; const data = { targetResource : ' TARGET RESOURCE ' , eventTypes : [ ' EVENT TYPES ' ], payload options : { include resource : { { '<var>RESOURCE DATA</var>' } } }, drive options : { include descendants : { { '<var>INCLUDE DESCENDANTS</var>' } } }, notification endpoint : { pubsub topic : ' TOPIC NAME ' } }; try { const { token } = await authClient . getAccessToken (); const response = await axios . post ( url , data , { headers : { 'Authorization' : Bearer ${ token } }}); console . log ( 'Subscription created:' , response . data ); } catch ( error ) { const message = error . response ? error . response . data : error . message ; console . error ( 'Error creating subscription:' , message ); } } authorize (). then ( createSubscription ). catch ( console . error ); Replace the following: SCOPES : One or more OAuth scopes that support each event type for the subscription.",
+          "This function processes different types of Drive events. @param {object} cloudEvent The CloudEvent object. @param {object} cloudEvent.data The data payload from the event source. / functions . cloudEvent ( 'helloFromDrive' , async ( cloudEvent ) = > { try { // Verify the Pub/Sub message exists if ( ! cloudEvent . data ! cloudEvent . data . message ) { console . warn ( \"Event is missing the Pub/Sub message payload.\" ); return ; } // Extract the Pub/Sub message details const { message } = cloudEvent . data ; const { attributes , data } = message ; // The original Drive CloudEvent is reconstructed from the Pub/Sub message attributes const driveEvent = HTTP . toEvent ({ headers : attributes }); const { type } = driveEvent ; // The Drive event's payload is a base64 encoded JSON string const payload = JSON . parse ( Buffer . from ( data , \"base64\" ). toString ()); console . log ( Processing Drive event type: ${ type } ); // Use a switch statement to handle different event types switch ( type ) { case 'google.workspace.drive.file.v3.contentChanged' : console . log ( 'File Content Changed:' , payload ); break ; case 'google.workspace.drive.accessproposal.v3.created' : console . log ( 'Access Proposal Created:' , payload ); break ; default : console . log ( Received unhandled event type: ${ type } ); break ; } } catch ( error ) { console . error ( \"An error occurred while processing the Drive event:\" , error ); } }); Limitations When the includeDescendants boolean field in DriveOptions is true , Drive subscriptions on shared drives and folders always dispatch an event, even if the file that triggered the event is nested many layers below the folder used for the Drive subscription.",
+          "With the addition of Drive events in Google Workspace Events API, there's now a third method receive events: Subscribe to events using the Google Workspace Events API to receive events as they occur."
+        ]
+      },
+      {
+        "title": "Resolve errors \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/handle-errors",
+        "source_id": "site-docs-root",
+        "final_score": 153,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following JSON sample is a representation of this error: { \"error\" : { \"errors\" : [ { \"domain\" : \"global\" , \"reason\" : \"numChildrenInNonRootLimitExceeded\" , \"message\" : \"The limit for this folder's number of children (files and folders) has been exceeded.\" } ], \"code\" : 403 , \"message\" : \"The limit for this folder's number of children (files and folders) has been exceeded.\" } } To fix this error, try any of the following: Inform the user that Drive prevents folders with more than 500,000 items.",
+          "The following JSON sample is a representation of this error: { \"error\" : { \"errors\" : [ { \"domain\" : \"global\" , \"reason\" : \"fileOwnerNotMemberOfTeamDrive\" , \"message\" : \"Cannot move a file into a shared drive as a writer when the owner of the file is not a member of that shared drive.\" } ], \"code\" : 403 , \"message\" : \"Cannot move a file into a shared drive as a writer when the owner of the file is not a member of that shared drive.\" } } To fix this error: Add the member to the shared drive with role=owner .",
+          "For more information, see Folder-depth limit . { \"error\" : { \"errors\" : [ { \"domain\" : \"global\" , \"reason\" : \"teamDriveHierarchyTooDeep\" , \"message\" : \"The shared drive hierarchy depth will exceed the limit.\" } ], \"code\" : 403 , \"message\" : \"The shared drive hierarchy depth will exceed the limit.\" } } To fix this error: Inform the user that shared drives prevents placing folders more than 100 levels deep."
+        ]
+      },
+      {
+        "title": "Google Drive API overview \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/about-sdk",
+        "source_id": "site-docs-root",
+        "final_score": 151,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Files stored on My Drive can be shared with other users, but ownership of the content remains specific to an individual user.",
+          "Users can also be granted access to individual files inside the shared drive.",
+          "Monitor or respond to file activity using Google Drive events ."
+        ]
+      },
+      {
+        "title": "Labels overview \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/about-labels",
+        "source_id": "site-docs-root",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "Selection and user fields can be set with multiple values if the field is configured with ListOptions in the Google Drive Labels API .",
+          "Drive labels can support business processes by attaching metadata to files and folders.",
+          "Drive users can assign labels and set label field values for files."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.js",
+      "credentials.json",
+      "developers.google.com",
+      "files.get",
+      "package.json",
+      "subscriptions.create",
+      "token.json",
+      "workspaceevents.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/events-overview",
+        "https://developers.google.com/workspace/drive/api/guides/handle-errors",
+        "https://developers.google.com/workspace/drive/api/guides/about-sdk",
+        "https://developers.google.com/workspace/drive/api/guides/about-labels"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/events-overview",
+        "https://developers.google.com/workspace/drive/api/guides/handle-errors",
+        "https://developers.google.com/workspace/drive/api/guides/about-sdk",
+        "https://developers.google.com/workspace/drive/api/guides/about-labels"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/events-overview",
+        "https://developers.google.com/workspace/drive/api/guides/handle-errors",
+        "https://developers.google.com/workspace/drive/api/guides/about-sdk",
+        "https://developers.google.com/workspace/drive/api/guides/about-labels"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/events-overview",
+        "https://developers.google.com/workspace/drive/api/guides/handle-errors",
+        "https://developers.google.com/workspace/drive/api/guides/about-sdk",
+        "https://developers.google.com/workspace/drive/api/guides/about-labels"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/events-overview",
+        "https://developers.google.com/workspace/drive/api/guides/handle-errors",
+        "https://developers.google.com/workspace/drive/api/guides/about-sdk",
+        "https://developers.google.com/workspace/drive/api/guides/about-labels"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/events-overview",
+        "https://developers.google.com/workspace/drive/api/guides/handle-errors",
+        "https://developers.google.com/workspace/drive/api/guides/about-sdk",
+        "https://developers.google.com/workspace/drive/api/guides/about-labels"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/events-overview",
+        "https://developers.google.com/workspace/drive/api/guides/handle-errors",
+        "https://developers.google.com/workspace/drive/api/guides/about-sdk",
+        "https://developers.google.com/workspace/drive/api/guides/about-labels"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/events-overview",
+        "https://developers.google.com/workspace/drive/api/guides/handle-errors",
+        "https://developers.google.com/workspace/drive/api/guides/about-sdk",
+        "https://developers.google.com/workspace/drive/api/guides/about-labels"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/events-overview",
+        "https://developers.google.com/workspace/drive/api/guides/handle-errors",
+        "https://developers.google.com/workspace/drive/api/guides/about-sdk",
+        "https://developers.google.com/workspace/drive/api/guides/about-labels"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/events-overview",
+        "https://developers.google.com/workspace/drive/api/guides/handle-errors",
+        "https://developers.google.com/workspace/drive/api/guides/about-sdk",
+        "https://developers.google.com/workspace/drive/api/guides/about-labels"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/events-overview",
+        "https://developers.google.com/workspace/drive/api/guides/handle-errors",
+        "https://developers.google.com/workspace/drive/api/guides/about-sdk",
+        "https://developers.google.com/workspace/drive/api/guides/about-labels"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:02.457Z",
+  "source_step08_card": "data/step-08/current/products/drive-api/card.json",
+  "product_name": "Drive API",
+  "product_slug": "drive-api"
+}

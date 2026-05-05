@@ -1,0 +1,106 @@
+{
+  "feature_name": "Multiple VLAN attachments over Partner Interconnect in Bare Metal Solution",
+  "feature_slug": "multiple-vlan-attachments-over-partner-interconnect-in-bare-metal-solution",
+  "summary": "Enables configuring multiple VLAN attachments over a Partner Interconnect connection.",
+  "extended_definition": "Enables configuring multiple VLAN attachments over a Partner Interconnect connection.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+      "https://docs.cloud.google.com/bare-metal/docs/bms-security",
+      "https://docs.cloud.google.com/bare-metal/docs/bms-setup"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Plan for Bare Metal Solution \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "source_id": "site-docs-reference",
+        "final_score": 160,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Multiple VLAN attachments You can configure multiple VLAN attachment pairs over a Partner Interconnect connection to your Bare Metal Solution environment.",
+          "To configure multiple VLAN attachment pairs, see Create the VLAN attachments for the Partner Interconnect connection in Bare Metal Solution .",
+          "When your order an advanced networking configuration, the following options become available for more complex network deployments: Multiple VLANs Multiple VLAN attachments Multiple VPC connections Maximum transmission unit Network templates Multiple VLANs Instead of a single client network and single private network for each bonded interface, you can add multiple client networks and private networks on server bond interfaces."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Set up Google Cloud to work with your Bare Metal Solution environment\\",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "source_id": "site-docs-root",
+        "final_score": 144,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "They are both in the us-central1 region. gcloud compute interconnects attachments partner create my-attachment \\ --region us-central1 \\ --router my-router-1 \\ --edge-availability-domain availability-domain-1 \\ --admin-enabled gcloud compute interconnects attachments partner create my-attachment \\ --region us-central1 \\ --router my-router-2 \\ --edge-availability-domain availability-domain-2 \\ --admin-enabled Run the gcloud compute interconnects attachments describe command to view the details of the VLAN attachment. gcloud compute interconnects attachments describe my-attachment \\ --region us-central1 adminEnabled: false edgeAvailabilityDomain: AVAILABILITY DOMAIN 1 creationTimestamp: '2017-12-01T08:29:09.886-08:00' id: '7976913826166357434' kind: compute#interconnectAttachment labelFingerprint: 42WmSpB8rSM= name: my-attachment region: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1 router: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1/routers/my-router selfLink: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1/interconnectAttachments/my-attachment state: PENDING PARTNER type: PARTNER The state of the VLAN attachment is PENDING PARTNER until Google Cloud completes your VLAN attachment configuration.",
+          "If the VLAN attachments do not come up after Google Cloud completes your Bare Metal Solution order, activate each VLAN attachment: gcloud compute interconnects attachments partner update attachment-name \\ --region region \\ --admin-enabled You can check the status of the Cloud Routers and your advertised routes in the Cloud console.",
+          "Also, add the --admin-enabled flag to pre-activate the attachments and send traffic immediately after Google Cloud completes the Bare Metal Solution configuration. gcloud compute interconnects attachments partner create first-attachment-name \\ --region region \\ --router first-router-name \\ --edge-availability-domain availability-domain-1 \\ --admin-enabled gcloud compute interconnects attachments partner create second-attachment-name \\ --region region \\ --router second-router-name \\ --edge-availability-domain availability-domain-2 \\ --admin-enabled Google Cloud automatically adds an interface and a BGP peer on the Cloud Router."
+        ]
+      },
+      {
+        "title": "\"Provide security for enterprise workloads in a Bare Metal Solution environment\\",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-security",
+        "source_id": "site-docs-reference",
+        "final_score": 140,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Applications running in Google Cloud Bare Metal Solution runs in regional extensions; the only network path to or from the regional extension is through a Partner Interconnect to the associated Google Cloud region over customer-specific VLAN attachments.",
+          "Network security Network security is offered at two layers, as shown in Figure 3 : Layer 3 VLAN attachments connect your Google Virtual Private Cloud to a unique virtual routing and forwarding instance (VRF) on the Bare Metal Solution edge routers.",
+          "To connect to your Bare Metal Solution servers from your on-premises environment, you must connect your on-premises data center to Google Cloud by using a Dedicated Interconnect , Partner Interconnect , or Cloud VPN ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-security"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-security"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-security"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:17.932Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution"
+}

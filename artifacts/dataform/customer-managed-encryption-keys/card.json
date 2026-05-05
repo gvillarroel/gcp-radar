@@ -1,0 +1,142 @@
+{
+  "feature_name": "Customer-managed encryption keys",
+  "feature_slug": "customer-managed-encryption-keys",
+  "summary": "Customer-managed encryption keys let Dataform protect repositories with user-managed encryption keys; Customer-managed encryption keys let Dataform protect repositories with user-managed encryption keys.",
+  "extended_definition": "Customer-managed encryption keys let Dataform protect repositories with user-managed encryption keys; Customer-managed encryption keys let Dataform protect repositories with user-managed encryption keys.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataform/docs/cmek",
+      "https://docs.cloud.google.com/dataform/docs/create-repository",
+      "https://docs.cloud.google.com/dataform/docs/repositories",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use customer-managed encryption keys \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/cmek",
+        "source_id": "site-docs-root-2",
+        "final_score": 354,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This integration lets you specify the following encryption compliance requirements for Dataform repositories in your organization: Require CMEKs for all new Dataform repositories Restrict Cloud KMS keys for a Dataform project Considerations when applying organization policies Before applying any CMEK organization policies, you should be aware of the following.",
+          "CMEK encryption of repository data When you apply CMEK encryption to a Dataform repository, all Dataform-managed customer data in that repository is encrypted at rest using the CMEK protection key set for the repository.",
+          "Home Documentation Data analytics Dataform Guides Send feedback Use customer-managed encryption keys Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Create a repository \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/repositories",
+        "source_id": "site-docs-root-2",
+        "final_score": 268,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about using customer-managed encryption keys (CMEK) in Dataform, see Use customer-managed encryption keys .",
+          "You can use the default encryption , a unique customer-managed Cloud KMS encryption key, or a default Dataform CMEK key.",
+          "In the Encryption section, select the Customer-managed encryption keys (CMEK) option."
+        ]
+      },
+      {
+        "title": "Create a repository \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "source_id": "site-docs-root",
+        "final_score": 258,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about using customer-managed encryption keys (CMEK) in Dataform, see Use customer-managed encryption keys .",
+          "You can use the default encryption , a unique customer-managed Cloud KMS encryption key, or a default Dataform CMEK key.",
+          "In the Encryption section, select the Customer-managed encryption keys (CMEK) option."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.dataform.v1 (0.87.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1",
+        "source_id": "site-java-reference",
+        "final_score": 160,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Builder Builder for projects/{project}/locations/{location}/repositories/{repository}/workflowInvocations/{workflow invocation}. com. google. cloud. dataform. v1.",
+          "Builder Builder for projects/{project}/locations/{location}/repositories/{repository}/compilationResults/{compilation result}. com. google. cloud. dataform. v1.",
+          "Builder Builder for projects/{project}/locations/{location}/repositories/{repository}/workflowConfigs/{workflow config}. com. google. cloud. dataform. v1."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dataform.v1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/cmek",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/cmek",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/cmek",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/cmek",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/cmek",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataform/latest/com.google.cloud.dataform.v1"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:54.747Z",
+  "source_step08_card": "data/step-08/current/products/dataform/card.json",
+  "product_name": "Dataform",
+  "product_slug": "dataform"
+}

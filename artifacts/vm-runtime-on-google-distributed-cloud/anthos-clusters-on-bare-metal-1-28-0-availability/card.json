@@ -1,0 +1,147 @@
+{
+  "feature_name": "Anthos Clusters on Bare Metal 1.28.0 availability",
+  "feature_slug": "anthos-clusters-on-bare-metal-1-28-0-availability",
+  "summary": "Anthos Clusters on bare metal version 1.28.0 is now available for download.",
+  "extended_definition": "Anthos Clusters on bare metal version 1.28.0 is now available for download.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/cluster-upgrades",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/create-storage-credentials",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-deploy-existing-vm"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Edit VM configuration in VM Runtime on GDC \\_|\\_ Google Distributed Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "source_id": "site-docs-reference",
+        "final_score": 207,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This document is intended for application owners that use VM Runtime on GDC to run virtual machines (VMs) in clusters created with Google Distributed Cloud (software only) on bare metal.",
+          "Home Technology areas Google Distributed Cloud GDC for bare metal Guides Send feedback Edit VM configuration in VM Runtime on GDC Stay organized with collections Save and categorize content based on your preferences.",
+          "VMs running in version 1.13.0 clusters or higher can be configured to restart automatically whenever you make changes to their configuration."
+        ]
+      },
+      {
+        "title": "\"Tutorial: Deploy an existing VM in a cluster using VM Runtime on GDC \\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-deploy-existing-vm",
+        "source_id": "site-docs-reference",
+        "final_score": 191,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable VM Runtime on GDC and install the virtctl plugin The VM Runtime on GDC custom resource definition is part of all bare metal clusters since version 1.10.",
+          "Objectives Enable VM Runtime on GDC and install the virtctl plugin Deploy the VM-based workload Log in to the VM and check the application status Access the VM-based workload Before you begin To complete this document you need the following resources: Access to a version 1.12.0 or higher bare metal cluster that was created by following the Install with Manual Loadbalancer guide.",
+          "If your cluster doesn't have this Ingress resource, create it by applying the following manifest: kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/anthos-samples/main/anthos-bm-gcp-terraform/resources/manifests/pos-ingress.yaml apiVersion : networking.k8s.io/v1 kind : Ingress metadata : name : pos-ingress spec : rules : - http : paths : - path : / pathType : Prefix backend : service : name : api-server-svc port : number : 8080 Create a Kubernetes Service that routes traffic to the VM."
+        ]
+      },
+      {
+        "title": "\"Upgrade VM Runtime on GDC from a Preview version \\_|\\_ Google Distributed\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/cluster-upgrades",
+        "source_id": "site-docs-reference",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Technology areas Google Distributed Cloud GDC for bare metal Guides Send feedback Upgrade VM Runtime on GDC from a Preview version Stay organized with collections Save and categorize content based on your preferences.",
+          "Note: If you have version 1.11 or later clusters, you can delete VMs and resource and disable VM Runtime on GDC with a single command.",
+          "VM Runtime on GDC is released for General Availability (GA) with the release of Google Distributed Cloud version 1.12.0."
+        ]
+      },
+      {
+        "title": "\"Create and use credentials to import images from Cloud Storage for VM Runtime\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/create-storage-credentials",
+        "source_id": "site-docs-reference",
+        "final_score": 181,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Apply the SecretForwarder manifest using kubectl : kubectl apply -f my-forwarded-secret.yaml Across clusters The following example SecretForwarder manifest forwards a secret across clusters: apiVersion : baremetal.cluster.gke.io/v1 kind : SecretForwarder metadata : name : cdi-gcs namespace : cluster-user1 spec : RemoteClusterTargetSecrets : name : gcs-sa namespaces : - default sourceSecret : name : gke-connect namespace : anthos-creds This example does the following: Creates a SecretForwarder named cdi-gcs in the cluster-user1 namespace.",
+          "Same cluster The following example SecretForwarder manifest forwards a secret in the same cluster: apiVersion : baremetal.cluster.gke.io/v1 kind : SecretForwarder metadata : name : cdi-gcs namespace : default spec : inClusterTargetSecrets : name : gcs-sa namespaces : - default sourceSecret : name : gke-connect namespace : anthos-creds This example does the following: Creates a SecretForwarder named cdi-gcs in the default namespace.",
+          "Before you begin To complete this document, you need access to the following resources: Access to Google Distributed Cloud version 1.12.0 ( anthosBareMetalVersion: 1.12.0 ) or higher cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "baremetal.cluster.gke.io",
+      "ingress.yaml",
+      "networking.k8s.io",
+      "raw.githubusercontent.com",
+      "secret.yaml",
+      "service.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-deploy-existing-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/cluster-upgrades",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/create-storage-credentials"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-deploy-existing-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/cluster-upgrades",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/create-storage-credentials"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-deploy-existing-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/cluster-upgrades",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/create-storage-credentials"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-deploy-existing-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/cluster-upgrades",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/create-storage-credentials"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-deploy-existing-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/cluster-upgrades",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/create-storage-credentials"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:47.764Z",
+  "source_step08_card": "data/step-08/current/products/vm-runtime-on-google-distributed-cloud/card.json",
+  "product_name": "VM Runtime on Google Distributed Cloud",
+  "product_slug": "vm-runtime-on-google-distributed-cloud"
+}

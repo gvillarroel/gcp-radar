@@ -1,0 +1,109 @@
+{
+  "feature_name": "GKE on AWS Installation Preflight API Checks",
+  "feature_slug": "gke-on-aws-installation-preflight-api-checks",
+  "summary": "Additional preflight validation checks were introduced to enforce that required Google Cloud APIs are enabled during installation and upgrade.",
+  "extended_definition": "Additional preflight validation checks were introduced to enforce that required Google Cloud APIs are enabled during installation and upgrade.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/create-cluster-with-terraform",
+      "https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade",
+      "https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Upgrade Cloud Service Mesh \\_|\\_ Cloud Service Mesh v1.21 \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade",
+        "source_id": "site-docs-reference",
+        "final_score": 71,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Additionally, relative kubeconfig file locations that use a will not work. --output dir Include this option to specify a directory where asmcli downloads the anthos-service-mesh package and extracts the installation file, which contains istioctl , samples, and manifests.",
+          "Additionally, relative kubeconfig file locations that use a will not work. --output dir Include this option to specify a directory where asmcli downloads the anthos-service-mesh package and extracts the installation file, which contains istioctl , samples, and manifests.",
+          "Additionally, relative kubeconfig file locations that use a will not work. --output dir Include this option to specify a directory where asmcli downloads the anthos-service-mesh package and extracts the installation file, which contains istioctl , samples, and manifests."
+        ]
+      },
+      {
+        "title": "\"Upgrade Cloud Service Mesh \\_|\\_ Cloud Service Mesh v1.22 \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade",
+        "source_id": "site-docs-reference-2",
+        "final_score": 71,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Additionally, relative kubeconfig file locations that use a will not work. --output dir Include this option to specify a directory where asmcli downloads the anthos-service-mesh package and extracts the installation file, which contains istioctl , samples, and manifests.",
+          "Additionally, relative kubeconfig file locations that use a will not work. --output dir Include this option to specify a directory where asmcli downloads the anthos-service-mesh package and extracts the installation file, which contains istioctl , samples, and manifests.",
+          "Additionally, relative kubeconfig file locations that use a will not work. --output dir Include this option to specify a directory where asmcli downloads the anthos-service-mesh package and extracts the installation file, which contains istioctl , samples, and manifests."
+        ]
+      },
+      {
+        "title": "\"Create a VPC and cluster with Terraform \\_|\\_ GKE on AWS \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/create-cluster-with-terraform",
+        "source_id": "site-docs-root-2",
+        "final_score": 65,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Delete your cluster and AWS Virtual Private Cloud Before you delete your cluster and AWS Virtual Private Cloud, you must remove all of the following: Any active AWS load balancers in the AWS Virtual Private Cloud Any additional node pools in your cluster not created with Terraform Any additional clusters in the AWS Virtual Private Cloud not created with Terraform To remove the cluster and AWS Virtual Private Cloud you created with Terraform, run the following command: terraform destroy Terraform drains workloads from your nodes, deletes your primary node pool and cluster, and deletes your AWS Virtual Private Cloud.",
+          "You can configure your AWS environment and create your clusters in it either with Terraform or with the GKE on AWS installation instructions .",
+          "To add additional identity providers to your cluster, see Manage identity with GKE Identity Service ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "v1.21",
+      "v1.22"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade",
+        "https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/create-cluster-with-terraform"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade",
+        "https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/create-cluster-with-terraform"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade",
+        "https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/create-cluster-with-terraform"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:04.861Z",
+  "source_step08_card": "data/step-08/current/products/anthos-clusters-on-aws-previous-generation/card.json",
+  "product_name": "Anthos clusters on AWS (previous generation)",
+  "product_slug": "anthos-clusters-on-aws-previous-generation"
+}

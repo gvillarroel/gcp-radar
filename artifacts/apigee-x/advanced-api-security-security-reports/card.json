@@ -1,0 +1,159 @@
+{
+  "feature_name": "Advanced API Security security reports",
+  "feature_slug": "advanced-api-security-security-reports",
+  "summary": "Security reports help detect bots and other threats in API traffic.",
+  "extended_definition": "Security reports help detect bots and other threats in API traffic.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+      "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+      "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Advanced API Security for multiple Apigee organizations and gateways \\_\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "source_id": "site-docs-reference-2",
+        "final_score": 149,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Apigee Advanced API Security is available as an additional add-on for your API hub instance to help you manage and govern the security posture of your APIs across multiple Apigee organizations, environments, and gateways.",
+          "IAM roles and permissions To use Advanced API Security, you must have the following IAM roles and permissions: IAM roles Permissions Description API Security Admin ( roles/apigee.securityAdmin ) apigee.securityProfilesV2.create apigee.securityProfilesV2.delete apigee.securityProfilesV2.update apigee.securityProfilesV2.get apigee.securityProfilesV2.list Provides permissions to create, update, delete, get, and list security profiles. apigee.securityAssessmentResult.compute Provides permissions to compute security assessment results. apigee.securityMonitoringConditions.create apigee.securityMonitoringConditions.delete apigee.securityMonitoringConditions.get apigee.securityMonitoringConditions.list apigee.securityMonitoringConditions.update Provides permissions to create, delete, get, list, and update security monitoring conditions.",
+          "Key capabilities Advanced API Security offers the following capabilities when you enable it for your API hub instance: Risk assessment across multiple Apigee organizations, environments, and gateways: assess the security scores for a specific API or for all APIs across all of its deployments in multiple Apigee organizations, environments, and gateways to get a comprehensive understanding of its risk profile."
+        ]
+      },
+      {
+        "title": "API observations in API hub \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 119,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The API observations feature in API hub helps you address the challenges of undocumented and unmanaged APIs, also known as shadow APIs , which can introduce significant security and governance risks in your API infrastructure.",
+          "The Advanced API Security add-on is available for Google Cloud projects with or without Apigee provisioning: For subscription customers, the Advanced API Security add-on is available with the Apigee organization.",
+          "However, since API observations in API hub leverages Shadow API discovery, which is part of the Apigee Advanced API Security add-on, you can incur charges related to your Apigee usage."
+        ]
+      },
+      {
+        "title": "Shadow API Discovery overview \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "source_id": "site-docs-reference-2",
+        "final_score": 111,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Task Required Role(s) Enable or disable Advanced API Security Apigee Organization Admin (roles/apigee.admin) Create observation sources and jobs API Management Admin (roles/apim.admin) View observations API Management Viewer (roles/apim.viewer) Access Shadow API Discovery in the Apigee UI This section describes how to access Shadow API Discovery in the Apigee UI.",
+          "Enable Shadow API Discovery Shadow API Discovery is part of the Advanced API Security add-on and is available for Google Cloud projects with or without Apigee provisioning.",
+          "See Manage Advanced API Security for Subscription organizations Pay-as-you-go customers must enable the add-on for at least one environment."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.admin",
+      "apigee.securityAdmin",
+      "apigee.securityAssessmentResult.compute",
+      "apigee.securityMonitoringConditions.create",
+      "apigee.securityMonitoringConditions.delete",
+      "apigee.securityMonitoringConditions.get",
+      "apigee.securityMonitoringConditions.list",
+      "apigee.securityMonitoringConditions.update",
+      "apigee.securityProfilesV2.create",
+      "apigee.securityProfilesV2.delete",
+      "apigee.securityProfilesV2.get",
+      "apigee.securityProfilesV2.list",
+      "apigee.securityProfilesV2.update",
+      "apim.admin",
+      "apim.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/apigee.admin",
+      "roles/apigee.securityAdmin",
+      "roles/apim.admin",
+      "roles/apim.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:06.675Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x"
+}

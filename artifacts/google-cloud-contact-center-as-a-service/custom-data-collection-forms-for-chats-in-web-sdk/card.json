@@ -1,0 +1,98 @@
+{
+  "feature_name": "Custom data-collection forms for chats in Web SDK",
+  "feature_slug": "custom-data-collection-forms-for-chats-in-web-sdk",
+  "summary": "The Web SDK can send custom data-collection forms for chats to end users.",
+  "extended_definition": "The Web SDK can send custom data-collection forms for chats to end users.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/chat-platform-api-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Chat Settings and Features \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+        "source_id": "site-docs-reference",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "Dismissed chat details Dismissal settings can be set globally or per-queue When chats have been dismissed, they do not accrue wait time For a chat to be dismissed, both the consumer and agent have to have sent at least one message The dismiss eligibility timer starts from the latest message from an agent Only inbound chats can be dismissed When chats are dismissed and later reactivated, a consumer has to send at least one message afterward before the chat is eligible to be dismissed again Dismissed chats are ultimately ended when the chat timeout duration is met When chats are dismissed, activities are added to the chat transcript Chat Flow CCAI Platform portal configuration Dismissing chats - global setting A global configuration for all chat channels can be configured in Chat Settings.",
+          "Real-time and Standard Reporting Real-time reports Dismissed chats are moved from Chats > Ongoing to Chats Previous The status for dismissed chats on the Previous Chats page is Dismissed - Inactive End user If that chat is restarted by the consumer sending a response, the chat is placed back in queue and will show in Chats > Future When an agent picks up a restarted chat, that chat will be moved to the Ongoing chat page Reporting The chat duration timer stops as soon as a chat has been placed into dismissed status.",
+          "Ex. \"Can we help you?\" \"Want to learn more?\" Proactive triggers help increase product sales and customer retention while minimizing customer churn by sending a relevant, targeted message from any web page."
+        ]
+      },
+      {
+        "title": "\"Call and Chat Settings \\_|\\_ Google Cloud Contact Center as a Service \\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings",
+        "source_id": "site-docs-reference",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "Here is an example reserved data properties in a SIP header: se tt i n g : { redirec t io n : { op t io n : \"sip\" , sip : { uri : \"Destination SIP URI\" , da ta parame ters e na bled : true false , da ta parame ters : [ { f ield : \"verified customer\" , t ype : \"dynamic\" , source : \"ujet metadata\" , source f ield : \"Incoming Field\" }, { f ield : \"bad actor\" , t ype : \"dynamic\" , source : \"ujet metadata\" , source f ield : \"Incoming Field\" }, { f ield : \"repeat customer\" , t ype : \"dynamic\" , source : \"ujet metadata\" , source f ield : \"Incoming Field\" } ], da ta records : { i n me ta da ta : true false , i n crm record : true false } } } } Support for virtual agents If you have a virtual agent (a support agent or a virtual task assistant) that performs end-user verification, the virtual agent can pass the end-user verification information to CCAI Platform.",
+          "Viewing live chat UI Agent : Name of Agent as entered on the Users and Teams page End User : Consumer name or unique ID if available Issue : Queue menu path View Case / Ticket : If your CRM is integrated with Contact Center AI Platform (CCAI Platform), click the link to view the CRM record associated with the chat session After Hour Deflection for Calls and Chats Overview Customize your consumer's experience by configuring specific deflection paths for when consumers try to contact you outside of your Hours of Operation are first configured, then deflection is enabled and configured at the global level in the Call Settings and Chat Settings pages.",
+          "Here are the reserved data properties that you can send to CCAI Platform: reserved verified customer : indicates that you consider this end-user to be a legitimate customer. reserved bad actor : indicates that you consider this end-user to potentially be a bad actor."
+        ]
+      },
+      {
+        "title": "\"Chat platform API Guide \\_|\\_ Google Cloud Contact Center as a Service \\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/chat-platform-api-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "When an end user selects this option, after the email is sent, The customer will need to mark the chat as deflected and ended by using the PATCH /chats/:id endpoint with the following params in the request body: \"status\": \"finished\" , \"escalation id\": &lt;id of escalation> , and \"deflection channel\": \"email\" Continue with virtual agent : This is technically a valid deflection option, however it doesn't make sense for using the queue selection VA as the VA would just try to escalate the chat again.",
+          "Sending the media file as a chat message : To send the media file as a chat message, send the following payload to the POST /chats/:id/message endpoint : { \"from user id\" : <id of end user>, \"message\" : \"type\" : < \"photo\" or \"video\" >, \"content\" : { \"media id\" : < media id returned as described in 2 .c > } } Expect unrecognized JSON keys in API responses All API updates are backward compatible.",
+          "If a link is selected, end the chat and use external link for the deflection channel parameter Send and receive messages To send or receive messages, follow these steps: Text content : To send text messages, use the POST /chats/:id/message endpoint as defined in the API doc."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/chat-platform-api-guide"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/chat-platform-api-guide"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:12.756Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service"
+}

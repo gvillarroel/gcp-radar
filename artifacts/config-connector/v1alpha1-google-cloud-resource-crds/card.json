@@ -1,0 +1,108 @@
+{
+  "feature_name": "v1alpha1 Google Cloud resource CRDs",
+  "feature_slug": "v1alpha1-google-cloud-resource-crds",
+  "summary": "Config Connector now includes 136 v1alpha1 Google Cloud resource CRDs.",
+  "extended_definition": "Config Connector now includes 136 v1alpha1 Google Cloud resource CRDs.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/concepts/resources",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Installing Config Connector v1alpha1 CRDs \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "source_id": "site-docs-reference",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Installing Config Connector v1alpha1 CRDs This topic explains how to install v1alpha1 Google Cloud resource Custom Resource Definitions (CRDs) in Config Connector.",
+          "Uninstalling the v1alpha1 CRDs Delete the CRs for v1alpha1 CRDs if you no longer need the underlying Google Cloud resources.",
+          "Warning: Config Connector v1alpha1 Google Cloud resource CRDs should not be used in production."
+        ]
+      },
+      {
+        "title": "About Config Connector CRDs \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/concepts/resources",
+        "source_id": "site-docs-reference",
+        "final_score": 100,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "About Config Connector CRDs Config Connector includes a collection of Custom Resource Definitions (CRDs).",
+          "Object metadata Each Config Connector resource includes a metadata field.",
+          "If the resourceID field is supported in the Config Connector resource, you can specify a different name, which follows the naming convention of the Google Cloud resource, for the corresponding Google Cloud resource in the spec.resourceID field."
+        ]
+      },
+      {
+        "title": "\"Managing resources with the resourceID field \\_|\\_ Config Connector \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids",
+        "source_id": "site-docs-reference",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "Acquiring a folder To acquire a folder using Config Connector with the resourceID field, complete the following steps: Copy the following contents into a file named folder.yaml . apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Folder metadata : annotations : cnrm.cloud.google.com/organization-id : ORG ID Remove the deletion-policy annotation if it is safe to delete the folder when the resource is deleted from your cluster. cnrm.cloud.google.com/deletion-policy : \"abandon\" name : folder-sample-for-acquisition spec : resourceID : ACQUIRED FOLDER ID displayName : ACQUIRED FOLDER DISPLAY NAME Replace the following: ORG ID with the numeric ID for your organization.",
+          "Copy the following contents into a file named bigquery-dataset.yaml . apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryDataset metadata : name : bigquerydataset-sample-for-creation spec : resourceID : bigquerydataset sample with resourceid defaultTableExpirationMs : 3600000 description : \"BigQuery Dataset Sample with the ResourceID Field\" friendlyName : bigquerydataset-sample-with-resourceid location : US Apply the YAML file to your cluster. kubectl apply --namespace CC NAMESPACE -f bigquery-dataset.yaml Replace CC NAMESPACE with the namespace Config Connector manages resources from.",
+          "The name of the Config Connector resource is pubsub-topic-sample and the name of the Pub/Sub topic is pubsub-topic-id . apiVersion : pubsub.cnrm.cloud.google.com/v1beta1 kind : PubSubTopic metadata : name : pubsub-topic-sample spec : resourceID : pubsub-topic-id Creating a resource with the resourceID field Note: When you manage a Google Cloud resource with the resourceID field, if the resource has a service-generated resource ID, Config Connector assumes the resource already exists and tries to acquire the resource."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.cnrm.cloud.google.com",
+      "cnrm.cloud.google.com",
+      "dataset.yaml",
+      "folder.yaml",
+      "github.com",
+      "metadata.annotations.cnrm",
+      "pubsub.cnrm.cloud.google.com",
+      "resourcemanager.cnrm.cloud.google.com",
+      "spec.resourceID"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/resources",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-alpha-crds",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/resources",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:47.576Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector"
+}

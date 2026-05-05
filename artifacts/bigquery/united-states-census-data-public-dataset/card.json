@@ -1,0 +1,125 @@
+{
+  "feature_name": "United States Census Data public dataset",
+  "feature_slug": "united-states-census-data-public-dataset",
+  "summary": "The BigQuery public datasets program includes the United States Census Data dataset.",
+  "extended_definition": "The BigQuery public datasets program includes the United States Census Data dataset.",
+  "lifecycle": {
+    "latest_feature_date": "2017-04-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/arima-time-series-forecasting-with-limits-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/managing-datasets",
+      "https://docs.cloud.google.com/bigquery/docs/tables"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage datasets \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/managing-datasets",
+        "source_id": "site-docs-reference-required-11",
+        "final_score": 145,
+        "relevance": "",
+        "evidence_snippets": [
+          "Value ; import java.io.IOException ; import java.util.HashMap ; import java.util.Map ; // Sample to copy dataset from another gcp project public class CopyDataset { public static void main ( String [] args ) throws IOException { // TODO(developer): Replace these variables before running the sample. final String destinationProjectId = \"MY DESTINATION PROJECT ID\" ; final String destinationDatasetId = \"MY DESTINATION DATASET ID\" ; final String sourceProjectId = \"MY SOURCE PROJECT ID\" ; final String sourceDatasetId = \"MY SOURCE DATASET ID\" ; Map<String , Value > params = new HashMap <> (); params . put ( \"source project id\" , Value . newBuilder (). setStringValue ( sourceProjectId ). build ()); params . put ( \"source dataset id\" , Value . newBuilder (). setStringValue ( sourceDatasetId ). build ()); TransferConfig transferConfig = TransferConfig . newBuilder () . setDestinationDatasetId ( destinationDatasetId ) . setDisplayName ( \"Your Dataset Copy Name\" ) . setDataSourceId ( \"cross region copy\" ) . setParams ( Struct . newBuilder (). putAllFields ( params ). build ()) . setSchedule ( \"every 24 hours\" ) . build (); copyDataset ( destinationProjectId , transferConfig ); } public static void copyDataset ( String projectId , TransferConfig transferConfig ) throws IOException { try ( DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient . create ()) { ProjectName parent = ProjectName . of ( projectId ); CreateTransferConfigRequest request = CreateTransferConfigRequest . newBuilder () . setParent ( parent . toString ()) . setTransferConfig ( transferConfig ) . build (); TransferConfig config = dataTransferServiceClient . createTransferConfig ( request ); System . out . println ( \"Copy dataset created successfully :\" + config . getName ()); } catch ( ApiException ex ) { System . out . print ( \"Copy dataset was not created.\" + ex . toString ()); } } } Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to copy datasets: bigquery.transfers.update on the destination project bigquery.jobs.create on the destination project bigquery.datasets.get on the source and destination dataset bigquery.tables.list on the source and destination dataset bigquery.datasets.update on the destination dataset bigquery.tables.create on the destination dataset You might also be able to get these permissions with custom roles or other predefined roles .",
+          "See the License for the specific language governing permissions and limitations under the License. require \"google/cloud/bigquery\" def delete dataset and contents dataset id = \"my dataset with tables\" bigquery = Google :: Cloud :: Bigquery . new Use the force parameter to delete a dataset and its contents dataset = bigquery . dataset dataset id dataset . delete force : true puts \"Dataset #{ dataset id } and contents deleted.\" end Restore tables from deleted datasets You can restore tables from a deleted dataset that are within the dataset's time travel window ."
+        ]
+      },
+      {
+        "title": "\"Limit forecasted values for an ARIMA_PLUS time series model \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/arima-time-series-forecasting-with-limits-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a dataset named bqml tutorial with the data location set to US . bq mk --dataset \\ --location=US \\ --description \"BigQuery ML tutorial dataset.\" \\ bqml tutorial Confirm that the dataset was created: bq ls API Call the datasets.insert method with a defined dataset resource . { \"datasetReference\" : { \"datasetId\" : \"bqml tutorial\" } } BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames .",
+          "In the following sample, bigquery-public-data.new york.citibike trips indicates that you are querying the citibike trips table in the new york dataset. import bigframes.pandas as bpd df = bpd . read gbq ( \"bigquery-public-data.new york.citibike trips\" ) features = bpd .",
+          "SQL In the following query, the FROM bigquery-public-data.new york.citibike trips clause indicates that you are querying the citibike trips table in the new york dataset."
+        ]
+      },
+      {
+        "title": "Create and use tables \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/tables",
+        "source_id": "site-docs-root",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "Because the table you're querying is in another project, the bigquery-public-data project, you add the project ID to the dataset in the following format: project id . dataset .INFORMATION SCHEMA. view ; for example, bigquery-public-data.census bureau usa.INFORMATION SCHEMA.TABLES .",
+          "This dataset is part of the BigQuery public dataset program .",
+          "This dataset is part of the BigQuery public dataset program ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigframes.pandas",
+      "bigquery.datasets.create",
+      "bigquery.datasets.get",
+      "bigquery.datasets.update",
+      "bigquery.jobs.create",
+      "bigquery.tables.create",
+      "bigquery.tables.get",
+      "bigquery.tables.getData",
+      "bigquery.tables.list",
+      "bigquery.transfers.update",
+      "data.census",
+      "data.new",
+      "datasets.insert",
+      "java.io.IOException",
+      "java.util.HashMap",
+      "java.util.Map",
+      "usa.INFORMATION",
+      "york.citibike"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/managing-datasets",
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/arima-time-series-forecasting-with-limits-tutorial"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/managing-datasets",
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/arima-time-series-forecasting-with-limits-tutorial"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/managing-datasets",
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/arima-time-series-forecasting-with-limits-tutorial"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

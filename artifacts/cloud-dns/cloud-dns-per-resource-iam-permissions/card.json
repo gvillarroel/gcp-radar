@@ -1,0 +1,311 @@
+{
+  "feature_name": "Cloud DNS per-resource IAM permissions",
+  "feature_slug": "cloud-dns-per-resource-iam-permissions",
+  "summary": "Cloud DNS now provides IAM permissions that can be assigned at the individual resource level; Cloud DNS now supports IAM permissions scoped to specific resources, with granular read, write, and admin roles.",
+  "extended_definition": "Cloud DNS now provides IAM permissions that can be assigned at the individual resource level; Cloud DNS now supports IAM permissions scoped to specific resources, with granular read, write, and admin roles.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dns/docs/access-control",
+      "https://docs.cloud.google.com/dns/docs/audit-logging",
+      "https://docs.cloud.google.com/dns/docs/overview",
+      "https://docs.cloud.google.com/dns/docs/zones"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Roles and permissions \\_|\\_ Cloud DNS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dns/docs/access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 250,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: Managed zone compute.networks.get compute.networks.list dns.changes. dns.changes.create dns.changes.get dns.changes.list dns.dnsKeys. dns.dnsKeys.get dns.dnsKeys.list dns.gkeClusters. dns. gkeClusters. bindDNSResponsePolicy dns. gkeClusters. bindPrivateDNSZone dns.managedZoneOperations. dns.managedZoneOperations.get dns.managedZoneOperations.list dns.managedZones.create dns.managedZones.delete dns.managedZones.get dns.managedZones.getIamPolicy dns.managedZones.list dns.managedZones.update dns.networks. dns. networks. bindDNSResponsePolicy dns. networks. bindPrivateDNSPolicy dns. networks. bindPrivateDNSZone dns. networks. targetWithPeeringZone dns.networks.useHealthSignals dns.policies. dns.policies.create dns.policies.createTagBinding dns.policies.delete dns.policies.deleteTagBinding dns.policies.get dns.policies.list dns.policies.listEffectiveTags dns.policies.listTagBindings dns.policies.update dns.projects.get dns.resourceRecordSets. dns.resourceRecordSets.create dns.resourceRecordSets.delete dns.resourceRecordSets.get dns.resourceRecordSets.list dns.resourceRecordSets.update dns.responsePolicies. dns.responsePolicies.create dns.responsePolicies.delete dns.responsePolicies.get dns.responsePolicies.list dns.responsePolicies.update dns.responsePolicyRules. dns.responsePolicyRules.create dns.responsePolicyRules.delete dns.responsePolicyRules.get dns.responsePolicyRules.list dns.responsePolicyRules.update resourcemanager.projects.get resourcemanager.projects.list DNS Peer ( roles/ dns.peer ) Access to target networks with DNS peering zones dns. networks. targetWithPeeringZone DNS Reader ( roles/ dns.reader ) Provides read-only access to all Cloud DNS resources.",
+          "Warning: Do not grant service agent roles to any principals except service agents . compute. globalNetworkEndpointGroups. attachNetworkEndpoints compute. globalNetworkEndpointGroups. create compute. globalNetworkEndpointGroups. delete compute. globalNetworkEndpointGroups. detachNetworkEndpoints compute. globalNetworkEndpointGroups. get compute.globalOperations.get compute.healthChecks.get The following table lists the DNS Armor IAM roles with a corresponding list of all the permissions that each role includes.",
+          "You would then give that user (who) the /roles/dns.admin role, which has the dns.changes.create and dns.resourceRecordSets.create permissions (what) so that they can create and update resource record sets (which)."
+        ]
+      },
+      {
+        "title": "Cloud DNS overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dns/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Per resource permission access To configure a policy on a DNS resource such as a managed zone, you must have Owner access to the project that owns that resource.",
+          "Cloud DNS supports Identity and Access Management (IAM) permissions at the project level and individual DNS zone level.",
+          "For information about how to set individual resource IAM permissions, see Create a zone with specific IAM permissions ."
+        ]
+      },
+      {
+        "title": "Cloud DNS audit logging information \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dns/docs/audit-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 214,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ dns.changes.get dns.changes.list dns.dnsKeys.get dns.managedZoneOperations.list dns.managedZones.get dns.managedZones.getiampolicy dns.managedZones.list dns.policies.get dns.policies.list dns.projects.get dns.resourceRecordSets.get dns.resourceRecordSets.list dns.responsePolicies.get dns.responsePolicies.list dns.responsePolicyRules.get dns.responsePolicyRules.list dns.changes.get dns.changes.list dns.dnsKeys.get dns.managedZoneOperations.list dns.managedZones.get dns.managedZones.getiampolicy dns.managedZones.list dns.policies.get dns.policies.list dns.projects.get dns.resourceRecordSets.get dns.resourceRecordSets.list dns.responsePolicies.get dns.responsePolicies.list dns.responsePolicyRules.get dns.responsePolicyRules.list ADMIN WRITE dns.changes.create dns.managedZones.create dns.managedZones.delete dns.managedZones.patch dns.managedZones.setiampolicy dns.managedZones.update dns.policies.create dns.policies.delete dns.policies.patch dns.policies.update dns.resourceRecordSets.create dns.resourceRecordSets.delete dns.resourceRecordSets.patch dns.responsePolicies.create dns.responsePolicies.delete dns.responsePolicies.patch dns.responsePolicies.update dns.responsePolicyRules.create dns.responsePolicyRules.delete dns.responsePolicyRules.patch dns.responsePolicyRules.update dns.changes.create dns.managedZones.create dns.managedZones.delete dns.managedZones.patch dns.managedZones.setiampolicy dns.managedZones.update dns.policies.create dns.policies.delete dns.policies.patch dns.policies.update dns.resourceRecordSets.create dns.resourceRecordSets.delete dns.resourceRecordSets.patch dns.responsePolicies.create dns.responsePolicies.delete dns.responsePolicies.patch dns.responsePolicies.update dns.responsePolicyRules.create dns.responsePolicyRules.delete dns.responsePolicyRules.patch dns.responsePolicyRules.update DATA READ dns.dnsKeys.list dns.managedZoneOperations.get dns.managedZoneOperations.list dns.dnsKeys.list dns.managedZoneOperations.get dns.managedZoneOperations.list API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Cloud DNS. cloud.dns.api.v1.ChangesService The following audit logs are associated with methods belonging to cloud.dns.api.v1.ChangesService . create Method : dns.changes.create Audit log type : Admin activity Permissions : dns.changes.create - ADMIN WRITE dns.resourceRecordSets.create - ADMIN WRITE dns.resourceRecordSets.delete - ADMIN WRITE dns.resourceRecordSets.update - ADMIN WRITE Method is a long-running or streaming operation : No.",
+          "Filter for this method : protoPayload.methodName=\"dns.responsePolicyRules.update\" cloud.dns.api.v1beta2.ChangesService The following audit logs are associated with methods belonging to cloud.dns.api.v1beta2.ChangesService . create Method : dns.changes.create Audit log type : Admin activity Permissions : dns.changes.create - ADMIN WRITE dns.resourceRecordSets.create - ADMIN WRITE dns.resourceRecordSets.delete - ADMIN WRITE dns.resourceRecordSets.update - ADMIN WRITE Method is a long-running or streaming operation : No.",
+          "Filter for this method : protoPayload.methodName=\"dns.projects.get\" cloud.dns.api.v1beta2.ResourceRecordSetsService The following audit logs are associated with methods belonging to cloud.dns.api.v1beta2.ResourceRecordSetsService . create Method : dns.resourceRecordSets.create Audit log type : Admin activity Permissions : dns.changes.create - ADMIN WRITE dns.resourceRecordSets.create - ADMIN WRITE Method is a long-running or streaming operation : No."
+        ]
+      },
+      {
+        "title": "Create, modify, and delete zones \\_|\\_ Cloud DNS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dns/docs/zones",
+        "source_id": "site-docs-root",
+        "final_score": 214,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Terraform resource \"google dns managed zone\" \"private zone\" { name = \"private-zone\" dns name = \"private.example.com.\" description = \"Example private DNS zone\" labels = { foo = \"bar\" } visibility = \"private\" private visibility config { networks { network url = google compute network.network 1.id } networks { network url = google compute network.network 2.id } } } resource \"google compute network\" \"network 1\" { name = \"network-1\" auto create subnetworks = false } resource \"google compute network\" \"network 2\" { name = \"network-2\" auto create subnetworks = false } Create a managed reverse lookup private zone A managed reverse lookup zone is a private zone with a special attribute that instructs Cloud DNS to perform a PTR lookup against Compute Engine DNS data.",
+          "Permissions dns.managedZones.create to create a managed zone dns.managedZones.list to list managed zones dns.networks.bindPrivateDNSZone dns.networks.targetWithPeeringZone dns.gkeClusters.bindPrivateDNSZone dns.managedZones.update dns.managedZones.list dns.managedZones.patch dns.activePeeringZones.getZoneInfo dns.activePeeringZones.list dns.activePeeringZones.deactivate Roles roles/dns.admin roles/dns.peer Before you begin The Cloud DNS API requires that you create a Cloud DNS project and enable the Cloud DNS API.",
+          "To determine the URL for a VPC network, use the following gcloud command, replacing VPC NETWORK NAME with the network's name: gcloud compute networks describe VPC NETWORK NAME \\ --format=\"get(selfLink)\" Create a zone with specific IAM permissions The Identity and Access Management (IAM) permission for individual resource managed zone lets you set up specific read, write, or administrator permissions for different managed zones under the same project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.globalOperations.get",
+      "compute.healthChecks.get",
+      "compute.networks.get",
+      "compute.networks.list",
+      "dns.activePeeringZones.deactivate",
+      "dns.activePeeringZones.getZoneInfo",
+      "dns.activePeeringZones.list",
+      "dns.admin",
+      "dns.changes",
+      "dns.changes.create",
+      "dns.changes.get",
+      "dns.changes.list",
+      "dns.dnsKeys",
+      "dns.dnsKeys.get",
+      "dns.dnsKeys.list",
+      "dns.gkeClusters",
+      "dns.gkeClusters.bindPrivateDNSZone",
+      "dns.googleapis.com",
+      "dns.managedZoneOperations",
+      "dns.managedZoneOperations.get",
+      "dns.managedZoneOperations.list",
+      "dns.managedZones.create",
+      "dns.managedZones.delete",
+      "dns.managedZones.get",
+      "dns.managedZones.getiampolicy",
+      "dns.managedZones.getIamPolicy",
+      "dns.managedZones.list",
+      "dns.managedZones.patch",
+      "dns.managedZones.setiampolicy",
+      "dns.managedZones.update",
+      "dns.networks",
+      "dns.networks.bindPrivateDNSZone",
+      "dns.networks.targetWithPeeringZone",
+      "dns.networks.useHealthSignals",
+      "dns.peer",
+      "dns.policies",
+      "dns.policies.create",
+      "dns.policies.createTagBinding",
+      "dns.policies.delete",
+      "dns.policies.deleteTagBinding",
+      "dns.policies.get",
+      "dns.policies.list",
+      "dns.policies.listEffectiveTags",
+      "dns.policies.listTagBindings",
+      "dns.policies.patch",
+      "dns.policies.update",
+      "dns.projects.get",
+      "dns.reader",
+      "dns.resourceRecordSets",
+      "dns.resourceRecordSets.create",
+      "dns.resourceRecordSets.delete",
+      "dns.resourceRecordSets.get",
+      "dns.resourceRecordSets.list",
+      "dns.resourceRecordSets.patch",
+      "dns.resourceRecordSets.update",
+      "dns.responsePolicies",
+      "dns.responsePolicies.create",
+      "dns.responsePolicies.delete",
+      "dns.responsePolicies.get",
+      "dns.responsePolicies.list",
+      "dns.responsePolicies.patch",
+      "dns.responsePolicies.update",
+      "dns.responsePolicyRules",
+      "dns.responsePolicyRules.create",
+      "dns.responsePolicyRules.delete",
+      "dns.responsePolicyRules.get",
+      "dns.responsePolicyRules.list",
+      "dns.responsePolicyRules.patch",
+      "dns.responsePolicyRules.update",
+      "example.private",
+      "network.network",
+      "private.example.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/dns.admin",
+      "roles/dns.peer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/access-control",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/audit-logging",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/access-control",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/audit-logging",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/access-control",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/audit-logging",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/access-control",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/audit-logging",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/access-control",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/audit-logging",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/access-control",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/audit-logging",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/access-control",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/audit-logging",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/access-control",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/audit-logging",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/access-control",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/audit-logging",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/access-control",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/audit-logging",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/access-control",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/audit-logging",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/access-control",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/audit-logging",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/access-control",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/audit-logging",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:29.213Z",
+  "source_step08_card": "data/step-08/current/products/cloud-dns/card.json",
+  "product_name": "Cloud DNS",
+  "product_slug": "cloud-dns"
+}

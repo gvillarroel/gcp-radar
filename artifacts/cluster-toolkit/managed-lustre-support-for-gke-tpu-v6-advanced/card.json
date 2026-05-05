@@ -1,0 +1,171 @@
+{
+  "feature_name": "Managed Lustre support for gke-tpu-v6-advanced",
+  "feature_slug": "managed-lustre-support-for-gke-tpu-v6-advanced",
+  "summary": "Cluster Toolkit adds Google Cloud Managed Lustre as an optional storage solution for the gke-tpu-v6-advanced blueprint.",
+  "extended_definition": "Cluster Toolkit adds Google Cloud Managed Lustre as an optional storage solution for the gke-tpu-v6-advanced blueprint.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-gke-cluster",
+      "https://docs.cloud.google.com/cluster-toolkit/docs/gke/reconfigure-gke-cluster",
+      "https://docs.cloud.google.com/cluster-toolkit/docs/setup/cluster-blueprint",
+      "https://docs.cloud.google.com/cluster-toolkit/docs/setup/cluster-blueprint-catalog"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cluster blueprint catalog \\_|\\_ Cluster Toolkit \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cluster-toolkit/docs/setup/cluster-blueprint-catalog",
+        "source_id": "site-docs-reference",
+        "final_score": 230,
+        "relevance": "",
+        "evidence_snippets": [
+          "Batch GKE Slurm HTCondor None Cloud Storage Filestore Google Cloud Managed Lustre Local SSD None A4X Max (NVIDIA GB300) A4 (NVIDIA B200) A4X (NVIDIA GB200 Superchips) A3 Ultra (NVIDIA H200) A3 Mega (NVIDIA H100) A3 High (NVIDIA H100) A2 (NVIDIA A100) C2 C2D C3 E2 G4 (NVIDIA RTX PRO 6000) G2 (NVIDIA L4) H4D H3 N2 N1 TPUv4 TPU v6e TPU7x Container-Optimized OS debian-11 debian-12 hpc-centos-7 hpc-rocky-linux-8 rocky-linux-8-optimized-gcp rocky-linux-8 slurm-gcp-6-4-tf-2.14.0 ubuntu-2004-lts ubuntu-2204-lts ubuntu-2404-lts Ansys Fluent Bare metal GPUs TPUs GROMACS JAX Kueue Jobset Maxtext NCCL NVIDIA IMEX OpenFoam Packer PyTorch QSim Spack Star CCM+ TensorFlow VDI with VMD WRF Clear all Cluster blueprint Scheduler Storage Machine types Base operating system Featured software and compute resources Collection a4x-maxgpu-4g-metal Slurm Filestore, Cloud Storage, Google Cloud Managed Lustre A4X Max ubuntu-accelerator-2404-arm64-with-nvidia-580 NVIDIA ConnectX-8 Bare Metal NVIDIA IMEX GPUs RDMA Core gke-a4xmax GKE Filestore, Cloud Storage, Google Cloud Managed Lustre A4X Max Container-Optimized OS NVIDIA ConnectX-8 Bare Metal GPUs Jobset Kueue Core gke-tpu-7x GKE Filestore, Cloud Storage, Google Cloud Managed Lustre TPU7x Container-Optimized OS TPUs Jobset Kueue JAX Multi-VPC Networking Core gke-tpu-v6e GKE Filestore, Cloud Storage, Google Cloud Managed Lustre TPU v6e Container-Optimized OS TPUs Jobset Kueue JAX Multi-VPC Networking Core a4-highgpu-8g Slurm Filestore, Cloud Storage, Google Cloud Managed Lustre A4 ubuntu-accelerator-2204-amd64-with-nvidia-570 NVIDIA ConnectX-7 Google Virtual NIC (gVNIC) GPUs Virtual Private Cloud Core a4x-highgpu-4g Slurm Filestore, Cloud Storage, Google Cloud Managed Lustre A4X ubuntu-accelerator-2404-arm64-with-nvidia-570 NVIDIA ConnectX-7 Google Virtual NIC (gVNIC) NVIDIA IMEX GPUs Core gke-a4x GKE Filestore, Cloud Storage, Google Cloud Managed Lustre A4X Container-Optimized OS GPUs Jobset Kueue Core gke-a3-ultragpu GKE Filestore, Cloud Storage, Google Cloud Managed Lustre A3 Ultra Container-Optimized OS NVIDIA ConnectX-7 Google Virtual NIC (gVNIC) GPUs Core gke-a3-highgpu GKE None A3 High Container-Optimized OS GPUs Jobset Kueue Core gke-a3-megagpu GKE None A3 Mega Container-Optimized OS GPUs Jobset Kueue Core gke-managed-hyperdisk GKE Filestore, Cloud Storage C3 Container-Optimized OS Core gke-managed-lustre GKE Google Cloud Managed Lustre N2 Container-Optimized OS Core gke-a4 GKE Filestore, Cloud Storage, Google Cloud Managed Lustre A4 Container-Optimized OS GPUs Jobset Kueue Core gke-g4 GKE Cloud Storage G4 Container-Optimized OS GPUs Jobset Kueue Core gke-h4d GKE Filestore, Cloud Storage H4D Container-Optimized OS Google Virtual NIC (gVNIC) and Cloud RDMA Kueue and Jobset Service account Core a3-ultragpu-8g Slurm Filestore, Cloud Storage, Google Cloud Managed Lustre A3 Ultra ubuntu-accelerator-2204-amd64-with-nvidia-570 NVIDIA ConnectX-7 Google Virtual NIC (gVNIC) GPUs Core a3-highgpu-8g Slurm Filestore, Cloud Storage A3 High ubuntu-2004-lts Google Virtual NIC (gVNIC) GPUs Core a3-megagpu-8g Slurm Filestore, Cloud Storage A3 Mega debian-12 Google Virtual NIC (gVNIC) GPUs Core h4d-vm None Filestore, Local SSD H4D hpc-rocky-linux-8 Google Virtual NIC (gVNIC) Cloud RDMA Core hpc-slurm-h4d Slurm Filestore, Local SSD N2, H4D hpc-rocky-linux-8 Google Virtual NIC (gVNIC) Cloud RDMA Core hpc-slurm Slurm Filestore N2, C2, H3 hpc-rocky-linux-8 Core hpc-slurm6-tpu-maxtext Slurm None TPUv4, N2, C2 slurm-gcp-6-4-tf-2.14.0 TPUs Maxtext Community, Experimental ml-slurm Slurm Filestore, Cloud Storage N2, A2, G2 debian-11 GPUs NCCL PyTorch TensorFlow Core serverless-batch Batch Filestore N2 rocky-linux-8-optimized-gcp Core serverless-batch-mpi Batch Filestore C2 hpc-rocky-linux-8 Spack Weather Research and Forecasting (WRF) Core tutorial-starccm None Filestore C2 hpc-centos-7 Star CCM+ Community, Experimental tutorial-fluent None Filestore C2 hpc-rocky-linux-8 Ansys Fluent Community, Experimental image-builder Slurm Filestore C2, N2 hpc-rocky-linux-8 Packer Core hpc-build-slurm-image Slurm None N2D hpc-rocky-linux-8 Packer Building Slurm Community hpc-amd-slurm Slurm Filestore C2D hpc-rocky-linux-8 AMD AMD Optimizing C/C++ and Fortran Compilers (AOCC) OpenFoam Spack Community hpc-slurm-local-ssd Slurm Filestore, Local SSD N1 hpc-rocky-linux-8 Community, Experimental hpc-slurm-ubuntu2204 Slurm Filestore N2, C2 ubuntu-2204-lts Community hpc-slurm-gromacs Slurm Filestore C2 hpc-rocky-linux-8 GROMACS Spack Community, Experimental hpc-slurm-hcls Slurm Cloud Storage, Filestore A2, C2 hpc-rocky-linux-8 GPUs GROMACS on GPUs Spack VDI with VMD Community htc-htcondor HTCondor None C2 hpc-rocky-linux-8 Community, Experimental ml-gke GKE None N2, A2 Container-Optimized OS GPUs Community, Experimental hpc-gke GKE None N2, C2 Container-Optimized OS Community, Experimental storage-gke GKE Filestore, Local SSD N2D Container-Optimized OS CSI Drivers Persistent Volumes Community, Experimental client-google-cloud-storage None Cloud Storage E2 hpc-rocky-linux-8 Community, Experimental hpc-slurm-sharedvpc Slurm Filestore N2, C2 hpc-rocky-linux-8 Shared VPC configuration Community This OS image is an optimized Schedmd's Slurm image that is based on the specified operating system. † This OS image has DAOS drivers pre-installed and needs to be built following instructions in the DAOS project.",
+          "This page describes Google's catalog of cluster blueprints, which are reusable YAML configuration files for deploying specific, opinionated solutions with the Cluster Toolkit.",
+          "For each cluster blueprint, featured applications and Google Cloud resources that can be leveraged by using the blueprint are also highlighted."
+        ]
+      },
+      {
+        "title": "Cluster blueprint \\_|\\_ Cluster Toolkit \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cluster-toolkit/docs/setup/cluster-blueprint",
+        "source_id": "site-docs-reference",
+        "final_score": 211,
+        "relevance": "",
+        "evidence_snippets": [
+          "PSA is a best practice for Filestore instances, but can be optionally removed by deleting the private service access module and any references to the module by Filestore modules. https://cloud.google.com/vpc/docs/configure-private-services-access#permissions - id : private service access source : modules/network/private-service-access use : [ network ] - id : controller sa source : modules/project/service-account settings : name : controller project roles : - compute.instanceAdmin.v1 - iam.serviceAccountUser - logging.logWriter - monitoring.metricWriter - pubsub.admin - storage.objectViewer - id : login sa source : modules/project/service-account settings : name : login project roles : - logging.logWriter - monitoring.metricWriter - storage.objectViewer - id : compute sa source : modules/project/service-account settings : name : compute project roles : - logging.logWriter - monitoring.metricWriter - storage.objectCreator - id : homefs source : modules/file-system/filestore use : [ network , private service access ] settings : local mount : /home - id : projectsfs source : modules/file-system/filestore use : [ network , private service access ] settings : local mount : /projects - id : lustre-gcp source : modules/file-system/managed-lustre use : [ network , private service access ] settings : name : $(vars.lustre instance id) local mount : /lustre remote mount : lustrefs size gib : 36000 - id : n2 nodeset source : community/modules/compute/schedmd-slurm-gcp-v6-nodeset use : [ network , compute sa ] settings : node count dynamic max : 4 machine type : n2-standard-2 instance image : $(vars.slurm image) allow automatic updates : false - id : n2 partition source : community/modules/compute/schedmd-slurm-gcp-v6-partition use : [ n2 nodeset ] settings : partition name : n2 exclusive : false # allows nodes to stay up after jobs are done is default : true partition conf : SuspendTime : 300 # time (in secs) the nodes in this partition stay active after their tasks have completed - id : c2 nodeset source : community/modules/compute/schedmd-slurm-gcp-v6-nodeset use : [ network , compute sa ] settings : node count dynamic max : 20 machine type : c2-standard-60 # this is the default bandwidth tier : tier 1 enabled instance image : $(vars.slurm image) disk type : pd-ssd disk size gb : 100 allow automatic updates : false use -p c2 to submit jobs to this partition: ex: srun -p c2 -N 1 hostname - id : c2 partition source : community/modules/compute/schedmd-slurm-gcp-v6-partition use : [ c2 nodeset ] settings : partition name : c2 the following two are true by default exclusive : true - id : c2d nodeset source : community/modules/compute/schedmd-slurm-gcp-v6-nodeset use : [ network , compute sa ] settings : node count dynamic max : 20 machine type : c2d-standard-112 instance image : $(vars.slurm image) bandwidth tier : tier 1 enabled disk type : pd-ssd disk size gb : 100 allow automatic updates : false - id : c2d partition source : community/modules/compute/schedmd-slurm-gcp-v6-partition use : [ c2d nodeset ] settings : partition name : c2d - id : c3 nodeset source : community/modules/compute/schedmd-slurm-gcp-v6-nodeset use : [ network , compute sa ] settings : node count dynamic max : 20 machine type : c3-highcpu-176 instance image : $(vars.slurm image) bandwidth tier : tier 1 enabled disk type : pd-ssd disk size gb : 100 allow automatic updates : false - id : c3 partition source : community/modules/compute/schedmd-slurm-gcp-v6-partition use : [ c3 nodeset ] settings : partition name : c3 - id : a2 8 nodeset source : community/modules/compute/schedmd-slurm-gcp-v6-nodeset use : [ network , compute sa ] settings : node count dynamic max : 16 machine type : a2-ultragpu-8g This makes this nodeset look for machines in any of the following zones https://github.com/GoogleCloudPlatform/hpc-toolkit/tree/develop/community/modules/compute/schedmd-slurm-gcp-v6-nodeset#compute-vm-zone-policies zones : $(vars.gpu zones) bandwidth tier : gvnic enabled instance image : $(vars.slurm image) disk type : pd-ssd disk size gb : 100 node conf : SocketsPerBoard : 2 CoresPerSocket : 24 allow automatic updates : false use -p a208 to submit jobs to this partition: ex: srun -p a208 --gpus-per-node=8 -N 1 nvidia-smi - id : a2 8 partition source : community/modules/compute/schedmd-slurm-gcp-v6-partition use : [ a2 8 nodeset ] settings : partition name : a208 The following allows users to use more host memory without specifying cpus on a job partition conf : DefMemPerGPU : 160000 DefMemPerCPU : null - id : a2 16 nodeset source : community/modules/compute/schedmd-slurm-gcp-v6-nodeset use : [ network , compute sa ] settings : node count dynamic max : 16 machine type : a2-megagpu-16g This makes this nodeset look for machines in any of the following zones https://github.com/GoogleCloudPlatform/hpc-toolkit/tree/develop/community/modules/compute/schedmd-slurm-gcp-v6-nodeset#compute-vm-zone-policies // !!! zones : $(vars.gpu zones) bandwidth tier : gvnic enabled instance image : $(vars.slurm image) disk type : pd-ssd disk size gb : 100 node conf : SocketsPerBoard : 2 CoresPerSocket : 24 allow automatic updates : false use -p a216 to submit jobs to this partition: ex: srun -p a216 --gpus-per-node=16 -N 1 nvidia-smi - id : a2 16 partition source : community/modules/compute/schedmd-slurm-gcp-v6-partition use : [ a2 16 nodeset ] settings : partition name : a216 The following allows users to use more host memory without specifying cpus on a job partition conf : DefMemPerGPU : 160000 DefMemPerCPU : null - id : h3 nodeset source : community/modules/compute/schedmd-slurm-gcp-v6-nodeset use : [ network , compute sa ] settings : node count dynamic max : 16 Note that H3 is available in only specific zones. https://cloud.google.com/compute/docs/regions-zones machine type : h3-standard-88 bandwidth tier : gvnic enabled # https://cloud.google.com/compute/docs/compute-optimized-machines#h3 network instance image : $(vars.slurm image) H3 does not support pd-ssd and pd-standard https://cloud.google.com/compute/docs/compute-optimized-machines#h3 disks disk type : pd-balanced disk size gb : 100 allow automatic updates : false use -p h3 to submit jobs to this partition: ex: srun -p h3 -N 1 hostname - id : h3 partition source : community/modules/compute/schedmd-slurm-gcp-v6-partition use : [ h3 nodeset ] settings : partition name : h3 - id : slurm login source : community/modules/scheduler/schedmd-slurm-gcp-v6-login use : [ network , login sa ] settings : instance image : $(vars.slurm image) machine type : n2-standard-4 we recommend disabling public IPs if possible but that requires your network to have a NAT or private access configured enable login public ips : true - id : slurm controller source : community/modules/scheduler/schedmd-slurm-gcp-v6-controller use : [ network , controller sa , homefs , projectsfs , lustre-gcp , slurm login , n2 partition , c2 partition , c2d partition , c3 partition , a2 8 partition , a2 16 partition , h3 partition ] settings : instance image : $(vars.slurm image) the following allow for longer boot time which is useful for large GPU nodes cloud parameters : no comma params : false resume rate : 0 resume timeout : 600 suspend rate : 0 suspend timeout : 600 we recommend disabling public IPs if possible but that requires your network to have a NAT or private access configured enable controller public ips : true - id : hpc dashboard source : modules/monitoring/dashboard outputs : [ instructions ] Request additional quotas You might need to request additional quota to be able to deploy and use your cluster.",
+          "See the License for the specific language governing permissions and limitations under the License. --- blueprint name : hpc-enterprise-slurm-v6 vars : project id : ## Set GCP Project ID Here ## deployment name : hpc01 region : us-central1 zone : us-central1-a gpu zones : [ us-central1-a , us-central1-b , us-central1-c , us-central1-f ] lustre instance id : lustre-hpc slurm image : Visit https://github.com/GoogleCloudPlatform/slurm-gcp/blob/master/docs/images.md#published-image-family for a list of valid family options with Slurm family : slurm-gcp-6-12-hpc-rocky-linux-8 project : schedmd-slurm-public If image above is changed to use custom image, then setting below must be set to true instance image custom : false metadata : # Workaround for https://github.com/GoogleCloudPlatform/cluster-toolkit/discussions/3243 VmDnsSetting : GlobalOnly Recommended to use GCS backend for Terraform state See https://github.com/GoogleCloudPlatform/hpc-toolkit/tree/main/examples#optional-setting-up-a-remote-terraform-state terraform backend defaults: type: gcs configuration: bucket: <<BUCKET NAME> > Documentation for each of the modules used below can be found at https://github.com/GoogleCloudPlatform/hpc-toolkit/blob/main/modules/README.md deployment groups : - group : primary modules : Source is an embedded module, denoted by \"modules/ \" without ./, ../, / as a prefix.",
+          "PSA is a best practice for Filestore instances, but can be optionally removed by deleting the private service access module and any references to the module by Filestore modules. https://cloud.google.com/vpc/docs/configure-private-services-access#permissions - id : private service access source : modules/network/private-service-access use : [ network ] - id : homefs source : modules/file-system/filestore use : [ network , private service access ] settings : local mount : /home - id : debug nodeset source : community/modules/compute/schedmd-slurm-gcp-v6-nodeset use : [ network ] settings : node count dynamic max : 4 machine type : n2-standard-2 allow automatic updates : false - id : debug partition source : community/modules/compute/schedmd-slurm-gcp-v6-partition use : - debug nodeset settings : partition name : debug exclusive : false # allows nodes to stay up after jobs are done is default : true - id : compute nodeset source : community/modules/compute/schedmd-slurm-gcp-v6-nodeset use : [ network ] settings : node count dynamic max : 20 bandwidth tier : gvnic enabled allow automatic updates : false - id : compute partition source : community/modules/compute/schedmd-slurm-gcp-v6-partition use : - compute nodeset settings : partition name : compute - id : h3 nodeset source : community/modules/compute/schedmd-slurm-gcp-v6-nodeset use : [ network ] settings : node count dynamic max : 20 Note that H3 is available in only specific zones. https://cloud.google.com/compute/docs/regions-zones machine type : h3-standard-88 H3 does not support pd-ssd and pd-standard https://cloud.google.com/compute/docs/compute-optimized-machines#h3 disks disk type : pd-balanced bandwidth tier : gvnic enabled allow automatic updates : false - id : h3 partition source : community/modules/compute/schedmd-slurm-gcp-v6-partition use : - h3 nodeset settings : partition name : h3 - id : slurm login source : community/modules/scheduler/schedmd-slurm-gcp-v6-login use : [ network ] settings : machine type : n2-standard-4 enable login public ips : true - id : slurm controller source : community/modules/scheduler/schedmd-slurm-gcp-v6-controller use : - network - debug partition - compute partition - h3 partition - homefs - slurm login settings : enable controller public ips : true Example 2 Deploys a cluster with Slurm that has a tiered file systems for higher performance."
+        ]
+      },
+      {
+        "title": "\"Deploy an A3 Mega GKE cluster for ML training \\_|\\_ Cluster Toolkit \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-gke-cluster",
+        "source_id": "site-docs-reference",
+        "final_score": 183,
+        "relevance": "",
+        "evidence_snippets": [
+          "Clean up resources created by Cluster Toolkit To avoid recurring charges for the resources used on this page, clean up the resources provisioned by Cluster Toolkit, including the VPC networks and GKE cluster: cd /cluster-toolkit ./gcluster destroy CLUSTER NAME / Replace CLUSTER NAME with the name of your cluster.",
+          "This document outlines the deployment steps for provisioning an A3 Mega ( a3-megagpu-8g ) Google Kubernetes Engine (GKE) cluster that is ideal for running large-scale artificial intelligence (AI) and machine learning (ML) training workloads.",
+          "Home Documentation Compute Cluster Toolkit Guides Send feedback Deploy an A3 Mega GKE cluster for ML training Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Reconfigure a GKE cluster \\_|\\_ Cluster Toolkit \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cluster-toolkit/docs/gke/reconfigure-gke-cluster",
+        "source_id": "site-docs-reference",
+        "final_score": 169,
+        "relevance": "",
+        "evidence_snippets": [
+          "Reconfigure the cluster For GKE clusters, you can update the cluster as follows: Edit the deployment blueprint to update the supported parameters.",
+          "Home Documentation Compute Cluster Toolkit Guides Send feedback Reconfigure a GKE cluster Stay organized with collections Save and categorize content based on your preferences.",
+          "Limitations The following changes can't be made by editing the blueprint: You can't switch from a zonal to a regional GKE cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.instanceAdmin.v1",
+      "github.com",
+      "iam.serviceAccountUser",
+      "images.md",
+      "logging.logWriter",
+      "monitoring.metricWriter",
+      "pubsub.admin",
+      "storage.objectCreator",
+      "storage.objectViewer",
+      "vars.gpu",
+      "vars.lustre",
+      "vars.slurm"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cluster-toolkit/docs/setup/cluster-blueprint-catalog",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/setup/cluster-blueprint",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-gke-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/gke/reconfigure-gke-cluster"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cluster-toolkit/docs/setup/cluster-blueprint-catalog",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/setup/cluster-blueprint",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-gke-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/gke/reconfigure-gke-cluster"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cluster-toolkit/docs/setup/cluster-blueprint-catalog",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/setup/cluster-blueprint",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-gke-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/gke/reconfigure-gke-cluster"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cluster-toolkit/docs/setup/cluster-blueprint-catalog",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/setup/cluster-blueprint",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-gke-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/gke/reconfigure-gke-cluster"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cluster-toolkit/docs/setup/cluster-blueprint-catalog",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/setup/cluster-blueprint",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-gke-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/gke/reconfigure-gke-cluster"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cluster-toolkit/docs/setup/cluster-blueprint-catalog",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/setup/cluster-blueprint",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-gke-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/gke/reconfigure-gke-cluster"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cluster-toolkit/docs/setup/cluster-blueprint-catalog",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/setup/cluster-blueprint",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-gke-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/gke/reconfigure-gke-cluster"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:45.465Z",
+  "source_step08_card": "data/step-08/current/products/cluster-toolkit/card.json",
+  "product_name": "Cluster Toolkit",
+  "product_slug": "cluster-toolkit"
+}

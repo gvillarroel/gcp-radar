@@ -1,0 +1,20 @@
+# Google Workspace Marketplace API
+
+Generated at: `2026-05-05T20:07:59.548Z`
+
+Service card: [card.json](../../artifacts/google-workspace-marketplace-api/card.json)
+
+Artifacts index: [google-workspace-marketplace-api](../../artifacts/google-workspace-marketplace-api/index.md)
+
+## Summary
+
+- Promoted features: 1
+- Skipped features during promotion: 0
+- Latest feature date: 2026-01-08
+- Service IAM status: {"explicit":0,"derived_from_permission_prefix":0,"unknown":1}
+
+## Features
+
+| Feature | IAM | Explicit roles | Explicit permissions | Derived roles | Derived permissions | Coverage | Official sources |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| [License notifications](../../artifacts/google-workspace-marketplace-api/license-notifications/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://developers.google.com/workspace/marketplace/about-app-review)<br>[source](https://developers.google.com/workspace/marketplace/example-calls-marketplace-api)<br>[source](https://developers.google.com/workspace/marketplace/list-multiple-app-integrations) |

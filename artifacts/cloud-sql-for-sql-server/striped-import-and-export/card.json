@@ -1,0 +1,126 @@
+{
+  "feature_name": "Striped import and export",
+  "feature_slug": "striped-import-and-export",
+  "summary": "Striped import and export reduce the time needed for BAK file operations and related workflows.",
+  "extended_definition": "Striped import and export reduce the time needed for BAK file operations and related workflows.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Export and import using BAK files and transaction log files \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "source_id": "site-docs-root",
+        "final_score": 266,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use striped export The advantages of striped export are the following: Reductions in the time needed for operations to complete Databases larger than 5 TB can be exported A potential disadvantage of using striped export is that the backup, rather than consisting of one file, is split across a set of files.",
+          "Use striped import The advantages of striped import are the following: Reductions in the time needed for operations to complete Databases larger than 5 TB can be imported Note: Striped import does not support the import of encrypted columns.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id /export\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ target-instance-id \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-21T22:43:37.981Z\", \"operationType\": \"EXPORT\", \"exportContext\": { \"uri\": {uri}, \"databases\": [ database name ], \"kind\": \"sql#exportContext\", \"fileType\": \"BAK\", \"bakExportOptions\": { \"bakType\": FULL, \"differentialBase\": true, } }, \"name\": \" operation-id \", \"targetId\": \" instance-id \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /operations/ operation-id \", \"targetProject\": \" project-id \" } Export a differential backup: Before using any of the request data, make the following replacements: project-id : the project ID instance-id : the instance ID bucket name : the Cloud Storage bucket name path to dump file : the path to the SQL dump fle database name 1 : the name of a database inside the Cloud SQL instance database name 2 : the name of a database inside the Cloud SQL instance offload : to enable and use serverless exports, set this value to true ."
+        ]
+      },
+      {
+        "title": "\"Export and import using SQL dump files \\_|\\_ Cloud SQL for SQL Server \\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "source_id": "site-docs-root",
+        "final_score": 212,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id /import\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ target-instance-id \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-21T22:43:37.981Z\", \"operationType\": \"UPDATE\", \"name\": \" operation-id \", \"targetId\": \" instance-id \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /operations/ operation-id \", \"targetProject\": \" project-id \" } For the complete list of parameters for the request, see the instances:import page.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id /import\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ target-instance-id \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-21T22:43:37.981Z\", \"operationType\": \"UPDATE\", \"name\": \" operation-id \", \"targetId\": \" instance-id \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /operations/ operation-id \", \"targetProject\": \" project-id \" } For the complete list of parameters for the request, see the instances:import page.",
+          "Home Documentation Databases Cloud SQL SQL Server Guides Send feedback Export and import using SQL dump files Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"General best practices \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 151,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When using the export backup feature on an Enterprise or Standard SQL Server instance, avoid creating a GZ archive file because it tries to compress a backup that's already natively compressed by SQL Server.",
+          "Exports take longer to create, because an external file is created in Cloud Storage that can be used to recreate your data.",
+          "Data import and export Best practice More information Speed up imports for small instance sizes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "request.json",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:41.951Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server"
+}

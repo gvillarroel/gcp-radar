@@ -1,0 +1,155 @@
+{
+  "feature_name": "Throughput in Bytes",
+  "feature_slug": "throughput-in-bytes",
+  "summary": "The Throughput in Bytes widget shows ingestion volume over time.",
+  "extended_definition": "The Throughput in Bytes widget shows ingestion volume over time.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide",
+      "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Dashboards overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 171,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The table is followed by graphs of all Google Cloud services with their associated data that show their ingestion trend over the following time intervals: Last 24 hours Last 30 days Last six months Context Aware Detections - Risk dashboard The Context Aware Detections - Risk dashboard provides insight into the current threat status of assets and users in your enterprise.",
+          "Burst Rejection Graph : displays the hourly volume over time of logs that were rejected for exceeding the burst limit (see Burst limits ).",
+          "Ingestion - Throughput (All-Time) : displays the ingestion throughput per year for all the time that there is data for."
+        ]
+      },
+      {
+        "title": "\"Forwarder Management \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "source_id": "site-api-reference",
+        "final_score": 133,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SERVICE ACCOUNT FILE is the full path to the apikeys-demo.json file ToDo: Replace this with the full path to your OAuth2 credentials SERVICE ACCOUNT FILE = '/customer-keys/apikeys-demo.json' Create a credential using the Google Developer Service Account Credential and Backstory API Scope. credentials = service account.Credentials.from service account file(SERVICE ACCOUNT FILE, scopes=SCOPES) Build a requests Session Object to make authorized OAuth requests. http session = requests.AuthorizedSession(credentials) Your endpoint GET POST PATCH etc. code will vary below Reference List example (for US region) url = 'https://backstory.googleapis.com/v2/lists/COLDRIVER SHA256' You might need another regional endpoint for your API call; see https://cloud.google.com/chronicle/docs/reference/ingestion-api#regional endpoints requests GET example response = http session.request(\"GET\", url) POST example uses json body = { \"foo\": \"bar\" } response = http session.request(\"POST\", url, json=body) PATCH example uses params and json params = { \"foo\": \"bar\" } response = http session.request(\"PATCH\", url, params=params, json=body) For more complete examples, see: https://github.com/chronicle/api-samples-python/ Backstory API query limits The Backstory API enforces limits on the volume of requests that can be made by any one customer against the Google SecOps platform.",
+          "Response example { \"collectors\": [ { \"name\": \"?\", \"displayName\": \"abc collector 1\", \"config\": { \"logType\": \"tomcat\", \"maxSecondsPerBatch\": \"10\", \"maxBytesPerBatch\": \"1048576\" } }, { \"name\": \"?\", \"displayName\": \"abc collector 2\", \"config\": { \"logType\": \"tomcat\", \"maxSecondsPerBatch\": \"10\", \"maxBytesPerBatch\": \"1048576\" } } ] } Update Collector When updating a collector with the API, you can choose to overwrite the entire collector configuration or to overwrite only specific fields of the collector configuration.",
+          "PATCH https://backstory.googleapis.com/v2/forwarders/12ab3cd4-56ef-7abc-d89e-1f23a4bcde56/collectors/98ab7cd6-54ef-3abc-d21e-1f23a4bcde56?updateMask=displayName,config.logType,config.metadata.assetNamespace,config.syslogSettings.protocol { \"display name\": \"UpdatedCollector\" \"config\": { \"metadata\": { \"asset namespace\": \"COLLECTOR\", }, \"log type\": \"CISCO ASA FIREWALL\", \"syslog settings\": { \"protocol\": \"TCP\", } } } Response example This is an example of the response returned for the request example above. { \"name\": \"forwarders/12ab3cd4-56ef-7abc-d89e-1f23a4bcde56/collectors/98ab7cd6-54ef-3abc-d21e-1f23a4bcde56\", \"displayName\": \"UpdatedCollector\", \"config\": { \"logType\": \"CISCO ASA FIREWALL\", \"metadata\": { \"assetNamespace\": \"COLLECTOR\" }, \"maxSecondsPerBatch\": 10, \"maxBytesPerBatch\": \"1048576\", \"syslogSettings\": { \"protocol\": \"TCP\", \"address\": \"0.0.0.0\", \"port\": 10514, } }, \"state\": \"ACTIVE\" } Delete Collector Deletes a collector."
+        ]
+      },
+      {
+        "title": "Cases overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "Each case entry shows key metadata, such as: Case name and unique ID Case timestamp Number of associated alerts Assigned analyst (with avatar) Case priority and stage (optional, depending on view) Analysts can toggle between these views: Default view : Shows case cards with essential information.",
+          "They collect enrichment data, analyst comments, and historical context, letting analysts track entity behavior over time and across cases.",
+          "Case overview tab The Case Overview tab displays case-specific widgets configured by the administrator."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.Credentials.from",
+      "backstory.googleapis.com",
+      "config.logType",
+      "config.metadata.assetNamespace",
+      "config.syslogSettings.protocol",
+      "demo.json",
+      "github.com",
+      "requests.AuthorizedSession",
+      "session.request",
+      "settings.authentication.password",
+      "settings.authentication.username",
+      "settings.bpf",
+      "settings.host",
+      "settings.minimum",
+      "settings.network",
+      "settings.port"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:18.186Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops"
+}

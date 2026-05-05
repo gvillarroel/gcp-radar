@@ -1,0 +1,148 @@
+{
+  "feature_name": "Cloud Monitoring billing metrics",
+  "feature_slug": "cloud-monitoring-billing-metrics",
+  "summary": "Firestore with MongoDB compatibility databases expose billing metrics in Cloud Monitoring in Preview.",
+  "extended_definition": "Firestore with MongoDB compatibility databases expose billing metrics in Cloud Monitoring in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/bulk-delete",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-and-query-database",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and manage databases \\_|\\_ Firestore with MongoDB compatibility \\_\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "source_id": "site-docs-root",
+        "final_score": 286,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Learn about Cloud Monitoring metrics for Firestore with MongoDB compatibility .",
+          "Required permissions To manage databases, you need the following permissions: Create a database: datastore.databases.create Read database configuration: datastore.databases.getMetadata Configure a database: datastore.databases.update Delete a database: datastore.databases.delete Clone a database: datastore.databases.clone Create a database To create a Firestore with MongoDB compatibility database, use one of the following methods: Google Cloud console In the Google Cloud console, go to the Databases page.",
+          "Home Documentation Databases Firestore with MongoDB compatibility Guides Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Import and export data \\_|\\_ Firestore with MongoDB compatibility \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+        "source_id": "site-iam-reference",
+        "final_score": 269,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: You must export specific collections if you plan to: Import only specific collections Load Firestore with MongoDB compatibility data into BigQuery Export all documents Google Cloud Console In the Google Cloud console, go to the Databases page.",
+          "Home Documentation Databases Firestore with MongoDB compatibility Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Otherwise, the following roles grant the necessary permissions for export and import operations and for access to Cloud Storage: Firestore with MongoDB compatibility roles: Owner , Cloud Datastore Owner , or Cloud Datastore Import Export Admin Note: These Datastore roles also grant permissions in Firestore with MongoDB compatibility."
+        ]
+      },
+      {
+        "title": "\"Bulk delete data \\_|\\_ Firestore with MongoDB compatibility \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/bulk-delete",
+        "source_id": "site-iam-reference",
+        "final_score": 261,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Firestore with MongoDB compatibility Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "To bulk delete the restaurants and reviews collections, your command looks as follows: gcloud firestore bulk-delete \\ --collection-ids=restaurants,reviews \\ --database='cymbal' Manage bulk delete operations After you start a bulk delete operation, Firestore with MongoDB compatibility assigns the operation a unique name.",
+          "Otherwise, the following roles grant the necessary permissions for bulk delete operations: Firestore with MongoDB compatibility roles: Owner , Cloud Datastore Owner , or Cloud Datastore Bulk Admin Note: These Datastore roles also grant permissions in Firestore."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Connect with mongosh \\_|\\_ Firestore with MongoDB compatibility\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-and-query-database",
+        "source_id": "site-docs-root",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Firestore with MongoDB compatibility Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Firestore with MongoDB compatibility requires Firestore Enterprise edition: In the Google Cloud console, go to the Databases page.",
+          "DATABASE ID : a database ID Once connected, you can create and read data, for example: db.pages.insertOne({ message: \"Hello World!\"}) db.pages.find({}) exit What's next See a list of supported features Learn about behavior differences in Firestore with MongoDB compatibility Learn about additional authentication methods Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datastore.databases.clone",
+      "datastore.databases.create",
+      "datastore.databases.delete",
+      "datastore.databases.getMetadata",
+      "datastore.databases.update",
+      "db.pages.find",
+      "db.pages.insertOne"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/bulk-delete",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-and-query-database"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/bulk-delete",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-and-query-database"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/bulk-delete",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-and-query-database"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/bulk-delete",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-and-query-database"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/bulk-delete",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-and-query-database"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:06.277Z",
+  "source_step08_card": "data/step-08/current/products/firestore-with-mongodb-compatibility/card.json",
+  "product_name": "Firestore with MongoDB compatibility",
+  "product_slug": "firestore-with-mongodb-compatibility"
+}

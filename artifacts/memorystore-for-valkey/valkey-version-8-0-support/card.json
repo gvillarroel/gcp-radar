@@ -1,0 +1,169 @@
+{
+  "feature_name": "Valkey version 8.0 support",
+  "feature_slug": "valkey-version-8-0-support",
+  "summary": "Memorystore for Valkey supports Valkey version 8.0 in Preview.",
+  "extended_definition": "Memorystore for Valkey supports Valkey version 8.0 in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/valkey/about-in-transit-encryption",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/about-upgrading-version",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/connect-instance",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/supported-versions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About upgrading the Valkey version of an instance \\_|\\_ Memorystore for\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/about-upgrading-version",
+        "source_id": "site-iam-reference",
+        "final_score": 274,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This page contains the following information: Best practices to upgrade the version of your Memorystore for Valkey instance How your instance behaves during a version upgrade operation For more information about upgrading your instance's version, see Upgrade the Valkey version of an instance .",
+          "Home Documentation Databases Memorystore Memorystore for Valkey Guides Send feedback About upgrading the Valkey version of an instance Stay organized with collections Save and categorize content based on your preferences.",
+          "Best practices to upgrade your instance's version This section provides guidance for upgrading the version of your Memorystore for Valkey instance."
+        ]
+      },
+      {
+        "title": "\"About in-transit encryption \\_|\\_ Memorystore for Valkey \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/about-in-transit-encryption",
+        "source_id": "site-docs-root",
+        "final_score": 251,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In-transit encryption prerequisites To use in-transit encryption with Memorystore for Valkey, you need the following: A Valkey client that supports TLS or a third-party TLS sidecar.",
+          "Memorystore for Valkey supports the TLS protocol, versions 1.2 and later.",
+          "The following are sample use cases for using in-transit encryption: Protect sensitive cached data : If you use Memorystore for Valkey to store high-value information, such as session tokens, Personal Identifiable Information (PII), or API keys, then in-transit encryption prevents attackers with VPC access from accessing your data."
+        ]
+      },
+      {
+        "title": "Supported versions \\_|\\_ Memorystore for Valkey \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/supported-versions",
+        "source_id": "site-docs-root",
+        "final_score": 251,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Valkey version 8.0 The following table outlines Memorystore support of some major features introduced by Valkey 8.0: Feature Description Asynchronous I/O threading for performance boost This feature significantly improves performance by enabling parallel processing between the main thread and I/O threads.",
+          "Memorystore for Valkey supports Valkey versions 7.2, 8.0, and 9.0.",
+          "Current versions This table shows the supported Valkey versions and when each version was last updated: Valkey major version Last update 9.0 March 11, 2026 8.0 October 2, 2024 7.2 August 30, 2024 Valkey version 9.0 Valkey 9.0's major features focus on performance and scalability enhancements, including hash field expiration for more granular data management."
+        ]
+      },
+      {
+        "title": "Connect to a Memorystore for Valkey instance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/connect-instance",
+        "source_id": "site-docs-root",
+        "final_score": 235,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The output should be similar to the following: authorizationMode: AUTH DISABLED createTime: '2024-08-06T22:02:55.224704101Z' deletionProtectionEnabled: false engineVersion: VALKEY 7 2 name: projects/myproject/locations/us-central1/instances/my-instance nodeConfig: sizeGb: 6.5 nodeType: STANDARD SMALL persistenceConfig: mode: DISABLED endpoints: - connections: - pscAutoConnection: connectionType: CONNECTION TYPE PRIMARY forwardingRule: https://www.googleapis.com/compute/v1/projects/my-project/regions/us-central1/forwardingRules/sca-auto-fr-ec00907a-3ee3-4740-8092-ae832428f8e4 ipAddress: 10.128.0.124 network: projects/my-project/global/networks/default port: 6379 projectId: my-project pscConnectionId: '38876592440606778' serviceAttachment: projects/448055306617/regions/us-central1/serviceAttachments/gcp-memorystore-auto-b3c43536-4a77-40-psc-sa - pscAutoConnection: connectionType: CONNECTION TYPE READER forwardingRule: https://www.googleapis.com/compute/v1/projects/my-project/regions/us-central1/forwardingRules/sca-auto-fr-5ce5518f-1c59-4b46-aa74-799fad70d7b1 ipAddress: 10.128.0.125 network: projects/my-project/global/networks/default port: 6379 projectId: my-project pscConnectionId: '38876592440606779' serviceAttachment: projects/448055306617/regions/us-central1/serviceAttachments/gcp-memorystore-auto-b3c43536-4a77-40-psc-sa-2 replicaCount: 2 shardCount: 1 mode: CLUSTER DISABLED state: ACTIVE transitEncryptionMode: TRANSIT ENCRYPTION DISABLED uid: 869f2d09-d20b-46d8-94ba-be83c48ceb54 updateTime: '2024-08-06T22:18:59.389980051Z' zoneDistributionConfig: mode: MULTI ZONE Primary endpoint: Take a note of the endpoint address and port number listed under CONNECTION TYPE PRIMARY in the endpoints: section.",
+          "The output should be similar to the following: authorizationMode: AUTH DISABLED createTime: '2024-08-06T22:02:55.224704101Z' deletionProtectionEnabled: false engineVersion: VALKEY 7 2 name: projects/myproject/locations/us-central1/instances/my-instance nodeConfig: sizeGb: 6.5 nodeType: STANDARD SMALL persistenceConfig: mode: DISABLED endpoints: - connections: - pscAutoConnection: connectionType: CONNECTION TYPE DISCOVERY forwardingRule: https://www.googleapis.com/compute/v1/projects/my-project/regions/us-central1/forwardingRules/sca-auto-fr-ec00907a-3ee3-4740-8092-ae832428f8e4 ipAddress: 10.128.0.58 network: projects/my-project/global/networks/default port: 6379 projectId: my-project pscConnectionId: '38876592440606778' serviceAttachment: projects/129109085717/regions/us-east1/serviceAttachments/gcp-memorystore-auto-58e78f71-fdb7-48-psc-sa - pscAutoConnection: forwardingRule: https://www.googleapis.com/compute/v1/projects/my-project/regions/us-central1/forwardingRules/sca-auto-fr-5ce5518f-1c59-4b46-aa74-799fad70d7b1 ipAddress: 10.128.0.59 network: projects/my-project/global/networks/default port: 6379 projectId: my-project pscConnectionId: '38876592440606779' serviceAttachment: projects/129109085717/regions/us-east1/serviceAttachments/gcp-memorystore-auto-58e78f71-fdb7-48-psc-sa-2 replicaCount: 2 shardCount: 5 state: ACTIVE transitEncryptionMode: TRANSIT ENCRYPTION DISABLED uid: 869f2d09-d20b-46d8-94ba-be83c48ceb54 updateTime: '2024-08-06T22:18:59.389980051Z' zoneDistributionConfig: mode: MULTI ZONE Take a note of the endpoint address and port number listed in the endpoints: section for the connectionType: CONNECTION TYPE DISCOVERY entry.",
+          "After you connect to the node, enter the following Valkey commands: Enter: PING Result: PONG Connect to a Cluster Mode Disabled instance This section explains how to connect to a Memorystore for Valkey Cluster Mode Disabled instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "memorystore.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-upgrading-version",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/supported-versions",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/connect-instance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-upgrading-version",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/supported-versions",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/connect-instance"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-upgrading-version",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/supported-versions",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/connect-instance"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-upgrading-version",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/supported-versions",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/connect-instance"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-upgrading-version",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/supported-versions",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/connect-instance"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-upgrading-version",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/supported-versions",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/connect-instance"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-upgrading-version",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/supported-versions",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/connect-instance"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-upgrading-version",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/supported-versions",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/connect-instance"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:26.694Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-valkey/card.json",
+  "product_name": "Memorystore for Valkey",
+  "product_slug": "memorystore-for-valkey"
+}

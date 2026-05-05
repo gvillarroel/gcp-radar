@@ -1,0 +1,83 @@
+{
+  "feature_name": "WebSphere Traditional plugin",
+  "feature_slug": "websphere-traditional-plugin",
+  "summary": "The WebSphere Traditional plugin for workload modernization is deprecated; deprecated on 2023-11-29.",
+  "extended_definition": "The WebSphere Traditional plugin for workload modernization is deprecated; deprecated on 2023-11-29.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-29",
+    "deprecation_date": "2023-11-29",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/compatible-components",
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan",
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/websphere-traditional/websphere-traditional-customizing-a-migration"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customize migration plan for WebSphere traditional workloads \\_|\\_ Migrate\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/websphere-traditional/websphere-traditional-customizing-a-migration",
+        "source_id": "site-docs-reference",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Customize migration plan for WebSphere traditional workloads Important: The websphere-traditional plugin is now deprecated.",
+          "If you're new to WebSphere workload modernization, then use the websphere-container plugin with the Migrate to Containers CLI instead.",
+          "For existing customers, this plugin is still supported till December 2023, after which it will no longer be available."
+        ]
+      },
+      {
+        "title": "Create a migration plan \\_|\\_ Migrate to Containers \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 143,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a migration plan for WebSphere traditional workloads Important: The websphere-traditional plugin is now deprecated.",
+          "If you're new to WebSphere workload modernization, then use the websphere-container plugin with the Migrate to Containers CLI instead.",
+          "If you want to migrate WebSphere traditional workloads, or perform a migration between different Java environments, you can set up the binaryAppScanner.jar ."
+        ]
+      },
+      {
+        "title": "\"Review compatible OS, workloads, and Kubernetes versions \\_|\\_ Migrate to\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/compatible-components",
+        "source_id": "site-docs-reference",
+        "final_score": 115,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported workloads Migrate to Containers CLI supports modernization of workloads listed in the following table: Workload Type (if applicable) Supported versions Linux VM container VMs running 64-bit Linux-based operating systems Linux-based workloads Tomcat Apache Tomcat version 8.5 - 10.0 Apache Apache HTTP Server version 2.4 JBoss WildFly (formerly known as JBoss Application Server) version 8.1.0 - 26.1.1 JBoss Enterprise Application Platform version 7.0 - 7.4 WebSphere WebSphere Application Server traditional version 8.55 and 9.05 All versions of WebSphere Application Server Liberty WordPress sites WordPress version 4.0 or later running on Apache HTTP Server version 2.4 Windows IIS application Microsoft Internet Information Services version 7 or later Note: For workloads that use a Java-based plugin, Migrate to Containers CLI only supports Java SE version 8 or later.",
+          "Source VM operating systems Linux VM container Migrate to Containers CLI supports migrations of VMs to containers on Google Kubernetes Engine on the 64-bit Linux operating systems listed in the following table: OS Compute Engine VMware CentOS 6.0 7.0 7.0 UEFI 8.0 6.7 6.9 7.6 Debian 7.0 8.0 9.0 10.0 9.4 9.6 RHEL 6.0 7.0 7.0 UEFI 7.4 SAP 7.6 SAP 8.0 6.5 7.5 7.6 8.3 SUSE 12 12 SP3 SAP 12 SP4 SAP 15 15 SAP 15 SP1 SAP 12 SP2 12 SP3 12 SP4 15 Ubuntu 12 LTS 14 LTS 16 LTS 16 LTS minimal 18 LTS 18 LTS minimal 18 LTS UEFI 19.04 19.04 minimal 12.04.5 LTS 14.04 LTS 16.04 LTS 18.04.10 LTS Linux-based workloads For Linux-based workloads, Migrate to Containers CLI supports all Linux-based operating systems.",
+          "Windows IIS application Migrate to Containers CLI supports the Windows operating systems listed in the following table: OS Compute Engine Windows Microsoft Windows Server 2008R2 or later ASP.NET and .NET Framework version 3.5 or later Warning: Dynamic disks have been deprecated by Microsoft, and have severe limitations with snapshots."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "provided.ear"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:27.030Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-containers/card.json",
+  "product_name": "Migrate to Containers",
+  "product_slug": "migrate-to-containers"
+}

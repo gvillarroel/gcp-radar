@@ -1,0 +1,80 @@
+# Dataproc Metastore
+
+Service card: [card.json](./card.json)
+
+Generated from Step 08 card: `data/step-08/current/products/dataproc-metastore/card.json`
+
+## Summary
+
+- Promoted features: 30
+- Step 07 product status: PASS
+- Corpus health: healthy
+- Latest feature date: 2026-03-13
+- Official source links: 31
+
+## Official Service Evidence
+
+- [https://docs.cloud.google.com/dataproc-metastore/docs/about-managed-migration](https://docs.cloud.google.com/dataproc-metastore/docs/about-managed-migration)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/access-service](https://docs.cloud.google.com/dataproc-metastore/docs/access-service)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/admin-interface](https://docs.cloud.google.com/dataproc-metastore/docs/admin-interface)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/authentication](https://docs.cloud.google.com/dataproc-metastore/docs/authentication)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/auxiliary-versions](https://docs.cloud.google.com/dataproc-metastore/docs/auxiliary-versions)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/backup-metadata](https://docs.cloud.google.com/dataproc-metastore/docs/backup-metadata)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/cmek](https://docs.cloud.google.com/dataproc-metastore/docs/cmek)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos](https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/core-concepts](https://docs.cloud.google.com/dataproc-metastore/docs/core-concepts)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/create-federation](https://docs.cloud.google.com/dataproc-metastore/docs/create-federation)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/create-service](https://docs.cloud.google.com/dataproc-metastore/docs/create-service)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/create-service-cluster](https://docs.cloud.google.com/dataproc-metastore/docs/create-service-cluster)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/import-metadata](https://docs.cloud.google.com/dataproc-metastore/docs/import-metadata)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/manage-service](https://docs.cloud.google.com/dataproc-metastore/docs/manage-service)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/migrate-mysql-metastore](https://docs.cloud.google.com/dataproc-metastore/docs/migrate-mysql-metastore)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/overview](https://docs.cloud.google.com/dataproc-metastore/docs/overview)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest](https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/reference/rpc](https://docs.cloud.google.com/dataproc-metastore/docs/reference/rpc)
+- [https://docs.cloud.google.com/dataproc-metastore/docs/troubleshooting](https://docs.cloud.google.com/dataproc-metastore/docs/troubleshooting)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest.Builder](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest.Builder)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequestOrBuilder](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequestOrBuilder)
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.BackendMetastoreOrBuilder](https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.BackendMetastoreOrBuilder)
+- [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationAsyncClient](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationAsyncClient)
+- [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient)
+- [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.pagers.ListFederationsAsyncPager](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.pagers.ListFederationsAsyncPager)
+- [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient)
+- [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient)
+- [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.pagers.ListMetadataImportsAsyncPager](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.pagers.ListMetadataImportsAsyncPager)
+- [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.pagers.ListMetadataImportsPager](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.pagers.ListMetadataImportsPager)
+- [https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.types](https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.types)
+
+## Features
+
+- [Administrator interface](./administrator-interface/README.md)
+- [Asynchronous background tasks](./asynchronous-background-tasks/README.md)
+- [Autoscaling](./autoscaling/README.md)
+- [Auxiliary versions](./auxiliary-versions/README.md)
+- [Avro import and export](./avro-import-and-export/README.md)
+- [Cloud Monitoring request_count metric](./cloud-monitoring-request-count-metric/README.md)
+- [Custom region configurations](./custom-region-configurations/README.md)
+- [Customer-managed encryption keys](./customer-managed-encryption-keys/README.md)
+- [Customer-managed encryption keys for multi-regional services](./customer-managed-encryption-keys-for-multi-regional-services/README.md)
+- [Data Catalog Sync](./data-catalog-sync/README.md)
+- [Dataproc Metastore 2](./dataproc-metastore-2/README.md)
+- [Deletion protection](./deletion-protection/README.md)
+- [gRPC endpoints](./grpc-endpoints/README.md)
+- [Hive metadata schema validation for imports](./hive-metadata-schema-validation-for-imports/README.md)
+- [Hive Metastore versions 1.2.2 and 2.2.0](./hive-metastore-versions-1-2-2-and-2-2-0/README.md)
+- [Managed migration](./managed-migration/README.md)
+- [Metadata backup and restore](./metadata-backup-and-restore/README.md)
+- [Metadata federation](./metadata-federation/README.md)
+- [Metadata federation for BigQuery and BigLake](./metadata-federation-for-bigquery-and-biglake/README.md)
+- [Metadata federation for BigQuery datasets](./metadata-federation-for-bigquery-datasets/README.md)
+- [Metadata federation for Dataplex lakes](./metadata-federation-for-dataplex-lakes/README.md)
+- [Metadata import description updates](./metadata-import-description-updates/README.md)
+- [MetadataImport.DatabaseDump.source_database field](./metadataimport-databasedump-source-database-field/README.md)
+- [Multi-region and custom dual region support](./multi-region-and-custom-dual-region-support/README.md)
+- [Multi-regional configurations](./multi-regional-configurations/README.md)
+- [Non-RFC 1918 private IP ranges](./non-rfc-1918-private-ip-ranges/README.md)
+- [Private Service Connect](./private-service-connect/README.md)
+- [Scheduled backups](./scheduled-backups/README.md)
+- [Shared VPC support](./shared-vpc-support/README.md)
+- [Spanner database type](./spanner-database-type/README.md)

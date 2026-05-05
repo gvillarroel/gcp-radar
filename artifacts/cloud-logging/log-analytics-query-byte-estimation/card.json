@@ -1,0 +1,109 @@
+{
+  "feature_name": "Log Analytics query byte estimation",
+  "feature_slug": "log-analytics-query-byte-estimation",
+  "summary": "Log Analytics shows estimated bytes processed and query validation status before running a SQL query.",
+  "extended_definition": "Log Analytics shows estimated bytes processed and query validation status before running a SQL query.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/buckets",
+      "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+      "https://docs.cloud.google.com/logging/docs/view/logging-query-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Logging query language \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logging-query-language",
+        "source_id": "site-docs-root",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "Each field is followed by the next level of names for that field, if applicable: httpRequest : { cacheFillBytes , cacheHit , cacheLookup , cacheValidatedWithOriginServer , latency , protocol , referer , remoteIp , requestMethod , requestSize , requestUrl , responseSize , serverIp , status , userAgent } insertId jsonPayload { variable } labels { variable } logName metadata { systemLabels , userLabels } operation { id , producer , first , last } protoPayload { @type , variable } receiveTimestamp resource { type , labels } severity sourceLocation : { file , line , function } spanId textPayload timestamp trace Following are examples of field path identifiers you can use in your comparisons: resource.type : If your first path identifier is resource , then the next identifier must be a field in the MonitoredResource type. httpRequest.latency : If your first path identifier is httpRequest , then the next identifier must be a field in the HttpRequest type. labels.[KEY] If your first path identifier is labels , then the next identifier, [KEY] , must be one of the keys from the key-value pairs appearing in the labels field. logName : Since the logName field is a string, you can't follow it by any subfield names.",
+          "The substring operator ( : ) is applicable to string and bytes , and is handled like equality except that the right-hand operand need only equal some part of the left-hand field.",
+          "If a and b are Timestamp values, a < b means a is earlier in time than b . bytes : Operands are compared byte by byte, left-to-right. string : Comparisons ignore letter case."
+        ]
+      },
+      {
+        "title": "Configure log buckets \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/buckets",
+        "source_id": "site-docs-root",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "After Logging displays the linked dataset name on the Logs Storage page, it might take several minutes before BigQuery recognizes the dataset. gcloud To create a linked dataset for a log bucket that is upgraded to use Observability Analytics, run the gcloud logging links create command: gcloud logging links create LINK ID --bucket= BUCKET ID --location= LOCATION The LINK ID that you provide is used as the name of the BigQuery dataset, and the value of this field must be unique for your Google Cloud project.",
+          "REST To create a linked a BigQuery dataset for an existing log bucket that is upgraded use Observability Analytics, call the asynchronous projects.locations.buckets.links.create method of the Cloud Logging API.",
+          "Create a linked BigQuery dataset When you want to use the capabilities of BigQuery to analyze your log data, upgrade a log bucket to use Observability Analytics, and then create a linked dataset ."
+        ]
+      },
+      {
+        "title": "OpsAnalyticsQuery \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "source_id": "site-docs-reference",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation QueryBuilderConfig JSON representation FilterPredicate JSON representation OperatorType FilterExpression JSON representation FieldSource JSON representation ProjectedField JSON representation FieldOperation FunctionApplication JSON representation Comparator SortOrderParameter JSON representation SortOrder Describes a query that can be run in Log Analytics.",
+          "Home Documentation Observability Cloud Logging Reference Send feedback OpsAnalyticsQuery Stay organized with collections Save and categorize content based on your preferences.",
+          "A query builder configuration used in Log Analytics."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.buckets.links.create",
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logging-query-language",
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logging-query-language",
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logging-query-language",
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:31.891Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging"
+}

@@ -1,0 +1,212 @@
+{
+  "feature_name": "Gemini Code Assist release channels",
+  "feature_slug": "gemini-code-assist-release-channels",
+  "summary": "Gemini Code Assist Standard and Enterprise offer Preview and GA release channels to control access to features and models; Gemini Code Assist Standard and Enterprise offer Preview and GA release channels to control access to features and models.",
+  "extended_definition": "Gemini Code Assist Standard and Enterprise offer Preview and GA release channels to control access to features and models; Gemini Code Assist Standard and Enterprise offer Preview and GA release channels to control access to features and models.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/configure-release-channels",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+      "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure Gemini Code Assist release channels \\_|\\_ Gemini for Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/configure-release-channels",
+        "source_id": "site-docs-root",
+        "final_score": 375,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions cloudaicompanion.releaseChannelSettings.create cloudaicompanion.releaseChannelSettings.delete cloudaicompanion.releaseChannelSettings.get cloudaicompanion.releaseChannelSettings.list cloudaicompanion.releaseChannelSettings.update cloudaicompanion.dataSharingWithGoogleSettings.create Configure release channels using an API: cloudaicompanion.settingBindings.releaseChannelSettingsCreate cloudaicompanion.settingBindings.releaseChannelSettingsDelete cloudaicompanion.settingBindings.releaseChannelSettingsGet cloudaicompanion.settingBindings.releaseChannelSettingsList cloudaicompanion.settingBindings.releaseChannelSettingsUpdate cloudaicompanion.settingBindings.releaseChannelSettingsUse Configure prompt and response sharing using an API: cloudaicompanion.settingBindings.dataSharingWithGoogleSettingsCreate cloudaicompanion.settingBindings.dataSharingWithGoogleSettingsUse View Gemini for Google Cloud administrator settings: cloudaicompanion.instances.queryEffectiveSetting cloudaicompanion.instances.queryEffectiveSettingBindings Configure Gemini Code Assist release channels Select one of the following options: Console In the Google Cloud console, go to the Admin for Gemini page.",
+          "Home Documentation AI and ML Gemini for Google Cloud Guides Send feedback Configure Gemini Code Assist release channels Stay organized with collections Save and categorize content based on your preferences.",
+          "The output shows the releaseChannel set to RELEASE CHANNEL : { \"name\": \"projects/ CONTAINER PROJECT NAME /locations/global/releaseChannelSettings/ RC SETTING ID \", \"createTime\": \"2025-01-23T15:22:49.717166932Z\", \"updateTime\": \"2025-01-23T15:22:49.717166932Z\", \"releaseChannel\": RELEASE CHANNEL } Create the release channel setting binding: curl \\ -H \"Authorization: Bearer $TOKEN\" \\ -H 'Content-Type: application/json' \\ -d '{ \"target\": \"projects/ TARGET PROJECT NAME \", \"product\": \"GEMINI CODE ASSIST\" }' \\ -X POST \"https://cloudaicompanion.googleapis.com/v1/projects/ CONTAINER PROJECT NAME /locations/global/releaseChannelSettings/ RC SETTING ID /settingBindings?setting binding id= RC BINDING ID \" Replace the following: TARGET PROJECT NAME : the target project to which the binding should be bound."
+        ]
+      },
+      {
+        "title": "\"Set up Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 367,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Learn more about the supported features: Code features overview Chat features overview Get started with the following guides: Code with Gemini Code Assist Chat with Gemini Code Assist List of directories where Gemini Code Assist caches information The following table provides a list of directories where Gemini Code Assist stores extension information such as auth tokens: Windows %LOCALAPPDATA%/cloud-code %LOCALAPPDATA%/google-vscode-extension macOS /Library/Application Support/cloud-code /Library/Application Support/google-vscode-extension Linux /.cache/cloud-code /.cache/google-vscode-extension Sign into Google and select a Google Cloud project Once users have installed Gemini Code Assist in their IDEs, they need to sign in to their Google Accounts, and if it's their first time using Gemini Code Assist Standard or Enterprise in their IDE, they select a Google Cloud project.",
+          "Any custom roles that you create need the following permissions for you to access Gemini Code Assist Standard and Enterprise: cloudaicompanion.companions.generateChat cloudaicompanion.companions.generateCode cloudaicompanion.instances.completeCode cloudaicompanion.instances.completeTask cloudaicompanion.instances.generateCode cloudaicompanion.instances.generateText cloudaicompanion.instances.exportMetrics cloudaicompanion.instances.queryEffectiveSetting cloudaicompanion.instances.queryEffectiveSettingBindings serviceusage.services.enable Assign and manage licenses.",
+          "Optional: Configure VPC Service Controls If your organization has a service perimeter, then you must add the following resources to your perimeter: Gemini for Google Cloud API Gemini Code Assist API If you are using Gemini Code Assist Standard or Enterprise from outside of your service perimeter, then you also need to modify the ingress policy to allow access to those services."
+        ]
+      },
+      {
+        "title": "\"Set up Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 347,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Learn more about the supported features: Code features overview Chat features overview Get started with the following guides: Code with Gemini Code Assist Chat with Gemini Code Assist List of directories where Gemini Code Assist caches information The following table provides a list of directories where Gemini Code Assist stores extension information such as auth tokens: Windows %LOCALAPPDATA%/cloud-code %LOCALAPPDATA%/google-vscode-extension macOS /Library/Application Support/cloud-code /Library/Application Support/google-vscode-extension Linux /.cache/cloud-code /.cache/google-vscode-extension Sign into Google and select a Google Cloud project Once users have installed Gemini Code Assist in their IDEs, they need to sign in to their Google Accounts, and if it's their first time using Gemini Code Assist Standard or Enterprise in their IDE, they select a Google Cloud project.",
+          "Any custom roles that you create need the following permissions for you to access Gemini Code Assist Standard and Enterprise: cloudaicompanion.companions.generateChat cloudaicompanion.companions.generateCode cloudaicompanion.instances.completeCode cloudaicompanion.instances.completeTask cloudaicompanion.instances.generateCode cloudaicompanion.instances.generateText cloudaicompanion.instances.exportMetrics cloudaicompanion.instances.queryEffectiveSetting cloudaicompanion.instances.queryEffectiveSettingBindings serviceusage.services.enable Assign and manage licenses.",
+          "Optional: Configure VPC Service Controls If your organization has a service perimeter, then you must add the following resources to your perimeter: Gemini for Google Cloud API Gemini Code Assist API If you are using Gemini Code Assist Standard or Enterprise from outside of your service perimeter, then you also need to modify the ingress policy to allow access to those services."
+        ]
+      },
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "source_id": "site-docs-root-2",
+        "final_score": 337,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Gemini for Google Cloud Guides Send feedback Code with Gemini Code Assist Standard and Enterprise Stay organized with collections Save and categorize content based on your preferences.",
+          "Before you begin VS Code Set up Gemini Code Assist Standard or Enterprise , if you haven't already.",
+          "IntelliJ Set up Gemini Code Assist Standard or Enterprise , if you haven't already."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaicompanion.companions.generateChat",
+      "cloudaicompanion.companions.generateCode",
+      "cloudaicompanion.dataSharingWithGoogleSettings.create",
+      "cloudaicompanion.googleapis.com",
+      "cloudaicompanion.instances.completeCode",
+      "cloudaicompanion.instances.completeTask",
+      "cloudaicompanion.instances.exportMetrics",
+      "cloudaicompanion.instances.generateCode",
+      "cloudaicompanion.instances.generateText",
+      "cloudaicompanion.instances.queryEffectiveSetting",
+      "cloudaicompanion.instances.queryEffectiveSettingBindings",
+      "cloudaicompanion.releaseChannelSettings.create",
+      "cloudaicompanion.releaseChannelSettings.delete",
+      "cloudaicompanion.releaseChannelSettings.get",
+      "cloudaicompanion.releaseChannelSettings.list",
+      "cloudaicompanion.releaseChannelSettings.update",
+      "cloudaicompanion.settingBindings.dataSharingWithGoogleSettingsCreate",
+      "cloudaicompanion.settingBindings.dataSharingWithGoogleSettingsUse",
+      "cloudaicompanion.settingBindings.releaseChannelSettingsCreate",
+      "cloudaicompanion.settingBindings.releaseChannelSettingsDelete",
+      "cloudaicompanion.settingBindings.releaseChannelSettingsGet",
+      "cloudaicompanion.settingBindings.releaseChannelSettingsList",
+      "cloudaicompanion.settingBindings.releaseChannelSettingsUpdate",
+      "cloudaicompanion.settingBindings.releaseChannelSettingsUse",
+      "grpc.health.v1.Health",
+      "serviceusage.services.enable"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/configure-release-channels",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/configure-release-channels",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/configure-release-channels",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/configure-release-channels",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/configure-release-channels",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/configure-release-channels",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/configure-release-channels",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/configure-release-channels",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/configure-release-channels",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/configure-release-channels",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:07.404Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini"
+}

@@ -1,0 +1,93 @@
+{
+  "feature_name": "Container-bound script ownership inheritance",
+  "feature_slug": "container-bound-script-ownership-inheritance",
+  "summary": "Apps Script makes the container owner the owner of new container-bound script projects regardless of who created them.",
+  "extended_definition": "Apps Script makes the container owner the owner of new container-bound script projects regardless of who created them.",
+  "lifecycle": {
+    "latest_feature_date": "2017-03-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/bound",
+      "https://developers.google.com/apps-script/guides/collaborating",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Container-bound Scripts \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/bound",
+        "source_id": "site-docs-root",
+        "final_score": 129,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Apps Script Guides Send feedback Container-bound Scripts Stay organized with collections Save and categorize content based on your preferences.",
+          "All container-bound scripts use the same owner, viewer, and editor access list defined for the container file.",
+          "The container owner takes ownership of a new script project regardless of who created it."
+        ]
+      },
+      {
+        "title": "Collaborate with other developers \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/collaborating",
+        "source_id": "site-docs-root",
+        "final_score": 107,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Collaboration basics In order to collaborate on a project, you and your collaborators must all have editor access to the Apps Script project file (and its container, if it is a bound script ).",
+          "Collaboration requires all developers to have editor access to the Apps Script project file and its container if it's a bound script.",
+          "All container-bound scripts use the same owner, viewer and editor access list defined for the container file ."
+        ]
+      },
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 103,
+        "relevance": "",
+        "evidence_snippets": [
+          "For all container-bound scripts , the container owner takes ownership of a new script project regardless of who created it.",
+          "For container-bound scripts : If someone outside the container owner's organization creates or edits a container-bound script project, the container owner receives an email notification.",
+          "Change Any script that is container-bound to a Google Doc can now access the active user's Cursor and Selection by calling Document.getCursor() and Document.getSelection() , respectively."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "script.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/bound",
+        "https://developers.google.com/apps-script/guides/collaborating",
+        "https://developers.google.com/apps-script/releases"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:15.255Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script"
+}

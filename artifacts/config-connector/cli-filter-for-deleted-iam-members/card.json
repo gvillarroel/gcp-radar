@@ -1,0 +1,141 @@
+{
+  "feature_name": "CLI filter for deleted IAM members",
+  "feature_slug": "cli-filter-for-deleted-iam-members",
+  "summary": "The config-connector CLI supports filtering out deleted IAM members.",
+  "extended_definition": "The config-connector CLI supports filtering out deleted IAM members.",
+  "lifecycle": {
+    "latest_feature_date": "2021-03-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+      "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Bulk importing and exporting existing Google Cloud resources \\_|\\_ Config\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+        "source_id": "site-docs-reference",
+        "final_score": 94,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, to output assets from the project my-project to the sample directory, run the following command: config-connector bulk-export --project my-project --on-error continue --output sample/ Command-line options The config-connector bulk-export command has the following options: config-connector bulk-export --input FILENAME \\ --output FILENAME \\ --storage-key gs://BUCKET NAME \\ --project PROJECT ID \\ --folder FOLDER NUMBER \\ --organization ORGANIZATION ID \\ --oauth2-token TOKEN \\ --on-error [halt continue ignore] \\ --iam-format [policy policymember none] \\ --filter-deleted-iam-members [true false] \\ --verbose --input : Cloud Asset Inventory input file. --output : An optional output file path that disables standard output.",
+          "Before you begin Install the config-connector tool If you want to use the config-connector tool to export directly from Cloud Asset Inventory, enable the Cloud Asset Inventory API on your Google Cloud Identity's project with gcloud . gcloud services enable cloudasset.googleapis.com Bulk export example In this example, you create a PubSubTopic with the Google Cloud CLI and then import it into Config Connector.",
+          "Create a topic named sample-topic with the Google Cloud CLI: gcloud pubsub topics create sample-topic You receive confirmation that the topic has been created."
+        ]
+      },
+      {
+        "title": "Troubleshoot Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "source_id": "site-docs-reference",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "Stop Config Sync from reacting to updates to the resource on the Kubernetes API Server by setting the annotation client.lifecycle.config.k8s.io/mutation to ignore .",
+          "Find the mismatch in between the gcloud CLI output and the YAML configuration of the Config Connector resource, and update those fields in the YAML configuration.",
+          "For example, running kubectl delete , using config management tools like Argo CD, or using a customized API client can cause resource deletion."
+        ]
+      },
+      {
+        "title": "Export and import resources to Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+        "source_id": "site-docs-reference",
+        "final_score": 88,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After Config Connector acquires the resource, you can manage that resource by following the steps in Managing and deleting resources . config-connector CLI tool optional fields When running the config-connector export command, you can pass the following optional fields: config-connector export RESOURCE NAME \\ --output FILENAME \\ --oauth2-token TOKEN \\ --iam-format [policy policymember none] \\ --filter-deleted-iam-members [true false] \\ --verbose --output : An optional output path that disables standard output.",
+          "By default, config-connector uses the Google Cloud CLI default credentials . --iam-format : Specifies the kind of IAM resources output with your export.",
+          "Options are policy (default), policymember , or none . --filter-deleted-iam-members : Specifies whether to filter out deleted IAM principals."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "client.lifecycle.config.k8s.io",
+      "cloudasset.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:47.576Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector"
+}

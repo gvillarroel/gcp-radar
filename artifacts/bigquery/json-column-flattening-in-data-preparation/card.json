@@ -1,0 +1,171 @@
+{
+  "feature_name": "JSON column flattening in data preparation",
+  "feature_slug": "json-column-flattening-in-data-preparation",
+  "summary": "BigQuery data preparation can flatten JSON columns in a single operation.",
+  "extended_definition": "BigQuery data preparation can flatten JSON columns in a single operation.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-columns",
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-index-columns"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "SEARCH_INDEX_COLUMNS view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-index-columns",
+        "source_id": "site-docs-reference-3",
+        "final_score": 116,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SEARCH INDEX COLUMNS The result is similar to the following: +------------+------------+-------------------+------------------+ table name index name index column name index field path +------------+------------+-------------------+------------------+ my table my index a a my table my index c c.e my table my index c c.f.g +------------+------------+-------------------+------------------+ The following query joins the INFORMATION SCHEMA.SEARCH INDEX COLUMNS view with the INFORMATION SCHEMA.SEARCH INDEXES and INFORMATION SCHEMA.COLUMNS views to include the search index status and the data type of each column: SELECT index columns view . index catalog AS project name , index columns view . index SCHEMA AS dataset name , indexes view .",
+          "The INFORMATION SCHEMA.SEARCH INDEX COLUMNS view has the following schema: Column name Data type Value index catalog STRING The name of the project that contains the dataset. index schema STRING The name of the dataset that contains the index. table name STRING The name of the base table that the index is created on. index name STRING The name of the index. index column name STRING The name of the top-level indexed column. index field path STRING The full path of the expanded indexed field, starting with the column name.",
+          "CREATE TABLE dataset . my table ( a STRING , b INT64 , c STRUCT < d INT64 , e ARRAY<STRING> , f STRUCT<g STRING , h INT64 >> ) AS SELECT 'hello' AS a , 10 AS b , ( 20 , [ 'x' , 'y' ] , ( 'z' , 30 )) AS c ; CREATE SEARCH INDEX my index ON dataset . my table ( ALL COLUMNS ); The following query extracts information on which fields are indexed."
+        ]
+      },
+      {
+        "title": "Mask column data \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "source_id": "site-docs-reference-5",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . const datapolicy = require ( ' @google-cloud/bigquery-datapolicies ' ); const { DataPolicyServiceClient } = datapolicy . v2 ; const protos = datapolicy . protos . google . cloud . bigquery . datapolicies . v2 ; const { status } = require ( '@grpc/grpc-js' ); const dataPolicyServiceClient = new DataPolicyServiceClient (); / Creates a data policy to apply a data masking rule to a specific BigQuery table column.",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to assign a data policy directly on a column: bigquery.tables.update bigquery.tables.setColumnDataPolicy bigquery.dataPolicies.attach You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Make sure the project ID and\" \" location are correct and you have the necessary permissions.\" ) except Exception as e : print ( f \"An unexpected error occurred: { e } \" ) Set policy tags on columns Set a data policy on a column by attaching the policy tag associated with the data policy to the column."
+        ]
+      },
+      {
+        "title": "COLUMNS view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-columns",
+        "source_id": "site-api-reference",
+        "final_score": 113,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required permissions To query the INFORMATION SCHEMA.COLUMNS view, you need the following Identity and Access Management (IAM) permissions: bigquery.tables.get bigquery.tables.list Each of the following predefined IAM roles includes the preceding permissions: roles/bigquery.admin roles/bigquery.dataViewer roles/bigquery.dataEditor roles/bigquery.metadataViewer For more information about BigQuery permissions, see Access control with IAM .",
+          "The INFORMATION SCHEMA.COLUMNS view has the following schema: Column name Data type Value table catalog STRING The project ID of the project that contains the dataset. table schema STRING The name of the dataset that contains the table also referred to as the datasetId . table name STRING The name of the table or view also referred to as the tableId . column name STRING The name of the column. ordinal position INT64 The 1-indexed offset of the column within the table; if it's a pseudo column such as PARTITIONTIME or PARTITIONDATE, the value is NULL . is nullable STRING YES or NO depending on whether the column's mode allows NULL values. data type STRING The column's GoogleSQL data type . is generated STRING The value is ALWAYS if the column is an automatically generated embedding column ; otherwise, the value is NEVER . generation expression STRING The value is the generation expression used to define the column if the column is an automatically generated embedding column; otherwise the value is NULL . is stored STRING The value is YES if the column is an automatically generated embedding column; otherwise, the value is NULL . is hidden STRING YES or NO depending on whether the column is a pseudo column such as PARTITIONTIME or PARTITIONDATE. is updatable STRING The value is always NULL . is system defined STRING YES or NO depending on whether the column is a pseudo column such as PARTITIONTIME or PARTITIONDATE. is partitioning column STRING YES or NO depending on whether the column is a partitioning column . clustering ordinal position INT64 The 1-indexed offset of the column within the table's clustering columns; the value is NULL if the table is not a clustered table. collation name STRING The name of the collation specification if it exists; otherwise, NULL .",
+          "For readability, some columns are excluded from the result. +------------------------+-------------+------------------+-------------+-----------+-----------+-------------------+------------------------+-----------------------------+-------------+ table name column name ordinal position is nullable data type is hidden is system defined is partitioning column clustering ordinal position policy tags +------------------------+-------------+------------------+-------------+-----------+-----------+-------------------+------------------------+-----------------------------+-------------+ population by zip 2010 zipcode 1 NO STRING NO NO NO NULL 0 rows population by zip 2010 geo id 2 YES STRING NO NO NO NULL 0 rows population by zip 2010 minimum age 3 YES INT64 NO NO NO NULL 0 rows population by zip 2010 maximum age 4 YES INT64 NO NO NO NULL 0 rows population by zip 2010 gender 5 YES STRING NO NO NO NULL 0 rows population by zip 2010 population 6 YES INT64 NO NO NO NULL 0 rows +------------------------+-------------+------------------+-------------+-----------+-----------+-------------------+------------------------+-----------------------------+-------------+ Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.admin",
+      "bigquery.dataEditor",
+      "bigquery.dataPolicies.attach",
+      "bigquery.dataViewer",
+      "bigquery.metadataViewer",
+      "bigquery.tables.get",
+      "bigquery.tables.list",
+      "bigquery.tables.setColumnDataPolicy",
+      "bigquery.tables.update",
+      "c.e",
+      "c.f.g"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.admin",
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.dataViewer",
+      "roles/bigquery.metadataViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-index-columns",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-columns"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-index-columns",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-columns"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-index-columns",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-columns"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-index-columns",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-columns"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-index-columns",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-columns"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-index-columns",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-columns"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-index-columns",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-columns"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-index-columns",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-columns"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-index-columns",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-columns"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

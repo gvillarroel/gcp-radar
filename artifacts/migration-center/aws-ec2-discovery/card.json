@@ -1,0 +1,155 @@
+{
+  "feature_name": "AWS EC2 discovery",
+  "feature_slug": "aws-ec2-discovery",
+  "summary": "Migration Center can discover AWS EC2 instances and upload the collected information.",
+  "extended_definition": "Migration Center can discover AWS EC2 instances and upload the collected information.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migration-center/docs/discovery-and-assessment-overview",
+      "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+      "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+      "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Start an asset discovery \\_|\\_ Migration Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery",
+        "source_id": "site-docs-root",
+        "final_score": 281,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Collected environment Collection method Automated (one-time) Automated (continuous) Manual collection and import Virtual machines on vCenter mcdc CLI Discovery client Upload RVTools data Virtual machines on other hypervisors mcdc CLI 1 Discovery client Manually create and upload data tables Physical servers mcdc CLI 1 Discovery client Manually create and upload data tables AWS EC2s mcdc CLI Discovery client 2 Not available AWS assets mcdc CLI Not available Not available Azure virtual machines ( Preview) mcdc CLI Discovery client 2 Not available Databases mcdc CLI Not available Discover and import databases 1 Use the mcdc CLI for Windows if you need to collect data directly from Windows hosts.",
+          "With Google Cloud Migration Center, you can discover physical servers and virtual machine (VM) instances in your infrastructure hosted on-premises or on other cloud providers, and gather detailed information about every component.",
+          "To perform an automated one-time collection, download and run the Migration Center discovery client CLI, then scan your infrastructure."
+        ]
+      },
+      {
+        "title": "\"Discovery client data collection and security \\_|\\_ Migration Center \\_\\",
+        "url": "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "source_id": "site-docs-root",
+        "final_score": 236,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Migration Migration Center Resources Send feedback Discovery client data collection and security Stay organized with collections Save and categorize content based on your preferences.",
+          "Communication with Google Cloud Registered discovery clients communicate with Google Cloud Migration Center during their normal operation.",
+          "This document addresses concerns and questions about installing the Migration Center discovery client in data centers."
+        ]
+      },
+      {
+        "title": "\"About infrastructure discovery and assessment \\_|\\_ Migration Center \\_\\",
+        "url": "https://docs.cloud.google.com/migration-center/docs/discovery-and-assessment-overview",
+        "source_id": "site-docs-root",
+        "final_score": 233,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "How infrastructure assessment works After you've completed the discovery step and collected your infrastructure data into Migration Center, you group the servers and databases that you want to migrate based on your application or business objective.",
+          "Home Documentation Migration Migration Center Guides Send feedback About infrastructure discovery and assessment Stay organized with collections Save and categorize content based on your preferences.",
+          "For example: Install the Migration Center discovery client to collect data for multiple days, to get complete and detailed information about your infrastructure."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.discoveryClients \\_|\\_ Migration Center\\",
+        "url": "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+        "source_id": "site-api-reference",
+        "final_score": 197,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Migration Migration Center Reference Send feedback REST Resource: projects.locations.discoveryClients Stay organized with collections Save and categorize content based on your preferences.",
+          "Resource: DiscoveryClient JSON representation State Methods Resource: DiscoveryClient Represents an installed Migration Center Discovery Client instance.",
+          "Methods create Creates a new discovery client. delete Deletes a discovery client. get Gets the details of a discovery client. list Lists all the discovery clients in a given project and location. patch Updates a discovery client. send Heartbeat Sends a discovery client heartbeat."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "migrationcenter.discoveryClient",
+      "projects.locations.discoveryClients",
+      "projects.locations.discoveryClients.create"
+    ],
+    "missing_inventory_roles": [
+      "roles/migrationcenter.discoveryClient"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-and-assessment-overview",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-and-assessment-overview",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-and-assessment-overview",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-and-assessment-overview",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-and-assessment-overview",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-and-assessment-overview",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:28.580Z",
+  "source_step08_card": "data/step-08/current/products/migration-center/card.json",
+  "product_name": "Migration Center",
+  "product_slug": "migration-center"
+}

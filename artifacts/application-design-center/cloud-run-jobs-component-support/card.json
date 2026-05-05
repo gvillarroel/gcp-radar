@@ -1,0 +1,126 @@
+{
+  "feature_name": "Cloud Run Jobs component support",
+  "feature_slug": "cloud-run-jobs-component-support",
+  "summary": "Application Design Center supports Cloud Run Jobs as a component option.",
+  "extended_definition": "Application Design Center supports Cloud Run Jobs as a component option.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-design-center/docs/import-components",
+      "https://docs.cloud.google.com/application-design-center/docs/overview",
+      "https://docs.cloud.google.com/application-design-center/docs/reference/rpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Design Center API \\_|\\_ Application Design Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-design-center/docs/reference/rpc",
+        "source_id": "site-docs-root",
+        "final_score": 28,
+        "relevance": "",
+        "evidence_snippets": [
+          "InferConnections Infers and suggests connections between components within a space.",
+          "ListComponents Lists components in an application template.",
+          "GetComponent Gets details about a Component."
+        ]
+      },
+      {
+        "title": "Application Design Center overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-design-center/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 26,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can select from the following types of components: Google components : components designed by Google that incorporate Google Cloud best practices and default security configurations.",
+          "Components can include: Assets : supporting resources that help you control other resources, such as service accounts or secrets.",
+          "By using these components, you ensure that every part of your application follows security and performance standards."
+        ]
+      },
+      {
+        "title": "Import components \\_|\\_ Application Design Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-design-center/docs/import-components",
+        "source_id": "site-docs-root",
+        "final_score": 26,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, the following is a metadata.yaml file that you might create for a service account: spec : info : actuationTool : flavor : Terraform version : \">= 1.3\" interfaces : # Optional variables : - name : service account connections : - source : source : github.com/terraform-google/terraform-google-service-accounts version : \">= 4.4\" spec : outputExpr : email requirements : roles : # Optional after IAM integrations - level : Project roles : - roles/iam.serviceAccountUser - roles/iap.admin - roles/run.admin - roles/iam.serviceAccountAdmin providerVersions : - source : hashicorp/google version : \">= 6, < 7\" - source : hashicorp/google-beta version : \">= 6, < 7\" ui : # Optional input : variables : ca root module : name : ca root module title : Ca Root Module service account : name : service account title : Service Account Import from your repository You can create an App Design Center component by importing a Terraform module that is based on a single Google Cloud product.",
+          "Application Design Center supports several Google Cloud products that you can add as components to your application.",
+          "Create a catalog template revision based on the Terraform module in your repository. gcloud design-center spaces catalogs templates revisions create REVISION \\ --project = PROJECT \\ --catalog = CATALOG \\ --location = LOCATION \\ --space = SPACE \\ --template = COMPONENT TEMPLATE \\ --developer-connect-repo = DEVELOPER CONNECT REPO \\ --developer-connect-repo-ref = DEVELOPER CONNECT REPO REF \\ --developer-connect-repo-dir = DEVELOPER CONNECT REPO DIR \\ --metadata = METADATA Replace the following: REVISION : The revision ID for the revision that you want to create."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "github.com",
+      "iam.serviceAccountAdmin",
+      "iam.serviceAccountUser",
+      "iap.admin",
+      "metadata.yaml",
+      "run.admin"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.serviceAccountAdmin",
+      "roles/iam.serviceAccountUser",
+      "roles/iap.admin",
+      "roles/run.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/import-components",
+        "https://docs.cloud.google.com/application-design-center/docs/reference/rpc",
+        "https://docs.cloud.google.com/application-design-center/docs/overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/import-components",
+        "https://docs.cloud.google.com/application-design-center/docs/reference/rpc",
+        "https://docs.cloud.google.com/application-design-center/docs/overview"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/import-components",
+        "https://docs.cloud.google.com/application-design-center/docs/reference/rpc",
+        "https://docs.cloud.google.com/application-design-center/docs/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/import-components",
+        "https://docs.cloud.google.com/application-design-center/docs/reference/rpc",
+        "https://docs.cloud.google.com/application-design-center/docs/overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:14.656Z",
+  "source_step08_card": "data/step-08/current/products/application-design-center/card.json",
+  "product_name": "Application Design Center",
+  "product_slug": "application-design-center"
+}

@@ -1,0 +1,158 @@
+{
+  "feature_name": "File Format Conversion template",
+  "feature_slug": "file-format-conversion-template",
+  "summary": "This Google-provided template converts files between supported data formats.",
+  "extended_definition": "This Google-provided template converts files between supported data formats.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bulk-compress-cloud-storage",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bulk-decompress-cloud-storage",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-csv-to-bigquery"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud Storage CSV files to BigQuery template \\_|\\_ Cloud Dataflow \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-csv-to-bigquery",
+        "source_id": "site-api-reference",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The CSV files can be uncompressed or compressed in formats listed in https://beam.apache.org/releases/javadoc/current/org/apache/beam/sdk/io/Compression.html.\" , optionsClass = Options . class , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"Create a JSON file that describes your {{bigquery name short}} schema.\\n\" + \" <p>Ensure that there is a top-level JSON array titled <code>BigQuery Schema</code> and that its\\n\" + \" contents follow the pattern <code>{\\\"name\\\": \\\"COLUMN NAME\\\", \\\"type\\\": \\\"DATA TYPE\\\"}</code>.</p>\\n\" + \" <p>The following JSON describes an example BigQuery schema:</p>\\n\" + \"<pre class=\\\"prettyprint lang-json\\\">\\n\" + \"{\\n\" + \" \\\"BigQuery Schema\\\": [\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"location\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"name\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"age\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"color\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" },\\n\" + \" {\\n\" + \" \\\"name\\\": \\\"coffee\\\",\\n\" + \" \\\"type\\\": \\\"STRING\\\"\\n\" + \" }\\n\" + \" ]\\n\" + \"}\\n\" }) public class CSVToBigQuery { / Options supported by {@link CSVToBigQuery}. / public interface Options extends DataflowPipelineOptions , CsvPipelineOptions { @TemplateParameter.Text ( order = 1 , groupName = \"Source\" , description = \"Cloud Storage Input File(s)\" , helpText = \"The Cloud Storage path to the CSV file that contains the text to process.\" , regexes = { \"^gs:\\\\/\\\\/[^\\\\n\\\\r]+$\" }, example = \"gs://your-bucket/path/ .csv\" ) ValueProvider<String> getInputFilePattern (); void setInputFilePattern ( ValueProvider<String> value ); @TemplateParameter.GcsReadFile ( order = 2 , groupName = \"Target\" , description = \"Cloud Storage location of your BigQuery schema file, described as a JSON\" , helpText = \"The Cloud Storage path to the JSON file that defines your BigQuery schema.\" ) ValueProvider<String> getSchemaJSONPath (); void setSchemaJSONPath ( ValueProvider<String> value ); @TemplateParameter.BigQueryTable ( order = 3 , groupName = \"Target\" , description = \"BigQuery output table\" , helpText = \"The name of the BigQuery table that stores your processed data.",
+          "LOCATION : the region where you want to deploy your Dataflow job—for example, us-central1 PATH TO CSV DATA : the Cloud Storage path to your CSV files PATH TO BIGQUERY SCHEMA JSON : the Cloud Storage path to the JSON file containing the schema definition BIGQUERY DESTINATION TABLE : the BigQuery destination table name BIGQUERY BAD RECORDS TABLE : the BigQuery bad records table name PATH TO TEMP DIR ON GCS : the Cloud Storage path to the temp directory DELIMITER : CSV file delimiter CSV FORMAT : CSV format specification for parsing records CONTAINS HEADERS : whether the CSV files contains headers CSV FILE ENCODING : encoding in the CSV files Template source code Java / Copyright (C) 2024 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License.",
+          "REGION NAME : the region where you want to deploy your Dataflow job—for example, us-central1 PATH TO CSV DATA : the Cloud Storage path to your CSV files PATH TO BIGQUERY SCHEMA JSON : the Cloud Storage path to the JSON file containing the schema definition BIGQUERY DESTINATION TABLE : the BigQuery destination table name BIGQUERY BAD RECORDS TABLE : the BigQuery bad records table name PATH TO TEMP DIR ON GCS : the Cloud Storage path to the temp directory DELIMITER : CSV file delimiter CSV FORMAT : CSV format specification for parsing records CONTAINS HEADERS : whether the CSV files contains headers CSV FILE ENCODING : encoding in the CSV files API To run the template using the REST API, send an HTTP POST request."
+        ]
+      },
+      {
+        "title": "\"Bulk Compress Cloud Storage Files template \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bulk-compress-cloud-storage",
+        "source_id": "site-api-reference",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The extensions appended will be one of: .bzip2, .deflate, .gz.\" , \"Any errors which occur during the compression process will be output to the failure file in CSV format of filename, error message. \" + \"If no failures occur while running the pipeline, the error file will still be created but will contain no error records.\" }, optionsClass = Options . class , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/bulk-compress-cloud-storage\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"The compression must be in one of the following formats: BZIP2, DEFLATE, GZIP.\" , \"The output directory must exist prior to running the pipeline.\" }) public class BulkCompressor { / The logger to output status messages to. / private static final Logger LOG = LoggerFactory . getLogger ( BulkCompressor . class ); / The tag used to identify the main output of the {@link Compressor}. / private static final TupleTag<String> COMPRESSOR MAIN OUT = new TupleTag<String> () {}; / The tag used to identify the dead-letter output of the {@link Compressor}. / private static final TupleTag<KV<String , String >> DEADLETTER TAG = new TupleTag<KV<String , String >> () {}; / The {@link Options} class provides the custom execution options passed by the executor at the command-line. / public interface Options extends PipelineOptions { @TemplateParameter.GcsReadFile ( order = 1 , groupName = \"Source\" , description = \"Input Cloud Storage File(s)\" , helpText = \"The Cloud Storage location of the files you'd like to process.\" , example = \"gs://your-bucket/your-files/ .txt\" ) @Required ValueProvider<String> getInputFilePattern (); void setInputFilePattern ( ValueProvider<String> value ); @TemplateParameter.GcsWriteFolder ( order = 2 , groupName = \"Target\" , description = \"Output file directory in Cloud Storage\" , helpText = \"The path and filename prefix for writing output files.",
+          "If no failures occur during execution, the error file will still be created but will contain no error records. <p><b>Pipeline Requirements</b> <ul> <li>The compression must be in one of the following formats: <code>BZIP2</code>, <code>DEFLATE </code>, <code>GZIP</code>, <code>ZIP</code>. <li>The output directory must exist prior to pipeline execution. </ul> <p>Check out <a href=\"https://github.com/GoogleCloudPlatform/DataflowTemplates/blob/main/v1/README Bulk Compress GCS Files.md\">README</a> for instructions on how to use or modify this template. / @Template ( name = \"Bulk Compress GCS Files\" , category = TemplateCategory .",
+          "See the License for the specific language governing permissions and limitations under the License. / package com.google.cloud.teleport.templates ; import com.google.cloud.teleport.metadata.Template ; import com.google.cloud.teleport.metadata.TemplateCategory ; import com.google.cloud.teleport.metadata.TemplateParameter ; import com.google.cloud.teleport.metadata.TemplateParameter.TemplateEnumOption ; import com.google.cloud.teleport.templates.BulkCompressor.Options ; import com.google.common.collect.ImmutableList ; import com.google.common.io.ByteStreams ; import java.io.IOException ; import java.nio.channels.ReadableByteChannel ; import java.nio.channels.WritableByteChannel ; import org.apache.beam.sdk.Pipeline ; import org.apache.beam.sdk.PipelineResult ; import org.apache.beam.sdk.io.Compression ; import org.apache.beam.sdk.io.FileIO ; import org.apache.beam.sdk.io.FileSystems ; import org.apache.beam.sdk.io.TextIO ; import org.apache.beam.sdk.io.fs.MatchResult ; import org.apache.beam.sdk.io.fs.ResolveOptions.StandardResolveOptions ; import org.apache.beam.sdk.io.fs.ResourceId ; import org.apache.beam.sdk.options.PipelineOptions ; import org.apache.beam.sdk.options.PipelineOptionsFactory ; import org.apache.beam.sdk.options.Validation.Required ; import org.apache.beam.sdk.options.ValueProvider ; import org.apache.beam.sdk.transforms.DoFn ; import org.apache.beam.sdk.transforms.MapElements ; import org.apache.beam.sdk.transforms.ParDo ; import org.apache.beam.sdk.util.MimeTypes ; import org.apache.beam.sdk.values.KV ; import org.apache.beam.sdk.values.PCollectionTuple ; import org.apache.beam.sdk.values.TupleTag ; import org.apache.beam.sdk.values.TupleTagList ; import org.apache.beam.sdk.values.TypeDescriptors ; import org.slf4j.Logger ; import org.slf4j.LoggerFactory ; / The {@link BulkCompressor} is a batch pipeline that compresses files on matched by an input file pattern and outputs them to a specified file location."
+        ]
+      },
+      {
+        "title": "\"Bulk Decompress Cloud Storage Files template \\_|\\_ Cloud Dataflow \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bulk-decompress-cloud-storage",
+        "source_id": "site-api-reference",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "UTILITIES , displayName = \"Bulk Decompress Files on Cloud Storage\" , description = { \"The Bulk Decompress Cloud Storage Files template is a batch pipeline that decompresses files on Cloud Storage to a specified location. \" + \"This functionality is useful when you want to use compressed data to minimize network bandwidth costs during a migration, but would like to maximize analytical processing speed by operating on uncompressed data after migration. \" + \"The pipeline automatically handles multiple compression modes during a single run and determines the decompression mode to use based on the file extension (.bzip2, .deflate, .gz, .zip).\" , \"Note: The Bulk Decompress Cloud Storage Files template is intended for single compressed files and not compressed folders.\" }, optionsClass = Options . class , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/bulk-decompress-cloud-storage\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"The files to decompress must be in one of the following formats: Bzip2, Deflate, and Gzip.\" , \"The output directory must exist prior to running the pipeline.\" }) public class BulkDecompressor { / The logger to output status messages to. / private static final Logger LOG = LoggerFactory . getLogger ( BulkDecompressor . class ); / A list of the {@link Compression} values excluding {@link Compression#AUTO} and {@link Compression#UNCOMPRESSED}. / @VisibleForTesting static final Set<Compression> SUPPORTED COMPRESSIONS = Stream . of ( Compression . values ()) . filter ( value - > value != Compression .",
+          "See the License for the specific language governing permissions and limitations under the License. / package com.google.cloud.teleport.templates ; import com.google.cloud.teleport.metadata.Template ; import com.google.cloud.teleport.metadata.TemplateCategory ; import com.google.cloud.teleport.metadata.TemplateParameter ; import com.google.cloud.teleport.templates.BulkDecompressor.Options ; import com.google.common.annotations.VisibleForTesting ; import com.google.common.collect.ImmutableList ; import com.google.common.io.ByteStreams ; import com.google.common.io.Files ; import java.io.IOException ; import java.io.StringWriter ; import java.nio.channels.ReadableByteChannel ; import java.nio.channels.WritableByteChannel ; import java.util.Set ; import java.util.stream.Collectors ; import java.util.stream.Stream ; import javax.annotation.Nullable ; import org.apache.beam.sdk.Pipeline ; import org.apache.beam.sdk.PipelineResult ; import org.apache.beam.sdk.io.Compression ; import org.apache.beam.sdk.io.FileIO ; import org.apache.beam.sdk.io.FileSystems ; import org.apache.beam.sdk.io.TextIO ; import org.apache.beam.sdk.io.fs.MatchResult ; import org.apache.beam.sdk.io.fs.MoveOptions ; import org.apache.beam.sdk.io.fs.ResolveOptions.StandardResolveOptions ; import org.apache.beam.sdk.io.fs.ResourceId ; import org.apache.beam.sdk.options.PipelineOptions ; import org.apache.beam.sdk.options.PipelineOptionsFactory ; import org.apache.beam.sdk.options.Validation.Required ; import org.apache.beam.sdk.options.ValueProvider ; import org.apache.beam.sdk.transforms.DoFn ; import org.apache.beam.sdk.transforms.MapElements ; import org.apache.beam.sdk.transforms.ParDo ; import org.apache.beam.sdk.util.MimeTypes ; import org.apache.beam.sdk.values.KV ; import org.apache.beam.sdk.values.PCollectionTuple ; import org.apache.beam.sdk.values.TupleTag ; import org.apache.beam.sdk.values.TupleTagList ; import org.apache.beam.sdk.values.TypeDescriptors ; import org.apache.commons.csv.CSVFormat ; import org.apache.commons.csv.CSVPrinter ; import org.apache.commons.csv.QuoteMode ; import org.slf4j.Logger ; import org.slf4j.LoggerFactory ; / This pipeline decompresses file(s) from Google Cloud Storage and re-uploads them to a destination location. <p><b>Parameters</b> <p>The {@code --inputFilePattern} parameter specifies a file glob to process.",
+          "UNCOMPRESSED ) . collect ( Collectors . toSet ()); / The error msg given when the pipeline matches a file but cannot determine the compression. / @VisibleForTesting static final String UNCOMPRESSED ERROR MSG = \"Skipping file %s because it did not match any compression mode (%s)\" ; @VisibleForTesting static final String MALFORMED ERROR MSG = \"The file resource %s is malformed or not in %s compressed format.\" ; / The tag used to identify the main output of the {@link Decompress} DoFn. / @VisibleForTesting static final TupleTag<String> DECOMPRESS MAIN OUT TAG = new TupleTag<String> () {}; / The tag used to identify the dead-letter sideOutput of the {@link Decompress} DoFn. / @VisibleForTesting static final TupleTag<KV<String , String >> DEADLETTER TAG = new TupleTag<KV<String , String >> () {}; / The {@link Options} class provides the custom execution options passed by the executor at the command-line. / public interface Options extends PipelineOptions { @TemplateParameter.GcsReadFile ( order = 1 , groupName = \"Source\" , description = \"Input Cloud Storage File(s)\" , helpText = \"The Cloud Storage location of the files you'd like to process.\" , example = \"gs://your-bucket/your-files/ .gz\" ) @Required ValueProvider<String> getInputFilePattern (); void setInputFilePattern ( ValueProvider<String> value ); @TemplateParameter.GcsWriteFolder ( order = 2 , groupName = \"Target\" , description = \"Output file directory in Cloud Storage\" , helpText = \"The path and filename prefix for writing output files."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "beam.apache.org",
+      "com.google.cloud.teleport.metadata.Template",
+      "com.google.cloud.teleport.metadata.TemplateCategory",
+      "com.google.cloud.teleport.metadata.TemplateParameter",
+      "com.google.cloud.teleport.metadata.TemplateParameter.TemplateEnumOption",
+      "com.google.cloud.teleport.templates",
+      "com.google.cloud.teleport.templates.BulkCompressor.Options",
+      "com.google.cloud.teleport.templates.BulkDecompressor.Options",
+      "com.google.common.annotations.VisibleForTesting",
+      "com.google.common.collect.ImmutableList",
+      "com.google.common.io.ByteStreams",
+      "com.google.common.io.Files",
+      "failed.csv",
+      "github.com",
+      "java.io.IOException",
+      "java.io.StringWriter",
+      "java.nio.channels.ReadableByteChannel",
+      "java.nio.channels.WritableByteChannel",
+      "java.util.Set",
+      "java.util.stream.Collectors",
+      "java.util.stream.Stream",
+      "javax.annotation.Nullable",
+      "org.apache.beam.sdk.io.Compression",
+      "org.apache.beam.sdk.io.FileIO",
+      "org.apache.beam.sdk.io.FileSystems",
+      "org.apache.beam.sdk.io.fs.MatchResult",
+      "org.apache.beam.sdk.io.fs.MoveOptions",
+      "org.apache.beam.sdk.io.fs.ResolveOptions.StandardResolveOptions",
+      "org.apache.beam.sdk.io.fs.ResourceId",
+      "org.apache.beam.sdk.io.TextIO",
+      "org.apache.beam.sdk.options.PipelineOptions",
+      "org.apache.beam.sdk.options.PipelineOptionsFactory",
+      "org.apache.beam.sdk.options.Validation.Required",
+      "org.apache.beam.sdk.options.ValueProvider",
+      "org.apache.beam.sdk.Pipeline",
+      "org.apache.beam.sdk.PipelineResult",
+      "org.apache.beam.sdk.transforms.DoFn",
+      "org.apache.beam.sdk.transforms.MapElements",
+      "org.apache.beam.sdk.transforms.ParDo",
+      "org.apache.beam.sdk.util.MimeTypes",
+      "org.apache.beam.sdk.values.KV",
+      "org.apache.beam.sdk.values.PCollectionTuple",
+      "org.apache.beam.sdk.values.TupleTag",
+      "org.apache.beam.sdk.values.TupleTagList",
+      "org.apache.beam.sdk.values.TypeDescriptors",
+      "org.apache.commons.csv.CSVFormat",
+      "org.apache.commons.csv.CSVPrinter",
+      "org.apache.commons.csv.QuoteMode",
+      "org.slf4j.Logger",
+      "org.slf4j.LoggerFactory",
+      "result.waitUntilFinish"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-csv-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bulk-compress-cloud-storage",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bulk-decompress-cloud-storage"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-csv-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bulk-compress-cloud-storage",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bulk-decompress-cloud-storage"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-csv-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bulk-compress-cloud-storage",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bulk-decompress-cloud-storage"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:53.762Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow"
+}

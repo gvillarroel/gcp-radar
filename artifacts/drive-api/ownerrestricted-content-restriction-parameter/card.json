@@ -1,0 +1,125 @@
+{
+  "feature_name": "ownerRestricted content restriction parameter",
+  "feature_slug": "ownerrestricted-content-restriction-parameter",
+  "summary": "This content restriction parameter lets only the file owner modify the restriction.",
+  "extended_definition": "This content restriction parameter lets only the file owner modify the restriction.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+      "https://developers.google.com/workspace/drive/api/guides/create-file",
+      "https://developers.google.com/workspace/drive/api/guides/enable-sdk",
+      "https://developers.google.com/workspace/drive/api/guides/manage-comments"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Protect file content \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+        "source_id": "site-docs-root",
+        "final_score": 181,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following code sample shows how to add a content restriction for file owners only: Java File updatedFile = new File () . setContentRestrictions ( ImmutableList . of ( new ContentRestriction (). setReadOnly ( true ). setOwnerRestricted ( true ). setReason ( \"Finalized contract.\" )); File response = driveService . files (). update ( \" FILE ID \" , updatedFile ). setFields ( \"contentRestrictions\" ). execute (); Python content restriction = { 'readOnly' : True , 'ownerRestricted' : True , 'reason' : 'Finalized contract.' } response = drive service . files () . update ( fileId = \" FILE ID \" , body = { 'contentRestrictions' : [ content restriction ]}, fields = \"contentRestrictions\" ) . execute (); Node.js / Set an owner restricted content restriction on a file. @return{obj} updated file / async function addOwnerRestrictedContentRestriction () { // Get credentials and build service // TODO (developer) - Use appropriate auth mechanism for your app const { GoogleAuth } = require ( 'google-auth-library' ); const { google } = require ( 'googleapis' ); const auth = new GoogleAuth ({ scopes : 'https://www.googleapis.com/auth/drive' }); const service = google . drive ({ version : 'v3' , auth }); const contentRestriction = { 'readOnly' : True , 'ownerRestricted' : True , 'reason' : 'Finalized contract.' , }; const updatedFile = { 'contentRestrictions' : [ contentRestriction ], }; try { const response = await service . files . update ({ fileId : ' FILE ID ' , resource : updatedFile , fields : 'contentRestrictions' , }); return response ; } catch ( err ) { // TODO (developer) - Handle error throw err ; } } Replace FILE ID with the fileId of the file that you want to modify.",
+          "Add a content restriction only the file owner can modify To add a file content restriction so only file owners can toggle the mechanism, use the files.update method with the contentRestrictions.ownerRestricted boolean field set to true .",
+          "Add an optional reason for why you're adding the restriction, such as \"Finalized contract.\" The following code sample shows how to add a content restriction: Java File updatedFile = new File () . setContentRestrictions ( ImmutableList . of ( new ContentRestriction (). setReadOnly ( true ). setReason ( \"Finalized contract.\" )); File response = driveService . files (). update ( \" FILE ID \" , updatedFile ). setFields ( \"contentRestrictions\" ). execute (); Python content restriction = { 'readOnly' : True , 'reason' : 'Finalized contract.' } response = drive service . files () . update ( fileId = \" FILE ID \" , body = { 'contentRestrictions' : [ content restriction ]}, fields = \"contentRestrictions\" ) . execute (); Node.js / Set a content restriction on a file. @return{obj} updated file / async function addContentRestriction () { // Get credentials and build service // TODO (developer) - Use appropriate auth mechanism for your app const { GoogleAuth } = require ( 'google-auth-library' ); const { google } = require ( 'googleapis' ); const auth = new GoogleAuth ({ scopes : 'https://www.googleapis.com/auth/drive' }); const service = google . drive ({ version : 'v3' , auth }); const contentRestriction = { 'readOnly' : True , 'reason' : 'Finalized contract.' , }; const updatedFile = { 'contentRestrictions' : [ contentRestriction ], }; try { const response = await service . files . update ({ fileId : ' FILE ID ' , resource : updatedFile , fields : 'contentRestrictions' , }); return response ; } catch ( err ) { // TODO (developer) - Handle error throw err ; } } Replace FILE ID with the fileId of the file that you want to modify."
+        ]
+      },
+      {
+        "title": "Create and manage files \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/create-file",
+        "source_id": "site-docs-root",
+        "final_score": 127,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Create file To create a file in Drive that contains no metadata or content, use the create method on the files resource with no parameters.",
+          "Limits and considerations As you prepare to copy files, take note of these limits and considerations: Permissions : The DownloadRestrictionsMetadata object of the files resource determines who can copy the file."
+        ]
+      },
+      {
+        "title": "Manage comments and replies \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/manage-comments",
+        "source_id": "site-docs-root",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "POST https://www.googleapis.com/drive/v3/files/ FILE ID /comments/ COMMENT ID /replies?fields=id,comment Request body { \"action\": \"resolve\", \"content\": \"This comment has been resolved.\" } Get a comment To get a comment on a file, use the get method on the comments resource with the fileId and commentId parameters.",
+          "PATCH https://www.googleapis.com/drive/v3/files/ FILE ID /comments/ COMMENT ID ?fields=id,comment Request body { \"content\": \"This comment is now updated.\" } Delete a comment To delete a comment on a file, use the delete method on the comments resource with the fileId and commentId parameters.",
+          "DELETE https://www.googleapis.com/drive/v3/files/ FILE ID /comments/ COMMENT ID Related topics Files and folders overview Manage file revisions Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Configure a Drive UI integration \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/enable-sdk",
+        "source_id": "site-docs-root",
+        "final_score": 114,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "This parameter contains a JSON-encoded string with template variables and data about the request to your app.",
+          "By default, a state query parameter is appended to this URL to pass data from the Drive UI to your app."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "files.update"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+        "https://developers.google.com/workspace/drive/api/guides/create-file",
+        "https://developers.google.com/workspace/drive/api/guides/manage-comments",
+        "https://developers.google.com/workspace/drive/api/guides/enable-sdk"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+        "https://developers.google.com/workspace/drive/api/guides/create-file",
+        "https://developers.google.com/workspace/drive/api/guides/manage-comments",
+        "https://developers.google.com/workspace/drive/api/guides/enable-sdk"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+        "https://developers.google.com/workspace/drive/api/guides/create-file",
+        "https://developers.google.com/workspace/drive/api/guides/manage-comments",
+        "https://developers.google.com/workspace/drive/api/guides/enable-sdk"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:02.457Z",
+  "source_step08_card": "data/step-08/current/products/drive-api/card.json",
+  "product_name": "Drive API",
+  "product_slug": "drive-api"
+}

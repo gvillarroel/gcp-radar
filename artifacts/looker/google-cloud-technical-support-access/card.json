@@ -1,0 +1,198 @@
+{
+  "feature_name": "Google Cloud Technical Support access",
+  "feature_slug": "google-cloud-technical-support-access",
+  "summary": "Google Cloud Technical Support access is available for Looker (Google Cloud core) instances; Google Cloud Technical Support access lets admins configure support access duration and support user roles.",
+  "extended_definition": "Google Cloud Technical Support access is available for Looker (Google Cloud core) instances; Google Cloud Technical Support access lets admins configure support access duration and support user roles.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+      "https://docs.cloud.google.com/looker/docs/looker-core-access-control"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Admin settings - General settings \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "source_id": "site-docs-reference",
+        "final_score": 176,
+        "relevance": "",
+        "evidence_snippets": [
+          "Automated Gemini in Looker enablement and user management Note: This setting is not available for Looker (Google Cloud core) instances.",
+          "Some settings are available only for Looker (original) instances or only for Looker (Google Cloud core) instances.",
+          "Login Consent Configuration Note: This setting is available only for Looker (Google Cloud core) instances."
+        ]
+      },
+      {
+        "title": "Looker (Google Cloud core) access control with IAM \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Role Name Permissions Looker Viewer (roles/looker.viewer) Read-only access to all Looker (Google Cloud core) resources in the Google Cloud console. looker.backups.get looker.backups.list looker.instances.get looker.instances.list looker.instances.login looker.locations.get looker.locations.list looker.operations.get looker.operations.list resourcemanager.projects.get resourcemanager.projects.list Looker Instance User roles/looker.instanceUser Access to sign in to a Looker (Google Cloud core) instance. looker.instances.get looker.instances.login resourcemanager.projects.get resourcemanager.projects.list Looker Schema Viewer roles/looker.schemaViewer Access to Looker (Google Cloud core) schema data in Knowledge Catalog. looker.schemas.view Looker Admin roles/looker.admin Full access to all Looker (Google Cloud core) resources. looker.backups.create looker.backups.delete looker.backups.get looker.backups.list looker.instances.create looker.instances.delete looker.instances.export looker.instances.get looker.instances.import looker.instances.list looker.instances.login looker.instances.update looker.locations.get looker.locations.list looker.operations.cancel looker.operations.delete looker.operations.get looker.operations.list looker.schemas.view resourcemanager.projects.get resourcemanager.projects.list At least one principal must have the Looker Admin ( roles/looker.admin ) IAM role.",
+          "These roles are granted at the Google Cloud project level and will control access uniformly for all Looker (Google Cloud core) instances within a Google Cloud project.",
+          "For example, the looker.instances.login permission lets a principal log in to Looker (Google Cloud core) instances."
+        ]
+      },
+      {
+        "title": "\"Admin settings - OpenID Connect authentication \\_|\\_ Looker \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "source_id": "site-docs-reference",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can merge users from the following systems: Looker Email/Password (not available for Looker (Google Cloud core)) Google LDAP (not available for Looker (Google Cloud core)) SAML If you have multiple authentication systems in place, you can specify more than one system to merge by in this field.",
+          "Additionally, Looker (Google Cloud core) customers who are using OIDC with a private connections instance, must ensure that their networks are set up to allow access to the OIDC provider.",
+          "Note: Customers who use Looker (Google Cloud core) should be aware of their responsibility for controlling access and permissions when using third-party identity providers."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "looker.admin",
+      "looker.backups.create",
+      "looker.backups.delete",
+      "looker.backups.get",
+      "looker.backups.list",
+      "looker.instances.create",
+      "looker.instances.delete",
+      "looker.instances.export",
+      "looker.instances.get",
+      "looker.instances.import",
+      "looker.instances.list",
+      "looker.instances.login",
+      "looker.instances.update",
+      "looker.instanceUser",
+      "looker.locations.get",
+      "looker.locations.list",
+      "looker.operations.cancel",
+      "looker.operations.delete",
+      "looker.operations.get",
+      "looker.operations.list",
+      "looker.schemas.view",
+      "looker.schemaViewer",
+      "looker.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/looker.admin",
+      "roles/looker.instanceUser",
+      "roles/looker.schemaViewer",
+      "roles/looker.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:23.337Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker"
+}

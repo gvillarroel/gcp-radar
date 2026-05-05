@@ -1,0 +1,122 @@
+{
+  "feature_name": "Manifest layouts",
+  "feature_slug": "manifest-layouts",
+  "summary": "Deployment Manager supports manifest layouts in the v2beta2 API.",
+  "extended_definition": "Deployment Manager supports manifest layouts in the v2beta2 API.",
+  "lifecycle": {
+    "latest_feature_date": "2015-04-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deployment-manager/docs/fundamentals",
+      "https://docs.cloud.google.com/deployment-manager/docs/reference/latest",
+      "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "API Reference \\_|\\_ Cloud Deployment Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/reference/latest",
+        "source_id": "site-api-reference",
+        "final_score": 51,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Method HTTP request Description URIs relative to https://www.googleapis.com/deploymentmanager/v2/projects, unless otherwise noted get GET / project /global/deployments/ deployment /manifests/ manifest Gets information about a specific manifest. list GET / project /global/deployments/ deployment /manifests Lists all manifests for a given deployment.",
+          "Method HTTP request Description URIs relative to https://www.googleapis.com/deploymentmanager/v2/projects, unless otherwise noted cancelPreview POST / project /global/deployments/ deployment /cancelPreview Cancels and removes the preview currently associated with the deployment. delete DELETE / project /global/deployments/ deployment Deletes a deployment and all of the resources in the deployment. get GET / project /global/deployments/ deployment Gets information about a specific deployment. getIamPolicy GET / project /global/deployments/ resource /getIamPolicy Gets the access control policy for a resource.",
+          "This does not roll back any work that has already been completed, but prevents any new work from being started. testIamPermissions POST / project /global/deployments/ resource /testIamPermissions Returns permissions that a caller has on the specified resource. update PUT / project /global/deployments/ deployment Updates a deployment and all of the resources described by the deployment manifest."
+        ]
+      },
+      {
+        "title": "Deployment Manager Fundamentals \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/fundamentals",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 49,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Manifest A manifest is a read-only object that contains the original configuration you provided, including any imported templates, and also contains the fully-expanded resource list, created by Deployment Manager.",
+          "Each time you update a deployment, Deployment Manager generates a new manifest file to reflect the new state of the deployment.",
+          "To call a composite type in your configuration, use: type : [ PROJECT ID ]/ composite : [ TYPE NAME ] For example: resources : - name : my - composite - type type : myproject / composite : example - composite - type To learn how to create a composite type, read Adding a Composite Type to Deployment Manager ."
+        ]
+      },
+      {
+        "title": "Deployments \\_|\\_ Cloud Deployment Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments",
+        "source_id": "site-api-reference",
+        "final_score": 49,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource representations { \"id\": unsigned long , \"name\": string , \"description\": string , \"operation\": operations Resource , \"fingerprint\": bytes , \"manifest\": string , \"update\": { \"manifest\": string , \"labels\": [ { \"key\": string , \"value\": string } ], \"description\": string }, \"insertTime\": string , \"updateTime\": string , \"target\": { \"config\": { \"content\": string }, \"imports\": [ { \"name\": string , \"content\": string } ] }, \"labels\": [ { \"key\": string , \"value\": string } ], \"selfLink\": string } Property name Value Description Notes description string An optional user-provided description of the deployment. fingerprint bytes Provides a fingerprint to use in requests to modify a deployment, such as update() , stop() , and cancelPreview() requests.",
+          "This does not roll back any work that has already been completed, but prevents any new work from being started. testIamPermissions Returns permissions that a caller has on the specified resource. update Updates a deployment and all of the resources described by the deployment manifest.",
+          "May be empty if no such policy or resource exists. insert Creates a deployment and all of the resources described by the deployment manifest. list Lists all deployments for a given project. patch Patches a deployment and all of the resources described by the deployment manifest."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/reference/latest",
+        "https://docs.cloud.google.com/deployment-manager/docs/fundamentals",
+        "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/reference/latest",
+        "https://docs.cloud.google.com/deployment-manager/docs/fundamentals",
+        "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/reference/latest",
+        "https://docs.cloud.google.com/deployment-manager/docs/fundamentals",
+        "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/reference/latest",
+        "https://docs.cloud.google.com/deployment-manager/docs/fundamentals",
+        "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/reference/latest",
+        "https://docs.cloud.google.com/deployment-manager/docs/fundamentals",
+        "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:28.909Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deployment-manager/card.json",
+  "product_name": "Cloud Deployment Manager",
+  "product_slug": "cloud-deployment-manager"
+}

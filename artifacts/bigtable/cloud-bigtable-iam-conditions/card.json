@@ -1,0 +1,222 @@
+{
+  "feature_name": "Cloud Bigtable IAM conditions",
+  "feature_slug": "cloud-bigtable-iam-conditions",
+  "summary": "IAM conditions can be used to enforce conditional access controls on Cloud Bigtable instances, clusters, and tables.",
+  "extended_definition": "IAM conditions can be used to enforce conditional access controls on Cloud Bigtable instances, clusters, and tables.",
+  "lifecycle": {
+    "latest_feature_date": "2021-05-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/access-control",
+      "https://docs.cloud.google.com/iam/docs/overview",
+      "https://docs.cloud.google.com/iam/docs/resource-types-with-conditional-roles"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Bigtable access control with IAM \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/access-control",
+        "source_id": "site-docs-reference-2",
+        "final_score": 126,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "IAM conditions IAM Conditions let you define and enforce conditional, attribute-based access control for some Google Cloud resources, including Bigtable resources.",
+          "In Bigtable, you can enforce conditional access based on the following attributes: Date/time attributes : Use to set temporary (expiring), scheduled, or limited-duration access to Bigtable resources.",
+          "Returned as IAM policies. bigtable.authorizedViews.list List authorized views in a table. bigtable.authorizedViews.mutateRows Modify rows within an authorized view. bigtable.authorizedViews.readRows Read rows from an authorized view. bigtable.authorizedViews.sampleRowKeys Get a sample of the row keys that are used in an authorized view. bigtable.authorizedViews.setIamPolicy Update access control policies for an authorized view. bigtable.authorizedViews.update Update the settings for an authorized view."
+        ]
+      },
+      {
+        "title": "\"Services that allow conditional role bindings \\_|\\_ Identity and Access\\",
+        "url": "https://docs.cloud.google.com/iam/docs/resource-types-with-conditional-roles",
+        "source_id": "site-iam-reference",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you need to grant conditional access to a resource that doesn't allow conditions or a resource that doesn't have an allow policy, see Support for inherited conditions .",
+          "Services that allow conditions You can add conditions to allow policies for resources from the following services: Cloud Bigtable Admin API Binary Authorization BigQuery Certificate Authority Service Chrome Enterprise Premium Cloud Deploy Cloud Key Management Service (Cloud KMS) Cloud Logging Cloud Run Cloud Storage Cloud Workstations Compute Engine Managed Service for Apache Spark Identity-Aware Proxy (IAP) Identity and Access Management (IAM) Resource Manager Secret Manager Service Management Spanner Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Identity and Access Management (IAM) lets you grant roles conditionally ."
+        ]
+      },
+      {
+        "title": "\"IAM overview \\_|\\_ Identity and Access Management (IAM) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iam/docs/overview",
+        "source_id": "site-iam-reference",
+        "final_score": 102,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "IAM Conditions : IAM Conditions lets you define and enforce conditional, attribute-based access control.",
+          "Principal access boundary (PAB) policies : Principal access boundary policies define and enforce the resources a principal is eligible to access.",
+          "Advanced access control In addition to allow policies, IAM provides the following access control mechanisms to help you refine who has access to what resources: Additional policy types : IAM offers the following policy types in addition to allow policies: Deny policies : Deny policies prevent principals from using certain permissions, even if they're granted a role with the permission."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigtable.authorizedViews.list",
+      "bigtable.authorizedViews.mutateRows",
+      "bigtable.authorizedViews.readRows",
+      "bigtable.authorizedViews.sampleRowKeys",
+      "bigtable.authorizedViews.setIamPolicy",
+      "bigtable.authorizedViews.update",
+      "bigtable.materializedViews.list",
+      "bigtable.materializedViews.readRows",
+      "bigtable.materializedViews.sampleRowKeys",
+      "bigtable.materializedViews.setIamPolicy",
+      "bigtable.materializedViews.update"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/access-control",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-conditional-roles",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/access-control",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-conditional-roles",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/access-control",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-conditional-roles",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/access-control",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-conditional-roles",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/access-control",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-conditional-roles",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/access-control",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-conditional-roles",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/access-control",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-conditional-roles",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/access-control",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-conditional-roles",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/access-control",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-conditional-roles",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/access-control",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-conditional-roles",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/access-control",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-conditional-roles",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/access-control",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-conditional-roles",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/access-control",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-conditional-roles",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/access-control",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-conditional-roles",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/access-control",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-conditional-roles",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/access-control",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-conditional-roles",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:24.978Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable"
+}

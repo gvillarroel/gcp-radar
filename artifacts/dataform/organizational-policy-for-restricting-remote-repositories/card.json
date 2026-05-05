@@ -1,0 +1,309 @@
+{
+  "feature_name": "Organizational policy for restricting remote repositories",
+  "feature_slug": "organizational-policy-for-restricting-remote-repositories",
+  "summary": "This organizational policy lets administrators restrict remote repositories used by Dataform.",
+  "extended_definition": "This organizational policy lets administrators restrict remote repositories used by Dataform.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataform/docs/access-control",
+      "https://docs.cloud.google.com/dataform/docs/restrict-git-remotes",
+      "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Restrict remote repositories \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/restrict-git-remotes",
+        "source_id": "site-docs-root-2",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following is a request to apply the dataform.restrictGitRemotes constraint to an organization where Dataform repositories can connect to only the selected remote Git repositories, and the constraints/dataform.restrictGitRemotes policy is already set: PATCH https://orgpolicy.googleapis.com/v2/projects/ PROJECT ID OR NUMBER /policies/dataform.restrictGitRemotes The request body contains the desired organization policy for this constraint: { \"name\": \"projects/ PROJECT ID OR NUMBER /policies/dataform.restrictGitRemotes\", \"spec\": { \"rules\": [ { \"values\": { \"allowedValues\": [\"https://github.com/example/allowed-repository.git\"] } } ] } } Replace PROJECT ID OR NUMBER with the project ID or project number for this request.",
+          "For example, the following is a request to apply the dataform.restrictGitRemotes constraint to an organization where Dataform repositories can connect only to the selected remote Git repositories, and the constraints/dataform.restrictGitRemotes policy is not set yet: POST https://orgpolicy.googleapis.com/v2/projects/ PROJECT ID OR NUMBER /policies The request body contains the desired organization policy for this constraint: { \"name\": \"projects/ PROJECT ID OR NUMBER /policies/dataform.restrictGitRemotes\", \"spec\": { \"rules\": [ { \"values\": { \"allowedValues\": [\"https://github.com/example/allowed-repository.git\"] } } ] } } Replace PROJECT ID OR NUMBER with the project ID or project number for this request.",
+          "The constraint for restricting remote Git repositories in Dataform is: constraints/dataform.restrictGitRemotes To use the constraint, you create an organization policy with an allowedValues list of URLs of remote Git repositories that can connect to a Dataform repository."
+        ]
+      },
+      {
+        "title": "Control access with IAM \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/access-control",
+        "source_id": "site-docs-root-2",
+        "final_score": 203,
+        "relevance": "",
+        "evidence_snippets": [
+          "The permissions in the Code Creator let you create and list code in Dataform, and access only the code that you created and code that was explicitly shared with you. dataform.commentThreads.get dataform.commentThreads.list dataform.comments.get dataform.comments.list dataform.folders.create dataform.locations. dataform.locations.get dataform.locations.list dataform.repositories.create dataform.repositories.list resourcemanager.projects.get resourcemanager.projects.list Code Editor ( roles/ dataform.codeEditor ) Edit access code resources. dataform.commentThreads. dataform.commentThreads.create dataform.commentThreads.delete dataform.commentThreads.get dataform.commentThreads.list dataform.commentThreads.update dataform.comments. dataform.comments.create dataform.comments.delete dataform.comments.get dataform.comments.list dataform.comments.update dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.folders.addContents dataform.folders.create dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform.operations.get dataform.repositories.commit dataform. repositories. computeAccessTokenStatus dataform.repositories.create dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform.workspaces.writeFile resourcemanager.projects.get resourcemanager.projects.list Code Owner ( roles/ dataform.codeOwner ) Full access to code resources. dataform.commentThreads. dataform.commentThreads.create dataform.commentThreads.delete dataform.commentThreads.get dataform.commentThreads.list dataform.commentThreads.update dataform.comments. dataform.comments.create dataform.comments.delete dataform.comments.get dataform.comments.list dataform.comments.update dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.folders. dataform.folders.addContents dataform.folders.create dataform.folders.delete dataform.folders.deleteTree dataform.folders.get dataform.folders.getIamPolicy dataform.folders.move dataform.folders.queryContents dataform.folders.setIamPolicy dataform.folders.update dataform.locations. dataform.locations.get dataform.locations.list dataform.operations.get dataform.operations.list dataform.repositories.commit dataform. repositories. computeAccessTokenStatus dataform.repositories.create dataform.repositories.delete dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform.repositories.move dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform. repositories. setIamPolicy dataform.repositories.update dataform.workspaces. dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform. workspaces. setIamPolicy dataform.workspaces.writeFile resourcemanager.projects.get resourcemanager.projects.list Code Scheduler Beta ( roles/ dataform.codeScheduler ) Access for scheduling workflows and releases. dataform.releaseConfigs.create dataform. workflowConfigs. create Code Viewer ( roles/ dataform.codeViewer ) Read-only access to all code resources. dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform. repositories. computeAccessTokenStatus dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform.workspaces.list dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. searchFiles resourcemanager.projects.get resourcemanager.projects.list Team Folder Commenter Beta ( roles/ dataform.teamFolderCommenter ) View and comment access to a team folder and its contents. dataform.commentThreads. dataform.commentThreads.create dataform.commentThreads.delete dataform.commentThreads.get dataform.commentThreads.list dataform.commentThreads.update dataform.comments. dataform.comments.create dataform.comments.delete dataform.comments.get dataform.comments.list dataform.comments.update dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform. repositories. computeAccessTokenStatus dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform.workspaces.list dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. searchFiles resourcemanager.projects.get resourcemanager.projects.list Team Folder Contributor ( roles/ dataform.teamFolderContributor ) Edit access to a team folder and its contents. dataform.commentThreads. dataform.commentThreads.create dataform.commentThreads.delete dataform.commentThreads.get dataform.commentThreads.list dataform.commentThreads.update dataform.comments. dataform.comments.create dataform.comments.delete dataform.comments.get dataform.comments.list dataform.comments.update dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.folders.addContents dataform.folders.create dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform.operations.get dataform.repositories.commit dataform. repositories. computeAccessTokenStatus dataform.repositories.create dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform.teamFolders.update dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform.workspaces.writeFile resourcemanager.projects.get resourcemanager.projects.list Team Folder Creator ( roles/ dataform.teamFolderCreator ) Access to create new team folders. dataform.teamFolders.create Team Folder Owner ( roles/ dataform.teamFolderOwner ) Full access to a team folder and its contents.",
+          "Predefined Dataform roles The following table lists the predefined roles that give you access to Dataform resources: Role Permissions Dataform Admin ( roles/ dataform.admin ) Full access to all Dataform resources. dataform. dataform.commentThreads.create dataform.commentThreads.delete dataform.commentThreads.get dataform.commentThreads.list dataform.commentThreads.update dataform.comments.create dataform.comments.delete dataform.comments.get dataform.comments.list dataform.comments.update dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.config.get dataform.config.update dataform.folders.addContents dataform.folders.create dataform.folders.delete dataform.folders.deleteTree dataform.folders.get dataform.folders.getIamPolicy dataform.folders.move dataform.folders.queryContents dataform.folders.setIamPolicy dataform.folders.update dataform.locations.get dataform.locations.list dataform.operations.cancel dataform.operations.delete dataform.operations.get dataform.operations.list dataform.releaseConfigs.create dataform.releaseConfigs.delete dataform.releaseConfigs.get dataform.releaseConfigs.list dataform.releaseConfigs.update dataform.repositories.commit dataform. repositories. computeAccessTokenStatus dataform.repositories.create dataform.repositories.delete dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform.repositories.move dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform. repositories. scheduleRelease dataform. repositories. scheduleWorkflow dataform. repositories. setIamPolicy dataform.repositories.update dataform.teamFolders.create dataform.teamFolders.delete dataform. teamFolders. deleteTree dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform. teamFolders. setIamPolicy dataform.teamFolders.update dataform. workflowConfigs. create dataform. workflowConfigs. delete dataform.workflowConfigs.get dataform.workflowConfigs.list dataform. workflowConfigs. update dataform. workflowInvocations. cancel dataform. workflowInvocations. create dataform. workflowInvocations. delete dataform. workflowInvocations. get dataform. workflowInvocations. list dataform. workflowInvocations. query dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform. workspaces. setIamPolicy dataform.workspaces.writeFile resourcemanager.projects.get resourcemanager.projects.list Dataform Editor ( roles/ dataform.editor ) Edit access to Workspaces and Read-only access to Repositories. dataform.commentThreads.get dataform.commentThreads.list dataform.comments.get dataform.comments.list dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.config.get dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform.operations.get dataform.operations.list dataform.releaseConfigs.get dataform.releaseConfigs.list dataform. repositories. computeAccessTokenStatus dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform.workflowConfigs.get dataform.workflowConfigs.list dataform.workflowInvocations. dataform. workflowInvocations. cancel dataform. workflowInvocations. create dataform. workflowInvocations. delete dataform. workflowInvocations. get dataform. workflowInvocations. list dataform. workflowInvocations. query dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform.workspaces.writeFile resourcemanager.projects.get resourcemanager.projects.list Dataform Viewer ( roles/ dataform.viewer ) Read-only access to all Dataform resources. dataform.commentThreads.get dataform.commentThreads.list dataform.comments.get dataform.comments.list dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.config.get dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform.operations.get dataform.operations.list dataform.releaseConfigs.get dataform.releaseConfigs.list dataform. repositories. computeAccessTokenStatus dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform.workflowConfigs.get dataform.workflowConfigs.list dataform. workflowInvocations. get dataform. workflowInvocations. list dataform. workflowInvocations. query dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform.workspaces.list dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. searchFiles resourcemanager.projects.get resourcemanager.projects.list Code Commenter Beta ( roles/ dataform.codeCommenter ) Permissions to comment, at the repository level.",
+          "Can share the team folder and its contents. dataform.commentThreads. dataform.commentThreads.create dataform.commentThreads.delete dataform.commentThreads.get dataform.commentThreads.list dataform.commentThreads.update dataform.comments. dataform.comments.create dataform.comments.delete dataform.comments.get dataform.comments.list dataform.comments.update dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.folders. dataform.folders.addContents dataform.folders.create dataform.folders.delete dataform.folders.deleteTree dataform.folders.get dataform.folders.getIamPolicy dataform.folders.move dataform.folders.queryContents dataform.folders.setIamPolicy dataform.folders.update dataform.locations. dataform.locations.get dataform.locations.list dataform.operations.get dataform.operations.list dataform.repositories.commit dataform. repositories. computeAccessTokenStatus dataform.repositories.create dataform.repositories.delete dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform.repositories.move dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform. repositories. setIamPolicy dataform.repositories.update dataform.teamFolders.delete dataform. teamFolders. deleteTree dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform. teamFolders. setIamPolicy dataform.teamFolders.update dataform.workspaces. dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform. workspaces. setIamPolicy dataform.workspaces.writeFile resourcemanager.projects.get resourcemanager.projects.list Team Folder Viewer ( roles/ dataform.teamFolderViewer ) View access to a team folder and its contents. dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform. repositories. computeAccessTokenStatus dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform.workspaces.list dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. searchFiles resourcemanager.projects.get resourcemanager.projects.list Service agent roles Service agent roles should only be granted to service agents ."
+        ]
+      },
+      {
+        "title": "\"Class DataformAsyncClient (0.10.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 192,
+        "relevance": "",
+        "evidence_snippets": [
+          "Request message for SetIamPolicy method. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "FetchRemoteBranches request message. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "Note: This method can return repositories not shown in the Dataform UI <https://console.cloud.google.com/bigquery/dataform> ."
+        ]
+      },
+      {
+        "title": "\"Class DataformClient (0.10.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient",
+        "source_id": "site-python-reference",
+        "final_score": 192,
+        "relevance": "",
+        "evidence_snippets": [
+          "Request message for SetIamPolicy method. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "FetchRemoteBranches request message. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "Note: This method can return repositories not shown in the Dataform UI <https://console.cloud.google.com/bigquery/dataform> ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "async.AsyncRetry",
+      "console.cloud.google.com",
+      "core.retry",
+      "core.retry.Retry",
+      "dataform.admin",
+      "dataform.codeCommenter",
+      "dataform.codeEditor",
+      "dataform.codeOwner",
+      "dataform.codeScheduler",
+      "dataform.codeViewer",
+      "dataform.comments",
+      "dataform.comments.create",
+      "dataform.comments.delete",
+      "dataform.comments.get",
+      "dataform.comments.list",
+      "dataform.comments.update",
+      "dataform.commentThreads",
+      "dataform.commentThreads.create",
+      "dataform.commentThreads.delete",
+      "dataform.commentThreads.get",
+      "dataform.commentThreads.list",
+      "dataform.commentThreads.update",
+      "dataform.compilationResults",
+      "dataform.config.get",
+      "dataform.config.update",
+      "dataform.editor",
+      "dataform.folders",
+      "dataform.folders.addContents",
+      "dataform.folders.create",
+      "dataform.folders.delete",
+      "dataform.folders.deleteTree",
+      "dataform.folders.get",
+      "dataform.folders.getIamPolicy",
+      "dataform.folders.move",
+      "dataform.folders.queryContents",
+      "dataform.folders.setIamPolicy",
+      "dataform.folders.update",
+      "dataform.googleapis.com",
+      "dataform.locations",
+      "dataform.locations.get",
+      "dataform.locations.list",
+      "dataform.operations.cancel",
+      "dataform.operations.delete",
+      "dataform.operations.get",
+      "dataform.operations.list",
+      "dataform.releaseConfigs.create",
+      "dataform.releaseConfigs.delete",
+      "dataform.releaseConfigs.get",
+      "dataform.releaseConfigs.list",
+      "dataform.releaseConfigs.update",
+      "dataform.repositories.commit",
+      "dataform.repositories.create",
+      "dataform.repositories.delete",
+      "dataform.repositories.get",
+      "dataform.repositories.list",
+      "dataform.repositories.move",
+      "dataform.repositories.readFile",
+      "dataform.repositories.update",
+      "dataform.restrictGitRemotes",
+      "dataform.teamFolderCommenter",
+      "dataform.teamFolderContributor",
+      "dataform.teamFolderCreator",
+      "dataform.teamFolderOwner",
+      "dataform.teamFolders.create",
+      "dataform.teamFolders.delete",
+      "dataform.teamFolders.get",
+      "dataform.teamFolders.update",
+      "dataform.teamFolderViewer",
+      "dataform.viewer",
+      "dataform.workflowConfigs.get",
+      "dataform.workflowConfigs.list",
+      "dataform.workflowInvocations",
+      "dataform.workspaces",
+      "dataform.workspaces.commit",
+      "dataform.workspaces.create",
+      "dataform.workspaces.delete",
+      "dataform.workspaces.get",
+      "dataform.workspaces.list",
+      "dataform.workspaces.moveFile",
+      "dataform.workspaces.pull",
+      "dataform.workspaces.push",
+      "dataform.workspaces.readFile",
+      "dataform.workspaces.removeFile",
+      "dataform.workspaces.reset",
+      "dataform.workspaces.writeFile",
+      "github.com",
+      "orgpolicy.googleapis.com",
+      "repositories.setIamPolicy",
+      "repository.git"
+    ],
+    "missing_inventory_roles": [
+      "roles/dataform.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/restrict-git-remotes",
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/restrict-git-remotes",
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/restrict-git-remotes",
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/restrict-git-remotes",
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/restrict-git-remotes",
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/restrict-git-remotes",
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/restrict-git-remotes",
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/restrict-git-remotes",
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/restrict-git-remotes",
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/restrict-git-remotes",
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/restrict-git-remotes",
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:54.747Z",
+  "source_step08_card": "data/step-08/current/products/dataform/card.json",
+  "product_name": "Dataform",
+  "product_slug": "dataform"
+}

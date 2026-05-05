@@ -1,0 +1,122 @@
+{
+  "feature_name": "Multiple output destinations in Dataflow SQL",
+  "feature_slug": "multiple-output-destinations-in-dataflow-sql",
+  "summary": "Dataflow SQL can write query results to two destinations, including Pub/Sub.",
+  "extended_definition": "Dataflow SQL can write query results to two destinations, including Pub/Sub.",
+  "lifecycle": {
+    "latest_feature_date": "2020-03-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-parquet",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-bigquery",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Spanner change streams to BigQuery template \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "source_id": "site-api-reference",
+        "final_score": 155,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "WriteDLQ . newBuilder () . withDlqDirectory ( dlqManager . getSevereDlqDirectoryWithDateTime ()) . withTmpDirectory ( dlqManager . getSevereDlqDirectory () + \"tmp/\" ) . setIncludePaneInfo ( true ) . build ()); return pipeline . run (); } private static DeadLetterQueueManager buildDlqManager ( SpannerChangeStreamsToBigQueryOptions options ) { String tempLocation = options . as ( DataflowPipelineOptions . class ). getTempLocation (). endsWith ( \"/\" ) ? options . as ( DataflowPipelineOptions . class ). getTempLocation () : options . as ( DataflowPipelineOptions . class ). getTempLocation () + \"/\" ; String dlqDirectory = options . getDeadLetterQueueDirectory (). isEmpty () ? tempLocation + \"dlq/\" + options . getJobName () + \"/\" : options . getDeadLetterQueueDirectory (); LOG . info ( \"Dead letter queue directory: {}\" , dlqDirectory ); return DeadLetterQueueManager . create ( dlqDirectory , DLQ MAX RETRIES ); } / Remove the following intermediate metadata fields that are not user data from {@link TableRow}: metadata error, metadata retry count, metadata spanner original payload json. / private static TableRow removeIntermediateMetadataFields ( TableRow tableRow ) { TableRow cleanTableRow = tableRow . clone (); Set<String> rowKeys = tableRow . keySet (); Set<String> metadataFields = BigQueryUtils . getBigQueryIntermediateMetadataFieldNames (); for ( String rowKey : rowKeys ) { if ( metadataFields . contains ( rowKey )) { cleanTableRow . remove ( rowKey ); } else if ( rowKeys . contains ( \" type \" + rowKey )) { cleanTableRow . remove ( \" type \" + rowKey ); } } return cleanTableRow ; } / DoFn that converts a {@link DataChangeRecord} to multiple {@link Mod} in serialized JSON format. / static class DataChangeRecordToModJsonFn extends DoFn<DataChangeRecord , String > { @ProcessElement public void process ( @Element DataChangeRecord input , OutputReceiver<String> receiver ) { for ( org . apache . beam . sdk . io . gcp . spanner . changestreams . model .",
+          "Template ; import com.google.cloud.teleport.metadata.TemplateCategory ; import com.google.cloud.teleport.v2.cdc.dlq.DeadLetterQueueManager ; import com.google.cloud.teleport.v2.cdc.dlq.StringDeadLetterQueueSanitizer ; import com.google.cloud.teleport.v2.coders.FailsafeElementCoder ; import com.google.cloud.teleport.v2.common.UncaughtExceptionLogger ; import com.google.cloud.teleport.v2. options .SpannerChangeStreamsToBigQueryOptions ; import com.google.cloud.teleport.v2.templates.spannerchangestreamstobigquery. model .Mod ; import com.google.cloud.teleport.v2.templates.spannerchangestreamstobigquery. model .ModColumnType ; import com.google.cloud.teleport.v2.templates.spannerchangestreamstobigquery.schemautils.BigQueryUtils ; import com.google.cloud.teleport.v2.templates.spannerchangestreamstobigquery.schemautils.OptionsUtils ; import com.google.cloud.teleport.v2.transforms.DLQWriteTransform ; import com.google.cloud.teleport.v2.utils.BigQueryIOUtils ; import com.google.cloud.teleport.v2.values.FailsafeElement ; import com.google.common.base.Strings ; import com.google.common.collect.ImmutableSet ; import java.io.IOException ; import java.util.ArrayList ; import java.util.List ; import java.util.Set ; import java.util.stream.Collectors ; import org.apache.beam.runners.dataflow. options .DataflowPipelineOptions ; import org.apache.beam.sdk.",
+          "Mod changeStreamsMod : input . getMods ()) { Mod mod = new Mod ( changeStreamsMod . getKeysJson (), changeStreamsMod . getNewValuesJson (), input . getCommitTimestamp (), input . getServerTransactionId (), input . isLastRecordInTransactionInPartition (), input . getRecordSequence (), input . getTableName (), input . getRowType (). stream (). map ( ModColumnType :: new ). collect ( Collectors . toList ()), input . getModType (), input . getValueCaptureType (), input . getNumberOfRecordsInTransaction (), input . getNumberOfPartitionsInTransaction ()); String modJsonString ; try { modJsonString = mod . toJson (); } catch ( IOException e ) { // Ignore exception and print bad format. modJsonString = String . format ( \"\\\"%s\\\"\" , input ); } receiver . output ( modJsonString ); } } } } Production considerations When running the Spanner Change Streams to BigQuery template in a production environment, consider the following best practices to help ensure reliability and prevent data loss: Worker provisioning and scaling Set maxNumWorkers adequately: Insufficient Dataflow workers can cause the pipeline to fall behind in processing change stream data."
+        ]
+      },
+      {
+        "title": "\"Bigtable change streams to BigQuery template \\_|\\_ Cloud Dataflow \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-bigquery",
+        "source_id": "site-api-reference",
+        "final_score": 124,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "WriteDLQ . newBuilder () . withDlqDirectory ( dlqManager . getSevereDlqDirectory () + \"YYYY/MM/dd/HH/mm/\" ) . withTmpDirectory ( dlqManager . getSevereDlqDirectory () + \"tmp/\" ) . setIncludePaneInfo ( true ) . build ()); return pipeline . run (); } private static void validateBigQueryDatasetExists ( String bigQueryProject , String bigQueryDataset ) { BigQueryOptions options = BigQueryOptions . newBuilder (). build (); options . setThrowNotFound ( true ); BigQuery bigQuery = options . getService (); bigQuery . getDataset ( DatasetId . of ( bigQueryProject , bigQueryDataset )); } private static Instant toInstant ( Timestamp timestamp ) { if ( timestamp == null ) { return null ; } else { return Instant . ofEpochMilli ( timestamp . getSeconds () 1000 + timestamp . getNanos () / 1000000 ); } } private static DeadLetterQueueManager buildDlqManager ( BigtableChangeStreamToBigQueryOptions options ) { String tempLocation = options . as ( DataflowPipelineOptions . class ). getTempLocation (). endsWith ( \"/\" ) ? options . as ( DataflowPipelineOptions . class ). getTempLocation () : options . as ( DataflowPipelineOptions . class ). getTempLocation () + \"/\" ; String dlqDirectory = options . getDlqDirectory (). isEmpty () ? tempLocation + \"dlq/\" : options . getDlqDirectory (); LOG . info ( \"Dead letter queue directory: {}\" , dlqDirectory ); return DeadLetterQueueManager . create ( dlqDirectory , 1 ); } private static String getBigtableCharset ( BigtableChangeStreamToBigQueryOptions options ) { return StringUtils . isEmpty ( options . getBigtableChangeStreamCharset ()) ? \"UTF-8\" : options . getBigtableChangeStreamCharset (); } private static String getBigtableProjectId ( BigtableChangeStreamToBigQueryOptions options ) { return StringUtils . isEmpty ( options . getBigtableReadProjectId ()) ? options . getProject () : options . getBigtableReadProjectId (); } private static String getBigQueryChangelogTableName ( BigtableChangeStreamToBigQueryOptions options ) { return StringUtils . isEmpty ( options . getBigQueryChangelogTableName ()) ? options . getBigtableReadTableId () + \" changelog\" : options . getBigQueryChangelogTableName (); } private static String getBigQueryProjectId ( BigtableChangeStreamToBigQueryOptions options ) { return StringUtils . isEmpty ( options . getBigQueryProjectId ()) ? options . getProject () : options . getBigQueryProjectId (); } / DoFn that converts a {@link ChangeStreamMutation} to multiple {@link Mod} in serialized JSON format. / static class ChangeStreamMutationToTableRowFn extends DoFn<ChangeStreamMutation , TableRow > { private final BigtableSource sourceInfo ; private final BigQueryUtils bigQuery ; ChangeStreamMutationToTableRowFn ( BigtableSource source , BigQueryUtils bigQuery ) { this . sourceInfo = source ; this . bigQuery = bigQuery ; } @ProcessElement public void process ( @Element ChangeStreamMutation input , OutputReceiver<TableRow> receiver ) throws Exception { for ( Entry entry : input . getEntries ()) { ModType modType = getModType ( entry ); Mod mod = null ; switch ( modType ) { case SET CELL : mod = new Mod ( sourceInfo , input , ( SetCell ) entry ); break ; case DELETE CELLS : mod = new Mod ( sourceInfo , input , ( DeleteCells ) entry ); break ; case DELETE FAMILY : mod = new Mod ( sourceInfo , input , ( DeleteFamily ) entry ); break ; default : case UNKNOWN : throw new UnsupportedEntryException ( \"Cloud Bigtable change stream entry of type \" + entry . getClass (). getName () + \" is not supported.",
+          "Streams Bigtable data change records and writes them into BigQuery using Dataflow Runner V2.\" , optionsClass = BigtableChangeStreamToBigQueryOptions . class , optionsOrder = { BigtableChangeStreamToBigQueryOptions . class , ReadChangeStreamOptions . class , ReadOptions . class }, skipOptions = { \"bigtableReadAppProfile\" , \"bigtableAdditionalRetryCodes\" , \"bigtableRpcAttemptTimeoutMs\" , \"bigtableRpcTimeoutMs\" }, documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-bigquery\" , flexContainerName = \"googlecloud-to-googlecloud\" , contactInformation = \"https://cloud.google.com/support\" , streaming = true ) public final class BigtableChangeStreamsToBigQuery { private static final Logger LOG = LoggerFactory . getLogger ( BigtableChangeStreamsToBigQuery . class ); private static final String USE RUNNER V2 EXPERIMENT = \"use runner v2\" ; / Main entry point for executing the pipeline. @param args The command-line arguments to the pipeline. / public static void main ( String [] args ) { LOG . info ( \"Starting to replicate change records from Cloud Bigtable change streams to BigQuery\" ); BigtableChangeStreamToBigQueryOptions options = PipelineOptionsFactory . fromArgs ( args ) . withValidation () . as ( BigtableChangeStreamToBigQueryOptions . class ); run ( options ); } private static void setOptions ( BigtableChangeStreamToBigQueryOptions options ) { options . setStreaming ( true ); options . setEnableStreamingEngine ( true ); // Add use runner v2 to the experiments option, since change streams connector is only supported // on Dataflow runner v2.",
+          "The entry was put into a dead letter queue directory. \" + \"Please update your Dataflow template with the latest template version\" ); } TableRow tableRow = new TableRow (); if ( bigQuery . setTableRowFields ( mod , tableRow )) { receiver . output ( tableRow ); } } } private ModType getModType ( Entry entry ) { if ( entry instanceof SetCell ) { return ModType ."
+        ]
+      },
+      {
+        "title": "\"BigQuery export to Parquet (via Storage API) template \\_|\\_ Cloud Dataflow\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-parquet",
+        "source_id": "site-api-reference",
+        "final_score": 116,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BATCH , displayName = \"BigQuery export to Parquet (via Storage API)\" , description = \"The BigQuery export to Parquet template is a batch pipeline that reads data from a BigQuery table and writes it to a Cloud Storage bucket in Parquet format. \" + \"This template utilizes the <a href=\\\"https://cloud.google.com/bigquery/docs/reference/storage\\\">BigQuery Storage API</a> to export the data.\" , optionsClass = BigQueryToParquetOptions . class , flexContainerName = \"bigquery-to-parquet\" , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-parquet\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"The input BigQuery table must exist before running the pipeline.\" , \"The output Cloud Storage bucket must exist before running the pipeline.\" }) public class BigQueryToParquet { / Logger for class. / private static final Logger LOG = LoggerFactory . getLogger ( BigQueryToParquet . class ); / File suffix for file to be written. / private static final String FILE SUFFIX = \".parquet\" ; / Factory to create BigQueryStorageClients. / static class BigQueryStorageClientFactory { / Creates BigQueryStorage client for use in extracting table schema. @return BigQueryStorageClient / static BigQueryStorageClient create () { try { return BigQueryStorageClient . create (); } catch ( IOException e ) { LOG . error ( \"Error connecting to BigQueryStorage API: \" + e . getMessage ()); throw new RuntimeException ( e ); } } } / Factory to create ReadSessions. / static class ReadSessionFactory { / Creates ReadSession for schema extraction. @param client BigQueryStorage client used to create ReadSession. @param options BigQueryToParquetOptions options. @param tableReadOptions TableReadOptions that specify any fields in the table to filter on. @return session ReadSession object that contains the schema for the export. / static ReadSession create ( BigQueryStorageClient client , BigQueryToParquetOptions options , TableReadOptions tableReadOptions ) { String tableString = options . getTableRef (); TableReference tableReference = BigQueryHelpers . parseTableSpec ( tableString ); BigQueryOptions bigQueryOptions = options . as ( BigQueryOptions . class ); String parentProjectId = bigQueryOptions . getBigQueryProject () == null ? bigQueryOptions . getProject () : bigQueryOptions . getBigQueryProject (); String parentProjectIdResource = \"projects/\" + parentProjectId ; TableReferenceProto .",
+          "Builder builder = CreateReadSessionRequest . newBuilder () . setParent ( parentProjectIdResource ) . setReadOptions ( tableReadOptions ) . setTableReference ( storageTableRef ); try { return client . createReadSession ( builder . build ()); } catch ( InvalidArgumentException iae ) { LOG . error ( \"Error creating ReadSession: \" + iae . getMessage ()); throw new RuntimeException ( iae ); } } } / The {@link BigQueryToParquetOptions} class provides the custom execution options passed by the executor at the command-line. / public interface BigQueryToParquetOptions extends PipelineOptions { @TemplateParameter.BigQueryTable ( order = 1 , description = \"BigQuery table to export\" , groupName = \"Source\" , helpText = \"The BigQuery input table location.\" , example = \"your-project:your-dataset.your-table-name\" ) @Required String getTableRef (); void setTableRef ( String tableRef ); @TemplateParameter.GcsWriteFile ( order = 2 , description = \"Output Cloud Storage file(s)\" , groupName = \"Target\" , helpText = \"The Cloud Storage folder to write the Parquet files to.\" , example = \"gs://your-bucket/export/\" ) @Required String getBucket (); void setBucket ( String bucket ); @TemplateParameter.Integer ( order = 3 , optional = true , description = \"Maximum output shards\" , helpText = \"The number of output file shards.",
+          "POST h tt ps : //dataflow.googleapis.com/v1b3/projects/ PROJECT ID /locations/ LOCATION /flexTemplates:launch { \"launch parameter\" : { \"jobName\" : \" JOB NAME \" , \"parameters\" : { \"tableRef\" : \" BIGQUERY TABLE \" , \"bucket\" : \" OUTPUT DIRECTORY \" , \"numShards\" : \" NUM SHARDS \" , \"fields\" : \" FIELDS \" }, \"containerSpecGcsPath\" : \"gs://dataflow-templates- LOCATION / VERSION /flex/BigQuery to Parquet\" , } } Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.teleport.metadata.TemplateCategory",
+      "com.google.cloud.teleport.v2",
+      "com.google.cloud.teleport.v2.cdc.dlq.DeadLetterQueueManager",
+      "com.google.cloud.teleport.v2.cdc.dlq.StringDeadLetterQueueSanitizer",
+      "com.google.cloud.teleport.v2.coders.FailsafeElementCoder",
+      "com.google.cloud.teleport.v2.common.UncaughtExceptionLogger",
+      "com.google.cloud.teleport.v2.templates.spannerchangestreamstobigquery",
+      "com.google.cloud.teleport.v2.templates.spannerchangestreamstobigquery.schemautils.BigQueryUtils",
+      "com.google.cloud.teleport.v2.templates.spannerchangestreamstobigquery.schemautils.OptionsUtils",
+      "com.google.cloud.teleport.v2.transforms.DLQWriteTransform",
+      "com.google.cloud.teleport.v2.utils.BigQueryIOUtils",
+      "com.google.cloud.teleport.v2.values.FailsafeElement",
+      "com.google.common.base.Strings",
+      "com.google.common.collect.ImmutableSet",
+      "dataflow.googleapis.com",
+      "dataset.your",
+      "java.io.IOException",
+      "java.util.ArrayList",
+      "java.util.List",
+      "java.util.Set",
+      "java.util.stream.Collectors",
+      "org.apache.beam.runners.dataflow",
+      "org.apache.beam.sdk"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-parquet"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-parquet"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:53.762Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow"
+}

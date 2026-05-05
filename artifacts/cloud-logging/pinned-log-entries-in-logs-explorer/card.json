@@ -1,0 +1,134 @@
+{
+  "feature_name": "Pinned Log Entries in Logs Explorer",
+  "feature_slug": "pinned-log-entries-in-logs-explorer",
+  "summary": "Logs Explorer supports pinning log entries and viewing pinned entries in different resource contexts.",
+  "extended_definition": "Logs Explorer supports pinning log entries and viewing pinned entries in different resource contexts.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/regionalized-logs",
+      "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+      "https://docs.cloud.google.com/logging/docs/write-query-log-entries-gcloud"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and analyze logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "source_id": "site-docs-root",
+        "final_score": 189,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before you begin To get the permissions that you need to use the Logs Explorer to view log entries, ask your administrator to grant you the following IAM roles: To view log entries in the Required bucket and those in the Default view on the Default bucket, or to select a log scope: Logs Viewer ( roles/logging.viewer ) on your project, folder, or organization.",
+          "Show logs that match the resource of a pinned log entry After you pin a log entry, you can run a new query that displays log entries that match the resource type or resource labels of the pinned log.",
+          "This document provides you with an overview of the Logs Explorer in the Google Cloud console, which you can use to retrieve, view, and analyze log entries that are stored in log buckets ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Write and query log entries with the gcloud CLI \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/logging/docs/write-query-log-entries-gcloud",
+        "source_id": "site-docs-root",
+        "final_score": 140,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The method returns a response similar to the following: { \"entries\": [ { \"textPayload\": \"A simple entry\", \"insertId\": \"vd4m1if7h7u1a\", \"resource\": { \"type\": \"global\", \"labels\": { \"project id\": \"myloggingproject\" } }, \"timestamp\": \"2018-11-01T18:39:19.718100792Z\", \"logName\": \"projects/myloggingproject/logs/my-test-log\", \"receiveTimestamp\": \"2018-11-01T18:39:19.718100792Z\" }, { \"insertId\": \"jpj9zjf73t1mn\", \"jsonPayload\": { \"message\": \"My second entry\", \"weather\": \"partly cloudy\" }, \"resource\": { \"type\": \"global\", \"labels\": { \"project id\": \"myloggingproject\" } }, \"timestamp\": \"2018-11-01T18:39:31.114507977Z\", \"logName\": \"projects/myloggingproject/logs/my-test-log\", \"receiveTimestamp\": \"2018-11-01T18:39:31.114507977Z\" } ] } View log entries in the Logs Explorer To view log entries in the Google Cloud console, you can use the Logs Explorer.",
+          "For example, to display all log entries that contain the text simple , do the following: In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging .",
+          "To view the log entries that you wrote using the Logs Explorer, do the following: In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging ."
+        ]
+      },
+      {
+        "title": "Regionalize your logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/regionalized-logs",
+        "source_id": "site-docs-root",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "Search logs in the Google Cloud console To view the log entries in your log bucket, go to the Google Cloud console and complete the following steps: In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging .",
+          "The Logs Explorer is configured to display log entries that originate in your project.",
+          "Logging supports querying logs from multiple regions together, in which case queries are processed in the same locations as the buckets being queried and then aggregated in the region the query was received from to return the results."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "logging.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-gcloud",
+        "https://docs.cloud.google.com/logging/docs/regionalized-logs"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-gcloud",
+        "https://docs.cloud.google.com/logging/docs/regionalized-logs"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-gcloud",
+        "https://docs.cloud.google.com/logging/docs/regionalized-logs"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-gcloud",
+        "https://docs.cloud.google.com/logging/docs/regionalized-logs"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-gcloud",
+        "https://docs.cloud.google.com/logging/docs/regionalized-logs"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-gcloud",
+        "https://docs.cloud.google.com/logging/docs/regionalized-logs"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:31.891Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging"
+}

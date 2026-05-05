@@ -1,0 +1,135 @@
+{
+  "feature_name": "AutoML Translation EAP-to-Beta model continuity",
+  "feature_slug": "automl-translation-eap-to-beta-model-continuity",
+  "summary": "AutoML Translation preserves models created during EAP so they remain valid when moving into the Beta phase without retraining.",
+  "extended_definition": "AutoML Translation preserves models created during EAP so they remain valid when moving into the Beta phase without retraining.",
+  "lifecycle": {
+    "latest_feature_date": "2018-07-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-models",
+      "https://docs.cloud.google.com/translate/docs/advanced/custom-tllm-models",
+      "https://docs.cloud.google.com/translate/docs/advanced/translate-documents"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create and manage models \\_|\\_ Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-models",
+        "source_id": "site-docs-root",
+        "final_score": 104,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT ID \" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /models\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"models\": [ { \"name\": \"projects/ PROJECT NUMBER /locations/us-central1/models/ MODEL ID \", \"displayName\": \" MODEL DISPLAY NAME \", \"dataset\": \"projects/ PROJECT NUMBER /locations/us-central1/datasets/ DATASET ID \" \"sourceLanguageCode\": \" SOURCE LANG CODE \", \"targetLanguageCode\": \" TARGET LANG CODE \", \"trainExampleCount\": NUM TRAINING SEGMENTS , \"validateExampleCount\": NUM VALIDATION SEGMENTS , \"createTime\": \"2022-12-02T21:53:26.788521838Z\", \"updateTime\": \"2022-12-03T00:42:27.946594016Z\" }, ... ] } Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT ID \" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /models/ MODEL ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/us-central1/models/ MODEL ID \", \"displayName\": \" MODEL DISPLAY NAME \", \"dataset\": \"projects/ PROJECT NUMBER /locations/us-central1/datasets/ DATASET ID \" \"sourceLanguageCode\": \" SOURCE LANG CODE \", \"targetLanguageCode\": \" TARGET LANG CODE \", \"trainExampleCount\": NUM TRAINING SEGMENTS , \"validateExampleCount\": NUM VALIDATION SEGMENTS , \"createTime\": \"2022-12-02T21:53:26.788521838Z\", \"updateTime\": \"2022-12-03T00:42:27.946594016Z\" } Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT ID \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /models\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION /operations/ OPERATION ID \" } Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET."
+        ]
+      },
+      {
+        "title": "Create and manage models \\_|\\_ Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/custom-tllm-models",
+        "source_id": "site-docs-root",
+        "final_score": 104,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Response { \"name\": \"projects/ PROJECT ID /locations/ TUNING JOB REGION /tuningJobs/ TUNING JOB ID \", \"tunedModelDisplayName\": \" TUNED MODEL DISPLAYNAME \", \"createTime\": CREATE TIME , \"endTime\": END TIME , \"tunedModel\": { \"model\": \"projects/ PROJECT ID /locations/ TUNING JOB REGION /models/ MODEL ID \", \"endpoint\": \"projects/ PROJECT ID /locations/ TUNING JOB REGION /endpoints/ ENDPOINT ID \" }, \"experiment\": \"projects/ PROJECT ID /locations/ TUNING JOB REGION /metadataStores/default/contexts/ EXPERIMENT ID \", \"tuning data statistics\": { \"supervisedTuningDataStats\": { \"tuninDatasetExampleCount\": \" TUNING DATASET EXAMPLE COUNT \", \"totalBillableTokenCount\": \" TOTAL BILLABLE TOKEN COUNT \", \"tuningStepCount\": \" TUNING STEP COUNT \" } }, \"status\": \" STATUS \", \"supervisedTuningSpec\" : { \"trainingDatasetUri\": \" TRAINING DATASET URI \", \"validationDataset uri\": \" VALIDATION DATASET URI \", \"hyperParameters\": { \"epochCount\": EPOCH COUNT , \"learningRateMultiplier\": LEARNING RATE MULTIPLIER } } } Python import vertexai from vertexai.tuning import sft TODO(developer): Update and un-comment below lines PROJECT ID = \"your-project-id\" LOCATION = \"us-central1\" vertexai . init ( project = PROJECT ID , location = LOCATION ) tuning job id = \"4982013113894174720\" response = sft .",
+          "PROJECT ID = os.environ[\"GOOGLE CLOUD PROJECT\"] vertexai . init ( project = PROJECT ID , location = \"us-central1\" ) sft tuning job = sft . train ( source model = \"translation-llm-002\" , train dataset = \"gs://cloud-samples-data/ai-platform/generative ai/gemini-2 0/text/sft train data.jsonl\" , The following parameters are optional validation dataset = \"gs://cloud-samples-data/ai-platform/generative ai/gemini-2 0/text/sft validation data.jsonl\" , tuned model display name = \"tuned translation llm 002\" , ) Polling for job completion while not sft tuning job . has ended : time . sleep ( 60 ) sft tuning job . refresh () print ( sft tuning job . tuned model name ) print ( sft tuning job . tuned model endpoint name ) print ( sft tuning job . experiment ) Example response: projects/123456789012/locations/us-central1/models/1234567890@1 projects/123456789012/locations/us-central1/endpoints/123456789012345 <google.cloud.aiplatform.metadata.experiment resources.Experiment object at 0x7b5b4ae07af0> View a list of tuning jobs You can view a list of tuning jobs in your current project by using the Google Cloud console, the Vertex AI SDK for Python, or by sending a GET request by using the tuningJobs method.",
+          "TranslationServiceClient () location = \"us-central1\" parent = f \"projects/ { project id } /locations/ { location } \" model path = f \" { parent } /models/translation-llm-custom/ { model id } \" Supported language codes: https://cloud.google.com/translate/docs/languages response = client . translate text ( request = { \"contents\" : [ text ], \"target language code\" : \"ja\" , \"model\" : model path , \"source language code\" : \"en\" , \"parent\" : parent , \"mime type\" : \"text/plain\" , # mime types: text/plain, text/html } ) Display the translation for each input text provided for translation in response . translations : print ( f \"Translated text: { translation . translated text } \" ) return response Tuning and validation metrics You can configure a model tuning job to collect and report model tuning and model evaluation metrics, which can then be visualized in Vertex AI Studio ."
+        ]
+      },
+      {
+        "title": "Translate documents \\_|\\_ Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/translate-documents",
+        "source_id": "site-docs-root",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "TranslationServiceClient () location = \"us-central1\" parent = f \"projects/ { project id } /locations/ { location } \" Supported file types: https://cloud.google.com/translate/docs/supported-formats with open ( file path , \"rb\" ) as document : document content = document . read () document input config = { \"content\" : document content , \"mime type\" : \"application/pdf\" , } response = client . translate document ( request = { \"parent\" : parent , \"target language code\" : \"fr-FR\" , \"document input config\" : document input config , } ) To output the translated document, uncomment the code below. f = open('/tmp/output', 'wb') f.write(response.document translation.byte stream outputs[0]) f.close() If not provided in the TranslationRequest, the translated file will only be returned through a byte-stream and its output mime type will be the same as the input file's mime type print ( f \"Response: Detected Language Code - { response . document translation . detected language code } \" ) return response Use an AutoML model or a glossary Instead of the Google-managed model, you can use your own AutoML Translation models to translate documents.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT NUMBER OR ID \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/ LOCATION :translateDocument\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"documentTranslation\": { \"byteStreamOutputs\": [\" BYTE STREAM \"], \"mimeType\": \" MIME TYPE \" }, \"glossary document translation\": { \"byteStreamOutputs\": [\" BYTE STREAM USING GLOSSARY \"], \"mimeType\": \" MIME TYPE \" }, \"model\": \"projects/ MODEL PROJECT ID /locations/ MODEL LOCATION /models/ MODEL ID \", \"glossaryConfig\": { \"glossary\": \"projects/ GLOSSARY PROJECT ID /locations/ MODEL LOCATION /glossaries/ GLOSSARY ID \" } } Translate documents (batch) Batch translation allows you to translate multiple files into multiple languages in a single request.",
+          "HTTP method and URL: POST https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/ LOCATION :translateDocument Request JSON body: { \"source language code\": \" SOURCE LANGUAGE \", \"target language codes\": \"[ TARGET LANGUAGE , ...]\", \"input configs\": [ { \"gcsSource\": { \"inputUri\": \"gs:// INPUT FILE PATH \" } } ], \"output config\": { \"gcsDestination\": { \"outputUriPrefix\": \"gs:// OUTPUT FILE PREFIX \" } }, \"models\": { \" TARGET LANGUAGE \": \"projects/ MODEL PROJECT ID /locations/ MODEL LOCATION /models/ MODEL ID \", ... }, \"glossaries\": { \" TARGET LANGUAGE \": { \"glossary\": \"projects/ GLOSSARY PROJECT ID /locations/ MODEL LOCATION /glossaries/ GLOSSARY ID \" }, ... } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.jsonl",
+      "f.close",
+      "f.write",
+      "os.environ",
+      "request.json",
+      "resources.Experiment",
+      "response.document",
+      "translation.byte",
+      "translation.googleapis.com",
+      "type.googleapis.com",
+      "vertexai.generative",
+      "vertexai.tuning"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-models",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-tllm-models",
+        "https://docs.cloud.google.com/translate/docs/advanced/translate-documents"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-models",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-tllm-models",
+        "https://docs.cloud.google.com/translate/docs/advanced/translate-documents"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-models",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-tllm-models",
+        "https://docs.cloud.google.com/translate/docs/advanced/translate-documents"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-models",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-tllm-models",
+        "https://docs.cloud.google.com/translate/docs/advanced/translate-documents"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-models",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-tllm-models",
+        "https://docs.cloud.google.com/translate/docs/advanced/translate-documents"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:17.292Z",
+  "source_step08_card": "data/step-08/current/products/automl-translation/card.json",
+  "product_name": "AutoML Translation",
+  "product_slug": "automl-translation"
+}

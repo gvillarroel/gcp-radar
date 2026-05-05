@@ -1,0 +1,117 @@
+{
+  "feature_name": "Managed I/O rolling upgrades for streaming jobs",
+  "feature_slug": "managed-i-o-rolling-upgrades-for-streaming-jobs",
+  "summary": "Dataflow Managed I/O can automatically roll connector upgrades into running streaming pipelines as new versions become available.",
+  "extended_definition": "Dataflow Managed I/O can automatically roll connector upgrades into running streaming pipelines as new versions become available.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+      "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+      "https://docs.cloud.google.com/dataflow/docs/guides/managed-io"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Dataflow managed I/O \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/managed-io",
+        "source_id": "site-docs-reference-2",
+        "final_score": 190,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For streaming jobs, Dataflow upgrades your Managed I/O connectors in running pipelines as new versions become available.",
+          "Java --dataflowServiceOptions=managed transforms rolling upgrade window=never Python --dataflow service options=managed transforms rolling upgrade window=never Go --dataflow service options=managed transforms rolling upgrade window=never gcloud Use the gcloud dataflow jobs run command with the additional-experiments option.",
+          "If you're using a Flex Template that uses Managed I/O, use the gcloud dataflow flex-template run command. --additional-experiments=managed transforms rolling upgrade window= DAYS To disable rolling upgrades, set the managed transforms rolling upgrade window service option to never ."
+        ]
+      },
+      {
+        "title": "Troubleshoot Dataflow errors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "source_id": "site-docs-reference-2",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "Pipelines that use Managed I/O might fail with this error if Dataflow can't automatically upgrade the I/O transforms to the latest supported version.",
+          "Request payload size exceeds the limit: 20971520 bytes When you run a pipeline, the job might fail with the following error: com.google.api.client.googleapis.json.GoogleJsonResponseException: 400 Bad Request POST https://dataflow.googleapis.com/v1b3/projects/PROJECT ID/locations/REGION/jobs/JOB ID/workItems:reportStatus { \"code\": 400, \"errors\": [ { \"domain\": \"global\", \"message\": \"Request payload size exceeds the limit: 20971520 bytes.\", \"reason\": \"badRequest\" } ], \"message\": \"Request payload size exceeds the limit: 20971520 bytes.\", \"status\": \"INVALID ARGUMENT\" } This error can occur when a job using the Dataflow runner has a very large job graph.",
+          "Invalid table specification in Data Catalog When you use Dataflow SQL to create Dataflow SQL jobs, your job might fail with the following error in the log files: Invalid table specification in Data Catalog: Could not resolve table in Data Catalog This error occurs if the Dataflow service account doesn't have access to the Data Catalog API."
+        ]
+      },
+      {
+        "title": "\"Use customer-managed encryption keys \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+        "source_id": "site-docs-reference-2",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "For Encryption type: \"Google-Managed key\" For Encryption type: \"Customer-Managed key\" CLI Run the describe command using the gcloud CLI: gcloud dataflow jobs describe JOB ID Search for the line that contains serviceKmsKeyName .",
+          "Encryption of pipeline state artifacts Data that a Dataflow pipeline reads from user-specified data sources is encrypted, except for the data keys that you specify for key-based transforms in streaming jobs.",
+          "Job metadata includes the following: User-supplied data, such as Job Names, Job Parameter values, and Pipeline Graph System-generated data, such as Job IDs and IP addresses of workers Encryption of pipeline state locations The following storage locations are protected with Cloud KMS keys: Persistent Disks attached to Dataflow workers and used for Persistent Disk-based shuffle and streaming state storage."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.api.client.googleapis.json.GoogleJsonResponseException",
+      "dataflow.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/managed-io",
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/managed-io",
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/managed-io",
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/managed-io",
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:53.762Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow"
+}

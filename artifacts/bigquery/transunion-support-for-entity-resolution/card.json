@@ -1,0 +1,110 @@
+{
+  "feature_name": "TransUnion support for entity resolution",
+  "feature_slug": "transunion-support-for-entity-resolution",
+  "summary": "BigQuery entity resolution now supports TransUnion as a data provider.",
+  "extended_definition": "BigQuery entity resolution now supports TransUnion as a data provider.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/authentication",
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+      "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Authenticate to BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/authentication",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 70,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After installation, initialize the Google Cloud CLI by running the following command: gcloud init If you're using an external identity provider (IdP), you must first sign in to the gcloud CLI with your federated identity .",
+          "After installation, initialize the Google Cloud CLI by running the following command: gcloud init If you're using an external identity provider (IdP), you must first sign in to the gcloud CLI with your federated identity .",
+          "If an authentication error is returned, and you are using an external identity provider (IdP), confirm that you have signed in to the gcloud CLI with your federated identity ."
+        ]
+      },
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 65,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner references BigQuery data source for Grafana Community Spotlight: BigQuery Plugin Connect Grafana to BigQuery using Workload Identity Federation Partner Advantage page Direct link LogicLoop Solution LogicLoop Category Data Quality, Observability, & FinOps Description LogicLoop empowers operations teams to set up alerts and automations on top of company data without needing engineers.",
+          "Partner references Luria BigQuery Integration Luria receives Cloud Ready designation Partner Advantage page Direct link Qlik Solution Qlik Sense Category BI, ML, & Advanced Analytics Description Qlik Sense is a business intelligence (BI) and visual analytics platform that supports a range of analytic use cases.",
+          "It supports direct connection mode besides the import mode while connecting to Google BigQuery."
+        ]
+      },
+      {
+        "title": "Troubleshoot quota and limit errors \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "source_id": "site-docs-root",
+        "final_score": 61,
+        "relevance": "",
+        "evidence_snippets": [
+          "STREAMING TIMELINE BY PROJECT WHERE start timestamp > TIMESTAMP SUB ( CURRENT TIMESTAMP , INTERVAL 1 DAY ) GROUP BY start timestamp , error code ORDER BY 1 DESC Resolution To resolve this quota error, do the following: If you are using the insertId field for deduplication, and your project is in a region that supports the higher streaming quota, we recommend removing the insertId field.",
+          "To see all copy jobs in all regions, you can use the following filter in Cloud Logging: resource.type=\"bigquery resource\" protoPayload.methodName=\"jobservice.insert\" protoPayload.serviceData.jobInsertRequest.resource.jobConfiguration.tableCopy: Resolution If the goal of the frequent copy operations is to create a snapshot of data, consider using table snapshots instead.",
+          "Error message Your project exceeded quota for free query bytes scanned Resolution To continue using BigQuery, you need to upgrade the account to a paid Cloud Billing account ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "jobservice.insert",
+      "resource.jobConfiguration.tableCopy",
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authentication",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authentication",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authentication",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

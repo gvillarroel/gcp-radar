@@ -1,0 +1,188 @@
+{
+  "feature_name": "Firestore Triggers (Events)",
+  "feature_slug": "firestore-triggers-events",
+  "summary": "Enables Firestore Triggers for Firestore with MongoDB compatibility databases.",
+  "extended_definition": "Enables Firestore Triggers for Firestore with MongoDB compatibility databases.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Extend Firestore with MongoDB compatibility with event triggers using Cloud\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+        "source_id": "site-iam-reference",
+        "final_score": 303,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Extend Firestore with MongoDB compatibility with event triggers using Cloud Run functions With Cloud Run functions, you can deploy code to handle events triggered by changes in your Cloud Run database.",
+          "Run the following command to create a trigger that filters events: gcloud eventarc triggers create TRIGGER NAME \\ --location= EVENTARC TRIGGER LOCATION \\ --destination-run-service= FUNCTION \\ --destination-run-region= REGION \\ --event-filters=\"type=google.cloud.firestore.document.v1.created\" \\ --service-account= PROJECT NUMBER -compute@developer.gserviceaccount.com Replace: TRIGGER NAME with the name for your trigger.",
+          "Home Documentation Databases Firestore with MongoDB compatibility Guides Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Create event-driven architectures with Eventarc \\_|\\_ Firestore with MongoDB\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc",
+        "source_id": "site-iam-reference",
+        "final_score": 283,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Firestore with MongoDB compatibility triggers for Eventarc generate events from changes to a particular documents in your database.",
+          "Limitations Note the following limitations for Firestore with MongoDB compatibility triggers for Eventarc: Ordering is not guaranteed.",
+          "Home Documentation Databases Firestore with MongoDB compatibility Guides Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Migrate to Firestore with MongoDB compatibility \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data",
+        "source_id": "site-iam-reference",
+        "final_score": 250,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After the replication completes, the Firestore with MongoDB compatibility database can become the new source of truth for your application workload.",
+          "Limitations Before you begin, review the differences between Firestore with MongoDB compatibility and MongoDB .",
+          "Migrate to Firestore with MongoDB compatibility This guide takes you through the step-by-step process of migrating your MongoDB-compatible source database to a Firestore with MongoDB compatibility database with minimal downtime."
+        ]
+      },
+      {
+        "title": "\"Authenticate and connect to a database \\_|\\_ Firestore with MongoDB compatibility\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+        "source_id": "site-iam-reference",
+        "final_score": 242,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a user and connect to a database To create a user for your Firestore with MongoDB compatibility database, use one of the following method: Google Cloud console In the Google Cloud console, go to the Databases page.",
+          "Authenticate and connect to a database Connection requirements The following are required for Firestore with MongoDB compatibility clients: Drivers must connect in load balanced mode.",
+          "CopyFrom ( updated policy ) final policy = client . set iam policy ( set policy request ) print ( f 'Policy updated successfully { final policy } ' ) def provision firestore user creds and iam ( project id : str , database id : str , user name : str ): \"\"\"Provision user credentials and configure an IAM policy.\"\"\" user creds = create user creds ( project id , database id , user name ) Note the password returned in the UserCreds proto - it cannot be retrieved again after the initial call to the create user creds API. print ( f 'Created credentials for username: { user name } ' ) print ( f 'IAM principal: { user creds . resource identity . principal } ' ) print ( f 'Password: [ { user creds . secure password } ]' ) Provision an IAM binding for the principal associated with these user credentials. update iam policy for user creds ( project id , database id , user name , user creds ) Emit the password again print ( f 'Successfully configured IAM policy for database: { database id } ,' f ' username: { user name } ' ) print ( f 'Please make a note of the password: [ { user creds . secure password } ]' ) Use the following connection string to connect to your database with SCRAM: mongodb : // USERNAME : PASSWORD @ UID ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.auth",
+      "developer.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:06.277Z",
+  "source_step08_card": "data/step-08/current/products/firestore-with-mongodb-compatibility/card.json",
+  "product_name": "Firestore with MongoDB compatibility",
+  "product_slug": "firestore-with-mongodb-compatibility"
+}

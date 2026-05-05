@@ -1,0 +1,124 @@
+{
+  "feature_name": "Cloud Text-to-Speech audio profiles",
+  "feature_slug": "cloud-text-to-speech-audio-profiles",
+  "summary": "Cloud Text-to-Speech introduced general availability of audio profiles so applications can optimize generated speech for specific playback hardware such as headphones and car stereos.",
+  "extended_definition": "Cloud Text-to-Speech introduced general availability of audio profiles so applications can optimize generated speech for specific playback hardware such as headphones and car stereos.",
+  "lifecycle": {
+    "latest_feature_date": "2019-02-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-texttospeech/latest/com.google.cloud.texttospeech.v1.AudioConfig",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-texttospeech/latest/com.google.cloud.texttospeech.v1.AudioConfig.Builder",
+      "https://docs.cloud.google.com/text-to-speech/docs/audio-profiles"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use device profiles for generated audio \\_|\\_ Cloud Text-to-Speech \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/text-to-speech/docs/audio-profiles",
+        "source_id": "site-docs-reference-2",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . / Demonstrates using the Text to Speech client with audio profiles to synthesize text or ssml @param text the raw text to be synthesized. (e.g., \"Hello there!\") @param effectsProfile audio profile to be used for synthesis. (e.g., \"telephony-class-application\") @throws Exception on TextToSpeechClient Errors. / public static void synthesizeTextWithAudioProfile ( String text , String effectsProfile ) throws Exception { // Instantiates a client try ( TextToSpeechClient textToSpeechClient = TextToSpeechClient . create ()) { // Set the text input to be synthesized SynthesisInput input = SynthesisInput . newBuilder (). setText ( text ). build (); // Build the voice request VoiceSelectionParams voice = VoiceSelectionParams . newBuilder () . setLanguageCode ( \"en-US\" ) // languageCode = \"en us\" . setSsmlGender ( SsmlVoiceGender .",
+          "TextToSpeechClient (); async function synthesizeWithEffectsProfile () { // Add one or more effects profiles to array. // Refer to documentation for more details: // https://cloud.google.com/text-to-speech/docs/audio-profiles const effectsProfileId = [ 'telephony-class-application' ]; const request = { input : { text : text }, voice : { languageCode : languageCode , ssmlGender : ssmlGender }, audioConfig : { audioEncoding : 'MP3' , effectsProfileId : effectsProfileId }, }; const [ response ] = await client . synthesizeSpeech ( request ); const writeFile = util . promisify ( fs . writeFile ); await writeFile ( outputFile , response . audioContent , 'binary' ); console . log ( Audio content written to file: ${ outputFile } ); } Python To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries .",
+          "The following example shows how to send a request to the text:synthesize endpoint. curl \\ -H \"Authorization: Bearer \" $( gcloud auth print-access-token ) \\ -H \"Content-Type: application/json; charset=utf-8\" \\ --data \"{ 'input':{ 'text':'This is a sentence that helps test how audio profiles can change the way Cloud Text-to-Speech sounds.' }, 'voice':{ 'languageCode':'en-us', }, 'audioConfig':{ 'audioEncoding':'LINEAR16', 'effectsProfileId': ['telephony-class-application'] } }\" \"https://texttospeech.googleapis.com/v1beta1/text:synthesize\" > audio-profile.txt If the request is successful, the Cloud Text-to-Speech API returns the synthesized audio as base64-encoded data contained in the JSON output."
+        ]
+      },
+      {
+        "title": "\"Class AudioConfig (2.89.0) \\_|\\_ Java client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-texttospeech/latest/com.google.cloud.texttospeech.v1.AudioConfig",
+        "source_id": "site-java-reference",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "An identifier which selects 'audio effects' profiles that are applied on (post synthesized) text to speech.",
+          "An identifier which selects 'audio effects' profiles that are applied on (post synthesized) text to speech.",
+          "An identifier which selects 'audio effects' profiles that are applied on (post synthesized) text to speech."
+        ]
+      },
+      {
+        "title": "\"Class AudioConfig.Builder (2.89.0) \\_|\\_ Java client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-texttospeech/latest/com.google.cloud.texttospeech.v1.AudioConfig.Builder",
+        "source_id": "site-java-reference",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "An identifier which selects 'audio effects' profiles that are applied on (post synthesized) text to speech.",
+          "An identifier which selects 'audio effects' profiles that are applied on (post synthesized) text to speech.",
+          "An identifier which selects 'audio effects' profiles that are applied on (post synthesized) text to speech."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.texttospeech.v1.AudioConfig",
+      "com.google.cloud.texttospeech.v1.AudioConfig.Builder",
+      "com.google.cloud.texttospeech.v1.AudioConfigOrBuilder",
+      "e.g",
+      "output.txt",
+      "profile.txt",
+      "profile.wav",
+      "profiles.txt",
+      "texttospeech.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/audio-profiles",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-texttospeech/latest/com.google.cloud.texttospeech.v1.AudioConfig",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-texttospeech/latest/com.google.cloud.texttospeech.v1.AudioConfig.Builder"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/audio-profiles",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-texttospeech/latest/com.google.cloud.texttospeech.v1.AudioConfig",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-texttospeech/latest/com.google.cloud.texttospeech.v1.AudioConfig.Builder"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/audio-profiles",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-texttospeech/latest/com.google.cloud.texttospeech.v1.AudioConfig",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-texttospeech/latest/com.google.cloud.texttospeech.v1.AudioConfig.Builder"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/audio-profiles",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-texttospeech/latest/com.google.cloud.texttospeech.v1.AudioConfig",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-texttospeech/latest/com.google.cloud.texttospeech.v1.AudioConfig.Builder"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:41.307Z",
+  "source_step08_card": "data/step-08/current/products/text-to-speech/card.json",
+  "product_name": "Text-to-Speech",
+  "product_slug": "text-to-speech"
+}

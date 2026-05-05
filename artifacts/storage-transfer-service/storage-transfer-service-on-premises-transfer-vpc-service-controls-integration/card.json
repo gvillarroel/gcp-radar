@@ -1,0 +1,259 @@
+{
+  "feature_name": "Storage Transfer Service on-premises transfer VPC Service Controls integration",
+  "feature_slug": "storage-transfer-service-on-premises-transfer-vpc-service-controls-integration",
+  "summary": "Storage Transfer Service introduced a beta on-premises transfer integration with VPC Service Controls.",
+  "extended_definition": "Storage Transfer Service introduced a beta on-premises transfer integration with VPC Service Controls.",
+  "lifecycle": {
+    "latest_feature_date": "2020-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+      "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+      "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure VPC Service Controls for file system transfers | Storage Transfer Service | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "source_id": "site-docs-reference-required-3-http",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported sources and sinks Other transfer options Differences between Storage Transfer Service options Common use cases Transfer between Cloud Storage buckets Move your Cloud Storage data to another location Transfer data between file systems Transfer from S3 via CloudFront Transfer from S3 or Azure with a customer-managed private network Configure access Access control with IAM Agentless transfer permissions Delegate service agent permissions Agent-based transfer permissions Role and permission reference Sources Cloud Storage Amazon S3 S3-compatible storage Microsoft Azure Blob Storage URL list File system Sinks Cloud Storage File system Transfer data Create transfers All transfers Amazon S3 to Cloud Storage File system to Cloud Storage HDFS to Cloud Storage S3-compatible storage to Cloud Storage Public URLs to Cloud Storage Manage transfers Event-driven transfers Overview From Cloud Storage From AWS S3 From Azure Blob Storage or Data Lake Storage Gen2 Cross-bucket replication Cloud Storage managed folders Cloud Storage hierarchical namespace Filter source objects by prefix Transfer specific files or objects Schedule transfers Metadata preservation Data integrity Improve transfer speeds Manage transfer agents Requirements Agent pools Transfer agents Manage network bandwidth Best practices Advanced options Protect file system data Troubleshoot Log and monitor Cloud Logging Audit Logging Monitor transfer jobs File system transfer logs Pub/Sub notifications Security and compliance Custom organization policy constraints Regional endpoints Configure VPC Service Controls Cloud object storage transfers File system transfers Customer-managed encryption keys Access Transparency AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Storage Storage Transfer Service Send feedback Configure VPC Service Controls for file system transfers Stay organized with collections Save and categorize content based on your preferences.",
+          "Configure VPC Service Controls for file system transfers | Storage Transfer Service | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Storage Transfer Service Start free Guides Reference Support Resources Technology areas More Guides Reference Support Resources Cross-product tools More Console Discover What is Storage Transfer Service?",
+          "Using Private Google Access with VPC Service Controls To use Private Google Access with VPC Service Controls: Create a service perimeter to restrict the following services: Cloud Storage Storage Transfer Service Configure Private Google Access for on-premises hosts ."
+        ]
+      },
+      {
+        "title": "\"Access Context Manager roles and permissions \\_|\\_ Identity and Access Management\\",
+        "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "source_id": "site-iam-reference",
+        "final_score": 66,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create, edit, and change access levels, access zones and authorized orgs descs. accesscontextmanager. accessLevels. accesscontextmanager. accessLevels. create accesscontextmanager. accessLevels. delete accesscontextmanager. accessLevels. get accesscontextmanager. accessLevels. list accesscontextmanager. accessLevels. replaceAll accesscontextmanager. accessLevels. update accesscontextmanager. authorizedOrgsDescs. accesscontextmanager. authorizedOrgsDescs. create accesscontextmanager. authorizedOrgsDescs. delete accesscontextmanager. authorizedOrgsDescs. get accesscontextmanager. authorizedOrgsDescs. list accesscontextmanager. authorizedOrgsDescs. update accesscontextmanager. policies. create accesscontextmanager. policies. delete accesscontextmanager. policies. get accesscontextmanager. policies. getIamPolicy accesscontextmanager. policies. list accesscontextmanager. policies. update accesscontextmanager. servicePerimeters. accesscontextmanager. servicePerimeters. commit accesscontextmanager. servicePerimeters. create accesscontextmanager. servicePerimeters. delete accesscontextmanager. servicePerimeters. get accesscontextmanager. servicePerimeters. list accesscontextmanager. servicePerimeters. replaceAll accesscontextmanager. servicePerimeters. update cloudasset. assets. searchAllResources resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list Access Context Manager Reader ( roles/ accesscontextmanager.policyReader ) Read access to policies, access levels, access zones and authorized orgs descs. accesscontextmanager. accessLevels. get accesscontextmanager. accessLevels. list accesscontextmanager. authorizedOrgsDescs. get accesscontextmanager. authorizedOrgsDescs. list accesscontextmanager. policies. get accesscontextmanager. policies. getIamPolicy accesscontextmanager. policies. list accesscontextmanager. servicePerimeters. get accesscontextmanager. servicePerimeters. list resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list VPC Service Controls Troubleshooter Viewer ( roles/ accesscontextmanager.vpcScTroubleshooterViewer ) accesscontextmanager. accessLevels. get accesscontextmanager. accessLevels. list accesscontextmanager. authorizedOrgsDescs. get accesscontextmanager. authorizedOrgsDescs. list accesscontextmanager. policies. get accesscontextmanager. policies. getIamPolicy accesscontextmanager. policies. list accesscontextmanager. servicePerimeters. get accesscontextmanager. servicePerimeters. list logging.exclusions.get logging.exclusions.list logging.logEntries.list logging.logMetrics.get logging.logMetrics.list logging.logServiceIndexes.list logging.logServices.list logging.logs.list logging.sinks.get logging.sinks.list logging.usage.get resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list Access Context Manager permissions Permission Included in roles accesscontextmanager. accessLevels. create Owner ( roles/ owner ) Editor ( roles/ editor ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "Cloud Deployment Manager Service Agent ( roles/ clouddeploymentmanager.serviceAgent ) accesscontextmanager. authorizedOrgsDescs. create Owner ( roles/ owner ) Editor ( roles/ editor ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) accesscontextmanager. authorizedOrgsDescs. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) accesscontextmanager. authorizedOrgsDescs. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) Access Context Manager Reader ( roles/ accesscontextmanager.policyReader ) VPC Service Controls Troubleshooter Viewer ( roles/ accesscontextmanager.vpcScTroubleshooterViewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) accesscontextmanager. authorizedOrgsDescs. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) Access Context Manager Reader ( roles/ accesscontextmanager.policyReader ) VPC Service Controls Troubleshooter Viewer ( roles/ accesscontextmanager.vpcScTroubleshooterViewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) accesscontextmanager. authorizedOrgsDescs. update Owner ( roles/ owner ) Editor ( roles/ editor ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) accesscontextmanager. gcpUserAccessBindings. create Owner ( roles/ owner ) Editor ( roles/ editor ) Cloud Access Binding Admin ( roles/ accesscontextmanager.gcpAccessAdmin ) accesscontextmanager. gcpUserAccessBindings. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Cloud Access Binding Admin ( roles/ accesscontextmanager.gcpAccessAdmin ) accesscontextmanager. gcpUserAccessBindings. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Cloud Access Binding Admin ( roles/ accesscontextmanager.gcpAccessAdmin ) Cloud Access Binding Reader ( roles/ accesscontextmanager.gcpAccessReader ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "Security Center Control Service Agent ( roles/ securitycenter.controlServiceAgent ) Security Center Service Agent ( roles/ securitycenter.serviceAgent ) accesscontextmanager. gcpUserAccessBindings. update Owner ( roles/ owner ) Editor ( roles/ editor ) Cloud Access Binding Admin ( roles/ accesscontextmanager.gcpAccessAdmin ) accesscontextmanager. policies. create Owner ( roles/ owner ) Editor ( roles/ editor ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) accesscontextmanager. policies. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) accesscontextmanager. policies. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) Access Context Manager Reader ( roles/ accesscontextmanager.policyReader ) VPC Service Controls Troubleshooter Viewer ( roles/ accesscontextmanager.vpcScTroubleshooterViewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) accesscontextmanager. policies. getIamPolicy Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) Access Context Manager Reader ( roles/ accesscontextmanager.policyReader ) VPC Service Controls Troubleshooter Viewer ( roles/ accesscontextmanager.vpcScTroubleshooterViewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) accesscontextmanager. policies. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Access Context Manager Admin ( roles/ accesscontextmanager.policyAdmin ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Access Context Manager Editor ( roles/ accesscontextmanager.policyEditor ) Access Context Manager Reader ( roles/ accesscontextmanager.policyReader ) VPC Service Controls Troubleshooter Viewer ( roles/ accesscontextmanager.vpcScTroubleshooterViewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents ."
+        ]
+      },
+      {
+        "title": "\"Identity federation: products and limitations \\_|\\_ Identity and Access\\",
+        "url": "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "source_id": "site-iam-reference",
+        "final_score": 52,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Other: No known limitations Virtual Private Cloud GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations VPC Service Controls GA Console (federated): Autocomplete suggestions aren't supported when adding user identities in the following fields: Access policies Ingress and egress rules in service perimeters Google Cloud API: v1alpha APIs aren't available to federated identities.",
+          "VPC Service Controls supports only specific Workforce Identity Federation and Workload Identity Federation principal identifiers .",
+          "Other: No known limitations Storage Transfer Service GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Text-to-Speech GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Transcoder API GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Transfer Appliance GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Translation Hub Unsupported Alternatives: No alternatives available Vertex AI GA Console (federated): When Workforce Identity Federation users create a new model monitoring job, Vertex AI doesn't prefill the alert email input with their email address."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accesscontextmanager.gcpAccessAdmin",
+      "accesscontextmanager.gcpAccessReader",
+      "accesscontextmanager.policyAdmin",
+      "accesscontextmanager.policyEditor",
+      "accesscontextmanager.policyReader",
+      "accesscontextmanager.vpcScTroubleshooterViewer",
+      "clouddeploymentmanager.serviceAgent",
+      "iam.securityAdmin",
+      "iam.securityAuditor",
+      "iam.securityReviewer",
+      "iam.supportUser",
+      "logging.exclusions.get",
+      "logging.exclusions.list",
+      "logging.logEntries.list",
+      "logging.logMetrics.get",
+      "logging.logMetrics.list",
+      "logging.logs.list",
+      "logging.logServiceIndexes.list",
+      "logging.logServices.list",
+      "logging.sinks.get",
+      "logging.sinks.list",
+      "logging.usage.get",
+      "securedlandingzone.bqdwOrgRemediator",
+      "securitycenter.controlServiceAgent",
+      "securitycenter.serviceAgent"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accesscontextmanager",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:40.458Z",
+  "source_step08_card": "data/step-08/current/products/storage-transfer-service/card.json",
+  "product_name": "Storage Transfer Service",
+  "product_slug": "storage-transfer-service"
+}

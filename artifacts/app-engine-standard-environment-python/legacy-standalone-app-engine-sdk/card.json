@@ -1,0 +1,94 @@
+{
+  "feature_name": "Legacy standalone App Engine SDK",
+  "feature_slug": "legacy-standalone-app-engine-sdk",
+  "summary": "The legacy standalone App Engine SDK packages provide local development and deployment tooling outside Cloud SDK; deprecated on 2020-07-30.",
+  "extended_definition": "The legacy standalone App Engine SDK packages provide local development and deployment tooling outside Cloud SDK; deprecated on 2020-07-30.",
+  "lifecycle": {
+    "latest_feature_date": "2019-07-30",
+    "deprecation_date": "2020-07-30",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/appengine/docs/standard/python3/services/access",
+      "https://docs.cloud.google.com/appengine/docs/legacy/standard/python/apis",
+      "https://docs.cloud.google.com/appengine/docs/standard/apis"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"APIs & Reference \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/legacy/standard/python/apis",
+        "source_id": "site-docs-reference-required-9",
+        "final_score": 81,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "App Engine legacy bundled services APIs App Engine legacy bundled services APIs for Go Use the legacy bundled services APIs to ease the transition of moving your app from first-generation runtimes to newer runtimes.",
+          "Cloud Client Libraries Cloud Client Libraries for Go A client library that embraces idioms of Go and provides high-level API abstractions so that you can easily access Google Cloud services.",
+          "App Engine legacy bundled services APIs for Python Use the App Engine legacy bundled services APIs to ease the transition of moving your app from first-generation runtimes to newer runtimes."
+        ]
+      },
+      {
+        "title": "\"Access legacy bundled services for Python 3 \\_|\\_ App Engine standard environment\\",
+        "url": "https://cloud.google.com/appengine/docs/standard/python3/services/access",
+        "source_id": "site-docs-reference-3",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": [
+          "To locally test the legacy bundled services functionality in your Python 3 app, use the local development server .",
+          "For example: python3 CLOUD SDK ROOT / bin / dev appserver . py -- runtime python path = \"python27=/user/bin/python2.7,python3=/usr/bin/python3\" Important: When using the local development server to test Python 3 apps that use the Deferred API , you must set the following environment variable in your app.yaml : DEFERRED USE CROSS COMPATIBLE PICKLE PROTOCOL: 'True' Pickle Compatibility Shared services including Memcache, Cloud NDB and deferred use the pickle module to serialize and share Python objects.",
+          "Note: To continue using legacy bundled services with the latest supported version of Python , ensure you upgrade to the latest version of the App Engine services SDK by adding appengine-python-standard>=1.0.0 in your requirements.txt file."
+        ]
+      },
+      {
+        "title": "\"APIs & Reference \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/apis",
+        "source_id": "site-docs-reference",
+        "final_score": 71,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "App Engine legacy bundled services APIs App Engine legacy bundled services APIs for Go Use the legacy bundled services APIs to ease the transition of moving your app from first-generation runtimes to newer runtimes.",
+          "Cloud Client Libraries Cloud Client Libraries for Go A client library that embraces idioms of Go and provides high-level API abstractions so that you can easily access Google Cloud services.",
+          "App Engine legacy bundled services APIs for Python Use the App Engine legacy bundled services APIs to ease the transition of moving your app from first-generation runtimes to newer runtimes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "python2.7",
+      "requirements.txt"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/standard/python3/services/access",
+        "https://docs.cloud.google.com/appengine/docs/legacy/standard/python/apis",
+        "https://docs.cloud.google.com/appengine/docs/standard/apis"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:13.289Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-python/card.json",
+  "product_name": "App Engine standard environment Python",
+  "product_slug": "app-engine-standard-environment-python"
+}

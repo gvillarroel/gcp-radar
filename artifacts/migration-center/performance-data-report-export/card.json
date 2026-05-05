@@ -1,0 +1,240 @@
+{
+  "feature_name": "Performance data report export",
+  "feature_slug": "performance-data-report-export",
+  "summary": "Migration Center can create and export a performance data report for assets to explain recommendations.",
+  "extended_definition": "Migration Center can create and export a performance data report for assets to explain recommendations.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iam/docs/roles-permissions/migrationcenter",
+      "https://docs.cloud.google.com/migration-center/docs/generate-tco-report",
+      "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Google Cloud Migration Center roles and permissions \\_|\\_ Identity and Access\\",
+        "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/migrationcenter",
+        "source_id": "site-iam-reference",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google Cloud Migration Center roles Role Permissions Migration Center Admin Beta ( roles/ migrationcenter.admin ) Full access to Migration Center all resources. migrationcenter. migrationcenter.assets.delete migrationcenter.assets.get migrationcenter.assets.list migrationcenter. assets. reportFrames migrationcenter.assets.update migrationcenter. assetsExportJobs. create migrationcenter. assetsExportJobs. delete migrationcenter. assetsExportJobs. get migrationcenter. assetsExportJobs. list migrationcenter. assetsExportJobs. run migrationcenter. discoveryClients. create migrationcenter. discoveryClients. delete migrationcenter. discoveryClients. get migrationcenter. discoveryClients. list migrationcenter. discoveryClients. sendHeartbeat migrationcenter. discoveryClients. update migrationcenter. errorFrames. get migrationcenter. errorFrames. list migrationcenter.groups.create migrationcenter.groups.delete migrationcenter.groups.get migrationcenter.groups.list migrationcenter.groups.update migrationcenter. importDataFiles. create migrationcenter. importDataFiles. delete migrationcenter. importDataFiles. get migrationcenter. importDataFiles. list migrationcenter. importJobs. create migrationcenter. importJobs. delete migrationcenter.importJobs.get migrationcenter. importJobs. list migrationcenter. importJobs. update migrationcenter.locations.get migrationcenter.locations.list migrationcenter. operations. cancel migrationcenter. operations. delete migrationcenter.operations.get migrationcenter. operations. list migrationcenter. preferenceSets. create migrationcenter. preferenceSets. delete migrationcenter. preferenceSets. get migrationcenter. preferenceSets. list migrationcenter. preferenceSets. update migrationcenter.relations.get migrationcenter.relations.list migrationcenter. reportConfigs. create migrationcenter. reportConfigs. delete migrationcenter. reportConfigs. get migrationcenter. reportConfigs. list migrationcenter.reports.create migrationcenter.reports.delete migrationcenter.reports.get migrationcenter.reports.list migrationcenter.settings.get migrationcenter. settings. update migrationcenter.sources.create migrationcenter.sources.delete migrationcenter.sources.get migrationcenter.sources.list migrationcenter.sources.update resourcemanager.projects.get resourcemanager.projects.list rma. rma.annotations.create rma.annotations.get rma.collectors.create rma.collectors.delete rma.collectors.get rma.collectors.list rma.collectors.update rma.locations.get rma.locations.list rma.operations.cancel rma.operations.delete rma.operations.get rma.operations.list serviceusage.quotas.get Migration Center Viewer Beta ( roles/ migrationcenter.viewer ) Read-only access to Migration Center all resources. migrationcenter.assets.get migrationcenter.assets.list migrationcenter. assetsExportJobs. get migrationcenter. assetsExportJobs. list migrationcenter. discoveryClients. get migrationcenter. discoveryClients. list migrationcenter.errorFrames. migrationcenter. errorFrames. get migrationcenter. errorFrames. list migrationcenter.groups.get migrationcenter.groups.list migrationcenter. importDataFiles. get migrationcenter. importDataFiles. list migrationcenter.importJobs.get migrationcenter. importJobs. list migrationcenter.locations. migrationcenter.locations.get migrationcenter.locations.list migrationcenter.operations.get migrationcenter. operations. list migrationcenter. preferenceSets. get migrationcenter. preferenceSets. list migrationcenter.relations. migrationcenter.relations.get migrationcenter.relations.list migrationcenter. reportConfigs. get migrationcenter. reportConfigs. list migrationcenter.reports.get migrationcenter.reports.list migrationcenter.settings.get migrationcenter.sources.get migrationcenter.sources.list resourcemanager.projects.get resourcemanager.projects.list rma.annotations.get rma.collectors.get rma.collectors.list rma.locations. rma.locations.get rma.locations.list rma.operations.get rma.operations.list serviceusage.quotas.get Migration Center Discovery Client Beta ( roles/ migrationcenter.discoveryClient ) Migration Center Discover Client role migrationcenter. assets. reportFrames migrationcenter. discoveryClients. get migrationcenter. discoveryClients. sendHeartbeat Migration Center Discovery Client Registrator Beta ( roles/ migrationcenter.discoveryClientRegistrator ) Registrator of Migration Center Discover Clients migrationcenter. discoveryClients. create migrationcenter. discoveryClients. delete migrationcenter. discoveryClients. update migrationcenter.operations.get migrationcenter.sources.create migrationcenter.sources.delete resourcemanager.projects.get resourcemanager.projects.list Service agent roles Service agent roles should only be granted to service agents .",
+          "RMA Service Agent ( roles/ rapidmigrationassessment.serviceAgent ) migrationcenter. importJobs. update Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) migrationcenter.locations.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Support User ( roles/ iam.supportUser ) migrationcenter.locations.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) migrationcenter. operations. cancel Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) migrationcenter. operations. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) migrationcenter.operations.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Support User ( roles/ iam.supportUser ) Migration Center Discovery Client Registrator ( roles/ migrationcenter.discoveryClientRegistrator ) migrationcenter. operations. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) migrationcenter. preferenceSets. create Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) migrationcenter. preferenceSets. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) migrationcenter. preferenceSets. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Support User ( roles/ iam.supportUser ) migrationcenter. preferenceSets. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) migrationcenter. preferenceSets. update Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) migrationcenter.relations.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Support User ( roles/ iam.supportUser ) migrationcenter.relations.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) migrationcenter. reportConfigs. create Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) migrationcenter. reportConfigs. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) migrationcenter. reportConfigs. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Support User ( roles/ iam.supportUser ) migrationcenter. reportConfigs. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) migrationcenter.reports.create Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) migrationcenter.reports.delete Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) migrationcenter.reports.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Support User ( roles/ iam.supportUser ) migrationcenter.reports.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) migrationcenter.settings.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Support User ( roles/ iam.supportUser ) migrationcenter. settings. update Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) migrationcenter.sources.create Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Discovery Client Registrator ( roles/ migrationcenter.discoveryClientRegistrator ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "RMA Service Agent ( roles/ rapidmigrationassessment.serviceAgent ) migrationcenter.assets.update Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) migrationcenter. assetsExportJobs. create Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) migrationcenter. assetsExportJobs. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) migrationcenter. assetsExportJobs. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Support User ( roles/ iam.supportUser ) migrationcenter. assetsExportJobs. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) migrationcenter. assetsExportJobs. run Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) migrationcenter. discoveryClients. create Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Discovery Client Registrator ( roles/ migrationcenter.discoveryClientRegistrator ) migrationcenter. discoveryClients. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Discovery Client Registrator ( roles/ migrationcenter.discoveryClientRegistrator ) migrationcenter. discoveryClients. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Support User ( roles/ iam.supportUser ) Migration Center Discovery Client ( roles/ migrationcenter.discoveryClient ) migrationcenter. discoveryClients. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) migrationcenter. discoveryClients. sendHeartbeat Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Discovery Client ( roles/ migrationcenter.discoveryClient ) migrationcenter. discoveryClients. update Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Discovery Client Registrator ( roles/ migrationcenter.discoveryClientRegistrator ) migrationcenter. errorFrames. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Support User ( roles/ iam.supportUser ) migrationcenter. errorFrames. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) migrationcenter.groups.create Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) migrationcenter.groups.delete Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) migrationcenter.groups.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Support User ( roles/ iam.supportUser ) migrationcenter.groups.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) migrationcenter.groups.update Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) migrationcenter. importDataFiles. create Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) migrationcenter. importDataFiles. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) migrationcenter. importDataFiles. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Support User ( roles/ iam.supportUser ) migrationcenter. importDataFiles. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) migrationcenter. importJobs. create Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) migrationcenter. importJobs. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Migration Center Admin ( roles/ migrationcenter.admin ) migrationcenter.importJobs.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Migration Center Admin ( roles/ migrationcenter.admin ) Migration Center Viewer ( roles/ migrationcenter.viewer ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents ."
+        ]
+      },
+      {
+        "title": "\"Class MigrationCenterAsyncClient (0.4.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 262,
+        "relevance": "",
+        "evidence_snippets": [
+          "CreateReportConfigRequest ( parent=\"parent value\", report config id=\"report config id value\", report config=report config, ) Make the request operation = client. create report config (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.migrationcenter v1.types.CreateReportConfigRequest , dict]] The request object.",
+          "CreateReportRequest ( parent=\"parent value\", report id=\"report id value\", ) Make the request operation = client. create report (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.migrationcenter v1.types.CreateReportRequest , dict]] The request object.",
+          "Returns Type Description google.cloud.migrationcenter v1.types.ReportConfig The groups and associated preference sets on which we can generate reports. get settings get settings ( request : typing ."
+        ]
+      },
+      {
+        "title": "\"Class MigrationCenterClient (0.4.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "source_id": "site-python-reference",
+        "final_score": 262,
+        "relevance": "",
+        "evidence_snippets": [
+          "CreateReportConfigRequest ( parent=\"parent value\", report config id=\"report config id value\", report config=report config, ) Make the request operation = client. create report config (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.migrationcenter v1.types.CreateReportConfigRequest , dict] The request object.",
+          "CreateReportRequest ( parent=\"parent value\", report id=\"report id value\", ) Make the request operation = client. create report (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.migrationcenter v1.types.CreateReportRequest , dict] The request object.",
+          "Returns Type Description google.cloud.migrationcenter v1.types.ReportConfig The groups and associated preference sets on which we can generate reports. get settings get settings ( request : typing ."
+        ]
+      },
+      {
+        "title": "Generate TCO reports \\_|\\_ Migration Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/generate-tco-report",
+        "source_id": "site-docs-root",
+        "final_score": 262,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can view your TCO report directly in Migration Center, or export it to Google Slides or Google Sheets, or download it as a CSV file or a Microsoft Excel spreadsheet.",
+          "Limitations If you generate a TCO report for a group that contains a database deployment and its underlying server, Migration Center generates separate cost estimates for the server and the database.",
+          "Home Documentation Migration Migration Center Guides Send feedback Generate TCO reports Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "iam.securityAdmin",
+      "iam.securityAuditor",
+      "iam.securityReviewer",
+      "iam.supportUser",
+      "migrationcenter.admin",
+      "migrationcenter.assets.delete",
+      "migrationcenter.assets.get",
+      "migrationcenter.assets.list",
+      "migrationcenter.assets.update",
+      "migrationcenter.discoveryClient",
+      "migrationcenter.discoveryClientRegistrator",
+      "migrationcenter.errorFrames",
+      "migrationcenter.groups.create",
+      "migrationcenter.groups.delete",
+      "migrationcenter.groups.get",
+      "migrationcenter.groups.list",
+      "migrationcenter.groups.update",
+      "migrationcenter.importJobs.get",
+      "migrationcenter.locations",
+      "migrationcenter.locations.get",
+      "migrationcenter.locations.list",
+      "migrationcenter.operations.get",
+      "migrationcenter.relations",
+      "migrationcenter.relations.get",
+      "migrationcenter.relations.list",
+      "migrationcenter.reports.create",
+      "migrationcenter.reports.delete",
+      "migrationcenter.reports.get",
+      "migrationcenter.reports.list",
+      "migrationcenter.settings.get",
+      "migrationcenter.sources.create",
+      "migrationcenter.sources.delete",
+      "migrationcenter.sources.get",
+      "migrationcenter.sources.list",
+      "migrationcenter.sources.update",
+      "migrationcenter.viewer",
+      "operation.result",
+      "rapidmigrationassessment.serviceAgent",
+      "rma.annotations.create",
+      "rma.annotations.get",
+      "rma.collectors.create",
+      "rma.collectors.delete",
+      "rma.collectors.get",
+      "rma.collectors.list",
+      "rma.collectors.update",
+      "rma.locations",
+      "rma.locations.get",
+      "rma.locations.list",
+      "rma.operations.cancel",
+      "rma.operations.delete",
+      "rma.operations.get",
+      "rma.operations.list",
+      "serviceusage.quotas.get",
+      "storage.objects.get",
+      "v1.types.CreateImportDataFileRequest",
+      "v1.types.CreateReportConfigRequest",
+      "v1.types.CreateReportRequest",
+      "v1.types.ReportConfig"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/migrationcenter",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/generate-tco-report"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/migrationcenter",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/generate-tco-report"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/migrationcenter",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/generate-tco-report"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/migrationcenter",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/generate-tco-report"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/migrationcenter",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/generate-tco-report"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/migrationcenter",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/generate-tco-report"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/migrationcenter",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/generate-tco-report"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:28.580Z",
+  "source_step08_card": "data/step-08/current/products/migration-center/card.json",
+  "product_name": "Migration Center",
+  "product_slug": "migration-center"
+}

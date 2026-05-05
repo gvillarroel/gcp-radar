@@ -1,0 +1,105 @@
+{
+  "feature_name": "Cloud Firestore server client libraries",
+  "feature_slug": "cloud-firestore-server-client-libraries",
+  "summary": "Cloud Firestore provides server client libraries for C#, PHP, and Ruby.",
+  "extended_definition": "Cloud Firestore provides server client libraries for C#, PHP, and Ruby.",
+  "lifecycle": {
+    "latest_feature_date": "2018-02-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/reference/libraries",
+      "https://docs.cloud.google.com/firestore/native/docs/create-database-server-client-library",
+      "https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create a Firestore database by using a server client library\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/create-database-server-client-library",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a Firestore database by using a server client library This quickstart shows you how to set up Firestore, add data, and read data by using the C#, Go, Java, Node.js, PHP, Python, or Ruby server client library.",
+          "Java Add the Firestore Java library to your app: Using Maven: <dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>libraries-bom</artifactId> <version>26.65.0</version> <type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-firestore</artifactId> </dependency> pom.xml If you are using Gradle or setting up without BOM, see the Firestore Client for Java README.",
+          "WriteLine ( \"Created Cloud Firestore client with project ID: {0}\" , project ); Program . cs Ruby require \"google/cloud/firestore\" The project id parameter is optional and represents which project the client will act on behalf of."
+        ]
+      },
+      {
+        "title": "\"Class FirestoreAdminClient (2.23.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient",
+        "source_id": "site-python-reference",
+        "final_score": 157,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Python Client libraries Send feedback Class FirestoreAdminClient (2.23.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "FirestoreAdminClient () Initialize request argument(s) pitr snapshot = firestore admin v1.PitrSnapshot() pitr snapshot.database = \"database value\" request = firestore admin v1.CloneDatabaseRequest( parent=\"parent value\", database id=\"database id value\", pitr snapshot=pitr snapshot, ) Make the request operation = client . clone database (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[google.cloud.firestore admin v1.types.CloneDatabaseRequest, dict] The request object.",
+          "FirestoreAdminClient () Initialize request argument(s) request = firestore admin v1.RestoreDatabaseRequest( parent=\"parent value\", database id=\"database id value\", backup=\"backup value\", ) Make the request operation = client . restore database (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[google.cloud.firestore admin v1.types.RestoreDatabaseRequest, dict] The request object."
+        ]
+      },
+      {
+        "title": "Datastore mode client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/reference/libraries",
+        "source_id": "site-docs-root",
+        "final_score": 151,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Entity ( key = task key ) task [ \"description\" ] = \"Buy milk\" Saves the entity datastore client . put ( task ) print ( f \"Saved { task . key . name } : { task [ 'description' ] } \" ) Ruby Imports the Google Cloud client library require \"google/cloud/datastore\" Instantiate a client datastore = Google :: Cloud :: Datastore . new The kind for the new entity kind = \"Task\" The name/ID for the new entity task name = \"sampleTask\" The Cloud Datastore key for the new entity task key = datastore . key kind , task name Prepares the new entity task = datastore . entity task key do t t [ \"description\" ] = \"Buy milk\" end Saves the entity datastore . save task puts \"Saved #{ task . key . name } : #{ task [ 'description' ] } \" task key = datastore . find task key Additional resources C# The following list contains links to more resources related to the client library for C#: API reference Client libraries best practices Issue tracker google-cloud-datastore on Stack Overflow Source code Go The following list contains links to more resources related to the client library for Go: API reference Client libraries best practices Issue tracker google-cloud-datastore on Stack Overflow Source code Java The following list contains links to more resources related to the client library for Java: API reference Client libraries best practices Issue tracker google-cloud-datastore on Stack Overflow Source code Node.js The following list contains links to more resources related to the client library for Node.js: API reference Client libraries best practices Issue tracker google-cloud-datastore on Stack Overflow Source code PHP The following list contains links to more resources related to the client library for PHP: API reference Client libraries best practices Issue tracker google-cloud-datastore on Stack Overflow Source code Python The following list contains links to more resources related to the client library for Python: API reference Client libraries best practices Issue tracker google-cloud-datastore on Stack Overflow Source code Ruby The following list contains links to more resources related to the client library for Ruby: API reference Client libraries best practices Issue tracker google-cloud-datastore on Stack Overflow Source code Dependency on App Engine application See App Engine Requirement .",
+          "Although you can use Google Cloud APIs directly by making raw requests to the server, client libraries provide simplifications that significantly reduce the amount of code you need to write.",
+          "Google App Engine Standard Environment Client Libraries Integrate Firestore in Datastore mode with your App Engine Standard Environment applications by using the App Engine client libraries."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "autoload.php",
+      "com.google.cloud",
+      "field.name",
+      "operation.result",
+      "pom.xml",
+      "snapshot.database",
+      "v1.CloneDatabaseRequest",
+      "v1.Field",
+      "v1.PitrSnapshot",
+      "v1.RestoreDatabaseRequest",
+      "v1.types.CloneDatabaseRequest",
+      "v1.types.RestoreDatabaseRequest",
+      "v1.types.UpdateFieldRequest",
+      "v1.UpdateFieldRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/create-database-server-client-library",
+        "https://docs.cloud.google.com/datastore/docs/reference/libraries",
+        "https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:05.644Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore"
+}

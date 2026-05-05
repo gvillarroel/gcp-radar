@@ -1,0 +1,130 @@
+{
+  "feature_name": "Storage Write API quota monitoring metrics",
+  "feature_slug": "storage-write-api-quota-monitoring-metrics",
+  "summary": "Cloud Monitoring exposes quota usage and limit metrics for Storage Write API concurrent connections and throughput.",
+  "extended_definition": "Cloud Monitoring exposes quota usage and limit metrics for Storage Write API concurrent connections and throughput.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/admin-intro",
+      "https://docs.cloud.google.com/bigquery/docs/exporting-data",
+      "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot quota and limit errors \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "source_id": "site-docs-root",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To learn about limits and quotas, see Storage Write API and to see costs of using this API, see BigQuery data ingestion pricing .",
+          "To learn about limits and quotas, see Storage Write API and to see costs of using this API, see BigQuery data ingestion pricing .",
+          "To learn about limits and quotas, see Storage Write API and to see costs of using this API, see BigQuery data ingestion pricing ."
+        ]
+      },
+      {
+        "title": "Export table data to Cloud Storage \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/exporting-data",
+        "source_id": "site-docs-root",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the PromQL query editor, enter the following query: ( sum by (project id, quota metric, location) (increase({\"serviceruntime.googleapis.com/quota/rate/net usage\", monitored resource=\"consumer quota\", service=\"bigquery.googleapis.com\"}[1m])) / max by (project id, quota metric, location) ({\"serviceruntime.googleapis.com/quota/limit\", monitored resource=\"consumer quota\", service=\"bigquery.googleapis.com\", limit name=\"ExtractBytesPerDay\"}) ) > 0.01 If Auto-run isn't enabled, then click Run Query .",
+          "Error message Your usage exceeded quota for ExtractBytesPerDay Diagnosis If you are exporting a table that is larger than 50 TiB, the export fails because it exceeds the extraction limit .",
+          "You can compare your current usage against the quota limit to determine your quota usage for a particular type of job."
+        ]
+      },
+      {
+        "title": "Introduction to BigQuery administration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/admin-intro",
+        "source_id": "site-docs-reference-2",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "Quotas Google Cloud sets limits on the use of resources, including BigQuery resources, both to ensure fair usage of shared resources, and to protect you from runaway costs.",
+          "Troubleshoot In addition to the features described in this document for monitoring and managing your organization's BigQuery system, the following resources are available for troubleshooting problems that might arise: BigQuery error messages BigQuery billing questions Troubleshoot quota errors If you need additional assistance, see Get support .",
+          "Administration charts and alerts You can use Cloud Monitoring to create custom charts based on the resources, metrics, and any aggregation that you specify."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.admin",
+      "bigquery.googleapis.com",
+      "bigquery.jobUser",
+      "bigquery.user",
+      "serviceruntime.googleapis.com",
+      "storage.admin",
+      "storage.objectAdmin",
+      "storage.objects.create",
+      "storage.objects.delete"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.admin",
+      "roles/bigquery.jobUser",
+      "roles/bigquery.user",
+      "roles/storage.admin",
+      "roles/storage.objectAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "https://docs.cloud.google.com/bigquery/docs/exporting-data",
+        "https://docs.cloud.google.com/bigquery/docs/admin-intro"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "https://docs.cloud.google.com/bigquery/docs/exporting-data",
+        "https://docs.cloud.google.com/bigquery/docs/admin-intro"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "https://docs.cloud.google.com/bigquery/docs/exporting-data",
+        "https://docs.cloud.google.com/bigquery/docs/admin-intro"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "https://docs.cloud.google.com/bigquery/docs/exporting-data",
+        "https://docs.cloud.google.com/bigquery/docs/admin-intro"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

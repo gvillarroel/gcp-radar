@@ -1,0 +1,146 @@
+{
+  "feature_name": "Report and Replace API integration for Slurm",
+  "feature_slug": "report-and-replace-api-integration-for-slurm",
+  "summary": "Cluster Toolkit integrates the Report and Replace API with Slurm to report faulty nodes for repair or replacement.",
+  "extended_definition": "Cluster Toolkit integrates the Report and Replace API with Slurm to report faulty nodes for repair or replacement.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/create-a-slurm-cluster-h4d",
+      "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/create-a-slurm-cluster-with-a4",
+      "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/slurm-cluster",
+      "https://docs.cloud.google.com/cluster-toolkit/docs/simcenter-star-ccm/run-workload"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create an AI-optimized Slurm cluster with A4 VMs \\_|\\_ Cluster Toolkit \\_\\",
+        "url": "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/create-a-slurm-cluster-with-a4",
+        "source_id": "site-docs-reference",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "What's next Advanced Slurm tasks: Learn how to Redeploy the Slurm cluster Learn how to Test network performance on the Slurm cluster Learn how to manage host events: Manage host events across compute instances Manage host events across reservations View the topology of a compute instance Monitor compute instances in your Slurm cluster Report a faulty host Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "On Google Cloud, you can create a Cloud Storage bucket that has versioning enabled. gcloud storage buckets create gs://${GOOGLE CLOUD BUCKET NAME} \\ --project=${A4 RESERVATION PROJECT ID} \\ --default-storage-class=STANDARD \\ --location=${GOOGLE CLOUD BUCKET LOCATION} \\ --uniform-bucket-level-access gcloud storage buckets update gs://${GOOGLE CLOUD BUCKET NAME} --versioning Set up the Cluster Toolkit To create a Slurm cluster in a Google Cloud project, you can use Cluster Toolkit to handle deploying and provisioning the cluster.",
+          "Get required roles for your Compute Engine default service account To get the permissions that you need to deploy a Slurm cluster, ask your administrator to grant you the following IAM roles: Storage Object Viewer ( roles/storage.objectViewer ) on your project Compute Instance Admin (v1) ( roles/compute.instanceAdmin.v1 ) on your project Service Account User ( roles/iam.serviceAccountUser ) on the service account itself For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      },
+      {
+        "title": "\"Deploy an HPC cluster with Slurm \\_|\\_ Cluster Toolkit \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/slurm-cluster",
+        "source_id": "site-docs-reference",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Deploy the HPC cluster using Terraform To deploy the HPC cluster, complete the following steps: Use the gcluster deploy command to begin automatic deployment of your cluster: ./gcluster deploy hpc-slurm gcluster reports the changes that Terraform is proposing to make for your cluster.",
+          "To create a deployment folder from the cluster blueprint, run the following command from Cloud Shell: ./gcluster create examples/hpc-slurm.yaml \\ -l ERROR --vars project id= PROJECT ID Replace PROJECT ID with your project ID.",
+          "From the command line of the VM, run the hostname command using Slurm. srun -N 3 hostname This command creates three compute nodes for your HPC cluster."
+        ]
+      },
+      {
+        "title": "\"Create a Cloud RDMA-enabled HPC Slurm cluster with H4D instances \\_|\\_ Cluster\\",
+        "url": "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/create-a-slurm-cluster-h4d",
+        "source_id": "site-docs-reference",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Clone the Cluster Toolkit GitHub repository In Cloud Shell, clone the GitHub repository: git clone https://github.com/GoogleCloudPlatform/cluster-toolkit.git Go to the main working directory: cd cluster-toolkit/ Build the Cluster Toolkit binary In Cloud Shell, build the Cluster Toolkit binary from source by running the following command: make To verify the build, run the following command: To deploy an HPC-optimized Slurm cluster that uses H4D instances, you must use version v1.70.0 or later of the Cluster Toolkit. ./gcluster --version After building the binary, you are now ready to deploy clusters to run your jobs or workloads.",
+          "On Google Cloud, you can create a Cloud Storage bucket that has versioning enabled. gcloud storage buckets create gs://${GOOGLE CLOUD BUCKET NAME} \\ --project=${H4D RESERVATION PROJECT ID} \\ --default-storage-class=STANDARD \\ --location=${GOOGLE CLOUD BUCKET LOCATION} \\ --uniform-bucket-level-access gcloud storage buckets update gs://${GOOGLE CLOUD BUCKET NAME} --versioning Set up the Cluster Toolkit To create a Slurm cluster in a Google Cloud project, you can use Cluster Toolkit to handle deploying and provisioning the cluster.",
+          "What's next Learn how to Reconfigure the Slurm cluster Learn how to manage host events: Manage host events across VMs Manage host events across reservations View VMs topology Monitor VMs in your Slurm cluster Report a faulty host Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Compute Engine API \\_|\\_ Cluster Toolkit \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cluster-toolkit/docs/simcenter-star-ccm/run-workload",
+        "source_id": "site-docs-reference",
+        "final_score": 214,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set a default region and zone in which to deploy your compute nodes. gcloud config set compute/region REGION gcloud config set compute/zone ZONE Replace the following: REGION : your preferred region ZONE : a zone within your preferred region Define environment variables. export DEPLOYMENT NAME= DEPLOYMENT NAME export GOOGLE CLOUD PROJECT=gcloud config list --format 'value(core.project)' export CLUSTER REGION=gcloud config list --format 'value(compute.region)' export CLUSTER ZONE=gcloud config list --format 'value(compute.zone)' Replace DEPLOYMENT NAME with a name for your deployment.",
+          "To create a deployment folder from the cluster blueprint, run the following command from Cloud Shell: ./gcluster create community/examples/tutorial-starccm-slurm.yaml \\ --vars \"deployment name=${DEPLOYMENT NAME}\" \\ --vars \"project id=${GOOGLE CLOUD PROJECT}\" \\ --vars \"region=${CLUSTER REGION}\" \\ --vars \"zone=${CLUSTER ZONE}\" This command creates the DEPLOYMENT NAME / deployment folder, which contains the Terraform needed to deploy your cluster.",
+          "Two blueprints are provided for the deployment of the cluster as follows: community/examples/tutorial-starccm-slurm.yaml : this blueprint uses Slurm , which is a cluster management and job scheduling system that is used in many HPC centers."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.instanceAdmin.v1",
+      "compute.region",
+      "compute.zone",
+      "core.project",
+      "github.com",
+      "iam.serviceAccountUser",
+      "slurm.yaml",
+      "storage.objectViewer",
+      "toolkit.git",
+      "v1.70.0"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.instanceAdmin.v1",
+      "roles/iam.serviceAccountUser",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/create-a-slurm-cluster-with-a4",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/slurm-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/create-a-slurm-cluster-h4d",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/simcenter-star-ccm/run-workload"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/create-a-slurm-cluster-with-a4",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/slurm-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/create-a-slurm-cluster-h4d",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/simcenter-star-ccm/run-workload"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/create-a-slurm-cluster-with-a4",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/slurm-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/create-a-slurm-cluster-h4d",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/simcenter-star-ccm/run-workload"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/create-a-slurm-cluster-with-a4",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/slurm-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/quickstarts/create-a-slurm-cluster-h4d",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/simcenter-star-ccm/run-workload"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:45.465Z",
+  "source_step08_card": "data/step-08/current/products/cluster-toolkit/card.json",
+  "product_name": "Cluster Toolkit",
+  "product_slug": "cluster-toolkit"
+}

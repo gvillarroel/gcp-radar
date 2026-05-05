@@ -1,0 +1,91 @@
+{
+  "feature_name": "Cloud Build SLSA v1.0 provenance attestations",
+  "feature_slug": "cloud-build-slsa-v1-0-provenance-attestations",
+  "summary": "Cloud Build now generates repository-event-triggered provenance attestations that meet the SLSA v1.0 specification.",
+  "extended_definition": "Cloud Build now generates repository-event-triggered provenance attestations that meet the SLSA v1.0 specification.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/building/build-containerize-java",
+      "https://docs.cloud.google.com/build/docs/building/build-go",
+      "https://docs.cloud.google.com/build/docs/building/build-java"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Build, test, and containerize Java applications \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/building/build-containerize-java",
+        "source_id": "site-docs-root-2",
+        "final_score": 86,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following build step containerizes your application, pushes your container image to Artifact Registry, and generates build provenance information: maven steps: - name: gcr.io/cloud-builders/docker args: [ 'build' , '-t' , ' location -docker.pkg.dev/ project-id / repository / image ' , '--build-arg=JAR FILE=target/ build-artifact ' , '.' ] images: [ ' location -docker.pkg.dev/ project-id / repository / image ' ] gradle steps: - name: gcr.io/cloud-builders/docker args: [ 'build' , '-t' , ' location -docker.pkg.dev/ project-id / repository / image ' , '--build-arg=JAR FILE=build/libs/ build-artifact ' , '.' ] images: [ ' location -docker.pkg.dev/ project-id / repository / image ' ] Where: location : the regional or multi-regional location for your repository. project-id : the ID of your Google Cloud project. repository : the name of your repository Artifact Registry. image : the name of your container image. build-artifact : the name of your JAR file created from your build step.",
+          "Optional: Add requestedVerifyOption: VERIFIED within the options field in your build config file to enable Supply chain Levels for Software Artifacts (SLSA) provenance generation.",
+          "This page explains how to use Cloud Build to build, test, and containerize Java-based applications, upload your container images to Artifact Registry, and generate build provenance."
+        ]
+      },
+      {
+        "title": "Build and test Go applications \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/building/build-go",
+        "source_id": "site-docs-root-2",
+        "final_score": 78,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Optional: Enable provenance generation Cloud Build can generate verifiable Supply chain Levels for Software Artifacts (SLSA) build provenance metadata to help secure your continuous integration pipeline.",
+          "A subsequent build step will save the logs in this file to Cloud Storage. steps : Run tests and save to file - name : golang:1.23 entrypoint : /bin/bash args : - -c - go install github.com/jstemmer/go-junit-report/v2@latest 2>&1 go test -timeout 1m -v ./... /go/bin/go-junit-report -set-exit-code -iocopy -out ${SHORT SHA} test log.xml Upload to Artifact Registry : In your config file, use the goModules field to specify your application path and your Go repository in Artifact Registry: Upload Go module to artifact registry artifacts : goModules : - repositoryName : ' repositoryName ' repositoryLocation : ' location ' repositoryProjectId : ' projectId ' sourcePath : ' sourcePath ' modulePath : ' appPath ' moduleVersion : ' version ' Replace the following values: repositoryName : the name of your Go repository in Artifact Registry. location : the location for your repository in Artifact Registry. projectId : the ID of the Google Cloud project that contains your Artifact Registry repository. sourcePath : the path to the go.mod file in the build's workspace. appPath : the path to your packaged application. version : the version number for your application, formatted in numbers and dots like v1.0.1 .",
+          "The following build step stores the test logs that you saved in the JUNIT XML file to a Cloud Storage bucket: Save test logs to Google Cloud Storage artifacts : objects : location : gs://$ BUCKET NAME/ paths : - ${SHORT SHA} test log.xml The following snippet shows the complete build config file for the preceding steps: steps : Run tests and save to file - name : golang:1.23 entrypoint : /bin/bash args : - -c - go install github.com/jstemmer/go-junit-report/v2@latest 2>&1 go test -timeout 1m -v ./... /go/bin/go-junit-report -set-exit-code -iocopy -out ${SHORT SHA} test log.xml Store golang modules in Google Artifact Registry artifacts : goModules : - repositoryName : ' repositoryName ' repositoryLocation : ' location ' repositoryProjectId : ' projectId ' sourcePath : ' sourcePath ' modulePath : ' appPath ' moduleVersion : ' version ' Start the build using the gcloud CLI or create a build trigger : Google Cloud CLI gcloud builds submit -- region = us - west2 -- config = cloudbuild . yaml \\ -- substitutions = AR REPO NAME = \" AR REPO NAME \" Build Triggers Follow the steps in Create a build trigger ."
+        ]
+      },
+      {
+        "title": "Build and test Java applications \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/building/build-java",
+        "source_id": "site-docs-root",
+        "final_score": 78,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Optional: Enable provenance generation Cloud Build can generate verifiable Supply chain Levels for Software Artifacts (SLSA) build provenance metadata to help secure your continuous integration pipeline.",
+          "This page explains how to use Cloud Build to build and test Java-based applications, store built artifacts in a Maven repository in Artifact Registry, and generate build provenance information.",
+          "Upload to Artifact Registry : In your build config file, use the mavenArtifacts field to specify your application path and your Maven repository in Artifact Registry: artifacts : mavenArtifacts : - repository : ' https : // location -maven.pkg.dev/ project-id / repository-name ' path : ' app - path ' artifactId : ' build - artifact ' groupId : ' group - id ' version : ' version ' Replace the following values: location : the location for your repository in Artifact Registry. project-id : the ID of the Google Cloud project that contains your Artifact Registry repository. repository-name : the name of your Maven repository in Artifact Registry. app-path : the path to your packaged application. build-artifact : the name of your package file created from your build step. group-id : uniquely identifies your project across all Maven projects, in the format com.mycompany.app ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.mycompany.app",
+      "docker.pkg.dev",
+      "gcr.io",
+      "github.com",
+      "go.mod",
+      "log.xml",
+      "maven.pkg.dev",
+      "v1.0",
+      "v1.0.1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:27.705Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build"
+}

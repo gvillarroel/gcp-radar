@@ -1,0 +1,141 @@
+{
+  "feature_name": "Vertex AI Agent Engine LlamaIndex Query Pipeline integration",
+  "feature_slug": "vertex-ai-agent-engine-llamaindex-query-pipeline-integration",
+  "summary": "LlamaIndex Query Pipeline integration is now available in preview for Vertex AI Agent Engine.",
+  "extended_definition": "LlamaIndex Query Pipeline integration is now available in preview for Vertex AI Agent Engine.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/manage/tracing",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Develop a LlamaIndex Query Pipeline agent \\_|\\_ Vertex AI Agent Builder\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline",
+        "source_id": "site-docs-reference",
+        "final_score": 350,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "NEXT : '3' > : RelatedNodeInfo ( node id = 'f7d2cb7e-fa0c-40bf-b8e7-b888e36b87f9' , node type = '1' , metadata = {}, hash = 'db7cc1a67fa3afd1e5f24c8c61583781ce6a00c444da8f25a5374468c17b7de0' ) }, metadata template = ' {key} : {value} ' , metadata separator = ' \\n ' , text = 'So I looked around to see what I could salvage from the wreckage of my plans, and there was Lisp...' , mimetype = 'text/plain' , start char idx = 7166 , end char idx = 11549 , metadata separator = ' \\n ' , text template = ' {metadata str} \\n\\n {content} ' ), score = 0.7403571819090398 ) ] To use the retriever inside LlamaIndexQueryPipelineAgent , add it under the retriever builder= argument: from vertexai.preview import reasoning engines agent = reasoning engines .",
+          "Request () creds . refresh ( auth req ) if model kwargs is None : model kwargs = {} endpoint = f \"https:// { location } -aiplatform.googleapis.com\" api base = f ' { endpoint } /v1beta1/projects/ { project } /locations/ { location } /endpoints/openapi' return OpenAILike ( model = model name , api base = api base , api key = creds . token , model kwargs , ) Use the model in LlamaIndexQueryPipelineAgent : from vertexai.preview import reasoning engines agent = reasoning engines .",
+          "LlamaIndexQueryPipelineAgent ( model = model , system instruction = system instruction , ) You can override the default prompt template with your own prompt template, and use it when constructing the agent: prompt str = \"Please answer {question} about {name} \" prompt tmpl = PromptTemplate ( prompt str ) from vertexai.preview import reasoning engines agent = reasoning engines ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Develop and deploy agents on Vertex AI Agent Engine \\_|\\_ Vertex\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 297,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Develop and deploy agents on Vertex AI Agent Engine This page demonstrates how to create and deploy an agent to Vertex AI Agent Engine Runtime using the following agent frameworks: LangGraph LangChain AG2 LlamaIndex Query Pipeline (preview) This quickstart guides you through the following steps: Set up your Google Cloud project.",
+          "For more information, see the launch stage descriptions . agent . query ( input = \"What is the exchange rate from US dollars to SEK today?\" ) Deploy an agent Deploy the agent by creating a reasoningEngine resource in Vertex AI: LangGraph remote agent = client . agent engines . create ( agent , config = { \"requirements\" : [ \"google-cloud-aiplatform[agent engines,langchain]\" ], }, ) LangChain remote agent = client . agent engines . create ( agent , config = { \"requirements\" : [ \"google-cloud-aiplatform[agent engines,langchain]\" ], }, ) AG2 remote agent = client . agent engines . create ( agent , config = { \"requirements\" : [ \"google-cloud-aiplatform[agent engines,ag2]\" ], }, ) LlamaIndex Preview This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "For more information, see the launch stage descriptions . from vertexai.preview import reasoning engines def runnable with tools builder ( model , runnable kwargs = None , kwargs ): from llama index.core.query pipeline import QueryPipeline from llama index.core.tools import FunctionTool from llama index.core.agent import ReActAgent llama index tools = [] for tool in runnable kwargs . get ( \"tools\" ): llama index tools . append ( FunctionTool . from defaults ( tool )) agent = ReActAgent . from tools ( llama index tools , llm = model , verbose = True ) return QueryPipeline ( modules = { \"agent\" : agent }) agent = reasoning engines ."
+        ]
+      },
+      {
+        "title": "\"Use agent identity with Vertex AI Agent Engine \\_|\\_ Vertex AI Agent Builder\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "source_id": "site-docs-root",
+        "final_score": 274,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you deploy an ADK agent to Vertex AI Agent Engine Runtime, you need to build a custom frontend and migrate ADK-web authentication or redirect code into your frontend to perform the same OAuth integration.",
+          "The Agent Engine instance is created with a read-only, system attested agent identity (a principal identifier ): Agent identity Format principal:// TRUST DOMAIN / NAMESPACE / AGENT NAME Example agent identity principal://agents.global.org- ORGANIZATION ID .system.id.goog/resources/aiplatform/projects/ PROJECT NUMBER /locations/ LOCATION /reasoningEngines/ AGENT ENGINE ID The following parts are auto-provisioned to you as part of agent identity: TRUST DOMAIN : A trust domain is provisioned for you when you enable the Vertex AI API: If you have an organization, the trust domain is created at the organization level with the format agents.global.org- ORGANIZATION ID .system.id.goog .",
+          "Define the agent in your preferred framework: from google.adk.agents import Agent agent = Agent ( model = \"gemini-2.5-flash\" , name = \"minimal agent\" , instruction = \"You are a helpful assistant.\" , ) Then, deploy it: import vertexai from vertexai import types from vertexai.agent engines import AdkApp Initialize the Vertex AI client with v1beta1 API for agent identity support client = vertexai ."
+        ]
+      },
+      {
+        "title": "Trace an agent \\_|\\_ Vertex AI Agent Builder \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/manage/tracing",
+        "source_id": "site-iam-reference",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: from vertexai.preview import reasoning engines def runnable with tools builder ( model , runnable kwargs = None , kwargs ): from llama index.core.query pipeline import QueryPipeline from llama index.core.tools import FunctionTool from llama index.core.agent import ReActAgent llama index tools = [] for tool in runnable kwargs . get ( \"tools\" ): llama index tools . append ( FunctionTool . from defaults ( tool )) agent = ReActAgent . from tools ( llama index tools , llm = model , verbose = True ) return QueryPipeline ( modules = { \"agent\" : agent }) agent = reasoning engines .",
+          "For example: from vertexai.agent engines import LanggraphAgent agent = LanggraphAgent ( model = model , # Required. tools = [ get exchange rate ], # Optional. enable tracing = True , # [New] Optional. ) LlamaIndex Preview This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "LlamaIndexQueryPipelineAgent ( model = \"gemini-2.0-flash\" , runnable kwargs = { \"tools\" : [ get exchange rate ]}, runnable builder = runnable with tools builder , enable tracing = True , # Optional ) Custom To enable tracing for custom agents , visit Tracing using OpenTelemetry for details."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "agents.global.org",
+      "aiplatform.googleapis.com",
+      "index.core.agent",
+      "index.core.query",
+      "index.core.tools",
+      "index.llms.anthropic",
+      "system.id.goog",
+      "vertexai.agent",
+      "vertexai.preview"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/quickstart",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/tracing"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/quickstart",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/tracing"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/quickstart",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/tracing"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/quickstart",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/tracing"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:43.725Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-agent-builder/card.json",
+  "product_name": "Vertex AI Agent Builder",
+  "product_slug": "vertex-ai-agent-builder"
+}

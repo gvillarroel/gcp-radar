@@ -1,0 +1,146 @@
+{
+  "feature_name": "Aggregated ClusterRoles",
+  "feature_slug": "aggregated-clusterroles",
+  "summary": "Config Connector aggregates cnrm-admin and cnrm-viewer ClusterRoles into standard Kubernetes admin, edit, and view roles.",
+  "extended_definition": "Config Connector aggregates cnrm-admin and cnrm-viewer ClusterRoles into standard Kubernetes admin, edit, and view roles.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Monitoring Config Connector with Prometheus \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "source_id": "site-docs-reference",
+        "final_score": 61,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Name Type Labels Description configconnector reconcile requests total Counter Namespace group version kind status The total number of reconcile requests. configconnector reconcile request duration seconds Histogram Namespace group version kind status Distributions of the time to complete reconcile requests. configconnector applied resources total Gauge Namespace group version kind status The total number of resources under management. configconnector build info Gauge version Current version of Config Connector. configconnector reconcile workers total Gauge group version kind The total number of reconcile workers aggregated by resource kind. configconnector reconcile occupied workers total Gauge group version kind The total number of occupied reconcile workers aggregated by resource kind.",
+          "By default, metrics are aggregated on resource kind (for example, PubSubTopic).",
+          "You can enable metrics to be aggregated by individual resources."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions",
+        "source_id": "site-docs-reference",
+        "final_score": 60,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Organization owner permission To expand Config Connector's permissions so it can manage all projects and folders for a given organization, complete the following steps: Create the following YAML manifest: apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPolicyMember metadata : name : iampolicymember-orglevel-permission namespace : NAMESPACE spec : member : serviceAccount: SERVICE ACCOUNT NAME @ HOST PROJECT ID . iam.gserviceaccount.com role : roles/owner resourceRef : kind : Organization external : ORGANIZATION ID Replace the following: NAMESPACE with the name of your namespace SERVICE ACCOUNT NAME with your service account name HOST PROJECT ID with the host project ID of your service account roles/owner with the appropriate role ORGANIZATION ID with your organization ID Apply the YAML manifest to your cluster using kubectl or any config management tools of your choice.",
+          "Folder owner permission To expand Config Connector's permissions so it can manage all projects and folders in a given folder, complete the following steps: Create the following YAML manifest: apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPolicyMember metadata : name : iampolicymember-orglevel-permission namespace : NAMESPACE spec : member : serviceAccount: SERVICE ACCOUNT NAME @ HOST PROJECT ID . iam.gserviceaccount.com role : roles/owner resourceRef : kind : Folder external : folders/ FOLDER ID Replace the following: NAMESPACE with the name of your namespace SERVICE ACCOUNT NAME with your service account name HOST PROJECT ID with the host project ID of your service account roles/owner with the appropriate role FOLDER ID with your folder ID Apply the YAML manifest to your cluster using kubectl or any config management tools of your choice.",
+          "Project owner permissions To allow Config Connector to manage a specific project's resources, complete the following steps: Create the following YAML manifest: apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPolicyMember metadata : name : iampolicymember-orglevel-permission namespace : NAMESPACE spec : member : serviceAccount: SERVICE ACCOUNT NAME @ HOST PROJECT ID . iam.gserviceaccount.com role : roles/owner resourceRef : kind : Project external : projects/ PROJECT ID Replace the following: NAMESPACE with the name of your namespace SERVICE ACCOUNT NAME with your service account name HOST PROJECT ID with the host project ID of your service account roles/owner with the appropriate role PROJECT ID with your target project ID Apply the YAML manifest to your cluster using kubectl or any config management tools of your choice."
+        ]
+      },
+      {
+        "title": "IAMPartialPolicy \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "source_id": "site-docs-root-2",
+        "final_score": 56,
+        "relevance": "",
+        "evidence_snippets": [
+          "It will merge with the existing bindings on the project. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPartialPolicy metadata : name : iampartialpolicy-sample-project spec : resourceRef : kind : Project name : iampartialpolicy-dep-project bindings : - role : roles/storage.admin members : - member : serviceAccount:iampartialpolicy-dep-project@iampartialpolicy-dep-project.iam.gserviceaccount.com - role : roles/editor members : - memberFrom : serviceAccountRef : name : iampartialpolicy-dep-project --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : annotations : cnrm.cloud.google.com/project-id : iampartialpolicy-dep-project name : iampartialpolicy-dep-project --- apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project metadata : annotations : cnrm.cloud.google.com/auto-create-network : \"false\" name : iampartialpolicy-dep-project spec : name : Config Connector Sample organizationRef : Replace \"${ORG ID?}\" with the numeric ID for your organization external : \"${ORG ID?}\" PubSub Admin IAMPartialPolicy Copyright 2020 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License.",
+          "Replace ${PROJECT ID?} below with your desired project ID. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPartialPolicy metadata : name : iampartialpolicy-sample-pubsubadmin spec : resourceRef : kind : PubSubTopic name : iampartialpolicy-dep-pubsubadmin bindings : - role : roles/editor members : - member : serviceAccount:partialpolicy-dep-pubsubadmin@${PROJECT ID?}.iam.gserviceaccount.com --- Replace ${PROJECT ID?} below with your desired project ID. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : annotations : cnrm.cloud.google.com/project-id : ${PROJECT ID?} name : partialpolicy-dep-pubsubadmin --- apiVersion : pubsub.cnrm.cloud.google.com/v1beta1 kind : PubSubTopic metadata : name : iampartialpolicy-dep-pubsubadmin Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .",
+          "Property Value Google Cloud Service Name IAM Google Cloud Service Documentation /iam/docs/ Google Cloud REST Resource Name v1.iamPolicies Google Cloud REST Resource Documentation /iam/reference/rest/v1/iamPolicies Config Connector Resource Short Names gcpiampartialpolicy gcpiampartialpolicies iampartialpolicy Config Connector Service Name iam.googleapis.com Config Connector Resource Fully Qualified Name iampartialpolicies.iam.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Supported Resources You can use IAMPartialPolicy to configure IAM for the following resources."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cnrm.cloud.google.com",
+      "iam.cnrm.cloud.google.com",
+      "iam.googleapis.com",
+      "iam.gserviceaccount.com",
+      "iampartialpolicies.iam.cnrm.cloud.google.com",
+      "project.iam.gserviceaccount.com",
+      "pubsub.cnrm.cloud.google.com",
+      "resourcemanager.cnrm.cloud.google.com",
+      "spec.args",
+      "storage.admin",
+      "v1.iamPolicies"
+    ],
+    "missing_inventory_roles": [
+      "roles/editor",
+      "roles/owner",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampartialpolicy",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:47.576Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector"
+}

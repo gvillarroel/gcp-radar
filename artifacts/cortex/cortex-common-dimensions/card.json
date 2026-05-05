@@ -1,0 +1,134 @@
+{
+  "feature_name": "Cortex Common Dimensions",
+  "feature_slug": "cortex-common-dimensions",
+  "summary": "Cortex Common Dimensions provides shared utility views and tables such as country, product hierarchy, and currency conversion across data sources.",
+  "extended_definition": "Cortex Common Dimensions provides shared utility views and tables such as country, product hierarchy, and currency conversion across data sources.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cortex/docs/datamesh",
+      "https://docs.cloud.google.com/cortex/docs/deployment-step-five",
+      "https://docs.cloud.google.com/cortex/docs/looker-block-customize"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customize Looker Blocks \\_|\\_ Google Cloud Cortex Framework \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/cortex/docs/looker-block-customize",
+        "source_id": "site-docs-reference",
+        "final_score": 132,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BUSINESS UNIT NAME ) ;; } } Include the new refinement in the Explore : Use the new file in the include property instead of the refinement provided in the Cortex Framework Looker Block. include : \"/views/my customizations/sales invoices rfn.view\" explore : sales invoices { } Editing LookML dashboard filters The common set of dashboard filters used across multiple LookML dashboards are defined in a dashboard named with template suffix and extended into each dashboard.",
+          "The Cortex Framework Looker Blocks have been created in a layered approach where each layer adds an incremental piece of logic onto the previous layer: Base Layer : Machine-generated LookML views referencing source tables.",
+          "Significant modifications to these views like labels, new dimensions and measures have been created in the Core folder using refinements , extends or derived tables ."
+        ]
+      },
+      {
+        "title": "\"(Deprecated) Data Mesh User Guide \\_|\\_ Google Cloud Cortex Framework \\_\\",
+        "url": "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "source_id": "site-docs-reference",
+        "final_score": 105,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To ensure that you are deploying with required packages and versions, you can run the utility from the same image used by the Cortex deployment process with the following commands: Run container interactively docker container run -it gcr.io/kittycorn-public/deploy-kittycorn:v2.0 Clone the repo git clone https://github.com/GoogleCloudPlatform/cortex-data-foundation Navigate into the repo cd cortex-data-foundation For help with the available parameters and their usage, run the following command: python src/common/data mesh/deploy data mesh.py -h The following is an example for invocation for SAP ECC: python src/common/data mesh/deploy data mesh.py \\ --config-file config/config.json \\ --lake-directories \\ src/SAP/SAP REPORTING/config/ecc/lakes \\ --tag-template-directories \\ src/SAP/SAP REPORTING/config/ecc/tag templates \\ --policy-directories \\ src/SAP/SAP REPORTING/config/ecc/policy taxonomies \\ --annotation-directories \\ src/SAP/SAP REPORTING/config/ecc/annotations See the Data Mesh directories section for information about directory locations.",
+          "The following sections are particularly relevant: Roles interact Authorization inheritance Masking rules and hierarchy Policy tag best practices Cortex Framework provides sample policy tags to demonstrate how they are specified and potential uses, however resources that affect access control are not enabled in the Data Mesh deployment by default.",
+          "Asset and Column Level Access Control with Tag Templates Cortex Framework provides the ability to enable asset or column level access control on all artifacts that are associated with a Catalog Tag Template."
+        ]
+      },
+      {
+        "title": "\"Step 5: Configure deployment \\_|\\_ Google Cloud Cortex Framework \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/cortex/docs/deployment-step-five",
+        "source_id": "site-docs-reference",
+        "final_score": 71,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The configuration files for each workload are located in the following paths within the Cortex Framework Data Foundation repository: Data Source Settings files Operational - SAP src/SAP/SAP REPORTING/reporting settings ecc.yaml Operational - Salesforce Sales Cloud src/SFDC/config/reporting settings.yaml Operational - Oracle EBS src/oracleEBS/config/reporting settings.yaml Marketing - Google Ads src/marketing/src/GoogleAds/config/reporting settings.yaml Marketing - CM360 src/marketing/src/CM360/config/reporting settings.yaml Marketing - Meta src/marketing/src/Meta/config/reporting settings.yaml Marketing - Salesforce Marketing Cloud src/marketing/src/SFMC/config/reporting settings.yaml Marketing - TikTok src/marketing/src/TikTok/config/reporting settings.yaml Marketing - YouTube (with DV360) src/marketing/src/DV360/config/reporting settings.yaml Marketing - Google Analytics 4 src/marketing/src/GA4/config/reporting settings.yaml Marketing - Cross Media & Product Connected Insights src/marketing/src/CrossMedia/config/reporting settings.yaml Customizing reporting settings file The reporting settings files drives how the BigQuery objects (tables or views) are created for reporting datasets.",
+          "Performance optimization for reporting views Reporting artifacts can be created as views or as tables refreshed regularly through DAGs.",
+          "Note: Test data deployment will only execute if the raw dataset is empty and has no tables . deploySAP Deploy SAP true Execute the deployment for SAP workload (ECC or S/4 HANA). deploySFDC Deploy Salesforce true Execute the deployment for Salesforce workload. deployMarketing Deploy Marketing true Execute the deployment for Marketing sources (Google Ads, CM360, and TikTok). deployOracleEBS Deploy Oracle EBS true Execute the deployment for Oracle EBS workload. enableTaskDependencies Task dependent DAGs false Enable task dependent DAGs so supported SQL tables will be executed based on dependency order, within single DAGs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.json",
+      "ecc.yaml",
+      "gcr.io",
+      "github.com",
+      "mesh.py",
+      "rfn.view",
+      "rfn2.view",
+      "settings.yaml",
+      "v2.0",
+      "v4.2",
+      "v5.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/looker-block-customize",
+        "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-five"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/looker-block-customize",
+        "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-five"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/looker-block-customize",
+        "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-five"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/looker-block-customize",
+        "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-five"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/looker-block-customize",
+        "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-five"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:52.886Z",
+  "source_step08_card": "data/step-08/current/products/cortex/card.json",
+  "product_name": "Cortex",
+  "product_slug": "cortex"
+}

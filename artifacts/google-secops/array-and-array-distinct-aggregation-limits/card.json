@@ -1,0 +1,119 @@
+{
+  "feature_name": "Array and array_distinct aggregation limits",
+  "feature_slug": "array-and-array-distinct-aggregation-limits",
+  "summary": "The element limit for array and array_distinct aggregation functions in YARA-L has increased to 1,000.",
+  "extended_definition": "The element limit for array and array_distinct aggregation functions in YARA-L has increased to 1,000.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+      "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Functions \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can use these functions in the following parts of a YARA-L query: events section BOOL CLAUSE of a conditional in the outcome section arrays.concat Supported in: Rules Search arrays.concat(string array, string array) Description Returns a new string array by copying elements from original string arrays.",
+          "Param data types ARRAY STRINGS , STRING Return type STRING Code samples Here are some examples of how to use the function: Example 1 This example joins an array with non-null elements and a delimiter. arrays.join string([\"foo\", \"bar\"], \",\") = \"foo,bar\" Example 2 This example joins an array with a null element and a delimiter. arrays.join string([\"foo\", NULL, \"bar\"], \",\") = \"foo,bar\" Example 3 This example joins an array with non-null elements and no delimiter. arrays.join string([\"foo\", \"bar\"]) = \"foobar\" arrays.length Supported in: Rules Search arrays.length(repeatedField) Description Returns the number of repeated field elements.",
+          "Param data types ARRAY STRINGS ARRAY INTS ARRAY FLOATS , INT Return type FLOAT Code samples Example 1 The following example fetches an element at index 1 from an array of floats. arrays.index to float([1.2, 2.1, 3.5, 4.6], 1) // 2.1 Example 2 The following example fetches an element at index -1 from an array of floats. arrays.index to float([1.2, 2.1, 3.5, 4.6], 0-1) // 4.6 Example 3 The following example fetches an element for an index greater than the size of the array. arrays.index to float([1.2, 2.1, 3.5, 4.6], 6) // 0.0 Example 4 The following example fetches an element from an empty array. arrays.index to float([], 0) // 0.0 Example 5 The following example fetches an element at index 1 from a string array. arrays.index to float([\"1.2\", \"3.3\", \"2.4\"], 1) // 3.3 Example 6 The following example fetches an element at index 2 from an array of integers. arrays.index to float([1, 3, 2], 2) // 2.0 arrays.index to int Supported in: Rules Search arrays.index to int(array of inputs, index) Description Returns the value at a given index in an array as an integer."
+        ]
+      },
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "Feature Programmatic access limit Web interface limit QPH limit 2,000 1,000 Simple query concurrency 40 40 Complex query concurrency 10 10 Concurrency limits Concurrency limits define the number of simultaneous search operations allowed per tenant: Simple queries: Queries that span less than one day, use a single data source, and don't include stats.",
+          "For example, if you add the following to your search, it limits the results to a maximum of 25: limit: 25 Note: You can also add the limit keyword to custom dashboards.",
+          "Search limits and quotas Google SecOps enforces limits on search queries to ensure platform stability and consistent performance across programmatic and web interface."
+        ]
+      },
+      {
+        "title": "Detection Engine \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "source_id": "site-docs-reference-2",
+        "final_score": 131,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Sample response (specific version of rule - retrohunt done) { \"retrohuntId\": \"oh 95805380-2d44-4aab-9306-929789eba814\", \"ruleId\": \"ru 30979d84-aa89-47d6-bf4d-b4bb0eacb497\", \"versionId\": \"ru 30979d84-aa89-47d6-bf4d-b4bb0eacb497@v 1612472807 179679000\", \"eventStartTime\": \"2021-01-01T23:00:00Z\", \"eventEndTime\": \"2021-01-30T23:00:00Z\", \"retrohuntStartTime\": \"2021-02-08T03:22:57.910122Z\", \"retrohuntEndTime\": \"2021-02-08T03:23:44.510819Z\", \"state\": \"DONE\", \"progressPercentage\": 100 } Limitations See the detailed list of the Backstory API query limits .",
+          "If you use a library which supports streaming, you can view the stream response from Google SecOps as a stream of bytes that represent a continuous JSON array (for example, [{\"key1\": \"value1\"},{\"key2\": \"value2\"}, {\"key3\": \"value3\"}, ...] For this code sample, one element of the JSON array is referred to as a \"detection batch\".",
+          "The max results parameter only limits the number of detections returned, not the number of errors."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "arrays.concat",
+      "arrays.index",
+      "arrays.join",
+      "arrays.length"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:18.186Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops"
+}

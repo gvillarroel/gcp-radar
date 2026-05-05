@@ -1,0 +1,155 @@
+{
+  "feature_name": "Cortex for Meridian",
+  "feature_slug": "cortex-for-meridian",
+  "summary": "Cortex for Meridian supplies ready data models and automated Meridian model execution workflows for marketing mix modeling on Google Cloud.",
+  "extended_definition": "Cortex for Meridian supplies ready data models and automated Meridian model execution workflows for marketing mix modeling on Google Cloud.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cortex/docs/data-sources-and-workloads",
+      "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+      "https://docs.cloud.google.com/cortex/docs/deployment-step-three"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Step 4: Set up components \\_|\\_ Google Cloud Cortex Framework \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+        "source_id": "site-docs-reference",
+        "final_score": 140,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable Google Cloud services In this section you enable the following Google Cloud services in your Google Cloud project: BigQuery instance and datasets Cloud Build API Cloud Storage Buckets Service account Cloud Resource Manager API Workflow executions (if deploying Cortex for Meridian ) AI Platform (if deploying Cortex for Meridian ) Enable these Google Cloud services using Cloud Shell : Copy and paste the following command: gcloud config set project SOURCE PROJECT gcloud services enable bigquery.googleapis.com \\ cloudbuild.googleapis.com \\ composer.googleapis.com \\ storage-component.googleapis.com \\ cloudresourcemanager.googleapis.com \\ dataflow.googleapis.com \\ datacatalog.googleapis.com \\ workflowexecutions.googleapis.com \\ workflows.googleapis.com \\ aiplatform.googleapis.com Replace SOURCE PROJECT with your source project ID.",
+          "For Cortex Framework with Meridian: Colab Enterprise: Running the Colab Enterprise notebook during and execution having access to the following: The notebook and configuration file on Cloud Storage.",
+          "Note: workflowexecutions.googleapis.com , workflows.googleapis.com , and aiplatform.googleapis.com are only needed with Cortex Framework for Meridian."
+        ]
+      },
+      {
+        "title": "\"Step 3: Determine integration mechanism \\_|\\_ Google Cloud Cortex Framework\\",
+        "url": "https://docs.cloud.google.com/cortex/docs/deployment-step-three",
+        "source_id": "site-docs-reference",
+        "final_score": 112,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Operational: SAP (SAP ECC or SAP S/4 HANA) Salesforce Sales Cloud Oracle EBS Marketing: Google Ads Campaign Manager 360 (CM360) TikTok LiveRamp Meta (Facebook / Instagram) Salesforce Marketing Cloud (SFMC) YouTube (with DV360) Google Analytics 4 Cross Media & Product Connected Insights Cortex for Meridian Sustainability: Dun & Bradstreet For more information about the Entity-Relationship Diagrams that each data source supports, see the docs folder in the Cortex Framework Data Foundation repository.",
+          "The post-processing K9 steps occurs after all workloads have deployed their reporting models to enable cross-workload reporting or augmenting models to find their necessary dependencies within each individual reporting dataset.",
+          "The pre-processing K9 step runs before all workloads start their deployment, so the reusable models are available during their deployment."
+        ]
+      },
+      {
+        "title": "\"Data sources and workloads \\_|\\_ Google Cloud Cortex Framework \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/cortex/docs/data-sources-and-workloads",
+        "source_id": "site-docs-reference",
+        "final_score": 102,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "By integrating data from diverse sources and using Cortex Framework's predefined models, you can make informed decisions, optimize resources, and gain accurate, up-to-date insights into your marketing efforts.",
+          "The Cortex Framework gives you the tools to use this data foundation, create pipelines for new data ingestion, perform analysis, and build dashboards or AI models.",
+          "The following are the marketing related data sources available: Salesforce Marketing Cloud Google Ads Campaign Manager 360 (CM360) TikTok Meta LiveRamp YouTube (with DV360) Google Analytics 4 Cross Media & Product Connected Insights Cortex for Meridian Operational Cortex Framework incorporates operational platforms such as SAP (SAP ECC and SAP S/4 HANA) and Salesforce as valuable data sources to get real-time insights to improve efficiency and productivity in different areas."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.colabEnterpriseAdmin",
+      "aiplatform.colabServiceAgent",
+      "aiplatform.googleapis.com",
+      "aiplatform.notebookRuntimeAdmin",
+      "bigquery.dataViewer",
+      "bigquery.googleapis.com",
+      "bigquery.jobUser",
+      "bigquery.readSessionUser",
+      "cloudbuild.builds.editor",
+      "cloudbuild.googleapis.com",
+      "cloudresourcemanager.googleapis.com",
+      "component.googleapis.com",
+      "composer.googleapis.com",
+      "datacatalog.googleapis.com",
+      "dataflow.googleapis.com",
+      "iam.gserviceaccount.com",
+      "logging.logWriter",
+      "storage.admin",
+      "storage.objectUser",
+      "workflowexecutions.googleapis.com",
+      "workflows.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.colabEnterpriseAdmin",
+      "roles/aiplatform.colabServiceAgent",
+      "roles/aiplatform.notebookRuntimeAdmin",
+      "roles/bigquery.dataViewer",
+      "roles/bigquery.jobUser",
+      "roles/bigquery.readSessionUser",
+      "roles/cloudbuild.builds.editor",
+      "roles/logging.logWriter",
+      "roles/storage.admin",
+      "roles/storage.objectUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-three",
+        "https://docs.cloud.google.com/cortex/docs/data-sources-and-workloads"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-three",
+        "https://docs.cloud.google.com/cortex/docs/data-sources-and-workloads"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-three",
+        "https://docs.cloud.google.com/cortex/docs/data-sources-and-workloads"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-three",
+        "https://docs.cloud.google.com/cortex/docs/data-sources-and-workloads"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-three",
+        "https://docs.cloud.google.com/cortex/docs/data-sources-and-workloads"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:52.886Z",
+  "source_step08_card": "data/step-08/current/products/cortex/card.json",
+  "product_name": "Cortex",
+  "product_slug": "cortex"
+}

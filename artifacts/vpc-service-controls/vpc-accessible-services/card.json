@@ -1,0 +1,168 @@
+{
+  "feature_name": "VPC accessible services",
+  "feature_slug": "vpc-accessible-services",
+  "summary": "VPC accessible services limits network endpoints and VMs in a perimeter to only services protected by that perimeter.",
+  "extended_definition": "VPC accessible services limits network endpoints and VMs in a perimeter to only services protected by that perimeter.",
+  "lifecycle": {
+    "latest_feature_date": "2020-06-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc-service-controls/docs/service-perimeters",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter-verify-access",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "VPC accessible services \\_|\\_ VPC Service Controls \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+        "source_id": "site-docs-reference-2",
+        "final_score": 333,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The VPC accessible services feature limits the set of services that are accessible from network endpoints inside your service perimeter.",
+          "To limit the VPC network's access to only the storage service, you enable VPC accessible services and set storage.googleapis.com as an allowed service: gcloud access-context-manager perimeters update my-authorized-perimeter \\ --enable-vpc-accessible-services \\ --add-vpc-allowed-services = storage.googleapis.com Success!",
+          "Home Documentation Networking VPC Service Controls Guides Send feedback VPC accessible services Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Supported products and limitations \\_|\\_ VPC Service Controls \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "source_id": "site-docs-reference-2",
+        "final_score": 275,
+        "relevance": "",
+        "evidence_snippets": [
+          "When placing or creating a Looker (Google Cloud core) instance inside a VPC Service Controls service perimeter, you must remove the default route to the internet by calling the services.enableVpcServiceControls method or by running the following gcloud command: gcloud services vpc-peerings enable-vpc-service-controls --network=your-network service=servicenetworking.googleapis.com Removing the default route restricts outgoing traffic to only VPC Service Controls compliant services .",
+          "Service name meshca.googleapis.com, meshconfig.googleapis.com, trafficdirector.googleapis.com, networkservices.googleapis.com, networksecurity.googleapis.com Details The API for Cloud Service Mesh can be protected by VPC Service Controls, and the product can be used normally inside service perimeters.",
+          "Service name networkservices.googleapis.com, networksecurity.googleapis.com Details The APIs for Secure Web Proxy can be protected by VPC Service Controls and the product can be used normally inside service perimeters."
+        ]
+      },
+      {
+        "title": "\"Set up a VPC Service Controls perimeter for a Virtual Private Cloud network\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter-verify-access",
+        "source_id": "site-docs-root-2",
+        "final_score": 261,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, the following command uses the Resource Manager service, which is not configured in the VPC accessible services allowlist. gcloud projects describe PROJECT ID The output is similar to the following: \"ERROR: (gcloud.projects.list) PERMISSION DENIED: Request is prohibited by organization's policy.\" Your Compute Engine instance and other network endpoints can only request services that are configured in the VPC accessible services allowlist.",
+          "Verify that the perimeter allows internal traffic to restricted services inside the perimeter In this section, you verify that the perimeter allows traffic from network endpoints inside your perimeter if the service is also configured in VPC accessible services .",
+          "The previous diagram illustrates how a perimeter allows traffic from network endpoints inside the perimeter to reach restricted services that you also configured as VPC accessible services."
+        ]
+      },
+      {
+        "title": "\"Service perimeter details and configuration \\_|\\_ VPC Service Controls \\_\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/service-perimeters",
+        "source_id": "site-docs-reference",
+        "final_score": 249,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set up VPC accessible services When you enable VPC accessible services for a perimeter, access from network endpoints inside your perimeter is limited to a set of services that you specify.",
+          "Also, the services that are accessible inside a perimeter, such as from VMs in a VPC network that is hosted inside a perimeter, can be restricted using the VPC accessible services feature.",
+          "To protect Google Cloud services in your projects and mitigate the risk of data exfiltration, you can specify service perimeters at the project or VPC network level."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcloud.projects.list",
+      "meshca.googleapis.com",
+      "meshconfig.googleapis.com",
+      "networksecurity.googleapis.com",
+      "networkservices.googleapis.com",
+      "servicenetworking.googleapis.com",
+      "services.enableVpcServiceControls",
+      "storage.googleapis.com",
+      "trafficdirector.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter-verify-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/service-perimeters"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter-verify-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/service-perimeters"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter-verify-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/service-perimeters"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter-verify-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/service-perimeters"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter-verify-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/service-perimeters"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter-verify-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/service-perimeters"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-accessible-services",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter-verify-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/service-perimeters"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:47.928Z",
+  "source_step08_card": "data/step-08/current/products/vpc-service-controls/card.json",
+  "product_name": "VPC Service Controls",
+  "product_slug": "vpc-service-controls"
+}

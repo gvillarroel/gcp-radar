@@ -1,0 +1,175 @@
+{
+  "feature_name": "Speech-to-Text regional endpoints",
+  "feature_slug": "speech-to-text-regional-endpoints",
+  "summary": "Speech-to-Text now supports regional EU and US endpoints.",
+  "extended_definition": "Speech-to-Text now supports regional EU and US endpoints.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/speech-to-text/docs/batch-recognize",
+      "https://docs.cloud.google.com/speech-to-text/docs/class-tokens",
+      "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+      "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Overview of custom speech models \\_|\\_ Cloud Speech-to-Text \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "source_id": "site-docs-root",
+        "final_score": 244,
+        "relevance": "",
+        "evidence_snippets": [
+          "Dedicated hardware is supported in the following combinations of models and regions: Base model Google Cloud Region Supported tasks latest long us-east1 Training and Deployment latest long europe-west4 Training and Deployment Quota For Custom Speech-to-Text model training, each Google Cloud project should have enough default quota to run multiple training jobs concurrently and is intended to meet the needs of most projects without additional adjustments.",
+          "Supported models, languages and regions Custom Speech-to-Text models support the following combinations of models and languages and locales for training: Language BCP-47 Base model German (Germany) de-DE latest long English (Australia) en-AU latest long English (United Kingdom) en-GB latest long English (India) en-IN latest long English (United States) en-US latest long Spanish (United States) es-US latest long Spanish (Spain) es-ES latest long French (Canada) fr-CA latest long French (France) fr-FR latest long Hindi (India) hi-IN latest long Italian (Italy) it-IT latest long Japanese (Japan) ja-JP latest long Korean (South Korea) ko-KR latest long Dutch (Netherlands) nl-NL latest long Portuguese (Brazil) pt-BR latest long Portuguese (Portugal) pt-PT latest long Additionally, to comply with your data residency requirements we offer training and deployment hardware in different regions.",
+          "What's next Follow the resources to take advantage of custom speech models in your application: Prepare your training data Train and manage your custom models Deploy and manage model endpoints Use your custom models Evaluate your custom models Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Supported class tokens \\_|\\_ Cloud Speech-to-Text \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/class-tokens",
+        "source_id": "site-api-reference",
+        "final_score": 241,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Contextual phrases like \"2 months from now\" are not supported. \"luglio\" luglio Italian (Italy) it-IT $OPERAND A numerical value including whole numbers, fractions, and decimals. \"tre\" 3 \"meno tre\" -3 \"trecento\" 300 Italian (Italy) it-IT $PERCENT A percentage value, including any corresponding percent sign. \"uno per cento\" 1% \"trenta quattro virgola cinque sei per cento\" 34,56% \"trenta quattro virgola cinquanta sei per cento\" 34,56% Italian (Italy) it-IT $POSTALCODE A postal code, as used in the target locale. \"ottanta due zero dieci\" 82010 \"zero sette zero quindici\" 07015 \"ottanta trenta due quattro\" 80324 Italian (Italy) it-IT $TIME A specific time of day. \"zero\" 0 \"le zero\" 0 \"un quarto all'una\" 0:45 Italian (Italy) it-IT $YEAR A year. \"mille e novecento novanta nove\" 1999 \"due mila e dieci\" 2010 \"mille e novecento sessanta quattro\" 1964 Japanese (Japan) ja-JP $OOV CLASS AM RADIO FREQUENCY An AM radio frequency. \"せん にひゃく に じゅー\" 1220 \"いち にー にー ぜろ\" 1220 \"いち にー にー れー\" 1220 Japanese (Japan) ja-JP $OOV CLASS DIGIT SEQUENCE A digit sequence of any length. \"ニ\" 2 \"一 ニ 三\" 123 \"ニ ニ ニ ニ ニ ニ\" 222222 Japanese (Japan) ja-JP $OOV CLASS FM RADIO FREQUENCY An FM radio frequency. \"きゅー じゅー てん ご\" 90.5 \"なな じゅー なな てん いち\" 77.1 \"なな じゅー しち てん いち\" 77.1 Japanese (Japan) ja-JP $OOV CLASS TEMPERATURE A temperature, in degrees. \"いち\" 1 \"まいなす いち\" -1 \"ひく いち\" -1 Japanese (Japan) ja-JP $ADDRESSNUM A street number for an address, as used in the target locale. \"いち の じゅー いち の に じゅー きゅー\" 1-11-29 \"に の じゅー ご の に じゅー ご\" 2-15-25 \"せん にひゃく はち じゅー ご の さん\" 1285-3 Japanese (Japan) ja-JP $FULLPHONENUM A phone number, as used in the target locale. \"ぜろ きゅー ぜろ いち にー さん よん ごー ろく なな はち\" 090-1234-5678 \"ぜろ いち にー さん いち にー さん よん ごー ろく\" 0123-12-3456 \"ぜろ さん いち にー さん よん ごー ろく なな はち\" 03-1234-5678 Japanese (Japan) ja-JP $MONEY An amount of money with a currency unit name. \"きゅーせん えん\" 9000 円 \"さん じゅー なな どる\" 37 ドル \"いち まん はっせん はっぴゃく えん\" 18800 円 Japanese (Japan) ja-JP $OPERAND A numerical value including whole numbers, fractions, and decimals. \"れー てん いち\" 0.1 \"せん さん じゅー よん てん ごー ろく なな\" 1034.567 \"いち まん\" 1万 Japanese (Japan) ja-JP $PERCENT A percentage value, including any corresponding percent sign. \"れー てん ぜろ ぱーせんと\" 0.0% \"れー てん れー ぱーせんと\" 0.0% \"さん じゅー よん てん ごー ろく ぱーせんと\" 34.56% Japanese (Japan) ja-JP $POSTALCODE A postal code, as used in the target locale. \"にー さん ぜろ にー さん ぜろ ぜろ\" 230-2300 \"きゅー ぜろ ぜろ の きゅー ぜろ ぜろ ぜろ\" 900-9000 \"さん ぜろ ぜろ なな ぜろ にー ぜろ\" 300-7020 Japanese (Japan) ja-JP $TIME A specific time of day, or duration. \"に じゅー じ さん じっ ぷん\" 20 時 30 分 \"ご じ\" 5 時 \"さん じゅー に ふん ご\" 32 分 後 Korean (South Korea) ko-KR $OOV CLASS ALPHANUMERIC SEQUENCE A sequence of letters [a-z] and/or digits. \"a 일 b 이 c 삼\" a1b2c3 \"c q b c f\" cqbcf \"아홉 네 한 두\" 9412 Korean (South Korea) ko-KR $OOV CLASS ALPHA SEQUENCE A sequence of letters [a-z]. \"c q b c f\" cqbcf \"j\" j \"a b c\" abc Korean (South Korea) ko-KR $OOV CLASS DIGIT SEQUENCE A digit sequence of any length. \"구 사 일 이\" 9412 \"한 두 세\" 123 \"투 투 포 원 파이브\" 22415 Korean (South Korea) ko-KR $OOV CLASS POSTALCODE A postal code, as used in the target locale. \"영 칠 영 일 오\" 07015 \"팔 영 삼 이 사\" 80324 \"팔 이 영 일 영\" 82010 Korean (South Korea) ko-KR $FULLPHONENUM A phone number, as used in the target locale. \"공 이 삼 사 오 육 다시 칠 팔 구 공\" 02-3456-7890 \"공 일 구 다시 팔 칠 육 오 다시 사 삼 둘 일\" 019-8765-4321 \"하나 이 삼 사 오 육 칠 팔\" 1234-5678 Korean (South Korea) ko-KR $TIME A specific time of day. \"일시 사십이분\" 1시 42분 \"세시 삼십분\" 3시 30분 \"열시 삼십분\" 10시 30분 Norwegian Bokmål (Norway) no-NO $OOV CLASS ADDRESSNUM A street number for an address, as used in the target locale. \"femogtyve\" 25 \"femogtjue\" 25 \"tjue fem\" 25 Norwegian Bokmål (Norway) no-NO $OOV CLASS ALPHANUMERIC SEQUENCE A sequence of letters [a-z] and/or digits. \"a en b to c tre\" a1b2c3 \"c q b c f\" cqbcf \"ni fire en to\" 9412 Norwegian Bokmål (Norway) no-NO $OOV CLASS ALPHA SEQUENCE A sequence of letters [a-z]. \"c q b c f\" cqbcf \"j\" j \"a b c\" abc Norwegian Bokmål (Norway) no-NO $OOV CLASS AM RADIO FREQUENCY An AM radio frequency. \"en fire åtti fem\" 1485 \"ett tusen og fire hundre og femogåtti\" 1485 \"ett tusen og fire hundre og åtti fem\" 1485 Norwegian Bokmål (Norway) no-NO $OOV CLASS DIGIT SEQUENCE A digit sequence of any length. \"ni fire en to\" 9412 \"sju\" 7 \"syv\" 7 Norwegian Bokmål (Norway) no-NO $OOV CLASS FM RADIO FREQUENCY An FM radio frequency. \"sytti syv komma en\" 77,1 \"sytti syv punktum en\" 77.1 \"nitti komma en\" 90,1 Norwegian Bokmål (Norway) no-NO $OOV CLASS FULLPHONENUM A phone number, as used in the target locale. \"tretti femogførti sjuogseksti niogåtti\" 30 45 67 89 \"fire fire syv seks fem fire tre to\" 447 65 432 \"plus førti syv tretti førti fem seksti sju åtti ni\" +47 30 45 67 89 Norwegian Bokmål (Norway) no-NO $OOV CLASS OPERAND A numerical value including whole numbers, fractions, and decimals. \"null komma en\" 0,1 \"null komma to\" 0,2 \"null komma tre\" 0,3 Norwegian Bokmål (Norway) no-NO $OOV CLASS TEMPERATURE A temperature, in degrees. \"en\" 1 \"minus en\" -1 \"pluss en\" +1 Norwegian Bokmål (Norway) no-NO $PERCENT A percentage value, including any corresponding percent sign. \"fireogtredve komma fem seks prosent\" 34,56% \"fireogtredve komma seksogfemti prosent\" 34,56% \"fireogtretti komma seksogfemti prosent\" 34,56% Norwegian Bokmål (Norway) no-NO $FULLPHONENUM A phone number, as used in the target locale. \"tretti femogførti sjuogseksti niogåtti\" 30 45 67 89 \"fire fire syv seks fem fire tre to\" 44 76 54 32 \"plus førti syv førti fire tretti tre tjue to elleve\" +47 44 33 22 11 Norwegian Bokmål (Norway) no-NO $POSTALCODE A postal code, as used in the target locale. \"ni tusen og ni hundre og tretti\" 9930 \"niognitti tredve\" 9930 \"nitti ni tretti\" 9930 Norwegian Bokmål (Norway) no-NO $TIME A specific time of day. \"ett tjue tre\" 1:23 \"fem\" 5 \"tjue fem minutter over elleve om kvelden\" 23:25 Norwegian Bokmål (Norway) no-NO $YEAR A year. \"tjue syv åtti\" 2780 \"nitten nitti ni\" 1999 \"nitten åtti\" 1980 Dutch (Belgium) nl-BE $OOV CLASS ALPHANUMERIC SEQUENCE A sequence of letters [a-z] and/or digits. \"a één b twee c drie\" a1b2c3 \"c q b c f\" cqbcf \"negen vier één twee\" 9412 Dutch (Belgium) nl-BE $OOV CLASS ALPHA SEQUENCE A sequence of letters [a-z]. \"c q b c f\" cqbcf \"j\" j \"a b c\" abc Dutch (Belgium) nl-BE $OOV CLASS AM RADIO FREQUENCY An AM radio frequency. \"zeven honderd zeven en veertig\" 747 \"duizend zes honderd twee\" 1602 \"duizend vijf honderd zes en zestig\" 1566 Dutch (Belgium) nl-BE $OOV CLASS DIGIT SEQUENCE A digit sequence of any length. \"negen vier één twee\" 9412 \"zeven\" 7 \"één twee drie\" 123 Dutch (Belgium) nl-BE $OOV CLASS FM RADIO FREQUENCY An FM radio frequency. \"honderd één punt negen\" 101.9 \"zeven en zeventig punt één\" 77.1 \"honderd twee punt één\" 102.1 Dutch (Belgium) nl-BE $OOV CLASS FULLPHONENUM A phone number, as used in the target locale. \"nul één twaalf vijf en zestig drie en veertig één en twintig\" 0112-654321 \"nul zes één twee drie vier vijf zes zeven acht\" 06-12345678 \"plus één en dertig één nul één twee drie vier vijf zes zeven\" +31-10-1234567 Dutch (Belgium) nl-BE $OOV CLASS TEMPERATURE A temperature, in degrees. \"één\" 1 \"min één\" -1 \"plus één\" +1 Dutch (Belgium) nl-BE $ADDRESSNUM A street number for an address, as used in the target locale. \"negen en negentig negen en negentig\" 9999 \"drie twee vijf\" 325 \"drie honderd vijf en twintig\" 325 Dutch (Belgium) nl-BE $DAY A numbered day within a month. \"drie en twintig\" 23 \"twaalf\" 12 Dutch (Belgium) nl-BE $FULLPHONENUM A phone number, as used in the target locale. \"plus één en dertig zes vijf zes één twee drie vier vijf zes\" +31-656-123456 \"nul tien één twee drie vier vijf zes zeven\" 010-1234567 \"nul één twaalf vijf en zestig drie en veertig één en twintig\" 0112-654321 Dutch (Belgium) nl-BE $MONEY An amount of money with a currency unit name. \"drie honderd euro\" €300 \"één en vijftig euro\" €51 \"elf duizend euro\" €11000 Dutch (Belgium) nl-BE $MONTH A named month in a year.",
+          "Contextual phrases like \"2 months from now\" are not supported. \"february\" February \"april\" April English (South Africa) en-ZA $OPERAND A numerical value including whole numbers, fractions, and decimals. \"four\" 4 \"twenty two\" 22 \"two\" 2 English (South Africa) en-ZA $PERCENT A percentage value, including any corresponding percent sign. \"minus one point nine zero five percent\" -1.905% \"a hundred ten percent\" 110% \"one percent\" 1% English (South Africa) en-ZA $TIME A specific time of day. \"a quarter to nine\" 8:45 \"eight forty five\" 8:45 \"ten to ten\" 9:50 English (South Africa) en-ZA $YEAR A year. \"sixteen hundred thirty four\" 1634 \"nineteen hundred thirty eight\" 1938 \"twenty zero zero\" 2000 English (South Africa) en-ZA $ADDRESSNUM A street number for an address, as used in the target locale. \"three hundred twenty five\" 325 \"three hundred and twenty five\" 325 \"two five\" 25 English (South Africa) en-ZA $FULLPHONENUM A phone number, as used in the target locale. \"oh one six three two one two three four five\" 01632 12345 \"oh one two one four six nine double five double five\" 0121 469 5555 \"plus forty four nine eight seven six five four three two one oh\" +44 987 654 3210 English (South Africa) en-ZA $MONEY An amount of money with a currency unit name. \"a dollar\" $1 \"three dollar and fifty cents\" $3.50 \"three thousand five hundred dollars\" $3,500 Spanish (Spain) es-ES $OOV CLASS ALPHANUMERIC SEQUENCE A sequence of letters [a-z] and/or digits. \"a uno b dos c tres\" a1b2c3 \"c q b c f\" cqbcf \"nueve cuatro uno dos\" 9412 Spanish (Spain) es-ES $OOV CLASS ALPHA SEQUENCE A sequence of letters [a-z]. \"c q b c f\" cqbcf \"j\" j \"a b c\" abc Spanish (Spain) es-ES $OOV CLASS AM RADIO FREQUENCY An AM radio frequency. \"doce veinte\" 1220 \"mil doscientos veinte\" 1220 \"uno dos dos cero\" 1220 Spanish (Spain) es-ES $OOV CLASS DIGIT SEQUENCE A digit sequence of any length. \"nueve cuatro uno dos\" 9412 \"siete\" 7 \"uno dos tres\" 123 Spanish (Spain) es-ES $OOV CLASS FM RADIO FREQUENCY An FM radio frequency. \"ciento cuatro punto tres\" 104.3 \"uno cero cuatro punto tres\" 104.3 Spanish (Spain) es-ES $OOV CLASS TEMPERATURE A temperature, in degrees. \"uno\" 1 \"un\" 1 \"menos uno\" -1 Spanish (Spain) es-ES $ADDRESSNUM A street number for an address, as used in the target locale. \"trescientos veinticinco\" 325 \"nueve mil novecientos noventa y nueve\" 9999 \"veinticinco\" 25 Spanish (Spain) es-ES $DAY A numbered day within a month. \"veintitrés\" 23 \"doce\" 12 Spanish (Spain) es-ES $FULLPHONENUM A phone number, as used in the target locale. \"más treinta y cuatro tres ocho siete sesenta y cinco cuatro tres dos uno\" +34 387 654 321 \"cero cero treinta y cuatro treinta y ocho siete seis cinco cuatro treinta y dos uno\" 0034 387 654 321 \"tres dos tres cuatro cinco sesenta y siete ocho nueve\" 323 45 67 89 Spanish (Spain) es-ES $MONEY An amount of money with a currency unit name. \"trescientos euros\" 300 € \"cincuenta y un euros\" 51 € \"once mil euros\" 11000 € Spanish (Spain) es-ES $OPERAND A numerical value including whole numbers, fractions, and decimals. \"tres\" 3 \"menos tres\" -3 \"trescientos\" 300 Spanish (Spain) es-ES $PERCENT A percentage value, including any corresponding percent sign. \"uno por ciento\" 1% \"uno por cien\" 1% \"treinta y cuatro coma cincuenta y seis por ciento\" 34,56% Spanish (Spain) es-ES $POSTALCODE A postal code, as used in the target locale. \"ocho veinte diez\" 82010 \"ochenta y dos cero diez\" 82010 \"ochenta y dos mil cien\" 82100 Spanish (Spain) es-ES $TIME A specific time of day. \"cuatro de la tarde en punto\" 16 \"diez y seis de la mañana\" 10:06 \"dos veintitrés de la tarde\" 14:23 Spanish (Spain) es-ES $YEAR A year. \"mil novecientos sesenta y cuatro\" 1964 Spanish (Argentina) es-AR $OOV CLASS ALPHANUMERIC SEQUENCE A sequence of letters [a-z] and/or digits. \"a uno b dos c tres\" a1b2c3 \"c q b c f\" cqbcf \"nueve cuatro uno dos\" 9412 Spanish (Argentina) es-AR $OOV CLASS ALPHA SEQUENCE A sequence of letters [a-z]. \"c q b c f\" cqbcf \"j\" j \"a b c\" abc Spanish (Argentina) es-AR $OOV CLASS AM RADIO FREQUENCY An AM radio frequency. \"doce veinte\" 1220 \"mil doscientos veinte\" 1220 \"uno dos dos cero\" 1220 Spanish (Argentina) es-AR $OOV CLASS DIGIT SEQUENCE A digit sequence of any length. \"nueve cuatro uno dos\" 9412 \"siete\" 7 \"uno dos tres\" 123 Spanish (Argentina) es-AR $OOV CLASS FM RADIO FREQUENCY An FM radio frequency. \"ciento cuatro punto tres\" 104.3 \"uno cero cuatro punto tres\" 104.3 Spanish (Argentina) es-AR $OOV CLASS TEMPERATURE A temperature, in degrees. \"uno\" 1 \"un\" 1 \"menos uno\" -1 Spanish (Argentina) es-AR $OOV CLASS TV CHANNEL A television channel number. \"doscientos dos\" 202 \"dos veintidós\" 222 \"dos cero dos\" 202 Spanish (Argentina) es-AR $ADDRESSNUM A street number for an address, as used in the target locale. \"uno cinco dos cinco\" 1525 \"quince veinticinco\" 1525 \"trescientos veinticinco\" 325 Spanish (Argentina) es-AR $DAY A numbered day within a month. \"veintitrés\" 23 \"doce\" 12 Spanish (Argentina) es-AR $MONEY An amount of money with a currency unit name. \"trescientos euros\" 300€ \"cincuenta y un euros\" 51€ \"once mil euros\" 11000€ Spanish (Argentina) es-AR $MONTH A named month in a year.",
+          "Contextual phrases like \"2 months from now\" are not supported. \"juli\" juli \"mei\" mei \"december\" december Dutch (Netherlands) nl-NL $OPERAND A numerical value including whole numbers, fractions, and decimals. \"drie\" 3 \"negen en twintig honderd\" 2900 \"min drie\" -3 Dutch (Netherlands) nl-NL $PERCENT A percentage value, including any corresponding percent sign. \"één procent\" 1% \"vier en dertig komma vijf zes procent\" 34,56% \"vier en dertig komma zes en vijftig procent\" 34,56% Dutch (Netherlands) nl-NL $POSTALCODE A postal code, as used in the target locale. \"twee en negentig drie en zeventig h z\" 9273 hz \"negen twee zeven drie h z\" 9273 hz \"één twee drie één a c\" 1231 ac Dutch (Netherlands) nl-NL $TIME A specific time of day. \"vier 's-middags\" 16:00 \"vier uur 's-middags\" 16:00 \"zes minuten over tien\" 10:06 Dutch (Netherlands) nl-NL $YEAR A year. \"achttien dertig\" 1830 \"negentien tien\" 1910 \"negentien honderd\" 1900 Polish (Poland) pl-PL $OOV CLASS ADDRESSNUM A street number for an address, as used in the target locale. \"dwadzieścia pięć\" 25 \"jeden\" 1 \"jedne\" 1 Polish (Poland) pl-PL $OOV CLASS ALPHANUMERIC SEQUENCE A sequence of letters [a-z] and/or digits. \"a jeden b dwa c trzy\" a1b2c3 \"c q b c f\" cqbcf \"dziewięć cztery jeden dwa\" 9412 Polish (Poland) pl-PL $OOV CLASS ALPHA SEQUENCE A sequence of letters [a-z]. \"c q b c f\" cqbcf \"j\" j \"a b c\" abc Polish (Poland) pl-PL $OOV CLASS AM RADIO FREQUENCY An AM radio frequency. \"dwanaście dwadzieścia\" 1220 \"jeden dwa dwa zero\" 1220 \"jeden dwa dwadzieścia\" 1220 Polish (Poland) pl-PL $OOV CLASS DIGIT SEQUENCE A digit sequence of any length. \"dziewięć cztery jeden dwa\" 9412 \"siedem\" 7 \"jeden dwa trzy\" 123 Polish (Poland) pl-PL $OOV CLASS FM RADIO FREQUENCY An FM radio frequency. \"jeden zero cztery przecinek trzy\" 104,3 \"sto cztery przecinek trzy\" 104,3 \"osiem dziewięć przecinek siedem\" 89,7 Polish (Poland) pl-PL $OOV CLASS TEMPERATURE A temperature, in degrees. \"jeden\" 1 \"minus jeden\" -1 \"dodać jeden\" +1 Polish (Poland) pl-PL $DAY A numbered day within a month. \"dwudziesty drugi\" 22 \"dwudziestą drugą\" 22 \"dwudziesta druga\" 22 Polish (Poland) pl-PL $MONEY An amount of money with a currency unit name. \"dwa tysiące trzysta czterdzieści pięć funtów i pięćdziesiąt sześć pensów\" 2345,56 £ \"dwa tysiące trzysta czterdzieści pięć przecinek pięćdziesiąt sześć funta\" 2345,56 £ \"tysiąc dwieście trzydzieści cztery euro\" 1234 € Polish (Poland) pl-PL $OPERAND A numerical value including whole numbers, fractions, and decimals. \"trzy\" 3 \"minus trzy\" -3 \"trzysta\" 300 Polish (Poland) pl-PL $PERCENT A percentage value, including any corresponding percent sign. \"jeden procent\" 1% \"jeden przecinek dwa procent\" 1,2% \"minus jeden przecinek dwa procent\" -1,2% Polish (Poland) pl-PL $FULLPHONENUM A phone number, as used in the target locale. \"dwanaście trzy czterdzieści pięć sześćdziesiąt siedem osiemdziesiąt dziewięć\" 12 345 67 89 \"plus czterdzieści osiem jeden dwa trzy cztery pięć sześć siedem osiem dziewięć\" +48 12 345 67 89 \"dwieście osiemdziesiąt siedem sześćdziesiąt pięć cztery trzysta dwadzieścia jeden\" 287 654 321 Polish (Poland) pl-PL $TIME A specific time of day. \"druga\" 2:00 \"drugiej\" 2:00 \"drugą\" 2:00 Portuguese (Brazil) pt-BR $OOV CLASS ALPHANUMERIC SEQUENCE A sequence of letters [a-z] and/or digits. \"a um b dois c três\" a1b2c3 \"c q b c f\" cqbcf \"nove quatro um dois\" 9412 Portuguese (Brazil) pt-BR $OOV CLASS ALPHA SEQUENCE A sequence of letters [a-z]. \"c q b c f\" cqbcf \"j\" j \"a b c\" abc Portuguese (Brazil) pt-BR $OOV CLASS AM RADIO FREQUENCY An AM radio frequency. \"doze vinte\" 1220 \"mil duzentos e vinte\" 1220 \"um dois dois zero\" 1220 Portuguese (Brazil) pt-BR $OOV CLASS DIGIT SEQUENCE A digit sequence of any length. \"nove quatro um dois\" 9412 \"sete\" 7 \"um dois três\" 123 Portuguese (Brazil) pt-BR $OOV CLASS FM RADIO FREQUENCY An FM radio frequency. \"cento e quatro vírgula três\" 104,3 \"um zero quatro vírgula três\" 104,3 \"oitenta e nove vírgula sete\" 89,7 Portuguese (Brazil) pt-BR $OOV CLASS TEMPERATURE A temperature, in degrees. \"um\" 1 \"menos um\" -1 \"mais um\" +1 Portuguese (Brazil) pt-BR $OOV CLASS TV CHANNEL A television channel number. \"duzentos e dois\" 202 \"nove dot quatro\" 9.4 \"dois vinte e dois\" 222 Portuguese (Brazil) pt-BR $ADDRESSNUM A street number for an address, as used in the target locale. \"dois cinco\" 25 \"três dois cinco\" 325 \"vinte três sete\" 2037 Portuguese (Brazil) pt-BR $DAY A numbered day within a month. \"vinte e três\" 23 \"doze\" 12 Portuguese (Brazil) pt-BR $MONEY An amount of money with a currency unit name. \"trezentos reais\" r$ 300 \"cinquenta e um reais\" r$ 51 \"onze mil reais\" r$ 11000 Portuguese (Brazil) pt-BR $MONTH A named month in a year."
+        ]
+      },
+      {
+        "title": "\"Transcribe long audio files into text \\_|\\_ Cloud Speech-to-Text \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/batch-recognize",
+        "source_id": "site-docs-root",
+        "final_score": 237,
+        "relevance": "",
+        "evidence_snippets": [
+          "BatchRecognizeResults . from json ( results bytes , ignore unknown fields = True ) for result in batch recognize results . results : print ( f \"Transcript: { result . alternatives [ 0 ] . transcript } \" ) return batch recognize results Perform batch recognition on multiple files Here is an example of performing batch speech recognition on multiple audio files in Cloud Storage and reading the transcription results from the output files in Cloud Storage: Python import os import re from typing import List from google.cloud import storage from google.cloud.speech v2 import SpeechClient from google.cloud.speech v2.types import cloud speech PROJECT ID = os . getenv ( \"GOOGLE CLOUD PROJECT\" ) def transcribe batch multiple files v2 ( audio uris : List [ str ], gcs output path : str , ) - > cloud speech .",
+          "InlineOutputConfig (), ), ) Transcribes the audio into text operation = client . batch recognize ( request = request ) print ( \"Waiting for operation to complete...\" ) response = operation . result ( timeout = 120 ) for result in response . results [ audio uri ] . transcript . results : print ( f \"Transcript: { result . alternatives [ 0 ] . transcript } \" ) return response . results [ audio uri ] . transcript Perform batch recognition and write results to Cloud Storage Here is an example of performing batch speech recognition on an audio file in Cloud Storage and reading the transcription results from the output file in Cloud Storage.",
+          "The service account email address is the following: service- PROJECT NUMBER @gcp-sa-speech.iam.gserviceaccount.com In order to transcribe Cloud Storage files in another project, you can give this service account the [Speech-to-Text Service Agent][speech-service-agent] role in the other project: gcloud projects add-iam-policy-binding PROJECT ID \\ --member = serviceAccount:service- PROJECT NUMBER @gcp-sa-speech.iam.gserviceaccount.com \\ --role = roles/speech.serviceAgent More information about project IAM policy is available at [Manage access to projects, folders, and organizations][manage-access]."
+        ]
+      },
+      {
+        "title": "\"Transcribe speech to text by using client libraries \\_|\\_ Cloud Speech-to-Text\\",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries",
+        "source_id": "site-docs-root",
+        "final_score": 235,
+        "relevance": "",
+        "evidence_snippets": [
+          "RecognizeRequest ( recognizer = f \"projects/ { PROJECT ID } /locations/global/recognizers/ \" , config = config , content = audio content , ) Transcribes the audio into text response = client . recognize ( request = request ) for result in response . results : print ( f \"Transcript: { result . alternatives [ 0 ] . transcript } \" ) return response You sent your first request to Speech-to-Text.",
+          "Home Documentation AI and ML Cloud Speech-to-Text Send feedback Transcribe speech to text by using client libraries Stay organized with collections Save and categorize content based on your preferences.",
+          "This page shows you how to send a speech recognition request to Speech-to-Text in your favorite programming language using the Google Cloud Client Libraries."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "speech.iam.gserviceaccount.com",
+      "speech.serviceAgent",
+      "v2.types"
+    ],
+    "missing_inventory_roles": [
+      "roles/speech.serviceAgent"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/class-tokens",
+        "https://docs.cloud.google.com/speech-to-text/docs/batch-recognize",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/class-tokens",
+        "https://docs.cloud.google.com/speech-to-text/docs/batch-recognize",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/class-tokens",
+        "https://docs.cloud.google.com/speech-to-text/docs/batch-recognize",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/class-tokens",
+        "https://docs.cloud.google.com/speech-to-text/docs/batch-recognize",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/class-tokens",
+        "https://docs.cloud.google.com/speech-to-text/docs/batch-recognize",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/class-tokens",
+        "https://docs.cloud.google.com/speech-to-text/docs/batch-recognize",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/class-tokens",
+        "https://docs.cloud.google.com/speech-to-text/docs/batch-recognize",
+        "https://docs.cloud.google.com/speech-to-text/docs/quickstarts/transcribe-client-libraries"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:40.059Z",
+  "source_step08_card": "data/step-08/current/products/speech-to-text/card.json",
+  "product_name": "Speech-to-Text",
+  "product_slug": "speech-to-text"
+}

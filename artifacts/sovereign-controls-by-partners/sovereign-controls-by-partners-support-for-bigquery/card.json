@@ -1,0 +1,122 @@
+{
+  "feature_name": "Sovereign Controls by Partners support for BigQuery",
+  "feature_slug": "sovereign-controls-by-partners-support-for-bigquery",
+  "summary": "Sovereign Controls by Partners added support for BigQuery.",
+  "extended_definition": "Sovereign Controls by Partners added support for BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sovereign-controls-by-partners/docs/data-boundaries/france-data-boundary-s3ns",
+      "https://docs.cloud.google.com/sovereign-controls-by-partners/docs/data-boundaries/germany-data-boundary-tsi",
+      "https://docs.cloud.google.com/sovereign-controls-by-partners/docs/data-boundaries/italy-data-boundary-psn",
+      "https://docs.cloud.google.com/sovereign-controls-by-partners/docs/sovereign-partners/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud Controls Partner API \\_|\\_ Sovereign Controls by Partners guides for\\",
+        "url": "https://docs.cloud.google.com/sovereign-controls-by-partners/docs/sovereign-partners/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 277,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Technology areas Sovereign Controls by Partners Sovereign Partners Reference Send feedback Cloud Controls Partner API Stay organized with collections Save and categorize content based on your preferences.",
+          "Provides insights about your customers and their Assured Workloads based on your Sovereign Controls by Partners offering.",
+          "REST Resource: v1alpha.organizations.locations.customers Methods get GET /v1alpha/{name=organizations/ /locations/ /customers/ } Gets details of a single customer list GET /v1alpha/{parent=organizations/ /locations/ }/customers Lists customers of a partner identified by its Google Cloud organization ID REST Resource: v1alpha.organizations.locations.customers.workloads Methods get GET /v1alpha/{name=organizations/ /locations/ /customers/ /workloads/ } Gets details of a single workload getEkmConnections GET /v1alpha/{name=organizations/ /locations/ /customers/ /workloads/ /ekmConnections} Gets the EKM connections associated with a workload getPartnerPermissions GET /v1alpha/{name=organizations/ /locations/ /customers/ /workloads/ /partnerPermissions} Gets the partner permissions granted for a workload list GET /v1alpha/{parent=organizations/ /locations/ /customers/ }/workloads Lists customer workloads for a given customer org id REST Resource: v1alpha.organizations.locations.customers.workloads.accessApprovalRequests Methods list GET /v1alpha/{parent=organizations/ /locations/ /customers/ /workloads/ }/accessApprovalRequests Lists access requests associated with a workload REST Resource: v1alpha.organizations.locations.customers.workloads.violations Methods get GET /v1alpha/{name=organizations/ /locations/ /customers/ /workloads/ /violations/ } Gets details of a single Violation. list GET /v1alpha/{parent=organizations/ /locations/ /customers/ /workloads/ }/violations Lists Violations for a workload Callers may also choose to read across multiple Customers or for a single customer as per AIP-159 by using '-' (the hyphen or dash character) as a wildcard character instead of {customer} & {workload}."
+        ]
+      },
+      {
+        "title": "\"France Data Boundary by S3NS \\_|\\_ Sovereign Controls by Partners \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sovereign-controls-by-partners/docs/data-boundaries/france-data-boundary-s3ns",
+        "source_id": "site-iam-reference",
+        "final_score": 273,
+        "relevance": "",
+        "evidence_snippets": [
+          "These split boundaries are accessible by Google personnel for technical support and debugging purposes, and are not subject to administrative access data controls in Sovereign Controls by Partners.",
+          "These split boundaries are accessible by Google personnel for technical support and debugging purposes, and are not subject to administrative access data controls in Sovereign Controls by Partners.",
+          "It's your responsibility not to use them with BigQuery for Sovereign Controls by Partners."
+        ]
+      },
+      {
+        "title": "\"Germany Data Boundary by T-Systems \\_|\\_ Sovereign Controls by Partners\\",
+        "url": "https://docs.cloud.google.com/sovereign-controls-by-partners/docs/data-boundaries/germany-data-boundary-tsi",
+        "source_id": "site-iam-reference",
+        "final_score": 273,
+        "relevance": "",
+        "evidence_snippets": [
+          "These split boundaries are accessible by Google personnel for technical support and debugging purposes, and are not subject to administrative access data controls in Sovereign Controls by Partners.",
+          "These split boundaries are accessible by Google personnel for technical support and debugging purposes, and are not subject to administrative access data controls in Sovereign Controls by Partners.",
+          "It's your responsibility not to use them with BigQuery for Sovereign Controls by Partners."
+        ]
+      },
+      {
+        "title": "\"Italy Data Boundary by PSN \\_|\\_ Sovereign Controls by Partners \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sovereign-controls-by-partners/docs/data-boundaries/italy-data-boundary-psn",
+        "source_id": "site-iam-reference",
+        "final_score": 273,
+        "relevance": "",
+        "evidence_snippets": [
+          "These split boundaries are accessible by Google personnel for technical support and debugging purposes, and are not subject to administrative access data controls in Sovereign Controls by Partners.",
+          "These split boundaries are accessible by Google personnel for technical support and debugging purposes, and are not subject to administrative access data controls in Sovereign Controls by Partners.",
+          "It's your responsibility not to use them with BigQuery for Sovereign Controls by Partners."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "v1alpha.organizations.locations.customers",
+      "v1alpha.organizations.locations.customers.workloads",
+      "v1alpha.organizations.locations.customers.workloads.accessApprovalRequests",
+      "v1alpha.organizations.locations.customers.workloads.violations",
+      "v1beta.organizations.locations.customers",
+      "v1beta.organizations.locations.customers.workloads",
+      "v1beta.organizations.locations.customers.workloads.accessApprovalRequests",
+      "v1beta.organizations.locations.customers.workloads.violations"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sovereign-controls-by-partners/docs/sovereign-partners/reference/rest",
+        "https://docs.cloud.google.com/sovereign-controls-by-partners/docs/data-boundaries/france-data-boundary-s3ns",
+        "https://docs.cloud.google.com/sovereign-controls-by-partners/docs/data-boundaries/germany-data-boundary-tsi",
+        "https://docs.cloud.google.com/sovereign-controls-by-partners/docs/data-boundaries/italy-data-boundary-psn"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sovereign-controls-by-partners/docs/sovereign-partners/reference/rest",
+        "https://docs.cloud.google.com/sovereign-controls-by-partners/docs/data-boundaries/france-data-boundary-s3ns",
+        "https://docs.cloud.google.com/sovereign-controls-by-partners/docs/data-boundaries/germany-data-boundary-tsi",
+        "https://docs.cloud.google.com/sovereign-controls-by-partners/docs/data-boundaries/italy-data-boundary-psn"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:37.733Z",
+  "source_step08_card": "data/step-08/current/products/sovereign-controls-by-partners/card.json",
+  "product_name": "Sovereign Controls by Partners",
+  "product_slug": "sovereign-controls-by-partners"
+}

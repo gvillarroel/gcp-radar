@@ -1,0 +1,117 @@
+{
+  "feature_name": "Apache Beam SDK for Python 2.0.0-2.4.0",
+  "feature_slug": "apache-beam-sdk-for-python-2-0-0-2-4-0",
+  "summary": "Apache Beam SDK for Python versions 2.0.0 through 2.4.0 are SDK versions used with Dataflow; deprecated on March 25.",
+  "extended_definition": "Apache Beam SDK for Python versions 2.0.0 through 2.4.0 are SDK versions used with Dataflow; deprecated on March 25.",
+  "lifecycle": {
+    "latest_feature_date": "2018-12-17",
+    "deprecation_date": "March 25",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+      "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+      "https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot Dataflow errors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "source_id": "site-docs-reference-2",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Runtime dependency errors When you run a Dataflow job that uses the Apache Beam SDK for Python with cross-language transforms, the job might fail with an HTTP Error 403: Forbidden error when downloading JAR files from Maven Central.",
+          "Python pipeline fails after one hour of worker inactivity When using the Apache Beam SDK for Python with Dataflow Runner V2 on worker machines with many CPU cores, use Apache Beam SDK 2.35.0 or later.",
+          "This issue is caused by a change in Maven Central's CDN provider, which blocks requests from the Python urllib library used by the Apache Beam SDK."
+        ]
+      },
+      {
+        "title": "\"Develop Apache Beam notebooks with the interactive runner \\_|\\_ Cloud Dataflow\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development",
+        "source_id": "site-docs-reference-2",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This location is used to store temporary files or intermediate results before outputting to the sink. options . view as ( GoogleCloudOptions ) . temp location = ' %s /temp' % dataflow gcs location If and only if you are using Apache Beam SDK built from source code, set the SDK location.",
+          "The following notebooks are available: Word Count Streaming Word Count Streaming NYC Taxi Ride Data Apache Beam SQL in notebooks with comparisons to pipelines Apache Beam SQL in notebooks with the Dataflow Runner Apache Beam SQL in notebooks Dataflow Word Count Interactive Flink at Scale RunInference Use GPUs with Apache Beam Visualize Data The Tutorials folder contains additional tutorials that explain the fundamentals of Apache Beam.",
+          "Home Documentation Data analytics Cloud Dataflow Guides Send feedback Develop Apache Beam notebooks with the interactive runner Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Use customer-managed encryption keys \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+        "source_id": "site-docs-reference-2",
+        "final_score": 159,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Support and limitations Cloud KMS is supported in the following Apache Beam SDK versions: Java SDK versions 2.13.0 and later Python SDK versions 2.13.0 and later Go SDK versions 2.40.0 and later Cloud KMS with Dataflow supports regional keys .",
+          "Specifying gcpTempLocation is required. mvn compile exec:java -Dexec.mainClass = org.apache.beam.examples.WordCount \\ -Dexec.args = \"--inputFile=gs://dataflow-samples/shakespeare/kinglear.txt \\ --output=gs:// STORAGE BUCKET /counts \\ --runner=DataflowRunner --project= PROJECT ID \\ --gcpTempLocation=gs:// STORAGE BUCKET /tmp \\ --dataflowKmsKey= KMS KEY \" -Pdataflow-runner Python Dataflow does not support creating default Cloud Storage paths for temporary files when using a Cloud KMS key.",
+          "Specifying gcpTempLocation is required. python -m apache beam.examples.wordcount \\ --input gs://dataflow-samples/shakespeare/kinglear.txt \\ --output gs:// STORAGE BUCKET /counts \\ --runner DataflowRunner \\ --region HOST GCP REGION \\ --project PROJECT ID \\ --temp location gs:// STORAGE BUCKET /tmp/ \\ --dataflow kms key = KMS KEY Go Dataflow does not support creating default Cloud Storage paths for temporary files when using a Cloud KMS key."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "beam.examples.wordcount",
+      "kinglear.txt",
+      "org.apache.beam.examples.WordCount",
+      "process.args",
+      "processes.py",
+      "python3.9",
+      "setup.py",
+      "subprocess.CalledProcessError",
+      "subprocess.check",
+      "subprocess.py"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:53.762Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow"
+}

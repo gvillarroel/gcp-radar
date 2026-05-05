@@ -1,0 +1,163 @@
+{
+  "feature_name": "HTTP connector digest authentication",
+  "feature_slug": "http-connector-digest-authentication",
+  "summary": "The HTTP connector supports Digest authentication.",
+  "extended_definition": "The HTTP connector supports Digest authentication.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigcommerce/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "BigCommerce \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigcommerce/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Digest : Digest HTTP authentication.",
+          "The following authentication types are supported: Basic : Basic HTTP authentication.",
+          "When creating this connection by using Terraform, you must set the following variables in your Terraform configuration file: Parameter name Data type Required Description proxy enabled BOOLEAN False Select this checkbox to configure a proxy server for the connection. proxy auth scheme ENUM False The authentication type to use to authenticate to the ProxyServer proxy."
+        ]
+      },
+      {
+        "title": "Couchbase \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 186,
+        "relevance": "",
+        "evidence_snippets": [
+          "Digest : Digest HTTP authentication.",
+          "SSL - Certificate connection type Field Name Details Region us-central1 Connector Couchbase Connector Version 1 Connector Name Couchbase-basic-auth-conn Service Account NAME-compute@developer.gserviceaccount.com Verbosity Level 5 Connection node settings: Min/Max number of nodes 2/50 SSL Configuration Enable SSL True Trust Store Private Custom Trust Store A full PEM Certificate (-----BEGIN CERTIFICATE----- MIIChTCCAe4CAQAwDQYJKoZIhv......Qw== -----END CERTIFICATE-----) Secret version 1 Host Address xx.1HOST NAME.cloud.couchbase.com:18xxx Authentication User Password Username username Password password versions 1 vConnection Mode Cloud DNS Server 192.0.2.0 OAuth scheme Basic Analytics Couchbase connection type Field Name Details Region us-central1 Connector Couchbase Connector Version 1 Connector Name Couchbase-basic-auth-Analytics-conn Service Account NAME-compute@developer.gserviceaccount.com Analytics Port 18095 Couchbase Service Analytics Verbosity Level 5 Connection node settings: Min/Max number of nodes 2/50 Host Address xx.1HOST NAME.cloud.couchbase.com:18095 Authentication User Password Username username Password password versions 1 vConnection Mode Cloud DNS Server 192.0.2.0 OAuth scheme Basic Entities, operations, and actions All the Integration Connectors provide a layer of abstraction for the objects of the connected application.",
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { } If the action is successful, the ListIndices task's connectorOutputPayload response parameter will have a value similar to the following: [{ \"id\" : \"3d8a78cd2e302ac2\" , \"datastore id\" : \"http://127.0.0.1:8091\" , \"namespace id\" : \"default\" , \"bucket id\" : null , \"scope id\" : null , \"keyspace id\" : \"CouchbaseTestBucket\" , \"index key\" : \"\" , \"condition\" : null , \"is primary\" : \"false\" , \"name\" : \"test\" , \"state\" : \"online\" , \"using\" : \"gsi\" }, { \"id\" : \"d6ce8c103b97a00d\" , \"datastore id\" : \"http://127.0.0.1:8091\" , \"namespace id\" : \"default\" , \"bucket id\" : \"CouchbaseTestBucket\" , \"scope id\" : \"TestScope\" , \"keyspace id\" : \"CouchBaseDatatypes\" , \"index key\" : \"\" , \"condition\" : null , \"is primary\" : \"true\" , \"name\" : \"#primary\" , \"state\" : \"online\" , \"using\" : \"gsi\" }, { \"id\" : \"58c25aef49dd32b3\" , \"datastore id\" : \"http://127.0.0.1:8091\" , \"namespace id\" : \"default\" , \"bucket id\" : \"CouchbaseTestBucket\" , \"scope id\" : \"TestScope\" , \"keyspace id\" : \"TestCollection\" , \"index key\" : \"\" , \"condition\" : null , \"is primary\" : \"false\" , \"name\" : \"SearchIndexTest 1\" , \"state\" : \"online\" , \"using\" : \"fts\" }] Example - Manage indices This example deletes an index in the specified bucket."
+        ]
+      },
+      {
+        "title": "Apache CouchDB \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 182,
+        "relevance": "",
+        "evidence_snippets": [
+          "Basic authentication connection type Field name Details Location us-central1 Connector Apache CouchDB Connector version 1 Connection Name couchdb-vm-connection Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com List Views Yes Flexible Schema Yes Minimum number of nodes 2 Maximum number of nodes 50 Destination Type(Server) Host address Host address http://198.51.100.0 Username USERNAME Password PASSWORD Secret version 1 Proxy connection type Field name Details Location us-central1 Connector Apache CouchDB Connector version 1 Connection Name couchdb-proxy-conn Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com List Views No Flexible Schema No Proxy use proxy Proxy Auth Scheme Digest Proxy User PROXY USER Proxy Password PROXY PASSWORD Minimum number of nodes 2 Maximum number of nodes 50 Destination Type(Server) Host address Host address http://198.51.100.0 Username USERNAME Password PASSWORD Secret version 1 SSL connection (insecure) connection type Field name Details Location us-central1 Connector Apache CouchDB Connector version 1 Connection Name couchdb-ssl-conn Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com List Views No Flexible Schema No Minimum number of nodes 2 Maximum number of nodes 50 Trust store (choose the trust model) Insecure Connection Destination Type(Server) Host address Host address http://198.51.100.0 Username USERNAME Password PASSWORD Secret version 1 SSL connection (private) connection type Field name Details Location us-central1 Connector Apache CouchDB Connector version 1 Connection Name couchdb-proxy-conn Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com List Views No Flexible Schema No Minimum number of nodes 2 Maximum number of nodes 50 Trust store (choose the trust model) Private Custom Trust store Self-signed certificate.",
+          "Secret Version 1 Destination Type(Server) Host address Host address https://198.51.100.0 Username USERNAME Password PASSWORD Secret version 1 JWT Authentication connection type Field name Details Location us-central1 Connector Apache CouchDB Connector version 1 Connection Name couchdb-vm-jwt-conn Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com List Views No Flexible Schema No Proxy No Minimum number of nodes 2 Maximum number of nodes 50 Destination Type(Server) Host address Host address http://203.0.113.0 JWT Subject admin JWT Algorithm HS256 JWT Key Type Symmetric JWT Key JWT KEY Secret version 1 Entities, operations, and actions All the Integration Connectors provide a layer of abstraction for the objects of the connected application.",
+          "Digest : Digest HTTP authentication."
+        ]
+      },
+      {
+        "title": "Asana \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 182,
+        "relevance": "",
+        "evidence_snippets": [
+          "Digest : Digest HTTP authentication.",
+          "Actions The Asana connector supports actions, such as the following: AddDependenciesToTask, AddDependentsToTask, AddFollowers, AddProjectToTask, AddTagsToTask, AddTaskToSection, DownloadAttachment, DuplicateProject, DuplicateTask, RemoveDependenciesFromTask, RemoveDependentsFromTask, RemoveFollowers, RemoveProjectsFromTask, RemoveTagsFromTask, SetParentofTask, and UploadAttachment.",
+          "The following authentication types are supported: Basic : Basic HTTP authentication."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "authorize.net",
+      "developer.gserviceaccount.com",
+      "iam.gserviceaccount.com",
+      "xx.1HOST"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigcommerce/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigcommerce/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigcommerce/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigcommerce/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigcommerce/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigcommerce/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigcommerce/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:22.663Z",
+  "source_step08_card": "data/step-08/current/products/integration-connectors/card.json",
+  "product_name": "Integration Connectors",
+  "product_slug": "integration-connectors"
+}

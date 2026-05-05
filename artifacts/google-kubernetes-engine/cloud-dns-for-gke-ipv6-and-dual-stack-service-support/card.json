@@ -1,0 +1,190 @@
+{
+  "feature_name": "Cloud DNS for GKE IPv6 and dual-stack service support",
+  "feature_slug": "cloud-dns-for-gke-ipv6-and-dual-stack-service-support",
+  "summary": "Cloud DNS for GKE now supports SingleStack IPv6 and DualStack services.",
+  "extended_definition": "Cloud DNS for GKE now supports SingleStack IPv6 and DualStack services.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/elk-stack"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create a GKE cluster and deploy a workload using Terraform \\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform",
+        "source_id": "site-docs-root",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "Review the cluster.tf file: cat cluster.tf The output is similar to the following resource \"google compute network\" \"default\" { name = \"example-network\" auto create subnetworks = false enable ula internal ipv6 = true } resource \"google compute subnetwork\" \"default\" { name = \"example-subnetwork\" ip cidr range = \"10.0.0.0/16\" region = \"us-central1\" stack type = \"IPV4 IPV6\" ipv6 access type = \"INTERNAL\" # Change to \"EXTERNAL\" if creating an external loadbalancer network = google compute network.default.id secondary ip range { range name = \"services-range\" ip cidr range = \"192.168.0.0/24\" } secondary ip range { range name = \"pod-ranges\" ip cidr range = \"192.168.1.0/24\" } } resource \"google container cluster\" \"default\" { name = \"example-autopilot-cluster\" location = \"us-central1\" enable autopilot = true enable l4 ilb subsetting = true network = google compute network.default.id subnetwork = google compute subnetwork.default.id ip allocation policy { stack type = \"IPV4 IPV6\" services secondary range name = google compute subnetwork.default.secondary ip range[0].range name cluster secondary range name = google compute subnetwork.default.secondary ip range[1].range name } Set deletion protection to true will ensure that one cannot accidentally delete this instance by use of Terraform. deletion protection = false } This file describes the following resources: google compute network : a VPC network with internal IPv6 enabled. google compute subnetwork : a dual-stack subnetwork . google container cluster : a dual-stack Autopilot mode cluster located in us-central1 .",
+          "Review the app.tf file: cat app.tf The output is similar to the following: data \"google client config\" \"default\" {} provider \"kubernetes\" { host = \"https://${google container cluster.default.endpoint}\" token = data.google client config.default.access token cluster ca certificate = base64decode ( google container cluster.default.master auth[0].cluster ca certificate ) ignore annotations = [ \"^autopilot\\\\.gke\\\\.io\\\\/. \" , \"^cloud\\\\.google\\\\.com\\\\/. \" ] } resource \"kubernetes deployment v1\" \"default\" { metadata { name = \"example-hello-app-deployment\" } spec { selector { match labels = { app = \"hello-app\" } } template { metadata { labels = { app = \"hello-app\" } } spec { container { image = \"us-docker.pkg.dev/google-samples/containers/gke/hello-app:2.0\" name = \"hello-app-container\" port { container port = 8080 name = \"hello-app-svc\" } security context { allow privilege escalation = false privileged = false read only root filesystem = false capabilities { add = [] drop = [ \"NET RAW\" ] } } liveness probe { http get { path = \"/\" port = \"hello-app-svc\" http header { name = \"X-Custom-Header\" value = \"Awesome\" } } initial delay seconds = 3 period seconds = 3 } } security context { run as non root = true seccomp profile { type = \"RuntimeDefault\" } } Toleration is currently required to prevent perpetual diff: https://github.com/hashicorp/terraform-provider-kubernetes/pull/2380 toleration { effect = \"NoSchedule\" key = \"kubernetes.io/arch\" operator = \"Equal\" value = \"amd64\" } } } } } resource \"kubernetes service v1\" \"default\" { metadata { name = \"example-hello-app-loadbalancer\" annotations = { \"networking.gke.io/load-balancer-type\" = \"Internal\" # Remove to create an external loadbalancer } } spec { selector = { app = kubernetes deployment v1.default.spec[0].selector[0].match labels.app } ip family policy = \"RequireDualStack\" port { port = 80 target port = kubernetes deployment v1.default.spec[0].template[0].spec[0].container[0].port[0].name } type = \"LoadBalancer\" } depends on = [ time sleep.wait service cleanup ] } Provide time for Service cleanup resource \"time sleep\" \"wait service cleanup\" { depends on = [ google container cluster.default ] destroy duration = \"180s\" } This file describes the following resources: A Deployment with a sample container image.",
+          "To expose the demo application to the internet: In cluster.tf , change ipv6 access type from INTERNAL to EXTERNAL . ipv6 access type = \"EXTERNAL\" In app.tf , configure an external load balancer by removing the networking.gke.io/load-balancer-type annotation. annotations = { \"networking.gke.io/load-balancer-type\" = \"Internal\" # Remove this line } Create a cluster and deploy an application In Cloud Shell, run this command to verify that Terraform is available: terraform The output should be similar to the following: Usage: terraform [global options] <subcommand> [args] The available commands for execution are listed below."
+        ]
+      },
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 97,
+        "relevance": "",
+        "evidence_snippets": [
+          "The patch mitigate the following vulnerability: The vulnerability described in Kubernetes issue 91507 CAP NET RAW capability (which is included in the default container capability set) to maliciously configure the IPv6 stack on the node and redirect node traffic to the attacker controlled container.",
+          "The patch mitigate the following vulnerability: The vulnerability described in Kubernetes issue 91507 CAP NET RAW capability (which is included in the default container capability set) to maliciously configure the IPv6 stack on the node and redirect node traffic to the attacker controlled container.",
+          "The patch mitigate the following vulnerability: The vulnerability described in Kubernetes issue 91507 CAP NET RAW capability (which is included in the default container capability set) to maliciously configure the IPv6 stack on the node and redirect node traffic to the attacker controlled container."
+        ]
+      },
+      {
+        "title": "Set up Elastic Stack on GKE \\_|\\_ Kubernetes Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/elk-stack",
+        "source_id": "site-docs-root",
+        "final_score": 95,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Delete the Elastic Stack components, ECK operator, and kube-state-metrics: kubectl --namespace elastic-system delete ingresses.networking.k8s.io elastic-stack kubectl --namespace elastic-system delete managedcertificates.networking.gke.io elastic-stack kubectl --namespace elastic-system delete frontendconfigs.networking.gke.io elastic-stack kubectl --namespace elastic-system delete agents.agent.k8s.elastic.co elastic-agent kubectl --namespace elastic-system delete agents.agent.k8s.elastic.co fleet-server kubectl --namespace elastic-system delete kibanas.kibana.k8s.elastic.co kibana kubectl --namespace elastic-system delete elasticsearches.elasticsearch.k8s.elastic.co elasticsearch kubectl --namespace elastic-system delete daemonsets.apps max-map-count-setter kubectl --namespace elastic-system delete pvc --selector = 'elasticsearch.k8s.elastic.co/cluster-name=elasticsearch' helm --namespace elastic-system uninstall kube-state-metrics helm --namespace elastic-system uninstall elastic-operator Delete the DNS record set, IP address, DNS managed zone, and GKE cluster: gcloud dns record-sets delete \"elk.",
+          "See the License for the specific language governing permissions and limitations under the License. apiVersion : networking.gke.io/v1beta1 kind : FrontendConfig metadata : name : elastic-stack namespace : elastic-system spec : redirectToHttps : enabled : true responseCodeName : MOVED PERMANENTLY DEFAULT --- apiVersion : networking.gke.io/v1 kind : ManagedCertificate metadata : name : elastic-stack namespace : elastic-system spec : domains : - elk.BASE DOMAIN --- apiVersion : networking.k8s.io/v1 kind : Ingress metadata : name : kibana namespace : elastic-system annotations : networking.gke.io/managed-certificates : elastic-stack networking.gke.io/v1beta1.FrontendConfig : elastic-stack kubernetes.io/ingress.global-static-ip-name : elastic-stack kubernetes.io/ingress.class : gce spec : defaultBackend : service : name : kibana-kb-http port : number : 5601 This manifest describes a ManagedCertificate that provisions an SSL certificate to establish the TLS connection.",
+          "Add a Helm chart repository and update it: helm repo add elastic https://helm.elastic.co helm repo update Clone the GitHub repository: git clone https://github.com/GoogleCloudPlatform/kubernetes-engine-samples.git Change to the working directory: cd kubernetes-engine-samples/observability/elastic-stack-tutorial Create a GKE cluster Create a GKE cluster with control plane metrics collection enabled: gcloud container clusters create-auto elk-stack \\ --location = \"us-central1\" \\ --monitoring = \"SYSTEM,WORKLOAD,API SERVER,SCHEDULER,CONTROLLER MANAGER\" Deploy the ECK operator Elastic Cloud on Kubernetes (ECK) is a platform for deploying and managing the Elastic Stack on Kubernetes clusters."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "agents.agent.k8s.elastic.co",
+      "app.kubernetes.io",
+      "app.tf",
+      "cluster.default",
+      "cluster.default.endpoint",
+      "cluster.default.master",
+      "cluster.tf",
+      "config.default.access",
+      "container.googleapis.com",
+      "daemonsets.apps",
+      "data.google",
+      "docker.pkg.dev",
+      "elasticsearch.k8s.elastic.co",
+      "elasticsearches.elasticsearch.k8s.elastic.co",
+      "elk.BASE",
+      "frontendconfigs.networking.gke.io",
+      "github.com",
+      "helm.elastic.co",
+      "ingress.class",
+      "ingress.global",
+      "ingresses.networking.k8s.io",
+      "k8s.io",
+      "kibanas.kibana.k8s.elastic.co",
+      "kubernetes.io",
+      "labels.app",
+      "managedcertificates.networking.gke.io",
+      "network.default.id",
+      "networking.gke.io",
+      "networking.k8s.io",
+      "samples.git",
+      "sleep.wait",
+      "subnetwork.default.id",
+      "subnetwork.default.secondary",
+      "v1.default.spec",
+      "v1beta1.FrontendConfig"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/elk-stack"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/elk-stack"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/elk-stack"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/elk-stack"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/elk-stack"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/elk-stack"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/elk-stack"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/elk-stack"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/create-cluster-using-terraform",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/elk-stack"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:15.353Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

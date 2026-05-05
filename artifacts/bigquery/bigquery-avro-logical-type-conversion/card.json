@@ -1,0 +1,134 @@
+{
+  "feature_name": "BigQuery Avro logical type conversion",
+  "feature_slug": "bigquery-avro-logical-type-conversion",
+  "summary": "BigQuery supports converting Avro logical types when loading Avro data.",
+  "extended_definition": "BigQuery supports converting Avro logical types when loading Avro data.",
+  "lifecycle": {
+    "latest_feature_date": "2018-12-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analyze-multimodal-data",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-load-data-from-bigquery-job",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquerydatatransfer-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "List data sources \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquerydatatransfer-quickstart",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Includes the autoloader for libraries installed with composer require DIR . '/vendor/autoload.php'; Imports the Google Cloud client library use Google\\Cloud\\BigQuery\\DataTransfer\\V1\\Client\\DataTransferServiceClient; use Google\\Cloud\\BigQuery\\DataTransfer\\V1\\ListDataSourcesRequest; Instantiates a client $bqdtsClient = new DataTransferServiceClient(); Your Google Cloud Platform project ID $projectId = 'YOUR PROJECT ID'; $parent = sprintf('projects/%s/locations/us', $projectId); try { echo 'Supported Data Sources:', PHP EOL; $listDataSourcesRequest = (new ListDataSourcesRequest()) ->setParent($parent); $pagedResponse = $bqdtsClient->listDataSources($listDataSourcesRequest); foreach ($pagedResponse->iterateAllElements() as $dataSource) { echo 'Data source: ', $dataSource->getDisplayName(), PHP EOL; echo 'ID: ', $dataSource->getDataSourceId(), PHP EOL; echo 'Full path: ', $dataSource->getName(), PHP EOL; echo 'Description: ', $dataSource->getDescription(), PHP EOL; } } finally { $bqdtsClient->close(); } Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "Imports the Google Cloud client library require \"google/cloud/bigquery/data transfer\" Your Google Cloud Platform project ID project id = \"YOUR PROJECT ID\" Instantiate a client data transfer = Google :: Cloud :: Bigquery :: DataTransfer . data transfer service Get the full path to your project. project path = data transfer . project path project : project id puts \"Supported Data Sources:\" Iterate over all possible data sources. data transfer . list data sources ( parent : project path ) . each do data source puts \"Data source: #{ data source . display name } \" puts \"ID: #{ data source . data source id } \" puts \"Full path: #{ data source . name } \" puts \"Description: #{ data source . description } \" end What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .",
+          "Data sources are the services that can be used to create data transfers into BigQuery. @param {string} projectId The Google Cloud project ID, for example 'example-project-id'. / async function listDataSources ( projectId ) { const request = { parent : projects/ ${ projectId } , }; try { const [ dataSources ] = await client . listDataSources ( request ); if ( dataSources . length === 0 ) { console . log ( No data sources found in project ${ projectId } . ); return ; } console . log ( 'Supported data sources:' ); for ( const dataSource of dataSources ) { console . log ( \\nData source: ${ dataSource . name } ); console . log ( ID: ${ dataSource . dataSourceId } ); console . log ( Display Name: ${ dataSource . displayName } ); } } catch ( err ) { if ( err . code === status ."
+        ]
+      },
+      {
+        "title": "Analyze multimodal data in BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analyze-multimodal-data",
+        "source_id": "site-docs-reference-5",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "Generative AI functions Generate text, embeddings, and scalar values based on ObjectRef or ObjectRefRuntime input by using the following generative AI functions with Gemini models: AI.GENERATE AI.GENERATE TEXT AI.GENERATE TABLE AI.GENERATE BOOL AI.GENERATE DOUBLE AI.GENERATE INT AI.GENERATE EMBEDDING AI.EMBED AI.SIMILARITY AI.CLASSIFY AI.IF AI.SCORE Work with multimodal data in Python You can analyze multimodal data in Python by using BigQuery DataFrames classes and methods.",
+          "Limitations The following limitations apply to BigQuery multimodal data features: If you don't explicitly specify the name of the project that contains the connection in the authorizer field of an ObjectRef value, then the connection must exist either in the project that contains the object table that stores it, or in the project in which the query that references the ObjectRef value is run.",
+          "BigQuery's multimodal data features let you perform the following tasks: Integrate unstructured data stored in Cloud Storage as another column alongside structured data in standard BigQuery tables by representing unstructured data as ObjectRef values."
+        ]
+      },
+      {
+        "title": "\"Create a BigQuery DataFrame from a finished query job \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-load-data-from-bigquery-job",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": [
+          "Client ( project = project , location = location ) Job ID inserted based on the query results selcted to explore job id = JOB ID job = client . get job ( job id ) destination = str ( job . destination ) Load data from a BigQuery table using BigFrames DataFrames: bq df = bpd . read gbq table ( destination ) What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .",
+          "For more information, see Set up authentication for client libraries . from google.cloud import bigquery import bigframes.pandas as bpd Project ID inserted based on the query results selected to explore project = your project id Location inserted based on the query results selected to explore location = \"us\" client = bigquery .",
+          "Home Documentation Data analytics BigQuery Samples Create a BigQuery DataFrame from a finished query job Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "autoload.php",
+      "bigframes.pandas"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquerydatatransfer-quickstart",
+        "https://docs.cloud.google.com/bigquery/docs/analyze-multimodal-data",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-load-data-from-bigquery-job"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquerydatatransfer-quickstart",
+        "https://docs.cloud.google.com/bigquery/docs/analyze-multimodal-data",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-load-data-from-bigquery-job"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquerydatatransfer-quickstart",
+        "https://docs.cloud.google.com/bigquery/docs/analyze-multimodal-data",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-load-data-from-bigquery-job"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquerydatatransfer-quickstart",
+        "https://docs.cloud.google.com/bigquery/docs/analyze-multimodal-data",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-load-data-from-bigquery-job"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquerydatatransfer-quickstart",
+        "https://docs.cloud.google.com/bigquery/docs/analyze-multimodal-data",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-load-data-from-bigquery-job"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

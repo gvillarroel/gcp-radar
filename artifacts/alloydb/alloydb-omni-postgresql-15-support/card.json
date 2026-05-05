@@ -1,0 +1,125 @@
+{
+  "feature_name": "AlloyDB Omni PostgreSQL 15 support",
+  "feature_slug": "alloydb-omni-postgresql-15-support",
+  "summary": "AlloyDB Omni version alloydb-omni-0.3.0-preview-postgresql-15.2 introduces PostgreSQL 15 support.",
+  "extended_definition": "AlloyDB Omni version alloydb-omni-0.3.0-preview-postgresql-15.2 introduces PostgreSQL 15 support.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/db-version-policies",
+      "https://docs.cloud.google.com/alloydb/docs/reference/extensions",
+      "https://docs.cloud.google.com/alloydb/docs/reference/model-endpoint"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Database version policies \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/db-version-policies",
+        "source_id": "site-docs-reference-2",
+        "final_score": 120,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Major version support timeline The following table shows the dates when AlloyDB support for compatible versions became generally available (GA): PostgreSQL compatible version AlloyDB version support GA date AlloyDB Omni version support GA Date PostgreSQL 18 March 18, 2026 Not applicable PostgreSQL 17 September 22, 2025 Not applicable PostgreSQL 16 October 23, 2024 April 8, 2025 PostgreSQL 15 January 19, 2024 October 11, 2023 PostgreSQL 14 December 12, 2022 Not applicable Major version compatibility release policy We aim to offer timely support for AlloyDB compatibility with new PostgreSQL major versions.",
+          "Major and minor version support AlloyDB supports compatibility with the following PostgreSQL database versions: PostgreSQL compatible version AlloyDB AlloyDB Omni PostgreSQL 18 18.1 Not applicable PostgreSQL 17 (default) 17.5 17.5 PostgreSQL 16 16.9 16.8 16.3 PostgreSQL 15 15.13 15.12 15.7 15.5 15.4 15.2 PostgreSQL 14 14.18 Not applicable PostgreSQL 18 compatibility Before you use PostgreSQL 18 as your database version, consider the following: PostgreSQL 18 isn't available with AlloyDB Omni.",
+          "AlloyDB and AlloyDB Omni version policies AlloyDB for PostgreSQL , which runs in Google Cloud, and AlloyDB Omni , which you install and run on your own computing environment, have related but distinct versioning policies as described in this section."
+        ]
+      },
+      {
+        "title": "\"Supported database extensions \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/extensions",
+        "source_id": "site-api-reference",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "However, you can manually install PostGIS to an existing AlloyDB Omni installation. postgres fdw Provides a foreign-data wrapper that you can use to access data stored in external PostgreSQL servers. postgresql-hll Introduces a new data type, hll , which is a HyperLogLog data structure. prefix Provides prefix-matching, plus index support. rdkit Provides functions for comparing, manipulating, and identifying molecular structures. refint Includes functions to check foreign key restraints, the referencing table, and the referenced table. rum Implements support to create RUM indexes for high-performance full-text search.",
+          "However, you can manually install Orafce to an existing AlloyDB Omni installation. pageinspect Inspects the contents of database pages at a low level. pg background Lets you run arbitrary commands in a background worker. pg bigm Provides full text search capability in PostgreSQL using 2-gram (bigram) indexes for faster full text searches.",
+          "Warning: In AlloyDB Omni only, enabling this extension and the PostgreSQL logging collector parameter might result in loss of audit logs."
+        ]
+      },
+      {
+        "title": "\"Model endpoint management reference \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/model-endpoint",
+        "source_id": "site-api-reference",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following example curl request passes the version HTTP header which is used by the model endpoint: curl -m 100 -X POST https://cymbal.com/models/text/embeddings/v1 \\ -H \"Content-Type: application/json\" \\ -H \"version: 2024-01-01\" \\ -d '{\"prompt\": [\"AlloyDB Embeddings\"]}' The model expects text input through the version field and returns the version value in JSON format.",
+          "Home Documentation Databases AlloyDB for PostgreSQL Reference Send feedback Model endpoint management reference Stay organized with collections Save and categorize content based on your preferences.",
+          "The ai.generate ( Preview ) SQL function in the AI functions, to generate text based on prompts specified in natural language. ai schema AlloyDB reserves, and creates, the ai schema."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ai.generate",
+      "cymbal.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/db-version-policies",
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions",
+        "https://docs.cloud.google.com/alloydb/docs/reference/model-endpoint"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/db-version-policies",
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions",
+        "https://docs.cloud.google.com/alloydb/docs/reference/model-endpoint"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/db-version-policies",
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions",
+        "https://docs.cloud.google.com/alloydb/docs/reference/model-endpoint"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/db-version-policies",
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions",
+        "https://docs.cloud.google.com/alloydb/docs/reference/model-endpoint"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/db-version-policies",
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions",
+        "https://docs.cloud.google.com/alloydb/docs/reference/model-endpoint"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:04.004Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb"
+}

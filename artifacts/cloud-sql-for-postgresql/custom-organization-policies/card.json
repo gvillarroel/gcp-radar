@@ -1,0 +1,130 @@
+{
+  "feature_name": "Custom organization policies",
+  "feature_slug": "custom-organization-policies",
+  "summary": "Custom organization policies let you define organization-level governance rules for Cloud SQL instances.",
+  "extended_definition": "Custom organization policies let you define organization-level governance rules for Cloud SQL instances.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options",
+      "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+      "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud SQL backups overview \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+        "source_id": "site-docs-root",
+        "final_score": 149,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Example custom organization policies for common use cases .",
+          "You can also set an Cloud SQL custom organization policy to take a final back at instance deletion for all instances in your organization and set a standard retention period.",
+          "For more information, see Cloud SQL organization policies ."
+        ]
+      },
+      {
+        "title": "\"Connect to an instance using Private Service Connect \\_|\\_ Cloud SQL for\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "source_id": "site-iam-reference",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Cloud SQL instance is located in the myproject project. gcloud network-connectivity service-connection-policies create cloud-sql-policy \\ --network=default \\ --project=my-project \\ --region=us-central1 \\ --service-class=google-cloud-sql \\ --subnets=managed-service-subnet \\ --psc-connection-limit=10 \\ --producer-instance-location=custom-resource-hierarchy-levels \\ --allowed-google-producers-resource-hierarchy-level=projects/myproject REST Before using any of the request data, make the following replacements: PROJECT ID : the ID of your project.",
+          "You can set the value of PRODUCER INSTANCE LOCATION to only one of the following: custom-resource-hierarchy-levels : the instance must be located in one of the projects, folders, or organizations that you provide as a value for the allowed-google-producers-resource-hierarchy-level parameter. none : the instance is in the same project as the service connection policy.",
+          "Click Create policy . gcloud To create a service connection policy, use the service-connection-policies create command . gcloud network-connectivity service-connection-policies create POLICY NAME \\ --network= NETWORK \\ --project= PROJECT ID \\ --region= REGION \\ --service-class= SERVICE CLASS \\ --subnets=https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks/ SUBNETS \\ --psc-connection-limit= LIMIT \\ --description=\" DESCRIPTION \" \\ --producer-instance-location= PRODUCER INSTANCE LOCATION \\ --allowed-google-producers-resource-hierarchy-level= RESOURCE HIERARCHY LEVEL Replace the following: POLICY NAME : the name of your service connection policy."
+        ]
+      },
+      {
+        "title": "\"Choose your backup option \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options",
+        "source_id": "site-iam-reference",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "In a multi-region configuration, it's recommended that backups be in the same region as the instance to minimize latency and avoid potential backup failures due to organization policies, or location-based limitations.",
+          "Unlike enhanced backups, where backup settings are defined by a backup plan, backup configurations for standard backups are set at the instance level and defined in the instance's settings.",
+          "Therefore, if you have multiple Cloud SQL instances, then you'll need to define the backup configurations for each instance separately in the instance's backup settings."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:39.896Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql"
+}

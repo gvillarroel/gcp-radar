@@ -1,0 +1,131 @@
+{
+  "feature_name": "Config Sync dependency enforcement",
+  "feature_slug": "config-sync-dependency-enforcement",
+  "summary": "Config Sync can skip applying objects whose dependencies are not successfully applied and fully reconciled.",
+  "extended_definition": "Config Sync can skip applying objects whose dependencies are not successfully applied and fully reconciled.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Monitor RootSync and RepoSync objects \\_|\\_ Config Sync \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+        "source_id": "site-docs-root",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Config Sync Guides Send feedback Monitor RootSync and RepoSync objects Stay organized with collections Save and categorize content based on your preferences.",
+          "View errors RootSync and RepoSync objects use the status field to track errors encountered when syncing the configs from the source of truth to a cluster.",
+          "To change log verbosity, use the .spec.override.logLevels field as shown in the following example: apiVersion : configsync.gke.io/v1beta1 kind : RootSync metadata : name : root-sync namespace : config-management-system spec : override : logLevels : - containerName : \"reconciler\" logLevel : 0 - containerName : \"git-sync\" logLevel : 10 The value in the containerName field must be one of the following: reconciler , git-sync , hydration-controller , oci-sync , or helm-sync ."
+        ]
+      },
+      {
+        "title": "\"Declare dependencies between resource objects \\_|\\_ Config Sync \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency",
+        "source_id": "site-docs-root",
+        "final_score": 144,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "More details can be found in sigs.k8s.io/cli-utils With the depends-on annotation, Config Sync not only applies objects in the order that you want, it also verifies that the dependency object is reconciled before applying the dependent object.",
+          "For the Wordpress example, the annotation in Wordpress Deployment resembles the following: deployment.yaml apiVersion : apps/v1 kind : Deployment metadata : name : wordpress namespace : default labels : app : wordpress annotations : config.kubernetes.io/depends-on : apps/namespaces/default/StatefulSet/wordpress-mysql When Config Sync applies the objects, it first applies the dependency, the object wordpress-mysql StatefulSet.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Config Sync Guides Send feedback Declare dependencies between resource objects Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Safe rollouts with Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync",
+        "source_id": "site-docs-root",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "Implementing staged rollouts with Config Sync In a multi-cluster environment, we don't recommend applying a configuration change across all the clusters at the same time.",
+          "Syncing errors occur only if Config Sync tries to apply an invalid repository or if the Kubernetes API server rejects some of the objects.",
+          "The K8sRequiredLabels resource is applied to clusters of type prod , with an enforcementAction parameter set to dryrun : apiVersion : constraints . gatekeeper . sh / v1beta1 kind : K8sRequiredLabels metadata : name : ns - must - have - team annotations : configmanagement . gke . io / cluster - selector : prod Spec : enforcementAction : dryrun match : kinds : - apiGroups : [ \"\" ] kinds : [ \"Namespace\" ] parameters : labels : - key : \"team\" The K8sRequiredLabels resource is applied to clusters of type canary-prod , without the enforcementAction parameter, meaning that the policy is actually enforced: apiVersion : constraints . gatekeeper . sh / v1beta1 kind : K8sRequiredLabels metadata : name : ns - must - have - team annotations : configmanagement . gke . io / cluster - selector : canary - prod spec : match : kinds : - apiGroups : [ \"\" ] kinds : [ \"Namespace\" ] parameters : labels : - key : \"team\" The configmanagement.gke.io/cluster-selector annotation allows the team to enforce the policy only in clusters of type canary-prod , preventing any unintended side-effects from spreading to the whole production fleet."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.kubernetes.io",
+      "configmanagement.gke.io",
+      "configsync.gke.io",
+      "deployment.yaml",
+      "example.com",
+      "sigs.k8s.io",
+      "spec.override.logLevels",
+      "sync.git"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:05.054Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management"
+}

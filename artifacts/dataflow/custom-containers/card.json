@@ -1,0 +1,142 @@
+{
+  "feature_name": "Custom containers",
+  "feature_slug": "custom-containers",
+  "summary": "Custom containers let Dataflow run pipelines with user-provided container images; Custom containers let Dataflow run pipelines with user-provided container images.",
+  "extended_definition": "Custom containers let Dataflow run pipelines with user-provided container images; Custom containers let Dataflow run pipelines with user-provided container images.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+      "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/configuring-flex-templates"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot Dataflow errors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "source_id": "site-docs-reference-2",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "Java --workerDiskType=pd-ssd Python --worker disk type=pd-ssd Go disk type=pd-ssd No space left on device When a job runs out of disk space, the following error might appear in the worker logs: No space left on device This error can occur for one of the following reasons: The worker persistent storage runs out of free space, which can occur for one of the following reasons: A job downloads large dependencies at runtime A job uses large custom containers A job writes many temporary data to local disk When using Dataflow Shuffle , Dataflow sets lower default disk size .",
+          "No value is provided When you try to archive a Dataflow job by using the API, the following error might occur: The field mask specifies an update for the field job metadata.user display properties.archived in job JOB ID , but no value is provided.",
+          "CONTAINER ID = nerdctl ps grep sdk-0-0 awk '{print $1}' Start a shell in the running container. nerdctl exec --privileged -it $CONTAINER ID /bin/bash Inspect python processes in the running container. ps -A grep python PYTHON PID = $( ps -A grep python head -1 awk '{print $1}' ) Use pystack to retrieve stacktraces from the python process. pip install pystack pystack remote --native $PYTHON PID Find which thread holds the GIL and inspect the stacktrace. pystack remote --native $PYTHON PID grep -iF \"Has the GIL\" -A 100 Alternately, use inspect with gdb. apt update && apt install -y gdb gdb --quiet \\ --eval-command = \"set pagination off\" \\ --eval-command = \"thread apply all bt\" \\ --eval-command \"set confirm off\" \\ --eval-command = \"quit\" -p $PYTHON PID In Python pipelines, in the default configuration, Dataflow assumes that each Python process running on the workers efficiently uses one vCPU core."
+        ]
+      },
+      {
+        "title": "\"Use Flex Templates to package a Dataflow pipeline for deployment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/configuring-flex-templates",
+        "source_id": "site-docs-reference-2",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "Here's an example Google Cloud CLI command that builds a Flex Template using an image in a private registry with a self-signed certificate. gcloud dataflow flex-template build gs://example-bucket/custom-pipeline-private-repo.json --sdk-language = JAVA --image = \"gcp.repository.example.com:9082/registry/example/image:latest\" --image-repository-username-secret-id = \"projects/example-project/secrets/username-secret\" --image-repository-password-secret-id = \"projects/example-project/secrets/password-secret/versions/latest\" --image-repository-cert-path = \"gs://example-bucket/self-signed.crt\" --metadata-file = metadata.json To build your own Flex Template, you need to replace the example values, and you might need to specify different or additional options.",
+          "For example: gcloud dataflow flex-template run $JOB NAME \\ --region = $REGION \\ --template-file-gcs-location = $TEMPLATE PATH \\ --parameters = sdk container image = $CUSTOM CONTAINER IMAGE \\ --additional-experiments = use runner v2 For more information, see Use custom containers in Dataflow .",
+          "Example metadata file Java { \"name\" : \"Streaming Beam SQL\" , \"description\" : \"An Apache Beam streaming pipeline that reads JSON encoded messages from Pub/Sub, uses Beam SQL to transform the message data, and writes the results to a BigQuery\" , \"parameters\" : [ { \"name\" : \"inputSubscription\" , \"label\" : \"Pub/Sub input subscription.\" , \"helpText\" : \"Pub/Sub subscription to read from.\" , \"regexes\" : [ \"[a-zA-Z][- . +%a-zA-Z0-9]{2,}\" ] }, { \"name\" : \"outputTable\" , \"label\" : \"BigQuery output table\" , \"helpText\" : \"BigQuery table spec to write to, in the form 'project:dataset.table'.\" , \"isOptional\" : true , \"regexes\" : [ \"[^:]+:[^.]+[.].+\" ] } ] } Python { \"name\" : \"Streaming beam Python flex template\" , \"description\" : \"Streaming beam example for python flex template.\" , \"parameters\" : [ { \"name\" : \"input subscription\" , \"label\" : \"Input PubSub subscription.\" , \"helpText\" : \"Name of the input PubSub subscription to consume from.\" , \"regexes\" : [ \"projects/[^/]+/subscriptions/[a-zA-Z][- . +%a-zA-Z0-9]{2,}\" ] }, { \"name\" : \"output table\" , \"label\" : \"BigQuery output table name.\" , \"helpText\" : \"Name of the BigQuery output table name.\" , \"isOptional\" : true , \"regexes\" : [ \"([^:]+:)?[^.]+[.].+\" ] } ] } You can download metadata files for the Google-provided templates from the Dataflow template directory ."
+        ]
+      },
+      {
+        "title": "\"Use Apache Beam notebook advanced features \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced",
+        "source_id": "site-docs-reference-2",
+        "final_score": 126,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For general Apache Beam container usage, see: Container environments Managing Python Pipeline Dependencies For Dataflow container usage, see: Use custom containers in Dataflow Disable external IP addresses When creating an Apache Beam notebook instance, to increase security, disable external IP addresses.",
+          "Build a custom container In most cases, if your pipeline doesn't require additional Python dependencies or executables, Apache Beam can automatically use its official container images to run your user-defined code.",
+          "Use custom containers Depending on the runner, you can use custom containers for different purposes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "beam.apache.org",
+      "dataset.table",
+      "docker.pkg.dev",
+      "gcp.repository.example.com",
+      "metadata.json",
+      "metadata.user",
+      "pkg.dev",
+      "properties.archived",
+      "python3.7",
+      "repo.json",
+      "signed.crt"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/configuring-flex-templates",
+        "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/configuring-flex-templates",
+        "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/configuring-flex-templates",
+        "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/configuring-flex-templates",
+        "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/configuring-flex-templates",
+        "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/configuring-flex-templates",
+        "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:53.762Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow"
+}

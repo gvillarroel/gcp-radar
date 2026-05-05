@@ -1,0 +1,195 @@
+{
+  "feature_name": "App Engine SSL certificate management",
+  "feature_slug": "app-engine-ssl-certificate-management",
+  "summary": "Beta-level App Engine Admin API and gcloud features can now create and manage SSL certificates.",
+  "extended_definition": "Beta-level App Engine Admin API and gcloud features can now create and manage SSL certificates.",
+  "lifecycle": {
+    "latest_feature_date": "2017-06-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/admin-api/audit-logging",
+      "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates",
+      "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Package google.appengine.v1 \\_|\\_ App Engine Admin API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "source_id": "site-docs-reference-4",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "Index Applications (interface) AuthorizedCertificates (interface) AuthorizedDomains (interface) DomainMappings (interface) Firewall (interface) Instances (interface) Services (interface) Versions (interface) ApiConfigHandler (message) ApiEndpointHandler (message) Application (message) Application.DatabaseType (enum) Application.FeatureSettings (message) Application.IdentityAwareProxy (message) Application.ServingStatus (enum) AuthFailAction (enum) AuthorizedCertificate (message) AuthorizedCertificateView (enum) AuthorizedDomain (message) AutomaticScaling (message) BasicScaling (message) BatchUpdateIngressRulesRequest (message) BatchUpdateIngressRulesResponse (message) CertificateRawData (message) CloudBuildOptions (message) ContainerInfo (message) CpuUtilization (message) CreateApplicationRequest (message) CreateAuthorizedCertificateRequest (message) CreateDomainMappingRequest (message) CreateIngressRuleRequest (message) CreateVersionMetadataV1 (message) CreateVersionRequest (message) DebugInstanceRequest (message) DeleteAuthorizedCertificateRequest (message) DeleteDomainMappingRequest (message) DeleteIngressRuleRequest (message) DeleteInstanceRequest (message) DeleteServiceRequest (message) DeleteVersionRequest (message) Deployment (message) DiskUtilization (message) DomainMapping (message) DomainOverrideStrategy (enum) EndpointsApiService (message) EndpointsApiService.RolloutStrategy (enum) Entrypoint (message) ErrorHandler (message) ErrorHandler.ErrorCode (enum) FileInfo (message) FirewallRule (message) FirewallRule.Action (enum) FlexibleRuntimeSettings (message) GetApplicationRequest (message) GetAuthorizedCertificateRequest (message) GetDomainMappingRequest (message) GetIngressRuleRequest (message) GetInstanceRequest (message) GetServiceRequest (message) GetVersionRequest (message) HealthCheck (message) InboundServiceType (enum) Instance (message) Instance.Availability (enum) Instance.Liveness (message) Instance.Liveness.LivenessState (enum) Library (message) ListAuthorizedCertificatesRequest (message) ListAuthorizedCertificatesResponse (message) ListAuthorizedDomainsRequest (message) ListAuthorizedDomainsResponse (message) ListDomainMappingsRequest (message) ListDomainMappingsResponse (message) ListIngressRulesRequest (message) ListIngressRulesResponse (message) ListInstancesRequest (message) ListInstancesResponse (message) ListServicesRequest (message) ListServicesResponse (message) ListVersionsRequest (message) ListVersionsResponse (message) LivenessCheck (message) LocationMetadata (message) LoginRequirement (enum) ManagedCertificate (message) ManagementStatus (enum) ManualScaling (message) Network (message) NetworkSettings (message) NetworkSettings.IngressTrafficAllowed (enum) NetworkUtilization (message) OperationMetadataV1 (message) ReadinessCheck (message) RepairApplicationRequest (message) RequestUtilization (message) ResourceRecord (message) ResourceRecord.RecordType (enum) Resources (message) ScriptHandler (message) SecurityLevel (enum) Service (message) ServingStatus (enum) SslSettings (message) SslSettings.SslManagementType (enum) StandardSchedulerSettings (message) StaticFilesHandler (message) TrafficSplit (message) TrafficSplit.ShardBy (enum) UpdateApplicationRequest (message) UpdateAuthorizedCertificateRequest (message) UpdateDomainMappingRequest (message) UpdateIngressRuleRequest (message) UpdateServiceRequest (message) UpdateVersionRequest (message) UrlDispatchRule (message) UrlMap (message) UrlMap.RedirectHttpResponseCode (enum) Version (message) VersionView (enum) Volume (message) VpcAccessConnector (message) VpcAccessConnector.EgressSetting (enum) ZipInfo (message) Applications Manages App Engine applications.",
+          "Defaults to the default channel. threadsafe bool Whether multiple requests can be dispatched to this version at once. vm bool Whether to deploy this version in a container on a virtual machine. flexible runtime settings FlexibleRuntimeSettings Settings for App Engine flexible runtimes. app engine apis bool Allows App Engine second generation runtimes to access the legacy bundled services. beta settings map<string, string> Metadata settings that are supplied to this version to enable beta runtime features. env string App Engine execution environment for this version.",
+          "Authorization requires the following IAM permission on the specified resource parent : appengine.applications.get view AuthorizedCertificateView Controls the set of fields returned in the LIST response. page size int32 Maximum results to return per page. page token string Continuation token for fetching the next page of results."
+        ]
+      },
+      {
+        "title": "\"REST Resource: apps.authorizedCertificates \\_|\\_ App Engine Admin API \\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates",
+        "source_id": "site-api-reference",
+        "final_score": 93,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Resource: AuthorizedCertificate JSON representation CertificateRawData JSON representation ManagedCertificate JSON representation ManagementStatus Methods Resource: AuthorizedCertificate An SSL certificate that a user has been authorized to administer.",
+          "Home Technology areas App Engine Admin API Reference Send feedback REST Resource: apps.authorizedCertificates Stay organized with collections Save and categorize content based on your preferences.",
+          "Methods create Uploads the specified SSL certificate. delete Deletes the specified SSL certificate. get Gets the specified SSL certificate. list Lists all SSL certificates the user is authorized to administer. patch Updates the specified SSL certificate."
+        ]
+      },
+      {
+        "title": "App Engine audit logging \\_|\\_ App Engine Admin API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/appengine/docs/admin-api/audit-logging",
+        "source_id": "site-api-reference",
+        "final_score": 70,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ google.appengine.v1.Applications.GetApplication google.appengine.v1.Services.GetService google.appengine.v1.Services.ListServices google.appengine.v1.Versions.GetVersion google.appengine.v1.Versions.ListVersions google.appengine.v1beta.Applications.GetApplication google.appengine.v1beta.Services.GetService google.appengine.v1beta.Services.ListServices google.appengine.v1beta.Versions.GetVersion google.appengine.v1beta.Versions.ListVersions ADMIN WRITE google.appengine.v1.Applications.CreateApplication (LRO) google.appengine.v1.Applications.RepairApplication (LRO) google.appengine.v1.Applications.UpdateApplication (LRO) google.appengine.v1.AuthorizedCertificates.CreateAuthorizedCertificate google.appengine.v1.AuthorizedCertificates.DeleteAuthorizedCertificate google.appengine.v1.AuthorizedCertificates.UpdateAuthorizedCertificate google.appengine.v1.DomainMappings.CreateDomainMapping (LRO) google.appengine.v1.DomainMappings.DeleteDomainMapping (LRO) google.appengine.v1.DomainMappings.UpdateDomainMapping (LRO) google.appengine.v1.Firewall.BatchUpdateIngressRules google.appengine.v1.Firewall.CreateIngressRule google.appengine.v1.Firewall.DeleteIngressRule google.appengine.v1.Firewall.UpdateIngressRule google.appengine.v1.Instances.DebugInstance (LRO) google.appengine.v1.Instances.DeleteInstance (LRO) google.appengine.v1.Services.DeleteService (LRO) google.appengine.v1.Services.UpdateService (LRO) google.appengine.v1.Versions.CreateVersion (LRO) google.appengine.v1.Versions.DeleteVersion (LRO) google.appengine.v1.Versions.UpdateVersion (LRO) google.appengine.v1alpha.AuthorizedCertificates.DeleteAuthorizedCertificate google.appengine.v1alpha.AuthorizedCertificates.UpdateAuthorizedCertificate google.appengine.v1alpha.DomainMappings.CreateDomainMapping (LRO) google.appengine.v1alpha.DomainMappings.DeleteDomainMapping (LRO) google.appengine.v1alpha.DomainMappings.UpdateDomainMapping (LRO) google.appengine.v1beta.Applications.CreateApplication (LRO) google.appengine.v1beta.Applications.RepairApplication (LRO) google.appengine.v1beta.Applications.UpdateApplication (LRO) google.appengine.v1beta.AuthorizedCertificates.CreateAuthorizedCertificate google.appengine.v1beta.AuthorizedCertificates.DeleteAuthorizedCertificate google.appengine.v1beta.AuthorizedCertificates.UpdateAuthorizedCertificate google.appengine.v1beta.DomainMappings.CreateDomainMapping (LRO) google.appengine.v1beta.DomainMappings.DeleteDomainMapping (LRO) google.appengine.v1beta.DomainMappings.UpdateDomainMapping (LRO) google.appengine.v1beta.Firewall.BatchUpdateIngressRules google.appengine.v1beta.Firewall.CreateIngressRule google.appengine.v1beta.Firewall.DeleteIngressRule google.appengine.v1beta.Firewall.UpdateIngressRule google.appengine.v1beta.Instances.DebugInstance (LRO) google.appengine.v1beta.Instances.DeleteInstance (LRO) google.appengine.v1beta.Services.DeleteService (LRO) google.appengine.v1beta.Services.UpdateService (LRO) google.appengine.v1beta.Versions.CreateVersion (LRO) google.appengine.v1beta.Versions.DeleteVersion (LRO) google.appengine.v1beta.Versions.UpdateVersion (LRO) API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for App Engine. google.appengine.v1.Applications The following audit logs are associated with methods belonging to google.appengine.v1.Applications .",
+          "Filter for this method : protoPayload.methodName=\"google.appengine.v1beta.Applications.GetApplication\" RepairApplication Method : google.appengine.v1beta.Applications.RepairApplication Audit log type : Admin activity Permissions : appengine.applications.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.appengine.v1beta.Applications.RepairApplication\" UpdateApplication Method : google.appengine.v1beta.Applications.UpdateApplication Audit log type : Admin activity Permissions : appengine.applications.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.appengine.v1beta.Applications.UpdateApplication\" google.appengine.v1beta.AuthorizedCertificates The following audit logs are associated with methods belonging to google.appengine.v1beta.AuthorizedCertificates .",
+          "Filter for this method : protoPayload.methodName=\"google.appengine.v1beta.AuthorizedCertificates.CreateAuthorizedCertificate\" DeleteAuthorizedCertificate Method : google.appengine.v1beta.AuthorizedCertificates.DeleteAuthorizedCertificate Audit log type : Admin activity Permissions : appengine.applications.update - ADMIN WRITE Method is a long-running or streaming operation : No."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.admin",
+      "appengine.applications.get",
+      "appengine.applications.update",
+      "apps.authorizedCertificates",
+      "apps.authorizedCertificates.create",
+      "apps.authorizedCertificates.get",
+      "apps.authorizedCertificates.list",
+      "platform.read"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/audit-logging"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/audit-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/audit-logging"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/audit-logging"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/audit-logging"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/audit-logging"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/audit-logging"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/audit-logging"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/audit-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/audit-logging"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/audit-logging"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/audit-logging"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.authorizedCertificates",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/audit-logging"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:07.706Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-admin-api/card.json",
+  "product_name": "App Engine Admin API",
+  "product_slug": "app-engine-admin-api"
+}

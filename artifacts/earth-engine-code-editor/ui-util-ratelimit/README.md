@@ -1,0 +1,38 @@
+# ui.util.rateLimit
+
+Product: Earth Engine Code Editor
+Feature slug: `ui-util-ratelimit`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Ui.util.rateLimit limits how often a function can run.
+
+## Lifecycle
+
+- Latest feature date: 2018-04-06
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access (evidence: [https://developers.google.com/earth-engine/apidocs/ui-util-ratelimit](https://developers.google.com/earth-engine/apidocs/ui-util-ratelimit), [https://developers.google.com/earth-engine/apidocs/ui-util-getcurrentposition](https://developers.google.com/earth-engine/apidocs/ui-util-getcurrentposition), [https://developers.google.com/earth-engine/apidocs/ui-util-debounce](https://developers.google.com/earth-engine/apidocs/ui-util-debounce))
+- auth (evidence: [https://developers.google.com/earth-engine/apidocs/ui-util-ratelimit](https://developers.google.com/earth-engine/apidocs/ui-util-ratelimit), [https://developers.google.com/earth-engine/apidocs/ui-util-getcurrentposition](https://developers.google.com/earth-engine/apidocs/ui-util-getcurrentposition), [https://developers.google.com/earth-engine/apidocs/ui-util-debounce](https://developers.google.com/earth-engine/apidocs/ui-util-debounce))
+- iam (evidence: [https://developers.google.com/earth-engine/apidocs/ui-util-ratelimit](https://developers.google.com/earth-engine/apidocs/ui-util-ratelimit), [https://developers.google.com/earth-engine/apidocs/ui-util-getcurrentposition](https://developers.google.com/earth-engine/apidocs/ui-util-getcurrentposition), [https://developers.google.com/earth-engine/apidocs/ui-util-debounce](https://developers.google.com/earth-engine/apidocs/ui-util-debounce))
+- identity (evidence: [https://developers.google.com/earth-engine/apidocs/ui-util-ratelimit](https://developers.google.com/earth-engine/apidocs/ui-util-ratelimit), [https://developers.google.com/earth-engine/apidocs/ui-util-getcurrentposition](https://developers.google.com/earth-engine/apidocs/ui-util-getcurrentposition), [https://developers.google.com/earth-engine/apidocs/ui-util-debounce](https://developers.google.com/earth-engine/apidocs/ui-util-debounce))
+- key (evidence: [https://developers.google.com/earth-engine/apidocs/ui-util-ratelimit](https://developers.google.com/earth-engine/apidocs/ui-util-ratelimit), [https://developers.google.com/earth-engine/apidocs/ui-util-getcurrentposition](https://developers.google.com/earth-engine/apidocs/ui-util-getcurrentposition), [https://developers.google.com/earth-engine/apidocs/ui-util-debounce](https://developers.google.com/earth-engine/apidocs/ui-util-debounce))
+- permission (evidence: [https://developers.google.com/earth-engine/apidocs/ui-util-ratelimit](https://developers.google.com/earth-engine/apidocs/ui-util-ratelimit), [https://developers.google.com/earth-engine/apidocs/ui-util-getcurrentposition](https://developers.google.com/earth-engine/apidocs/ui-util-getcurrentposition), [https://developers.google.com/earth-engine/apidocs/ui-util-debounce](https://developers.google.com/earth-engine/apidocs/ui-util-debounce))
+- policy (evidence: [https://developers.google.com/earth-engine/apidocs/ui-util-ratelimit](https://developers.google.com/earth-engine/apidocs/ui-util-ratelimit), [https://developers.google.com/earth-engine/apidocs/ui-util-getcurrentposition](https://developers.google.com/earth-engine/apidocs/ui-util-getcurrentposition), [https://developers.google.com/earth-engine/apidocs/ui-util-debounce](https://developers.google.com/earth-engine/apidocs/ui-util-debounce))
+- private (evidence: [https://developers.google.com/earth-engine/apidocs/ui-util-ratelimit](https://developers.google.com/earth-engine/apidocs/ui-util-ratelimit), [https://developers.google.com/earth-engine/apidocs/ui-util-getcurrentposition](https://developers.google.com/earth-engine/apidocs/ui-util-getcurrentposition), [https://developers.google.com/earth-engine/apidocs/ui-util-debounce](https://developers.google.com/earth-engine/apidocs/ui-util-debounce))
+- token (evidence: [https://developers.google.com/earth-engine/apidocs/ui-util-ratelimit](https://developers.google.com/earth-engine/apidocs/ui-util-ratelimit), [https://developers.google.com/earth-engine/apidocs/ui-util-getcurrentposition](https://developers.google.com/earth-engine/apidocs/ui-util-getcurrentposition), [https://developers.google.com/earth-engine/apidocs/ui-util-debounce](https://developers.google.com/earth-engine/apidocs/ui-util-debounce))
+
+## Official Evidence
+
+- [https://developers.google.com/earth-engine/apidocs/ui-util-debounce](https://developers.google.com/earth-engine/apidocs/ui-util-debounce)
+- [https://developers.google.com/earth-engine/apidocs/ui-util-getcurrentposition](https://developers.google.com/earth-engine/apidocs/ui-util-getcurrentposition)
+- [https://developers.google.com/earth-engine/apidocs/ui-util-ratelimit](https://developers.google.com/earth-engine/apidocs/ui-util-ratelimit)

@@ -1,0 +1,136 @@
+{
+  "feature_name": "Access Context Manager mobile require screen lock attribute",
+  "feature_slug": "access-context-manager-mobile-require-screen-lock-attribute",
+  "summary": "Access Context Manager added support for the Require screen lock device attribute for iOS and Android access levels.",
+  "extended_definition": "Access Context Manager added support for the Require screen lock device attribute for iOS and Android access levels.",
+  "lifecycle": {
+    "latest_feature_date": "2020-02-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+      "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+      "https://docs.cloud.google.com/access-context-manager/docs/use-mobile-devices"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access level attributes \\_|\\_ Access Context Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "source_id": "site-api-reference",
+        "final_score": 167,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following attributes are supported: Require screen lock Storage encryption Require administrator approval Require corp owned device OS policy Only certain device policy attributes can be used with mobile devices.",
+          "This attribute can only be included in conditions when creating or modifying an access level using the gcloud command-line tool or the Access Context Manager API.",
+          "Supports mobile devices Yes Important: For an iOS device to satisfy the the storage encryption attribute, screen lock must be enabled on the device."
+        ]
+      },
+      {
+        "title": "\"Use mobile devices with access levels \\_|\\_ Access Context Manager \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/use-mobile-devices",
+        "source_id": "site-docs-root",
+        "final_score": 143,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, if you modify your basic management settings to require use of a screen lock, it can take up to 24 hours to propagate that change.",
+          "While changes to access levels usually come into effect within a few minutes, enforcement of mobile device attributes can be delayed while changes to your managed mobile device settings are propagated.",
+          "Getting started To start using access levels to check mobile device attributes, do the following: Set up basic mobile management or advanced mobile management for your organization."
+        ]
+      },
+      {
+        "title": "\"Custom access level specification \\_|\\_ Access Context Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "source_id": "site-api-reference",
+        "final_score": 105,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Example: device.is corp owned device == true is secured with screenlock Type boolean Description Whether the device has its screen lock function enabled.",
+          "Example: device.is secured with screenlock == true os type Type enum Description Identifies which operating system the device is using.",
+          "Objects origin Contains attributes that identify the origin of the request. request.auth Contains attributes that identify authentication and authorization aspects of the request. request.time Contains time-based attributes that you can use to restrict access to resources based on the time of day, day of the week, or a specific date range. levels Contains attributes to define dependency on other access levels. device Contains attributes that describe the device the request originated from. origin attributes This section lists the attributes supported by the origin object."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "device.is",
+      "device.os",
+      "device.versionAtLeast",
+      "request.auth",
+      "request.time"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/use-mobile-devices",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/use-mobile-devices",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/use-mobile-devices",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/use-mobile-devices",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/use-mobile-devices",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/use-mobile-devices",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:03.795Z",
+  "source_step08_card": "data/step-08/current/products/access-context-manager/card.json",
+  "product_name": "Access Context Manager",
+  "product_slug": "access-context-manager"
+}

@@ -1,0 +1,267 @@
+{
+  "feature_name": "StorageBucket lifecycle rule prefix and suffix matching",
+  "feature_slug": "storagebucket-lifecycle-rule-prefix-and-suffix-matching",
+  "summary": "Config Connector supports matchesPrefix and matchesSuffix conditions in StorageBucket lifecycle rules.",
+  "extended_definition": "Config Connector supports matchesPrefix and matchesSuffix conditions in StorageBucket lifecycle rules.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/concepts/namespaces-and-projects",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/cloudfunctions/cloudfunctionsfunction",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagebucket"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "StorageBucket | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagebucket",
+        "source_id": "feature-recovery-http",
+        "final_score": 39,
+        "relevance": "",
+        "evidence_snippets": [
+          "Property Value Google Cloud Service Name Cloud Storage Google Cloud Service Documentation /storage/docs/ Google Cloud REST Resource Name v1.buckets Google Cloud REST Resource Documentation /storage/docs/json_api/v1/buckets Config Connector Resource Short Names gcpstoragebucket gcpstoragebuckets storagebucket Config Connector Service Name storage.googleapis.com Config Connector Resource Fully Qualified Name storagebuckets.storage.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember Yes Supports IAM Conditions Yes Supports IAM Audit Configs No IAM External Reference Format {{name}} Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Annotations Fields cnrm.cloud.google.com/force-destroy cnrm.cloud.google.com/project-id Spec Schema autoclass : enabled : boolean bucketPolicyOnly : boolean cors : - maxAgeSeconds : integer method : - string origin : - string responseHeader : - string customPlacementConfig : dataLocations : - string defaultEventBasedHold : boolean encryption : kmsKeyRef : external : string name : string namespace : string lifecycleRule : - action : storageClass : string type : string condition : age : integer createdBefore : string customTimeBefore : string daysSinceCustomTime : integer daysSinceNoncurrentTime : integer matchesPrefix : - string matchesStorageClass : - string matchesSuffix : - string noncurrentTimeBefore : string numNewerVersions : integer withState : string location : string logging : logBucket : string logObjectPrefix : string publicAccessPrevention : string requesterPays : boolean resourceID : string retentionPolicy : isLocked : boolean retentionPeriod : integer softDeletePolicy : retentionDurationSeconds : integer storageClass : string uniformBucketLevelAccess : boolean versioning : enabled : boolean website : mainPageSuffix : string notFoundPage : string Fields autoclass Optional object The bucket's autoclass configuration. autoclass.enabled Required* boolean While set to true, autoclass automatically transitions objects in your bucket to appropriate storage classes based on each object's access pattern. bucketPolicyOnly Optional boolean DEPRECATED.",
+          "StorageBucket | Config Connector | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Config Connector Start free Overview Guides API and reference Resources Technology areas More Overview Guides API and reference Resources Cross-product tools More Console Config Connector API resources overview AccessContextManager AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AccessContextManagerServicePerimeterResource AlloyDB AlloyDBBackup AlloyDBCluster AlloyDBInstance AlloyDBUser API Gateway APIGatewayAPI App Hub AppHubApplication Apigee ApigeeEndpointAttachment ApigeeEnvgroup ApigeeEnvgroupAttachment ApigeeEnvironment ApigeeInstance ApigeeInstanceAttachment ApigeeOrganization ArtifactRegistry ArtifactRegistryRepository Backup and DR BackupDRBackupPlan BackupDRBackupPlanAssociation BackupDRBackupVault BigQueryAnalyticsHub BigQueryAnalyticsHubDataExchange BigQueryAnalyticsHubListing BigQuery BigLake BigLakeTable BigQuery BigqueryConnectionConnection BigQueryDataset BigQueryJob BigQueryRoutine BigQueryTable BigQueryDataTransferConfig BigQuery Reservation BigQueryReservationAssignment BigQueryReservationReservation BillingBudgets BillingBudgetsBudget BinaryAuthorization BinaryAuthorizationAttestor BinaryAuthorizationPolicy Certificate Manager CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CertificateManagerDNSAuthorization Cloud Asset Inventory AssetFeed AssetSavedQuery Cloud Bigtable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable Cloud Build CloudBuildTrigger CloudBuildWorkerPool Cloud Composer ComposerEnvironment Cloud Deploy CloudDeployDeliveryPipeline Cloud Quotas APIQuotaAdjusterSettings APIQuotaPreference Cloud Functions CloudFunctionsFunction Cloud Identity CloudIdentityGroup CloudIdentityMembership Cloud Intrusion Detection System CloudIDSEndpoint Cloud Scheduler CloudSchedulerJob Config Controller ConfigControllerInstance Cloud DLP DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType Cloud DNS DNSManagedZone DNSPolicy DNSRecordSet Cloud Key Management Service KMSAutokeyConfig KMSCryptoKey KMSImportJob KMSKeyHandle KMSKeyRing Eventarc EventarcTrigger Identity and Access Management (IAM) IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider Identity-Aware Proxy (IAP) IAPBrand IAPIdentityAwareProxyClient IAPSettings Identity Platform IdentityPlatformConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig IdentityPlatformOAuthIDPConfig Cloud Logging LoggingLink LoggingLogBucket LoggingLogExclusion LoggingLogMetric LoggingLogSink LoggingLogView Cloud Memorystore for Memcached MemcacheInstance Cloud Monitoring MonitoringAlertPolicy MonitoringDashboard MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig OS Config OSConfigGuestPolicy OSConfigOSPolicyAssignment Organization Policy OrgPolicyCustomConstraint Cloud Source Repositories SourceRepoRepository Speech-to-Text SpeechCustomClass SpeechPhraseSet SpeechRecognizer Cloud Spanner SpannerBackupSchedule SpannerDatabase SpannerInstance Cloud SQL SQLDatabase SQLInstance SQLSSLCert SQLUser Cloud Storage StorageBucket StorageAnywhereCache StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification Compute Engine ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeFirewallPolicyRule ComputeForwardingRule ComputeHealthCheck ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeManagedSSLCertificate ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkFirewallPolicyAssociation ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSSLCertificate ComputeSSLPolicy ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel Container Analysis ContainerAnalysisNote Container Attached ContainerAttachedCluster Data Catalog DataCatalogPolicyTag DataCatalogTaxonomy Dataflow DataflowJob DataflowFlexTemplateJob Dataform DataformRepository Data Fusion DataFusionInstance Dataproc DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate Dataproc Metastore MetastoreBackup Filestore FilestoreBackup FilestoreInstance Firestore FirestoreDatabase FirestoreIndex Google Kubernetes Engine (GKE) ContainerCluster ContainerNodePool Distributed Cloud Edge EdgeContainerCluster EdgeContainerNodePool EdgeContainerVPNConnection EdgeNetworkNetwork EdgeNetworkSubnet Document AI DocumentAIProcessorVersion Essential Contacts EssentialContactsContact GKE Hub GKEHubFeature GKEHubFeatureMembership GKEHubMembership Managed Kafka ManagedKafkaCluster ManagedKafkaTopic Memorystore (Redis) RedisCluster RedisInstance Memorystore for Valkey MemorystoreInstance Network Connectivity NetworkConnectivityHub NetworkConnectivitySpoke Network Security NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy Network Services NetworkServicesEndpointPolicy NetworkServicesGateway NetworkServicesGRPCRoute NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute Notebooks NotebooksInstance Private CA PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Privileged Access Manager PrivilegedAccessManagerEntitlement Pub/Sub PubSubSchema PubSubSnapshot PubSubSubscription PubSubTopic Pub/Sub Lite PubSubLiteReservation reCAPTCHA Enterprise RecaptchaEnterpriseKey Resource Manager Folder Project ResourceManagerLien ResourceManagerPolicy Cloud Run RunJob RunService SecretManager SecretManagerSecret SecretManagerSecretVersion SecureSourceManager SecureSourceManagerInstance SecureSourceManagerRepository Service Directory ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService Service Networking ServiceNetworkingConnection Service Usage Service ServiceIdentity Storage Transfer Service StorageTransferJob Tags TagsLocationTagBinding TagsTagBinding TagsTagKey TagsTagValue Vertex AI VertexAIDataset VertexAIEndpoint VertexAIIndex VertexAIMetadataStore VMware Engine VMwareEngineExternalAddress VPC Access VPCAccessConnector Workstations WorkstationCluster WorkstationConfig Workstation Annotations AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Access and resource management Config Connector API and reference Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Sample YAML(s) Typical Use Case # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : storage.cnrm.cloud.google.com/v1beta1 kind : StorageBucket metadata : annotations : cnrm.cloud.google.com/force-destroy : \"false\" labels : label-one : \"value-one\" # StorageBucket names must be globally unique."
+        ]
+      },
+      {
+        "title": "\"Namespaces and Google Cloud projects \\_|\\_ Config Connector \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/concepts/namespaces-and-projects",
+        "source_id": "site-docs-reference",
+        "final_score": 38,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "CloudFunctionsFunction | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/cloudfunctions/cloudfunctionsfunction",
+        "source_id": "feature-recovery-http",
+        "final_score": 29,
+        "relevance": "",
+        "evidence_snippets": [
+          "CloudFunctionsFunction | Config Connector | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Config Connector Start free Overview Guides API and reference Resources Technology areas More Overview Guides API and reference Resources Cross-product tools More Console Config Connector API resources overview AccessContextManager AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AccessContextManagerServicePerimeterResource AlloyDB AlloyDBBackup AlloyDBCluster AlloyDBInstance AlloyDBUser API Gateway APIGatewayAPI App Hub AppHubApplication Apigee ApigeeEndpointAttachment ApigeeEnvgroup ApigeeEnvgroupAttachment ApigeeEnvironment ApigeeInstance ApigeeInstanceAttachment ApigeeOrganization ArtifactRegistry ArtifactRegistryRepository Backup and DR BackupDRBackupPlan BackupDRBackupPlanAssociation BackupDRBackupVault BigQueryAnalyticsHub BigQueryAnalyticsHubDataExchange BigQueryAnalyticsHubListing BigQuery BigLake BigLakeTable BigQuery BigqueryConnectionConnection BigQueryDataset BigQueryJob BigQueryRoutine BigQueryTable BigQueryDataTransferConfig BigQuery Reservation BigQueryReservationAssignment BigQueryReservationReservation BillingBudgets BillingBudgetsBudget BinaryAuthorization BinaryAuthorizationAttestor BinaryAuthorizationPolicy Certificate Manager CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CertificateManagerDNSAuthorization Cloud Asset Inventory AssetFeed AssetSavedQuery Cloud Bigtable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable Cloud Build CloudBuildTrigger CloudBuildWorkerPool Cloud Composer ComposerEnvironment Cloud Deploy CloudDeployDeliveryPipeline Cloud Quotas APIQuotaAdjusterSettings APIQuotaPreference Cloud Functions CloudFunctionsFunction Cloud Identity CloudIdentityGroup CloudIdentityMembership Cloud Intrusion Detection System CloudIDSEndpoint Cloud Scheduler CloudSchedulerJob Config Controller ConfigControllerInstance Cloud DLP DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType Cloud DNS DNSManagedZone DNSPolicy DNSRecordSet Cloud Key Management Service KMSAutokeyConfig KMSCryptoKey KMSImportJob KMSKeyHandle KMSKeyRing Eventarc EventarcTrigger Identity and Access Management (IAM) IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider Identity-Aware Proxy (IAP) IAPBrand IAPIdentityAwareProxyClient IAPSettings Identity Platform IdentityPlatformConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig IdentityPlatformOAuthIDPConfig Cloud Logging LoggingLink LoggingLogBucket LoggingLogExclusion LoggingLogMetric LoggingLogSink LoggingLogView Cloud Memorystore for Memcached MemcacheInstance Cloud Monitoring MonitoringAlertPolicy MonitoringDashboard MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig OS Config OSConfigGuestPolicy OSConfigOSPolicyAssignment Organization Policy OrgPolicyCustomConstraint Cloud Source Repositories SourceRepoRepository Speech-to-Text SpeechCustomClass SpeechPhraseSet SpeechRecognizer Cloud Spanner SpannerBackupSchedule SpannerDatabase SpannerInstance Cloud SQL SQLDatabase SQLInstance SQLSSLCert SQLUser Cloud Storage StorageBucket StorageAnywhereCache StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification Compute Engine ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeFirewallPolicyRule ComputeForwardingRule ComputeHealthCheck ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeManagedSSLCertificate ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkFirewallPolicyAssociation ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSSLCertificate ComputeSSLPolicy ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel Container Analysis ContainerAnalysisNote Container Attached ContainerAttachedCluster Data Catalog DataCatalogPolicyTag DataCatalogTaxonomy Dataflow DataflowJob DataflowFlexTemplateJob Dataform DataformRepository Data Fusion DataFusionInstance Dataproc DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate Dataproc Metastore MetastoreBackup Filestore FilestoreBackup FilestoreInstance Firestore FirestoreDatabase FirestoreIndex Google Kubernetes Engine (GKE) ContainerCluster ContainerNodePool Distributed Cloud Edge EdgeContainerCluster EdgeContainerNodePool EdgeContainerVPNConnection EdgeNetworkNetwork EdgeNetworkSubnet Document AI DocumentAIProcessorVersion Essential Contacts EssentialContactsContact GKE Hub GKEHubFeature GKEHubFeatureMembership GKEHubMembership Managed Kafka ManagedKafkaCluster ManagedKafkaTopic Memorystore (Redis) RedisCluster RedisInstance Memorystore for Valkey MemorystoreInstance Network Connectivity NetworkConnectivityHub NetworkConnectivitySpoke Network Security NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy Network Services NetworkServicesEndpointPolicy NetworkServicesGateway NetworkServicesGRPCRoute NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute Notebooks NotebooksInstance Private CA PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Privileged Access Manager PrivilegedAccessManagerEntitlement Pub/Sub PubSubSchema PubSubSnapshot PubSubSubscription PubSubTopic Pub/Sub Lite PubSubLiteReservation reCAPTCHA Enterprise RecaptchaEnterpriseKey Resource Manager Folder Project ResourceManagerLien ResourceManagerPolicy Cloud Run RunJob RunService SecretManager SecretManagerSecret SecretManagerSecretVersion SecureSourceManager SecureSourceManagerInstance SecureSourceManagerRepository Service Directory ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService Service Networking ServiceNetworkingConnection Service Usage Service ServiceIdentity Storage Transfer Service StorageTransferJob Tags TagsLocationTagBinding TagsTagBinding TagsTagKey TagsTagValue Vertex AI VertexAIDataset VertexAIEndpoint VertexAIIndex VertexAIMetadataStore VMware Engine VMwareEngineExternalAddress VPC Access VPCAccessConnector Workstations WorkstationCluster WorkstationConfig Workstation Annotations AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Access and resource management Config Connector API and reference Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "For a list of supported versions, see https://cloud.google.com/functions/docs/runtime-support#support_schedule. # Unsupported runtime version will cause googleapis error. runtime : \"nodejs20\" availableMemoryMb : 128 serviceAccountRef : # Replace ${PROJECT_ID?} with your project ID external : \"${PROJECT_ID?}@appspot.gserviceaccount.com\" # Replace ${REPO_URL?} with your cloud source repository url # Example: https://source.developers.google.com/projects/config-connector-samples/repos/config-connector-samples/moveable-aliases/main/paths/cloudfunctionsfunction sourceRepository : url : \"${REPO_URL?}\" timeout : \"60s\" entryPoint : \"helloGET\" ingressSettings : \"ALLOW_INTERNAL_ONLY\" environmentVariables : TEST_ENV_VARIABLE : \"test-env-variable-value\" maxInstances : 10 vpcConnectorRef : name : \"function-dep-trigger\" vpcConnectorEgressSettings : \"PRIVATE_RANGES_ONLY\" eventTrigger : eventType : \"providers/cloud.pubsub/eventTypes/topic.publish\" resourceRef : name : \"cloudfunctionsfunction-dep-pubsubtopic\" kind : \"PubSubTopic\" failurePolicy : true service : \"pubsub.googleapis.com\" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : cloudfunctionsfunction-dep-pubsubtopic spec : autoCreateSubnetworks : false --- apiVersion : pubsub.cnrm.cloud.google.com/v1beta1 kind : PubSubTopic metadata : name : cloudfunctionsfunction-dep-pubsubtopic --- apiVersion : vpcaccess.cnrm.cloud.google.com/v1beta1 kind : VPCAccessConnector metadata : name : function-dep-trigger spec : location : \"us-west2\" networkRef : name : cloudfunctionsfunction-dep-pubsubtopic ipCidrRange : \"10.5.0.0/28\" minThroughput : 300 maxThroughput : 400 projectRef : # Replace ${PROJECT_ID?} with your project ID external : \"projects/${PROJECT_ID?}\" Eventtrigger With StorageBucket # Copyright 2022 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : cloudfunctions.cnrm.cloud.google.com/v1beta1 kind : CloudFunctionsFunction metadata : name : cloudfunctionsfunction-sample-bucket spec : projectRef : # Replace ${PROJECT_ID?} with your project ID external : \"projects/${PROJECT_ID?}\" description : \"A sample cloud function with an event trigger from StorageBucket\" region : \"us-west2\" # Ensure that you're using a supported runtime version.",
+          "For a list of supported versions, see https://cloud.google.com/functions/docs/runtime-support#support_schedule. # Unsupported runtime version will cause googleapis error. runtime : \"nodejs20\" sourceArchiveUrl : \"gs://config-connector-samples/cloudfunctionsfunction/http_trigger.zip\" entryPoint : \"helloGET\" eventTrigger : eventType : \"providers/cloud.storage/eventTypes/object.change\" resourceRef : name : ${PROJECT_ID?}-cloudfunctionsfunction-dep-bucket kind : StorageBucket failurePolicy : true service : \"storage.googleapis.com\" --- apiVersion : storage.cnrm.cloud.google.com/v1beta1 kind : StorageBucket metadata : # StorageBucket names must be globally unique."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "autoclass.enabled",
+      "cloudfunctions.cnrm.cloud.google.com",
+      "cnrm.cloud.google.com",
+      "compute.cnrm.cloud.google.com",
+      "condition.matchesStorageClass",
+      "condition.matchesSuffix",
+      "condition.noncurrentTimeBefore",
+      "e.g",
+      "object.change",
+      "pubsub.cnrm.cloud.google.com",
+      "pubsub.googleapis.com",
+      "source.developers.google.com",
+      "storage.cnrm.cloud.google.com",
+      "storage.googleapis.com",
+      "storagebuckets.storage.cnrm.cloud.google.com",
+      "topic.publish",
+      "v1.buckets",
+      "vpcaccess.cnrm.cloud.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagebucket",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/cloudfunctions/cloudfunctionsfunction",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/namespaces-and-projects"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagebucket",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/cloudfunctions/cloudfunctionsfunction",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/namespaces-and-projects"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagebucket",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/cloudfunctions/cloudfunctionsfunction",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/namespaces-and-projects"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagebucket",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/cloudfunctions/cloudfunctionsfunction",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/namespaces-and-projects"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagebucket",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/cloudfunctions/cloudfunctionsfunction",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/namespaces-and-projects"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagebucket",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/cloudfunctions/cloudfunctionsfunction",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/namespaces-and-projects"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagebucket",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/cloudfunctions/cloudfunctionsfunction",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/namespaces-and-projects"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagebucket",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/cloudfunctions/cloudfunctionsfunction",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/namespaces-and-projects"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagebucket",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/cloudfunctions/cloudfunctionsfunction",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/namespaces-and-projects"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagebucket",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/cloudfunctions/cloudfunctionsfunction",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/namespaces-and-projects"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagebucket",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/cloudfunctions/cloudfunctionsfunction",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/namespaces-and-projects"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagebucket",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/cloudfunctions/cloudfunctionsfunction",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/namespaces-and-projects"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagebucket",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/cloudfunctions/cloudfunctionsfunction",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/namespaces-and-projects"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagebucket",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/cloudfunctions/cloudfunctionsfunction",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/namespaces-and-projects"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagebucket",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/cloudfunctions/cloudfunctionsfunction",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/namespaces-and-projects"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagebucket",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/cloudfunctions/cloudfunctionsfunction",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/namespaces-and-projects"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagebucket",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/cloudfunctions/cloudfunctionsfunction",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/namespaces-and-projects"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagebucket",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/cloudfunctions/cloudfunctionsfunction",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/namespaces-and-projects"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagebucket",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/cloudfunctions/cloudfunctionsfunction",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/namespaces-and-projects"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/storage/storagebucket",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/cloudfunctions/cloudfunctionsfunction",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/namespaces-and-projects"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:47.576Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector"
+}

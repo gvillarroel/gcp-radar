@@ -1,0 +1,253 @@
+{
+  "feature_name": "System insights dashboard",
+  "feature_slug": "system-insights-dashboard",
+  "summary": "The System insights dashboard shows cluster-level and node-level monitoring metrics for your clusters.",
+  "extended_definition": "The System insights dashboard shows cluster-level and node-level monitoring metrics for your clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/supported-commands"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Monitor access using audit logs \\_|\\_ Memorystore for Redis Cluster \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+        "source_id": "site-iam-reference",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To read your Google Cloud project-level audit log entries, run the following command: gcloud logging read \"logName : projects/ PROJECT ID /logs/cloudaudit.googleapis.com\" \\ --project= PROJECT ID To read your folder-level audit log entries, run the following command: gcloud logging read \"logName : folders/ FOLDER ID /logs/cloudaudit.googleapis.com\" \\ --folder= FOLDER ID To read your organization-level audit log entries, run the following command: gcloud logging read \"logName : organizations/ ORGANIZATION ID /logs/cloudaudit.googleapis.com\" \\ --organization= ORGANIZATION ID To read your Cloud Billing account-level audit log entries, run the following command: gcloud logging read \"logName : billingAccounts/ BILLING ACCOUNT ID /logs/cloudaudit.googleapis.com\" \\ --billing-account= BILLING ACCOUNT ID Add the --freshness flag to your command to read logs that are more than 1 day old.",
+          "Log name Cloud Audit Logs log names include resource identifiers indicating the Google Cloud project or other Google Cloud entity that owns the audit logs, and whether the log contains Admin Activity, Data Access, Policy Denied, or System Event audit logging data.",
+          "When deciding which Logging-specific permissions and roles apply to your use case, consider the following: The Logs Viewer role ( roles/logging.viewer ) gives you read-only access to Admin Activity, Policy Denied, and System Event audit logs."
+        ]
+      },
+      {
+        "title": "\"Client library connection code samples \\_|\\_ Memorystore for Redis Cluster\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection",
+        "source_id": "site-docs-root",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CertificateFactory cf = CertificateFactory . getInstance ( \"X.509\" ); X509Certificate caCert = ( X509Certificate ) cf . generateCertificate ( is ); TrustManagerFactory tmf = TrustManagerFactory . getInstance ( TrustManagerFactory . getDefaultAlgorithm ()); KeyStore ks = KeyStore . getInstance ( KeyStore . getDefaultType ()); ks . load ( null ); // You don't need the KeyStore cluster to come from a file. ks . setCertificateEntry ( \"caCert\" , caCert ); tmf . init ( ks ); SSLContext sslContext = SSLContext . getInstance ( \"TLS\" ); sslContext . init ( null , tmf . getTrustManagers (), null ); JedisCluster jedisCluster = new JedisCluster ( discovery , DefaultJedisClientConfig . builder () . connectionTimeoutMillis ( timeout ) . socketTimeoutMillis ( timeout ) . credentialsProvider ( credentialsProvider ) . ssl ( true ) . sslSocketFactory ( sslContext . getSocketFactory ()) . build (), maxAttempts , config ); // Perform operations on the cluster jedisCluster . set ( \"myKey\" , \"Hello, Redis Cluster!\" ); String value = jedisCluster . get ( \"myKey\" ); System . out . println ( \"Value for myKey: \" + value ); int count = 0 ; for ( int i = 0 ; i 1000 ; i ++ ) { String k = \"jediskey\" + String . valueOf ( i ); String v = \"jedisvalue\" + String . valueOf ( i ); jedisCluster . set ( k , v ); String got = jedisCluster . get ( k ); if ( got . equals ( v )) { count ++ ; } else { System . out . println ( \"unexpected value\" ); } } System . out . println ( \"Successfully got \" + String . valueOf ( count ) + \" keys\" ); // Disconnect from the cluster jedisCluster . close (); // Cleanup the resources used by the provider (( Closeable ) credentialsProvider ). close (); } } Go We recommend using Go , versions 1.24.5 and later. package main import ( \"context\" \"crypto/tls\" \"crypto/x509\" \"flag\" \"fmt\" \"io/ioutil\" \"log\" \"sync\" \"time\" credentials \"google.golang.org/genproto/googleapis/iam/credentials/v1\" \"github.com/golang/protobuf/ptypes\" \"github.com/redis/go-redis/v9\" \"google.golang.org/api/option\" gtransport \"google.golang.org/api/transport/grpc\" ) var ( svcAccount = flag .",
+          "IamCredentialsClient ; import io.lettuce.core.RedisCredentials ; import io.lettuce.core.RedisCredentialsProvider ; import io.lettuce.core.RedisURI ; import io.lettuce.core.SocketOptions ; import io.lettuce.core.SslOptions ; import io.lettuce.core.cluster.ClusterClientOptions ; import io.lettuce.core.cluster.ClusterTopologyRefreshOptions ; import io.lettuce.core.cluster.RedisClusterClient ; import io.lettuce.core.cluster.api.StatefulRedisClusterConnection ; import io.lettuce.core.cluster.api.sync.RedisAdvancedClusterCommands ; import io.lettuce.core.cluster.models.partitions.RedisClusterNode ; import io.lettuce.core.resource.ClientResources ; import io.lettuce.core.resource.DefaultClientResources ; import io.lettuce.core.resource.Delay ; import java.io.Closeable ; import java.io.File ; import java.time.Duration ; import java.time.Instant ; import java.util.ArrayList ; import java.util.Collections ; import java.util.List ; import java.util.concurrent.Executors ; import java.util.concurrent.ScheduledExecutorService ; import java.util.concurrent.TimeUnit ; import java.util.logging.Level ; import java.util.logging.Logger ; import reactor.core.publisher.Mono ; public class IAMAuth { / This thread-safe implementation (excluding the main app below) is intended for production use.",
+          "IamCredentialsClient ; import java.io.Closeable ; import java.io.FileInputStream ; import java.io.InputStream ; import java.security.KeyStore ; import java.security.cert.CertificateFactory ; import java.security.cert.X509Certificate ; import java.time.Duration ; import java.time.Instant ; import java.util.ArrayList ; import java.util.Collections ; import java.util.List ; import java.util.concurrent.Executors ; import java.util.concurrent.ScheduledExecutorService ; import java.util.concurrent.TimeUnit ; import java.util.logging.Level ; import java.util.logging.Logger ; import javax.net.ssl.SSLContext ; import javax.net.ssl.TrustManagerFactory ; import org.apache.commons.pool2.impl.GenericObjectPoolConfig ; import redis.clients.jedis.Connection ; import redis.clients.jedis.DefaultJedisClientConfig ; import redis.clients.jedis.DefaultRedisCredentials ; import redis.clients.jedis.HostAndPort ; import redis.clients.jedis.JedisCluster ; import redis.clients.jedis.RedisCredentials ; import redis.clients.jedis.RedisCredentialsProvider ; / Customers are free to update/replace code as they see fit. / public class IAMAuth { / This thread-safe implementation (excluding the main app below) is intended for production use."
+        ]
+      },
+      {
+        "title": "\"Cluster and node specification \\_|\\_ Memorystore for Redis Cluster \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification",
+        "source_id": "site-docs-root",
+        "final_score": 160,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cluster specification This section shows minimum and maximum cluster capacities given the cluster shape, node type, and replica count.",
+          "Maximum writable capacity Node type and size Max capacity given cluster shape of 250 primary nodes and 0 replicas per node Max capacity given cluster shape of 125 primary nodes and 1 replicas per node Max capacity given cluster shape of 83 primary nodes and 2 replicas per node Max capacity given cluster shape of 62 primary nodes and 3 replicas per node Max capacity given cluster shape of 50 primary nodes and 4 replicas per node Max capacity given cluster shape of 41 primary nodes and 5 replicas per node redis-shared-core-nano - 1.4 GB 350 GB 175 GB 116.2 GB 86.8 GB 70 GB 57.4 GB redis-standard-small - 6.5 GB 1,625 GB 812.5 GB 539.5 GB 403 GB 325 GB 266.5 GB redis-highmem-medium - 13 GB 3,250 GB 1,625 GB 1,079 GB 806 GB 650 GB 533 GB redis-highmem-xlarge - 58 GB 14,500 GB 7,250 GB 4,814 GB 3,596 GB 2,900 GB 2,378 GB Performance Using the OSS memtier benchmarking tool in the us-central1 region yielded 120,000 - 130,000 operations per second per 2 vCPU node ( redis-standard-small and redis-highmem-medium ) with microseconds latency and 1KiB data size.",
+          "The redis-standard-small node type lets you provision small clusters, and grow your cluster by smaller increments at potentially lower costs than other node types. redis-standard-small also offers the advantage of distributing your keyspace across more nodes with a higher total vCPU count."
+        ]
+      },
+      {
+        "title": "\"Supported and blocked commands \\_|\\_ Memorystore for Redis Cluster \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/supported-commands",
+        "source_id": "site-docs-root",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "LCS LINDEX LINSERT LLEN LMOVE LMPOP LOLWUT LPOP LPOS LPUSH LPUSHX LRANGE LREM LSET LTRIM MEMORY DOCTOR MEMORY HELP MEMORY MALLOC-STATS MEMORY PURGE MEMORY STATS MEMORY USAGE MGET MODULE HELP MONITOR MSET MSETNX MULTI OBJECT ENCODING OBJECT FREQ OBJECT HELP OBJECT IDLETIME OBJECT REFCOUNT PERSIST PEXPIRE PEXPIREAT PEXPIRETIME PFADD PFCOUNT PFMERGE PING PSETEX PSUBSCRIBE PTTL PUBLISH PUBSUB CHANNELS PUBSUB HELP PUBSUB NUMPAT PUBSUB NUMSUB PUBSUB SHARDCHANNELS PUBSUB SHARDNUMSUB PUNSUBSCRIBE QUIT RANDOMKEY READONLY READWRITE RENAME RENAMENX RESET RESTORE ROLE RPOP RPOPLPUSH RPUSH RPUSHX SADD SCAN SCARD SCRIPT DEBUG SCRIPT EXISTS SCRIPT FLUSH SCRIPT HELP SCRIPT KILL SCRIPT LOAD SDIFF SDIFFSTORE SELECT SET SETBIT SETEX SETNX SETRANGE SINTER SINTERCARD SINTERSTORE SISMEMBER SLOWLOG GET SLOWLOG HELP SLOWLOG LEN SLOWLOG RESET SMEMBERS SMISMEMBER SMOVE SORT SORT RO SPOP SPUBLISH SRANDMEMBER SREM SSCAN SSUBSCRIBE STRLEN SUBSCRIBE SUBSTR SUNION SUNIONSTORE SUNSUBSCRIBE TIME TOUCH TTL TYPE UNLINK UNSUBSCRIBE UNWATCH WAIT WATCH XACK XADD XAUTOCLAIM XCLAIM XDEL XGROUP CREATE XGROUP CREATECONSUMER XGROUP DELCONSUMER XGROUP DESTROY XGROUP HELP XGROUP SETID XINFO CONSUMERS XINFO GROUPS XINFO HELP XINFO STREAM XLEN XPENDING XRANGE XREAD XREADGROUP XREVRANGE XTRIM ZADD ZCARD ZCOUNT ZDIFF ZDIFFSTORE ZINCRBY ZINTER ZINTERCARD ZINTERSTORE ZLEXCOUNT ZMPOP ZMSCORE ZPOPMAX ZPOPMIN ZRANDMEMBER ZRANGE ZRANGEBYLEX ZRANGEBYSCORE ZRANGESTORE ZRANK ZREM ZREMRANGEBYLEX ZREMRANGEBYRANK ZREMRANGEBYSCORE ZREVRANGE ZREVRANGEBYLEX ZREVRANGEBYSCORE ZREVRANK ZSCAN ZSCORE ZUNION ZUNIONSTORE Blocked commands Memorystore for Redis Cluster supports all Redis 7.2 commands, except for the commands that are listed in this section.",
+          "Supported commands Memorystore for Redis Cluster supports the following commands: APPEND ASKING AUTH BITCOUNT BITFIELD BITFIELD RO BITOP BITPOS BLMOVE BLMPOP BLPOP BRPOP BRPOPLPUSH BZMPOP BZPOPMAX BZPOPMIN CLIENT CACHING CLIENT GETNAME CLIENT GETREDIR CLIENT HELP CLIENT ID CLIENT INFO CLIENT KILL CLIENT LIST CLIENT REPLY CLIENT SETNAME CLIENT TRACKING CLIENT TRACKINGINFO CLUSTER COUNT-FAILURE-REPORTS CLUSTER COUNTKEYSINSLOT CLUSTER GETKEYSINSLOT CLUSTER HELP CLUSTER INFO CLUSTER KEYSLOT CLUSTER LINKS CLUSTER MYID CLUSTER NODES CLUSTER REPLICAS CLUSTER SHARDS CLUSTER SLAVES CLUSTER SLOTS COMMAND COUNT COMMAND DOCS COMMAND GETKEYS COMMAND GETKEYSANDFLAGS COMMAND HELP COMMAND INFO COMMAND LIST CONFIG HELP COPY DBSIZE DECR DECRBY DEL DISCARD DUMP ECHO EVAL EVAL RO EVALSHA EVALSHA RO EXEC EXISTS EXPIRE EXPIREAT EXPIRETIME FCALL FCALL RO FLUSHALL FLUSHDB FUNCTION DELETE FUNCTION DUMP FUNCTION FLUSH FUNCTION HELP FUNCTION KILL FUNCTION LIST FUNCTION LOAD FUNCTION RESTORE FUNCTION STATS GEOADD GEODIST GEOHASH GEOPOS GEORADIUS GEORADIUS RO GEORADIUSBYMEMBER GEORADIUSBYMEMBER RO GEOSEARCH GEOSEARCHSTORE GET GETBIT GETDEL GETEX GETRANGE GETSET HDEL HELLO HEXISTS HGET HGETALL HINCRBY HINCRBYFLOAT HKEYS HLEN HMGET HMSET HRANDFIELD HSCAN HSET HSETNX HSTRLEN HVALS INCR INCRBY INCRBYFLOAT INFO KEYS LATENCY DOCTOR LATENCY GRAPH LATENCY HELP LATENCY HISTOGRAM LATENCY HISTORY LATENCY LATEST LATENCY RESET Note : The LATENCY command group isn't blocked.",
+          "ACL DELUSER ACL DRYRUN ACL GETUSER ACL LIST ACL LOAD ACL LOG ACL SAVE ACL SETUSER ACL USERS ACL CAT ACL GENPASS ACL HELP ACL WHOAMI BGREWRITEAOF BGSAVE CLIENT NO-EVICT CLIENT PAUSE CLIENT SETINFO CLIENT UNBLOCK CLIENT UNPAUSE CLUSTER ADDSLOTS CLUSTER ADDSLOTSRANGE CLUSTER BUMPEPOCH CLUSTER DELSLOTS CLUSTER DELSLOTSRANGE CLUSTER FAILOVER CLUSTER FLUSHSLOTS CLUSTER FORGET CLUSTER MEET CLUSTER REPLICATE CLUSTER RESET CLUSTER SAVECONFIG CLUSTER SET-CONFIG-EPOCH CLUSTER SETSLOT CONFIG GET CONFIG RESETSTAT CONFIG REWRITE CONFIG SET DEBUG FAILOVER LASTSAVE MIGRATE MODULE LIST MODULE LOAD MODULE LOADEX MODULE UNLOAD MOVE PFDEBUG PFSELFTEST PSYNC REPLCONF REPLICAOF RESTORE-ASKING SAVE SHUTDOWN SLAVEOF SWAPDB SYNC XSETID Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "com.google.cloud.iam.credentials.v1",
+      "github.com",
+      "io.lettuce.core.cluster.api.StatefulRedisClusterConnection",
+      "io.lettuce.core.cluster.api.sync.RedisAdvancedClusterCommands",
+      "io.lettuce.core.cluster.ClusterClientOptions",
+      "io.lettuce.core.cluster.ClusterTopologyRefreshOptions",
+      "io.lettuce.core.cluster.models.partitions.RedisClusterNode",
+      "io.lettuce.core.cluster.RedisClusterClient",
+      "io.lettuce.core.RedisCredentials",
+      "io.lettuce.core.RedisCredentialsProvider",
+      "io.lettuce.core.RedisURI",
+      "io.lettuce.core.resource.ClientResources",
+      "io.lettuce.core.resource.DefaultClientResources",
+      "io.lettuce.core.resource.Delay",
+      "io.lettuce.core.SocketOptions",
+      "io.lettuce.core.SslOptions",
+      "java.io.Closeable",
+      "java.io.File",
+      "java.io.FileInputStream",
+      "java.io.InputStream",
+      "java.security.cert.CertificateFactory",
+      "java.security.cert.X509Certificate",
+      "java.security.KeyStore",
+      "java.time.Duration",
+      "java.time.Instant",
+      "java.util.ArrayList",
+      "java.util.Collections",
+      "java.util.concurrent.Executors",
+      "java.util.concurrent.ScheduledExecutorService",
+      "java.util.concurrent.TimeUnit",
+      "java.util.List",
+      "java.util.logging.Level",
+      "java.util.logging.Logger",
+      "javax.net.ssl.SSLContext",
+      "javax.net.ssl.TrustManagerFactory",
+      "logging.viewer",
+      "org.apache.commons.pool2.impl.GenericObjectPoolConfig",
+      "reactor.core.publisher.Mono",
+      "redis.clients.jedis.Connection",
+      "redis.clients.jedis.DefaultJedisClientConfig",
+      "redis.clients.jedis.DefaultRedisCredentials",
+      "redis.clients.jedis.HostAndPort",
+      "redis.clients.jedis.JedisCluster",
+      "redis.clients.jedis.RedisCredentials",
+      "redis.clients.jedis.RedisCredentialsProvider",
+      "redis.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/supported-commands"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/supported-commands"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/supported-commands"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/supported-commands"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/supported-commands"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/supported-commands"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/supported-commands"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/supported-commands"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/supported-commands"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/supported-commands"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/supported-commands"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/audit-logs",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/supported-commands"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:26.516Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis-cluster/card.json",
+  "product_name": "Memorystore for Redis Cluster",
+  "product_slug": "memorystore-for-redis-cluster"
+}

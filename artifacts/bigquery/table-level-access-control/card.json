@@ -1,0 +1,173 @@
+{
+  "feature_name": "Table-level access control",
+  "feature_slug": "table-level-access-control",
+  "summary": "BigQuery supports access control policies at the table level; BigQuery supports access control policies at the table level.",
+  "extended_definition": "BigQuery supports access control policies at the table level; BigQuery supports access control policies at the table level.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/access-control-intro",
+      "https://docs.cloud.google.com/bigquery/docs/conditions",
+      "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Introduction to security and access controls in BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/access-control-intro",
+        "source_id": "site-docs-reference-2",
+        "final_score": 40,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information on assigning roles at the table, view, or routine level, see Control access to resources with IAM .",
+          "You can grant access to the following BigQuery resources: Datasets and these resources within datasets: Tables and views Routines Connections Saved queries Data canvases Data preparations Pipelines Repositories Grant access to Resource Manager resources You can configure access to BigQuery resources through Resource Manager by granting a BigQuery role to a principal and then by granting that role on an organization, a folder, or a project.",
+          "You can use the following types of roles in IAM to grant access to BigQuery resources: Predefined roles are managed by Google Cloud and support common use cases and access control patterns."
+        ]
+      },
+      {
+        "title": "Control access to resources with IAM \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "source_id": "site-docs-reference-5",
+        "final_score": 38,
+        "relevance": "",
+        "evidence_snippets": [
+          "This permission is required for creating replica materialized views. bigquery.tables.restoreSnapshot Table Restore a table snapshot. bigquery.tables.setCategory Table Set policy tags in the table's schema. bigquery.tables.setColumnDataPolicy Table Set column-level access policies on a table. bigquery.tables.setIamPolicy Table Set access controls on a table. bigquery.tables.update Table Update table. metadata. bigquery.tables.get is also required to update table metadata in the console. bigquery.tables.updateData Table Update table data. bigquery.tables.updateIndex Table Update a search index on the table.",
+          "Then call the IAM().SetPolicy() function to save changes to the access policy for a table or view. import ( \"context\" \"fmt\" \"io\" \"cloud.google.com/go/bigquery\" \"cloud.google.com/go/iam\" ) // revokeTableOrViewAccessPolicies creates a new ACL removing the VIEWER role to group \"example-analyst-group@google.com\" // For more information on the types of ACLs available see: // https://cloud.google.com/storage/docs/access-control/lists func revokeTableOrViewAccessPolicies ( w io .",
+          "Then call the Roles() function to get the access policy for a table or view. import ( \"context\" \"fmt\" \"io\" \"cloud.google.com/go/bigquery\" ) // viewTableOrViewAccessPolicies retrieves the ACL for the given resource // For more information on the types of ACLs available see: // https://cloud.google.com/storage/docs/access-control/lists func viewTableOrViewAccessPolicies ( w io ."
+        ]
+      },
+      {
+        "title": "Control access with IAM Conditions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/conditions",
+        "source_id": "site-docs-reference-5",
+        "final_score": 38,
+        "relevance": "",
+        "evidence_snippets": [
+          "However, a user with conditional access can grant themselves the BigQuery Admin role ( roles/bigquery.admin ) on the table, and then modify row and column access policies.",
+          "With this role, the user can list all the resources in the dataset, but they can't perform any queries on those resources. { \"members\" : [ cloudysanfrancisco @ gmail . com ], \"role\" : roles / bigquery . metadataViewer , \"condition\" : { \"title\" : \"Dataset dataset 2\" , \"description\" : \"Allowed to list resources in dataset 2 dataset\" , \"expression\" : resource . name == projects / project 2 / datasets / dataset 2 && resource . type == bigquery . googleapis . com / Dataset } } Grant owner access to all tables in all datasets with a specific prefix This example grants cloudysanfrancisco@gmail.com the BigQuery Data Owner role on all tables in all datasets that start with the public prefix: { \"members\" : [ cloudysanfrancisco @ gmail . com ], \"role\" : roles / bigquery . dataOwner , \"condition\" : { \"title\" : \"Tables public \" , \"description\" : \"Allowed owner access to tables in datasets with public prefix\" , \"expression\" : resource . name . startsWith ( \"projects/project 3/datasets/public \" ) && resource . type == bigquery . googleapis . com / Table } } Grant owner access to all tables, models, and routines in all datasets that have a specific prefix This example grants cloudysanfrancisco@gmail.com the BigQuery Data Owner role on all tables, models, and routines in all datasets that start with the general prefix: { \"members\" : [ cloudysanfrancisco @ gmail . com ], \"role\" : roles / bigquery . dataOwner , \"condition\" : { \"title\" : \"Tables general \" , \"description\" : \"Allowed owner access to tables in datasets with general prefix\" , \"expression\" : resource . name . startsWith ( \"projects/project 4/datasets/general \" ) && resource . type == bigquery . googleapis . com / Table } }, { \"members\" : [ cloudysanfrancisco @ gmail . com ], \"role\" : roles / bigquery . dataOwner , \"condition\" : { \"title\" : \"Models general \" , \"description\" : \"Allowed owner access to models in datasets with general prefix\" , \"expression\" : resource . name . startsWith ( \"projects/project 4/datasets/general \" ) && resource . type == bigquery . googleapis . com / Model } }, { \"members\" : [ cloudysanfrancisco @ gmail . com ], \"role\" : roles / bigquery . dataOwner , \"condition\" : { \"title\" : \"Routines general \" , \"description\" : \"Allowed owner access to routines in datasets with general prefix\" , \"expression\" : resource . name . startsWith ( \"projects/project 4/datasets/general \" ) && resource . type == bigquery . googleapis . com / Routine } } What's next Learn more about configuring temporary access by using IAM Conditions.",
+          "When you create conditions for BigQuery routines, use the following formats: Attribute Value resource.type bigquery.googleapis.com/Routine resource.name projects/ PROJECT ID /datasets/ DATASET ID /routines/ ROUTINE ID resource.service bigquery.googleapis.com When you create conditions for BigQuery models, use the following formats: Attribute Value resource.type bigquery.googleapis.com/Model resource.name projects/ PROJECT ID /datasets/ DATASET ID /models/ MODEL ID resource.service bigquery.googleapis.com Replace the following: PROJECT ID : the ID of the project that contains the resources that you are granting access to DATASET ID : the ID of the dataset that you are granting access to TABLE ID : the ID of the table or view that you are granting access to ROUTINE ID : the ID of the routine that you are granting access to MODEL ID : the ID of the model that you are granting access to Conditions best practices When you build conditions in BigQuery, use the following best practices: We recommend using positive conditions for resource.type , resource.name , and resource.service for greater accuracy."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.admin",
+      "bigquery.googleapis.com",
+      "bigquery.tables.get",
+      "bigquery.tables.list",
+      "bigquery.tables.restoreSnapshot",
+      "bigquery.tables.setCategory",
+      "bigquery.tables.setColumnDataPolicy",
+      "bigquery.tables.setIamPolicy",
+      "bigquery.tables.update",
+      "bigquery.tables.updateData",
+      "bigquery.tables.updateIndex",
+      "gmail.com",
+      "resource.name",
+      "resource.service",
+      "resource.type"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/access-control-intro",
+        "https://docs.cloud.google.com/bigquery/docs/conditions"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/access-control-intro",
+        "https://docs.cloud.google.com/bigquery/docs/conditions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/access-control-intro",
+        "https://docs.cloud.google.com/bigquery/docs/conditions"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/access-control-intro",
+        "https://docs.cloud.google.com/bigquery/docs/conditions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/access-control-intro",
+        "https://docs.cloud.google.com/bigquery/docs/conditions"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/access-control-intro",
+        "https://docs.cloud.google.com/bigquery/docs/conditions"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/access-control-intro",
+        "https://docs.cloud.google.com/bigquery/docs/conditions"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/access-control-intro",
+        "https://docs.cloud.google.com/bigquery/docs/conditions"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

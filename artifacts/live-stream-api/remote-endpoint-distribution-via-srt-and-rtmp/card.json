@@ -1,0 +1,118 @@
+{
+  "feature_name": "Remote endpoint distribution via SRT and RTMP",
+  "feature_slug": "remote-endpoint-distribution-via-srt-and-rtmp",
+  "summary": "Distributes live stream content to remote endpoints using the SRT or RTMP protocol.",
+  "extended_definition": "Distributes live stream content to remote endpoints using the SRT or RTMP protocol.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/livestream/docs/how-to/configure-captions-and-translations",
+      "https://docs.cloud.google.com/livestream/docs/overview",
+      "https://docs.cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.channels",
+      "https://docs.cloud.google.com/python/docs/reference/livestream/latest/google.cloud.video.live_stream_v1.types"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure automatic captions and translations \\_|\\_ Live Stream API \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/livestream/docs/how-to/configure-captions-and-translations",
+        "source_id": "site-iam-reference",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The elementary streams are included in the elementaryStreams field of the DistributionStream object. { \"distributionStreams\" : [ { \"key\" : \"ds1\" , \"container\" : \"ts\" , // to be used with an SRT distribution \"elementaryStreams\" : [ \"es video\" , \"es audio\" , \"embedded english ai\" , // distribute both English \"embedded spanish ai\" // and Spanish captions ] }, { \"key\" : \"ds2\" , \"container\" : \"flv\" , // to be used with an RTMP distribution \"elementaryStreams\" : [ \"es video\" , \"es audio\" , \"embedded spanish ai\" // only distribute Spanish captions ] } ] } Complete channel creation by following distribute live stream to remote endpoint guide .",
+          "Verify the translation in the output manifest Run the following command to see the contents of the generated HLS manifest: gcloud storage cat gs:// BUCKET NAME /main.m3u8 The AI-generated webvtt English and Spanish captions show up in the output manifest similar to the following: #EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID=\"sub\",LANGUAGE=\"en-US\",NAME=\"English (AI captioned)\",AUTOSELECT=YES,DEFAULT=YES,FORCED=NO,URI=\"vtt english ai/index-1.m3u8\" #EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID=\"sub\",LANGUAGE=\"es-MX\",NAME=\"Spanish (AI captioned)\",AUTOSELECT=NO,DEFAULT=NO,FORCED=NO,URI=\"vtt spanish ai/index-1.m3u8\" Configure AI-generated transcripts for distribution Before configuring AI-generated captions and translations for distribution, familiarize yourself with how to distribute live streams to remote endpoints .",
+          "Run the following command, using the INPUT STREAM URI from the Check for the result section: ffmpeg -re -stream loop -1 -i \" TEST VOD FILE \" \\ -c:v copy -c:a aac -strict 2 -f \"flv\" \" INPUT STREAM URI \" Note: Use format flv if the input endpoint uses the RTMP protocol."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.channels \\_|\\_ Live Stream API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.channels",
+        "source_id": "site-api-reference",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource: Channel JSON representation InputAttachment JSON representation AutomaticFailover JSON representation Output JSON representation ElementaryStream JSON representation VideoStream JSON representation H264CodecSettings JSON representation H265CodecSettings JSON representation AudioStream JSON representation AudioMapping JSON representation TextStream JSON representation TextMapping JSON representation MuxStream JSON representation SegmentSettings JSON representation Manifest JSON representation ManifestType DistributionStream JSON representation Distribution JSON representation State SrtPushOutputEndpoint JSON representation RtmpPushOutputEndpoint JSON representation SpriteSheet JSON representation StreamingState LogConfig JSON representation LogSeverity TimecodeConfig JSON representation TimecodeSource TimeZone JSON representation Encryption JSON representation DrmSystems JSON representation Widevine Fairplay Playready Clearkey Aes128Encryption SampleAesEncryption MpegCommonEncryption JSON representation InputConfig JSON representation InputSwitchMode RetentionConfig JSON representation StaticOverlay JSON representation NormalizedResolution JSON representation NormalizedCoordinate JSON representation AutoTranscriptionConfig JSON representation DisplayTiming QualityPreset Methods Resource: Channel Channel resource represents the processor that does a user-defined \"streaming\" operation, which includes getting an input stream through an input, transcoding it to multiple renditions, and publishing output live streams in certain formats (for example, HLS or DASH) to the specified location.",
+          "JSON representation { \"key\" : string , \"distributionStream\" : string , \"state\" : enum ( State ) , \"error\" : { object ( Status ) } , // Union field endpoint can be only one of the following: \"srtPush\" : { object ( SrtPushOutputEndpoint ) } , \"rtmpPush\" : { object ( RtmpPushOutputEndpoint ) } // End of list of possible types for union field endpoint . } Fields key string Required.",
+          "Configurations for the output endpoint by streaming protocols. endpoint can be only one of the following: srtPush object ( SrtPushOutputEndpoint ) Output endpoint using SRT PUSH. rtmpPush object ( RtmpPushOutputEndpoint ) Output endpoint using RTMP PUSH."
+        ]
+      },
+      {
+        "title": "\"Package types (1.16.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/livestream/latest/google.cloud.video.live_stream_v1.types",
+        "source_id": "site-python-reference",
+        "final_score": 119,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SrtPushOutputEndpoint Configurations for an output endpoint using SRT PUSH as the streaming protocol. .. oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields StartChannelRequest Request message for \"LivestreamService.StartChannel\".",
+          "RtmpPushOutputEndpoint Configurations for an output endpoint using RTMP PUSH as the streaming protocol.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-03-31 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "Overview of the Live Stream API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/livestream/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 112,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Input types Supported formats Protocols SRT, RTMP Video codecs H.264 (AVC) Audio codecs AAC Captions Embedded CEA-608/708 (passthrough) Output types Supported formats Protocols Apple HLS with fMP4 and MPEG2-TS segments, MPEG-DASH with fMP4 segments Video codecs H.264 (AVC) Audio codecs AAC Captions Embedded CEA-608/708 (passthrough) Encryption AES-128, SAMPLE-AES, MPEG-CENC Spritesheet images JPG tiles, single images See the supported configurations for content encryption .",
+          "An input endpoint consists of either an RTMP or SRT URI that looks like the following: rtmp://192.0.2.1/live/ STREAM ID srt://192.0.2.1:4201?streamid= STREAM ID where STREAM ID is a string such as b8ebdd94-c8d9-4d88-a16e-b963c43a953b .",
+          "You first create an input endpoint, then create a channel resource that transcodes the live SRT or RTMP input signal into an HLS or DASH output stream."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "fields.html",
+      "main.m3u8",
+      "projects.locations.channels",
+      "python.readthedocs.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-captions-and-translations",
+        "https://docs.cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.channels",
+        "https://docs.cloud.google.com/python/docs/reference/livestream/latest/google.cloud.video.live_stream_v1.types",
+        "https://docs.cloud.google.com/livestream/docs/overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-captions-and-translations",
+        "https://docs.cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.channels",
+        "https://docs.cloud.google.com/python/docs/reference/livestream/latest/google.cloud.video.live_stream_v1.types",
+        "https://docs.cloud.google.com/livestream/docs/overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:23.229Z",
+  "source_step08_card": "data/step-08/current/products/live-stream-api/card.json",
+  "product_name": "Live Stream API",
+  "product_slug": "live-stream-api"
+}

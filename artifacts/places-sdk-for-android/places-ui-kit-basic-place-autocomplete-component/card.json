@@ -1,0 +1,176 @@
+{
+  "feature_name": "Places UI Kit Basic Place Autocomplete component",
+  "feature_slug": "places-ui-kit-basic-place-autocomplete-component",
+  "summary": "This component lets developers customize a full-screen search bar that shows autocomplete results as the user types.",
+  "extended_definition": "This component lets developers customize a full-screen search bar that shows autocomplete results as the user types.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/places/android-sdk/autocomplete-tutorial",
+      "https://developers.google.com/maps/documentation/places/android-sdk/basic-place-autocomplete-ui-kit",
+      "https://developers.google.com/maps/documentation/places/android-sdk/place-autocomplete",
+      "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-custom-styling"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/basic-place-autocomplete-ui-kit",
+        "source_id": "site-docs-root",
+        "final_score": 285,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Add the Basic Autocomplete component to your app Set the autocomplete filter parameters (for example, the types to return, the country to limit results to, the region coordinates for results, the origin of the request to display distance information, if available) as you would to use Place Autocomplete (New) without the Places UI Kit.",
+          "CustomizedTheme ) . build ()) . build ( this ); basicPlaceAutocompleteActivityResultLauncher . launch ( basicPlaceAutocompleteIntent ); Customize the theme The Places UI Kit provides a dark theme by default, so you may need to customize both dark and light themes.",
+          "Select platform: Android iOS JavaScript Basic Place Autocomplete component The Basic Place Autocomplete component of the Places UI Kit lets you add an individual UI component that returns a place ID when a user selects a place."
+        ]
+      },
+      {
+        "title": "Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-custom-styling",
+        "source_id": "site-docs-root",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Select platform: Android iOS JavaScript Customizeable style properties Visual customization examples You can customize the colors, typography, spacing, borders, and corners of these Places UI kit components and non-UI kit features: Place Details component Place Search component Basic Place Autocomplete component Non-UI Kit Place Autocomplete widget Places UI kit offers a design system approach to visual customization roughly based on Material Design (with some Google-Maps-specific modifications).",
+          "To create a dark theme, add an entry for the colors in values-night/colors.xml Customization tool Use this tool to visualize custom configurations in a Places UI Kit element.",
+          "Any theme attributes that are not overridden use the default styles. < style name = \"CustomizedPlaceDetailsTheme\" parent = \"PlacesMaterialTheme\" > < item name = \"placesColorPrimary\" > @color / app primary color < / item > < item name = \"placesColorOnSurface\" > @color / app color on surface < / item > < item name = \"placesColorOnSurfaceVariant\" > @color / app color on surface < / item > < item name = \"placesTextAppearanceBodySmall\" > @style / app text appearence small < / item > < item name = \"placesCornerRadius\" > 20 dp < / item > < / style > Important: The Places UI Kit provides a dark theme by default, so you may need to customize both dark and light themes."
+        ]
+      },
+      {
+        "title": "\"Add Place Autocomplete to an address form \\_|\\_ Places SDK for Android \\_\\",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/autocomplete-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Error: \" , e ); } map . moveCamera ( CameraUpdateFactory . newLatLngZoom ( coordinates , 15 f )); marker = map . addMarker ( new MarkerOptions () . position ( coordinates )); } private void fillInAddress ( Place place ) { AddressComponents components = place . getAddressComponents (); StringBuilder address1 = new StringBuilder (); StringBuilder postcode = new StringBuilder (); // Get each component of the address from the place details , // and then fill - in the corresponding field on the form . // Possible AddressComponent types are documented at https : // goo . gle / 32 SJPM1 if ( components != null ) { for ( AddressComponent component : components . asList ()) { String type = component . getTypes () . get ( 0 ); switch ( type ) { case \"street number\" : { address1 . insert ( 0 , component . getName ()); break ; } case \"route\" : { address1 . append ( \" \" ); address1 . append ( component . getShortName ()); break ; } case \"postal code\" : { postcode . insert ( 0 , component . getName ()); break ; } case \"postal code suffix\" : { postcode . append ( \"-\" ) . append ( component . getName ()); break ; } case \"locality\" : binding . autocompleteCity . setText ( component . getName ()); break ; case \"administrative area level 1\" : { binding . autocompleteState . setText ( component . getShortName ()); break ; } case \"country\" : binding . autocompleteCountry . setText ( component . getName ()); break ; } } } binding . autocompleteAddress1 . setText ( address1 . toString ()); binding . autocompletePostal . setText ( postcode . toString ()); // After filling the form with address components from the Autocomplete // prediction , set cursor focus on the second address line to encourage // entry of sub - premise information such as apartment , unit , or floor number . binding . autocompleteAddress2 . requestFocus (); // Add a map for visual confirmation of the address showMap ( place ); } private void showMap ( Place place ) { coordinates = place . getLocation (); // It isn 't possible to set a fragment' s id programmatically so we set a tag instead and // search for it using that . mapFragment = ( SupportMapFragment ) getSupportFragmentManager () . findFragmentByTag ( MAP FRAGMENT TAG ); // We only create a fragment if it doesn 't already exist. if ( mapFragment == null ) { mapPanel = (( ViewStub ) findViewById ( R . id . stub map )) . inflate (); GoogleMapOptions mapOptions = new GoogleMapOptions (); mapOptions . mapToolbarEnabled ( false ); // To programmatically add the map , we first create a SupportMapFragment . mapFragment = SupportMapFragment . newInstance ( mapOptions ); // Then we add it using a FragmentTransaction . getSupportFragmentManager () . beginTransaction () . add ( R . id . confirmation map , mapFragment , MAP FRAGMENT TAG ) . commit (); mapFragment . getMapAsync ( this ); } else { updateMap ( coordinates ); } } private void updateMap ( LatLng latLng ) { marker . setPosition ( latLng ); map . moveCamera ( CameraUpdateFactory . newLatLngZoom ( latLng , 15 f )); if ( mapPanel . getVisibility () == View .",
+          "See the License for the specific language governing permissions and limitations under the License . / package com . example . placesdemo ; import android.annotation.SuppressLint ; import android.app.Activity ; import android.content.Intent ; import android.content.pm.PackageManager ; import android.content.res.Resources ; import android.os.Bundle ; import android.util.Log ; import android.view.View ; import android.view.ViewStub ; import android.widget.Button ; import android.widget.CheckBox ; import android.widget.Toast ; import androidx.activity.result.ActivityResultLauncher ; import androidx.activity.result.contract.ActivityResultContracts ; import androidx.annotation.NonNull ; import androidx.annotation.Nullable ; import androidx.appcompat.app.AppCompatActivity ; import androidx.core.content.ContextCompat ; import com.example.placesdemo.databinding.AutocompleteAddressActivityBinding ; import com.google.android.gms.location.FusedLocationProviderClient ; import com.google.android.gms.location.LocationServices ; import com.google.android.gms.maps.CameraUpdateFactory ; import com.google.android.gms.maps.GoogleMap ; import com.google.android.gms.maps.GoogleMapOptions ; import com.google.android.gms.maps.OnMapReadyCallback ; import com.google.android.gms.maps.SupportMapFragment ; import com.google.android.gms.maps.model.LatLng ; import com.google.android.gms.maps.model.MapStyleOptions ; import com.google.android.gms.maps.model.Marker ; import com.google.android.gms.maps.model.MarkerOptions ; import com.google.android.libraries.places.api.Places ; import com.google.android.libraries.places.api.model.AddressComponent ; import com.google.android.libraries.places.api.model.AddressComponents ; import com.google.android.libraries.places.api.model.Place ; import com.google.android.libraries.places.api.model.PlaceTypes ; import com.google.android.libraries.places.api.net.PlacesClient ; import com.google.android.libraries.places.widget.Autocomplete ; import com.google.android.libraries.places.widget.model.AutocompleteActivityMode ; import java.util.Arrays ; import java.util.List ; import static android .",
+          "EdgeToEdge . enable ( this ); super . onCreate ( savedInstanceState ); binding = AutocompleteAddressActivityBinding . inflate ( getLayoutInflater ()); setContentView ( binding . getRoot ()); // Retrieve a PlacesClient ( previously initialized - see MainActivity ) placesClient = Places . createClient ( this ); // Attach an Autocomplete intent to the Address 1 EditText field binding . autocompleteAddress1 . setOnClickListener ( startAutocompleteIntentListener ); // Update checkProximity when user checks the checkbox CheckBox checkProximityBox = findViewById ( R . id . checkbox proximity ); checkProximityBox . setOnCheckedChangeListener (( view , isChecked ) - > { // Set the boolean to match user preference for when the Submit button is clicked checkProximity = isChecked ; }); // Submit and optionally check proximity Button saveButton = findViewById ( R . id . autocomplete save button ); saveButton . setOnClickListener ( v - > saveForm ()); // Reset the form Button resetButton = findViewById ( R . id . autocomplete reset button ); resetButton . setOnClickListener ( v - > clearForm ()); } private void startAutocompleteIntent () { // Set the fields to specify which types of place data to // return after the user has made a selection ."
+        ]
+      },
+      {
+        "title": "Autocomplete (New) \\_|\\_ Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/place-autocomplete",
+        "source_id": "site-docs-root",
+        "final_score": 237,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This example sets the origin to the center of San Francisco: Places.initializeWithNewPlacesApiEnabled(context, apiKey); final List<Field> placeFields = getPlaceFields(); LatLng center = new LatLng(37.7749, -122.4194); CircularBounds circle = CircularBounds.newInstance(center, / radius = / 5000); final FindAutocompletePredictionsRequest autocompletePlacesRequest = FindAutocompletePredictionsRequest.builder() .setQuery(\"Amoeba\") .setOrigin(center) .setLocationRestriction(circle) .build()); placesClient.findAutocompletePredictions(autoCompletePlacesRequest) .addOnSuccessListener( (response) -> { List<AutocompletePrediction> predictions = response.getResult().getAutocompletePredictions(); } ).addOnFailureListener( exception -> { Log.e(TAG, \"some exception happened\" + exception.getMessage()); }) ); Autocomplete (New) optimization This section describes best practices to help you make the most of the Autocomplete (New) service.",
+          "RESULT OK ) { // get prediction object AutocompletePrediction prediction = PlaceAutocomplete . getPredictionFromIntent ( Preconditions . checkNotNull ( intent )); // get session token AutocompleteSessionToken sessionToken = PlaceAutocomplete . getSessionTokenFromIntent ( Preconditions . checkNotNull ( intent )); // create PlacesClient to make FetchPlace request (optional) PlacesClient placesClient = Places . createClient ( this ); FetchPlaceRequest request = FetchPlaceRequest . builder ( prediction . getPlaceId (), Arrays . asList ( Field .",
+          "BrandedTheme ) . build ()) . build ( this ); placeAutocompleteActivityResultLauncher . launch ( placeAutocompleteIntent ); Get place predictions programmatically Your app can get a list of predicted place names and/or addresses from the autocomplete API by calling PlacesClient.findAutocompletePredictions() , passing a FindAutocompletePredictionsRequest object."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "android.annotation.SuppressLint",
+      "android.app.Activity",
+      "android.content.Intent",
+      "android.content.pm.PackageManager",
+      "android.content.res.Resources",
+      "android.os.Bundle",
+      "android.util.Log",
+      "android.view.View",
+      "android.view.ViewStub",
+      "android.widget.Button",
+      "android.widget.CheckBox",
+      "android.widget.Toast",
+      "androidx.activity.result.ActivityResultLauncher",
+      "androidx.activity.result.contract.ActivityResultContracts",
+      "androidx.annotation.NonNull",
+      "androidx.annotation.Nullable",
+      "androidx.appcompat.app.AppCompatActivity",
+      "androidx.core.content.ContextCompat",
+      "colors.xml",
+      "com.example.placesdemo.databinding.AutocompleteAddressActivityBinding",
+      "com.google.android.gms.location.FusedLocationProviderClient",
+      "com.google.android.gms.location.LocationServices",
+      "com.google.android.gms.maps.CameraUpdateFactory",
+      "com.google.android.gms.maps.GoogleMap",
+      "com.google.android.gms.maps.GoogleMapOptions",
+      "com.google.android.gms.maps.model.LatLng",
+      "com.google.android.gms.maps.model.MapStyleOptions",
+      "com.google.android.gms.maps.model.Marker",
+      "com.google.android.gms.maps.model.MarkerOptions",
+      "com.google.android.gms.maps.OnMapReadyCallback",
+      "com.google.android.gms.maps.SupportMapFragment",
+      "com.google.android.libraries.places.api.model.AddressComponent",
+      "com.google.android.libraries.places.api.model.AddressComponents",
+      "com.google.android.libraries.places.api.model.Place",
+      "com.google.android.libraries.places.api.model.PlaceTypes",
+      "com.google.android.libraries.places.api.net.PlacesClient",
+      "com.google.android.libraries.places.api.Places",
+      "com.google.android.libraries.places.widget.Autocomplete",
+      "com.google.android.libraries.places.widget.model.AutocompleteActivityMode",
+      "developers.google.com",
+      "exception.getMessage",
+      "java.util.Arrays",
+      "java.util.List",
+      "response.getResult"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/basic-place-autocomplete-ui-kit",
+        "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-custom-styling",
+        "https://developers.google.com/maps/documentation/places/android-sdk/autocomplete-tutorial",
+        "https://developers.google.com/maps/documentation/places/android-sdk/place-autocomplete"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/basic-place-autocomplete-ui-kit",
+        "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-custom-styling",
+        "https://developers.google.com/maps/documentation/places/android-sdk/autocomplete-tutorial",
+        "https://developers.google.com/maps/documentation/places/android-sdk/place-autocomplete"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/basic-place-autocomplete-ui-kit",
+        "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-custom-styling",
+        "https://developers.google.com/maps/documentation/places/android-sdk/autocomplete-tutorial",
+        "https://developers.google.com/maps/documentation/places/android-sdk/place-autocomplete"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/basic-place-autocomplete-ui-kit",
+        "https://developers.google.com/maps/documentation/places/android-sdk/places-ui-kit-custom-styling",
+        "https://developers.google.com/maps/documentation/places/android-sdk/autocomplete-tutorial",
+        "https://developers.google.com/maps/documentation/places/android-sdk/place-autocomplete"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:31.469Z",
+  "source_step08_card": "data/step-08/current/products/places-sdk-for-android/card.json",
+  "product_name": "Places SDK for Android",
+  "product_slug": "places-sdk-for-android"
+}

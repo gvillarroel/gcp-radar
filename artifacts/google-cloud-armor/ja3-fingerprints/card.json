@@ -1,0 +1,229 @@
+{
+  "feature_name": "JA3 fingerprints",
+  "feature_slug": "ja3-fingerprints",
+  "summary": "Cloud Armor custom rules can use JA3 fingerprints generally available.",
+  "extended_definition": "Cloud Armor custom rules can use JA3 fingerprints generally available.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+      "https://docs.cloud.google.com/armor/docs/common-use-cases",
+      "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+      "https://docs.cloud.google.com/armor/docs/rules-language-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure custom rules language attributes \\_|\\_ Google Cloud Armor \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 218,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples The following expression matches the incoming request against the Google Threat Intelligence iplist-known-malicious-ips feed for protection from the known list of malicious IPs: evaluateThreatIntelligence('iplist-known-malicious-ips') The following expression matches the incoming request against the Google Threat Intelligence iplist-known-malicious-ips feed for protection from the known list of malicious IPs except for IPs in 203.0.113.0/24 : evaluateThreatIntelligence('iplist-known-malicious-ips', ['203.0.113.0/24']) The following expression matches the custom request header for user IP against the address group named my-own-list-of-bad-ips : evaluateAddressGroup('my-own-list-of-bad-ips', origin.user ip) What's next Configure Cloud Armor security policies Tune Cloud Armor preconfigured WAF rules Troubleshoot Cloud Armor issues Quotas and limit Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Expressions written in the Cloud Armor custom rules language require two components: The attribute : the data to inspect The operation : how to use the data For example, the following expression uses the attributes origin.ip and 198.51.100.0/24 in the operation inIpRange .",
+          "This page discusses advanced match conditions and the Cloud Armor custom rules language that you use to write expressions in the advanced match conditions of security policy rules."
+        ]
+      },
+      {
+        "title": "Configure rate limiting \\_|\\_ Google Cloud Armor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "source_id": "site-iam-reference",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about exemption cookies and reCAPTCHA assessment, see the Cloud Armor bot management overview . gcloud compute security-policies rules create 115 \\ --security-policy SECURITY POLICY \\ --expression=\"token.recaptcha exemption.valid\" \\ --action=throttle \\ --rate-limit-threshold-count=20 \\ --rate-limit-threshold-interval-sec=300 \\ --conform-action=allow \\ --exceed-action=redirect \\ --exceed-redirect-type=google-recaptcha \\ --enforce-on-key=HTTP-COOKIE \\ --enforce-on-key-name=\"recaptcha-ca-e\" Rate limiting based on JA4 and JA3 fingerprints You can use JA4 and JA3 fingerprints as rate limiting keys.",
+          "Set up IAM permissions for Cloud Armor security policies The following operations require the Identity and Access Management (IAM) Compute Security Admin role ( roles/compute.securityAdmin ): Configuring, modifying, updating, and deleting a Cloud Armor security policy Using the following API methods: SecurityPolicies insert SecurityPolicies delete SecurityPolicies patch SecurityPolicies addRule SecurityPolicies patchRule SecurityPolicies removeRule A user with the Compute Network Admin role ( roles/compute.networkAdmin ) can perform the following operations: Setting a Cloud Armor security policy for a backend service Using the following API methods: BackendServices setSecurityPolicy BackendServices list ( gcloud only) Users with the Security Admin role ( roles/iam.securityAdmin ) and the Compute Network Admin role ( roles/compute.networkAdmin ) can view Cloud Armor security policies by using the SecurityPolicies API methods get , list , and getRule .",
+          "Banned requests return a status code of 429 Too Many Requests . gcloud compute security-policies rules create 102 \\ --security-policy sec-policy \\ --src-ip-ranges=\" \" \\ --action rate-based-ban \\ --rate-limit-threshold-count 20 \\ --rate-limit-threshold-interval-sec 60 \\ --ban-duration-sec 600 \\ --ban-threshold-count 500 \\ --ban-threshold-interval-sec 400 \\ --conform-action allow \\ --exceed-action deny-429 \\ --enforce-on-key ALL Change a throttle rule to a rate-based ban rule You can use the following command to change the action of an existing rule from a throttle action to a rate-based ban action. gcloud compute security-policies rules update 105 \\ --action=rate-based-ban \\ --security-policy=sec-policy \\ --ban-duration-sec=600 You can't change the action of an existing rule from a rate-based ban action to a throttle action."
+        ]
+      },
+      {
+        "title": "\"Cloud Armor Enterprise overview \\_|\\_ Google Cloud Armor \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 184,
+        "relevance": "",
+        "evidence_snippets": [
+          "What's next Subscribe and enroll projects in Cloud Armor Enterprise Troubleshoot issues Use the custom rules language reference Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "If you don't change the rule priority, you can update advanced rules so that they no longer use Cloud Armor Enterprise-exclusive features.",
+          "We recommend that you delete any advanced network DDoS protection rules before you unenroll your project from Cloud Armor Enterprise, but you can also delete advanced network DDoS protection rules after downgrading."
+        ]
+      },
+      {
+        "title": "\"Common use cases for security policies \\_|\\_ Google Cloud Armor \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/armor/docs/common-use-cases",
+        "source_id": "site-iam-reference",
+        "final_score": 176,
+        "relevance": "",
+        "evidence_snippets": [
+          "Custom rules to filter based on Layer 3 through Layer 7 parameters Use the Cloud Armor custom rules language to define one or more expressions in a rule's match condition.",
+          "The following example uses a preconfigured rule to mitigate SQLi attacks from the 192.0.2.1/24 IP address range: inIpRange(origin.ip, '192.0.2.1/24') && evaluatePreconfiguredWaf('sqli-v422-stable') OWASP Top 10 mitigation for hybrid workloads Cloud Armor offers mitigations for the following attacks, whether they are deployed in Google Cloud,on-premises, or in a third-party provider: SQL injection (SQLi) Cross-site scripting (XSS) Local File Inclusion (LFI) Remote File Inclusion (RFI) Remote Code Execution (RCE) You can use these capabilities to address some of the most common web application security risks, including those risks identified in the OWASP Top 10 list.",
+          "In the following example, requests from 2001:db8::/32 (such as your alpha testers) in the AU region match the following expression: origin.region code == \"AU\" && inIpRange(origin.ip, '2001:db8::/32') The following example matches with requests from 192.0.2.0/24 and with a user agent that contains the string WordPress : inIpRange(origin.ip, '192.0.2.0/24') && has(request.headers['user-agent']) && request.headers['user-agent'].contains('WordPress') For additional examples, see Example expressions in the custom rules language reference."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.networkAdmin",
+      "compute.securityAdmin",
+      "exemption.valid",
+      "iam.securityAdmin",
+      "origin.ip",
+      "origin.region",
+      "origin.tls",
+      "origin.user",
+      "request.headers",
+      "request.path",
+      "request.path.matches",
+      "token.recaptcha"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.networkAdmin",
+      "roles/compute.securityAdmin",
+      "roles/iam.securityAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/common-use-cases"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/common-use-cases"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/common-use-cases"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/common-use-cases"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/common-use-cases"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/common-use-cases"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/common-use-cases"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/common-use-cases"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/common-use-cases"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/common-use-cases"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/common-use-cases"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/common-use-cases"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/common-use-cases"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:12.438Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-armor/card.json",
+  "product_name": "Google Cloud Armor",
+  "product_slug": "google-cloud-armor"
+}

@@ -1,0 +1,196 @@
+{
+  "feature_name": "Data stewards",
+  "feature_slug": "data-stewards",
+  "summary": "Data Catalog supports assigning data stewards to data entries.",
+  "extended_definition": "Data Catalog supports assigning data stewards to data entries.",
+  "lifecycle": {
+    "latest_feature_date": "2022-01-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/data-catalog/docs/how-to/custom-entries",
+      "https://docs.cloud.google.com/data-catalog/docs/how-to/filesets",
+      "https://docs.cloud.google.com/data-catalog/docs/tag-bigquery-dataset",
+      "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.pagers.ListEntriesAsyncPager"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create custom Data Catalog entries for your data sources \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/data-catalog/docs/how-to/custom-entries",
+        "source_id": "site-docs-root",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" project id \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://datacatalog.googleapis.com/v1/projects/ project id /locations/ region /entryGroups/ entryGroupId /entries?entryId= entryId \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/my project id/locations/us-central1/entryGroups/my entryGroup id/entries/my entry id\", \"userSpecifiedType\": \"my-type\", \"userSpecifiedSystem\": \"my system\", \"displayName\": \"On-prem entry\", \"description\": \"My entry description.\", \"schema\": { \"columns\": [ { \"type\": \"STRING\", \"description\": \"First name\", \"mode\": \"REQUIRED\", \"column\": \"first name\" }, { \"type\": \"STRING\", \"description\": \"Last name\", \"mode\": \"REQUIRED\", \"column\": \"last name\" }, { \"type\": \"RECORD\", \"description\": \"Address\", \"mode\": \"REPEATED\", \"column\": \"address\", \"subcolumns\": [ { \"type\": \"STRING\", \"description\": \"City\", \"mode\": \"NULLABLE\", \"column\": \"city\" }, { \"type\": \"STRING\", \"description\": \"State\", \"mode\": \"NULLABLE\", \"column\": \"state\" } ] } ] }, \"sourceSystemTimestamps\": { \"createTime\": \"2019-10-23T23:11:26.326Z\", \"updateTime\": \"2019-10-23T23:11:26.326Z\" }, \"linkedResource\": \"example.com/def\" } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Example JSON schema: { ... \"schema\": { \"columns\": [ { \"column\": \"first name\", \"description\": \"First name\", \"mode\": \"REQUIRED\", \"type\": \"STRING\" }, { \"column\": \"last name\", \"description\": \"Last name\", \"mode\": \"REQUIRED\", \"type\": \"STRING\" }, { \"column\": \"address\", \"description\": \"Address\", \"mode\": \"REPEATED\", \"subcolumns\": [ { \"column\": \"city\", \"description\": \"City\", \"mode\": \"NULLABLE\", \"type\": \"STRING\" }, { \"column\": \"state\", \"description\": \"State\", \"mode\": \"NULLABLE\", \"type\": \"STRING\" } ], \"type\": \"RECORD\" } ] } ... } HTTP method and URL: POST https://datacatalog.googleapis.com/v1/projects/ project id /locations/ region /entryGroups/ entryGroupId /entries?entryId= entryId Request JSON body: { \"description\": \" Description \", \"displayName\": \" Display name \", \"userSpecifiedType\": \" my type \", \"userSpecifiedSystem\": \" my system \", \"linkedResource\": \" example.com/def \", \"schema\": { schema } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Save the request body in a file named request.json , and execute the following command: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"x-goog-user-project: project id \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https://datacatalog.googleapis.com/v1/projects/ project id /locations/ region /entryGroups/ entryGroupId /entries?entryId= entryId \" PowerShell (Windows) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login ."
+        ]
+      },
+      {
+        "title": "Tag a BigQuery table using Data Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/data-catalog/docs/tag-bigquery-dataset",
+        "source_id": "site-docs-root",
+        "final_score": 158,
+        "relevance": "",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" project-id \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://datacatalog.googleapis.com/v1/projects/ project-id /locations/ region /tagTemplates?tagTemplateId=demo tag template\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\":\"projects/project-id/locations/us-central1/tagTemplates/demo tag template\", \"displayName\":\"Demo Tag Template\", \"fields\":{ \"num rows\":{ \"displayName\":\"Number of rows in data asset\", \"isRequired\": \"false\", \"type\":{ \"primitiveType\":\"DOUBLE\" } }, \"has pii\":{ \"displayName\":\"Has PII\", \"isRequired\": \"false\", \"type\":{ \"primitiveType\":\"BOOL\" } }, \"pii type\":{ \"displayName\":\"PII type\", \"isRequired\": \"false\", \"type\":{ \"enumType\":{ \"allowedValues\":[ { \"displayName\":\"EMAIL ADDRESS\" }, { \"displayName\":\"NONE\" }, { \"displayName\":\"US SOCIAL SECURITY NUMBER\" } ] } } }, \"source\":{ \"displayName\":\"Source of data asset\", \"isRequired\":\"true\", \"type\":{ \"primitiveType\":\"STRING\" } } } } Lookup the Data Catalog entry-id for your BigQuery table Before using any of the request data, make the following replacements: project-id : Google Cloud project ID HTTP method and URL: GET https://datacatalog.googleapis.com/v1/entries:lookup?linkedResource=//bigquery.googleapis.com/projects/ project-id /datasets/demo dataset/tables/trips Request JSON body: Request body is empty.",
+          "The tag fields are now listed in the Tags section in the BigQuery table details. gcloud Run the gcloud data-catalog tag-templates create command shown below to create a tag template with the following five tag fields: display name: Source of data asset id: source required: TRUE type: String display name: Number of rows in the data asset id: num rows required: FALSE type: Double display name: Has PII id: has pii required: FALSE type: Boolean display name: PII type id: pii type required: FALSE type: Enumerated values: EMAIL ADDRESS US SOCIAL SECURITY NUMBER NONE ------------------------------- Create a Tag Template. ------------------------------- gcloud data-catalog tag-templates create demo template \\ --location=us-central1 \\ --display-name=\"Demo Tag Template\" \\ --field=id=source,display-name=\"Source of data asset\",type=string,required=TRUE \\ --field=id=num rows,display-name=\"Number of rows in the data asset\",type=double \\ --field=id=has pii,display-name=\"Has PII\",type=bool \\ --field=id=pii type,display-name=\"PII type\",type='enum(EMAIL ADDRESS US SOCIAL SECURITY NUMBER NONE)' ------------------------------- Lookup the Data Catalog entry for the table. ------------------------------- ENTRY NAME=$(gcloud data-catalog entries lookup '//bigquery.googleapis.com/projects/ PROJECT ID /datasets/ DATASET /tables/ TABLE ' --format=\"value(name)\") ------------------------------- Attach a Tag to the table. ------------------------------- Create the Tag file. cat > tag file.json The location parameter specifies the Compute Engine resource region .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" project-id \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json ` -Uri \"https://datacatalog.googleapis.com/v1/projects/ project-id /locations/ region /entryGroups/@bigquery/entries/ entry-id /tags\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\":\"projects/ project-id /locations/US/entryGroups/@bigquery/entries/ entry-id /tags/ tag-id \", \"template\":\"projects/ project-id /locations/us-central1/tagTemplates/demo tag template\", \"fields\":{ \"pii type\":{ \"displayName\":\"PII type\", \"enumValue\":{ \"displayName\":\"NONE\" } }, \"has pii\":{ \"displayName\":\"Has PII\", \"boolValue\":false }, \"source\":{ \"displayName\":\"Source of data asset\", \"stringValue\":\"Copied from tlc yellow trips 2017\" }, \"num rows\":{ \"displayName\":\"Number of rows in data asset\", \"doubleValue\":113496874 } }, \"templateDisplayName\":\"Demo Tag Template\" } Caution: Renaming the table in BigQuery deletes all the tags attached to it and its columns."
+        ]
+      },
+      {
+        "title": "\"Surface files from Cloud Storage with fileset entries \\_|\\_ Data Catalog\\",
+        "url": "https://docs.cloud.google.com/data-catalog/docs/how-to/filesets",
+        "source_id": "site-docs-root",
+        "final_score": 155,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" project id \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://datacatalog.googleapis.com/v1/projects/ project id /locations/ region /entryGroups/ entryGroupId /entries?entryId= entryId \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/my project id/locations/us-central1/entryGroups/my entryGroup id/entries/my entry id\", \"type\": \"FILESET\", \"displayName\": \"My Fileset\", \"description\": \"My Fileset description.\", \"schema\": { \"columns\": [ { \"type\": \"STRING\", \"description\": \"First name\", \"mode\": \"REQUIRED\", \"column\": \"first name\" }, { \"type\": \"STRING\", \"description\": \"Last name\", \"mode\": \"REQUIRED\", \"column\": \"last name\" }, { \"type\": \"RECORD\", \"description\": \"Address\", \"mode\": \"REPEATED\", \"column\": \"address\", \"subcolumns\": [ { \"type\": \"STRING\", \"description\": \"City\", \"mode\": \"NULLABLE\", \"column\": \"city\" }, { \"type\": \"STRING\", \"description\": \"State\", \"mode\": \"NULLABLE\", \"column\": \"state\" } ] } ] }, \"gcsFilesetSpec\": { \"filePatterns\": [ \"gs://my bucket name/chicago taxi trips/csv/shard- .csv\" ] }, \"sourceSystemTimestamps\": { \"createTime\": \"2019-10-23T23:11:26.326Z\", \"updateTime\": \"2019-10-23T23:11:26.326Z\" }, \"linkedResource\": \"//datacatalog.googleapis.com/projects/my project id/locations/us-central1/entryGroups/my entryGroup id/entries/my entry id \" } IAM roles, permissions, and policies Data Catalog defines entry and entry group roles to facilitate permission management of filesets and other Data Catalog resources.",
+          "Example JSON schema: { ... \"schema\": { \"columns\": [ { \"column\": \"first name\", \"description\": \"First name\", \"mode\": \"REQUIRED\", \"type\": \"STRING\" }, { \"column\": \"last name\", \"description\": \"Last name\", \"mode\": \"REQUIRED\", \"type\": \"STRING\" }, { \"column\": \"address\", \"description\": \"Address\", \"mode\": \"REPEATED\", \"subcolumns\": [ { \"column\": \"city\", \"description\": \"City\", \"mode\": \"NULLABLE\", \"type\": \"STRING\" }, { \"column\": \"state\", \"description\": \"State\", \"mode\": \"NULLABLE\", \"type\": \"STRING\" } ], \"type\": \"RECORD\" } ] } ... } HTTP method and URL: POST https://datacatalog.googleapis.com/v1/projects/ project id /locations/ region /entryGroups/ entryGroupId /entries?entryId= entryId Request JSON body: { \"description\": \" Fileset description. \", \"displayName\": \" Display name \", \"gcsFilesetSpec\": { \"filePatterns\": [ \"gs:// bucket name/file pattern \" ] }, \"type\": \"FILESET\", \"schema\": { schema } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "This Google Cloud CLI command example, below, creates a fileset entry that includes schema of fileset data. gcloud data-catalog entries create my fileset entry \\ --location=us-central1 \\ --entry-group= my entrygroup \\ --type=FILESET \\ --gcs-file-patterns=gs:// my-bucket / .csv \\ --schema-from-file= path to schema file \\ --description=\"Fileset description ...\" Flag notes: --gcs-file-patterns : See File pattern requirements . --schema-from-file : The following sample shows the JSON format of the schema text file accepted by the --schema-from-file flag. [ { \"column\": \"first name\", \"description\": \"First name\", \"mode\": \"REQUIRED\", \"type\": \"STRING\" }, { \"column\": \"last name\", \"description\": \"Last name\", \"mode\": \"REQUIRED\", \"type\": \"STRING\" }, { \"column\": \"address\", \"description\": \"Address\", \"mode\": \"REPEATED\", \"type\": \"STRING\" } ] Java Before trying this sample, follow the Java setup instructions in the Data Catalog quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "\"Class ListEntriesAsyncPager (3.29.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.pagers.ListEntriesAsyncPager",
+        "source_id": "site-python-reference",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.datacatalog v1.types.ListEntriesRequest The initial request object. response google.cloud.datacatalog v1.types.ListEntriesResponse The initial response object. retry google.api core.retry.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "Home Documentation Developer tools Python Client libraries Send feedback Class ListEntriesAsyncPager (3.29.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "If there are more pages, the aiter method will make additional ListEntries requests and continue to iterate through the entries field on the corresponding responses."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.googleapis.com",
+      "catalog.search",
+      "core.retry.AsyncRetry",
+      "datacatalog.googleapis.com",
+      "entries.create",
+      "example.com",
+      "file.json",
+      "request.json",
+      "v1.types.ListEntriesRequest",
+      "v1.types.ListEntriesResponse"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/custom-entries",
+        "https://docs.cloud.google.com/data-catalog/docs/tag-bigquery-dataset",
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/filesets",
+        "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.pagers.ListEntriesAsyncPager"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/custom-entries",
+        "https://docs.cloud.google.com/data-catalog/docs/tag-bigquery-dataset",
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/filesets",
+        "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.pagers.ListEntriesAsyncPager"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/custom-entries",
+        "https://docs.cloud.google.com/data-catalog/docs/tag-bigquery-dataset",
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/filesets",
+        "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.pagers.ListEntriesAsyncPager"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/custom-entries",
+        "https://docs.cloud.google.com/data-catalog/docs/tag-bigquery-dataset",
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/filesets",
+        "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.pagers.ListEntriesAsyncPager"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/custom-entries",
+        "https://docs.cloud.google.com/data-catalog/docs/tag-bigquery-dataset",
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/filesets",
+        "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.pagers.ListEntriesAsyncPager"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/custom-entries",
+        "https://docs.cloud.google.com/data-catalog/docs/tag-bigquery-dataset",
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/filesets",
+        "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.pagers.ListEntriesAsyncPager"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/custom-entries",
+        "https://docs.cloud.google.com/data-catalog/docs/tag-bigquery-dataset",
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/filesets",
+        "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.pagers.ListEntriesAsyncPager"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/custom-entries",
+        "https://docs.cloud.google.com/data-catalog/docs/tag-bigquery-dataset",
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/filesets",
+        "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.pagers.ListEntriesAsyncPager"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/custom-entries",
+        "https://docs.cloud.google.com/data-catalog/docs/tag-bigquery-dataset",
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/filesets",
+        "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.pagers.ListEntriesAsyncPager"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/custom-entries",
+        "https://docs.cloud.google.com/data-catalog/docs/tag-bigquery-dataset",
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/filesets",
+        "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.pagers.ListEntriesAsyncPager"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:53.232Z",
+  "source_step08_card": "data/step-08/current/products/data-catalog/card.json",
+  "product_name": "Data Catalog",
+  "product_slug": "data-catalog"
+}

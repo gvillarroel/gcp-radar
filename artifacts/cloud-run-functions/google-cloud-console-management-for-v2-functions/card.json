@@ -1,0 +1,168 @@
+{
+  "feature_name": "Google Cloud console management for v2 functions",
+  "feature_slug": "google-cloud-console-management-for-v2-functions",
+  "summary": "Google Cloud console support for creating, deploying, and updating v2 functions was removed; deprecated on 2025-02-19.",
+  "extended_definition": "Google Cloud console support for creating, deploying, and updating v2 functions was removed; deprecated on 2025-02-19.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-19",
+    "deprecation_date": "2025-02-19",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/functions/docs/building",
+      "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+      "https://docs.cloud.google.com/functions/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "source_id": "site-iam-reference",
+        "final_score": 117,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Administration actions include creating, updating, and deleting functions.",
+          "The error message Console ERROR: (gcloud.functions.deploy) ResponseError: status=[403], code=[Ok], message=[Validation failed for trigger projects/ PROJECT ID /locations/ LOCATION /triggers/ FUNCTION NAME - EVENTARC ID : Permission \"iam.serviceAccounts.ActAs\" denied on \"EndUserCredentials to PROJECT NUMBER -compute@developer.gserviceaccount.com\"] gcloud ERROR: (gcloud.functions.deploy) ResponseError: status=[403], code=[Ok], message=[Validation failed for trigger projects/<project-id>/locations/ LOCATION /triggers/ FUNCTION NAME - EVENTARC ID : Permission \"iam.serviceAccounts.ActAs\" denied on \"EndUserCredentials to PROJECT NUMBER -compute@developer.gserviceaccount.com\"] The solution To resolve this issue, reset this service account to the default role.",
+          "The error message Console Validation failed for trigger projects/ PROJECT ID /locations/ LOCATION /triggers/ FUNCTION NAME - EVENTARC ID : Permission \"iam.serviceAccounts.ActAs\" denied on \"EndUserCredentials to PROJECT NUMBER -compute@developer.gserviceaccount.com\" gcloud ERROR: (gcloud.functions.deploy) ResponseError: status=[403], code=[Ok], message=[Validation failed for trigger projects/test-project-356312/locations/ LOCATION /triggers/ FUNCTION NAME - EVENTARC ID : Permission \"iam.serviceAccounts.ActAs\" denied on \"EndUserCredentials to PROJECT NUMBER -compute@developer.gserviceaccount.com\"] The solution You can reset your service account to the default cloudfunctions.serviceAgent role."
+        ]
+      },
+      {
+        "title": "Build process overview \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/building",
+        "source_id": "site-iam-reference",
+        "final_score": 82,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: Deploying function ( may take a while - up to 2 minutes ) ...⠹ For Cloud Build Stackdriver Logs , visit: https://console.cloud.google.com/logs/viewer?project = & advancedFilter = resource.type% 3Dbuild%0Aresource.labels.build id%3D38d5b662-2315-45dd-8aa2- 380d50d4f5e8%0AlogName%3Dprojects%2F % 2Flogs%2Fcloudbuild Deploying function ( may take a while - up to 2 minutes ) ...done.",
+          "To stop using a given private pool and instead use the default Cloud Build pool, use the --clear-build-worker-pool flag when re-deploying. gcloud functions deploy FUNCTION NAME \\ --runtime RUNTIME \\ --clear-build-worker-pool [ FLAGS... ] Replace FUNCTION NAME with the name of the function and RUNTIME with the runtime you are using.",
+          "You can use gcloud CLI or the Google Cloud console to reach the logs, which are available through Cloud Logging . gcloud Deploy your function using the gcloud functions deploy command ."
+        ]
+      },
+      {
+        "title": "Cloud Functions IAM Roles \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "source_id": "site-docs-reference-2",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "Administration actions include creating, updating, and deleting functions.",
+          "To deploy Cloud Run functions that were created with the Cloud Functions v1 API or v2 API, ask your administrator to grant you the following IAM roles: Cloud Functions Admin role ( roles/cloudfunctions.admin ), Cloud Functions Developer role ( roles/cloudfunctions.developer ), or a custom role that has the required permissions for deploying functions on the project.",
+          "Additional configuration for deployment You use Identity and Access Management to authorize identities to perform administrative actions on functions created using the Cloud Functions v2 API —for example, using gcloud functions , the REST API, or Terraform."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudfunctions.admin",
+      "cloudfunctions.developer",
+      "cloudfunctions.functions.generateUploadUrl",
+      "cloudfunctions.serviceAgent",
+      "console.cloud.google.com",
+      "developer.gserviceaccount.com",
+      "gcloud.functions.deploy",
+      "iam.serviceAccounts.ActAs",
+      "labels.build",
+      "resource.type"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudfunctions.admin",
+      "roles/cloudfunctions.developer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:36.361Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run-functions/card.json",
+  "product_name": "Cloud Run functions",
+  "product_slug": "cloud-run-functions"
+}

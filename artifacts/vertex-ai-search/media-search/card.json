@@ -1,0 +1,124 @@
+{
+  "feature_name": "Media search",
+  "feature_slug": "media-search",
+  "summary": "Media search (preview with allowlist) enables creating media search applications on media data stores, connecting them to existing or new media data stores, and filtering search queries using document metadata.",
+  "extended_definition": "Media search (preview with allowlist) enables creating media search applications on media data stores, connecting them to existing or new media data stores, and filtering search queries using document metadata.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/about-media",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-app-media"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create media apps \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-app-media",
+        "source_id": "site-docs-root",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a media search app To use the Google Cloud console to create a media search app, follow these steps: Console In the Google Cloud console, go to the AI Applications page.",
+          "The processes for creating media recommendations apps and creating media search apps are similar.",
+          "What's next For search apps: Configure search results for structured data For recommendations apps: Get media recommendations Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Introduction to media search and recommendations \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/about-media",
+        "source_id": "site-docs-reference",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Data (documents and user events) are provided for the tutorials so all you need is a Google Cloud project and a billing account to create your first app: Get started with media recommendations Get started with media search Checklists There is a lot of commonality between working with media apps and working with custom apps, but some features apply only to custom apps and other features only to media apps.",
+          "Use the following checklists to guide you through typical workflows specific to media: Media search checklist Media recommendations checklist Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "This lets recommendations and search ranking use Google-defined, media-specific fields such as content ratings, aggregated ratings, persons, and production year to help generate results based on media engagement."
+        ]
+      },
+      {
+        "title": "Configure autocomplete \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "source_id": "site-docs-reference",
+        "final_score": 143,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example command and result curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\$ curl -X PATCH \\ -H \"X-Goog-User-Project: my-project-123\" \\t-access-token)\" \\ https://discoveryengine.googleapis.com/v1alpha/projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig?updateMask=queryFrequencyThreshold \\ -d '{ \"name\": \"projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig\", \"queryFrequencyThreshold\": 30 }' { \"name\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/completionConfig\", \"matchingOrder\": \"exact-prefix\", \"maxSuggestions\": 20, \"minPrefixLength\": 1, \"queryModel\": \"automatic\", \"enableMode\": \"AUTOMATIC\", \"queryFrequencyThreshold\": 30 } Update the CompletionConfig.numUniqueUsersThreshold field: curl -X PATCH \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -H \"X-Goog-User-Project: PROJECT ID \" \\ https://discoveryengine.googleapis.com/v1alpha/projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /completionConfig?updateMask = numUniqueUsersThreshold \\ -d '{ \"name\": \"projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /completionConfig\", \"numUniqueUsersThreshold\": UNIQUE USERS }' Replace UNIQUE USERS with an integer value that represents the minimum number of unique users who must enter a given search query before it can be returned as an autocomplete suggestion.",
+          "DataStoreName ; public class SyncCompleteQuery { public static void main ( String [] args ) throws Exception { syncCompleteQuery (); } public static void syncCompleteQuery () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( CompletionServiceClient completionServiceClient = CompletionServiceClient . create ()) { CompleteQueryRequest request = CompleteQueryRequest . newBuilder () . setDataStore ( DataStoreName . ofProjectLocationDataStoreName ( \"[PROJECT]\" , \"[LOCATION]\" , \"[DATA STORE]\" ) . toString ()) . setQuery ( \"query107944136\" ) . setQueryModel ( \"queryModel-184930495\" ) . setUserPseudoId ( \"userPseudoId-1155274652\" ) . setIncludeTailSuggestions ( true ) . build (); CompleteQueryResponse response = completionServiceClient . completeQuery ( request ); } } } Node.js For more information, see the Vertex AI Search Node.js API reference documentation .",
+          "Example command and result curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -H \"X-Goog-User-Project: my-project-123\" \\ https://discoveryengine.googleapis.com/v1alpha/projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig?updateMask=numUniqueUsersThreshold \\ -d '{ \"name\": \"projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig\", \"numUniqueUsersThreshold\": 6 }' { \"name\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/completionConfig\", \"matchingOrder\": \"exact-prefix\", \"maxSuggestions\": 20, \"minPrefixLength\": 1, \"queryModel\": \"automatic\", \"enableMode\": \"AUTOMATIC\", \"numUniqueUsersThreshold\": 6, \"queryFrequencyThreshold\": 30 } Update completable field annotations in schema To turn on autocomplete for fields in structured data schema, follow these steps: Console In the Google Cloud console, go to the AI Applications page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "discoveryengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-app-media",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/about-media"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-app-media",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/about-media"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-app-media",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/about-media"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-app-media",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/about-media"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-app-media",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/about-media"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:43.967Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search"
+}

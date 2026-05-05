@@ -1,0 +1,114 @@
+{
+  "feature_name": "Authorization modes",
+  "feature_slug": "authorization-modes",
+  "summary": "Deep Learning VM Images support single user mode and service account mode authorization.",
+  "extended_definition": "Deep Learning VM Images support single user mode and service account mode authorization.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deep-learning-vm/docs/cli",
+      "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-console",
+      "https://docs.cloud.google.com/deep-learning-vm/docs/shared-responsibility"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Deep Learning VM shared responsibility \\_|\\_ Deep Learning VM Images \\_\\",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/shared-responsibility",
+        "source_id": "site-docs-reference",
+        "final_score": 27,
+        "relevance": "",
+        "evidence_snippets": [
+          "The customer's security responsibilities include the following: Use the latest versions of Deep Learning VM Containers and VM Images : Deep Learning VM provides prebuilt containers and VM images to simplify the use of its services.",
+          "Home Documentation Compute Compute Engine Deep Learning VM Images Resources Send feedback Deep Learning VM shared responsibility Stay organized with collections Save and categorize content based on your preferences.",
+          "Google's security and compliance responsibilities in providing Deep Learning VM include the following: Protect the infrastructure : Google is responsible for providing secure infrastructure for its services, including physical security of data centers, network security, and application security."
+        ]
+      },
+      {
+        "title": "\"Create a Deep Learning VM instance from the command line \\_|\\_ Deep Learning\\",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/cli",
+        "source_id": "site-docs-reference",
+        "final_score": 22,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Compute Compute Engine Deep Learning VM Images Guides Send feedback Create a Deep Learning VM instance from the command line Stay organized with collections Save and categorize content based on your preferences.",
+          "This topic contains instructions for creating a new Deep Learning VM Images instance from the command line.",
+          "To provision a Deep Learning VM instance with one or more GPUs: export IMAGE FAMILY = \"tf-ent-latest-gpu\" export ZONE = \"us-west1-b\" export INSTANCE NAME = \"my-instance\" gcloud compute instances create $ INSTANCE NAME \\ -- zone =$ ZONE \\ -- image - family =$ IMAGE FAMILY \\ -- image - project = deeplearning - platform - release \\ -- maintenance - policy = TERMINATE \\ -- accelerator = \"type=nvidia-tesla-v100,count=1\" \\ -- metadata = \"install-nvidia-driver=True\" Options: --image-family must be one of the GPU-specific image types."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a Deep Learning VM instance by using the Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-console",
+        "source_id": "site-docs-reference",
+        "final_score": 22,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a Deep Learning VM instance by using the Google Cloud console This page shows you how to create a Deep Learning VM Images instance by using Google Cloud Marketplace in the Google Cloud console.",
+          "Home Documentation Compute Compute Engine Deep Learning VM Images Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "After the instance is deployed, the Google Cloud console opens the Deployment Manager page where you can manage your Deep Learning VM instances and other deployments."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deep-learning-vm/docs/shared-responsibility",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/cli",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-console"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deep-learning-vm/docs/shared-responsibility",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/cli",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-console"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deep-learning-vm/docs/shared-responsibility",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/cli",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-console"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deep-learning-vm/docs/shared-responsibility",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/cli",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-console"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:57.849Z",
+  "source_step08_card": "data/step-08/current/products/deep-learning-vm-images/card.json",
+  "product_name": "Deep Learning VM Images",
+  "product_slug": "deep-learning-vm-images"
+}

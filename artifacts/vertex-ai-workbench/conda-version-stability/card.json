@@ -1,0 +1,149 @@
+{
+  "feature_name": "Conda version stability",
+  "feature_slug": "conda-version-stability",
+  "summary": "Vertex AI Workbench instances now avoid the M124-introduced regression that downgraded Conda to an older version.",
+  "extended_definition": "Vertex AI Workbench instances now avoid the M124-introduced regression that downgraded Conda to an older version.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/introduction"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Introduction to Vertex AI Workbench \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/introduction",
+        "source_id": "site-docs-root",
+        "final_score": 80,
+        "relevance": "",
+        "evidence_snippets": [
+          "Add conda environments Vertex AI Workbench instances use kernels based on conda environments.",
+          "Although the use of custom virtual machine (VM) images or Deep Learning VM images with Vertex AI Workbench instances can be possible, Vertex AI Workbench doesn't provide any support for unexpected behaviors or malfunctions when using those images.",
+          "When you use Access Context Manager and Chrome Enterprise Premium to protect Vertex AI Workbench instances with context-aware access controls, access is evaluated each time the user authenticates to the instance."
+        ]
+      },
+      {
+        "title": "Manage access to a Vertex AI Workbench instance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access",
+        "source_id": "site-docs-reference-2",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before using any of the command data below, make the following replacements: INSTANCE NAME : the name of your instance PROJECT ID : your Google Cloud project ID LOCATION : the zone where your instance is located Save the following content in a file called request.json : { \"policy\" : { \"bindings\" : [ { \"role\" : \"roles/notebooks.viewer\" , \"members\" : [ \"user:email@example.com\" ] }, { \"role\" : \"roles/notebooks.admin\" , \"members\" : [ \"user:eve@example.com\" ] } ], \"etag\" : \"BwWWja0YfJA=\" , \"version\" : 3 } } Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud workbench instances set-iam-policy INSTANCE NAME \\ --project = PROJECT ID \\ --location = LOCATION \\ request.json --format = json Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud workbench instances set-iam-policy INSTANCE NAME --project = PROJECT ID --location = LOCATION request.json --format = json Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud workbench instances set-iam-policy INSTANCE NAME ^ --project = PROJECT ID ^ --location = LOCATION ^ request.json --format = json Grant access to the JupyterLab interface Granting a principal access to a Vertex AI Workbench instance doesn't grant the ability to use the instance's JupyterLab interface.",
+          "Grant access to Vertex AI Workbench instances To grant users permission to access a specific Vertex AI Workbench instance, set an IAM policy on the instance. gcloud To grant a role to a principal on a Vertex AI Workbench instance, use the get-iam-policy command to retrieve the current policy, edit the current policy's access, and then use the set-iam-policy command to update the policy on the instance.",
+          "Retrieve the current policy Before using any of the command data below, make the following replacements: INSTANCE NAME : the name of your instance PROJECT ID : your Google Cloud project ID LOCATION : the zone where your instance is located Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud workbench instances get-iam-policy INSTANCE NAME \\ --project = PROJECT ID \\ --location = LOCATION Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud workbench instances get-iam-policy INSTANCE NAME --project = PROJECT ID --location = LOCATION Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud workbench instances get-iam-policy INSTANCE NAME ^ --project = PROJECT ID ^ --location = LOCATION The response is the text of your instance's IAM policy."
+        ]
+      },
+      {
+        "title": "Vertex AI Workbench instances documentation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances",
+        "source_id": "site-docs-reference",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "Documentation resources Find quickstarts and guides, review key references, and get help with common issues. format list numbered Guides Create a Vertex AI Workbench instance Introduction to Vertex AI Workbench instances Query data in BigQuery from within JupyterLab info Manage your environment Add a conda environment Manage your conda environment Change machine type and configure GPUs of a Vertex AI Workbench instance info Resources Pricing Release notes Get support Related videos Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation AI and ML Vertex AI Vertex AI Workbench Vertex AI Workbench instances documentation Read product documentation Vertex AI Workbench instances are Jupyter notebook-based development environments for the entire data science workflow.",
+          "Vertex AI Workbench instances are prepackaged with JupyterLab and have a preinstalled suite of deep learning packages, including support for the TensorFlow and PyTorch frameworks."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cmd.exe",
+      "example.com",
+      "notebooks.admin",
+      "notebooks.googleapis.com",
+      "notebooks.viewer",
+      "projects.locations.instances.patch",
+      "request.json"
+    ],
+    "missing_inventory_roles": [
+      "roles/notebooks.admin",
+      "roles/notebooks.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/introduction",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/introduction",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/introduction",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/introduction",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/introduction",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/introduction",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/introduction",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:45.074Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-workbench/card.json",
+  "product_name": "Vertex AI Workbench",
+  "product_slug": "vertex-ai-workbench"
+}

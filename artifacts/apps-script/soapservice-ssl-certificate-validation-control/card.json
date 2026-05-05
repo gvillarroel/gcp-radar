@@ -1,0 +1,100 @@
+{
+  "feature_name": "SoapService SSL certificate validation control",
+  "feature_slug": "soapservice-ssl-certificate-validation-control",
+  "summary": "SoapService can now disable SSL certificate validation when needed.",
+  "extended_definition": "SoapService can now disable SSL certificate validation when needed.",
+  "lifecycle": {
+    "latest_feature_date": "2012-11-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/reference/spreadsheet/data-validation",
+      "https://developers.google.com/apps-script/reference/spreadsheet/data-validation-criteria",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "November 13, 2012 Feature Added the ability to disable SSL certificate validation in the SoapService , in response to a feature request.",
+          "Feature The Slides service has been extended with the following new classes and methods that support connector lines: ConnnectionSite Group.getConnectionSites() Image.getConnectionSites() Line.getConnectionSites() Line.getEndConnection() Line.getLineCategory() Line.getStartConnection() Line.isConnector() Line.setEndConnection(connectionSite) Line.setLineCategory(lineCategory) Line.setStartConnection(connectionSite) LineCategory.UNSUPPORTED PageElement.getConnectionSites() Shape.getConnectionSites() SheetsChart.getConnectionSites() Table.getConnectionSites() Video.getConnectionSites() WordArt.getConnectionSites() November 14, 2018 Feature The Card service has been extended with the following new classes and methods that let you to customize the background of text button widgets: TextButtonStyle TextButton.setBackgroundColor(backgroundColor) TextButton.setDisabled(disabled) TextButton.setTextButtonStyle(textButtonStyle) The Slides service has been extended with the following new methods that let you control the Z-positioning of page elements in Slides.",
+          "Passing in string values for the document type is deprecated but still functional. (Issue 1755) Change Enabled SSL certificate validation for UrlFetchApp requests."
+        ]
+      },
+      {
+        "title": "Class DataValidation \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/spreadsheet/data-validation",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 60,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can use Range.setDataValidation(rule) to set the validation rule for a range. // Log information about the data validation rule for cell A1. const cell = SpreadsheetApp . getActive (). getRange ( 'A1' ); const rule = cell . getDataValidation (); if ( rule != null ) { const criteria = rule . getCriteriaType (); const args = rule . getCriteriaValues (); Logger . log ( 'The data validation rule is %s %s' , criteria , args ); } else { Logger . log ( 'The cell does not have a data validation rule.' ); } Methods Method Return type Brief description copy() Data Validation Builder Creates a builder for a data validation rule based on this rule's settings. get Allow Invalid() Boolean Returns true if the rule shows a warning when input fails data validation, or false if it rejects the input entirely. get Criteria Type() Data Validation Criteria Gets the rule's criteria type as defined in the Data Validation Criteria enum. get Criteria Values() Object[] Gets an array of arguments for the rule's criteria. get Help Text() String Gets the rule's help text, or null if no help text is set.",
+          "To use these values to create or modify a data validation rule, see DataValidationBuilder.withCriteria(criteria, args) . // Log information about the data validation rule for cell A1. const cell = SpreadsheetApp . getActive (). getRange ( 'A1' ); const rule = cell . getDataValidation (); if ( rule != null ) { const criteria = rule . getCriteriaType (); const args = rule . getCriteriaValues (); Logger . log ( 'The data validation rule is %s %s' , criteria , args ); } else { Logger . log ( 'The cell does not have a data validation rule.' ); } Return Object[] — an array of arguments appropriate to the rule's criteria type; the number of arguments and their type match the corresponding require...() method of the DataValidationBuilder class getHelpText() Gets the rule's help text, or null if no help text is set.",
+          "Detailed documentation copy() Creates a builder for a data validation rule based on this rule's settings. // Change existing data validation rules that require a date in 2013 to require // a date in 2014. const oldDates = [ new Date ( '1/1/2013' ), new Date ( '12/31/2013' )]; const newDates = [ new Date ( '1/1/2014' ), new Date ( '12/31/2014' )]; const sheet = SpreadsheetApp . getActiveSheet (); const range = sheet . getRange ( 1 , 1 , sheet . getMaxRows (), sheet . getMaxColumns ()); const rules = range . getDataValidations (); for ( let i = 0 ; i < rules . length ; i ++ ) { for ( let j = 0 ; j < rules [ i ]. length ; j ++ ) { const rule = rules [ i ][ j ]; if ( rule != null ) { const criteria = rule . getCriteriaType (); const args = rule . getCriteriaValues (); if ( criteria === SpreadsheetApp ."
+        ]
+      },
+      {
+        "title": "Enum DataValidationCriteria \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/spreadsheet/data-validation-criteria",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 59,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, SpreadsheetApp.DataValidationCriteria.DATE IS VALID DATE . // Change existing data-validation rules that require a date in 2013 to require // a date in 2014. const oldDates = [ new Date ( '1/1/2013' ), new Date ( '12/31/2013' )]; const newDates = [ new Date ( '1/1/2014' ), new Date ( '12/31/2014' )]; const sheet = SpreadsheetApp . getActiveSheet (); const range = sheet . getRange ( 1 , 1 , sheet . getMaxRows (), sheet . getMaxColumns ()); const rules = range . getDataValidations (); for ( let i = 0 ; i < rules . length ; i ++ ) { for ( let j = 0 ; j < rules [ i ]. length ; j ++ ) { const rule = rules [ i ][ j ]; if ( rule != null ) { const criteria = rule . getCriteriaType (); const args = rule . getCriteriaValues (); if ( criteria === SpreadsheetApp .",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-13 UTC.\"],[],[\"DataValidationCriteria defines the types of data validation rules applicable to a spreadsheet range.",
+          "DATE BETWEEN && args [ 0 ]. getTime () === oldDates [ 0 ]. getTime () && args [ 1 ]. getTime () === oldDates [ 1 ]. getTime ()) { // Create a builder from the existing rule, then change the dates. rules [ i ][ j ] = rule . copy (). withCriteria ( criteria , newDates ). build (); } } } } range . setDataValidations ( rules ); Properties Property Type Description DATE AFTER Enum Requires a date that is after the given value."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/spreadsheet/data-validation",
+        "https://developers.google.com/apps-script/reference/spreadsheet/data-validation-criteria"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/spreadsheet/data-validation",
+        "https://developers.google.com/apps-script/reference/spreadsheet/data-validation-criteria"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:15.255Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script"
+}

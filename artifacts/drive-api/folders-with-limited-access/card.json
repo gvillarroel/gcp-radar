@@ -1,0 +1,151 @@
+{
+  "feature_name": "Folders with limited access",
+  "feature_slug": "folders-with-limited-access",
+  "summary": "Drive API supports folders that restrict access to specific users by disabling inherited permissions.",
+  "extended_definition": "Drive API supports folders that restrict access to specific users by disabling inherited permissions.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/drive/api/guides/about-files",
+      "https://developers.google.com/workspace/drive/api/guides/about-sdk",
+      "https://developers.google.com/workspace/drive/api/guides/about-shareddrives",
+      "https://developers.google.com/workspace/drive/api/guides/limited-expansive-access"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage folders with limited and expansive access \\_|\\_ Google Drive \\_|\\_\\",
+        "url": "https://developers.google.com/workspace/drive/api/guides/limited-expansive-access",
+        "source_id": "site-docs-root",
+        "final_score": 322,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "With this change, folders with limited access are the one exception that allows restricting access to a specific subfolder in both My Drive and shared drives.",
+          "Folders with limited access are the one exception that allows restricting access to a specific subfolder in both My Drive and shared drives.",
+          "If a user deletes a hierarchy with folders that have limited access and are owned by others, these folders move to the owner's My Drive."
+        ]
+      },
+      {
+        "title": "Shared drives overview \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/about-shareddrives",
+        "source_id": "site-docs-root",
+        "final_score": 216,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Related topics Manage folders with limited and expansive access Create a shortcut to a Drive file How file access works in shared drives Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Users also lose access to any files and folders in the shared drive that were directly shared with them.",
+          "For example, a user that has role=commenter for a shared drive cannot have their access level reduced at another point within the folder hierarchy."
+        ]
+      },
+      {
+        "title": "Google Drive API overview \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/about-sdk",
+        "source_id": "site-docs-root",
+        "final_score": 211,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "These terms define the key components shown in Figure 1: Google Drive Google's cloud file storage service provides users with a personal storage space, called My Drive , and the option to access collaborative shared folders, called shared drives .",
+          "You can develop applications that integrate with Drive, and create robust functionality in your application using the Drive API.",
+          "Google Drive API The REST API that lets you use Drive storage from within your app."
+        ]
+      },
+      {
+        "title": "Files and folders overview \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/about-files",
+        "source_id": "site-docs-root",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Google Drive Guides Send feedback Files and folders overview Stay organized with collections Save and categorize content based on your preferences.",
+          "Shared drives A shared drive is an organizational structure within Drive that lives parallel to My Drive.",
+          "The corpora for Drive are: user , domain , drive , and allDrives . user : Includes all files created by and opened by the user in \"My Drive\", and those shared directly with the user in \"Shared with me.\" drive : Includes all files contained in a single shared drive, as indicated by the driveId . domain : Includes all searchable files shared with the user's domain. allDrives : Includes all files in shared drives where the user is a member, and all files in \"My Drive\" and \"Shared with me.\" Use the allDrives corpora with caution as it has a broad scope and can affect performance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/limited-expansive-access",
+        "https://developers.google.com/workspace/drive/api/guides/about-shareddrives",
+        "https://developers.google.com/workspace/drive/api/guides/about-sdk",
+        "https://developers.google.com/workspace/drive/api/guides/about-files"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/limited-expansive-access",
+        "https://developers.google.com/workspace/drive/api/guides/about-shareddrives",
+        "https://developers.google.com/workspace/drive/api/guides/about-sdk",
+        "https://developers.google.com/workspace/drive/api/guides/about-files"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/limited-expansive-access",
+        "https://developers.google.com/workspace/drive/api/guides/about-shareddrives",
+        "https://developers.google.com/workspace/drive/api/guides/about-sdk",
+        "https://developers.google.com/workspace/drive/api/guides/about-files"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/limited-expansive-access",
+        "https://developers.google.com/workspace/drive/api/guides/about-shareddrives",
+        "https://developers.google.com/workspace/drive/api/guides/about-sdk",
+        "https://developers.google.com/workspace/drive/api/guides/about-files"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/limited-expansive-access",
+        "https://developers.google.com/workspace/drive/api/guides/about-shareddrives",
+        "https://developers.google.com/workspace/drive/api/guides/about-sdk",
+        "https://developers.google.com/workspace/drive/api/guides/about-files"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/limited-expansive-access",
+        "https://developers.google.com/workspace/drive/api/guides/about-shareddrives",
+        "https://developers.google.com/workspace/drive/api/guides/about-sdk",
+        "https://developers.google.com/workspace/drive/api/guides/about-files"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:02.457Z",
+  "source_step08_card": "data/step-08/current/products/drive-api/card.json",
+  "product_name": "Drive API",
+  "product_slug": "drive-api"
+}

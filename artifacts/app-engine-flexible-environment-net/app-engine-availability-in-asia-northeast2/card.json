@@ -1,0 +1,142 @@
+{
+  "feature_name": "App Engine availability in asia-northeast2",
+  "feature_slug": "app-engine-availability-in-asia-northeast2",
+  "summary": "App Engine became available in the asia-northeast2 (Osaka, Japan) region.",
+  "extended_definition": "App Engine became available in the asia-northeast2 (Osaka, Japan) region.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+      "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+      "https://docs.cloud.google.com/appengine/docs/flexible/quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quotas and limits \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/quotas",
+        "source_id": "site-docs-reference-2",
+        "final_score": 51,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the Go API, the appengine.IsOverQuota function reports whether an error represents an API call failure due to insufficient available quota.",
+          "Resource Daily limit Maximum rate UrlFetch API calls 860,000,000 calls 660,000 calls/minute UrlFetch data sent 4.5 TB 3,600 MB/minute UrlFetch data received 4.5 TB 3,600 MB/minute Networking limits The following networking limits apply to App Engine: Outbound connections per second per instance: 500 (cannot be increased) Outbound DNS resolutions per second per instance: 100 (cannot be increased) Maximum packets per second per instance: 80,000 Maximum bits per second per instance: 100,000,000 Maximum worker connections in Nginx per instance: 4,096 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "US/Europe Resource Cost Code & Static Data Storage - First 1 GB Free Code & Static Data Storage - Exceeding 1 GB 0.026/GB/month Asia (Japan) Resource Cost Code & Static Data Storage - First 1 GB Free Code & Static Data Storage - Exceeding 1 GB 0.023/GB/month\"> Firestore in Datastore mode (Datastore) The Stored Data (billable) quota refers to all data stored for the application in Datastore and Blobstore."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a .NET app in the App Engine flexible environment \\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+        "source_id": "site-docs-reference",
+        "final_score": 38,
+        "relevance": "",
+        "evidence_snippets": [
+          "App Engine locations App Engine is regional , which means the infrastructure that runs your apps is located in a specific region, and Google manages it so that it is available redundantly across all of the zones within that region .",
+          "You can generally select the region nearest to your app's users, but you should consider the locations where App Engine is available as well as the locations of the other Google Cloud products and services that your app uses.",
+          "By default, App Engine uses the latest available LTS .NET version if you don't specify a runtime version in your app.yaml file."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a .NET app in the App Engine flexible environment \\_\\",
+        "url": "https://cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+        "source_id": "site-docs-root",
+        "final_score": 38,
+        "relevance": "",
+        "evidence_snippets": [
+          "App Engine locations App Engine is regional , which means the infrastructure that runs your apps is located in a specific region, and Google manages it so that it is available redundantly across all of the zones within that region .",
+          "You can generally select the region nearest to your app's users, but you should consider the locations where App Engine is available as well as the locations of the other Google Cloud products and services that your app uses.",
+          "By default, App Engine uses the latest available LTS .NET version if you don't specify a runtime version in your app.yaml file."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "appengine.appAdmin",
+      "appengine.IsOverQuota",
+      "artifactregistry.reader",
+      "cloudbuild.builds.builder",
+      "cloudbuild.builds.editor",
+      "iam.serviceAccountUser",
+      "logging.viewer",
+      "storage.objectAdmin",
+      "storage.objectViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/appengine.appAdmin",
+      "roles/artifactregistry.reader",
+      "roles/cloudbuild.builds.builder",
+      "roles/cloudbuild.builds.editor",
+      "roles/iam.serviceAccountUser",
+      "roles/logging.viewer",
+      "roles/storage.objectAdmin",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/quotas",
+        "https://cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/quotas",
+        "https://cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/quotas",
+        "https://cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/quotas",
+        "https://cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/quotas",
+        "https://cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:09.053Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-net/card.json",
+  "product_name": "App Engine flexible environment .NET",
+  "product_slug": "app-engine-flexible-environment-net"
+}

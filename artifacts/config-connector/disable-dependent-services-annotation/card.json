@@ -1,0 +1,189 @@
+{
+  "feature_name": "disable-dependent-services annotation",
+  "feature_slug": "disable-dependent-services-annotation",
+  "summary": "Config Connector added support for the iam.cnrm.cloud.google.com/disable-dependent-services annotation.",
+  "extended_definition": "Config Connector added support for the iam.cnrm.cloud.google.com/disable-dependent-services annotation.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "IAMPolicyMember \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "source_id": "site-docs-root-2",
+        "final_score": 242,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Replace ${PROJECT ID?} and ${ORG ID?} below with your desired project and organization IDs respectively. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPolicyMember metadata : name : iampolicymember-sample-orgrole spec : member : serviceAccount:iampolicymember-dep-orgrole@${PROJECT ID?}.iam.gserviceaccount.com role : organizations/${ORG ID?}/roles/iampolicymemberdeporgrole resourceRef : kind : Project external : projects/${PROJECT ID?} --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMCustomRole metadata : annotations : Replace \"${ORG ID?}\" with your organization ID cnrm.cloud.google.com/organization-id : \"${ORG ID?}\" name : iampolicymemberdeporgrole spec : title : Example Organization-Level Custom Role description : This role only contains two permissions - publish and update permissions : - pubsub.topics.publish - pubsub.topics.update stage : GA --- Replace ${PROJECT ID?} below with your desired project ID. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : annotations : cnrm.cloud.google.com/project-id : ${PROJECT ID?} name : iampolicymember-dep-orgrole Policy Member With BigQueryConnectionConnection Reference Copyright 2024 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License.",
+          "Replace ${PROJECT ID?} below with your desired project ID. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPolicyMember metadata : name : iampolicymember-sample-condition spec : member : serviceAccount:iampolicymember-dep-condition@${PROJECT ID?}.iam.gserviceaccount.com role : roles/cloudkms.admin condition : title : expires after 2019 12 31 description : Expires at midnight of 2019-12-31 expression : request.time < timestamp(\"2020-01-01T00:00:00Z\") resourceRef : kind : KMSKeyRing name : iampolicymember-dep-condition --- Replace ${PROJECT ID?} below with your desired project ID. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : annotations : cnrm.cloud.google.com/project-id : ${PROJECT ID?} name : iampolicymember-dep-condition --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSKeyRing metadata : name : iampolicymember-dep-condition spec : location : us-central1 Org Level IAM Custom Role Policy Member Copyright 2020 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License.",
+          "Replace ${PROJECT ID?} and ${ORG ID?} below with your desired project and organization IDs respectively. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPolicyMember metadata : name : iampolicymember-sample-orglevel spec : member : serviceAccount:iampolicymember-dep-orglevel@${PROJECT ID?}.iam.gserviceaccount.com role : roles/storage.admin resourceRef : kind : Organization external : \"${ORG ID?}\" --- Replace ${PROJECT ID?} below with your desired project ID. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : annotations : cnrm.cloud.google.com/project-id : ${PROJECT ID?} name : iampolicymember-dep-orglevel External Project Level Policy Member Copyright 2020 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License."
+        ]
+      },
+      {
+        "title": "IAMPolicy \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "source_id": "site-docs-root-2",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This ensures that the Config Connector service account can continue to manage the referenced project. - \"serviceAccount:${GSA EMAIL?}\" role : roles/owner - members : - serviceAccount:iampolicy-dep-project@iampolicy-dep-project.iam.gserviceaccount.com role : roles/storage.admin auditConfigs : - service : allServices auditLogConfigs : - logType : DATA WRITE - logType : DATA READ exemptedMembers : - serviceAccount:iampolicy-dep-project@iampolicy-dep-project.iam.gserviceaccount.com - service : compute.googleapis.com auditLogConfigs : - logType : ADMIN READ --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : annotations : cnrm.cloud.google.com/project-id : iampolicy-dep-project name : iampolicy-dep-project --- apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project metadata : annotations : cnrm.cloud.google.com/auto-create-network : \"false\" name : iampolicy-dep-project spec : name : Config Connector Sample organizationRef : Replace \"${ORG ID?}\" with the numeric ID for your organization external : \"${ORG ID?}\" PubSub Admin Policy Copyright 2020 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License.",
+          "This ensures that the Config Connector service account can continue to manage the referenced project. - \"serviceAccount:${GSA EMAIL?}\" role : roles/owner - members : - serviceAccount:iampolicy-dep-external-project@iampolicy-dep-external-project.iam.gserviceaccount.com role : roles/storage.admin --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : annotations : cnrm.cloud.google.com/project-id : iampolicy-dep-external-project name : iampolicy-dep-external-project --- Creates a Project resource to demonstrate how an IAMPolicy can reference a Project using external. apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project metadata : annotations : cnrm.cloud.google.com/auto-create-network : \"false\" name : iampolicy-dep-external-project spec : name : Config Connector Sample organizationRef : Replace \"${ORG ID?}\" with the numeric ID for your organization external : \"${ORG ID?}\" KMS Policy With Condition Copyright 2020 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License.",
+          "See the License for the specific language governing permissions and limitations under the License. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPolicy metadata : name : iampolicy-sample-workloadidentity spec : resourceRef : kind : IAMServiceAccount name : iampolicy-dep-workloadidentity bindings : - role : roles/iam.workloadIdentityUser members : replace ${PROJECT ID} with your project name - serviceAccount:${PROJECT ID?}.svc.id.goog[default/iampolicy-dep-workloadidentity] --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : name : iampolicy-dep-workloadidentity spec : displayName : Example Service Account --- apiVersion : v1 kind : ServiceAccount metadata : name : iampolicy-dep-workloadidentity annotations : replace ${PROJECT ID?} with your project name iam.gke.io/gcp-service-account : iampolicy-dep-workloadidentity@${PROJECT ID?}.iam.gserviceaccount.com Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector ."
+        ]
+      },
+      {
+        "title": "IAMAuditConfig \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "source_id": "site-docs-root-2",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Replace ${PROJECT ID?} and ${ORG ID?} below with your desired project and organization IDs respectively. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMAuditConfig metadata : name : iamauditconfig-sample-orglevel spec : service : allServices auditLogConfigs : - logType : DATA WRITE - logType : DATA READ exemptedMembers : - serviceAccount:iamauditconfig-dep-orglevel@${PROJECT ID?}.iam.gserviceaccount.com resourceRef : kind : Organization external : \"${ORG ID?}\" --- Replace ${PROJECT ID?} below with your desired project ID. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : annotations : cnrm.cloud.google.com/project-id : ${PROJECT ID?} name : iamauditconfig-dep-orglevel Project Level Audit Config Copyright 2020 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License.",
+          "Replace ${PROJECT ID?} below with your desired project ID. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMAuditConfig metadata : name : iamauditconfig-sample-projlevel spec : service : allServices auditLogConfigs : - logType : DATA WRITE - logType : DATA READ exemptedMembers : - serviceAccount:iamauditconfig-dep-projlevel@${PROJECT ID?}.iam.gserviceaccount.com resourceRef : kind : Project external : projects/${PROJECT ID?} --- Replace ${PROJECT ID?} below with your desired project ID. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : annotations : cnrm.cloud.google.com/project-id : ${PROJECT ID?} name : iamauditconfig-dep-projlevel Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .",
+          "Property Value Google Cloud Service Name IAM Google Cloud Service Documentation /iam/docs/ Google Cloud REST Resource Name v1.iamPolicies Google Cloud REST Resource Documentation /iam/reference/rest/v1/iamPolicies Config Connector Resource Short Names gcpiamauditconfig gcpiamauditconfigs iamauditconfig Config Connector Service Name iam.googleapis.com Config Connector Resource Fully Qualified Name iamauditconfigs.iam.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Supported Resources You can use IAMAuditConfig to configure Data Access audit logging for the following resources."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.admin",
+      "cnrm.cloud.google.com",
+      "compute.googleapis.com",
+      "iam.cnrm.cloud.google.com",
+      "iam.gke.io",
+      "iam.googleapis.com",
+      "iam.gserviceaccount.com",
+      "iam.workloadIdentityUser",
+      "iamauditconfigs.iam.cnrm.cloud.google.com",
+      "kms.cnrm.cloud.google.com",
+      "project.iam.gserviceaccount.com",
+      "pubsub.cnrm.cloud.google.com",
+      "pubsub.topics.publish",
+      "pubsub.topics.update",
+      "request.time",
+      "resourcemanager.cnrm.cloud.google.com",
+      "storage.admin",
+      "svc.id.goog",
+      "v1.iamPolicies"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.admin",
+      "roles/editor",
+      "roles/iam.workloadIdentityUser",
+      "roles/iampolicymemberdeporgrole",
+      "roles/owner",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:47.576Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector"
+}

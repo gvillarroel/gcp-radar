@@ -1,0 +1,140 @@
+{
+  "feature_name": "Spanner GoogleSQL LCASE() alias",
+  "feature_slug": "spanner-googlesql-lcase-alias",
+  "summary": "Spanner now supports LCASE() as an alias for the LOWER() function in GoogleSQL.",
+  "extended_definition": "Spanner now supports LCASE() as an alias for the LOWER() function in GoogleSQL.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+      "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+      "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"JDBC session management commands (GoogleSQL) \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "source_id": "site-docs-reference",
+        "final_score": 59,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example: Savepoint support (Click to expand) The following example shows how to enable and disable savepoints support in the Spanner JDBC driver. try ( Connection connection = DriverManager . getConnection ( String . format ( \"jdbc:cloudspanner:/projects/%s/instances/%s/databases/%s\" , \"my-project\" , \"my-instance\" , \"my-database\" ))) { // Savepoints can only be used when AutoCommit=false. connection . setAutoCommit ( false ); // Disables setting a savepoint. connection . createStatement (). execute ( \"SET SAVEPOINT SUPPORT='DISABLED'\" ); // The following statement fails because savepoints have been disabled. connection . setSavepoint ( \"my savepoint1\" ); // Enables setting a savepoint and releasing a savepoint. // Rolling back to a savepoint is disabled. connection . createStatement (). execute ( \"SET SAVEPOINT SUPPORT='FAIL AFTER ROLLBACK'\" ); Savepoint mySavepoint2 = connection . setSavepoint ( \"my savepoint2\" ); connection . createStatement (). execute ( \"insert into my table (id, value) values (1, 'One')\" ); connection . releaseSavepoint ( mySavepoint2 ); connection . commit (); // Enables setting, releasing and rolling back to a savepoint. connection . createStatement (). execute ( \"SET SAVEPOINT SUPPORT='ENABLED'\" ); Savepoint mySavepoint3 = connection . setSavepoint ( \"my savepoint3\" ); connection . createStatement (). execute ( \"insert into my table (id, value) values (2, 'Two')\" ); connection . rollback ( mySavepoint3 ); } What's next Learn how to connect JDBC to a GoogleSQL-dialect database .",
+          "The Spanner JDBC driver supports three alternatives for executing partitioned queries: SET AUTO PARTITION MODE = true RUN PARTITIONED QUERY sql PARTITION sql followed by multiple RUN PARTITION 'partition-token' Each of these methods are described in the following sections.",
+          "The Spanner JDBC driver (Java Database Connectivity) supports session management statements, which let you modify the state of your connection, execute transactions, and efficiently execute batches of statements."
+        ]
+      },
+      {
+        "title": "\"Create and query a database in the Google Cloud console \\_|\\_ Spanner \\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "source_id": "site-docs-reference",
+        "final_score": 55,
+        "relevance": "",
+        "evidence_snippets": [
+          "When the update is complete, the page looks like this: GoogleSQL PostgreSQL Notice that PostgreSQL converts the table name to lowercase.",
+          "INSERT INTO singers ( singerid , firstname , lastname , singerinfo , birthdate ) VALUES ( < singerid > , -- type: bigint < firstname > , -- type: character varying < lastname > , -- type: character varying < singerinfo > , -- type: bytea < birthdate > -- type: timestamp with time zone ); THEN RETURN singerid , firstname , lastname , singerinfo , birthdate ; Notice that PostgreSQL converts the column names to all lower case.",
+          "Enter: GoogleSQL CREATE TABLE Singers ( SingerId INT64 NOT NULL , FirstName STRING ( 1024 ), LastName STRING ( 1024 ), SingerInfo BYTES ( MAX ), BirthDate DATE ) PRIMARY KEY ( SingerId ); PostgreSQL CREATE TABLE Singers ( BirthDate TIMESTAMPTZ , SingerId BIGINT PRIMARY KEY , FirstName VARCHAR ( 1024 ), LastName VARCHAR ( 1024 ), SingerInfo BYTEA ); Click play circle Run ."
+        ]
+      },
+      {
+        "title": "Configure fine-grained access control \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "source_id": "site-docs-root",
+        "final_score": 55,
+        "relevance": "",
+        "evidence_snippets": [
+          "Ruby require \"google/cloud/spanner\" def spanner add and drop database role project id :, instance id :, database id : project id = \"Your Google Cloud project ID\" instance id = \"Your Spanner instance ID\" database id = \"Your Spanner database ID\" admin client = Google :: Cloud :: Spanner :: Admin :: Database :: V1 :: DatabaseAdmin :: Client . new role parent = \"new parent\" role child = \"new child\" db path = admin client . database path project : project id , instance : instance id , database : database id job = admin client . update database ddl database : db path , statements : [ \"CREATE ROLE #{ role parent } \" , \"GRANT SELECT ON TABLE Singers TO ROLE #{ role parent } \" , \"CREATE ROLE #{ role child } \" , \"GRANT ROLE #{ role parent } TO ROLE #{ role child } \" ] job . wait until done! puts \"Created roles #{ role parent } and #{ role child } and granted privileges\" job = admin client . update database ddl database : db path , statements : [ \"REVOKE ROLE #{ role parent } FROM ROLE #{ role child } \" , \"DROP ROLE #{ role child } \" ] job . wait until done! puts \"Revoked privileges and dropped role #{ role child } \" end More information About fine-grained access control Fine-grained access control for change streams Fine-grained access control privileges GoogleSQL DDL reference Make schema updates Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "String projectId = \"my-project\" ; String instanceId = \"my-instance\" ; String databaseId = \"my-database\" ; String iamMember = \"user:alice@example.com\" ; String role = \"my-role\" ; String title = \"my-condition-title\" ; enableFineGrainedAccess ( projectId , instanceId , databaseId , iamMember , title , role ); } static void enableFineGrainedAccess ( String projectId , String instanceId , String databaseId , String iamMember , String title , String role ) { try ( Spanner spanner = SpannerOptions . newBuilder (). setProjectId ( projectId ). build (). getService (); DatabaseAdminClient databaseAdminClient = spanner . createDatabaseAdminClient ()) { final GetPolicyOptions options = GetPolicyOptions . newBuilder (). setRequestedPolicyVersion ( 3 ). build (); final GetIamPolicyRequest getRequest = GetIamPolicyRequest . newBuilder () . setResource ( DatabaseName . of ( projectId , instanceId , databaseId ). toString ()) . setOptions ( options ). build (); final Policy policy = databaseAdminClient . getIamPolicy ( getRequest ); int policyVersion = policy . getVersion (); // The policy in the response from getDatabaseIAMPolicy might use the policy version // that you specified, or it might use a lower policy version.",
+          "Ruby require \"google/cloud/spanner\" def spanner list database roles project id :, instance id :, database id : project id = \"Your Google Cloud project ID\" instance id = \"Your Spanner instance ID\" database id = \"Your Spanner database ID\" admin client = Google :: Cloud :: Spanner :: Admin :: Database :: V1 :: DatabaseAdmin :: Client . new db path = admin client . database path project : project id , instance : instance id , database : database id result = admin client . list database roles parent : db path puts \"List of Database roles:\" result . each do role puts role . name end end View the privileges granted to a database role To view the privileges granted to a role, run the following queries: GoogleSQL SELECT FROM INFORMATION SCHEMA ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:37.939Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

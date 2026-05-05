@@ -1,0 +1,144 @@
+{
+  "feature_name": "RouteChangedListener trigger events",
+  "feature_slug": "routechangedlistener-trigger-events",
+  "summary": "RouteChangedListener now fires after route generation, after an alternative route is selected before navigation starts, and after a route is cleared.",
+  "extended_definition": "RouteChangedListener now fires after route generation, after an alternative route is selected before navigation starts, and after a route is cleared.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/events",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/route",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/tbt-feed"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Listen for navigation events \\_|\\_ Navigation SDK for Android \\_|\\_ Google\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/events",
+        "source_id": "site-docs-root",
+        "final_score": 161,
+        "relevance": "",
+        "evidence_snippets": [
+          "Navigator.RouteChangedListener provides the onRouteChanged() callback, triggered when the route changes.",
+          "LocationListener mLocationListener ; private Bundle mSavedInstanceState ; private static final String KEY JOURNEY IN PROGRESS = \"journey in progress\" ; private boolean mJourneyInProgress = false ; // Set fields for requesting location permission . private static final int PERMISSIONS REQUEST ACCESS FINE LOCATION = 1 ; private boolean mLocationPermissionGranted ; / Sets up the navigator when the activity is created . @param savedInstanceState The activity state bundle . / @Override protected void onCreate ( Bundle savedInstanceState ) { super . onCreate ( savedInstanceState ); // Save the navigator state , used to determine whether a journey is in progress . mSavedInstanceState = savedInstanceState ; if ( mSavedInstanceState != null && mSavedInstanceState . containsKey ( KEY JOURNEY IN PROGRESS )) { mJourneyInProgress = ( mSavedInstanceState . getInt ( KEY JOURNEY IN PROGRESS ) != 0 ); } setContentView ( R . layout . activity main ); // Initialize the Navigation SDK . initializeNavigationSdk (); } / Releases navigation listeners when the activity is destroyed . / @Override protected void onDestroy () { super . onDestroy (); if (( mJourneyInProgress ) && ( this . isFinishing ())) { mNavigator . removeArrivalListener ( mArrivalListener ); mNavigator . removeRouteChangedListener ( mRouteChangedListener ); mNavigator . removeRemainingTimeOrDistanceChangedListener ( mRemainingTimeOrDistanceChangedListener ); if ( mRoadSnappedLocationProvider != null ) { mRoadSnappedLocationProvider . removeLocationListener ( mLocationListener ); } displayMessage ( \"OnDestroy: Released navigation listeners.\" , DISPLAY LOG ); } } / Saves the state of the app when the activity is paused . / @Override protected void onSaveInstanceState ( Bundle outState ) { super . onSaveInstanceState ( outState ); if ( mJourneyInProgress ) { outState . putInt ( KEY JOURNEY IN PROGRESS , 1 ); } else { outState . putInt ( KEY JOURNEY IN PROGRESS , 0 ); } } / Starts the Navigation SDK and sets the camera to follow the device 's location.",
+          "ArrivalListener () { @Override public void onArrival ( ArrivalEvent arrivalEvent ) { displayMessage ( \"onArrival: You've arrived at a waypoint: \" + mNavigator . getCurrentRouteSegment () . getDestinationWaypoint () . getTitle (), DISPLAY BOTH ); // Start turn - by - turn guidance for the next leg of the route . if ( arrivalEvent . isFinalDestination ()) { displayMessage ( \"onArrival: You've arrived at the final destination.\" , DISPLAY BOTH ); } else { mNavigator . continueToNextDestination (); mNavigator . startGuidance (); } } }; // Listens for arrival at a waypoint . mNavigator . addArrivalListener ( mArrivalListener ); mRouteChangedListener = new Navigator ."
+        ]
+      },
+      {
+        "title": "\"Navigate a multi-destination route \\_|\\_ Navigation SDK for Android \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+        "source_id": "site-docs-root",
+        "final_score": 101,
+        "relevance": "",
+        "evidence_snippets": [
+          "LocationListener mLocationListener ; private Bundle mSavedInstanceState ; private static final String KEY JOURNEY IN PROGRESS = \"journey in progress\" ; private boolean mJourneyInProgress = false ; // Set fields for requesting location permission . private static final int PERMISSIONS REQUEST ACCESS FINE LOCATION = 1 ; private boolean mLocationPermissionGranted ; / Sets up the navigator when the activity is created . @param savedInstanceState The activity state bundle . / @Override protected void onCreate ( Bundle savedInstanceState ) { super . onCreate ( savedInstanceState ); // Save the navigator state , used to determine whether a journey is in progress . mSavedInstanceState = savedInstanceState ; if ( mSavedInstanceState != null && mSavedInstanceState . containsKey ( KEY JOURNEY IN PROGRESS )) { mJourneyInProgress = ( mSavedInstanceState . getInt ( KEY JOURNEY IN PROGRESS ) != 0 ); } setContentView ( R . layout . activity main ); // Initialize the Navigation SDK . initializeNavigationSdk (); } / Releases navigation listeners when the activity is destroyed . / @Override protected void onDestroy () { super . onDestroy (); if (( mJourneyInProgress ) && ( this . isFinishing ())) { mNavigator . removeArrivalListener ( mArrivalListener ); mNavigator . removeRouteChangedListener ( mRouteChangedListener ); mNavigator . removeRemainingTimeOrDistanceChangedListener ( mRemainingTimeOrDistanceChangedListener ); if ( mRoadSnappedLocationProvider != null ) { mRoadSnappedLocationProvider . removeLocationListener ( mLocationListener ); } displayMessage ( \"OnDestroy: Released navigation listeners.\" , DISPLAY LOG ); } } / Saves the state of the app when the activity is paused . / @Override protected void onSaveInstanceState ( Bundle outState ) { super . onSaveInstanceState ( outState ); if ( mJourneyInProgress ) { outState . putInt ( KEY JOURNEY IN PROGRESS , 1 ); } else { outState . putInt ( KEY JOURNEY IN PROGRESS , 0 ); } } / Starts the Navigation SDK and sets the camera to follow the device 's location.",
+          "ListenableResultFuture<Navigator.RouteStatus> pendingRoute = mNavigator.setDestinations(mWaypoints); // Define the action to perform when the SDK has determined the route. pendingRoute.setOnResultListener( new ListenableResultFuture.OnResultListener<Navigator.RouteStatus>() { @Override public void onResult(Navigator.RouteStatus code) { switch (code) { case OK: mJourneyInProgress = true; // Hide the toolbar to maximize the navigation UI. if (getActionBar() != null) { getActionBar().hide(); } // Register some listeners for navigation events. registerNavigationListeners(); // Display the time and distance to each waypoint. displayTimesAndDistances(); // Enable voice audio guidance (through the device speaker). mNavigator.setAudioGuidance( Navigator.AudioGuidance.VOICE ALERTS AND GUIDANCE); // Simulate vehicle progress along the route for demo/debug builds. if (BuildConfig.DEBUG) { mNavigator.getSimulator().simulateLocationsAlongExistingRoute( new SimulationOptions().speedMultiplier(5)); } // Start turn-by-turn guidance along the current route. mNavigator.startGuidance(); break; // Handle error conditions returned by the navigator. case NO ROUTE FOUND: displayMessage(\"Error starting navigation: No route found.\", DISPLAY BOTH); break; case NETWORK ERROR: displayMessage(\"Error starting navigation: Network error.\", DISPLAY BOTH); break; case ROUTE CANCELED: displayMessage(\"Error starting navigation: Route canceled.\", DISPLAY BOTH); break; default: displayMessage(\"Error starting navigation: \" + String.valueOf(code), DISPLAY BOTH); } } }); } Build and run your app Connect an Android device to your computer.",
+          "See the notes below about getting different place IDs .) After calculating directions, the SupportNavigationFragment displays a polyline representing the route on the map, with a marker at each waypoint. private void navigateToPlaces() { // Set up a waypoint for each place that we want to go to. createWaypoint(\"ChIJq6qq6jauEmsRJAf7FjrKnXI\", \"Sydney Star\"); createWaypoint(\"ChIJ3S-JXmauEmsRUcIaWtf4MzE\", \"Sydney Opera House\"); createWaypoint(\"ChIJLwgLFGmuEmsRzpDhHQuyyoU\", \"Sydney Conservatorium of Music\"); // If this journey is already in progress, no need to restart navigation. // This can happen when the user rotates the device, or sends the app to the background. if (mSavedInstanceState != null && mSavedInstanceState.containsKey(KEY JOURNEY IN PROGRESS) && mSavedInstanceState.getInt(KEY JOURNEY IN PROGRESS) == 1) { return; } // Create a future to await the result of the asynchronous navigator task."
+        ]
+      },
+      {
+        "title": "\"Navigate a single-destination route \\_|\\_ Navigation SDK for Android \\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/route",
+        "source_id": "site-docs-reference",
+        "final_score": 63,
+        "relevance": "",
+        "evidence_snippets": [
+          "After calculating directions, the SupportNavigationFragment displays a polyline representing the route on the map, and a marker at the destination.",
+          "Set the last digit of the car's license plate to get // route restrictions for supported countries. // mNavigator.setLicensePlateRestrictionInfo(getLastDigit(), \"BZ\"); // Set the camera to follow the device location with 'TILTED' driving view. mNavFragment.getCamera().followMyLocation(Camera.Perspective.TILTED); // Set the travel mode (DRIVING, WALKING, CYCLING, TWO WHEELER, or TAXI). mRoutingOptions = new RoutingOptions(); mRoutingOptions.travelMode(RoutingOptions.TravelMode.DRIVING); // Navigate to a place, specified by Place ID. navigateToPlace(SYDNEY OPERA HOUSE, mRoutingOptions); } / Handles errors from the Navigation SDK. @param errorCode The error code returned by the navigator. / @Override public void onError(@NavigationApi.ErrorCode int errorCode) { switch (errorCode) { case NavigationApi.ErrorCode.NOT AUTHORIZED: displayMessage(\"Error loading Navigation SDK: Your API key is \" + \"invalid or not authorized to use the Navigation SDK.\"); break; case NavigationApi.ErrorCode.TERMS NOT ACCEPTED: displayMessage(\"Error loading Navigation SDK: User did not accept \" + \"the Navigation Terms of Use.\"); break; case NavigationApi.ErrorCode.NETWORK ERROR: displayMessage(\"Error loading Navigation SDK: Network error.\"); break; case NavigationApi.ErrorCode.LOCATION PERMISSION MISSING: displayMessage(\"Error loading Navigation SDK: Location permission \" + \"is missing.\"); break; default: displayMessage(\"Error loading Navigation SDK: \" + errorCode); } } }); Set a destination The Navigator class provides control over configuring, starting, and stopping a navigation journey.",
+          "DEBUG ) { mNavigator . getSimulator () . simulateLocationsAlongExistingRoute ( new SimulationOptions () . speedMultiplier ( 5 )); } // Start turn - by - turn guidance along the current route . mNavigator . startGuidance (); break ; // Handle error conditions returned by the navigator . case NO ROUTE FOUND : displayMessage ( \"Error starting navigation: No route found.\" ); break ; case NETWORK ERROR : displayMessage ( \"Error starting navigation: Network error.\" ); break ; case ROUTE CANCELED : displayMessage ( \"Error starting navigation: Route canceled.\" ); break ; default : displayMessage ( \"Error starting navigation: \" + String . valueOf ( code )); } } }); } / Handles the result of the request for location permissions . / @Override public void onRequestPermissionsResult ( int requestCode , @NonNull String [] permissions , @NonNull int [] grantResults ) { mLocationPermissionGranted = false ; switch ( requestCode ) { case PERMISSIONS REQUEST ACCESS FINE LOCATION : { // If request is canceled , the result arrays are empty . if ( grantResults . length > 0 && grantResults [ 0 ] == PackageManager ."
+        ]
+      },
+      {
+        "title": "\"Enable turn-by-turn data feed \\_|\\_ Navigation SDK for Android \\_|\\_ Google\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/tbt-feed",
+        "source_id": "site-docs-reference",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "Expand to see examples icons for different maneuvers Sample Icon TurnByTurn Maneuvers DEPART UNKNOWN STRAIGHT ON RAMP UNSPECIFIED OFF RAMP UNSPECIFIED NAME CHANGE TURN RIGHT ON RAMP RIGHT TURN LEFT ON RAMP LEFT TURN SLIGHT RIGHT ON RAMP SLIGHT RIGHT OFF RAMP SLIGHT RIGHT TURN SLIGHT LEFT ON RAMP SLIGHT LEFT OFF RAMP SLIGHT LEFT TURN SHARP RIGHT ON RAMP SHARP RIGHT OFF RAMP SHARP RIGHT TURN SHARP LEFT ON RAMP SHARP LEFT OFF RAMP SHARP LEFT TURN U TURN COUNTERCLOCKWISE ON RAMP U TURN COUNTERCLOCKWISE OFF RAMP U TURN COUNTERCLOCKWISE TURN U TURN CLOCKWISE ON RAMP U TURN CLOCKWISE OFF RAMP U TURN CLOCKWISE ROUNDABOUT SHARP RIGHT COUNTERCLOCKWISE ROUNDABOUT SHARP RIGHT CLOCKWISE ROUNDABOUT RIGHT COUNTERCLOCKWISE ROUNDABOUT RIGHT CLOCKWISE ROUNDABOUT SLIGHT RIGHT COUNTERCLOCKWISE ROUNDABOUT SLIGHT RIGHT CLOCKWISE ROUNDABOUT STRAIGHT COUNTERCLOCKWISE ROUNDABOUT STRAIGHT CLOCKWISE ROUNDABOUT SLIGHT LEFT COUNTERCLOCKWISE ROUNDABOUT SLIGHT LEFT CLOCKWISE ROUNDABOUT LEFT COUNTERCLOCKWISE ROUNDABOUT LEFT CLOCKWISE ROUNDABOUT SHARP LEFT COUNTERCLOCKWISE ROUNDABOUT SHARP LEFT CLOCKWISE ROUNDABOUT U TURN COUNTERCLOCKWISE ROUNDABOUT U TURN CLOCKWISE ROUNDABOUT COUNTERCLOCKWISE ROUNDABOUT CLOCKWISE ROUNDABOUT EXIT COUNTERCLOCKWISE ROUNDABOUT EXIT CLOCKWISE MERGE RIGHT OFF RAMP RIGHT MERGE LEFT OFF RAMP LEFT FORK RIGHT TURN KEEP RIGHT ON RAMP KEEP RIGHT OFF RAMP KEEP RIGHT FORK LEFT TURN KEEP LEFT ON RAMP KEEP LEFT OFF RAMP KEEP LEFT MERGE UNSPECIFIED DESTINATION DESTINATION RIGHT DESTINATION LEFT FERRY BOAT FERRY TRAIN Use generated icons To facilitate Android Auto use cases, the Navigation SDK supports generation of maneuver and lane guidance icons.",
+          "Icon generation example NavigationUpdatesOptions options = NavigationUpdatesOptions.builder() .setNumNextStepsToPreview(numNextStepsToPreview) .setGeneratedStepImagesType(GeneratedStepImagesType.BITMAP) .setDisplayMetrics(getResources().getDisplayMetrics()) .build(); boolean isRegistered = navigator.registerServiceForNavUpdates( getPackageName(), NavInfoReceivingService.class.getName(), options); After you enable icon generation, the TurnbyTurn StepInfo object populates the maneuverBitmap and lanesBitmap fields with the icons.",
+          "Unregistering the service To stop receiving navigation updates, unregister the service from the Navigation SDK. navigator . unregisterServiceForNavUpdates (); Understand navigation states Use NavInfo.getNavState() to get the current state of navigation, which is one of the following: Enroute - The ENROUTE state means that guided navigation is active and the user is on the provided route."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "class.getName",
+      "developers.google.com",
+      "navigator.registerServiceForNavUpdates"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/events",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/tbt-feed"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/events",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/tbt-feed"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/events",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/tbt-feed"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/events",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/tbt-feed"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/events",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/tbt-feed"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:29.367Z",
+  "source_step08_card": "data/step-08/current/products/navigation-sdk-for-android/card.json",
+  "product_name": "Navigation SDK for Android",
+  "product_slug": "navigation-sdk-for-android"
+}

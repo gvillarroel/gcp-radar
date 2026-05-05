@@ -1,0 +1,145 @@
+{
+  "feature_name": "Live Sharing participant metadata",
+  "feature_slug": "live-sharing-participant-metadata",
+  "summary": "The SDK adds an API for setting participant metadata in Live Sharing sessions.",
+  "extended_definition": "The SDK adds an API for setting participant metadata in Live Sharing sessions.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/meet/api/guides/participants",
+      "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions",
+      "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions/get",
+      "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions/list"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Method: conferenceRecords.participants.participantSessions.get \\_|\\_ Google\\",
+        "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions/get",
+        "source_id": "site-docs-reference",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "HTTP request GET https://meet.googleapis.com/v2/{name=conferenceRecords/ /participants/ /participantSessions/ } The URL uses gRPC Transcoding syntax.",
+          "Response body If successful, the response body contains an instance of ParticipantSession .",
+          "Resource name of the participant."
+        ]
+      },
+      {
+        "title": "\"Method: conferenceRecords.participants.participantSessions.list \\_|\\_ Google\\",
+        "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions/list",
+        "source_id": "site-docs-reference",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If successful, the response body contains data with the following structure: JSON representation { \"participantSessions\" : [ { object ( ParticipantSession ) } ] , \"nextPageToken\" : string } Fields participantSessions[] object ( ParticipantSession ) List of participants in one page. nextPageToken string Token to be circulated back for further List call if current List doesn't include all the participants.",
+          "The following are the filterable fields: start time end time For example, end time IS NULL returns active participant sessions in the conference record.",
+          "HTTP request GET https://meet.googleapis.com/v2/{parent=conferenceRecords/ /participants/ }/participantSessions The URL uses gRPC Transcoding syntax."
+        ]
+      },
+      {
+        "title": "\"REST Resource: conferenceRecords.participants.participantSessions \\_|\\_\\",
+        "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions",
+        "source_id": "site-docs-reference",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "That means if a user joins a space multiple times from the same device, they're assigned different IDs, and are also be treated as different participant sessions.",
+          "Methods get Gets a participant session by participant session ID. list Lists the participant sessions of a participant in a conference record.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-04-02 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "Work with participants \\_|\\_ Google Meet \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/meet/api/guides/participants",
+        "source_id": "site-docs-root",
+        "final_score": 133,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following code sample shows how to list all participant sessions in a conference record: Java java-meet/samples/snippets/generated/com/google/apps/meet/v2/conferencerecordsservice/listparticipantsessions/AsyncListParticipantSessions.java View on GitHub import com.google.api.core.ApiFuture ; import com.google.apps.meet.v2.ConferenceRecordsServiceClient ; import com.google.apps.meet.v2.ListParticipantSessionsRequest ; import com.google.apps.meet.v2.ParticipantName ; import com.google.apps.meet.v2.ParticipantSession ; public class AsyncListParticipantSessions { public static void main ( String [] args ) throws Exception { asyncListParticipantSessions (); } public static void asyncListParticipantSessions () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( ConferenceRecordsServiceClient conferenceRecordsServiceClient = ConferenceRecordsServiceClient . create ()) { ListParticipantSessionsRequest request = ListParticipantSessionsRequest . newBuilder () . setParent ( ParticipantName . of ( \"[CONFERENCE RECORD]\" , \"[PARTICIPANT]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . setFilter ( \"filter-1274492040\" ) . build (); ApiFuture<ParticipantSession> future = conferenceRecordsServiceClient . listParticipantSessionsPagedCallable (). futureCall ( request ); // Do something. for ( ParticipantSession element : future . get (). iterateAll ()) { // doThingsWith(element); } } } } Node.js packages/google-apps-meet/samples/generated/v2/conference records service.list participant sessions.js View on GitHub // Copyright 2026 Google LLC // // Licensed under the Apache License, Version 2.0 (the \"License\"); // you may not use this file except in compliance with the License. // You may obtain a copy of the License at // // https://www.apache.org/licenses/LICENSE-2.0 // // Unless required by applicable law or agreed to in writing, software // distributed under the License is distributed on an \"AS IS\" BASIS, // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. // See the License for the specific language governing permissions and // limitations under the License. // // This file is automatically generated by gapic-generator-typescript. // https://github.com/googleapis/gapic-generator-typescript // All changes to this file may be overwritten. 'use strict' ; function main ( parent ) { / This snippet has been automatically generated and should be regarded as a code template only.",
+          "The following code sample shows how to list all participants in a conference record: Java java-meet/samples/snippets/generated/com/google/apps/meet/v2/conferencerecordsservice/listparticipants/AsyncListParticipants.java View on GitHub import com.google.api.core.ApiFuture ; import com.google.apps.meet.v2.ConferenceRecordName ; import com.google.apps.meet.v2.ConferenceRecordsServiceClient ; import com.google.apps.meet.v2.ListParticipantsRequest ; import com.google.apps.meet.v2.Participant ; public class AsyncListParticipants { public static void main ( String [] args ) throws Exception { asyncListParticipants (); } public static void asyncListParticipants () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( ConferenceRecordsServiceClient conferenceRecordsServiceClient = ConferenceRecordsServiceClient . create ()) { ListParticipantsRequest request = ListParticipantsRequest . newBuilder () . setParent ( ConferenceRecordName . of ( \"[CONFERENCE RECORD]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . setFilter ( \"filter-1274492040\" ) . build (); ApiFuture<Participant> future = conferenceRecordsServiceClient . listParticipantsPagedCallable (). futureCall ( request ); // Do something. for ( Participant element : future . get (). iterateAll ()) { // doThingsWith(element); } } } } Node.js packages/google-apps-meet/samples/generated/v2/conference records service.list participants.js View on GitHub / This snippet has been automatically generated and should be regarded as a code template only.",
+          "The following code sample shows how to retrieve a specific participant session: Java java-meet/samples/snippets/generated/com/google/apps/meet/v2/conferencerecordsservice/getparticipantsession/AsyncGetParticipantSession.java View on GitHub import com.google.api.core.ApiFuture ; import com.google.apps.meet.v2.ConferenceRecordsServiceClient ; import com.google.apps.meet.v2.GetParticipantSessionRequest ; import com.google.apps.meet.v2.ParticipantSession ; import com.google.apps.meet.v2.ParticipantSessionName ; public class AsyncGetParticipantSession { public static void main ( String [] args ) throws Exception { asyncGetParticipantSession (); } public static void asyncGetParticipantSession () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( ConferenceRecordsServiceClient conferenceRecordsServiceClient = ConferenceRecordsServiceClient . create ()) { GetParticipantSessionRequest request = GetParticipantSessionRequest . newBuilder () . setName ( ParticipantSessionName . of ( \"[CONFERENCE RECORD]\" , \"[PARTICIPANT]\" , \"[PARTICIPANT SESSION]\" ) . toString ()) . build (); ApiFuture<ParticipantSession> future = conferenceRecordsServiceClient . getParticipantSessionCallable (). futureCall ( request ); // Do something."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.api.core.ApiFuture",
+      "com.google.apps.meet.v2.ConferenceRecordName",
+      "com.google.apps.meet.v2.ConferenceRecordsServiceClient",
+      "com.google.apps.meet.v2.GetParticipantRequest",
+      "com.google.apps.meet.v2.GetParticipantSessionRequest",
+      "com.google.apps.meet.v2.ListParticipantSessionsRequest",
+      "com.google.apps.meet.v2.ListParticipantsRequest",
+      "com.google.apps.meet.v2.Participant",
+      "com.google.apps.meet.v2.ParticipantName",
+      "com.google.apps.meet.v2.ParticipantSession",
+      "com.google.apps.meet.v2.ParticipantSessionName",
+      "developers.google.com",
+      "github.com",
+      "meet.googleapis.com",
+      "participants.get",
+      "participants.js",
+      "participants.list",
+      "participants.participantSessions",
+      "participants.participantSessions.get",
+      "participants.participantSessions.list",
+      "service.list",
+      "sessions.js"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions/get",
+        "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions/list",
+        "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions",
+        "https://developers.google.com/workspace/meet/api/guides/participants"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions/get",
+        "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions/list",
+        "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions",
+        "https://developers.google.com/workspace/meet/api/guides/participants"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions/get",
+        "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions/list",
+        "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.participants.participantSessions",
+        "https://developers.google.com/workspace/meet/api/guides/participants"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:18.042Z",
+  "source_step08_card": "data/step-08/current/products/google-meet/card.json",
+  "product_name": "Google Meet",
+  "product_slug": "google-meet"
+}

@@ -1,0 +1,90 @@
+{
+  "feature_name": "Cloud Bigtable HBase migration tooling",
+  "feature_slug": "cloud-bigtable-hbase-migration-tooling",
+  "summary": "New tooling is available to migrate Bigtable workloads from HBase clusters on other Google Cloud services.",
+  "extended_definition": "New tooling is available to migrate Bigtable workloads from HBase clusters on other Google Cloud services.",
+  "lifecycle": {
+    "latest_feature_date": "2022-08-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+      "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+      "https://docs.cloud.google.com/bigtable/docs/hbase-replication"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "When is Bigtable a good destination for Cassandra workloads The best Google Cloud service for your Cassandra workload depends on your migration goals and the Cassandra functionality that you require after migration.",
+          "This document provides tips on what to consider when refactoring your application, if you choose Bigtable as the migration target for your Cassandra workloads.",
+          "In a blog post (2012) , Ilya Grigorik writes the following: \"An SSTable is a simple abstraction to efficiently store large numbers of key-value pairs while optimizing for high throughput, sequential read or write workloads.\" The following table outlines and describes shared concepts and the corresponding terminology that each product uses: Cassandra Bigtable primary key : a unique single or multi-field value that determines data placement and ordering. partition key : a single or multi-field value that determines data placement by consistent hash. clustering column : a single or multi-field value that determines the lexicographical data sorting within a partition. row key : a unique, single byte string that determines the placement of data by a lexicographical sort."
+        ]
+      },
+      {
+        "title": "Replicate from HBase to Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/hbase-replication",
+        "source_id": "site-docs-reference-2",
+        "final_score": 144,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Use cases Online migration to Bigtable - You can use the Bigtable HBase replication library, in conjunction with an offline migration of your existing HBase data, to migrate from HBase to Bigtable with almost no downtime.",
+          "Once the buffering has started to capture new writes, follow the offline migration guide to migrate a snapshot of your existing HBase data.",
+          "For offline migration from HBase to Bigtable, see Migrate data from HBase to Bigtable offline ."
+        ]
+      },
+      {
+        "title": "Migrate from DynamoDB to Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+        "source_id": "site-docs-reference-2",
+        "final_score": 109,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Bigtable supports replicated clusters in as many zones that are available in up to 8 Google Cloud regions where Bigtable is available.",
+          "To get started, use a Google-provided migration tool that helps you migrate from DynamoDB to Bigtable.",
+          "Migrate from DynamoDB to Bigtable Bigtable and DynamoDB are distributed key-value stores that can support millions of queries per second (QPS), provide storage that scales up to petabytes of data, and tolerate node failures."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/hbase-replication",
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:24.978Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable"
+}

@@ -1,0 +1,123 @@
+{
+  "feature_name": "osonly24 runtime",
+  "feature_slug": "osonly24-runtime",
+  "summary": "The osonly24 runtime provides an OS-only runtime for deploying binaries such as Dart and Go; The osonly24 runtime provides an OS-only runtime for deploying Go applications from source and binaries such as Dart and Go.",
+  "extended_definition": "The osonly24 runtime provides an OS-only runtime for deploying binaries such as Dart and Go; The osonly24 runtime provides an OS-only runtime for deploying Go applications from source and binaries such as Dart and Go.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/docs/buildpacks/nodejs",
+      "https://docs.cloud.google.com/docs/buildpacks/osonly",
+      "https://docs.cloud.google.com/docs/buildpacks/runtime-support"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure the OS only runtime \\_|\\_ Buildpacks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/buildpacks/osonly",
+        "source_id": "site-docs-reference",
+        "final_score": 160,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The OS only runtime lets you deploy Go applications from source, and binaries such as Dart and Go.",
+          "Compiled binaries The OS only runtime lets you deploy pre-compiled binaries.",
+          "For example, to compile a Go application targeting linux/amd64 , run the following command: GOOS = \"linux\" GOARCH = amd64 go build main.go Deploy to Cloud Run Deploy your binary to Cloud Run by running the following the gcloud run deploy command, and specify the base image (for example, osonly24 ): gcloud beta run deploy SERVICE \\ --source . \\ --no-build \\ --base-image = osonly24 \\ --project PROJECT ID \\ --allow-unauthenticated \\ --command COMMAND Replace the following: SERVICE : the name of your Cloud Run service."
+        ]
+      },
+      {
+        "title": "\"Google Cloud's buildpacks runtime lifecycle \\_|\\_ Buildpacks \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/docs/buildpacks/runtime-support",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 122,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Java Runtime Runtime ID Stacks Runtime base image Deprecation Decommission Java 25 java25 google-24 (default) google-24-full google-24/java25 google-24-full/java25 October 2031 Java 21 java21 google-22 (default) google-22-full google-22/java21 google-22-full/java21 September 2031 Java 17 java17 google-22 (default) google-22-full google-22/java17 google-22-full/java17 October 2027 Java 11 java11 google-18-full google-18-full/java11 2024-10-31 2025-10-31 Ruby Runtime Runtime ID Stacks Runtime base image Deprecation Decommission Ruby 4.0 ruby40 google-24-full (default) google-24-full/ruby40 2029-03-31 2029-09-30 Ruby 3.4 ruby34 google-22 (default) google-22-full google-22/ruby34 google-22-full/ruby34 2028-03-31 2028-09-30 Ruby 3.3 ruby33 google-22 (default) google-22-full google-22/ruby33 google-22-full/ruby33 2027-03-31 2027-09-30 Ruby 3.2 ruby32 google-22 (default) google-22-full google-22/ruby32 google-22-full/ruby32 2026-03-31 2026-09-30 Ruby 3.0 ruby30 google-18-full google-18-full/ruby30 2024-03-31 2025-03-31 Ruby 2.7 ruby27 google-18-full google-18-full/ruby27 2024-01-30 2025-01-30 Ruby 2.6 ruby26 google-18-full google-18-full/ruby26 2024-01-30 2025-01-30 PHP Runtime Runtime ID Stacks Runtime base image Deprecation Decommission PHP 8.5 php85 google-24-full (default) google-24-full/php85 2029-12-31 2030-06-30 PHP 8.4 php84 google-22-full (default) google-22-full/php84 2028-12-31 2029-06-30 PHP 8.3 php83 google-22-full (default) google-22-full/php83 2027-12-31 2028-06-30 PHP 8.2 php82 google-22-full (default) google-22-full/php82 2026-12-31 2027-06-30 PHP 8.1 php81 google-18-full google-18-full/php81 2025-12-31 2026-06-30 PHP 7.4 php74 google-18-full google-18-full/php74 2024-01-30 2025-01-30 .NET Runtime Runtime ID Stacks Runtime base image Deprecation Decommission .NET 10 dotnet10 google-24 (default) google-24-full google-24/dotnet10 google-24-full/dotnet10 2028-11-14 2029-05-14 .NET 8 dotnet8 google-22 (default) google-22-full google-22/dotnet8 google-22-full/dotnet8 2026-11-10 2027-05-10 .NET 6 dotnet6 google-22 (default) google-22-full google-22/dotnet6 google-22-full/dotnet6 2024-11-12 2025-11-12 .NET Core 3 dotnet3 google-18-full google-18-full/dotnet3 2024-01-30 2025-01-30 OS only Runtime Runtime ID Stacks Runtime base image Deprecation Decommission OS only 24 osonly24 google-24 (default) google-24/osonly24 April 30, 2029 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Note: Runtime ID is often used when deploying from the from the command line or through Terraform Node.js Runtime Runtime ID Stacks Runtime base image Deprecation Decommission Node.js 24 nodejs24 google-24 (default) google-24-full google-24/nodejs24 google-24-full/nodejs24 2028-04-30 2028-10-31 Node.js 22 nodejs22 google-22 (default) google-22-full google-22/nodejs22 google-22-full/nodejs22 2027-04-30 2027-10-31 Node.js 20 nodejs20 google-22 (default) google-22-full google-22/nodejs20 google-22-full/nodejs20 2026-04-30 2026-10-30 Node.js 18 nodejs18 google-22 (default) google-22-full google-22/nodejs18 google-22-full/nodejs18 2025-04-30 2025-10-30 Node.js 16 nodejs16 google-18-full google-18-full/nodejs16 2024-01-30 2025-01-30 Node.js 14 nodejs14 google-18-full google-18-full/nodejs14 2024-01-30 2025-01-30 Node.js 12 nodejs12 google-18-full google-18-full/nodejs12 2024-01-30 2025-01-30 Node.js 10 nodejs10 google-18-full google-18-full/nodejs10 2024-01-30 2025-01-30 Node.js 8 nodejs8 Decommissioned Decommissioned 2020-06-05 Feb 2021 Node.js 6 nodejs6 Decommissioned Decommissioned 2019-04-17 Aug 2020 Python Runtime Runtime ID Stacks Runtime base image Deprecation Decommission Python 3.14 python314 google-24 (default) google-24-full google-24/python314 google-24-full/python314 2030-10-10 2031-04-10 Python 3.13 python313 google-22 (default) google-22-full google-22/python313 google-22-full/python313 2029-10-10 2030-04-10 Python 3.12 python312 google-22 (default) google-22-full google-22/python312 google-22-full/python312 2028-10-02 2029-04-02 Python 3.11 python311 google-22 (default) google-22-full google-22/python311 google-22-full/python311 2027-10-24 2028-04-24 Python 3.10 python310 google-22 (default) google-22-full google-22/python310 google-22-full/python310 2026-10-04 2027-04-04 Python 3.9 python39 google-18-full google-18-full/python39 2025-10-05 2026-04-05 Python 3.8 python38 google-18-full google-18-full/python38 2024-10-14 2025-10-14 Python 3.7 python37 google-18-full google-18-full/python37 2024-01-30 2025-01-30 Go Runtime Runtime ID Stacks Runtime base image Deprecation Decommission Go 1.26 go126 google-24 (default) google-24-full google-24/go126 google-24-full/go126 Go 1.25 go125 google-22 (default) google-22-full google-22/go125 google-22-full/go125 Go 1.24 go124 google-22 (default) google-22-full google-22/go124 google-22-full/go124 2026-09-02 2027-03-02 Go 1.23 go123 google-22 (default) google-22-full google-22/go123 google-22-full/go123 2026-02-21 2026-08-21 Go 1.22 go122 google-22 (default) google-22-full google-22/go122 google-22-full/go122 2026-01-28 2026-07-28 Go 1.21 go121 google-22 (default) google-22-full google-22/go121 google-22-full/go121 2025-09-03 2026-03-03 Go 1.20 go120 google-22 (default) google-22-full google-22/go120 google-22-full/go120 2024-05-01 2025-05-01 Go 1.19 go119 google-22 (default) google-22-full google-22/go119 google-22-full/go119 2024-04-30 2025-01-30 Go 1.18 go118 google-22 (default) google-22-full google-22/go118 google-22-full/go120 2024-01-30 2025-01-30 Go 1.16 go116 google-18-full google-18-full/go116 2024-01-30 2025-01-30 Go 1.13 go113 google-18-full google-18-full/go113 2024-01-30 2025-01-30 Go 1.11 go111 Decommissioned Decommissioned 2020-08-05 Feb 2021 Note: Go's release policy states that each major Go release is supported until there are two newer major releases.",
+          "Runtimes are available in different release stages, such as Preview or General Availability (GA)."
+        ]
+      },
+      {
+        "title": "Building a Node.js application \\_|\\_ Buildpacks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/buildpacks/nodejs",
+        "source_id": "site-docs-reference",
+        "final_score": 99,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When deploying a function onto Cloud Run functions, the engines.node property should be compatible with the runtime used to deploy your function Install dependencies NPM is the default package manager for all versions of Node.js.",
+          "When deploying the application into App Engine standard environment, the engines.node property should be compatible with the runtime specified in app.yaml .",
+          "For example, when using NPM or Yarn version 1: @ SCOPE : registry = https : // REGION ID -npm.pkg.dev/ PROJECT ID / REPOSITORY NAME // REGION ID -npm.pkg.dev/ PROJECT ID / REPOSITORY NAME :always-auth=true If you're using Yarn version 2 or later, you only need to list the Artifact Registry repository in your .yarnrc.yml file without additional credentials."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "engines.node",
+      "gcr.io",
+      "main.go",
+      "npm.pkg.dev",
+      "project.toml",
+      "x.x",
+      "yarnrc.yml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/buildpacks/osonly",
+        "https://docs.cloud.google.com/docs/buildpacks/runtime-support",
+        "https://docs.cloud.google.com/docs/buildpacks/nodejs"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/buildpacks/osonly",
+        "https://docs.cloud.google.com/docs/buildpacks/runtime-support",
+        "https://docs.cloud.google.com/docs/buildpacks/nodejs"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/buildpacks/osonly",
+        "https://docs.cloud.google.com/docs/buildpacks/runtime-support",
+        "https://docs.cloud.google.com/docs/buildpacks/nodejs"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/buildpacks/osonly",
+        "https://docs.cloud.google.com/docs/buildpacks/runtime-support",
+        "https://docs.cloud.google.com/docs/buildpacks/nodejs"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:26.095Z",
+  "source_step08_card": "data/step-08/current/products/buildpacks/card.json",
+  "product_name": "Buildpacks",
+  "product_slug": "buildpacks"
+}

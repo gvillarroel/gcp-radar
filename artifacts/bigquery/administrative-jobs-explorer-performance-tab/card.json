@@ -1,0 +1,130 @@
+{
+  "feature_name": "Administrative jobs explorer Performance tab",
+  "feature_slug": "administrative-jobs-explorer-performance-tab",
+  "summary": "The administrative jobs explorer Performance tab compiles execution graphs, SQL text, execution history, performance variance, and system load for a query.",
+  "extended_definition": "The administrative jobs explorer Performance tab compiles execution graphs, SQL text, execution history, performance variance, and system load for a query.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/admin-jobs-explorer",
+      "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+      "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use administrative jobs explorer \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/admin-jobs-explorer",
+        "source_id": "site-docs-reference-2",
+        "final_score": 241,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to use administrative jobs explorer: To see data at project level: bigquery.jobs.listAll on the project To see data at organization level: bigquery.jobs.listAll on the organization To filter by reservations in your organization: bigquery.reservations.list on the organization You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Required roles To get the permissions that you need to use administrative jobs explorer, ask your administrator to grant you the BigQuery Resource Viewer ( roles/bigquery.resourceViewer ) IAM role on your organization or project.",
+          "You can also select individual jobs to open the job details page , which provides query details such as execution graphs, SQL text, and execution history to help you diagnose and troubleshoot queries."
+        ]
+      },
+      {
+        "title": "\"Monitor health, resource utilization, and jobs \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+        "source_id": "site-docs-reference-2",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "To learn more about the execution details and diagnose performance issues for your BigQuery jobs, see Get query performance insights .",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to view all data in the operational health and resource utilization charts: To view all data in the operational health and resource utilization charts for an organization: bigquery.jobs.listExecutionMetadata or bigquery.jobs.listAll on the organization bigquery.reservationAssignments.list on the administration project used to create the reservations bigquery.capacityCommitments.list on the administration project used to create the reservations As an on-demand user, to view all data in the resource utilization charts for an organization: bigquery.jobs.listExecutionMetadata or bigquery.jobs.listAll on the organization To view operational health summary data for BigQuery table storage: bigquery.tables.get or bigquery.tables.list on the organization To view operational health and resource utilization charts at the reservation level: bigquery.reservations.list on the administration project used to create the reservations bigquery.reservationAssignments.list on the administration project used to create the reservations To view resource utilization charts at the project level: bigquery.jobs.listAll on the project You might also be able to get these permissions with custom roles or other predefined roles .",
+          "BigQuery gathers the metrics by querying the following INFORMATION SCHEMA views : INFORMATION SCHEMA.JOBS INFORMATION SCHEMA.JOBS TIMELINE INFORMATION SCHEMA.RESERVATIONS INFORMATION SCHEMA.TABLE STORAGE For an example query that replicates the slot usage timeline chart found in administrative resource charts, see Match slot usage behavior from administrative resource charts ."
+        ]
+      },
+      {
+        "title": "Loading CSV data from Cloud Storage \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "CsvOptions csvOptions = CsvOptions . newBuilder (). setSkipLeadingRows ( 1 ). build (); TableId tableId = TableId . of ( datasetName , tableName ); LoadJobConfiguration loadConfig = LoadJobConfiguration . newBuilder ( tableId , sourceUri , csvOptions ). setSchema ( schema ). build (); // Load data from a GCS CSV file into the table Job job = bigquery . create ( JobInfo . of ( loadConfig )); // Blocks until this load table job completes its execution, either failing or succeeding. job = job . waitFor (); if ( job . isDone ()) { System . out . println ( \"CSV from GCS successfully added during load append job\" ); } else { System . out . println ( \"BigQuery was unable to load into the table due to an error:\" + job . getStatus (). getError ()); } } catch ( BigQueryException InterruptedException e ) { System . out . println ( \"Column not added during load append \\n\" + e . toString ()); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the BigQuery quickstart using client libraries .",
+          "Job completedJob = loadJob . waitFor (); // Check for errors if ( completedJob == null ) { throw new Exception ( \"Job not executed since it no longer exists.\" ); } else if ( completedJob . getStatus (). getError () != null ) { // You can also look at queryJob.getStatus().getExecutionErrors() for all // errors, not just the latest one. throw new Exception ( \"BigQuery was unable to load into the table due to an error: \\n\" + loadJob . getStatus (). getError ()); } System . out . println ( \"Data successfully loaded into time partitioned table during load job\" ); } catch ( BigQueryException InterruptedException e ) { System . out . println ( \"Data not loaded into time partitioned table during load job \\n\" + e . toString ()); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the BigQuery quickstart using client libraries .",
+          "Job completedJob = loadJob . waitFor (); // Check for errors if ( completedJob == null ) { throw new Exception ( \"Job not executed since it no longer exists.\" ); } else if ( completedJob . getStatus (). getError () != null ) { // You can also look at queryJob.getStatus().getExecutionErrors() for all // errors, not just the latest one. throw new Exception ( \"BigQuery was unable to load into the table due to an error: \\n\" + loadJob . getStatus (). getError ()); } System . out . println ( \"Table is successfully overwritten by CSV file loaded from GCS\" ); } catch ( BigQueryException InterruptedException e ) { System . out . println ( \"Column not added during load append \\n\" + e . toString ()); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the BigQuery quickstart using client libraries ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.admin",
+      "bigquery.capacityCommitments.list",
+      "bigquery.dataEditor",
+      "bigquery.dataOwner",
+      "bigquery.datasets.create",
+      "bigquery.jobs.create",
+      "bigquery.jobs.listAll",
+      "bigquery.jobs.listExecutionMetadata",
+      "bigquery.jobUser",
+      "bigquery.reservationAssignments.list",
+      "bigquery.reservations.list",
+      "bigquery.resourceViewer",
+      "bigquery.tables.create",
+      "bigquery.tables.get",
+      "bigquery.tables.list",
+      "bigquery.tables.update",
+      "bigquery.tables.updateData",
+      "bigquery.user"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.admin",
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.dataOwner",
+      "roles/bigquery.resourceViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/admin-jobs-explorer",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/admin-jobs-explorer",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/admin-jobs-explorer",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

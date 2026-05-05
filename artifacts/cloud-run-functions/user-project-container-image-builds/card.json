@@ -1,0 +1,215 @@
+{
+  "feature_name": "User-project container image builds",
+  "feature_slug": "user-project-container-image-builds",
+  "summary": "Supported runtimes can build container images in the user's project for direct build log access and without the preset build-time quota.",
+  "extended_definition": "Supported runtimes can build container images in the user's project for direct build log access and without the preset build-time quota.",
+  "lifecycle": {
+    "latest_feature_date": "2020-08-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/functions/docs/building",
+      "https://docs.cloud.google.com/functions/docs/concepts/iam",
+      "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Build process overview \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/building",
+        "source_id": "site-iam-reference",
+        "final_score": 203,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "View your build image logs A key benefit of having the build image process in your user project is access to build logs.",
+          "Cloud Build then automatically builds your code into a container image and pushes that image to an image registry .",
+          "If your private worker pool is in a different project than your function, you need to grant the Cloud Functions Service Agent Service Account ( service-FUNCTION PROJECT NUMBER@gcf-admin-robot.iam.gserviceaccount.com ) the cloudbuild.workerPoolUser role so that the Cloud Build service can access the worker pool. gcloud projects add-iam-policy-binding PRIVATE POOL PROJECT ID \\ --member serviceAccount:service- FUNCTION PROJECT NUMBER @gcf-admin-robot.iam.gserviceaccount.com --role roles/cloudbuild.workerPoolUser Replace FUNCTION PROJECT NUMBER with the number of the project where the function runs and PRIVATE POOL PROJECT ID with the ID of the project in which the worker pool is located."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.functions \\_|\\_ Cloud Run functions \\_\\",
+        "url": "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "source_id": "site-docs-root",
+        "final_score": 191,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"name\" : string , \"description\" : string , \"status\" : enum ( CloudFunctionStatus ) , \"entryPoint\" : string , \"runtime\" : string , \"timeout\" : string , \"availableMemoryMb\" : integer , \"serviceAccountEmail\" : string , \"updateTime\" : string , \"versionId\" : string , \"labels\" : { string : string , ... } , \"environmentVariables\" : { string : string , ... } , \"buildEnvironmentVariables\" : { string : string , ... } , \"network\" : string , \"maxInstances\" : integer , \"minInstances\" : integer , \"vpcConnector\" : string , \"vpcConnectorEgressSettings\" : enum ( VpcConnectorEgressSettings ) , \"ingressSettings\" : enum ( IngressSettings ) , \"kmsKeyName\" : string , \"buildWorkerPool\" : string , \"buildId\" : string , \"buildName\" : string , \"secretEnvironmentVariables\" : [ { object ( SecretEnvVar ) } ] , \"secretVolumes\" : [ { object ( SecretVolume ) } ] , \"sourceToken\" : string , \"dockerRepository\" : string , \"dockerRegistry\" : enum ( DockerRegistry ) , \"buildServiceAccount\" : string , \"satisfiesPzs\" : boolean , \"satisfiesPzi\" : boolean , // Union field source code can be only one of the following: \"sourceArchiveUrl\" : string , \"sourceRepository\" : { object ( SourceRepository ) } , \"sourceUploadUrl\" : string // End of list of possible types for union field source code . // Union field trigger can be only one of the following: \"httpsTrigger\" : { object ( HttpsTrigger ) } , \"eventTrigger\" : { object ( EventTrigger ) } // End of list of possible types for union field trigger . // Union field runtime update policy can be only one of the following: \"automaticUpdatePolicy\" : { object ( AutomaticUpdatePolicy ) } , \"onDeployUpdatePolicy\" : { object ( OnDeployUpdatePolicy ) } // End of list of possible types for union field runtime update policy . } Fields name string A user-defined name of the function.",
+          "The Cloud Build Name of the function deployment. projects/<project-number>/locations/<region>/builds/<build-id> . secretEnvironmentVariables[] object ( SecretEnvVar ) Secret environment variables configuration. secretVolumes[] object ( SecretVolume ) Secret volumes configuration. sourceToken string Input only.",
+          "Google Cloud Functions delegates access to service agents to protect function resources in internal projects that are not accessible by the end user. buildWorkerPool string Name of the Cloud Build Custom Worker Pool that should be used to build the function."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "source_id": "site-iam-reference",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Here's a few of the notable permissions that the cloudfunctions.serviceAgent uses: Permission Description roles/artifactregistry.admin Manage repositories and store build images in Artifact Registry. roles/cloudbuild.builds.editor Required to use Cloud Build to perform builds in user project. roles/cloudbuild.customworkers.builder Create builds in Cloud Build custom workers. compute.globalOperations.get , compute.networks.access , vpcaccess.connectors.{get, use} Provision functions with access to the consumer projects VPC. roles/eventarc.developer Manage Eventarc triggers for functions. firebasedatabase.instances.{get, update} Create functions triggered by the Firebase Realtime Database. iam.serviceAccounts.{actAs, getAccessToken, signBlob} Ability to get runtime service account credentials. iam.serviceAccounts.getOpenIdToken Needed for the agent to get an OpenID token on a user-specified authority.",
+          "In addition, all runtimes carry out container image building and storage within your project.",
+          "The following service accounts are used for Cloud Run functions: Name Member ID Role Compute Engine default service account PROJECT NUMBER-compute@developer.gserviceaccount.com Editor Google Cloud Functions Service Agent service-PROJECT NUMBER@gcf-admin-robot.iam.gserviceaccount.com Google Cloud Functions Service Agent Legacy Cloud Build service account 1 PROJECT NUMBER@cloudbuild.gserviceaccount.com Cloud Build Service Account Cloud Build Service Account service-PROJECT NUMBER@gcp-sa-cloudbuild.iam.gserviceaccount.com Cloud Build Service Agent Google Container Registry Service Agent service-PROJECT NUMBER@containerregistry.iam.gserviceaccount.com Container Registry Service Agent Artifact Registry Service Agent service-PROJECT NUMBER@gcp-sa-artifactregistry.iam.gserviceaccount.com Artifact Registry Service Agent Note: The iam.automaticIamGrantsForDefaultServiceAccounts organization policy constraint prevents the Editor role from being automatically granted to default service accounts."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "artifactregistry.admin",
+      "artifactregistry.iam.gserviceaccount.com",
+      "cloudbuild.builds.editor",
+      "cloudbuild.customworkers.builder",
+      "cloudbuild.gserviceaccount.com",
+      "cloudbuild.iam.gserviceaccount.com",
+      "cloudbuild.workerPoolUser",
+      "cloudfunctions.serviceAgent",
+      "compute.globalOperations.get",
+      "compute.networks.access",
+      "containerregistry.iam.gserviceaccount.com",
+      "developer.gserviceaccount.com",
+      "eventarc.developer",
+      "firebasedatabase.instances",
+      "iam.automaticIamGrantsForDefaultServiceAccounts",
+      "iam.serviceAccounts",
+      "iam.serviceAccounts.getOpenIdToken",
+      "projects.locations.functions",
+      "robot.iam.gserviceaccount.com",
+      "storage.objectViewer",
+      "vpcaccess.connectors"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.admin",
+      "roles/cloudbuild.builds.editor",
+      "roles/cloudbuild.customworkers.builder",
+      "roles/cloudbuild.workerPoolUser",
+      "roles/eventarc.developer",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:36.361Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run-functions/card.json",
+  "product_name": "Cloud Run functions",
+  "product_slug": "cloud-run-functions"
+}

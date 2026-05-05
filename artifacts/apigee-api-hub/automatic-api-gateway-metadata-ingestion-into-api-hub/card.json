@@ -1,0 +1,150 @@
+{
+  "feature_name": "Automatic API Gateway metadata ingestion into API hub",
+  "feature_slug": "automatic-api-gateway-metadata-ingestion-into-api-hub",
+  "summary": "Adds automatic ingestion of API metadata from API Gateway by attaching API Gateway projects to API hub.",
+  "extended_definition": "Adds automatic ingestion of API metadata from API Gateway by attaching API Gateway projects to API hub.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies",
+      "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+      "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Apigee known issues \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "source_id": "site-docs-reference",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "When multiple authorization headers are present in a request, the Apigee ingress gateway doesn't concatenate them into a single header.",
+          "Edit apigee-operator/templates/ helpers.tpl and remove the following bold lines: {{- define \"metricsSA\" -}} {{- $metricsName := \"apigee-metrics\" }} {{- $telemetryName := \"apigee-telemetry\" -}} {{- $generatedName := include \"orgScopeEncodedName\" (dict \"name\" .Values.org) -}} {{- if .Values.gcp.workloadIdentity.enabled -}} {{- printf \"%s-sa\" $metricsName -}} {{- else if .Values.serviceAccountSecretProviderClass -}} {{- else if .Values.multiOrgCluster -}} {{- printf \"%s-%s\" $metricsName $generatedName -}} {{- else -}} {{- printf \"%s-%s\" $metricsName $telemetryName -}} {{- end -}} {{- end -}} The resulting section should look like the following: {{- define \"metricsSA\" -}} {{- $metricsName := \"apigee-metrics\" }} {{- $telemetryName := \"apigee-telemetry\" -}} {{- $generatedName := include \"orgScopeEncodedName\" (dict \"name\" .Values.org) -}} {{- if .Values.gcp.workloadIdentity.enabled -}} {{- printf \"%s-sa\" $metricsName -}} {{- else if .Values.multiOrgCluster -}} {{- printf \"%s-%s\" $metricsName $generatedName -}} {{- else -}} {{- printf \"%s-%s\" $metricsName $telemetryName -}} {{- end -}} {{- end -}} Reapply the apigee-operator chart. helm upgrade operator apigee-operator/ \\ --namespace APIGEE NAMESPACE \\ --atomic \\ -f overrides .yaml 419856132 hybrid 1.14.2 and newer FIXED in hybrid 1.14.3 and hybrid 1.15.0 If gateway.networking.k8s.io/v1 is installed in your cluster, apigee-ingressgateway-manager may fail to upgrade.",
+          "Execute: kubectl delete crd $(cat istio-crd.csv) Update clusterrole Get the current apigee-ingressgateway-manager clusterrole: kubectl get clusterrole apigee-ingressgateway-manager-apigee -o yaml > apigee-ingressgateway-manager-apigee-clusterrole.yaml Copy the clusterrole to a new location: cp apigee-ingressgateway-manager-apigee-clusterrole.yaml apigee-ingressgateway-manager-apigee-clusterrole-added-istio-permissions.yaml Add the following additional permissions to the end of the file: - apiGroups: - gateway.networking.k8s.io resources: - gatewayclasses - gateways - grpcroutes - httproutes - referencegrants verbs: - get - list - watch - apiGroups: - networking.istio.io resources: - sidecars - destinationrules - gateways - virtualservices - envoyfilters - workloadentries - serviceentries - workloadgroups - proxyconfigs verbs: - get - list - watch - apiGroups: - security.istio.io resources: - peerauthentications - authorizationpolicies - requestauthentications verbs: - get - list - watch - apiGroups: - telemetry.istio.io resources: - telemetries verbs: - get - list - watch - apiGroups: - extensions.istio.io resources: - wasmplugins verbs: - get - list - watch Apply the role: kubectl -n APIGEE NAMESPACE apply -f apigee-ingressgateway-manager-apigee-clusterrole-added-istio-permissions.yaml After you have completed the above options, you will need to restart your apigee-ingressgateway-manager pods."
+        ]
+      },
+      {
+        "title": "\"Ingest Microsoft Azure API data into API hub \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+        "source_id": "site-docs-reference-2",
+        "final_score": 103,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Note: The execute integration.sh script triggers a one-time ingestion of metadata from Azure APIM and does not set up a continuous synchronization.",
+          "This tutorial shows you how to ingest API metadata from Azure API Management (APIM) platform into Apigee API hub.",
+          "For Each Parallel Task taskId: 19 For each API ID in $api id-list$ , runs a sub-integration ( api trigger/INTEGRATION NAME API 5 ) in parallel to gather detailed metadata for that API, including operations, revisions, specifications, and deployments."
+        ]
+      },
+      {
+        "title": "\"Auto-register APIs from Google Cloud projects \\_|\\_ Apigee \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies",
+        "source_id": "site-docs-reference-2",
+        "final_score": 96,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Supported Google Cloud services Auto-registration is currently supported for the following Google Cloud services: Google Cloud service Ingested data Apigee and Apigee hybrid Deployed API proxies and their associated OpenAPI specifications API Gateway Gateway definitions and managed endpoints Project associations and plugins Deprecated: Pull-based ingestion is no longer supported for Apigee and Apigee hybrid plugins as of July 31, 2025 .",
+          "During this process, API hub automatically discovers deployed APIs within the project and creates the necessary plugin instances in API hub to manage data ingestion.",
+          "When this option is selected, API hub automatically creates the necessary plugin instance to manage the metadata import."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "clusterrole.yaml",
+      "crd.csv",
+      "extensions.istio.io",
+      "gateway.networking.k8s.io",
+      "gcp.workloadIdentity.enabled",
+      "helpers.tpl",
+      "integration.sh",
+      "networking.istio.io",
+      "permissions.yaml",
+      "security.istio.io",
+      "telemetry.istio.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:05.893Z",
+  "source_step08_card": "data/step-08/current/products/apigee-api-hub/card.json",
+  "product_name": "Apigee API hub",
+  "product_slug": "apigee-api-hub"
+}

@@ -1,0 +1,103 @@
+{
+  "feature_name": "Increment operation",
+  "feature_slug": "increment-operation",
+  "summary": "Cloud Firestore supports incrementing or decrementing a numeric field by a specified amount.",
+  "extended_definition": "Cloud Firestore supports incrementing or decrementing a numeric field by a specified amount.",
+  "lifecycle": {
+    "latest_feature_date": "2019-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+      "https://docs.cloud.google.com/firestore/native/docs/enterprise-index-overview",
+      "https://docs.cloud.google.com/firestore/native/docs/manage-data/delete-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Delete documents and fields \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/manage-data/delete-data",
+        "source_id": "site-docs-root-2",
+        "final_score": 29,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "FieldValue . delete () }); test . firestore . js Swift Use the FieldValue.delete() method: Note: This product is not available on watchOS and App Clip targets. do { try await db . collection ( \"cities\" ). document ( \"BJ\" ). updateData ([ \"capital\" : FieldValue . delete (), ]) print ( \"Document successfully updated\" ) } catch { print ( \"Error updating document: \\( error ) \" ) } ViewController . swift Objective-C Use the fieldValueForDelete: method: Note: This product is not available on watchOS and App Clip targets. [[[ self . db collectionWithPath : @\"cities\" ] documentWithPath : @\"BJ\" ] updateData : @{ @\"capital\" : [ FIRFieldValue fieldValueForDelete ] } completion :^ ( NSError Nullable error ) { if ( error != nil ) { NSLog ( @\"Error updating document: %@\" , error ); } else { NSLog ( @\"Document successfully updated\" ); } }]; ViewController . m Kotlin Android Use the FieldValue.delete() method: val docRef = db . collection ( \"cities\" ). document ( \"BJ\" ) // Remove the 'capital' field from the document val updates = hashMapOf<String , Any > ( \"capital\" to FieldValue . delete (), ) docRef . update ( updates ). addOnCompleteListener { } DocSnippets . kt Java Android Use the FieldValue.delete() method: DocumentReference docRef = db . collection ( \"cities\" ). document ( \"BJ\" ); // Remove the 'capital' field from the document Map<String , Object > updates = new HashMap <> (); updates . put ( \"capital\" , FieldValue . delete ()); docRef . update ( updates ). addOnCompleteListener ( new OnCompleteListener<Void> () { // ... // ...",
+          "DocSnippets.java Dart Use the FieldValue.delete() method: final docRef = db . collection ( \"cities\" ). doc ( \"BJ\" ); // Remove the 'capital' field from the document final updates = < String , dynamic > { \"capital\" : FieldValue . delete (), }; docRef . update ( updates ); firestore . dart Java Use the FieldValue.delete() method: DocumentReference docRef = db . collection ( \"cities\" ). document ( \"BJ\" ); Map<String , Object > updates = new HashMap <> (); updates . put ( \"capital\" , FieldValue . delete ()); // Update and delete the \"capital\" field in the document ApiFuture<WriteResult> writeResult = docRef . update ( updates ); System . out . println ( \"Update time : \" + writeResult . get ()); ManageDataSnippets . java Python Use the firestore.DELETE FIELD method: city ref = db . collection ( \"cities\" ) . document ( \"BJ\" ) city ref . update ({ \"capital\" : firestore .",
+          "Delete fields To delete specific fields from a document, use the following language-specific FieldValue.delete() methods when you update a document: Web version 9 Use the deleteField() method: import { doc , updateDoc , deleteField } from \"firebase/firestore\" ; const cityRef = doc ( db , 'cities' , 'BJ' ); // Remove the 'capital' field from the document await updateDoc ( cityRef , { capital : deleteField () }); update delete field . js Web version 8 Use the FieldValue.delete() method: var cityRef = db . collection ( 'cities' ). doc ( 'BJ' ); // Remove the 'capital' field from the document var removeCapital = cityRef . update ({ capital : firebase . firestore ."
+        ]
+      },
+      {
+        "title": "\"Enterprise edition index overview \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/enterprise-index-overview",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 29,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enterprise edition index overview Preview — Firestore in Native mode (with Pipeline Operations) for Enterprise Edition This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "If the data of the indexed fields contains duplicate values and you attempt to create a unique index, then the index build fails with an error message in the operation details.",
+          "However, index entries increase storage costs and the amount of work done during a write operation on indexed fields."
+        ]
+      },
+      {
+        "title": "\"Overview of Key Visualizer \\_|\\_ Firestore in Native mode \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+        "source_id": "site-docs-reference",
+        "final_score": 29,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "These can be single-field indexes or composite indexes.For example, the following indexes are some examples of index keys as seen on the Key Visualizer tool: COLLECTION: projects/PROJECT ID/databases/default/documents/Users PROPERTIES: (timestamp: ASC) VALUES: (1686162996397845) DOCUMENT: projects/PROJECT ID/databases/default/documents/Users/QstCrsaGuq9ybj81dNse COLLECTION: projects/PROJECT ID/databases/default/documents/Users PROPERTIES: (Timestamp: ASC, Name: ASC,Country: ARRAY) VALUES: (16500000000000001L, 'Alice', 'USA') DOCUMENT: (projects/PROJECT ID/databases/default/documents/Users/5000000000000001) Scan eligibility Each Key Visualizer scan covers a two hour period.",
+          "Metrics The following metrics are available for document keys in Key Visualizer scans: Metrics Description Activity metrics Ops/s Average number of document operations per second.",
+          "Home Documentation Databases Firestore in Native mode Guides Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "firestore.Delete",
+      "firestore.DELETE",
+      "indexes.For"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/enterprise-index-overview",
+        "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/delete-data"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:05.644Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore"
+}

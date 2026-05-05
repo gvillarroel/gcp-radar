@@ -1,0 +1,108 @@
+{
+  "feature_name": "Scheduled delivery filename time zone",
+  "feature_slug": "scheduled-delivery-filename-time-zone",
+  "summary": "Scheduled delivery filenames for SFTP and S3 destinations now use the delivery time zone in their timestamp.",
+  "extended_definition": "Scheduled delivery filenames for SFTP and S3 destinations now use the delivery time zone in their timestamp.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Admin settings - Scheduled Emails \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 123,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Old Emailed Data Policy What Gets Delivered New Emailed Data Policy What Gets Delivered Send Link Only Link back to Looker content Send Data Only Existing Schedules : An embedded data visualization or file attachment replaces the link New Deliveries : Embedded data or a file attachment Send Link Only Link back to Looker content Send Links and Data Existing Schedules : Embedded data or a file attachment and option to include links automatically selected New Deliveries : Embedded data or a file attachment and option to include links automatically selected Send Data Only Embedded data or a file attachment Send Link Only Existing Schedules : Link back to Looker content replaces embedded; no file is attached New Deliveries : Link back to Looker content Send Data Only Embedded data or a file attachment Send Links and Data Existing Schedules : Embedded data or a file attachment and option to include links automatically selected New Deliveries : Embedded data or a file attachment and option to include links automatically selected Send Links and Data Embedded data or a file attachment and option to include links back to Looker content Send Link Only Existing Schedules : Link back to Looker content New Deliveries : Link back to Looker content Send Links and Data Embedded data or a file attachment and option to include links back to Looker content Send Data Only Existing Schedules : Embedded data or a file attachment New Deliveries : Embedded data or a file attachment Switching deliveries to Send Link Only If you are switching to the Send Link Only option, all new one-time and scheduled email deliveries will be sent containing only links back to Looker and the title of the Looker content, rather than embedded or attached Looker content.",
+          "Changing your emailed data policy option Although your Looker instance will have a default emailed data policy option selected based on the instance's settings prior to an update to Looker 7.8, Looker admins can change this default setting at any time by navigating to the Scheduled Emails page in the Admin panel under Alerts & Schedules .",
+          "The Scheduled Emails page, accessible from the Admin panel under Alerts & Schedules , lets Looker admins set a data sharing policy that applies to all new and existing one-time and scheduled email deliveries that use Looker 's native email destination."
+        ]
+      },
+      {
+        "title": "Admin settings - General settings \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "source_id": "site-docs-reference",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "The time zone used for schedules does not affect time data returned by a query; it affects only the time a data delivery is sent.",
+          "Looker Support requires permission from a technical contact to do any of the following: Cause downtime for the instance, which could be due to a non-scheduled version update, performance changes to your Looker server, or other reasons Change something about your Looker license, possibly to enable new features for you.",
+          "When User Specific Time Zones is enabled, each user is assigned a time zone, and Looker converts time-based data from the Database Time Zone to a user's time zone when the user views query results or interprets filters."
+        ]
+      },
+      {
+        "title": "\"Introduction to Cloud Storage transfers \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 89,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, gs://bucket/dir doesn't match on gs://bucket/dir/file.csv nor gs://bucket/file.csv However, you can use multiple wildcards for filenames within buckets.",
+          "The user then creates an incremental transfer from the Cloud Storage bucket, scheduled to run once daily at time 03:00Z, starting from 2023-07-01T03:00Z.",
+          "In the case of a failed transfer, you can also choose to manually trigger a transfer outside its regularly scheduled time."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "file.csv"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:23.337Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker"
+}

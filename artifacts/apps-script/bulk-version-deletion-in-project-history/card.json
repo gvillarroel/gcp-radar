@@ -1,0 +1,90 @@
+{
+  "feature_name": "Bulk version deletion in project history",
+  "feature_slug": "bulk-version-deletion-in-project-history",
+  "summary": "Bulk version deletion in project history lets users delete multiple unused script versions at once.",
+  "extended_definition": "Bulk version deletion in project history lets users delete multiple unused script versions at once.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/api/reference/rest/v1/projects.versions/create",
+      "https://developers.google.com/apps-script/api/reference/rest/v1/projects.versions/get",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "December 06, 2023 Feature ( Generally available ): You can now delete versions in your Apps Script project from the project history page in the Apps Script IDE.",
+          "March 07, 2024 Feature (Generally Available) : You can now delete multiple unused versions at the same time from the Project History page.",
+          "To learn more, refer to the following: Google Workspace Updates blog : View & compare script versions with Apps Script project history Developer documentation : Versions June 12, 2023 Feature Third-party smart chips and link previews are now generally available."
+        ]
+      },
+      {
+        "title": "Method: projects.versions.create \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/api/reference/rest/v1/projects.versions/create",
+        "source_id": "site-api-reference",
+        "final_score": 112,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Apps Script Reference Send feedback Method: projects.versions.create Stay organized with collections Save and categorize content based on your preferences.",
+          "Page Summary outlined flag A new immutable version of a script project is created using a POST request to a specific URL.",
+          "HTTP request POST https://script.googleapis.com/v1/projects/{scriptId}/versions The URL uses gRPC Transcoding syntax."
+        ]
+      },
+      {
+        "title": "Method: projects.versions.get \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/api/reference/rest/v1/projects.versions/get",
+        "source_id": "site-api-reference",
+        "final_score": 112,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Apps Script Reference Send feedback Method: projects.versions.get Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request GET https://script.googleapis.com/v1/projects/{scriptId}/versions/{versionNumber} The URL uses gRPC Transcoding syntax.",
+          "Page Summary outlined flag This page details how to get a specific version of an Apps Script project using a REST API request."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "projects.deployments",
+      "projects.deployments.delete",
+      "projects.versions",
+      "projects.versions.create",
+      "projects.versions.get",
+      "projects.versions.list",
+      "script.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:15.255Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script"
+}

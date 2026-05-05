@@ -1,0 +1,114 @@
+{
+  "feature_name": "Spot VMs on GKE",
+  "feature_slug": "spot-vms-on-gke",
+  "summary": "Spot VMs let you run fault-tolerant workloads on GKE at lower cost; Spot VMs provide lower-cost, interruptible compute for GKE workloads.",
+  "extended_definition": "Spot VMs let you run fault-tolerant workloads on GKE at lower cost; Spot VMs provide lower-cost, interruptible compute for GKE workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Node upgrade strategies \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies",
+        "source_id": "site-docs-reference-2",
+        "final_score": 85,
+        "relevance": "",
+        "evidence_snippets": [
+          "Tune surge upgrade settings to balance speed and disruption The following table describes four different upgrade profiles as examples to help you understand different configurations: Description Configuration Typical use case Balanced (Default), slower but least disruptive maxSurge=1 maxUnavailable=0 Most workloads Fast, no surge resources, most disruptive maxSurge=0 maxUnavailable=20 Large node pools after jobs have to run to completion Fast, most surge resources and less disruptive maxSurge=20 maxUnavailable=0 Large node pools Slowest, disruptive, no surge resources maxSurge=0 maxUnavailable=1 Resource-constrained node pool with reservation Balanced (Default) The simplest way to take advantage of surge upgrades is to use the default configuration, maxSurge=1;maxUnavailable=0.",
+          "Blue-green upgrades are optimal for the following scenarios: if you want a gradual rollout where risk mitigation is most important, where graceful termination greater than 60 minutes is needed. if your workloads are less tolerant of disruptions. if a temporary cost increase due to higher resource usage is acceptable.",
+          "Surge upgrades are optimal for the following scenarios: if you want to optimize for the speed of upgrades. if workloads are more tolerant of disruptions, where graceful termination up to 60 minutes is acceptable. if you want to control costs by minimizing the creation of new nodes."
+        ]
+      },
+      {
+        "title": "\"About GKE cluster autoscaling \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler",
+        "source_id": "site-docs-reference-2",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "It is the default location policy for flex-start provisioning mode and node pools that use Spot VMs, but you can also use it for node pools using reservations or on-demand nodes.",
+          "This policy is the default location policy for node pools using reservations or on-demand nodes, but you can also use it for Spot VMs.",
+          "Default values For Spot VMs node pools, the default cluster autoscaler distribution policy is ANY ."
+        ]
+      },
+      {
+        "title": "\"GKE Autopilot overview \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 77,
+        "relevance": "",
+        "evidence_snippets": [
+          "Run fault-tolerant workloads such as batch jobs at lower costs.",
+          "Networking : Autopilot enables some networking security features by default, such as passing all Pod network traffic through your Virtual Private Cloud firewall rules, even if the traffic is going to other Pods in the cluster.",
+          "Resource management : if you deploy workloads without setting resource values such as CPU and memory, Autopilot automatically sets pre-configured default values and modifies your resource requests at the workload level."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:15.353Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

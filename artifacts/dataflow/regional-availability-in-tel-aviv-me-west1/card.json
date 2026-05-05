@@ -1,0 +1,86 @@
+{
+  "feature_name": "Regional availability in Tel Aviv (me-west1)",
+  "feature_slug": "regional-availability-in-tel-aviv-me-west1",
+  "summary": "This feature makes Dataflow available in the Tel Aviv region me-west1.",
+  "extended_definition": "This feature makes Dataflow available in the Tel Aviv region me-west1.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/concepts/regional-endpoints",
+      "https://docs.cloud.google.com/dataflow/docs/guides/specifying-exec-params",
+      "https://docs.cloud.google.com/dataflow/docs/resources/locations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Dataflow locations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/resources/locations",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "Region description Region name Doha me-central1 Dammam, Saudi Arabia me-central2 Tel Aviv me-west1 Africa The following table lists the regions in Africa where Dataflow is available.",
+          "Regional availability You can use Dataflow workers, endpoints, Streaming Engine, Shuffle, and FlexRS in supported regions.",
+          "Region description Region name Montréal northamerica-northeast1 Toronto northamerica-northeast2 Queretaro, Mexico northamerica-south1 São Paulo southamerica-east1 Santiago southamerica-west1 Iowa us-central1 South Carolina us-east1 Northern Virginia us-east4 Columbus, Ohio us-east5 Oregon us-west1 Los Angeles, California us-west2 Salt Lake City, Utah us-west3 Las Vegas, Nevada us-west4 Dallas, Texas us-south1 Asia Pacific The following table lists the regions in Asia Pacific where Dataflow is available."
+        ]
+      },
+      {
+        "title": "Dataflow regions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/concepts/regional-endpoints",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 82,
+        "relevance": "",
+        "evidence_snippets": [
+          "Regional placement offers benefits such as: Improved resource availability: Dataflow jobs are more resilient to zonal resource availability errors, because workers can continue to be created in other zones with remaining availability.",
+          "Automatic zone placement For jobs not supported for regional placement, the best zone within the region is selected automatically, based on the available zone capacity at the time of the job creation request.",
+          "Because the job is configured to run in a single zone, the operation might fail with a zonal resource availability error if sufficient Compute Engine resources are not available."
+        ]
+      },
+      {
+        "title": "Set Dataflow pipeline options \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/specifying-exec-params",
+        "source_id": "site-docs-reference-2",
+        "final_score": 63,
+        "relevance": "",
+        "evidence_snippets": [
+          "Java The following example syntax is from the WordCount pipeline in the Java tutorial . mvn -Pdataflow-runner compile exec:java \\ -Dexec.mainClass = org.apache.beam.examples.WordCount \\ -Dexec.args = \"--project= PROJECT ID \\ --gcpTempLocation=gs:// BUCKET NAME /temp/ \\ --output=gs:// BUCKET NAME /output \\ --runner=DataflowRunner \\ --region= REGION \" Replace the following: PROJECT ID : your Google Cloud project ID BUCKET NAME : the name of your Cloud Storage bucket REGION : a Dataflow region , us-central1 Python The following example syntax is from the WordCount pipeline in the Python tutorial . python -m apache beam.examples.wordcount \\ --region DATAFLOW REGION \\ --input gs://dataflow-samples/shakespeare/kinglear.txt \\ --output gs:// STORAGE BUCKET /results/outputs \\ --runner DataflowRunner \\ --project PROJECT ID \\ --temp location gs:// STORAGE BUCKET /tmp/ Replace the following: DATAFLOW REGION : the region where you want to deploy the Dataflow job—for example, europe-west1 The --region flag overrides the default region that is set in the metadata server, your local client, or environment variables.",
+          "For more information about regions, check: https://cloud.google.com/dataflow/docs/concepts/regional-endpoints beam options = PipelineOptions ( beam args , runner = 'DataflowRunner' , project = 'my-project-id' , job name = 'unique-job-name' , temp location = 'gs://my-bucket/temp' , region = 'us-central1' ) Note: Repeatable options like dataflow service options or experiments must be specified as a list of string(s). e.g. dataflow service options=['enable prime'] Create the Pipeline with the specified options. with beam .",
+          "Java This example sets the boot disk size to 80 GB with the experiment flag. --experiments = streaming boot disk size gb = 80 Python This example sets the boot disk size to 80 GB with the experiment flag. --experiments = streaming boot disk size gb = 80 Go This example sets the boot disk size to 80 GB with the experiment flag. --experiments = streaming boot disk size gb = 80 Set in a template To enable an experimental feature when running a Dataflow template, use the --additional-experiments flag."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "beam.examples.wordcount",
+      "e.g",
+      "kinglear.txt",
+      "org.apache.beam.examples.WordCount"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:53.762Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow"
+}

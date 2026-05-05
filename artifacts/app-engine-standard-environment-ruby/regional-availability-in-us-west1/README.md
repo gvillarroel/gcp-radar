@@ -1,0 +1,31 @@
+# Regional availability in us-west1
+
+Product: App Engine standard environment Ruby
+Feature slug: `regional-availability-in-us-west1`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Regional availability in us-west1 lets you create and run App Engine applications in the Oregon region.
+
+## Lifecycle
+
+- Latest feature date: 2021-06-14
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- iam (evidence: [https://docs.cloud.google.com/appengine/docs/standard/ruby/create-app](https://docs.cloud.google.com/appengine/docs/standard/ruby/create-app), [https://docs.cloud.google.com/appengine/docs/standard/locations](https://docs.cloud.google.com/appengine/docs/standard/locations), [https://docs.cloud.google.com/appengine/docs/standard/ruby/runtime](https://docs.cloud.google.com/appengine/docs/standard/ruby/runtime))
+- role (evidence: [https://docs.cloud.google.com/appengine/docs/standard/ruby/create-app](https://docs.cloud.google.com/appengine/docs/standard/ruby/create-app), [https://docs.cloud.google.com/appengine/docs/standard/locations](https://docs.cloud.google.com/appengine/docs/standard/locations), [https://docs.cloud.google.com/appengine/docs/standard/ruby/runtime](https://docs.cloud.google.com/appengine/docs/standard/ruby/runtime))
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/appengine/docs/standard/locations](https://docs.cloud.google.com/appengine/docs/standard/locations)
+- [https://docs.cloud.google.com/appengine/docs/standard/ruby/create-app](https://docs.cloud.google.com/appengine/docs/standard/ruby/create-app)
+- [https://docs.cloud.google.com/appengine/docs/standard/ruby/runtime](https://docs.cloud.google.com/appengine/docs/standard/ruby/runtime)

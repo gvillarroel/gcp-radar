@@ -1,0 +1,152 @@
+{
+  "feature_name": "Dual-region instance configurations",
+  "feature_slug": "dual-region-instance-configurations",
+  "summary": "Cloud Spanner added dual-region instance configurations for Australia, Germany, India, and Japan to support regional replication and data residency requirements.",
+  "extended_definition": "Cloud Spanner added dual-region instance configurations for Australia, Germany, India, and Japan to support regional replication and data residency requirements.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+      "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+      "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Change dual-region quorum \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "source_id": "site-docs-root",
+        "final_score": 196,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json ` -Uri \"https://monitoring.googleapis.com/v3/projects/ PROJECT ID /timeSeries\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"timeSeries\": [ { \"metric\": { \"type\": \"spanner.googleapis.com/instance/dual region quorum availability\" }, \"resource\": { \"type\": \"spanner instance\", \"labels\": { \"project id\": \"spanner-project\", \"location\": \"australia-southeast1\" } }, \"metricKind\": \"GAUGE\", \"valueType\": \"DOUBLE\", \"points\": [ { \"interval\": { \"startTime\": \"2024-07-11T05:41:23Z\", \"endTime\": \"2024-07-11T05:41:23Z\" }, \"value\": { \"doubleValue\": 1 } } ] } ], \"unit\": \"10^2.%\" } If you don't see a similar response, your region might not be healthy, and you might need to change the dual-region quorum from dual-region to single region . gcloud CLI Download the dual-region-quorum-health-check-script.sh file.",
+          "The quorumInfo field provides information about the operation. gcloud spanner databases describe DATABASE ID --instance= INSTANCE ID What's next Learn more about Dual-region instance configurations .",
+          "For more information about dual-regions, see Spanner Dual-region instance configurations ."
+        ]
+      },
+      {
+        "title": "Autoscaler tool overview \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+        "source_id": "site-docs-root",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "The preprocessing done by the Poller also simplifies the process of evaluating thresholds for regional, dual-region, and multi-regional Spanner instances.",
+          "Multi-regional, dual-region, and regional instances all have different utilization thresholds that are used when scaling.",
+          "Custom thresholds The Autoscaler tool determines the number of nodes or processing units to be added or subtracted to an instance using the recommended Spanner thresholds for the following load metrics: High priority CPU 24-hour rolling average CPU Storage utilization We recommend that you use the default thresholds as described in Creating alerts for Spanner metrics ."
+        ]
+      },
+      {
+        "title": "\"Create a Spanner free trial instance and sample application \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "For a full list of all available instance configurations, see Regional, dual-region, and multi-region configurations .",
+          "You can create a free trial instance in any of the Spanner regional instance configurations : INSTANCE DESCRIPTION : the name to display for the instance in the Google Cloud console.",
+          "You can create a free trial instance in any of the Spanner regional instance configurations ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aggregation.alignmentPeriod",
+      "aggregation.crossSeriesReducer",
+      "aggregation.groupByFields",
+      "aggregation.perSeriesAligner",
+      "interval.endTime",
+      "interval.startTime",
+      "metric.labels.quorum",
+      "metric.type",
+      "monitoring.googleapis.com",
+      "request.json",
+      "resource.labels.location",
+      "script.sh",
+      "spanner.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:37.939Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

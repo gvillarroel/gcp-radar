@@ -1,0 +1,117 @@
+{
+  "feature_name": "HIPAA compliance coverage",
+  "feature_slug": "hipaa-compliance-coverage",
+  "summary": "Cloud Run is covered by HIPAA compliance requirements.",
+  "extended_definition": "Cloud Run is covered by HIPAA compliance requirements.",
+  "lifecycle": {
+    "latest_feature_date": "2019-10-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2",
+      "https://docs.cloud.google.com/run/docs/reference/rest/v1/Container",
+      "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Tutorial: Local troubleshooting of a Cloud Run service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 39,
+        "relevance": "",
+        "evidence_snippets": [
+          "System . err . println ( \"Environment validation failed.\" ); String msg = \"Missing required server parameter\" ; logger . error ( msg , new Exception ( msg )); res . status ( 500 ); return \"Internal Server Error\" ; } Examining this code, the following actions are taken when the NAME environment variable is not set: An error is logged to Google Cloud Observability An HTTP error response is sent The problem is caused by a missing variable, but the root cause is more specific: the code change adding the hard dependency on an environment variable did not include related changes to deployment scripts and runtime requirements documentation.",
+          "Python Create a new hello-service directory: mkdir hello-service cd hello-service Create a requirements.txt file and copy your dependencies into it: Flask == 3.0.3 pytest == 8.2.0 ; python version > \"3.0\" pin pytest to 4.6.11 for Python2. pytest == 4.6.11 ; python version < \"3.0\" gunicorn == 23.0.0 Werkzeug == 3.0.3 Go Create a new hello-service directory: mkdir hello-service cd hello-service Create a Go project by initializing a new go module : go mod init example . com / hello - service You can update the specific name as you wish: you should update the name if the code is published to a web-reachable code repository.",
+          "To clear the environment variables set earlier: gcloud run services update hello-service --clear-env-vars Add the new functionality for the default value to automated test coverage for the service."
+        ]
+      },
+      {
+        "title": "Container \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/reference/rest/v1/Container",
+        "source_id": "site-api-reference",
+        "final_score": 38,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"name\" : string , \"image\" : string , \"command\" : [ string ] , \"args\" : [ string ] , \"env\" : [ { object ( EnvVar ) } ] , \"resources\" : { object ( ResourceRequirements ) } , \"workingDir\" : string , \"ports\" : [ { object ( ContainerPort ) } ] , \"envFrom\" : [ { object ( EnvFromSource ) } ] , \"volumeMounts\" : [ { object ( VolumeMount ) } ] , \"livenessProbe\" : { object ( Probe ) } , \"readinessProbe\" : { object ( Probe ) } , \"startupProbe\" : { object ( Probe ) } , \"terminationMessagePath\" : string , \"terminationMessagePolicy\" : string , \"imagePullPolicy\" : string , \"securityContext\" : { object ( SecurityContext ) } } Fields name string Name of the container specified as a DNS LABEL (RFC 1123). image string Required.",
+          "JSON representation EnvVar JSON representation EnvVarSource JSON representation ConfigMapKeySelector JSON representation SecretKeySelector JSON representation ResourceRequirements JSON representation ContainerPort JSON representation EnvFromSource JSON representation ConfigMapEnvSource JSON representation SecretEnvSource JSON representation VolumeMount JSON representation Probe JSON representation ExecAction JSON representation HTTPGetAction JSON representation HTTPHeader JSON representation TCPSocketAction JSON representation GRPCAction JSON representation SecurityContext JSON representation A single application container.",
+          "For non-secret EnvVar names, the Container will only get the last-declared one. resources object ( ResourceRequirements ) Compute Resources required by this container. workingDir string Container's working directory."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.run.v2 (0.88.0) \\_|\\_ Java client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2",
+        "source_id": "site-java-reference",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": [
+          "Resource Requirements ResourceRequirements describes the compute resource requirements. com. google. cloud. run. v2.",
+          "Builder ResourceRequirements describes the compute resource requirements. com. google. cloud. run. v2.",
+          "Resource Requirements Or Builder com. google. cloud. run. v2."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.run.v2",
+      "requirements.txt"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/reference/rest/v1/Container",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/reference/rest/v1/Container",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/reference/rest/v1/Container",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/reference/rest/v1/Container",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:35.569Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run"
+}

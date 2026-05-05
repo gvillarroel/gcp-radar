@@ -1,0 +1,146 @@
+{
+  "feature_name": "Certificate issuance backdating",
+  "feature_slug": "certificate-issuance-backdating",
+  "summary": "Issuance policies now support a backdate_duration field that sets certificate not_before_time to an earlier time relative to issuance while preserving requested lifetime.",
+  "extended_definition": "Issuance policies now support a backdate_duration field that sets certificate not_before_time to an earlier time relative to issuance while preserving requested lifetime.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/certificate-authority-service/docs/known-limitations",
+      "https://docs.cloud.google.com/certificate-authority-service/docs/tutorials/using-3pi-with-reflection",
+      "https://docs.cloud.google.com/certificate-authority-service/docs/use-issuance-policy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Add certificate issuance policies | Certificate Authority Service | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/certificate-authority-service/docs/use-issuance-policy",
+        "source_id": "feature-recovery-http",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example : Allow only SANs having DNS Names as us.google.org or ending in .google.com . policy.yaml identityConstraints : allowSubjectPassthrough : false allowSubjectAltNamesPassthrough : true celExpression : expression : 'subject_alt_names.all(san, san.type == DNS && (san.value == \"us.google.org\" || san.value.endsWith(\".google.com\")) )' Example : Allow only SANs having URIs https://google.com/webhp or starting with spiffe://example-trust-domain-1/ns/namespace1/sa/ . policy.yaml identityConstraints : allowSubjectPassthrough : false allowSubjectAltNamesPassthrough : true celExpression : expression : 'subject_alt_names.all(san, san.type == URI && (san.value == \"https://google.com/webhp\" || san.value.startsWith(\"spiffe://example-trust-domain-1/ns/namespace1/sa/\")) )' Example : Allow only SANs having email addresses example@google.com or ending with @google.org . policy.yaml identityConstraints : allowSubjectPassthrough : false allowSubjectAltNamesPassthrough : true celExpression : expression : 'subject_alt_names.all(san, san.type == EMAIL && (san.value == \"example@google.com\" || san.value.endsWith(\"@google.org\")) )' Example : Allow only custom SANs having a specific OID and a custom value. policy.yaml identityConstraints : allowSubjectPassthrough : false allowSubjectAltNamesPassthrough : true celExpression : expression : 'subject_alt_names.all(san, san.type == CUSTOM && san.oid == [1, 2, 3, 4] && san.value == \"custom-data\" )' Restrict backdate duration of the issued certificates To set a past not_before_time for issued certificates, use the backdate_duration field.",
+          "The backdate_duration must be less than or equal to 48 hours.",
+          "Example : Allow only CSR issuance. policy.yaml allowedIssuanceModes : allowCsrBasedIssuance : True allowConfigBasedIssuance : False Restrict the public key algorithms of the certificate request To restrict the minimum key length and the public key algorithms that certificates can use, you can use the allowedKeyTypes field in the certificate issuance policy YAML file."
+        ]
+      },
+      {
+        "title": "\"Issue certificates that attest to third-party identity \\_|\\_ Certificate\\",
+        "url": "https://docs.cloud.google.com/certificate-authority-service/docs/tutorials/using-3pi-with-reflection",
+        "source_id": "site-iam-reference",
+        "final_score": 58,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Known limitations \\_|\\_ Certificate Authority Service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/certificate-authority-service/docs/known-limitations",
+        "source_id": "site-docs-root",
+        "final_score": 54,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "policy.yaml",
+      "san.oid",
+      "san.type",
+      "san.value",
+      "san.value.endsWith",
+      "san.value.startsWith",
+      "us.google.org"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/use-issuance-policy",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/tutorials/using-3pi-with-reflection",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/known-limitations"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/use-issuance-policy",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/tutorials/using-3pi-with-reflection",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/known-limitations"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/use-issuance-policy",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/tutorials/using-3pi-with-reflection",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/known-limitations"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/use-issuance-policy",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/tutorials/using-3pi-with-reflection",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/known-limitations"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/use-issuance-policy",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/tutorials/using-3pi-with-reflection",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/known-limitations"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/use-issuance-policy",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/tutorials/using-3pi-with-reflection",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/known-limitations"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/use-issuance-policy",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/tutorials/using-3pi-with-reflection",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/known-limitations"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/use-issuance-policy",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/tutorials/using-3pi-with-reflection",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/known-limitations"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:26.467Z",
+  "source_step08_card": "data/step-08/current/products/certificate-authority-service/card.json",
+  "product_name": "Certificate Authority Service",
+  "product_slug": "certificate-authority-service"
+}

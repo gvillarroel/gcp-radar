@@ -1,0 +1,143 @@
+{
+  "feature_name": "$filter aggregation operator",
+  "feature_slug": "filter-aggregation-operator",
+  "summary": "Supports the $filter aggregation operator.",
+  "extended_definition": "Supports the $filter aggregation operator.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+      "https://docs.cloud.google.com/firestore/native/docs/query-data/queries"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Query and filter data \\_|\\_ Firestore in Native mode \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/query-data/queries",
+        "source_id": "site-docs-root-2",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "Query operators The where() method takes three parameters: a field to filter on, a comparison operator, and a value.",
+          "Array membership You can use the array-contains operator to filter based on array values.",
+          "Id ); } Program . cs Ruby cities ref = firestore . col collection path query = cities ref . where \"capital\" , \"=\" , true query . get do city puts \"Document #{ city . document id } returned by query capital=true.\" end query data . rb Execute a query After creating a query object, use the get() function to retrieve the results: Web version 9 import { collection , query , where , getDocs } from \"firebase/firestore\" ; const q = query ( collection ( db , \"cities\" ), where ( \"capital\" , \"==\" , true )); const querySnapshot = await getDocs ( q ); querySnapshot . forEach (( doc ) = > { // doc.data() is never undefined for query doc snapshots console . log ( doc . id , \" => \" , doc . data ()); }); get multiple . js Web version 8 Learn more about the tree-shakeable modular Web API and its advantages over the namespaced API. db . collection ( \"cities\" ). where ( \"capital\" , \"==\" , true ) . get () . then (( querySnapshot ) = > { querySnapshot . forEach (( doc ) = > { // doc.data() is never undefined for query doc snapshots console . log ( doc . id , \" => \" , doc . data ()); }); }) . catch (( error ) = > { console . log ( \"Error getting documents: \" , error ); }); test . firestore . js Swift Note: This product is not available on watchOS and App Clip targets. do { let querySnapshot = try await db . collection ( \"cities\" ). whereField ( \"capital\" , isEqualTo : true ) . getDocuments () for document in querySnapshot . documents { print ( \" \\( document . documentID ) => \\( document . data ()) \" ) } } catch { print ( \"Error getting documents: \\( error ) \" ) } ViewController . swift Objective-C Note: This product is not available on watchOS and App Clip targets. [[[ self . db collectionWithPath : @\"cities\" ] queryWhereField : @\"capital\" isEqualTo : @( YES ) ] getDocumentsWithCompletion : ^ ( FIRQuerySnapshot snapshot , NSError error ) { if ( error != nil ) { NSLog ( @\"Error getting documents: %@\" , error ); } else { for ( FIRDocumentSnapshot document in snapshot . documents ) { NSLog ( @\"%@ => %@\" , document . documentID , document . data ); } } }]; ViewController . m Kotlin Android db . collection ( \"cities\" ) . whereEqualTo ( \"capital\" , true ) . get () . addOnSuccessListener { documents - > for ( document in documents ) { Log . d ( TAG , \" ${ document . id } => ${ document . data } \" ) } } . addOnFailureListener { exception - > Log . w ( TAG , \"Error getting documents: \" , exception ) } DocSnippets . kt Java Android db . collection ( \"cities\" ) . whereEqualTo ( \"capital\" , true ) . get () . addOnCompleteListener ( new OnCompleteListener<QuerySnapshot> () { @Override public void onComplete ( @NonNull Task<QuerySnapshot> task ) { if ( task . isSuccessful ()) { for ( QueryDocumentSnapshot document : task . getResult ()) { Log . d ( TAG , document . getId () + \" => \" + document . getData ()); } } else { Log . d ( TAG , \"Error getting documents: \" , task . getException ()); } } }); DocSnippets . java Dart db . collection ( \"cities\" ). where ( \"capital\" , isEqualTo: true ). get (). then ( ( querySnapshot ) { print ( \"Successfully completed\" ); for ( var docSnapshot in querySnapshot . docs ) { print ( ' ${ docSnapshot . id } => ${ docSnapshot . data () } ' ); } }, onError: ( e ) = > print ( \"Error completing: $ e \" ), ); firestore . dart Java // asynchronously retrieve multiple documents ApiFuture<QuerySnapshot> future = db . collection ( \"cities\" ). whereEqualTo ( \"capital\" , true ). get (); // future.get() blocks on response List<QueryDocumentSnapshot> documents = future . get (). getDocuments (); for ( DocumentSnapshot document : documents ) { System . out . println ( document . getId () + \" => \" + document . toObject ( City . class )); } RetrieveDataSnippets . java Python Note: Use of CollectionRef stream() is prefered to get() docs = ( db . collection ( \"cities\" ) . where ( filter = FieldFilter ( \"capital\" , \"==\" , True )) . stream () ) for doc in docs : print ( f \" { doc . id } => { doc . to dict () } \" ) snippets . py Python (Async) Note: Use of CollectionRef stream() is prefered to get() docs = ( db . collection ( \"cities\" ) . where ( filter = FieldFilter ( \"capital\" , \"==\" , True )) . stream () ) async for doc in docs : print ( f \" { doc . id } => { doc . to dict () } \" ) snippets . py C++ db - > Collection ( \"cities\" ) ."
+        ]
+      },
+      {
+        "title": "\"Supported features: 8.0 \\_|\\_ Firestore with MongoDB compatibility \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "source_id": "site-docs-root",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "Operator Supported $abs Yes $add Yes $ceil Yes $divide Yes $exp Yes $floor Yes $ln Yes $log Yes $log10 Yes $mod Yes $multiply Yes $pow Yes $round Yes $sqrt Yes $subtract Yes $trunc Yes Array operators Operator Supported $arrayElemAt Yes $arrayToObject Yes $concatArrays Yes $filter Yes $firstN Yes $in Yes $indexOfArray Yes $isArray Yes $lastN Yes $map Yes $maxN Yes $minN Yes $objectToArray Yes $range Yes $reduce Yes $reverseArray Yes $size Yes $slice Yes $sortArray Yes $zip Yes Boolean operators Operator Supported $and Yes $not Yes $or Yes Comparison operators Operator Supported $cmp Yes $eq Yes $gt Yes $gte Yes $lt Yes $lte Yes $ne Yes Conditional expression operators Operator Supported $cond Yes $ifNull Yes $switch Yes Data size operators Operator Supported $binarySize Yes $bsonSize Yes Date operators Operator Supported $dateAdd Yes $dateDiff Yes $dateFromParts Yes $dateFromString Yes $dateSubtract Yes $dateToParts Yes $dateToString Yes $dateTrunc Yes $dayOfMonth Yes $dayOfWeek Yes $dayOfYear Yes $hour Yes $isoDayOfWeek Yes $isoWeek Yes $isoWeekYear Yes $millisecond Yes $minute Yes $month Yes $second Yes $toDate Yes $week Yes $year Yes Timestamp operators Operator Supported $tsIncrement No $tsSecond No Miscellaneous operators Operator Supported $getField Yes $natural Yes (ascending) $rand Yes $sampleRate No $toHashedIndexKey No Literal expression operators Operator Supported $literal Yes Object operators Operator Supported $mergeObjects Yes $objectToArray Yes $setField No Set operators Operator Supported $allElementsTrue Yes $anyElementTrue Yes $setDifference Yes $setEquals Yes $setIntersection Yes $setIsSubset Yes $setUnion Yes Stage operators Operator Supported $addFields Yes $bucket Yes $bucketAuto No $changeStream No $collStats No $count Yes $currentOp No $documents Yes $facet Yes $geoNear No $graphLookup No $group Yes $indexStats No $limit Yes $listLocalSessions No $listSessions No $lookup Yes $match Yes $merge No $out No $planCacheStats No $project Yes $redact No $replaceRoot Yes $replaceWith Yes $sample Yes $set Yes $search No $setWindowFields No $skip Yes $sort Yes $sortByCount Yes $unionWith Yes $unset Yes $unwind Yes String operators Operator Supported $concat Yes $dateFromString Yes $dateToString Yes $indexOfBytes Yes $indexOfCP Yes $ltrim Yes $regexFind Yes $regexFindAll Yes $regexMatch Yes $replaceAll Yes $replaceOne Yes $rtrim Yes $split Yes $strcasecmp Yes $strLenBytes Yes $strLenCP Yes $substr Yes $substrBytes Yes $substrCP Yes $toLower Yes $toString Yes $toUpper Yes $trim Yes System variables Variable Supported $$CLUSTERTIME No $$CURRENT No $$DESCEND No $$KEEP No $$NOW Yes $$PRUNE No $$REMOVE Yes $$ROOT Yes Text operators Operator Supported $meta No Trigonometry operators Operator Supported $acos No $acosh No $asin No $asinh No $atan No $atan2 No $atanh No $cos No $cosh No $degreesToRadians No $radiansToDegrees No $sin No $sinh No $tan No $tanh No Type operators Operator Supported $convert Yes $isNumber Yes $toBool Yes $toDate Yes $toDecimal Yes $toDouble Yes $toInt Yes $toLong Yes $toObjectId Yes $toString Yes $type Yes Variable operators Operator Supported $let Yes Geospatial Firestore with MongoDB compatibility supports the following Geospatial operators.",
+          "Array operators Operator Supported $ Yes $[] Yes $[<identifier>] Yes $addToSet Yes $percentile Yes $pop Yes $pull Yes $pullAll Yes $push Yes Bitwise operators Operator Supported $bit Yes Field operators Operator Supported $currentDate Yes $inc Yes $max Yes $min Yes $mul Yes $rename Yes $set Yes $setOnInsert Yes $unset Yes Update modifiers Modifier Supported $each Yes $position Yes $slice Yes $sort Yes Aggregation pipeline operators Firestore with MongoDB compatibility supports the following aggregation pipeline operators.",
+          "Query and projection operators Firestore with MongoDB compatibility supports the following query and projection operators: Array operators Operator Supported $all Yes $elemMatch Yes $size Yes Bitwise operators Operator Supported $bitsAllClear No $bitsAllSet No $bitsAnyClear No $bitsAnySet No Comment operator Operator Supported $comment No Comparison operators Operator Supported $eq Yes $gt Yes $gte Yes $in Yes $lt Yes $lte Yes $ne Yes $nin Yes Element operators Operator Supported $exists Yes $type Yes Evaluation query operators Operator Supported $expr Yes $jsonSchema No $mod Yes $regex Yes $text No $where No Logical operators Operator Supported $and Yes $nor Yes $not Yes $or Yes Projection operators Operator Supported $ Yes $elemMatch Yes $meta Partial (supports textScore) $slice Yes Update operators Firestore with MongoDB compatibility supports the following update operators."
+        ]
+      },
+      {
+        "title": "\"Behavior differences \\_|\\_ Firestore with MongoDB compatibility \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences",
+        "source_id": "site-iam-reference",
+        "final_score": 77,
+        "relevance": "",
+        "evidence_snippets": [
+          "Read concern Firestore with MongoDB compatibility supports the snapshot , majority , and linearizable read concerns.",
+          "See the commands section for a complete list of supported stages and operators.",
+          "Queries and writes Command Unsupported Fields find max min returnKey showRecordId tailable oplogReplay noCursorTimeout awaitData allowPartialResults collation allowDiskUsage let aggregate collation let insert (none) update Within an update statement: collation delete Within a delete statement: collation findAndModify collation let count collation distinct collation getMore comment killCursors (none) explain (none) Transactions and sessions Command Unsupported Fields commitTransaction (none) abortTransaction (none) endSessions (none) Administration Command Unsupported Fields Notes listDatabases authorizedDatabases filter must be empty if provided. listCollections (none) authorizedCollections must be false if provided. listIndexes (none) createIndexes (none) dropIndexes (none) createCollection timeseries expireAfterSeconds clusteredIndex changeStreamPreAndPostImages size max storageEngine validator validationLevel validationAction indexOptionDefaults viewOn pipeline collation encryptedFields This command is a no-op. capped must be false if provided."
+        ]
+      },
+      {
+        "title": "\"Query execution reference \\_|\\_ Firestore with MongoDB compatibility \\_\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 63,
+        "relevance": "",
+        "evidence_snippets": [
+          "This node does not deduplicate results that appear in multiple children, and the order of returned results is nondeterministic. • Concat ├── • Fetch ... ├── • Fetch Compute Evaluates a set of expressions, assigning the results to a set of variables. • Compute $user 1: user $full name 1: str concat($first name 1, \" \", $last name 1) $address 1: UNSET records returned: 1 Filter Selectively returns rows if and only if they match the supplied expression. • Filter expression: $eq(foo, \"bar\") records returned: 1 RecordCount Counts the number of rows produced by the child node and emits the current count to the variable specified in the count attribute. • RecordCount count: $row number 1 records returned: 1 Values Produces a sequence of literal values to work on.",
+          "For example, a query where user equals $user id and date placed equals \"2025-08-10\" running on an index of [\"user\" ASC, \"date placed\" ASC] , would use the value of the $user id variable at runtime and the \"2025-08-10\" constraint on date placed to restrict the scan ranges. • IndexSeek index: type=CollectionGroupIndex, id=CAE, keys=[user ASC, date placed ASC, key ASC] fields: [$user 1 ASC, $date placed 1 ASC, $rid ASC] key: $key 1 filter: $eq($user 1, $user id) AND $eq($date placed 1, \"2025-08-10\") records returned: 1 records scanned: 1 Fetch Back-joins the supplied row's identifier to the actual row contents from primary storage.",
+          "Requires materializing the full group in-memory before returning the result and must not exceed the the query memory limit . • HashAggregate aggregations: [sum($b 1) AS total] groups: [$a 1] peak memory usage: 4.00 KiB (4,096 B) records returned: 0 StreamAggregate Specialized aggregate node which only maintains state for a single group at a time, reducing peak memory usage."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "doc.data",
+      "future.get"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/behavior-differences",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/query-explain-reference"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:06.277Z",
+  "source_step08_card": "data/step-08/current/products/firestore-with-mongodb-compatibility/card.json",
+  "product_name": "Firestore with MongoDB compatibility",
+  "product_slug": "firestore-with-mongodb-compatibility"
+}

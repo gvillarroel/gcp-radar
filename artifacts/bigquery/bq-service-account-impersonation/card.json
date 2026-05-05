@@ -1,0 +1,133 @@
+{
+  "feature_name": "bq service account impersonation",
+  "feature_slug": "bq-service-account-impersonation",
+  "summary": "The bq command-line tool supports running commands with service account impersonation.",
+  "extended_definition": "The bq command-line tool supports running commands with service account impersonation.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/authentication",
+      "https://docs.cloud.google.com/bigquery/docs/bq-command-line-tool",
+      "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "bq command-line tool reference \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 205,
+        "relevance": "",
+        "evidence_snippets": [
+          "To stop running bq commands from a service account, run the following command: gcloud config unset auth/impersonate service account Set default values for command-line flags You can set default values for command-line flags by including them in the bq command-line tool's configuration file, .bigqueryrc .",
+          "To verify the version of the bq command-line tool, enter bq version . --max rows per request= MAX ROWS An integer that specifies the maximum number of rows to return per read. --project id= PROJECT Specifies the project to use for commands. --proxy address= PROXY Specifies the name or IP address of the proxy host to use for connecting to Google Cloud. --proxy password= PASSWORD Specifies the password to use when authenticating with the proxy host. --proxy port= PORT Specifies the port number to use to connect to the proxy host. --proxy username= USERNAME Specifies the username to use when authenticating with the proxy host. --quiet={true false} or -q={true false} To suppress status updates while jobs are running, set to true .",
+          "CLI help You can get help with the bq command-line tool by running the following commands: Description Help command format Example Installed version bq version bq version List of all commands with examples bq help bq help Description of global flags bq --help bq --help Description of a particular command bq help COMMAND bq help mk Troubleshooting CLI commands To log requests sent and received: Add the --apilog= PATH TO FILE flag to save a log of operations to a local file."
+        ]
+      },
+      {
+        "title": "Use the bq tool \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bq-command-line-tool",
+        "source_id": "site-docs-root",
+        "final_score": 162,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use the bq tool In this tutorial, you learn how to use bq , the Python-based command-line interface (CLI) tool for BigQuery to create a dataset, load sample data, and query tables.",
+          "For a complete reference of all bq commands and flags, see the bq command-line tool reference .",
+          "Activate Cloud Shell At the bottom of the Google Cloud console, a Cloud Shell session starts and displays a command-line prompt."
+        ]
+      },
+      {
+        "title": "Authenticate to BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/authentication",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 159,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For a local development environment You can set up credentials for a local development environment in the following ways: User credentials for client libraries or third-party tools User credentials for REST requests from the command line Service account impersonation Client libraries or third-party tools Set up Application Default Credentials (ADC) in your local environment: Install the Google Cloud CLI.",
+          "To set up a local ADC file with service account impersonation, use the --impersonate-service-account flag with the gcloud auth application-default login command : gcloud auth application-default login --impersonate-service-account = SERVICE ACCT EMAIL For more information about service account impersonation, see Use service account impersonation .",
+          "You can set up the gcloud CLI to use service account impersonation by using the gcloud config set command : gcloud config set auth/impersonate service account SERVICE ACCT EMAIL For select languages, you can use service account impersonation to create a local ADC file for use by client libraries."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "iam.googleapis.com",
+      "yob2024.txt"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/bq-command-line-tool",
+        "https://docs.cloud.google.com/bigquery/docs/authentication"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/bq-command-line-tool",
+        "https://docs.cloud.google.com/bigquery/docs/authentication"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/bq-command-line-tool",
+        "https://docs.cloud.google.com/bigquery/docs/authentication"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/bq-command-line-tool",
+        "https://docs.cloud.google.com/bigquery/docs/authentication"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/bq-command-line-tool",
+        "https://docs.cloud.google.com/bigquery/docs/authentication"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/bq-command-line-tool",
+        "https://docs.cloud.google.com/bigquery/docs/authentication"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

@@ -1,0 +1,122 @@
+{
+  "feature_name": "Classic to global external Application Load Balancer migration",
+  "feature_slug": "classic-to-global-external-application-load-balancer-migration",
+  "summary": "Classic Application Load Balancer resources can be migrated to the global external Application Load Balancer infrastructure by changing the load balancing scheme to EXTERNAL_MANAGED; Classic Application Load Balancer resources can be migrated to the global external Application Load Balancer infrastructure by changing the load balancing scheme to EXTERNAL_MANAGED.",
+  "extended_definition": "Classic Application Load Balancer resources can be migrated to the global external Application Load Balancer infrastructure by changing the load balancing scheme to EXTERNAL_MANAGED; Classic Application Load Balancer resources can be migrated to the global external Application Load Balancer infrastructure by changing the load balancing scheme to EXTERNAL_MANAGED.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+      "https://docs.cloud.google.com/load-balancing/docs/https",
+      "https://docs.cloud.google.com/load-balancing/docs/tcp"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"External Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/https",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "To take advantage of new features available only with the global external Application Load Balancer , we recommend that you migrate your existing EXTERNAL resources to EXTERNAL MANAGED by using the migration process described at Migrate resources from classic to global external Application Load Balancer .",
+          "If you are an existing user of the classic Application Load Balancer, make sure that you review Migration overview when you plan a new deployment with the global external Application Load Balancer.",
+          "The following table summarizes the required source IP address ranges for the firewall rules: Load balancer mode Health check source ranges Request source ranges Global external Application Load Balancer 35.191.0.0/16 130.211.0.0/22 For IPv6 traffic to the backends: 2600:2d00:1:b029::/64 The source of GFE traffic depends on the backend type: Instance groups and zonal NEGs ( GCE VM IP PORT ): 130.211.0.0/22 35.191.0.0/16 For IPv6 traffic to the backends: 2600:2d00:1:1::/64 Hybrid connectivity NEGs ( NON GCP PRIVATE IP PORT ): 130.211.0.0/22 35.191.0.0/16 Internet NEGs ( INTERNET FQDN PORT and INTERNET IP PORT ): 34.96.0.0/20 34.127.192.0/18 SERVERLESS NEGs and backend buckets: Google's production network handles packet routing Classic Application Load Balancer 35.191.0.0/16 130.211.0.0/22 The source of GFE traffic depends on the backend type: Instance groups, zonal NEGs ( GCE VM IP PORT ), and hybrid connectivity NEGs ( NON GCP PRIVATE IP PORT ): 35.191.0.0/16 130.211.0.0/22 Internet NEGs ( INTERNET FQDN PORT and INTERNET IP PORT ): 34.96.0.0/20 34.127.192.0/18 SERVERLESS NEGs and backend buckets: Google's production network handles packet routing."
+        ]
+      },
+      {
+        "title": "\"Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "To take advantage of new features available only with the global external Application Load Balancer , we recommend that you migrate your existing EXTERNAL resources to EXTERNAL MANAGED by using the migration process described at Migrate resources from classic to global external Application Load Balancer .",
+          "High availability and cross-region failover Cross-region failover is only available with global external Application Load Balancers, classic Application Load Balancers, and cross-region internal Application Load Balancers.",
+          "Global external Application Load Balancers and classic Application Load Balancers use GFEs that are distributed globally , operating together by using Google's global network and control plane."
+        ]
+      },
+      {
+        "title": "\"External proxy Network Load Balancer overview \\_|\\_ Cloud Load Balancing\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "source_id": "site-docs-root",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "Load balancer mode Supported backends on a backend service Instance groups Zonal NEGs Internet NEGs Serverless NEGs Hybrid NEGs Private Service Connect NEGs GKE Classic proxy Network Load Balancer Use standalone zonal NEGs Global external proxy Network Load Balancer GCE VM IP PORT type endpoints Regional external proxy Network Load Balancer GCE VM IP PORT type endpoints Regional NEGs only Add a Private Service Connect NEG Global external proxy Network Load Balancers support IPv4 and IPv6 (dual stack) instance groups and zonal NEG backends with GCE VM IP PORT endpoints.",
+          "Load balancer mode Health check source ranges Request source ranges Global external proxy Network Load Balancer 35.191.0.0/16 130.211.0.0/22 For IPv6 traffic to the backends: 2600:2d00:1:b029::/64 The source of GFE traffic depends on the backend type: Instance groups and zonal NEGs ( GCE VM IP PORT ): 130.211.0.0/22 35.191.0.0/16 For IPv6 traffic to the backends: 2600:2d00:1:1::/64 Classic proxy Network Load Balancer 35.191.0.0/16 130.211.0.0/22 These ranges apply to health check probes and requests from the GFE.",
+          "Load balancer mode Load balancer type Access type Region Classic proxy Network Load Balancer Network (Proxy classic) External Global external proxy Network Load Balancer Network (Proxy) External Regional external proxy Network Load Balancer Network (Proxy) External Specifies a region gcloud Use the gcloud compute forwarding-rules describe command: gcloud compute forwarding-rules describe FORWARDING RULE NAME In the command output, check the load balancing scheme, region, and network tier."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:31.148Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing"
+}

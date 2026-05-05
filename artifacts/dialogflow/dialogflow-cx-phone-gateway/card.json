@@ -1,0 +1,101 @@
+{
+  "feature_name": "Dialogflow CX phone gateway",
+  "feature_slug": "dialogflow-cx-phone-gateway",
+  "summary": "Dialogflow CX phone gateway is generally available.",
+  "extended_definition": "Dialogflow CX phone gateway is generally available.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/advanced-speech",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/call-companion",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/conversation-profiles"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Call companion \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/call-companion",
+        "source_id": "site-docs-root",
+        "final_score": 136,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable call companion: For a new telephony integration: Follow the steps to enable Dialogflow CX Phone Gateway , and check the Enable call companion option for a new conversation profile.",
+          "When you are using the Dialogflow CX Phone Gateway, it will only use the output audio text for voice output and will only use the text response for the call companion transcript.",
+          "Limitations The following limitations apply: Call companion's built-in SMS functionality currently only works with Dialogflow CX Phone Gateway ."
+        ]
+      },
+      {
+        "title": "Conversation profiles \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/conversation-profiles",
+        "source_id": "site-docs-root",
+        "final_score": 112,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "They can be created in conjunction with either Dialogflow CX Phone Gateway integration or Agent Assist .",
+          "The Dialogflow CX Phone Gateway conversation profiles are relevant if you want to use Call companion .",
+          "Enable Call companion : Enable this to use call companion for Dialogflow CX Phone Gateway."
+        ]
+      },
+      {
+        "title": "Advanced speech settings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/advanced-speech",
+        "source_id": "site-docs-root",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "To the service account of the format service- PROJECT NUMBER @gcp-sa-dialogflow.iam.gserviceaccount.com if you use the Dialogflow CX Phone Gateway integration.",
+          "For Dialogflow CX Phone Gateway, see limitations .",
+          "While the End of speech sensitivity setting supports only the phone call speech model for the en-US language tag by default, the Enable advanced timeout-based end of speech sensitivity setting allows for configuring end of speech sensitivity for all languages and speech models supported by Dialogflow."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2",
+      "dialogflow.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/call-companion",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/conversation-profiles",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/advanced-speech"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/call-companion",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/conversation-profiles",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/advanced-speech"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:58.946Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

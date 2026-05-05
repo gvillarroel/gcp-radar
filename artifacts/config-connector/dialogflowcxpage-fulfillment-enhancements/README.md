@@ -1,0 +1,45 @@
+# DialogflowCXPage fulfillment enhancements
+
+Product: Config Connector
+Feature slug: `dialogflowcxpage-fulfillment-enhancements`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Config Connector added new fulfillment, messaging, and form parameter fields to DialogflowCXPage.
+
+## Lifecycle
+
+- Latest feature date: 2023-09-29
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access (evidence: [https://docs.cloud.google.com/config-connector/docs/reference/annotations](https://docs.cloud.google.com/config-connector/docs/reference/annotations), [https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields](https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields), [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started))
+- audit (evidence: [https://docs.cloud.google.com/config-connector/docs/reference/annotations](https://docs.cloud.google.com/config-connector/docs/reference/annotations), [https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields](https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields), [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started))
+- auth (evidence: [https://docs.cloud.google.com/config-connector/docs/reference/annotations](https://docs.cloud.google.com/config-connector/docs/reference/annotations), [https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields](https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields), [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started))
+- authorization (evidence: [https://docs.cloud.google.com/config-connector/docs/reference/annotations](https://docs.cloud.google.com/config-connector/docs/reference/annotations), [https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields](https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields), [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started))
+- certificate (evidence: [https://docs.cloud.google.com/config-connector/docs/reference/annotations](https://docs.cloud.google.com/config-connector/docs/reference/annotations), [https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields](https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields), [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started))
+- firewall (evidence: [https://docs.cloud.google.com/config-connector/docs/reference/annotations](https://docs.cloud.google.com/config-connector/docs/reference/annotations), [https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields](https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields), [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started))
+- iam (evidence: [https://docs.cloud.google.com/config-connector/docs/reference/annotations](https://docs.cloud.google.com/config-connector/docs/reference/annotations), [https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields](https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields), [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started))
+- identity (evidence: [https://docs.cloud.google.com/config-connector/docs/reference/annotations](https://docs.cloud.google.com/config-connector/docs/reference/annotations), [https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields](https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields), [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started))
+- key (evidence: [https://docs.cloud.google.com/config-connector/docs/reference/annotations](https://docs.cloud.google.com/config-connector/docs/reference/annotations), [https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields](https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields), [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started))
+- kms (evidence: [https://docs.cloud.google.com/config-connector/docs/reference/annotations](https://docs.cloud.google.com/config-connector/docs/reference/annotations), [https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields](https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields), [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started))
+- logging (evidence: [https://docs.cloud.google.com/config-connector/docs/reference/annotations](https://docs.cloud.google.com/config-connector/docs/reference/annotations), [https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields](https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields), [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started))
+- policy (evidence: [https://docs.cloud.google.com/config-connector/docs/reference/annotations](https://docs.cloud.google.com/config-connector/docs/reference/annotations), [https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields](https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields), [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started))
+- private (evidence: [https://docs.cloud.google.com/config-connector/docs/reference/annotations](https://docs.cloud.google.com/config-connector/docs/reference/annotations), [https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields](https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields), [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started))
+- role (evidence: [https://docs.cloud.google.com/config-connector/docs/reference/annotations](https://docs.cloud.google.com/config-connector/docs/reference/annotations), [https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields](https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields), [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started))
+- secret (evidence: [https://docs.cloud.google.com/config-connector/docs/reference/annotations](https://docs.cloud.google.com/config-connector/docs/reference/annotations), [https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields](https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields), [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started))
+- security (evidence: [https://docs.cloud.google.com/config-connector/docs/reference/annotations](https://docs.cloud.google.com/config-connector/docs/reference/annotations), [https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields](https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields), [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started))
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields](https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields)
+- [https://docs.cloud.google.com/config-connector/docs/how-to/getting-started](https://docs.cloud.google.com/config-connector/docs/how-to/getting-started)
+- [https://docs.cloud.google.com/config-connector/docs/reference/annotations](https://docs.cloud.google.com/config-connector/docs/reference/annotations)

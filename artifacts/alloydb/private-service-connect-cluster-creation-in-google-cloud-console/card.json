@@ -1,0 +1,163 @@
+{
+  "feature_name": "Private Service Connect cluster creation in Google Cloud console",
+  "feature_slug": "private-service-connect-cluster-creation-in-google-cloud-console",
+  "summary": "AlloyDB clusters with Private Service Connect can be created through the Google Cloud console.",
+  "extended_definition": "AlloyDB clusters with Private Service Connect can be created through the Google Cloud console.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+      "https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect",
+      "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.clusters \\_|\\_ AlloyDB for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "source_id": "site-iam-reference",
+        "final_score": 185,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Methods create Creates a new Cluster in a given project and location. createsecondary Creates a cluster of type SECONDARY in the given location using the primary cluster as the source. delete Deletes a single Cluster. export Exports data from the cluster. get Gets details of a single Cluster. import Imports data to the cluster. list Lists Clusters in a given project and location. patch Updates the parameters of a single Cluster. promote Promotes a SECONDARY cluster. restore Creates a new Cluster in a given project and location, with a volume restored from the provided source, either a backup ID or a point-in-time and a source cluster. restoreFromCloudSQL Restores an AlloyDB cluster from a CloudSQL resource. switchover Switches the roles of PRIMARY and SECONDARY clusters without any data loss. upgrade Upgrades a single Cluster.",
+          "Home Documentation Databases AlloyDB for PostgreSQL Reference Send feedback REST Resource: projects.locations.clusters Stay organized with collections Save and categorize content based on your preferences.",
+          "The configuration for Private Service Connect (PSC) for the cluster. maintenanceUpdatePolicy object ( MaintenanceUpdatePolicy ) Optional."
+        ]
+      },
+      {
+        "title": "\"Create a cluster and its primary instance \\_|\\_ AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "source_id": "site-docs-reference-2",
+        "final_score": 163,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Private services access gcloud alloydb clusters create CLUSTER ID \\ --database-version = POSTGRES VERSION \\ --password = PASSWORD \\ --region = REGION ID \\ --project = PROJECT ID \\ --network = NETWORK Private Service Connect gcloud alloydb clusters create CLUSTER ID \\ --database-version = POSTGRES VERSION \\ --password = PASSWORD \\ --region = REGION ID \\ --project = PROJECT ID \\ --enable-private-service-connect Replace the following: CLUSTER ID : the ID of the cluster that you are creating.",
+          "Create a cluster To create the cluster with either private service access or Private Service Connect enabled, use the gcloud alloydb clusters create command.",
+          "The following is a code snippet for creating a cluster and a primary instance based on the AlloyDB instance full example: resource \"google alloydb instance\" \"default\" { cluster = google alloydb cluster.default.name instance id = \"alloydb-instance\" instance type = \"PRIMARY\" machine config { cpu count = 2 } depends on = [google service networking connection.vpc connection] } resource \"google alloydb cluster\" \"cluster abc\" { cluster id = \"alloydb-cluster\" location = \"us-central1\" network config { network = google compute network.default.id } database version = \"POSTGRES 16\" initial user { password = \"alloydb-cluster\" } } data \"google project\" \"project\" {} resource \"google compute network\" \"default\" { name = \"alloydb-network\" } resource \"google compute global address\" \"private ip alloc\" { name = \"alloydb-cluster\" address type = \"INTERNAL\" purpose = \"VPC PEERING\" prefix length = 16 network = google compute network.default.id } resource \"google service networking connection\" \"vpc connection\" { network = google compute network.default.id service = \"servicenetworking.googleapis.com\" reserved peering ranges = [google compute global address.private ip alloc.name] } This example creates an N2 instance."
+        ]
+      },
+      {
+        "title": "\"Create and query an AlloyDB database using the Google Cloud console \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect",
+        "source_id": "site-docs-reference",
+        "final_score": 159,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create and connect to an AlloyDB database: compute.networks.list compute.networks.addPeering compute.addresses.create servicenetworking.services.addPeering alloydb.clusters.create alloydb.instances.create alloydb.instances.login You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Create and query an AlloyDB database using the Google Cloud console In AlloyDB for PostgreSQL, your databases are stored in clusters that contain instances .",
+          "If you created a private connection when you created a cluster , go to the Google Cloud console Networking page and click Delete VPC network ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "address.private",
+      "alloc.name",
+      "alloydb.clusters.create",
+      "alloydb.googleapis.com",
+      "alloydb.instances.create",
+      "alloydb.instances.login",
+      "cluster.default.name",
+      "compute.addresses.create",
+      "compute.networks.addPeering",
+      "compute.networks.list",
+      "connection.vpc",
+      "network.default.id",
+      "projects.locations.clusters",
+      "request.json",
+      "servicenetworking.googleapis.com",
+      "servicenetworking.services.addPeering"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/create-and-connect"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:04.004Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb"
+}

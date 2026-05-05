@@ -1,0 +1,121 @@
+{
+  "feature_name": "vaictl model output visualization",
+  "feature_slug": "vaictl-model-output-visualization",
+  "summary": "The vaictl command-line tool now includes a visualization command to display Vertex AI Vision model outputs over real-time video streams with annotations and statistics.",
+  "extended_definition": "The vaictl command-line tool now includes a visualization command to display Vertex AI Vision model outputs over real-time video streams with annotations and statistics.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vision-ai/docs/cloud-environment",
+      "https://docs.cloud.google.com/vision-ai/docs/face-blur-tutorial",
+      "https://docs.cloud.google.com/vision-ai/docs/occupancy-bq-tutorial",
+      "https://docs.cloud.google.com/vision-ai/docs/occupancy-count-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create an occupancy count app with remote streaming input \\_|\\_ Vertex AI\\",
+        "url": "https://docs.cloud.google.com/vision-ai/docs/occupancy-count-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Download the vaictl command-line tool In the SSH-in-browser window, download the Vertex AI Vision ( vaictl ) command-line tool using the following command: wget https://github.com/google/visionai/releases/download/v0.0.5/visionai 0.0-5 amd64.deb Install the command-line tool by running the following command: sudo apt install ./visionai 0.0-5 amd64.deb You can test the installation by running the following command: vaictl --help Ingest a video file into your app After you set up your VM environment, you can copy a sample video file and then use vaictl to stream the video data to your occupancy count app.",
+          "After establishing this connection, you can download the vaictl command-line tool to ingest video into your app.",
+          "If you use the --loop flag, the video is looped into the stream until you stop the command: vaictl -p PROJECT ID \\ -l LOCATION ID \\ -c application-cluster-0 \\ --service-endpoint visionai.googleapis.com \\ send video-file to streams ' occupancy-count-stream ' --file-path LOCAL FILE.EXT --loop It might take 100 seconds between starting the vaictl ingest operation and the video appearing in the dashboard."
+        ]
+      },
+      {
+        "title": "\"Create an occupancy analytics app with BigQuery forecasting \\_|\\_ Vertex\\",
+        "url": "https://docs.cloud.google.com/vision-ai/docs/occupancy-bq-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Download the vaictl command-line tool In the SSH-in-browser window, download the Vertex AI Vision ( vaictl ) command-line tool using the following command: wget https://github.com/google/visionai/releases/download/v0.0.5/visionai 0.0-5 amd64.deb Install the command-line tool by running the following command: sudo apt install ./visionai 0.0-5 amd64.deb You can test the installation by running the following command: vaictl --help Ingest a video file into your app After you set up your VM environment, you can copy a sample video file and then use vaictl to stream the video data to your occupancy count app.",
+          "After establishing this connection, you can download the vaictl command-line tool to ingest video into your app.",
+          "If using the --loop flag, the video is looped into the stream until you stop the command: vaictl -p PROJECT ID \\ -l LOCATION ID \\ -c application-cluster-0 \\ --service-endpoint visionai.googleapis.com \\ send video-file to streams ' occupancy-bq-stream ' --file-path LOCAL FILE.EXT --loop It might take 100 seconds between starting the vaictl ingest operation and the video appearing in the dashboard."
+        ]
+      },
+      {
+        "title": "\"Create a face blur app with warehouse storage \\_|\\_ Vertex AI Vision \\_\\",
+        "url": "https://docs.cloud.google.com/vision-ai/docs/face-blur-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Ingest video into the stream After you create a stream resource, you can use the vaictl command-line tool to send video data to the stream.",
+          "You must run this command in the network that has direct access to the RTSP feed. vaictl -p PROJECT ID \\ -l LOCATION ID \\ -c application-cluster-0 \\ --service-endpoint visionai.googleapis.com \\ send rtsp to streams input-stream --rtsp-uri RTSP ADDRESS If the command runs successfully, you get the following output: [...] Waiting for long running operation projects/your-project/locations/us-central1/operations/operation-1651364156981-5dde82db7e4a9-dfb17ca5-1051eb20 ⠙ I20220430 21:16:28.024988 211449 gstvaisink.cc:417] cluster-id=application-cluster-0 I20220430 21:16:28.025032 211449 gstvaisink.cc:418] cluster-endpoint=c8khq35ftg78mn61ef50.us-central1.visionai.goog I20220430 21:16:28.025040 211449 gstvaisink.cc:419] event-id=ev-1651364114183255223 I20220430 21:16:28.025048 211449 gstvaisink.cc:420] stream-id=input-stream I20220430 21:16:28.025053 211449 gstvaisink.cc:421] series-id=ev-1651364114183255223--input-stream I20220430 21:16:28.025060 211449 gstvaisink.cc:422] Sending data Local video file You can also send video file data to a stream instead of a live video feed.",
+          "To initialize the gcloud CLI, run the following command: gcloud init Installing the vaictl tool to ingest data into a stream (OS: Debian GNU/Linux, CPU architecture: x86 64): Note : You can also get a Docker image that has the Vertex AI Vision SDK and all its dependencies already pre-installed."
+        ]
+      },
+      {
+        "title": "\"Set up a project and a development environment \\_|\\_ Vertex AI Vision \\_\\",
+        "url": "https://docs.cloud.google.com/vision-ai/docs/cloud-environment",
+        "source_id": "site-docs-reference",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Install the Debian package You have two options for using the vaictl command-line tool, which you need to work with I/O (stream data): Install the command-line tool locally (OS: Debian GNU/Linux, CPU architecture: x86 64) or Run the commands in a Docker image that has all dependencies installed.",
+          "Before you can install the vaictl command-line tool, you must delete any prior versions of the tool on your machine: sudo apt-get remove visionai Download the required package.",
+          "Use the following steps to get the vaictl command-line tool: Download package For direct installations, we currently only support Debian/Ubuntu distributions."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "amd64.deb",
+      "c8khq35ftg78mn61ef50.us",
+      "central1.visionai.goog",
+      "github.com",
+      "gstvaisink.cc",
+      "v0.0.5",
+      "visionai.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision-ai/docs/occupancy-count-tutorial",
+        "https://docs.cloud.google.com/vision-ai/docs/occupancy-bq-tutorial",
+        "https://docs.cloud.google.com/vision-ai/docs/face-blur-tutorial",
+        "https://docs.cloud.google.com/vision-ai/docs/cloud-environment"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision-ai/docs/occupancy-count-tutorial",
+        "https://docs.cloud.google.com/vision-ai/docs/occupancy-bq-tutorial",
+        "https://docs.cloud.google.com/vision-ai/docs/face-blur-tutorial",
+        "https://docs.cloud.google.com/vision-ai/docs/cloud-environment"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:44.949Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-vision/card.json",
+  "product_name": "Vertex AI Vision",
+  "product_slug": "vertex-ai-vision"
+}

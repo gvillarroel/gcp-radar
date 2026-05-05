@@ -1,0 +1,126 @@
+{
+  "feature_name": "Reference list access in Search and Rules Editor",
+  "feature_slug": "reference-list-access-in-search-and-rules-editor",
+  "summary": "Reference lists are now accessible from the Search page and the Rules Editor page.",
+  "extended_definition": "Reference lists are now accessible from the Search page and the Rules Editor page.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+      "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 189,
+        "relevance": "",
+        "evidence_snippets": [
+          "This list is saved in your browser session history across the Search, Rules, and Dashboard editors.",
+          "Reference lists are also supported.",
+          "For example, if you have a database called suspicious with a column of IP addresses you know are problematic, you can reference that database in Search instead of manually entering individual IP addresses in Search: events: $e.principal.ip in %susupicious.ip You can narrow your results by searching for specific metadata in addition to IP addresses, for example you might be specifically concerned with changes to user resources: events: $e.metadata.event type = \"USER RESOURCE UPDATE CONTENT\" $e.principal.ip in %susupicious.ip You can narrow a search against interrelated UDM fields and match against multiple data table columns."
+        ]
+      },
+      {
+        "title": "\"Configure data RBAC for users \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Enforce data access window displays the number of rules and reference lists that will be scoped after data RBAC is enforced.",
+          "To grant access, define scopes and assign them to users, rules, and reference lists based on your requirement.",
+          "You have the following two options to set up data RBAC: Enable data RBAC before assigning scopes: when data RBAC is enabled, rules, reference lists, and data tables don't have any scopes assigned."
+        ]
+      },
+      {
+        "title": "\"Impact of data RBAC on Google SecOps features \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 172,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Access permissions for rules in reference lists A scoped rule can use a reference list if there is at least one matching scope between the rule and the reference list.",
+          "Reference lists Reference lists are collections of values that are used for matching and filtering data in UDM Search and detection rules.",
+          "Assigning scopes to a reference list (scoped list) restricts its access to specific users and resources such as rules and UDM search."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.metadata.event",
+      "e.principal.ip",
+      "susupicious.ip"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:19.630Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem"
+}

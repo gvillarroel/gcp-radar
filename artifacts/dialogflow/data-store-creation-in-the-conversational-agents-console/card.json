@@ -1,0 +1,92 @@
+{
+  "feature_name": "Data store creation in the Conversational Agents console",
+  "feature_slug": "data-store-creation-in-the-conversational-agents-console",
+  "summary": "Some data store types can be created directly in the Conversational Agents console.",
+  "extended_definition": "Some data store types can be created directly in the Conversational Agents console.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/basics",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Conversational Agents console overview \\_|\\_ Dialogflow CX \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents",
+        "source_id": "site-docs-root",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Using the Conversational Agents console, you can create interactive agents that use generative playbooks , generative data stores , and deterministic flows .",
+          "To create an agent with data store handlers : Open the Conversational Agents console .",
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Send feedback Conversational Agents console overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Flow-based agent basics \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/basics",
+        "source_id": "site-docs-root",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Dialogflow CX console is used to manage Dialogflow CX agents, while the Google Cloud Console is used to manage Google Cloud-specific Dialogflow CX settings (for example, billing) and other Google Cloud resources.",
+          "There are two types of state handlers with differing handler requirements: Term Definition Routes Routes are called when an end-user input matches an intent and/or some condition on the session status is met.",
+          "In most cases you should use the Dialogflow CX console to build agents, but you can also use the Dialogflow API to build agents for advanced scenarios."
+        ]
+      },
+      {
+        "title": "Data store tools \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler",
+        "source_id": "site-docs-root",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a data store tool Open the Conversational Agents console and choose a Google Cloud project.",
+          "See the reference documentation for details. { \"toolUse\" : { \"tool\" : \"projects/PROJECT ID/locations/LOCATION ID/agents/AGENT ID/tools/TOOL ID\" , \"action\" : \"TOOL DISPLAY NAME\" , \"inputParameters\" : [ { \"name\" : \"TOOL DISPLAY NAME input\" , \"value\" : { \"query\" : \"QUERY\" } } ], \"outputParameters\" : [ { \"name\" : \"TOOL DISPLAY NAME output\" , \"value\" : { \"answer\" : \"ANSWER\" , \"snippets\" : [ { \"title\" : \"TITLE\" , \"text\" : \"TEXT FROM DATASTORE\" , \"uri\" : \"URI OF DATASTORE\" } ] } } ] } } (Playbooks-based agents only) Data store tool examples Note: Examples work with playbooks-based agents only.",
+          "Is there anything else I can do for you?\" Data store tool configuration If you find during testing that some responses don't meet your expectations, you can try adjusting the following parameters to fine-tune performance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/basics",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:58.946Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

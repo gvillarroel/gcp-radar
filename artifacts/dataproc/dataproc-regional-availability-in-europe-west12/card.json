@@ -1,0 +1,106 @@
+{
+  "feature_name": "Dataproc regional availability in europe-west12",
+  "feature_slug": "dataproc-regional-availability-in-europe-west12",
+  "summary": "Dataproc is available in the europe-west12 (Turin) region.",
+  "extended_definition": "Dataproc is available in the europe-west12 (Turin) region.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/quotas",
+      "https://docs.cloud.google.com/dataproc-metastore/docs/regions",
+      "https://docs.cloud.google.com/dataproc-metastore/docs/scaling-factors"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Dataproc Metastore regions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/regions",
+        "source_id": "site-docs-root-2",
+        "final_score": 120,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Asia Pacific Tokyo Region description Region name Taiwan asia-east1 Hong Kong asia-east2 Tokyo asia-northeast1 Seoul asia-northeast3 Mumbai asia-south1 Delhi asia-south2 Singapore asia-southeast1 Jakarta asia-southeast2 Sydney australia-southeast1 Melbourne australia-southeast2 Europe Region description Region name Warsaw europe-central2 Finland europe-north1 Madrid europe-southwest1 Belgium europe-west1 London europe-west2 Frankfurt europe-west3 Netherlands europe-west4 Zürich europe-west6 Milan europe-west8 Paris europe-west9 Turin europe-west12 Middle East Region description Region name Tel Aviv me-west1 Dammam me-central2 Dataproc Metastore services created in me-central2 can't be attached to Managed Service for Apache Spark clusters.",
+          "Feature Supported Administrator Interface ✓ Artifacts Cloud Storage bucket ✓ Auxiliary versions ✓ Backup/Restore ✓ CMEK config ✓ Database type Spanner/MySQL Data Catalog sync ✓ Endpoint protocol (Thrift/gRPC) ✓ IAM policies on individual tables/databases ✓ Import/Export ✓ Kerberos ✓ Private Service Connect ✓ Release channels ✓ Scaling config ✓ VPC-SC ✓ Single region services Dataproc Metastore is available in the following regions.",
+          "Home Documentation Data analytics Dataproc Metastore Resources Send feedback Dataproc Metastore regions Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Dataproc Metastore scaling factors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/scaling-factors",
+        "source_id": "site-docs-root-2",
+        "final_score": 88,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following regions are considered resource constrained regions by Dataproc Metastore: australia-southeast2 europe-southwest1 europe-west8 europe-west9 europe-west12 southamerica-west1 us-east5 us-south1 me-central1 me-central2 me-west1 What's next Create a service Release notes Version policy Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Resource constrained regions Dataproc Metastore is present in several regions that have fewer resources available than others.",
+          "Autoscaling is only available for single region Dataproc Metastore instances."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Dataproc Metastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/quotas",
+        "source_id": "site-docs-root-2",
+        "final_score": 87,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, you might have sufficient quota to create a new regional, external IP address in the us-central1 region, but that would not be possible if there were no available external IP addresses in that region.",
+          "Situations where resources are unavailable in an entire region are rare; however, resources within a zone can be depleted from time to time, typically without impact to the service level agreement (SLA) for the type of resource.",
+          "Quotas and limits Dataproc Metastore services Item Quotas and limits Notes Services per region 20 services When a project violates Google Cloud service policy, its per-region service quota is significantly lowered."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/regions",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/scaling-factors",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/quotas"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/regions",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/scaling-factors",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/quotas"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/regions",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/scaling-factors",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/quotas"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:55.306Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc"
+}

@@ -1,0 +1,100 @@
+{
+  "feature_name": "Vertex AI Search advanced website indexing metadata schema",
+  "feature_slug": "vertex-ai-search-advanced-website-indexing-metadata-schema",
+  "summary": "Enables adding metadata fields to the data store schema so that indexed web content can be enriched when advanced website indexing is enabled.",
+  "extended_definition": "Enables adding metadata fields to the data store schema so that indexed web content can be enriched when advanced website indexing is enabled.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/add-website-metadata",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use structured data for advanced website indexing \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/add-website-metadata",
+        "source_id": "site-docs-reference",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Such tags can be used with advanced indexing when you add custom structured data attributes to the data store schema . <!DOCTYPE html> <html lang=\"en\"> <head> <meta charset=\"UTF-8\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"> <title>Your web page title</title> <!-- Robots instructions for crawlers and for Vertex AI Search. --> <meta name=\"robots\" content=\"index,follow\"> <!-- Vertex AI Search can use custom datetime fields to filter, boost, and order. --> <meta name=\"lastModified\" content=\"2024-09-06\"> <!-- Vertex AI Search can filter by category or tags. --> <meta name=\"category\" content=\"archived\"> <meta name=\"tags\" content=\"legacy,interesting,faq\"> <!-- Vertex AI Search can index these common HTML tags. --> <meta name=\"description\" content=\"A description of your web page's content.\"> <meta name=\"author\" content=\"Your name or organization\"> <meta name=\"keywords\" content=\"relevant,keywords,separated,by,commas\"> <link rel=\"canonical\" href=\"https://www.yourwebsite.com/this-page\"> <meta property=\"og:title\" content=\"Your Webpage Title\"> <meta property=\"og:description\" content=\"A description of your webpage's content.\"> <meta property=\"og:image\" content=\"https://www.yourwebsite.com/image.jpg\"> <meta property=\"og:url\" content=\"https://www.yourwebsite.com/this-page\"> <meta property=\"og:type\" content=\"website\"> <meta name=\"twitter:card\" content=\"summary large image\"> <meta name=\"twitter:title\" content=\"Your customized Webpage Title\"> <meta name=\"twitter:description\" content=\"A description of your webpage's content.\"> <meta name=\"twitter:image\" content=\"https://www.yourwebsite.com/image.jpg\"> </head> <body> ... </body> </html> Example use case for PageMaps Suppose you have several web pages that contain food recipes.",
+          "If advanced website indexing is enabled in your data store, you can use the following types of structured data to enrich your indexing: Predefined, Google-inferred page dates Custom structured data attributes Metadata using meta tags PageMaps Schema.org data This page introduces both these types of structured data for your web pages and describes how to add custom structured attributes to your data store schema.",
+          "Home Documentation AI and ML Vertex AI Search Send feedback Use structured data for advanced website indexing Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Create a search data store \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "source_id": "site-docs-root",
+        "final_score": 145,
+        "relevance": "",
+        "evidence_snippets": [
+          "If the data store is not configured as site search (GENERIC vertical and PUBLIC WEBSITE content config), this flag will be ignored. / // const createAdvancedSiteSearch = true / A boolean flag indicating whether to skip the default schema creation for the data store.",
+          "If the data store is not configured as site search (GENERIC vertical and PUBLIC WEBSITE content config), this flag will be ignored. / // const createAdvancedSiteSearch = true / A boolean flag indicating whether to skip the default schema creation for the data store.",
+          "Advanced website indexing provides additional features such as search summarization, search with follow-ups, and extractive answers."
+        ]
+      },
+      {
+        "title": "\"Introduction to custom search \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search",
+        "source_id": "site-docs-reference",
+        "final_score": 139,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Data ingestion : Vertex AI Search offers different types of ingestion for data from different sources, such as: Crawling for website data Ingesting structured and unstructured data from Cloud Storage and BigQuery or through the REST API Search and browse configuration : Field settings : Control how fields are configured for search and answer generation, such as searchable, retrievable, or indexable.",
+          "Vertex AI Search for custom apps is a powerful, Google-quality search and content discovery engine that you can integrate into your applications that contain website data and other structured or unstructured data.",
+          "Data processing and indexing : Vertex AI Search understands and indexes your data, creating a searchable and retrievable representation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "image.jpg"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/add-website-metadata",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/add-website-metadata",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:43.967Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search"
+}

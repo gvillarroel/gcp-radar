@@ -1,0 +1,129 @@
+{
+  "feature_name": "Google Distributed Cloud connected locations support",
+  "feature_slug": "google-distributed-cloud-connected-locations-support",
+  "summary": "Cloud Location Finder supports Google Distributed Cloud connected locations.",
+  "extended_definition": "Cloud Location Finder supports Google Distributed Cloud connected locations.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/location-finder/docs/reference/rest/v1/projects.locations.cloudLocations",
+      "https://docs.cloud.google.com/location-finder/docs/reference/rest/v1/projects.locations.cloudLocations/list",
+      "https://docs.cloud.google.com/location-finder/docs/reference/rest/v1alpha/projects.locations.cloudLocations",
+      "https://docs.cloud.google.com/location-finder/docs/reference/rest/v1alpha/projects.locations.cloudLocations/list"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.cloudLocations \\_|\\_ Cloud Location Finder\\",
+        "url": "https://docs.cloud.google.com/location-finder/docs/reference/rest/v1/projects.locations.cloudLocations",
+        "source_id": "site-api-reference",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Distributed, hybrid, and multicloud Cloud Location Finder Reference Send feedback REST Resource: projects.locations.cloudLocations Stay organized with collections Save and categorize content based on your preferences.",
+          "CLOUD LOCATION TYPE GDCC ZONE CloudLocation type for Google Distributed Cloud Connected Zone.",
+          "Methods get Retrieves a resource containing information about a cloud location. list Lists cloud locations under a given project and location. search Searches for cloud locations from a given source location."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.cloudLocations \\_|\\_ Cloud Location Finder\\",
+        "url": "https://docs.cloud.google.com/location-finder/docs/reference/rest/v1alpha/projects.locations.cloudLocations",
+        "source_id": "site-api-reference",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Distributed, hybrid, and multicloud Cloud Location Finder Reference Send feedback REST Resource: projects.locations.cloudLocations Stay organized with collections Save and categorize content based on your preferences.",
+          "CLOUD LOCATION TYPE GDCC ZONE CloudLocation type for Google Distributed Cloud Connected Zone.",
+          "Methods get Retrieves a resource containing information about a cloud location. list Lists cloud locations under a given project and location. search Searches for cloud locations from a given source location."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.cloudLocations.list \\_|\\_ Cloud Location Finder\\",
+        "url": "https://docs.cloud.google.com/location-finder/docs/reference/rest/v1/projects.locations.cloudLocations/list",
+        "source_id": "site-api-reference",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Distributed, hybrid, and multicloud Cloud Location Finder Reference Send feedback Method: projects.locations.cloudLocations.list Stay organized with collections Save and categorize content based on your preferences.",
+          "IAM Permissions Requires the following IAM permission on the parent resource: cloudlocationfinder.cloudLocations.list For more information, see the IAM documentation .",
+          "HTTP request GET https://cloudlocationfinder.googleapis.com/v1/{parent=projects/ /locations/ }/cloudLocations The URL uses gRPC Transcoding syntax."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.cloudLocations.list \\_|\\_ Cloud Location Finder\\",
+        "url": "https://docs.cloud.google.com/location-finder/docs/reference/rest/v1alpha/projects.locations.cloudLocations/list",
+        "source_id": "site-api-reference",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Distributed, hybrid, and multicloud Cloud Location Finder Reference Send feedback Method: projects.locations.cloudLocations.list Stay organized with collections Save and categorize content based on your preferences.",
+          "IAM Permissions Requires the following IAM permission on the parent resource: cloudlocationfinder.cloudLocations.list For more information, see the IAM documentation .",
+          "HTTP request GET https://cloudlocationfinder.googleapis.com/v1alpha/{parent=projects/ /locations/ }/cloudLocations The URL uses gRPC Transcoding syntax."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudlocationfinder.cloudLocations.list",
+      "cloudlocationfinder.googleapis.com",
+      "projects.locations.cloudLocations",
+      "projects.locations.cloudLocations.get",
+      "projects.locations.cloudLocations.list",
+      "projects.locations.cloudLocations.search"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/location-finder/docs/reference/rest/v1/projects.locations.cloudLocations",
+        "https://docs.cloud.google.com/location-finder/docs/reference/rest/v1alpha/projects.locations.cloudLocations",
+        "https://docs.cloud.google.com/location-finder/docs/reference/rest/v1/projects.locations.cloudLocations/list",
+        "https://docs.cloud.google.com/location-finder/docs/reference/rest/v1alpha/projects.locations.cloudLocations/list"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/location-finder/docs/reference/rest/v1/projects.locations.cloudLocations",
+        "https://docs.cloud.google.com/location-finder/docs/reference/rest/v1alpha/projects.locations.cloudLocations",
+        "https://docs.cloud.google.com/location-finder/docs/reference/rest/v1/projects.locations.cloudLocations/list",
+        "https://docs.cloud.google.com/location-finder/docs/reference/rest/v1alpha/projects.locations.cloudLocations/list"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/location-finder/docs/reference/rest/v1/projects.locations.cloudLocations",
+        "https://docs.cloud.google.com/location-finder/docs/reference/rest/v1alpha/projects.locations.cloudLocations",
+        "https://docs.cloud.google.com/location-finder/docs/reference/rest/v1/projects.locations.cloudLocations/list",
+        "https://docs.cloud.google.com/location-finder/docs/reference/rest/v1alpha/projects.locations.cloudLocations/list"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:31.808Z",
+  "source_step08_card": "data/step-08/current/products/cloud-location-finder/card.json",
+  "product_name": "Cloud Location Finder",
+  "product_slug": "cloud-location-finder"
+}

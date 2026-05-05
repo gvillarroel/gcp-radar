@@ -1,0 +1,122 @@
+{
+  "feature_name": "Cloud Spanner integration with Cloud Run functions",
+  "feature_slug": "cloud-spanner-integration-with-cloud-run-functions",
+  "summary": "Cloud Spanner can be used in conjunction with Cloud Run functions.",
+  "extended_definition": "Cloud Spanner can be used in conjunction with Cloud Run functions.",
+  "lifecycle": {
+    "latest_feature_date": "2017-05-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+      "https://docs.cloud.google.com/spanner/docs/information-schema",
+      "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Build change streams connections using Dataflow \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "source_id": "site-docs-root",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "If recordsToOutput is not empty, the function orders the data change records in recordsToOutput by commit timestamp and transaction ID and then outputs them. private static class BufferKeyUntilOutputTimestamp extends DoFn<KV<String , DataChangeRecord > , KV<String , Iterable<DataChangeRecord> >> { private static final Logger LOG = LoggerFactory . getLogger ( BufferKeyUntilOutputTimestamp . class ); private final long incrementIntervalInSeconds = 2 ; private BufferKeyUntilOutputTimestamp ( long incrementIntervalInSeconds ) { this . incrementIntervalInSeconds = incrementIntervalInSeconds ; } @SuppressWarnings ( \"unused\" ) @TimerId ( \"timer\" ) private final TimerSpec timerSpec = TimerSpecs . timer ( TimeDomain .",
+          "MEDIUM ) . withInclusiveStartAt ( startTime ) . withInclusiveEndAt ( endTime ); The following are descriptions of the readChangeStream() options: Spanner Config (Required) Used for configuring the project, instance and database where the change stream was created and should be queried from.",
+          "Note that this estimate can vary depending on several factors, such as the size of each transaction, how many change stream records are produced from a single transaction and other transformations, aggregations, or sinks that are being used in the pipeline."
+        ]
+      },
+      {
+        "title": "\"Information schema for GoogleSQL-dialect databases \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "source_id": "site-docs-reference",
+        "final_score": 65,
+        "relevance": "",
+        "evidence_snippets": [
+          "All other principals can see only parameters for change stream read functions on which the EXECUTE fine-grained access control privilege is granted to the current database role, to roles of which the current database role is a member, or to public .",
+          "All other principals can see only options for change stream read functions on which the EXECUTE fine-grained access control privilege is granted to the current database role, to roles of which the current database role is a member, or to public .",
+          "All other principals can see only change stream read functions on which the EXECUTE fine-grained access control privilege is granted to the current database role, to roles of which the current database role is a member, or to public ."
+        ]
+      },
+      {
+        "title": "\"Information schema for PostgreSQL-dialect databases \\_|\\_ Spanner \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "source_id": "site-docs-reference",
+        "final_score": 65,
+        "relevance": "",
+        "evidence_snippets": [
+          "Column name Type Description table catalog character varying The database name. table schema character varying The name of the schema that contains the table that contains the column that is used by the constraint. table name character varying The name of the table that contains the column that is used by the constraint. column name character varying The name of the column that is used by the constraint. constraint catalog character varying The database name. constraint schema character varying The name of the constraint's schema. constraint name character varying The name of the constraint. constraint table usage This view contains one row for each table used by a constraint.",
+          "Possible values include 'BASE TABLE', 'VIEW', or 'SYNONYM'. self referencing column name character varying Not used. reference generation character varying Not used. user defined type catalog character varying Not used. user defined type schema character varying Not used. user defined type name character varying Not used. is insertable into character varying Not used. is typed character varying Not used. commit action character varying Not used. parent table name character varying The name of the parent table if this table is interleaved, or NULL . on delete action character varying This is set to CASCADE or NO ACTION for interleaved tables, and NULL otherwise.",
+          "The default value is public . constraint name character varying The name of the foreign key constraint. unique constraint catalog character varying The database name. unique constraint schema character varying The name of the schema that contains the unique or primary key constraint that the foreign key constraint references. unique constraint name character varying The name of the unique or primary key constraint that the foreign key constraint references. match option character varying The match method used by the foreign key constraint."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:37.939Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

@@ -1,0 +1,133 @@
+{
+  "feature_name": "Add-on conference data",
+  "feature_slug": "add-on-conference-data",
+  "summary": "The Calendar API allows attaching conference data of type addOn to new or existing events through Events.insert and Events.update.",
+  "extended_definition": "The Calendar API allows attaching conference data of type addOn to new or existing events through Events.insert and Events.update.",
+  "lifecycle": {
+    "latest_feature_date": "2019-09-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/calendar/api/guides/create-events",
+      "https://developers.google.com/workspace/calendar/api/guides/event-types",
+      "https://developers.google.com/workspace/calendar/api/v3/reference/calendarList"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create events \\_|\\_ Google Calendar \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/calendar/api/guides/create-events",
+        "source_id": "site-docs-root",
+        "final_score": 95,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following code example demonstrates how to update an existing event to add an attachment: Java public static void addAttachment ( Calendar calendarService , Drive driveService , String calendarId , String eventId , String fileId ) throws IOException { File file = driveService . files (). get ( fileId ). execute (); Event event = calendarService . events (). get ( calendarId , eventId ). execute (); List<EventAttachment> attachments = event . getAttachments (); if ( attachments == null ) { attachments = new ArrayList<EventAttachment> (); } attachments . add ( new EventAttachment () . setFileUrl ( file . getAlternateLink ()) . setMimeType ( file . getMimeType ()) . setTitle ( file . getTitle ())); Event changes = new Event () . setAttachments ( attachments ); calendarService . events (). patch ( calendarId , eventId , changes ) . setSupportsAttachments ( true ) . execute (); } PHP function addAttachment($calendarService, $driveService, $calendarId, $eventId, $fileId) { $file = $driveService->files->get($fileId); $event = $calendarService->events->get($calendarId, $eventId); $attachments = $event->attachments; $attachments[] = array( 'fileUrl' => $file->alternateLink, 'mimeType' => $file->mimeType, 'title' => $file->title ); $changes = new Google Service Calendar Event(array( 'attachments' => $attachments )); $calendarService->events->patch($calendarId, $eventId, $changes, array( 'supportsAttachments' => TRUE )); } Python def add attachment ( calendarService , driveService , calendarId , eventId , fileId ): file = driveService . files () . get ( fileId = fileId ) . execute () event = calendarService . events () . get ( calendarId = calendarId , eventId = eventId ) . execute () attachments = event . get ( 'attachments' , []) attachments . append ({ 'fileUrl' : file [ 'alternateLink' ], 'mimeType' : file [ 'mimeType' ], 'title' : file [ 'title' ] }) changes = { 'attachments' : attachments } calendarService . events () . patch ( calendarId = calendarId , eventId = eventId , body = changes , supportsAttachments = True ) . execute () Important: You must perform a full sync of all events before enabling the supportsAttachments parameter for event modifications when adding attachments support into your existing app that stores events locally.",
+          "For example, to request conference generation for an existing event: JavaScript const eventPatch = { conferenceData : { createRequest : { requestId : \"7qxalsvy0e\" } } }; gapi . client . calendar . events . patch ({ calendarId : \"primary\" , eventId : \"7cbh8rpc10lrc0ckih9tafss99\" , resource : eventPatch , sendUpdates : \"all\" , conferenceDataVersion : 1 }). execute ( function ( event ) { console . log ( \"Conference created for event: %s\" , event . htmlLink ); }); The immediate response to this call might not yet contain the fully-populated conferenceData ; this is indicated by a status code of pending in the status field.",
+          "There are three types of conferenceData currently supported, as denoted by the conferenceData.conferenceSolution.key.type : Hangouts for consumers ( eventHangout ) Classic Hangouts for Google Workspace users (deprecated; eventNamedHangout ) Google Meet ( hangoutsMeet ) You can learn which conference type is supported for any given calendar of a user by looking at the conferenceProperties.allowedConferenceSolutionTypes in the calendars and calendarList collections."
+        ]
+      },
+      {
+        "title": "CalendarList \\_|\\_ Google Calendar \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/calendar/api/v3/reference/calendarList",
+        "source_id": "site-api-reference",
+        "final_score": 89,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource representations { \"kind\" : \"calendar#calendarListEntry\" , \"etag\" : etag , \"id\" : string , \"summary\" : string , \"description\" : string , \"location\" : string , \"timeZone\" : string , \"dataOwner\" : string , \"summaryOverride\" : string , \"colorId\" : string , \"backgroundColor\" : string , \"foregroundColor\" : string , \"hidden\" : boolean , \"selected\" : boolean , \"accessRole\" : string , \"defaultReminders\" : [ { \"method\" : string , \"minutes\" : integer } ], \"notificationSettings\" : { \"notifications\" : [ { \"type\" : string , \"method\" : string } ] } , \"primary\" : boolean , \"deleted\" : boolean , \"conferenceProperties\" : { \"allowedConferenceSolutionTypes\" : [ string ] } , \"autoAcceptInvitations\" : boolean } Property name Value Description Notes accessRole string The effective access role that the authenticated user has on the calendar.",
+          "Optional. writable conferenceProperties nested object Conferencing properties for this calendar, for example what types of conferences are allowed. conferenceProperties. allowedConferenceSolutionTypes[] list The types of conference solutions that are supported for this calendar.",
+          "Methods delete Removes a calendar from the user's calendar list. get Returns a calendar from the user's calendar list. insert Inserts an existing calendar into the user's calendar list. list Returns the calendars on the user's calendar list. patch Updates an existing calendar on the user's calendar list."
+        ]
+      },
+      {
+        "title": "Event types \\_|\\_ Google Calendar \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/calendar/api/guides/event-types",
+        "source_id": "site-docs-root",
+        "final_score": 86,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Events . get ( CALENDAR ID , ' EVENT ID ' ); console . log ( response ); } catch ( exception ) { console . log ( exception . message ); } } / Creates a default event. / function createDefaultEvent () { const event = { start : { dateTime : '2024-07-30T10:30:00+01:00' }, end : { dateTime : '2024-07-30T12:30:00+01:00' }, description : 'Created from Apps Script.' , eventType : 'default' , summary : 'Sample event' , } createEvent ( event ); } / Creates a birthday event. / function createBirthday () { const event = { start : { date : '2024-01-29' }, end : { date : '2024-01-30' }, eventType : 'birthday' , recurrence : [ \"RRULE:FREQ=YEARLY\" ], summary : \"My friend's birthday\" , transparency : \"transparent\" , visibility : \"private\" , } createEvent ( event ); } / Creates a Calendar event.",
+          "Paste the following into the code editor. const CALENDAR ID = ' CALENDAR ID ' 'primary' ; / Lists default events. / function listDefaultEvents () { listEvents ( 'default' ); } / Lists birthday events. / function listBirthdays () { listEvents ( 'birthday' ); } / Lists events from Gmail. / function listEventsFromGmail () { listEvents ( 'fromGmail' ); } / Lists events with the given event type.",
+          "See https://developers.google.com/workspace/calendar/api/v3/reference/events/list / function listEvents ( eventType = undefined ) { // Query parameters for the list request. const optionalArgs = { eventTypes : eventType ? [ eventType ] : undefined , singleEvents : true , timeMax : '2024-07-30T00:00:00+01:00' , timeMin : '2024-07-29T00:00:00+01:00' , } try { var response = Calendar ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "key.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/create-events",
+        "https://developers.google.com/workspace/calendar/api/v3/reference/calendarList",
+        "https://developers.google.com/workspace/calendar/api/guides/event-types"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/create-events",
+        "https://developers.google.com/workspace/calendar/api/v3/reference/calendarList",
+        "https://developers.google.com/workspace/calendar/api/guides/event-types"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/create-events",
+        "https://developers.google.com/workspace/calendar/api/v3/reference/calendarList",
+        "https://developers.google.com/workspace/calendar/api/guides/event-types"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/create-events",
+        "https://developers.google.com/workspace/calendar/api/v3/reference/calendarList",
+        "https://developers.google.com/workspace/calendar/api/guides/event-types"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/create-events",
+        "https://developers.google.com/workspace/calendar/api/v3/reference/calendarList",
+        "https://developers.google.com/workspace/calendar/api/guides/event-types"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/create-events",
+        "https://developers.google.com/workspace/calendar/api/v3/reference/calendarList",
+        "https://developers.google.com/workspace/calendar/api/guides/event-types"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:26.173Z",
+  "source_step08_card": "data/step-08/current/products/calendar-api/card.json",
+  "product_name": "Calendar API",
+  "product_slug": "calendar-api"
+}

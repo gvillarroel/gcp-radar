@@ -1,0 +1,94 @@
+{
+  "feature_name": "Dashboard editing for saved Log Analytics charts",
+  "feature_slug": "dashboard-editing-for-saved-log-analytics-charts",
+  "summary": "Saved Log Analytics charts can be edited directly from the Dashboards page; Saved Log Analytics charts can be edited directly from the Dashboards page.",
+  "extended_definition": "Saved Log Analytics charts can be edited directly from the Dashboards page; Saved Log Analytics charts can be edited directly from the Dashboards page.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/logging-gce-quickstart",
+      "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/ListSavedQueriesResponse",
+      "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and analyze logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "source_id": "site-docs-root",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "For information about creating charts from your query results and saving charts to a custom dashboard, see Chart query results with Observability Analytics .",
+          "The Logs Explorer contains the following sections, which are detailed on this page: Primary toolbar Query pane Fields pane Timeline Query results pane Primary toolbar in the Logs Explorer Using the primary toolbar, you can do the following: menu book Query library : View saved, recent, and suggested queries.",
+          "To perform aggregate operations on your log entries, like counting the number of log entries that contain a specific pattern, upgrade the log bucket to use Observability Analytics, and then run queries from the Observability Analytics page of the Google Cloud console."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Collect logs from Apache with the Ops Agent \\_|\\_ Cloud Logging\\",
+        "url": "https://docs.cloud.google.com/logging/docs/logging-gce-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 74,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "ListSavedQueriesResponse \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/ListSavedQueriesResponse",
+        "source_id": "site-docs-reference",
+        "final_score": 73,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It can be either 1) a saved query if a specific query is unreachable or 2) a location if a specific location is unreachabe. \"projects/[PROJECT ID]/locations/[LOCATION ID]/savedQueries/[QUERY ID]\" \"projects/[PROJECT ID]/locations/[LOCATION ID]\" For example: \"projects/my-project/locations/global/savedQueries/12345678\" \"projects/my-project/locations/global\" If there are unreachable resources, the response will first return pages that contain saved queries, and then return pages that contain the unreachable resources.",
+          "JSON representation { \"savedQueries\" : [ { object ( SavedQuery ) } ] , \"nextPageToken\" : string , \"unreachable\" : [ string ] } Fields savedQueries[] object ( SavedQuery ) A list of saved queries. nextPageToken string If there might be more results than appear in this response, then nextPageToken is included.",
+          "Home Documentation Observability Cloud Logging Reference Send feedback ListSavedQueriesResponse Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/ListSavedQueriesResponse",
+        "https://docs.cloud.google.com/logging/docs/logging-gce-quickstart"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/ListSavedQueriesResponse",
+        "https://docs.cloud.google.com/logging/docs/logging-gce-quickstart"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:31.891Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging"
+}

@@ -1,0 +1,126 @@
+{
+  "feature_name": "Custom masking routines",
+  "feature_slug": "custom-masking-routines",
+  "summary": "Custom masking routines let you create masking rules with REGEX_REPLACE to obfuscate sensitive data.",
+  "extended_definition": "Custom masking routines let you create masking rules with REGEX_REPLACE to obfuscate sensitive data.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+      "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+      "https://docs.cloud.google.com/bigquery/docs/user-defined-functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "User-defined functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "source_id": "site-docs-reference",
+        "final_score": 385,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REGEXP REPLACE ( ssn , '[0-9]' , 'X' ) # 123-45-6789 -> XXX-XX-XXXX ); The following example hashes with user provided salt , using the SHA256 function: CREATE OR REPLACE FUNCTION project .dataset.masking routine1 ( ssn STRING ) RETURNS STRING OPTIONS ( data governance type = 'DATA MASKING' ) AS ( CAST ( SHA256 ( CONCAT ( ssn , ' salt ' )) AS STRING format 'HEX' ) ); The following example masks a DATETIME column with a constant value: CREATE OR REPLACE FUNCTION project .dataset.masking routine2 ( column DATETIME ) RETURNS DATETIME OPTIONS ( data governance type = 'DATA MASKING' ) AS ( SAFE CAST ( '2023-09-07' AS DATETIME ) ); As a best practise, use the SAFE prefix wherever possible to avoid exposing raw data through error messages.",
+          "Following operators can be used with CASE and CASE expr statements: Comparison Operators - < , <= , > , >= , = , != , IN Logical Operators - AND , OR , NOT IS Operator For example, a masking routine that replaces a user's social security number with XXX-XX-XXXX might look as follows: CREATE OR REPLACE FUNCTION SSN Mask ( ssn STRING ) RETURNS STRING OPTIONS ( data governance type = \"DATA MASKING\" ) AS ( SAFE .",
+          "Custom masking routines support the following functions: AEAD.DECRYPT BYTES AEAD encryption function with KEYS.KEYSET CHAIN (raw key usage not supported) AEAD.DECRYPT STRING, AEAD encryption function with KEYS.KEYSET CHAIN (raw key usage not supported) AEAD.ENCRYPT AEAD encryption function with keyset chain (raw key usage not supported) CAST conversion function CONCAT string function CURRENT DATETIME datetime function CURRENT DATE date function CURRENT TIMESTAMP timestamp function CURRENT TIME time function DETERMINISTIC DECRYPT BYTES AEAD encryption function with KEYS.KEYSET CHAIN (raw key usage not supported) DETERMINISTIC DECRYPT STRING AEAD encryption function with KEYS.KEYSET CHAIN (raw key usage not supported) DETERMINISTIC ENCRYPT AEAD encryption function with KEYS.KEYSET CHAIN (raw key usage not supported) FARM FINGERPRINT hash function FROM BASE32 string function FROM BASE64 string function FROM HEX string function GENERATE UUID utility function KEYS.KEYSET CHAIN AEAD encryption function LENGTH string function LOWER string function LPAD string function LTRIM string function MD5 hash function REGEXP REPLACE string function REGEX EXTRACT string function REPLACE string function RPAD string function RTRIM string function SAFE CAST conversion function SHA1 hash function SHA256 hash function SHA512 hash function STARTS WITH string function SUBSTRING string function SUBSTR string function TO BASE32 string function TO BASE64 string function TO HEX string function TRIM string function UPPER string function Custom masking routines can accept either no inputs or one input within BigQuery data types , with the exception of GEOGRAPHY and STRUCT ."
+        ]
+      },
+      {
+        "title": "Introduction to data masking \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+        "source_id": "site-docs-reference-5",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "Custom masking routines Custom masking routines are subject to the following limitations: Custom data masking supports all BigQuery data types except STRUCT , because data masking can only apply to leaf fields of the STRUCT data type.",
+          "You can use the following data masking rules: Custom masking routine .",
+          "When this happens, BigQuery chooses which data masking rule to apply based on the following hierarchy: Custom masking routine Random Hash Hash (SHA-256) Email mask Last four characters First four characters Date year mask Default masking value Nullify For example, user A is a member of both the employees and the accounting groups."
+        ]
+      },
+      {
+        "title": "\"Introduction to BigLake external tables \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "source_id": "site-docs-reference-5",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "For BigLake tables based on Cloud Storage, you can also use dynamic data masking .",
+          "CREATE OR REPLACE TABLE temp table AS ( SELECT l shipmode , l linenumber , l orderkey FROM aws dataset . lineitem WHERE l shipmode IN ( 'AIR' , 'REG AIR' ) AND l commitdate l receiptdate AND l shipdate l commitdate AND l receiptdate >= DATE '1997-01-01' AND l receiptdate DATE '1997-02-01' ); After the temporary table is created, the JOIN operation completes, and the following query is run: SELECT l shipmode , o orderpriority , count ( l linenumber ) AS num lineitems FROM bigquery dataset . orders JOIN temp table ON orders . o orderkey = lineitem . l orderkey GROUP BY l shipmode , o orderpriority ORDER BY l shipmode , o orderpriority ; As another example, consider the following cross-cloud join: SELECT c mktsegment , c name FROM bigquery dataset . customer WHERE c mktsegment = 'BUILDING' UNION ALL SELECT c mktsegment , c name FROM aws dataset . customer WHERE c mktsegment = 'FURNITURE' LIMIT 10 ; In this query, the LIMIT clause is not pushed down to the BigQuery Omni region.",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to run a cross-cloud join: bigquery.jobs.create bigquery.tables.getData You might also be able to get these permissions with custom roles or other predefined roles ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.jobs.create",
+      "bigquery.tables.getData",
+      "dataset.masking"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

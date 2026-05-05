@@ -1,0 +1,127 @@
+{
+  "feature_name": "Dialogflow CX integration for Chat apps",
+  "feature_slug": "dialogflow-cx-integration-for-chat-apps",
+  "summary": "Google Chat apps can integrate directly with Dialogflow CX to understand and respond using natural language; The Chat API supports direct integration with Dialogflow CX so Chat apps can understand and respond with natural language.",
+  "extended_definition": "Google Chat apps can integrate directly with Dialogflow CX to understand and respond using natural language; The Chat API supports direct integration with Dialogflow CX so Chat apps can understand and respond with natural language.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/chat/api/reference/rpc/google.type",
+      "https://developers.google.com/workspace/chat/create-custom-emoji",
+      "https://developers.google.com/workspace/chat/delete-custom-emoji"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Package google.type \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rpc/google.type",
+        "source_id": "site-docs-reference",
+        "final_score": 50,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Google Chat Reference Send feedback Package google.type Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Create a custom emoji \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/create-custom-emoji",
+        "source_id": "site-docs-root",
+        "final_score": 46,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following example creates a custom emoji: Node.js chat/client-libraries/cloud/create-custom-emoji-user-cred.js View on GitHub import fs from 'node:fs' ; import { createClientWithUserCredentials } from './authentication-utils.js' ; const USER AUTH OAUTH SCOPES = [ 'https://www.googleapis.com/auth/chat.customemojis' , ]; // This sample shows how to create custom emoji with user credential async function main () { // Create a client const chatClient = await createClientWithUserCredentials ( USER AUTH OAUTH SCOPES , ); // TODO(developer) Replace FILENAME here. const filename = 'FILENAME' ; // Read custom emoji file content into a base64 encoded string. const fileContent = fs . readFileSync ( filename , { encoding : 'base64' }); // Initialize request argument(s) const request = { custom emoji : { // TODO(developer): Replace EMOJI NAME here. emoji name : 'EMOJI NAME' , payload : { file content : fileContent , filename , }, }, }; // Make the request const response = await chatClient . createCustomEmoji ( request ); // Handle the response console . log ( response ); } await main (); To run this sample, replace the following: FILENAME : A filename of the image.",
+          "This guide explains how to use the create method on the CustomEmoji resource of the Google Chat API to create a new custom emoji in a Google Workspace organization.",
+          "Home Google Workspace Google Chat Guides Send feedback Create a custom emoji Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Delete a custom emoji \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/delete-custom-emoji",
+        "source_id": "site-docs-root",
+        "final_score": 46,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Node.js chat/client-libraries/cloud/delete-custom-emoji-user-cred.js View on GitHub import { createClientWithUserCredentials } from './authentication-utils.js' ; const USER AUTH OAUTH SCOPES = [ 'https://www.googleapis.com/auth/chat.customemojis' , ]; // This sample shows how to delete a custom emoji with user credential async function main () { // Create a client const chatClient = await createClientWithUserCredentials ( USER AUTH OAUTH SCOPES , ); // Initialize request argument(s) const request = { // TODO(developer): Replace EMOJI NAME here. name : 'customEmojis/EMOJI NAME' , }; // Make the request const response = await chatClient . deleteCustomEmoji ( request ); // Handle the response console . log ( response ); } await main (); To run this sample, replace the following: EMOJI NAME : the unique name for your custom emoji, in the emoji name field.",
+          "Create access credentials based on how you want to authenticate in your Google Chat API request: To authenticate as a Chat user, create OAuth client ID credentials and save the credentials as a JSON file named credentials.json to your local directory.",
+          "Home Google Workspace Google Chat Guides Send feedback Delete a custom emoji Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "chat.customemojis",
+      "cred.js",
+      "credentials.json",
+      "developers.google.com",
+      "utils.js"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.type",
+        "https://developers.google.com/workspace/chat/delete-custom-emoji",
+        "https://developers.google.com/workspace/chat/create-custom-emoji"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.type",
+        "https://developers.google.com/workspace/chat/delete-custom-emoji",
+        "https://developers.google.com/workspace/chat/create-custom-emoji"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.type",
+        "https://developers.google.com/workspace/chat/delete-custom-emoji",
+        "https://developers.google.com/workspace/chat/create-custom-emoji"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.type",
+        "https://developers.google.com/workspace/chat/delete-custom-emoji",
+        "https://developers.google.com/workspace/chat/create-custom-emoji"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:26.701Z",
+  "source_step08_card": "data/step-08/current/products/chat-api/card.json",
+  "product_name": "Chat API",
+  "product_slug": "chat-api"
+}

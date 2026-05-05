@@ -1,0 +1,117 @@
+{
+  "feature_name": "FHIR bulk-delete operation",
+  "feature_slug": "fhir-bulk-delete-operation",
+  "summary": "The FHIR bulk-delete operation is generally available in Cloud Healthcare API, enabling deletion or purging of multiple FHIR resources in one long-running operation using filters such as resource type and last updated time; The FHIR bulk-delete operation is generally available in Cloud Healthcare API, enabling deletion or purging of multiple FHIR resources in one long-running operation using filters such as resource type and last updated time.",
+  "extended_definition": "The FHIR bulk-delete operation is generally available in Cloud Healthcare API, enabling deletion or purging of multiple FHIR resources in one long-running operation using filters such as resource type and last updated time; The FHIR bulk-delete operation is generally available in Cloud Healthcare API, enabling deletion or purging of multiple FHIR resources in one long-running operation using filters such as resource type and last updated time.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/best-practices-lros",
+      "https://docs.cloud.google.com/healthcare-api/docs/cmek",
+      "https://docs.cloud.google.com/healthcare-api/docs/concepts/fhir-import"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "FHIR import options \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/concepts/fhir-import",
+        "source_id": "site-docs-root-2",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If the application managing the fhirStores.import operation doesn't have a good strategy for the following, use fhir.executeBundle : Handling bulk errors Addressing failures on a subset of FHIR resources or entire batches When not to use FHIR bundles Consider the following limitations of fhir.executeBundle when determining whether to use it to store FHIR resources: Bundles have the equivalent quota and billing applied to the operations inside the bundle as if the operations were executed outside of the bundle.",
+          "Tip: If you're importing data from an external bulk FHIR server, consider using the Google open source Bulk FHIR Tools to load data directly into the Cloud Healthcare API.",
+          "If you need to send Pub/Sub notifications when FHIR create, update, or delete operations occur, use fhir.executeBundle ."
+        ]
+      },
+      {
+        "title": "\"Enable customer-managed encryption keys (CMEK) for Cloud Healthcare API\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/cmek",
+        "source_id": "site-docs-root-2",
+        "final_score": 131,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following process describes how key availability is checked, and how a dataset can be disabled and deleted: After a CMEK-encrypted Cloud Healthcare API dataset is created, the Cloud Healthcare API checks the key's status every five minutes to ensure the key is available.",
+          "Key unavailability and data loss If a dataset is encrypted by a key, and that key becomes unavailable and remains unavailable, the Cloud Healthcare API disables and eventually deletes the dataset.",
+          "CMEK operations Cloud KMS keys are used when a CMEK-encrypted resource is created, read, updated, or deleted, and for operational tasks like billing or ensuring the key is available."
+        ]
+      },
+      {
+        "title": "\"Long-running operations best practices \\_|\\_ Cloud Healthcare API \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/best-practices-lros",
+        "source_id": "site-docs-root-2",
+        "final_score": 127,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Quota impact LROs don't share quota with Cloud Healthcare API create, read, update, and delete (CRUD) methods that consume the following types of quota: fhir read ops fhir write ops fhir search ops fhir store ops dicom web ops dicom ops LRO quota is calculated using the fhir store lro ops and dicom store lro ops metrics.",
+          "Home Documentation Industry solutions Cloud Healthcare API Guides Send feedback Long-running operations best practices Stay organized with collections Save and categorize content based on your preferences.",
+          "LROs are background processes, so if the load from LROs interferes with higher-priority processes, such CRUD operations, the Cloud Healthcare API can reduce LRO throughput."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datasets.get",
+      "fhir.executeBundle"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/fhir-import",
+        "https://docs.cloud.google.com/healthcare-api/docs/cmek",
+        "https://docs.cloud.google.com/healthcare-api/docs/best-practices-lros"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/fhir-import",
+        "https://docs.cloud.google.com/healthcare-api/docs/cmek",
+        "https://docs.cloud.google.com/healthcare-api/docs/best-practices-lros"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/fhir-import",
+        "https://docs.cloud.google.com/healthcare-api/docs/cmek",
+        "https://docs.cloud.google.com/healthcare-api/docs/best-practices-lros"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/fhir-import",
+        "https://docs.cloud.google.com/healthcare-api/docs/cmek",
+        "https://docs.cloud.google.com/healthcare-api/docs/best-practices-lros"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:29.484Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api"
+}

@@ -1,0 +1,94 @@
+{
+  "feature_name": "Granular Budget Alert Scoping",
+  "feature_slug": "granular-budget-alert-scoping",
+  "summary": "Adds more granular budget filters so budgets and budget alerts can target groups of projects and services.",
+  "extended_definition": "Adds more granular budget filters so budgets and budget alerts can target groups of projects and services.",
+  "lifecycle": {
+    "latest_feature_date": "2019-08-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+      "https://docs.cloud.google.com/billing/docs/how-to/reports",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/com.google.cloud.billing.budgets.v1.Budget.Builder"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create, edit, or delete budgets and budget alerts \\_|\\_ Cloud Billing \\_\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+        "source_id": "site-docs-root",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "Subaccounts : (Only available to billing-account-level budgets.) If you're a reseller and your Cloud Billing account has subaccounts, in the Subaccounts field, select one or more subaccounts that you want to apply the budget alert to.",
+          "For more information about the budget settings, see: About cost trend chart About budget scope About budget amount Set alert threshold rules Manage notifications Delete a budget : Caution: Deleted budgets cannot be recovered.",
+          "Folders & organizations : If your Google Cloud is configured to use organizations and folders , in the Folders & organizations field, select one or more organizations or folders that you want to apply the budget alert to."
+        ]
+      },
+      {
+        "title": "\"Analyze billing data and cost trends with Reports \\_|\\_ Cloud Billing \\_\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "source_id": "site-docs-root",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note that the report's default settings are different if you access the report from the Budget and alerts page—the report's timeframe and filters are configured using the budget's scope settings.",
+          "Credits setting: You can select or clear the Credits filters to change the view of your cost calculations to include or exclude credits, helping you see how credits impact the cost calculations compared to your budget target amount.",
+          "Review the following examples for more information: Projects: budget scope versus cost report filter For the Cloud Billing account, assume the following regarding projects: 20 currently active projects incurring costs."
+        ]
+      },
+      {
+        "title": "\"Class Budget.Builder (2.88.0) \\_|\\_ Java client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/com.google.cloud.billing.budgets.v1.Budget.Builder",
+        "source_id": "site-java-reference",
+        "final_score": 132,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Filters that define which resources are used to compute the actual spend against the budget amount, such as projects, services, and the budget's time period, as well as other filters. .google.cloud.billing.budgets.v1.Filter budget filter = 3 [(.google.api.field behavior) = OPTIONAL]; Returns Type Description FilterOrBuilder getDefaultInstanceForType() public Budget getDefaultInstanceForType () Returns Type Description Budget getDescriptorForType() public Descriptors .",
+          "Filters that define which resources are used to compute the actual spend against the budget amount, such as projects, services, and the budget's time period, as well as other filters. .google.cloud.billing.budgets.v1.Filter budget filter = 3 [(.google.api.field behavior) = OPTIONAL]; Returns Type Description boolean Whether the budgetFilter field is set. hasNotificationsRule() public boolean hasNotificationsRule () Optional.",
+          "Filters that define which resources are used to compute the actual spend against the budget amount, such as projects, services, and the budget's time period, as well as other filters. .google.cloud.billing.budgets.v1.Filter budget filter = 3 [(.google.api.field behavior) = OPTIONAL]; Parameter Name Description value Filter Returns Type Description Budget.Builder setBudgetFilter(Filter.Builder builderForValue) public Budget ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.billing.budgets.v1.Budget",
+      "com.google.cloud.billing.budgets.v1.Budget.Builder",
+      "com.google.cloud.billing.budgets.v1.BudgetOrBuilder"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/com.google.cloud.billing.budgets.v1.Budget.Builder"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:27.261Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing"
+}

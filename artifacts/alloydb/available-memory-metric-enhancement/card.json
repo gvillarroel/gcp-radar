@@ -1,0 +1,144 @@
+{
+  "feature_name": "Available memory metric enhancement",
+  "feature_slug": "available-memory-metric-enhancement",
+  "summary": "The available memory metric enhancement makes the AlloyDB metric account for usable memory from the OS page cache for more accurate reporting.",
+  "extended_definition": "The available memory metric enhancement makes the AlloyDB metric account for usable memory from the OS page cache for more accurate reporting.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+      "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots",
+      "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Optimize database performance by comparing performance snapshots \\_|\\_ AlloyDB\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots",
+        "source_id": "site-docs-reference-2",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example report The following is an abridged example of a generated performance snapshot report: Example performance snapshot report $ psql -d postgres -U alloydbsuperuser postgres=> select perfsnap.report(22, 23); report -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- PGSNAP DB Report for: Snapshot details -------------------------------------- Host i841-sr-primary-2a34f46e-06bc Release 14.12 Startup Time 2024-10-08 03:23:15+00 Snap Id Snap Time ------------ ---------- ------------------------ Begin Snap: 22 24.10.2024 04:33:56 (UTC) Automatic snapshot End Snap: 23 25.10.2024 04:38:56 (UTC) Automatic snapshot Elapsed: 1 day 00:04:59.979321 Database Cache sizes Shared Buffers: 31 GB Block Size: 8192 Effective Cache Size: 25 GB WAL Buffers: 16384 Host CPU %User %Nice %System %Idle %WIO %IRQ %SIRQ %Steal %Guest ------- ------- ------- ------- ------- ------- ------- ------- ------- 1.07 0.22 0.91 97.40 0.09 0.00 0.31 0.00 0.00 Host Memory Total Memory: 63 GB Available Memory: 11 GB Free Memory: 726 MB Buffers Memory: 3706 MB Load profile (in bytes) Per Second Per Transaction ------------ --------------- Redo size: 63083.64 4489.93 Logical reads: 1961.21 139.59 ...",
+          "AlloyDB supports two types of snapshots: Snapshots of system metrics: these snapshots capture key system metrics such as vCPU usage, memory usage, and disk I/O.",
+          "The output looks similar to the following: postgres=# select from perfsnap.g$snapshots; snap id snap time instance id node id snap description snap type is baseline ---------+-------------------------------+--------------+---------------------------------+-------------------+-----------+------------- 1 2023-11-13 22:13:43.159237+00 perf-primary sab3-perf-primary-cab835ef-4cm8 Manual snapshot Manual f 2 2023-11-13 22:53:40.49565+00 perf-primary sab3-perf-primary-cab835ef-4cm8 Automatic snapshot Automatic f 3 2023-11-13 22:56:42.57094+00 perf-replica sab3-perf-replica-b9250422-tz4n Automatic snapshot Automatic f 4 2023-11-13 22:56:42.59476+00 perf-replica sab3-perf-replica-b9250422-63q3 Automatic snapshot Automatic f 5 2023-11-13 23:11:55.23157+00 perf-replica sab3-perf-replica-b9250422-tz4n Manual snapshot Manual f (5 rows) Note: To support basic metrics tracking, AlloyDB automatically takes a snapshot once a day."
+        ]
+      },
+      {
+        "title": "\"Use AlloyDB for PostgreSQL with MCP, Gemini CLI, and other agents \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "source_id": "site-docs-reference-2",
+        "final_score": 90,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before you begin To connect to your AlloyDB instance and use the available tools, you must have one of the following Identity and Access Management (IAM) roles, or a custom role with equivalent permissions: Task Role name Required Identity and Access Management (IAM) role Use read-only tools to list and get AlloyDB resources AlloyDB Viewer roles/alloydb.viewer Connect to an instance and run queries Cloud AlloyDB Client roles/alloydb.client Service Usage Consumer roles/serviceusage.serviceUsageConsumer Perform administrative tasks (such as creating or managing clusters, instances, and users) AlloyDB Admin roles/alloydb.admin Use the observability extension Monitoring Viewer roles/monitoring.viewer Before you can connect to your AlloyDB instance, complete the following steps to set up your project and database.",
+          "After you install AlloyDB in the MCP Store, resources and tools from the server are automatically available to the editor.",
+          "Locate AlloyDB for PostgreSQL in the list of available servers and click Install ."
+        ]
+      },
+      {
+        "title": "\"AlloyDB query tuning and optimization \\_|\\_ AlloyDB for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization",
+        "source_id": "site-api-reference",
+        "final_score": 82,
+        "relevance": "",
+        "evidence_snippets": [
+          "All documented hints in the following tables are available in AlloyDB: pg hint plan hint Purpose ColumnarScan(table) , NoColumnarScan(table) Influences the planner to use columnar engine for the specified table.",
+          "Specifically, you can use pg proctab to determine how much memory your idle connections are using, as shown: SELECT sa . pid , SUBSTR ( sa . query , 0 , 50 ) as query , pg size pretty ( ps . rss 1024 ) AS memory consumption FROM pg stat activity sa JOIN pg proctab () ps ON sa . pid = ps . pid WHERE sa . state = 'idle' ; pg systat The pg systat command-line tool can be executed remotely to retrieve statistics about databases, tables, indexes, tablespaces, vacuum, and standby instances.",
+          "802 rows = 9986 loops = 2 ) Sort Key : lastname , firstname Sort Method : quicksort Memory : 6751 kB Buffers : shared hit = 1773 Worker 0 : Sort Method : quicksort Memory : 7077 kB -> Parallel Seq Scan on person ( cost = 0 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.admin",
+      "alloydb.client",
+      "alloydb.viewer",
+      "monitoring.viewer",
+      "perfsnap.g",
+      "perfsnap.report",
+      "serviceusage.serviceUsageConsumer"
+    ],
+    "missing_inventory_roles": [
+      "roles/alloydb.admin",
+      "roles/alloydb.client",
+      "roles/alloydb.viewer",
+      "roles/monitoring.viewer",
+      "roles/serviceusage.serviceUsageConsumer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:04.004Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb"
+}

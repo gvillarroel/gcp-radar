@@ -1,0 +1,196 @@
+{
+  "feature_name": "Cloud Build user-specified service account support",
+  "feature_slug": "cloud-build-user-specified-service-account-support",
+  "summary": "Cloud Build user-specified service account support lets Cortex Framework deployments run builds with a chosen service account.",
+  "extended_definition": "Cloud Build user-specified service account support lets Cortex Framework deployments run builds with a chosen service account.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cortex/docs/datamesh",
+      "https://docs.cloud.google.com/cortex/docs/deployment-prerequisites",
+      "https://docs.cloud.google.com/cortex/docs/deployment-step-four"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"(Deprecated) Data Mesh User Guide \\_|\\_ Google Cloud Cortex Framework \\_\\",
+        "url": "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "source_id": "site-docs-reference",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following sections are particularly relevant: Roles interact Authorization inheritance Masking rules and hierarchy Policy tag best practices Cortex Framework provides sample policy tags to demonstrate how they are specified and potential uses, however resources that affect access control are not enabled in the Data Mesh deployment by default.",
+          "Home Documentation Data analytics Google Cloud Cortex Framework Guides Send feedback Stay organized with collections Save and categorize content based on your preferences. (Deprecated) Data Mesh User Guide Warning: The Data Mesh feature within the Google Cloud Cortex Framework is now deprecated and disabled.",
+          "For existing Cortex Framework users who have implemented the Data Mesh feature, we recommend transitioning to Dataplex Universal Catalog to ensure continued support and access to the latest features."
+        ]
+      },
+      {
+        "title": "\"Step 4: Set up components \\_|\\_ Google Cloud Cortex Framework \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+        "source_id": "site-docs-reference",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Assign the Service Account Token Creator role. gcloud Create a service account through an IAM policy with the following command: gcloud iam service-accounts create cortex-deployer \\ --description = \"Cortex Deployer Service Account\" \\ --display-name = \"Cortex Deployer\" Add the IAM policy to your Google Cloud project with the following command: gcloud projects add-iam-policy-binding SOURCE PROJECT \\ --member = \"serviceAccount: cortex-deployer @ SOURCE PROJECT .iam.gserviceaccount.com\" \\ --role = \"roles/cloudbuild.builds.editor\" Add the ID of all users (including your own) who can run the deployment through the service account, and assign them the Service Account Token Creator role with the following command: gcloud iam service-accounts add-iam-policy-binding cortex-deployer @ SOURCE PROJECT .iam.gserviceaccount.com \\ --member = \"user: USER EMAIL \" \\ --role = \"roles/iam.serviceAccountTokenCreator\" Replace the following: SOURCE PROJECT with the source project for Cortex Framework Data Foundation deployment.",
+          "This section guides you through creating a dedicated service account for Cortex Framework deployments and granting the necessary permissions to the Cloud Build service account.",
+          "The minimum required roles for a dedicated service account for Cortex for Meridian are the following: BigQuery Data Viewer ( roles/bigquery.dataViewer ) BigQuery Job User ( roles/bigquery.jobUser ) BigQuery Read Session User ( roles/bigquery.readSessionUser ) Cloud Build Editor ( roles/cloudbuild.builds.editor ) Colab Enterprise Admin ( roles/aiplatform.colabEnterpriseAdmin ) Logs Writer ( roles/logging.logWriter ) Notebook Runtime Admin ( aiplatform.notebookRuntimeAdmin ) Storage Admin ( roles/storage.admin ) Storage Object User ( roles/storage.objectUser ) Vertex AI Colab Service Agent ( roles/aiplatform.colabServiceAgent ) Use the following command to grant the roles to the dedicated service account for Cortex for Meridian: gcloud projects add-iam-policy-binding SOURCE PROJECT \\ --member = \"serviceAccount: cortex-meridian-colab-runner @ SOURCE PROJECT .iam.gserviceaccount.com\" \\ --role = 'roles/bigquery.dataViewer' gcloud projects add-iam-policy-binding SOURCE PROJECT \\ --member = \"serviceAccount: cortex-meridian-colab-runner @ SOURCE PROJECT .iam.gserviceaccount.com\" \\ --role = 'roles/bigquery.jobUser' gcloud projects add-iam-policy-binding SOURCE PROJECT \\ --member = \"serviceAccount: cortex-meridian-colab-runner @ SOURCE PROJECT .iam.gserviceaccount.com\" \\ --role = 'roles/bigquery.readSessionUser' gcloud projects add-iam-policy-binding SOURCE PROJECT \\ --member = \"serviceAccount: cortex-meridian-colab-runner @ SOURCE PROJECT .iam.gserviceaccount.com\" \\ --role = 'roles/cloudbuild.builds.editor' gcloud projects add-iam-policy-binding SOURCE PROJECT \\ --member = \"serviceAccount: cortex-meridian-colab-runner @ SOURCE PROJECT .iam.gserviceaccount.com\" \\ --role = 'roles/aiplatform.colabEnterpriseAdmin' gcloud projects add-iam-policy-binding SOURCE PROJECT \\ --member = \"serviceAccount: cortex-meridian-colab-runner @ SOURCE PROJECT .iam.gserviceaccount.com\" \\ --role = 'roles/logging.logWriter' gcloud projects add-iam-policy-binding SOURCE PROJECT \\ --member = \"serviceAccount: cortex-meridian-colab-runner @ SOURCE PROJECT .iam.gserviceaccount.com\" \\ --role = 'roles/aiplatform.notebookRuntimeAdmin' gcloud projects add-iam-policy-binding SOURCE PROJECT \\ --member = \"serviceAccount: cortex-meridian-colab-runner @ SOURCE PROJECT .iam.gserviceaccount.com\" \\ --role = 'roles/storage.admin' gcloud projects add-iam-policy-binding SOURCE PROJECT \\ --member = \"serviceAccount: cortex-meridian-colab-runner @ SOURCE PROJECT .iam.gserviceaccount.com\" \\ --role = 'roles/storage.objectUser' gcloud projects add-iam-policy-binding SOURCE PROJECT \\ --member = \"serviceAccount: cortex-meridian-colab-runner @ SOURCE PROJECT .iam.gserviceaccount.com\" \\ --role = 'roles/aiplatform.colabServiceAgent' Replace the following: SOURCE PROJECT with the project ID where Cortex for Meridian is deployed. cortex-meridian-colab-runner with your service account for Cortex for Meridian."
+        ]
+      },
+      {
+        "title": "Prerequisites \\_|\\_ Google Cloud Cortex Framework \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cortex/docs/deployment-prerequisites",
+        "source_id": "site-docs-reference",
+        "final_score": 120,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Get the required roles To get the permissions that you need to deploy Cortex Framework Data Foundation solution content, ask your administrator to grant you the following IAM roles on your source project and target project: BigQuery Job User ( roles/bigquery.jobUser ) BigQuery Data Editor ( roles/bigquery.dataEditor ) Create Service Accounts ( roles/iam.serviceAccountCreator ) Project IAM Admin ( roles/resourcemanager.projectIamAdmin ) Project Reader ( roles/reader ) Service Usage Admin ( roles/serviceusage.serviceUsageAdmin ) Storage Object Viewer ( roles/storage.objectViewer ) Storage Admin ( roles/storage.admin ) Cloud Build Editor ( roles/cloudbuild.builds.editor ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Explore the repository The prerequisites outlined on this page are specifically designed for deploying Cortex Framework Data Foundation content from the official GitHub repository .",
+          "When deploying Cortex Framework content you will want to understand which data sources and workloads are required to meet your business needs and are relevant for deployment."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.colabEnterpriseAdmin",
+      "aiplatform.colabServiceAgent",
+      "aiplatform.notebookRuntimeAdmin",
+      "bigquery.dataEditor",
+      "bigquery.dataViewer",
+      "bigquery.jobUser",
+      "bigquery.readSessionUser",
+      "cloudbuild.builds.builder",
+      "cloudbuild.builds.editor",
+      "iam.gserviceaccount.com",
+      "iam.serviceAccountCreator",
+      "iam.serviceAccountTokenCreator",
+      "iam.serviceAccountUser",
+      "logging.logWriter",
+      "resourcemanager.projectIamAdmin",
+      "serviceusage.serviceUsageAdmin",
+      "storage.admin",
+      "storage.objectUser",
+      "storage.objectViewer",
+      "workflows.editor"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.colabEnterpriseAdmin",
+      "roles/aiplatform.colabServiceAgent",
+      "roles/aiplatform.notebookRuntimeAdmin",
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.dataViewer",
+      "roles/bigquery.jobUser",
+      "roles/bigquery.readSessionUser",
+      "roles/cloudbuild.builds.builder",
+      "roles/cloudbuild.builds.editor",
+      "roles/iam.serviceAccountCreator",
+      "roles/iam.serviceAccountTokenCreator",
+      "roles/iam.serviceAccountUser",
+      "roles/logging.logWriter",
+      "roles/reader",
+      "roles/resourcemanager.projectIamAdmin",
+      "roles/serviceusage.serviceUsageAdmin",
+      "roles/storage.admin",
+      "roles/storage.objectUser",
+      "roles/storage.objectViewer",
+      "roles/workflows.editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+        "https://docs.cloud.google.com/cortex/docs/deployment-prerequisites"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+        "https://docs.cloud.google.com/cortex/docs/deployment-prerequisites"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+        "https://docs.cloud.google.com/cortex/docs/deployment-prerequisites"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+        "https://docs.cloud.google.com/cortex/docs/deployment-prerequisites"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+        "https://docs.cloud.google.com/cortex/docs/deployment-prerequisites"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+        "https://docs.cloud.google.com/cortex/docs/deployment-prerequisites"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+        "https://docs.cloud.google.com/cortex/docs/deployment-prerequisites"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+        "https://docs.cloud.google.com/cortex/docs/deployment-prerequisites"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "https://docs.cloud.google.com/cortex/docs/deployment-step-four",
+        "https://docs.cloud.google.com/cortex/docs/deployment-prerequisites"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:52.886Z",
+  "source_step08_card": "data/step-08/current/products/cortex/card.json",
+  "product_name": "Cortex",
+  "product_slug": "cortex"
+}

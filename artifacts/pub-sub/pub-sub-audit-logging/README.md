@@ -1,0 +1,38 @@
+# Pub/Sub audit logging
+
+Product: Pub/Sub
+Feature slug: `pub-sub-audit-logging`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Pub/Sub can generate Google Cloud Audit Logs to track usage and access.
+
+## Lifecycle
+
+- Latest feature date: 2018-02-20
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access (evidence: [https://docs.cloud.google.com/pubsub/docs/audit-logging](https://docs.cloud.google.com/pubsub/docs/audit-logging), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_topic), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_topic))
+- audit (evidence: [https://docs.cloud.google.com/pubsub/docs/audit-logging](https://docs.cloud.google.com/pubsub/docs/audit-logging), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_topic), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_topic))
+- iam (evidence: [https://docs.cloud.google.com/pubsub/docs/audit-logging](https://docs.cloud.google.com/pubsub/docs/audit-logging), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_topic), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_topic))
+- identity (evidence: [https://docs.cloud.google.com/pubsub/docs/audit-logging](https://docs.cloud.google.com/pubsub/docs/audit-logging), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_topic), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_topic))
+- key (evidence: [https://docs.cloud.google.com/pubsub/docs/audit-logging](https://docs.cloud.google.com/pubsub/docs/audit-logging), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_topic), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_topic))
+- logging (evidence: [https://docs.cloud.google.com/pubsub/docs/audit-logging](https://docs.cloud.google.com/pubsub/docs/audit-logging), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_topic), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_topic))
+- permission (evidence: [https://docs.cloud.google.com/pubsub/docs/audit-logging](https://docs.cloud.google.com/pubsub/docs/audit-logging), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_topic), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_topic))
+- policy (evidence: [https://docs.cloud.google.com/pubsub/docs/audit-logging](https://docs.cloud.google.com/pubsub/docs/audit-logging), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_topic), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic), [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_topic))
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/pubsub/docs/audit-logging](https://docs.cloud.google.com/pubsub/docs/audit-logging)
+- [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_topic)
+- [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_topic)
+- [https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic](https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic)

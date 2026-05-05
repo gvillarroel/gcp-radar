@@ -1,0 +1,208 @@
+{
+  "feature_name": "Dynamic local extension startup",
+  "feature_slug": "dynamic-local-extension-startup",
+  "summary": "The guest agent can dynamically start locally installed extensions when local plugins are enabled.",
+  "extended_definition": "The guest agent can dynamically start locally installed extensions when local plugins are enabled.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+      "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+      "https://docs.cloud.google.com/compute/docs/metadata/manage-guest-attributes",
+      "https://docs.cloud.google.com/compute/docs/tutorials/setup-active-directory"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About the guest agent \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+        "source_id": "site-docs-reference",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Extensions (Optional plugins) : you can provision these extensions to integrate with other Google Cloud services to perform tasks such as: Monitoring and logging: enable the Ops Agent to collect metrics and logs for Cloud Monitoring.",
+          "Lifecycle management for extensions includes the following: Installation and updates: the guest agent manager installs, starts, stops, and configures extensions based on instructions from VM Extension Manager.",
+          "Health monitoring: the guest agent manager monitors the health and status of extensions, including their CPU and memory usage, and reports this information back to VM Extension Manager."
+        ]
+      },
+      {
+        "title": "Guest environment \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+        "source_id": "site-docs-root",
+        "final_score": 160,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This module lets the system use Google Cloud IAM permissions to control whether the system can log into an instance or perform operations as root (with sudo ). google oslogin nss cache : a utility for updating the local user and group cache. selinux : a package that contains SELinux policy definition files and a compiled policy package for configuring SELinux to support OS Login.",
+          "The guest agent is available for both Linux and Windows operating systems, with the following package names: Linux: google-guest-agent Windows: google-compute-engine-windows For detailed information about the guest agent, including its features, architecture, and how to manage the agent, see Guest agent .",
+          "Reads data from and writes data to the VM metadata Sends logs to the Windows Application Event Log, serial port, and Cloud Logging guest-agent google-compute-engine-sysprep Contains scripts for generalizing a Windows instance in preparation for creating an OS image."
+        ]
+      },
+      {
+        "title": "\"Setting and querying guest attributes \\_|\\_ Compute Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/compute/docs/metadata/manage-guest-attributes",
+        "source_id": "site-iam-reference",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, guest attributes work well for the following use cases: Startup scripts that can signal successful initialization by setting a custom status value in guest attributes.",
+          "Inventory management agents that can publish list of packages installed in the VM instance to guest attributes.",
+          "For example, you can retrieve all of the values for the VM as follows: gcloud compute instances get-guest-attributes VM NAME \\ --zone= ZONE To retrieve all of the values under a specific namespace, include the --query-path flag and the namespace that you defined: gcloud compute instances get-guest-attributes VM NAME \\ --query-path= NAMESPACE \\ --zone= ZONE To retrieve all of the values under a specific namespace, include the --query-path flag, the namespace, and the key for the value that you defined: gcloud compute instances get-guest-attributes VM NAME \\ --query-path= NAMESPACE / KEY \\ --zone= ZONE Replace the following: VM NAME : the name of the VM from which you want to read the guest attribute metadata value NAMESPACE : the namespace for the guest-attributes key that you want to query KEY : the path within guest-attributes metadata where the value is stored ZONE : the zone where the VM is located REST Use the compute.instances.getguestattributes method : GET https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /zones/ ZONE /instances/ VM NAME /getGuestAttributes?queryPath= NAMESPACE / KEY Replace the following: PROJECT ID : your project ID ZONE : the zone where your VM is located VM NAME : the name of the VM from which you want to read the guest attribute metadata value NAMESPACE : the namespace for the guest-attributes key that you want to query KEY : the path within guest-attributes metadata where the value is stored To retrieve all of the keys for a NAMESPACE , omit the KEY : GET https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /zones/ ZONE /instances/ VM NAME /getGuestAttributes?queryPath= NAMESPACE To retrieve all of the keys in each namespace on the VM, omit the NAMESPACE : GET https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /zones/ ZONE /instances/ VM NAME /getGuestAttributes?queryPath= Alternatively, if you have an OAuth token, you can use curl : curl -H \"Authorization: Bearer OAUTH TOKEN \" https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /zones/ ZONE /instances/ VM NAME /getGuestAttributes?queryPath= NAMESPACE / KEY Replace the following: OAUTH TOKEN : your OAuth token PROJECT ID : your project ID ZONE : the zone where your VM is located VM NAME : the name of the VM from which you want to read the guest attribute metadata value NAMESPACE : the namespace for the guest-attributes key that you want to query KEY : the path within guest-attributes metadata where the value is stored Deleting guest attributes Use the following instructions to remove guest attributes from within a VM."
+        ]
+      },
+      {
+        "title": "\"Deploy an Active Directory forest on Compute Engine \\_|\\_ Cloud Architecture\\",
+        "url": "https://docs.cloud.google.com/compute/docs/tutorials/setup-active-directory",
+        "source_id": "site-docs-root",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about configuring the guest agent, see Enabling and disabling Windows instance features .",
+          "Configure the guest agent to disable the account manager.",
+          "Create a VM instance for the first domain controller: $Subnet = \"projects/$VpcProjectId/regions/$Region/subnetworks/domain-controllers\" $Metadata = \"ActiveDirectoryDnsDomain=$AdDnsDomain\", \"ActiveDirectoryNetbiosDomain=$AdNetbiosDomain\", \"ActiveDirectoryFirstDc=dc-1\", \"sysprep-specialize-script-ps1=Install-WindowsFeature AD-Domain-Services; Install-WindowsFeature DNS\", \"disable-account-manager=true\" -join \",\" & gcloud compute instances create dc-1 --image-family windows-2022 --image-project windows-cloud --machine-type n2-standard-8 --tags ad-domaincontroller --metadata \"$Metadata\" --metadata-from-file windows-startup-script-ps1=dc-startup.ps1 --no-address --network-interface \"no-address,private-network-ip=$AddressOfDc1,subnet=$Subnet\" --service-account $DcServiceAccount --scopes cloud-platform --zone $Zones[0] --shielded-integrity-monitoring --shielded-secure-boot --shielded-vtpm --deletion-protection This command does the following: Create a shielded Windows Server 2022 VM."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "compute.instances.getguestattributes",
+      "metadata.google.internal",
+      "startup.ps1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+        "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+        "https://docs.cloud.google.com/compute/docs/metadata/manage-guest-attributes",
+        "https://docs.cloud.google.com/compute/docs/tutorials/setup-active-directory"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+        "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+        "https://docs.cloud.google.com/compute/docs/metadata/manage-guest-attributes",
+        "https://docs.cloud.google.com/compute/docs/tutorials/setup-active-directory"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+        "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+        "https://docs.cloud.google.com/compute/docs/metadata/manage-guest-attributes",
+        "https://docs.cloud.google.com/compute/docs/tutorials/setup-active-directory"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+        "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+        "https://docs.cloud.google.com/compute/docs/metadata/manage-guest-attributes",
+        "https://docs.cloud.google.com/compute/docs/tutorials/setup-active-directory"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+        "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+        "https://docs.cloud.google.com/compute/docs/metadata/manage-guest-attributes",
+        "https://docs.cloud.google.com/compute/docs/tutorials/setup-active-directory"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+        "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+        "https://docs.cloud.google.com/compute/docs/metadata/manage-guest-attributes",
+        "https://docs.cloud.google.com/compute/docs/tutorials/setup-active-directory"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+        "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+        "https://docs.cloud.google.com/compute/docs/metadata/manage-guest-attributes",
+        "https://docs.cloud.google.com/compute/docs/tutorials/setup-active-directory"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+        "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+        "https://docs.cloud.google.com/compute/docs/metadata/manage-guest-attributes",
+        "https://docs.cloud.google.com/compute/docs/tutorials/setup-active-directory"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+        "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+        "https://docs.cloud.google.com/compute/docs/metadata/manage-guest-attributes",
+        "https://docs.cloud.google.com/compute/docs/tutorials/setup-active-directory"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+        "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+        "https://docs.cloud.google.com/compute/docs/metadata/manage-guest-attributes",
+        "https://docs.cloud.google.com/compute/docs/tutorials/setup-active-directory"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+        "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+        "https://docs.cloud.google.com/compute/docs/metadata/manage-guest-attributes",
+        "https://docs.cloud.google.com/compute/docs/tutorials/setup-active-directory"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/images/guest-agent",
+        "https://docs.cloud.google.com/compute/docs/images/guest-environment",
+        "https://docs.cloud.google.com/compute/docs/metadata/manage-guest-attributes",
+        "https://docs.cloud.google.com/compute/docs/tutorials/setup-active-directory"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:21.362Z",
+  "source_step08_card": "data/step-08/current/products/guest-environment/card.json",
+  "product_name": "Guest Environment",
+  "product_slug": "guest-environment"
+}

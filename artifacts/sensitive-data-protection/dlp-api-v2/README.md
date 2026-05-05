@@ -1,0 +1,44 @@
+# DLP API v2
+
+Product: Sensitive Data Protection
+Feature slug: `dlp-api-v2`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+The new V2 version of the DLP API was launched.
+
+## Lifecycle
+
+- Latest feature date: 2018-03-21
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/auth](https://docs.cloud.google.com/sensitive-data-protection/docs/auth), [https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json](https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json), [https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview))
+- audit (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/auth](https://docs.cloud.google.com/sensitive-data-protection/docs/auth), [https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json](https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json), [https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview))
+- auth (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/auth](https://docs.cloud.google.com/sensitive-data-protection/docs/auth), [https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json](https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json), [https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview))
+- encrypt (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/auth](https://docs.cloud.google.com/sensitive-data-protection/docs/auth), [https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json](https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json), [https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview))
+- firewall (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/auth](https://docs.cloud.google.com/sensitive-data-protection/docs/auth), [https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json](https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json), [https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview))
+- iam (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/auth](https://docs.cloud.google.com/sensitive-data-protection/docs/auth), [https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json](https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json), [https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview))
+- identity (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/auth](https://docs.cloud.google.com/sensitive-data-protection/docs/auth), [https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json](https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json), [https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview))
+- key (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/auth](https://docs.cloud.google.com/sensitive-data-protection/docs/auth), [https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json](https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json), [https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview))
+- kms (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/auth](https://docs.cloud.google.com/sensitive-data-protection/docs/auth), [https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json](https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json), [https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview))
+- logging (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/auth](https://docs.cloud.google.com/sensitive-data-protection/docs/auth), [https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json](https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json), [https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview))
+- permission (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/auth](https://docs.cloud.google.com/sensitive-data-protection/docs/auth), [https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json](https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json), [https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview))
+- policy (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/auth](https://docs.cloud.google.com/sensitive-data-protection/docs/auth), [https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json](https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json), [https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview))
+- role (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/auth](https://docs.cloud.google.com/sensitive-data-protection/docs/auth), [https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json](https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json), [https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview))
+- security (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/auth](https://docs.cloud.google.com/sensitive-data-protection/docs/auth), [https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json](https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json), [https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview))
+- threat (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/auth](https://docs.cloud.google.com/sensitive-data-protection/docs/auth), [https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json](https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json), [https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview))
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview](https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/auth](https://docs.cloud.google.com/sensitive-data-protection/docs/auth)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json](https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json)

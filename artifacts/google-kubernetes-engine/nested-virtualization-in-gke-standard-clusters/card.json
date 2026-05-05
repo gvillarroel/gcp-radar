@@ -1,0 +1,108 @@
+{
+  "feature_name": "Nested virtualization in GKE Standard clusters",
+  "feature_slug": "nested-virtualization-in-gke-standard-clusters",
+  "summary": "GKE Standard clusters now support nested virtualization.",
+  "extended_definition": "GKE Standard clusters now support nested virtualization.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "source_id": "site-api-reference",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "AdvancedMachineFeatures JSON representation { // Union field threads per core can be only one of the following: \"threadsPerCore\" : string // End of list of possible types for union field threads per core . // Union field enable nested virtualization can be only one of the following: \"enableNestedVirtualization\" : boolean // End of list of possible types for union field enable nested virtualization . // Union field performance monitoring unit can be only one of the following: \"performanceMonitoringUnit\" : enum ( PerformanceMonitoringUnit ) // End of list of possible types for union field performance monitoring unit . } Fields Union field threads per core . threads per core can be only one of the following: threadsPerCore string ( int64 format) The number of threads per physical core.",
+          "Union field autopilot compatibility auditing enabled . autopilot compatibility auditing enabled can be only one of the following: autopilotCompatibilityAuditingEnabled boolean If true, enables the GCW Auditor that audits workloads on standard clusters.",
+          "Union field enable nested virtualization . enable nested virtualization can be only one of the following: enableNestedVirtualization boolean Whether or not to enable nested virtualization (defaults to false)."
+        ]
+      },
+      {
+        "title": "\"Run workloads in Autopilot mode in Standard clusters \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "source_id": "site-docs-reference-2",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information about the implications of running an Autopilot workload in your Standard clusters, including differences that you might notice when you deploy those workloads, see About Autopilot mode workloads in GKE Standard .",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Guides Send feedback Run workloads in Autopilot mode in Standard clusters Stay organized with collections Save and categorize content based on your preferences.",
+          "Autopilot Standard Cluster administrators and application operators can get the benefits of Google Kubernetes Engine (GKE) Autopilot, like pricing and pre-configured settings, in Standard mode clusters."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "AdvancedMachineFeatures JSON representation { // Union field threads per core can be only one of the following: \"threadsPerCore\" : string // End of list of possible types for union field threads per core . // Union field enable nested virtualization can be only one of the following: \"enableNestedVirtualization\" : boolean // End of list of possible types for union field enable nested virtualization . // Union field performance monitoring unit can be only one of the following: \"performanceMonitoringUnit\" : enum ( PerformanceMonitoringUnit ) // End of list of possible types for union field performance monitoring unit . } Fields Union field threads per core . threads per core can be only one of the following: threadsPerCore string ( int64 format) The number of threads per physical core.",
+          "Union field autopilot compatibility auditing enabled . autopilot compatibility auditing enabled can be only one of the following: autopilotCompatibilityAuditingEnabled boolean If true, enables the GCW Auditor that audits workloads on standard clusters.",
+          "Union field enable nested virtualization . enable nested virtualization can be only one of the following: enableNestedVirtualization boolean Whether or not to enable nested virtualization (defaults to false)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:15.353Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

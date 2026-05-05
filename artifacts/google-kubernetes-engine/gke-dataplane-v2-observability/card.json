@@ -1,0 +1,124 @@
+{
+  "feature_name": "GKE Dataplane V2 observability",
+  "feature_slug": "gke-dataplane-v2-observability",
+  "summary": "Adds Dataplane V2 metrics and observability tools for GKE clusters.",
+  "extended_definition": "Adds Dataplane V2 metrics and observability tools for GKE clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/explore-gke-networking-docs-use-cases",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"GKE Autopilot overview \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "To access visualizations, Network Policy verdicts, and flow dumps, configure additional troubleshooting tools using GKE Dataplane V2 observability .",
+          "Observe your Kubernetes network traffic By default, Autopilot use GKE Dataplane V2 for metrics and observability .",
+          "Autopilot clusters collect the following types of logs and metrics automatically, adhering to Google's best practices for telemetry collection: Logs for Cloud Logging System logs Workload logs Admin Activity audit logs Data Access audit logs Metrics for Cloud Monitoring System metrics Workload metrics (from Google Cloud Managed Service for Prometheus) No additional configuration is required to enable logging and monitoring."
+        ]
+      },
+      {
+        "title": "Explore GKE networking documentation and use cases \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-overview",
+        "source_id": "site-docs-root",
+        "final_score": 151,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Challenge: Use a modern, secure dataplane, and provision clusters with the new dataplane Scenarios: The enterprise requires high performance and built-in policy enforcement to support demanding workloads and a zero-trust security posture.",
+          "Challenge: Use observability tools to monitor and troubleshoot workload issues Scenario: you must fix problems with network traffic, and need to understand and monitor GKE traffic flows to diagnose issues effectively.",
+          "Clusters must be configured to use a modern networking dataplane for high performance and security, and they must be deployed within the organization's centrally managed network structure."
+        ]
+      },
+      {
+        "title": "Explore GKE networking documentation and use cases \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/explore-gke-networking-docs-use-cases",
+        "source_id": "site-iam-reference",
+        "final_score": 151,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Challenge: Use a modern, secure dataplane, and provision clusters with the new dataplane Scenarios: The enterprise requires high performance and built-in policy enforcement to support demanding workloads and a zero-trust security posture.",
+          "Challenge: Use observability tools to monitor and troubleshoot workload issues Scenario: you must fix problems with network traffic, and need to understand and monitor GKE traffic flows to diagnose issues effectively.",
+          "Clusters must be configured to use a modern networking dataplane for high performance and security, and they must be deployed within the organization's centrally managed network structure."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/explore-gke-networking-docs-use-cases",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-overview"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/explore-gke-networking-docs-use-cases",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/explore-gke-networking-docs-use-cases",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/explore-gke-networking-docs-use-cases",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/explore-gke-networking-docs-use-cases",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:15.353Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

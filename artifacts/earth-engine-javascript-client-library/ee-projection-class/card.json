@@ -1,0 +1,59 @@
+{
+  "feature_name": "ee.Projection class",
+  "feature_slug": "ee-projection-class",
+  "summary": "The ee.Projection class represents map projections.",
+  "extended_definition": "The ee.Projection class represents map projections.",
+  "lifecycle": {
+    "latest_feature_date": "2014-02-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Image computations with the Earth Engine REST API \\_|\\_ Google Earth Engine\\",
+        "url": "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image",
+        "source_id": "site-docs-reference",
+        "final_score": 27,
+        "relevance": "",
+        "evidence_snippets": [
+          "ImageCollection (' COPERNICUS / S2 ') collection = collection . filterBounds ( region ) collection = collection . filterDate (' 2020 - 04 - 01 ', ' 2020 - 09 - 01 ') image = collection . median () Serialize the expression graph This will create an object that represents the Earth Engine expression graph (specifically, an Expression ).",
+          "Make a projection to discover the scale in degrees. proj = ee.Projection('EPSG:4326').atScale(10).getInfo() Get scales out of the transform. scale x = proj['transform'][0] scale y = -proj['transform'][4] Send the request Make a POST request to the computePixels endpoint.",
+          "In general, you should build these with one of the client APIs. serialized = ee.serializer.encode(image) Create the desired projection (WGS84) at the desired scale (10 meters for Sentinel-2)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 1 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "ee.Projection",
+      "ee.serializer.encode"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:03.090Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-javascript-client-library/card.json",
+  "product_name": "Earth Engine JavaScript Client Library",
+  "product_slug": "earth-engine-javascript-client-library"
+}

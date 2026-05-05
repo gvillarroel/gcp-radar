@@ -1,0 +1,157 @@
+{
+  "feature_name": "Code customization",
+  "feature_slug": "code-customization",
+  "summary": "Code customization lets users tailor generated code when using Gemini CLI or agent mode; Code customization lets users tailor generated code when using Gemini CLI or agent mode.",
+  "extended_definition": "Code customization lets users tailor generated code when using Gemini CLI or agent mode; Code customization lets users tailor generated code when using Gemini CLI or agent mode.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization-overview",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use Gemini Code Assist code customization \\_|\\_ Gemini for Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+        "source_id": "site-docs-root-2",
+        "final_score": 262,
+        "relevance": "",
+        "evidence_snippets": [
+          "Include health checks.\" \"Write a FUNCTION OR CLASS in the following structure: EXPLAIN STRUCTURE .\" After you generate some code, try using a follow-up prompt to improve it: \"Try the /fix command to adjust the generated code—for example, syntax errors.\" \"Add missing imports.\" \"Try /fix on chat-generated code.\" Cleaning, simplifying, and refactoring code Try the following prompts in Gemini Code Assist chat: \"Can you merge IMPORTS VARIABLES OR NOTE EXPORTED FUNCTIONS in this file?\" \"How would you simplify the FUNCTION NAME function?\" \"Can you merge FUNCTION NAME 1 and FUNCTION NAME 2 into one function?\" \"Could you inline some variables in FUNCTION NAME ?\" \"Could you simplify variable naming in the function FUNCTION NAME ?\" Readability Try the following prompts in Gemini Code Assist chat: \"Write the function FUNCTION NAME in fewer lines of code, if possible.\" \"Add comments to the function FUNCTION NAME .\" \"Remove unnecessary whitespaces in the function FUNCTION NAME .\" \"Format the function FUNCTION NAME in a similar way as the rest of the code.\" Code review Try the following prompts in Gemini Code Assist chat: \"Split the code in parts and explain each part using our codebase.\" \"Are there variables or keywords that could be shorter and more self-explanatory?\" \"Can you give me useful code from the REPOSITORY NAME PACKAGE MODULE context for this code?\" \"What do you think about the function FUNCTION NAME ?\" Debugging Try the following prompts in Gemini Code Assist chat: \"I am getting an error when I try to do X/add Y.",
+          "Use cases and prompt examples The following table provides guidance and examples about using code customization in specific use cases: Use case Things worth trying Writing new code Try the following to generate code in your IDE or Gemini Code Assist chat: Generate code that would use terms which are already mentioned in your codebase.",
+          "If you highlight or select code when you send a message in chat, Gemini Code Assist uses that code to improve code customization and chat quality."
+        ]
+      },
+      {
+        "title": "\"Configure Gemini Code Assist code customization \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "source_id": "site-docs-root",
+        "final_score": 242,
+        "relevance": "",
+        "evidence_snippets": [
+          "Optional: To delete the index, in a shell environment, use the gemini code-repository-indexes delete command : gcloud gemini code-repository-indexes delete INDEX NAME \\ --location= REGION \\ --project= PROJECT ID What's next Start using Gemini Code Assist: VS Code, IntelliJ, and other supported JetBrains IDEs: Code with Gemini Code Assist Cloud Shell Editor: Code with Gemini Code Assist Cloud Workstations: Code with Gemini Code Assist Learn how to use code customization and best practices.",
+          "Gemini Code Assist code customization feature lets you receive code recommendations, which draw from the internal libraries, private APIs, and coding style of your organization.",
+          "To learn more about using code customization and best practices, see Use code customization ."
+        ]
+      },
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "source_id": "site-docs-root-2",
+        "final_score": 202,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you're using Gemini Code Assist Enterprise , you can use Code customization , which lets you get code suggestions based on your organization's private codebase directly from Gemini Code Assist Enterprise.",
+          "Vim: Cannot accept or dismiss code generation suggestions unless in insert mode When using the Vim plugin in normal mode, you can't accept or dismiss code suggestions.",
+          "Known issues This section outlines the known issues of Gemini Code Assist: VS Code Chat responses may be truncated when they include an updated version of a large open file To work around this issue, select a smaller section of code and include an additional directive in the chat prompt, such as only output the selected code."
+        ]
+      },
+      {
+        "title": "\"Code customization overview \\_|\\_ Gemini for Google Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization-overview",
+        "source_id": "site-docs-root",
+        "final_score": 194,
+        "relevance": "",
+        "evidence_snippets": [
+          "Code customization, a feature in Gemini Code Assist Enterprise, lets you get code suggestions from Gemini Code Assist Enterprise that are based on your organization's private repositories, and thus aligned to your organization's coding style.",
+          "Code customization supports only documentation (in Markdown) and the following languages: C, C++, and C# Golang Java JavaScript Kotlin PHP Python Rust TypeScript Verilog and SystemVerilog All other coding languages are not indexed or used in code customization.",
+          "With code customization, developers can use remote context from your organization directly in the IDE, as the following diagram shows: As you code, Gemini Code Assist searches your private index for code that is similar to what you're trying to write."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaicompanion.repositoryGroupsUser",
+      "data.google",
+      "example.com",
+      "policy.foo",
+      "policy.foo.policy"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudaicompanion.repositoryGroupsUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization-overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization-overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization-overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization-overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:07.404Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini"
+}

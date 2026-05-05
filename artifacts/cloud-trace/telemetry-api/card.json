@@ -1,0 +1,171 @@
+{
+  "feature_name": "Telemetry API",
+  "feature_slug": "telemetry-api",
+  "summary": "The Telemetry API provides an OpenTelemetry OTLP-compatible endpoint for sending trace data and supports VPC Service Controls.",
+  "extended_definition": "The Telemetry API provides an OpenTelemetry OTLP-compatible endpoint for sending trace data and supports VPC Service Controls.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/trace/docs/migrate-to-otlp-endpoints",
+      "https://docs.cloud.google.com/trace/docs/otlp",
+      "https://docs.cloud.google.com/trace/docs/quotas",
+      "https://docs.cloud.google.com/trace/docs/setup/sample-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate from the Trace exporter to the OTLP endpoint \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/trace/docs/migrate-to-otlp-endpoints",
+        "source_id": "site-docs-root-2",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For a Python application that uses gRPC for export, add the following imports: from opentelemetry import trace from opentelemetry.exporter.otlp.proto.grpc.trace exporter import ( OTLPSpanExporter , ) Also, update the initialization code to configure the TraceProvider with the gRPC exporter: Initialize OpenTelemetry with OTLP exporters channel creds: configure Application Default Credentials trace provider = TracerProvider ( resource = resource ) processor = BatchSpanProcessor ( OTLPSpanExporter ( credentials = channel creds , endpoint = \"https://telemetry.googleapis.com:443/v1/traces\" , ) ) trace provider . add span processor ( processor ) trace . set tracer provider ( trace provider ) tracer = trace . get tracer ( \"my.tracer.name\" ) Node.js This section illustrates changes that you need to make when using gRPC for export.",
+          "The sample application defines the system properties in the build.gradle script: // You can switch the desired protocol here by changing otel.exporter.otlp.protocol. def autoconf config = [ ' - Dotel . exporter . otlp . endpoint = https : //telemetry.googleapis.com', ' - Dotel . traces . exporter = otlp ' , ' - Dotel . logs . exporter = none ' , ' - Dotel . metrics . exporter = none ' , ' - Dotel . service . name = otlptrace - example ' , ' - Dotel . exporter . otlp . protocol = http / protobuf ' , ' - Dotel . java . global - autoconfigure . enabled = true ' , ] Also, pass the configuration as JVM arguments: application { mainClassName = ' com . google . cloud . opentelemetry . example . otlptrace .",
+          "For a Node.js application that uses gRPC for export, add the following imports: import { AuthClient , GoogleAuth } from 'google-auth-library' ; import { credentials } from '@grpc/grpc-js' ; Also, update the initialization code to configure ADC before you instantiate the gRPC exporter: async function getAuthenticatedClient () : Promise<AuthClient> { const auth : GoogleAuth = new GoogleAuth ({ scopes : 'https://www.googleapis.com/auth/cloud-platform' , }); return await auth . getClient (); } // Express App that exports traces via gRPC with protobuf async function main () { const authenticatedClient : AuthClient = await getAuthenticatedClient (); // ... } Configure the required OpenTelemetry resource attributes Add to the OTEL RESOURCE ATTRIBUTES environment variable the key-value pair that specifies your project."
+        ]
+      },
+      {
+        "title": "\"Use the Ops Agent and OpenTelemetry Protocol (OTLP) \\_|\\_ Cloud Trace \\_\\",
+        "url": "https://docs.cloud.google.com/trace/docs/otlp",
+        "source_id": "site-docs-root-2",
+        "final_score": 258,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Open a PowerShell terminal with administrator privileges by right-clicking the PowerShell icon and selecting Run as Administrator To restart the agent, run the following PowerShell command: Restart-Service google-cloud-ops-agent -Force To confirm that the agent restarted, run the following command and verify that the components \"Metrics Agent\" and \"Logging Agent\" started: Get-Service google-cloud-ops-agent Collect OTLP metrics When you use the OTLP receiver to collect metrics from your OpenTelemetry applications, the primary configuration choice for the receiver is the API that you want to use to ingest the metrics.",
+          "Trivial PromQL queries for the example metrics look like the following: workload googleapis com:otlp test gauge{monitored resource=\"gce instance\"} workload googleapis com:otlp test cumulative{monitored resource=\"gce instance\"} The following screenshot shows the result of querying the workload.googleapis.com/otlp.test.gauge metric: The following screenshot shows the result of querying the workload.googleapis.com/otlp.test.cumulative metric: View metric usage and diagnostics in Cloud Monitoring The Cloud Monitoring Metrics Management page provides information that can help you control the amount you spend on billable metrics without affecting observability.",
+          "Prometheus API: When you use the Prometheus API to ingest your application's metrics, each metric is transformed by using the standard OpenTelemetry-to-Prometheus transformation and mapped to a Cloud Monitoring monitored-resource type."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/quotas",
+        "source_id": "site-docs-reference",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Telemetry API implements the OpenTelemetry OTLP API, and it provides greater compatibility and support for the open source OpenTelemetry ecosystem.",
+          "The Telemetry API, which implements the OpenTelemetry OTLP API, is designed for use with applications that are instrumented by using one of the OpenTelemetry SDKs .",
+          "To send trace data to your Google Cloud project you can use the Telemetry (OTLP) API or the Cloud Trace API ."
+        ]
+      },
+      {
+        "title": "\"Overview of collector-based instrumentation samples \\_|\\_ Cloud Trace \\_\\",
+        "url": "https://docs.cloud.google.com/trace/docs/setup/sample-overview",
+        "source_id": "site-docs-root-2",
+        "final_score": 214,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "These exporters convert the telemetry into a format compatible with the corresponding API and then send the transformed data to your Google Cloud project by issuing an API command.",
+          "Use the Ops Agent and OpenTelemetry Protocol (OTLP) describes how you can configure the Ops Agent and an OTLP receiver to collect metrics and traces from an application.",
+          "The instrumentation in these samples, which includes using the OpenTelemetry SDK and the SDK's in-process OTLP exporter, is vendor neutral."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "build.gradle",
+      "my.tracer.name",
+      "opentelemetry.exporter.otlp.proto.grpc.trace",
+      "otel.exporter.otlp.protocol",
+      "otlp.test.cumulative",
+      "otlp.test.gauge",
+      "serviceusage.services.enable",
+      "serviceusage.serviceUsageAdmin",
+      "telemetry.googleapis.com",
+      "workload.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/serviceusage.serviceUsageAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/migrate-to-otlp-endpoints",
+        "https://docs.cloud.google.com/trace/docs/otlp",
+        "https://docs.cloud.google.com/trace/docs/quotas",
+        "https://docs.cloud.google.com/trace/docs/setup/sample-overview"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/migrate-to-otlp-endpoints",
+        "https://docs.cloud.google.com/trace/docs/otlp",
+        "https://docs.cloud.google.com/trace/docs/quotas",
+        "https://docs.cloud.google.com/trace/docs/setup/sample-overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/migrate-to-otlp-endpoints",
+        "https://docs.cloud.google.com/trace/docs/otlp",
+        "https://docs.cloud.google.com/trace/docs/quotas",
+        "https://docs.cloud.google.com/trace/docs/setup/sample-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/migrate-to-otlp-endpoints",
+        "https://docs.cloud.google.com/trace/docs/otlp",
+        "https://docs.cloud.google.com/trace/docs/quotas",
+        "https://docs.cloud.google.com/trace/docs/setup/sample-overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/migrate-to-otlp-endpoints",
+        "https://docs.cloud.google.com/trace/docs/otlp",
+        "https://docs.cloud.google.com/trace/docs/quotas",
+        "https://docs.cloud.google.com/trace/docs/setup/sample-overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/migrate-to-otlp-endpoints",
+        "https://docs.cloud.google.com/trace/docs/otlp",
+        "https://docs.cloud.google.com/trace/docs/quotas",
+        "https://docs.cloud.google.com/trace/docs/setup/sample-overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/migrate-to-otlp-endpoints",
+        "https://docs.cloud.google.com/trace/docs/otlp",
+        "https://docs.cloud.google.com/trace/docs/quotas",
+        "https://docs.cloud.google.com/trace/docs/setup/sample-overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:44.599Z",
+  "source_step08_card": "data/step-08/current/products/cloud-trace/card.json",
+  "product_name": "Cloud Trace",
+  "product_slug": "cloud-trace"
+}

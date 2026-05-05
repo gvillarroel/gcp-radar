@@ -1,0 +1,189 @@
+{
+  "feature_name": "User-defined labels for uptime checks",
+  "feature_slug": "user-defined-labels-for-uptime-checks",
+  "summary": "Public and private uptime checks support user-defined labels.",
+  "extended_definition": "Public and private uptime checks support user-defined labels.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent",
+      "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+      "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/changelog"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Changelog \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/changelog",
+        "source_id": "site-python-reference",
+        "final_score": 112,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "2.30.0 (latest) 2.29.1 2.28.0 2.27.2 2.26.0 2.25.0 2.24.0 2.23.1 2.22.2 2.21.0 2.20.0 2.19.4 2.18.0 2.17.0 2.16.0 2.15.1 2.14.2 2.13.0 2.12.0 2.11.3 2.10.1 2.9.2 2.8.0 2.7.0 2.6.0 2.5.2 2.4.2 2.3.0 2.2.1 2.1.0 2.0.1 1.1.2 1.0.0 0.36.2 0.35.0 0.34.0 0.33.0 0.32.0 PyPI History 2.30.0 (2026-03-26) Features Allow Protobuf 7.x ( 1eb7c268482e55971966e284dac2cbeb903adcbb ) update image to us-central1-docker.pkg.dev/cloud-sdk-librarian-prod/images-prod/python-librarian-generator@sha256:f5426423676c75008c2135037e7b98f78cbb99f78b3c46fe043b6897be92d836 ( 3654fe76d755dd8db62ece81d5770ec58b3624df ) Bug Fixes Require Python 3.9 ( 1eb7c268482e55971966e284dac2cbeb903adcbb ) Require google-api-core >= 2.11.0 ( 1eb7c268482e55971966e284dac2cbeb903adcbb ) Improve type checking ( 1eb7c268482e55971966e284dac2cbeb903adcbb ) 2.29.1 (2026-02-05) Bug Fixes fix mypy errors (#15494) ( 1f4c2862d77afa893f7a968af57e7adf54d49d0e ) 2.29.0 (2026-01-09) Features auto-enable mTLS when supported certificates are detected ( c353aa5bcc937ef9399c8efc90492dadbcf01aa2 ) check Python and dependency versions in generated GAPICs ( c353aa5bcc937ef9399c8efc90492dadbcf01aa2 ) 2.28.0 (2025-10-14) Features Add support for Python 3.14 ( 4763aa7 ) Bug Fixes Deprecate credentials file argument ( 4763aa7 ) 2.27.2 (2025-06-11) Documentation Update import statement example in README ( 868b006 ) 2.27.1 (2025-03-15) Bug Fixes [Many APIs] Allow Protobuf 6.x ( c8bbf32 ) remove setup.cfg configuration for creating universal wheels ( #13659 ) ( 59bfd42 ) 2.27.0 (2025-02-12) Features add filter field to snooze proto ( 0e9d669 ) Add REST Interceptors which support reading metadata ( 0e9d669 ) Add support for reading selective GAPIC generation methods from service YAML ( 0e9d669 ) Documentation remove extra fenced code block markers ( 0e9d669 ) 2.26.0 (2025-01-13) Features [google-cloud-monitoring] add active only field to ListMetricDescriptorsRequest ( #13421 ) ( 5777b06 ) 2.25.0 (2025-01-02) Features Add support for opt-in debug logging ( 7ecb33c ) added PrometheusQueryLanguageCondition.disable metric validation ( 7ecb33c ) added SqlCondition in AlertPolicy ( 7ecb33c ) added TimeSeries.description for input only ( 7ecb33c ) deprecated QueryTimeSeries (MQL query endpoint) ( 7ecb33c ) Bug Fixes Fix typing issue with gRPC metadata when key ends in -bin ( 7ecb33c ) Documentation ServiceAgentAuthentication supports generating an OAuth token ( 7ecb33c ) ServiceLevelObjective.goal must be <= 0.9999 ( 7ecb33c ) TimeSeries.unit allows limited updating by CreateTimeSeries ( 7ecb33c ) 2.24.0 (2024-12-12) Features Added support for notification prompts in AlertPolicy ( d596268 ) Added support for PromQL metric validation opt-out in AlertPolicy ( d596268 ) 2.23.1 (2024-11-11) Bug Fixes disable universe-domain validation ( #13244 ) ( ae1f471 ) 2.23.0 (2024-10-24) Features Add support for Python 3.13 ( #13207 ) ( ceb9be8 ) 2.22.2 (2024-07-30) Bug Fixes Retry and timeout values do not propagate in requests during pagination ( d95af77 ) 2.22.1 (2024-07-08) Bug Fixes Allow Protobuf 5.x ( #12868 ) ( 0e39c1a ) 2.22.0 (2024-06-24) Features Add support to add links in AlertPolicy ( 7fcde4f ) 2.21.0 (2024-04-17) Features Added CloudRun, GkeNamespace, GkeWorkload, GkeService, and BasicService service types ( f43231d ) Documentation Updated comments accordingly ( f43231d ) 2.20.0 (2024-04-16) Features Added ServiceAgentAuthentication auth method for Uptime ( 25e126a ) Added Synthetic Monitor targets to Uptime data model ( 25e126a ) Documentation Updated comments accordingly ( 25e126a ) 2.19.4 (2024-04-15) Documentation [google-cloud-monitoring] Various updates ( #12569 ) ( 54b593d ) 2.19.3 (2024-03-05) Bug Fixes deps: Exclude google-auth 2.24.0 and 2.25.0 ( #12385 ) ( d50f4d0 ) 2.19.2 (2024-02-22) Bug Fixes deps: [Many APIs] Require google-api-core&gt;=1.34.1 ( #12307 ) ( be87bc4 ) fix ValueError in test validate universe domain ( 7c2f2c2 ) make google-cloud-monitoring tests work without mock ( #12317 ) ( 1988e0d ) 2.19.1 (2024-02-06) Bug Fixes Add google-auth as a direct dependency ( 27dceb9 ) Add staticmethod decorator to get client cert source and get api endpoint ( 27dceb9 ) Resolve AttributeError ‘Credentials’ object has no attribute ‘universe domain’ ( 27dceb9 ) 2.19.0 (2024-02-01) Features Allow users to explicitly configure universe domain ( #12241 ) ( aae72f5 ) 2.18.0 (2023-12-12) Features Added support for severity in AlertPolicy ( 4e817f8 ) Documentation add value range to comment on field forecast horizon ( 4e817f8 ) 2.17.0 (2023-12-07) Features Add support for python 3.12 ( 5cd98aa ) Introduce compatibility with native namespace packages ( 5cd98aa ) Bug Fixes Require proto-plus >= 1.22.3 ( 5cd98aa ) Use retry async instead of retry in async client ( 5cd98aa ) 2.16.0 (2023-10-09) Features Added support for forecast options in AlertPolicy ( 218e678 ) Added support for promQL condition type in AlertPolicy ( 218e678 ) Added support for retriggering notifications in AlertPolicy ( 218e678 ) Documentation Minor formatting ( 218e678 ) 2.15.1 (2023-07-04) Bug Fixes Add async context manager return types ( #545 ) ( 4309faa ) 2.15.0 (2023-05-25) Features Add basic http authentication ( 2774ac4 ) Add httpStatusCode ( 2774ac4 ) Add ICMP pings ( 2774ac4 ) Add individual USA regions ( 2774ac4 ) Add json path matching capabilities ( 2774ac4 ) 2.14.2 (2023-03-23) Documentation Fix formatting of request arg in docstring ( #535 ) ( e10167f ) 2.14.1 (2023-01-20) Bug Fixes Add context manager return types ( 4643933 ) Documentation Add documentation for enums ( 4643933 ) 2.14.0 (2023-01-10) Features Add support for python 3.11 ( #521 ) ( c448c0c ) 2.13.0 (2023-01-09) Features Added Snooze API support ( #519 ) ( 1d33db7 ) 2.12.0 (2022-12-15) Features Add typing to proto.Message based class attributes ( eaaca48 ) Bug Fixes Add dict typing for client options ( eaaca48 ) Add metric label example to the snippet ( #509 ) ( 48b4e35 ) Add missing argument description ( #504 ) ( 8d54a7e ) deps: Require google-api-core >=1.34.0, >=2.11.0 ( eaaca48 ) Drop usage of pkg resources ( eaaca48 ) Fix timeout default values ( eaaca48 ) Remove duplicate variable declaration ( #503 ) ( 99a981c ) Documentation samples: Snippetgen should call await on the operation coroutine before calling result ( eaaca48 ) 2.11.3 (2022-10-07) Bug Fixes deps: Allow protobuf 3.19.5 ( #500 ) ( 9bb171e ) 2.11.2 (2022-10-03) Bug Fixes deps: Require protobuf >= 3.20.2 ( #496 ) ( 7d8eeb8 ) 2.11.1 (2022-08-12) Bug Fixes deps: allow protobuf < 5.0.0 ( #475 ) ( 14f4612 ) deps: require proto-plus >= 1.22.0 ( 14f4612 ) 2.11.0 (2022-08-06) Features Added support for evaluating missing data in AlertPolicy ( #470 ) ( 71e94c2 ) Documentation samples: add docstrings to explain the project ID format ( #469 ) ( 7009724 ) 2.10.1 (2022-07-14) Bug Fixes deps: require google-api-core>=1.32.0,>=2.8.0 ( #461 ) ( 8e631d7 ) 2.10.0 (2022-07-06) Features add audience parameter ( 0bf6561 ) Bug Fixes deps: require google-api-core >= 2.8.0 ( #457 ) ( 0bf6561 ) require python 3.7+ ( #459 ) ( 1ff6e13 ) 2.9.2 (2022-06-06) Bug Fixes deps: require protobuf <4.0.0dev ( #441 ) ( 87a8660 ) Documentation fix changelog header to consistent size ( #439 ) ( ce27cb4 ) 2.9.1 (2022-03-05) Bug Fixes deps: require google-api-core>=1.31.5, >=2.3.2 ( #286 ) ( e77a5cd ) 2.9.0 (2022-02-26) Features add api key support ( #270 ) ( 412b9fc ) Bug Fixes resolve DuplicateCredentialArgs error when using credentials file ( c58bcce ) Documentation add generated snippets ( #276 ) ( 2340cc9 ) 2.8.0 (2021-11-16) Features Added support for auto-close configurations ( #253 ) ( 0541c7a ) 2.7.0 (2021-11-09) Features add CreateServiceTimeSeries RPC ( b347e70 ) Bug Fixes deps: drop packaging dependency ( b347e70 ) deps: require google-api-core >= 1.28.0 ( b347e70 ) Reintroduce deprecated field/enum ServiceTier for backward compatibility ( b347e70 ) Miscellaneous Chores release as 2.7.0 ( #247 ) ( b347e70 ) Documentation list oneofs in docstring ( b347e70 ) Use absolute link targets in comments ( b347e70 ) 2.6.0 (2021-11-01) Features add context manager support in client ( #230 ) ( 954dd18 ) add CreateServiceTimeSeries RPC ( #235 ) ( 2970b22 ) Bug Fixes deps: drop packaging dependency ( 22d4eab ) deps: require google-api-core >= 1.28.0 ( 22d4eab ) Reintroduce deprecated field/enum ServiceTier for backward compatibility ( #240 ) ( eeb0534 ) Documentation list oneofs in docstring ( 22d4eab ) Use absolute link targets in comments ( eeb0534 ) 2.6.0 (2021-10-07) Features add context manager support in client ( #230 ) ( 954dd18 ) 2.5.2 (2021-09-30) Bug Fixes improper types in pagers generation ( 4a8b823 ) 2.5.1 (2021-09-24) Bug Fixes add ‘dict’ annotation type to ‘request’ ( ffae24c ) 2.5.0 (2021-08-27) Features Added support for log-based alerts ( #204 ) ( b56a78c ) Added support for user-defined labels on cloud monitoring’s Service object ( b56a78c ) Added support for user-defined labels on cloud monitoring’s ServiceLevelObjective object ( b56a78c ) Bug Fixes mark required fields in QueryTimeSeriesRequest as required by the backend ( b56a78c ) Documentation samples: include example writing of label data ( #202 ) ( f5e8cf8 ) 2.4.2 (2021-07-28) Bug Fixes enable self signed jwt for grpc ( #190 ) ( 502487a ) Documentation add Samples section to CONTRIBUTING.rst ( #184 ) ( 5b7b07b ) Miscellaneous Chores release as 2.4.2 ( #191 ) ( 6f183dd ) 2.4.1 (2021-07-20) Bug Fixes deps: pin ‘google-{api,cloud}-core’, ‘google-auth’ to allow 2.x versions ( #183 ) ( fdc5b07 ) 2.4.0 (2021-07-01) Features add always use jwt access ( #165 ) ( 064f1e0 ) Bug Fixes disable always use jwt access ( #171 ) ( c194a00 ) Documentation omit mention of Python 2.7 in ‘CONTRIBUTING.rst’ ( #1127 ) ( #159 ) ( adc82c9 ), closes #1126 2.3.0 (2021-06-18) Features support self-signed JWT flow for service accounts ( ffa4b1f ) Bug Fixes add async client to %name %version/init.py ( ffa4b1f ) 2.2.1 (2021-03-29) Bug Fixes fix minimum required versions of proto-plus and pandas ( #102 ) ( 782b3b2 ) 2.2.0 (2021-03-25) Features add client cert source for mtls ( 0eb2ca6 ) Added IstioCanonicalService for service monitoring. ( 0eb2ca6 ) Added total size to the response of ListAlertPolicies . ( 0eb2ca6 ) Added creation and mutation records to notification channels. ( 0eb2ca6 ) Added support for Monitoring Query Language ( 0eb2ca6 ) Added support for Monitoring Query Language ( #101 ) ( 0eb2ca6 ) Added support for querying metrics for folders and organizations. ( 0eb2ca6 ) Added support for secondary aggregation when querying metrics. ( 0eb2ca6 ) Added support for units in the MetricService ( 0eb2ca6 ) Bug Fixes Extended the default deadline for UpdateGroup to 180s. ( 0eb2ca6 ) Un-deprecated cluster istio for service monitoring. ( 0eb2ca6 ) use correct retry deadline ( 0eb2ca6 ) 2.1.0 (2021-03-12) Features Adding labels to the metric descriptor in the snippets.py ( #88 ) ( 811f9aa ) Bug Fixes fix as dataframe ( #91 ) ( f135202 ) Documentation remove code snippet and ‘Stackdriver’ ( #71 ) ( 4cdb1ff ) 2.0.1 (2021-02-18) Bug Fixes allow any set query params to work with query.iter() ( #83 ) ( 4279c92 ) remove gRPC send/recv limits and expose client transport ( #62 ) ( bec9e87 ) 2.0.0 (2020-10-06) ⚠ BREAKING CHANGES move to use microgen (#54).",
+          "Features move to use microgen ( #54 ) ( d25e49f ) 1.1.0 (2020-08-20) Features add “not equal” support to the query filter ( #11 ) ( e293f7f ) 1.0.0 (2020-06-03) Features set release status to Production/Stable ( #8 ) ( a99d67a ) 0.36.0 (2020-05-13) Features BREAKING CHANGE: drop support for TimeSeriesQueryLanguageCondition as an alert condition type ( #22 ) ( e4bc568 ) 0.35.0 (2020-04-21) Features add uptime check feature; increase default timeout (via synth) ( #15 ) ( dcf074a ) 0.34.0 11-19-2019 14:27 PST Implementation Changes Deprecate resource name helper methods; update docs configuration (via synth). ( #9838 ) New Features Add service monitoring (via synth). ( #9799 ) Add monitoring.v3.InternalChecker.state (via synth). ( #9546 ) Add monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption (via synth). ( #9546 ) Add recursive parameter to delete group (via synth). ( #9546 ) Add read-only validity field to monitoring.v3.AlertPolicy (via synth). ( #9546 ) Add validate ssl parameter to monitoring.v3.UptimeCheckConfig.HttpCheck (via synth). ( #9546 ) Documentation Add python 2 sunset banner to documentation. ( #9036 ) Fix intersphinx reference to requests. ( #9294 ) Remove CI for gh-pages, use googleapis.dev for api core refs. ( #9085 ) Remove compatability badges from READMEs. ( #9035 ) Internal / Testing Changes Revert change to docs/conf.py. ( #9803 ) Normalize VPCSC configuration in systests. ( #9615 ) Make VPCSC env comparison case-insensitive. ( #9564 ) Refresh VPCSC tests. ( #9437 ) Fix environment variables for VPC tests. ( #8302 ) 0.33.0 08-12-2019 13:54 PDT New Features Add notification channel verification; remove send/recv msg size limit (via synth). ( #8980 ) Documentation Normalize docs. ( #8994 ) Update intersphinx mapping for requests. ( #8805 ) 0.32.0 07-24-2019 16:52 PDT Implementation Changes Allow kwargs to be passed to create channel (via synth). ( #8397 ) Add routing header to method metadata, update docs config (via synth). ( #7642 ) Remove classifier for Python 3.4 for end-of-life. ( #7535 ) Remove unused message exports. ( #7271 ) Protoc-generated serialization update. ( #7089 ) Pick up stub docstring fix in GAPIC generator. ( #6976 ) New Features Add ‘client options’ support, update list method docstrings (via synth). ( #8516 ) Dependencies Bump minimum version for google-api-core to 1.14.0. ( #8709 ) Documentation Link to googleapis.dev documentation in READMEs. ( #8705 ) Add compatibility check badges to READMEs. ( #8288 ) Fixes #8545 by removing typing information for kwargs to not conflict with type checkers ( #8546 ) Update docstrings, copy lintified proto files (via synth). ( #7451 ) googlecloudplatform –> googleapis in READMEs ( #7411 ) Updated client library documentation URLs. ( #7307 ) Update copyright: 2018 -> 2019. ( #7151 ) Internal / Testing Changes Add docs job to publish to googleapis.dev. ( #8464 ) Declare encoding as utf-8 in pb2 files (via synth). ( #8358 ) Add disclaimer to auto-generated template files (via synth). ( #8321 ) Fix coverage in ‘types.py’ (via synth). ( #8159 ) Add empty lines (via synth). ( #8065 ) Add nox session docs (via synth). ( #7777 ) Regenerate VPCSC tests to include NotificationChannelService and UptimeCheckService. ( #7853 ) Set environment variables for VPCSC system tests. ( #7847 ) Add VPCSC system test. ( #7791 ) protobuf file housekeeping (no user-visible changes) (via synth). ( #7588 ) Add clarifying comment to blacken nox target. ( #7398 ) Trivial gapic-generator change. ( #7231 ) Add protos as an artifact to library ( #7205 ) 0.31.1 12-17-2018 16:51 PST Implementation Changes Import iam.policy from google.api core.iam.policy . ( #6741 ) Documentation Document Python 2 deprecation ( #6910 ) Normalize docs for page size / max results / page token . ( #6842 ) Internal / Testing Changes Add baseline for synth.metadata Update noxfile.",
+          "Blacken all gen’d libs ( #6792 ) 0.31.0 11-29-2018 13:03 PST Implementation Changes Pick up enum fixes in the GAPIC generator. ( #6614 ) Pick up fixes to the GAPIC generator. ( #6501 ) Fix client info bug, update docstrings and timeouts. ( #6416 ) Dependencies Bump minimum ‘api core’ version for all GAPIC libs to 1.4.1. ( #6391 ) Documentation Docstring changes, ‘account’ -> ‘workspace’, via synth. ( #6461 ) Add ‘dropped labels’, ‘span context’, plus docstring changes. ( #6358 ) Fix GAX fossils ( #6264 ) Harmonize / DRY ‘monitoring/README.rst’ / ‘monitoring/docs/index.rst’. ( #6156 ) Internal / Testing Changes Run Black on Generated libraries ( #6666 ) Add templates for flake8, coveragerc, noxfile, and black. ( #6642 ) Assorted synth fixups / cleanups ( #6400 ) Use new Nox ( #6175 ) Fix long lines from autosynth ( #5961 Test pandas under all supported Python versions ( #5858 ) 0.30.1 Implementation Changes Monitoring: Add Transports Layer to clients (#5594) Remove gRPC size restrictions (4MB default) (#5594) Documentation Monitoring."
+        ]
+      },
+      {
+        "title": "\"User-defined metrics from the agent \\_|\\_ Cloud Monitoring \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent",
+        "source_id": "site-iam-reference",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "TypeInstance \"^active-connections$\" # Match on type instance . < / Match > < Target \"set\" > Specify the metric descriptor type : MetaData \"stackdriver metric type\" \"custom.googleapis.com/nginx/active connections\" Specify a value for the \"service name\" label ; clean it up in the next Target : MetaData \"label:service name\" \"%{plugin instance}\" < / Target > < Target \"replace\" > Remove the \"nginx \" prefix in the service name to get the real service name : MetaData \"label:service name\" \"nginx \" \"\" < / Target > < / Rule > The following rule is run after rewriting your metric , or if the metric wasn ' t one of your user - defined metrics .",
+          "The default processing will write all metrics to Cloud Monitoring , which will drop any unrecognized metrics : ones that aren ' t in the list of curated metrics and don ' t have the user - defined metric metadata . < Rule \"go back\" > Target \"return\" < / Rule > < / Chain > Load the new configuration Restart your agent to pick up the new configuration by executing the following command on your VM instance: sudo service stackdriver-agent restart Your user-defined metric information begins to flow into Monitoring.",
+          "The first five components make up the collectd identifier for the metric: Host, Plugin, Plugin-instance, Type, Type-instance, [value] In this example, the metrics you want to send as a user-defined metric have the following values: Component Expected value(s) Host any Plugin curl json Plugin instance nginx my service a or nginx my service b 1 Type gauge Type instance active-connections [value] any value 2 Notes : 1 In the example, this value encodes both the application (Nginx) and the connected service name."
+        ]
+      },
+      {
+        "title": "View and manage metric usage \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "source_id": "site-docs-reference",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "What's next Use the Ops Agent to collect metrics: Configure the Ops Agent Monitor third-party applications Collect Prometheus metrics Collect OTLP telemetry Use the Google Cloud Managed Service for Prometheus to collect metrics: Use managed collection Use self-deployed collection Use the OpenTelemetry Collector Use custom metrics in Cloud Run Collect on-premises and hybrid-cloud metrics by using BindPlane Create user-defined metrics by using the Monitoring API Google Cloud Observability pricing Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Other billable metrics The Metrics Management page does not report user-defined log-based metrics .",
+          "For more information, see the User-defined-metrics section in the Monitoring quotas document."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "conf.py",
+      "core.iam.policy",
+      "custom.googleapis.com",
+      "docker.pkg.dev",
+      "googleapis.dev",
+      "iam.policy",
+      "index.rst",
+      "init.py",
+      "monitoring.v3.AlertPolicy",
+      "monitoring.v3.InternalChecker.state",
+      "monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption",
+      "monitoring.v3.UptimeCheckConfig.HttpCheck",
+      "proto.Message",
+      "query.iter",
+      "setup.cfg",
+      "snippets.py",
+      "synth.metadata",
+      "types.py"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/changelog",
+        "https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/changelog",
+        "https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/changelog",
+        "https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/changelog",
+        "https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/changelog",
+        "https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/changelog",
+        "https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/changelog",
+        "https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/changelog",
+        "https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/changelog",
+        "https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/changelog",
+        "https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/changelog",
+        "https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:33.032Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring"
+}

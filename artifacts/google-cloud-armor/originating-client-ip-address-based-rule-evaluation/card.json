@@ -1,0 +1,210 @@
+{
+  "feature_name": "Originating client IP address-based rule evaluation",
+  "feature_slug": "originating-client-ip-address-based-rule-evaluation",
+  "summary": "Cloud Armor can evaluate custom rules or Adaptive Protection using the originating client IP address.",
+  "extended_definition": "Cloud Armor can evaluate custom rules or Adaptive Protection using the originating client IP address.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/armor/docs/adaptive-protection-overview",
+      "https://docs.cloud.google.com/armor/docs/address-groups-using",
+      "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+      "https://docs.cloud.google.com/armor/docs/rules-language-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure custom rules language attributes \\_|\\_ Google Cloud Armor \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 261,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In this case, the expression returns true if origin.ip is within the 198.51.100.0/24 IP address range. inIpRange(origin.ip, '198.51.100.0/24') Even though the previous example expression only matches on client IP address, when you use the example expression in a Cloud Armor security policy rule, the rule is considered a rule with advanced match conditions from a quota perspective.",
+          "Cloud Armor rules and expressions explicitly use those region codes to allow or deny requests. origin.asn integer The autonomous system number (ASN) that is associated with the client IP address.",
+          "Preconfigured WAF rule examples The following expression uses the xss-v422-stable preconfigured WAF rule to mitigate XSS attacks: evaluatePreconfiguredWaf('xss-v422-stable') The following expression uses all the expressions from the xss-v422-stable preconfigured WAF rule except for member IDs 941100 and 941110 : evaluatePreconfiguredWaf('xss-v422-stable', {'opt out rule ids': ['owasp-crs-v042200-id941100-xss', 'owasp-crs-v042200-id941110-xss']}) The following expression uses a preconfigured WAF rule to mitigate SQLi attacks from the 198.51.100.0/24 IP address range: inIpRange(origin.ip, '198.51.100.0/24') && evaluatePreconfiguredWaf('sqli-v422-stable') The following expression uses the xss-v422-stable preconfigured WAF rule to mitigate XSS attacks for requests to example.com , excluding paths that start with /login/api/ : request.headers['host'].lower() == 'example.com' && !request.path.startswith('/login/api/') && evaluatePreconfiguredWaf('xss-v422-stable') Other operators Expressions Description evaluateThreatIntelligence(string) evaluateThreatIntelligence(string, LIST) evaluateThreatIntelligence(string, string, LIST) Returns true if the client IP address matches any of the IP ranges in the given IP list, unless explicitly excluded with the exclusion list."
+        ]
+      },
+      {
+        "title": "Configure address groups \\_|\\_ Google Cloud Armor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/armor/docs/address-groups-using",
+        "source_id": "site-iam-reference",
+        "final_score": 236,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In POLICY 2 , create a deny rule with the following match condition, which excludes 66.249.77.32/27 and 66.249.77.64/27 : evaluateAddressGroup(' MALICIOUS IPS ', origin.ip, [66.249.77.32/27, 66.249.77.64/27]) Use an address group to match against user IP addresses To use an address group to match against originating client (\"user\") IP addresses, you must configure userIpRequestHeaders[] in the security policy.",
+          "It's important to note that in the following conditions, you receive the source IP address of the request and not the IP address of the originating client because the value of origin.user ip defaults to the value of origin.ip : You don't configure the userIpRequestHeaders[] option.",
+          "In addition, you use an upstream proxy, which includes information about the originating client IP address in the header."
+        ]
+      },
+      {
+        "title": "Google Cloud Armor Adaptive Protection overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/armor/docs/adaptive-protection-overview",
+        "source_id": "site-docs-root",
+        "final_score": 212,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following is an example of a user-readable table that contains the signature of a potential attack: Attribute name Value Match type Attack likelihood Proportion in attack Proportion in baseline UserAgent \"foo\" Exact match 0.7 0.85 0.12 UserAgent \"bar\" Exact match 0.6 0.7 0.4 Client IP \"a.b.c.d\" Exact match 0.95 0.1 0.01 Client IP a.b.c.e Exact match 0.95 0.1 0.01 Client IP a.b.c.f Exact match 0.05 0.1 0.1 RegionCode UK Exact match 0.64 0.3 0.1 RegionCode IN Exact match 0.25 0.2 0.3 RequestUri /urlpart Substring 0.7 0.85 0.12 An Adaptive Protection alert and the relevant Cloud Logging event log contain the following: A unique alert ID, or alertID , which is used to refer to a specific alert when it reports user feedback (more below) The backend service under attack, or backendService The confidence score, or confidence , which is a number between 0 and 1 that indicates how strongly the Adaptive Protection system rates the detected event as a malicious attack You also receive a set of signatures and rules characterizing the detected attack.",
+          "The signature consists of a set of attributes, such as client IP address, geographical regions, cookies, user agents, referers and other HTTP request headers, and the set of values for those attributes thought to be associated with the potential attack traffic.",
+          "Rules in a Cloud Armor security policy are evaluated in priority order with evaluation terminating after the first matching rule is triggered and the associated rule action is taken."
+        ]
+      },
+      {
+        "title": "Configure rate limiting \\_|\\_ Google Cloud Armor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "source_id": "site-iam-reference",
+        "final_score": 208,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Requests that exceed the throttling limit are denied. gcloud compute security-policies rules create 1000 \\ --security-policy SECURITY POLICY \\ --expression \"request.path.matches('/login')\" \\ --action throttle \\ --rate-limit-threshold-count 20 \\ --rate-limit-threshold-interval-sec 300 \\ --conform-action allow \\ --exceed-action deny-429 \\ --enforce-on-key-configs tls-ja4-fingerprint Rate limiting based on user IP address When you receive requests that come through an upstream proxy, you can apply rate limiting based on the originating client's IP address.",
+          "The following example creates a throttle rule at priority 1000 with a rate limit of 20 requests per 5 minutes that matches on requests with the /login path, based on the originating client's IP address.",
+          "IAM permission API methods Roles compute.securityPolicies.create SecurityPolicies insert Compute Security Admin ( roles/compute.securityAdmin ) compute.securityPolicies.delete SecurityPolicies delete Compute Security Admin ( roles/compute.securityAdmin ) compute.securityPolicies.get SecurityPolicies get SecurityPolicies getRule Security Admin ( roles/iam.securityAdmin ) compute.securityPolicies.list SecurityPolicies list Security Admin ( roles/iam.securityAdmin ) Both of the following: compute.securityPolicies.use compute.backendServices. setSecurityPolicy BackendServices setSecurityPolicy Compute Network Admin ( roles/compute.networkAdmin ) compute.securityPolicies.update SecurityPolicies patch SecurityPolicies addRule SecurityPolicies patchRule SecurityPolicies removeRule Compute Security Admin ( roles/compute.securityAdmin ) Rules for rate-based throttling Rules for rate-based throttling have the following format in the Google Cloud CLI: gcloud compute security-policies rules create PRIORITY \\ --security-policy= SECURITY POLICY \\ {--expression= EXPRESSION --src-ip-ranges= SRC IP RANGE } \\ --action \"throttle\" \\ --rate-limit-threshold-count= RATE LIMIT THRESHOLD COUNT \\ --rate-limit-threshold-interval-sec= RATE LIMIT THRESHOLD INTERVAL SEC \\ --conform-action=[allow] \\ --exceed-action=[deny-403 deny-404 deny-429 deny-502 redirect] \\ --exceed-redirect-type=[google-recaptcha external-302] \\ --exceed-redirect-target= REDIRECT URL \\ --enforce-on-key=[IP ALL HTTP-HEADER XFF-IP HTTP-COOKIE HTTP-PATH SNI REGION-CODE] \\ --enforce-on-key-name=[ HTTP HEADER NAME HTTP COOKIE NAME ] Rate limiting on single keys For example, the following gcloud CLI command creates a throttle rule at priority 105 with a rate limit of 100 requests each 60 seconds for each IP address in 1.2.3.0/24 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a.b.c.d",
+      "a.b.c.e",
+      "a.b.c.f",
+      "compute.backendServices",
+      "compute.networkAdmin",
+      "compute.securityAdmin",
+      "compute.securityPolicies.create",
+      "compute.securityPolicies.delete",
+      "compute.securityPolicies.get",
+      "compute.securityPolicies.list",
+      "compute.securityPolicies.update",
+      "compute.securityPolicies.use",
+      "example.com",
+      "iam.securityAdmin",
+      "origin.asn",
+      "origin.ip",
+      "origin.user",
+      "request.headers",
+      "request.path.matches",
+      "request.path.startswith"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.networkAdmin",
+      "roles/compute.securityAdmin",
+      "roles/iam.securityAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/armor/docs/address-groups-using",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/armor/docs/address-groups-using",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/armor/docs/address-groups-using",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/armor/docs/address-groups-using",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/armor/docs/address-groups-using",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/armor/docs/address-groups-using",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/armor/docs/address-groups-using",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/armor/docs/address-groups-using",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/armor/docs/address-groups-using",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/rules-language-reference",
+        "https://docs.cloud.google.com/armor/docs/address-groups-using",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:12.438Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-armor/card.json",
+  "product_name": "Google Cloud Armor",
+  "product_slug": "google-cloud-armor"
+}

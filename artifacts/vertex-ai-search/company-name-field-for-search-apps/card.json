@@ -1,0 +1,142 @@
+{
+  "feature_name": "Company name field for search apps",
+  "feature_slug": "company-name-field-for-search-apps",
+  "summary": "Adds support for specifying a company or organization name when creating a Vertex AI Search app to improve summarization and follow-up response quality.",
+  "extended_definition": "Adds support for specifying a company or organization name when creating a Vertex AI Search app to improve summarization and follow-up response quality.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-app-hc",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create a search data store \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "source_id": "site-docs-root",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "FieldMask ; public class SyncImportDocuments { public static void main ( String [] args ) throws Exception { syncImportDocuments (); } public static void syncImportDocuments () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentServiceClient documentServiceClient = DocumentServiceClient . create ()) { ImportDocumentsRequest request = ImportDocumentsRequest . newBuilder () . setParent ( BranchName . ofProjectLocationDataStoreBranchName ( \"[PROJECT]\" , \"[LOCATION]\" , \"[DATA STORE]\" , \"[BRANCH]\" ) . toString ()) . setErrorConfig ( ImportErrorConfig . newBuilder (). build ()) . setUpdateMask ( FieldMask . newBuilder (). build ()) . setAutoGenerateIds ( true ) . setIdField ( \"idField1629396127\" ) . setForceRefreshContent ( true ) . build (); ImportDocumentsResponse response = documentServiceClient . importDocumentsAsync ( request ). get (); } } } Node.js For more information, see the Vertex AI Search Node.js API reference documentation .",
+          "FieldMask ; public class SyncImportDocuments { public static void main ( String [] args ) throws Exception { syncImportDocuments (); } public static void syncImportDocuments () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentServiceClient documentServiceClient = DocumentServiceClient . create ()) { ImportDocumentsRequest request = ImportDocumentsRequest . newBuilder () . setParent ( BranchName . ofProjectLocationDataStoreBranchName ( \"[PROJECT]\" , \"[LOCATION]\" , \"[DATA STORE]\" , \"[BRANCH]\" ) . toString ()) . setErrorConfig ( ImportErrorConfig . newBuilder (). build ()) . setUpdateMask ( FieldMask . newBuilder (). build ()) . setAutoGenerateIds ( true ) . setIdField ( \"idField1629396127\" ) . setForceRefreshContent ( true ) . build (); ImportDocumentsResponse response = documentServiceClient . importDocumentsAsync ( request ). get (); } } } Node.js For more information, see the Vertex AI Search Node.js API reference documentation .",
+          "DataStoreServiceClient ; public class SyncCreateDataStore { public static void main ( String [] args ) throws Exception { syncCreateDataStore (); } public static void syncCreateDataStore () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DataStoreServiceClient dataStoreServiceClient = DataStoreServiceClient . create ()) { CreateDataStoreRequest request = CreateDataStoreRequest . newBuilder () . setParent ( CollectionName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[COLLECTION]\" ). toString ()) . setDataStore ( DataStore . newBuilder (). build ()) . setDataStoreId ( \"dataStoreId929489618\" ) . setCreateAdvancedSiteSearch ( true ) . setSkipDefaultSchemaCreation ( true ) . build (); DataStore response = dataStoreServiceClient . createDataStoreAsync ( request ). get (); } } } Import documents import com.google.cloud.discoveryengine.v1."
+        ]
+      },
+      {
+        "title": "\"Set up data source access control \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control",
+        "source_id": "site-docs-reference",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When following the steps for data import in Create a search data store , make sure to do the following: If using the console, then when specifying the kind of data you're uploading, select JSONL for structured data with metadata If using the API, set BigQuerySource.dataSchema to document Preview results in the Workforce Identity Federation console To preview results for apps with third-party access control in the Google Cloud console, you must sign in with your organization's credentials.",
+          "Don't use a custom schema. [ { \"name\" : \"id\" , \"mode\" : \"REQUIRED\" , \"type\" : \"STRING\" , \"fields\" : [] }, { \"name\" : \"jsonData\" , \"mode\" : \"NULLABLE\" , \"type\" : \"STRING\" , \"fields\" : [] }, { \"name\" : \"content\" , \"type\" : \"RECORD\" , \"mode\" : \"NULLABLE\" , \"fields\" : [ { \"name\" : \"mimeType\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"uri\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" } ] } { \"name\" : \"acl info\" , \"type\" : \"RECORD\" , \"mode\" : \"NULLABLE\" , \"fields\" : [ { \"name\" : \"readers\" , \"type\" : \"RECORD\" , \"mode\" : \"REPEATED\" , \"fields\" : [ { \"name\" : \"principals\" , \"type\" : \"RECORD\" , \"mode\" : \"REPEATED\" , \"fields\" : [ { \"name\" : \"user id\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"group id\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" } ] } ] } ] } ] Include your ACL metadata as a column in your BigQuery table.",
+          "Don't use a custom schema. [ { \"name\" : \"id\" , \"mode\" : \"REQUIRED\" , \"type\" : \"STRING\" , \"fields\" : [] }, { \"name\" : \"jsonData\" , \"mode\" : \"NULLABLE\" , \"type\" : \"STRING\" , \"fields\" : [] }, { \"name\" : \"acl info\" , \"type\" : \"RECORD\" , \"mode\" : \"NULLABLE\" , \"fields\" : [ { \"name\" : \"readers\" , \"type\" : \"RECORD\" , \"mode\" : \"REPEATED\" , \"fields\" : [ { \"name\" : \"principals\" , \"type\" : \"RECORD\" , \"mode\" : \"REPEATED\" , \"fields\" : [ { \"name\" : \"user id\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" }, { \"name\" : \"group id\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" } ] } ] } ] } ] Include your ACL metadata as a column in your BigQuery table."
+        ]
+      },
+      {
+        "title": "\"Create a healthcare search app \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-app-hc",
+        "source_id": "site-docs-reference",
+        "final_score": 133,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the External name of your company or organization field, enter the common name for your company or organization.",
+          "If it is false , the app creation operation was unsuccessful. { \"name\": \"projects/ PROJECT ID /locations/us/collections/default collection/operations/ APP CREATION OPERATION ID \", \"done\": true, \"response\": { \"@type\": \"type.googleapis.com/google.cloud.discoveryengine.v1.Engine\", \"name\": \"projects/ PROJECT ID /locations/us/collections/default collection/engines/ APP ID \", \"displayName\": \" APP DISPLAY NAME \", \"dataStoreIds\": [ \" DATA STORE ID \" ], \"solutionType\": \"SOLUTION TYPE SEARCH\", \"searchEngineConfig\": { \"searchTier\": \"SEARCH TIER STANDARD\", \"searchAddOns\": [ \" SEARCH ADD ON LLM \" ] }, \"industryVertical\": \"HEALTHCARE FHIR\" } } Verify app creation This task shows you how to verify whether a healthcare search app was created successfully and whether FHIR data was imported into the data store successfully.",
+          "Key Term: In Vertex AI Search, the term app can be used interchangeably with the term engine in the context of APIs. curl -X POST\\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\"\\ -H \"X-Goog-User-Project: PROJECT ID \" \\ \"https://us-discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/us/collections/default collection/engines?engineId= APP ID \" \\ -d '{ \"displayName\": \" APP DISPLAY NAME \", \"dataStoreIds\":\" DATA STORE ID \", \"industryVertical\": \"HEALTHCARE FHIR\", \"solutionType\": \"SOLUTION TYPE SEARCH\", \"searchEngineConfig\": { \"searchTier\": \"SEARCH TIER STANDARD\", \"searchAddOns\": [\" SEARCH ADD ON \"] } }' Replace the following: PROJECT ID : the ID of your Google Cloud project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.discoveryengine.v1",
+      "discoveryengine.googleapis.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-app-hc"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-app-hc"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-app-hc"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-app-hc"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-app-hc"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-app-hc"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-app-hc"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:43.967Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search"
+}

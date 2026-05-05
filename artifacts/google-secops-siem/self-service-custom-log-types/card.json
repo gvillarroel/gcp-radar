@@ -1,0 +1,176 @@
+{
+  "feature_name": "Self-service custom log types",
+  "feature_slug": "self-service-custom-log-types",
+  "summary": "Users can create custom log types instantly without SecOps support to speed up onboarding.",
+  "extended_definition": "Users can create custom log types instantly without SecOps support to speed up onboarding.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+      "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+      "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure data RBAC for users \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "To filter and identify these specific events, you can create a custom label with the name Suspicious DHCP Activity with the following query: metadata.event type = \"NETWORK DHCP\" AND principal.ip = \"10.0.0.1\" The custom label works in the following manner: Google SecOps continuously ingests network logs and events into its UDM.",
+          "Create and manage custom labels Custom labels are metadata that you can add to the SIEM ingested Google SecOps data to categorize and organize it based on UDM-normalized values.",
+          "Create and manage scopes You can create and manage data scopes within the Google SecOps user interface, and then assign those scopes to users or groups through IAM."
+        ]
+      },
+      {
+        "title": "\"Cloud Threats category overview \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "source_id": "site-api-reference",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "Google Workspace-related rule sets The following rule sets detect patterns in Google Workspace data: Potential Insider Data Exfiltration from Chrome Potential Insider Data Exfiltration from Drive Potential Insider Data Exfiltration from Gmail Potential Workspace Account Compromise Suspicious Workspace Administrative Actions These rule sets require the following log types, listed by product name and Google SecOps ingestion label: Workspace Activities ( WORKSPACE ACTIVITY ) Workspace Alerts ( WORKSPACE ALERTS ) Workspace ChromeOS Devices ( WORKSPACE CHROMEOS ) Workspace Mobile Devices ( WORKSPACE MOBILE ) Workspace Users ( WORKSPACE USERS ) Google Chrome Browser Cloud Management ( CHROME MANAGEMENT ) Gmail logs ( GMAIL LOGS ) To ingest the required data, do the following: Collect the data listed in the All rule sets section of this document.",
+          "The following rule sets create a detection when findings from Security Command Center Event Threat Detection , Google Cloud Armor , Security Command Center Sensitive Actions Service , and Custom modules for Event Threat Detection are identified: CDIR SCC Cloud IDS CDIR SCC Cloud Armor CDIR SCC Impact CDIR SCC Enhanced Persistence CDIR SCC Enhanced Defense Evasion CDIR SCC Custom Module Kubernetes Suspicious Tools rule set To use the Kubernetes Suspicious Tools rule set, we recommend that you collect the data listed in the All rule sets section.",
+          "For information about creating users in Microsoft Entra ID, see How to create, invite, and delete users ."
+        ]
+      },
+      {
+        "title": "\"Google SecOps audit logs \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 113,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Actions in Google SecOps that generate this type of log include listing instances and customer metadata. chronicleservicemanager.googleapis.com/gcpAssociations.get chronicleservicemanager.googleapis.com/gcpSettings.get Logs with service name malachitefrontend-pa.googleapis.com The following log types are available for Google SecOps audit logs with the malachitefrontend-pa.googleapis.com service name.",
+          "Listing actions taken by a specific user To find the actions taken by a given user, run the following query in the Logs Explorer : resource.type=\"audited resource\" resource.labels.service=\"malachitefrontend-pa.googleapis.com\" protoPayload.authenticationInfo.principalSubject=USER Identifying users who took a specific action To find the users who updated an access control subject, run the following query in the Logs Explorer : resource.type=\"audited resource\" resource.labels.service=\"malachitefrontend-pa.googleapis.com\" protoPayload.methodName=\"malachite.frontend.v1.MalachiteFrontendService.UpdateSubject\" To find the users who updated an access control role, run the following query in the Logs Explorer : resource.type=\"audited resource\" resource.labels.service=\"malachitefrontend-pa.googleapis.com\" protoPayload.methodName=\"malachite.frontend.v1.MalachiteFrontendService.UpdateRole\" To find the users who updated a detection rule, run the following query in the Logs Explorer : resource.type=\"audited resource\" resource.labels.service=\"malachitefrontend-pa.googleapis.com\" protoPayload.methodName=\"malachite.frontend.v1.MalachiteFrontendService.UpdateRule\" What's next Cloud Audit Logs overview Understand audit logs Available audit logs Google Cloud Observability pricing: Cloud Logging Need more help?",
+          "Listing actions taken by a specific user To find the actions taken by a given user, run the following query in the Logs Explorer : resource.type=\"audited resource\" resource.labels.service=\"chronicle.googleapis.com\" protoPayload.authenticationInfo.principalSubject=USER Identifying users who took a specific action To find the users who updated a detection rule, run the following query in the Logs Explorer : resource.type=\"audited resource\" resource.labels.service=\"chronicle.googleapis.com\" protoPayload.methodName=\"google.cloud.chronicle.v1main.RuleService.UpdateRule\" Example: cloudresourcemanager.googleapis.com service name log To find the users who updated an access control role or subject, run the following query in the Logs Explorer : resource.type=\"project\" resource.labels.service=\"cloudresourcemanager.googleapis.com\" protoPayload.methodName=\"SetIamPolicy\" Examples: malachitefrontend-pa.googleapis.com service name logs The following sections describe common use cases for Cloud Audit Logs that use the malachitefrontend-pa.googleapis.com service name."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "chronicle.googleapis.com",
+      "chronicleservicemanager.googleapis.com",
+      "cloudresourcemanager.googleapis.com",
+      "feeds.get",
+      "malachite.frontend.v1.MalachiteFrontendService.UpdateRole",
+      "malachite.frontend.v1.MalachiteFrontendService.UpdateRule",
+      "malachite.frontend.v1.MalachiteFrontendService.UpdateSubject",
+      "metadata.event",
+      "pa.googleapis.com",
+      "principal.ip",
+      "resource.labels.service",
+      "resource.type",
+      "rules.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:19.630Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem"
+}

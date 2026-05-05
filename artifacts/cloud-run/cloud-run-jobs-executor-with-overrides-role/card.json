@@ -1,0 +1,400 @@
+{
+  "feature_name": "Cloud Run Jobs Executor With Overrides role",
+  "feature_slug": "cloud-run-jobs-executor-with-overrides-role",
+  "summary": "The Cloud Run Jobs Executor With Overrides predefined IAM role grants least-privilege access for executing Cloud Run jobs with overrides.",
+  "extended_definition": "The Cloud Run Jobs Executor With Overrides predefined IAM role grants least-privilege access for executing Cloud Run jobs with overrides.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient",
+      "https://docs.cloud.google.com/run/docs/reference/iam/roles"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Run IAM roles \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/reference/iam/roles",
+        "source_id": "site-api-reference",
+        "final_score": 243,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: Cloud Run service Cloud Run job recommender.locations. recommender.locations.get recommender.locations.list recommender. runServiceCostInsights. get recommender. runServiceCostInsights. list recommender. runServiceCostRecommendations. get recommender. runServiceCostRecommendations. list recommender. runServiceIdentityInsights. get recommender. runServiceIdentityInsights. list recommender. runServiceIdentityRecommendations. get recommender. runServiceIdentityRecommendations. list recommender. runServicePerformanceInsights. get recommender. runServicePerformanceInsights. list recommender. runServicePerformanceRecommendations. get recommender. runServicePerformanceRecommendations. list recommender. runServiceSecurityInsights. get recommender. runServiceSecurityInsights. list recommender. runServiceSecurityRecommendations. get recommender. runServiceSecurityRecommendations. list resourcemanager.projects.get resourcemanager.projects.list run.configurations. run.configurations.get run.configurations.list run.executions.get run.executions.list run.jobs.get run.jobs.getIamPolicy run.jobs.list run.jobs.listEffectiveTags run.jobs.listTagBindings run.locations.list run.operations.get run.operations.list run.prompts.get run.revisions.get run.revisions.list run.routes.get run.routes.list run.services.get run.services.getIamPolicy run.services.list run.services.listEffectiveTags run.services.listTagBindings run.tasks. run.tasks.get run.tasks.list run.workerpools.get run.workerpools.getIamPolicy run.workerpools.list Cloud Run Jobs Executor ( roles/ run.jobsExecutor ) Can execute and cancel Cloud Run jobs. run.executions.cancel run.jobs.run Cloud Run Jobs Executor With Overrides ( roles/ run.jobsExecutorWithOverrides ) Can execute and cancel Cloud Run jobs with overrides. run.executions.cancel run.jobs.run run.jobs.runWithOverrides Cloud Run Service Invoker ( roles/ run.servicesInvoker ) Can invoke Cloud Run services. run.routes.invoke Cloud Run Source Developer ( roles/ run.sourceDeveloper ) Deploy and manage Cloud Run source deployed resources. artifactregistry. attachments. get artifactregistry. attachments. list artifactregistry. dockerimages. artifactregistry. dockerimages. get artifactregistry. dockerimages. list artifactregistry. files. download artifactregistry.files.get artifactregistry.files.list artifactregistry.locations. artifactregistry.locations.get artifactregistry. locations. list artifactregistry. mavenartifacts. artifactregistry. mavenartifacts. get artifactregistry. mavenartifacts. list artifactregistry.npmpackages. artifactregistry. npmpackages. get artifactregistry. npmpackages. list artifactregistry.packages.get artifactregistry.packages.list artifactregistry. projectsettings. get artifactregistry. pythonpackages. artifactregistry. pythonpackages. get artifactregistry. pythonpackages. list artifactregistry. repositories. create artifactregistry. repositories. downloadArtifacts artifactregistry. repositories. exportArtifacts artifactregistry. repositories. get artifactregistry. repositories. list artifactregistry. repositories. listEffectiveTags artifactregistry. repositories. listTagBindings artifactregistry. repositories. readViaVirtualRepository artifactregistry.rules.get artifactregistry.rules.list artifactregistry.tags.get artifactregistry.tags.list artifactregistry.versions.get artifactregistry.versions.list cloudbuild.builds.create cloudbuild.builds.get cloudbuild.builds.list cloudbuild.builds.update cloudbuild.locations. cloudbuild.locations.get cloudbuild.locations.list cloudbuild.operations. cloudbuild.operations.get cloudbuild.operations.list cloudkms.keyHandles. cloudkms.keyHandles.create cloudkms.keyHandles.get cloudkms.keyHandles.list cloudkms.operations.get cloudkms. projects. showEffectiveAutokeyConfig eventarc. channelConnections. create eventarc. channelConnections. delete eventarc. channelConnections. get eventarc. channelConnections. getIamPolicy eventarc. channelConnections. list eventarc. channelConnections. publish eventarc.channels.attach eventarc.channels.create eventarc.channels.delete eventarc.channels.get eventarc.channels.getIamPolicy eventarc.channels.list eventarc.channels.publish eventarc.channels.undelete eventarc.channels.update eventarc.enrollments.create eventarc.enrollments.delete eventarc.enrollments.get eventarc. enrollments. getIamPolicy eventarc.enrollments.list eventarc.enrollments.update eventarc. googleApiSources. create eventarc. googleApiSources. delete eventarc.googleApiSources.get eventarc. googleApiSources. getIamPolicy eventarc.googleApiSources.list eventarc. googleApiSources. update eventarc. googleChannelConfigs. eventarc. googleChannelConfigs. get eventarc. googleChannelConfigs. update eventarc.kafkaSources.create eventarc.kafkaSources.delete eventarc.kafkaSources.get eventarc. kafkaSources. getIamPolicy eventarc.kafkaSources.list eventarc.locations. eventarc.locations.get eventarc.locations.list eventarc.operations. eventarc.operations.cancel eventarc.operations.delete eventarc.operations.get eventarc.operations.list eventarc.pipelines.create eventarc.pipelines.delete eventarc.pipelines.get eventarc. pipelines. getIamPolicy eventarc.pipelines.list eventarc.pipelines.update eventarc.providers. eventarc.providers.get eventarc.providers.list eventarc.triggers.create eventarc.triggers.delete eventarc.triggers.get eventarc.triggers.getIamPolicy eventarc.triggers.list eventarc.triggers.undelete eventarc.triggers.update orgpolicy.policy.get pubsub. messageTransforms. validate pubsub.schemas.attach pubsub.schemas.commit pubsub.schemas.create pubsub.schemas.delete pubsub.schemas.get pubsub.schemas.list pubsub.schemas.listRevisions pubsub.schemas.rollback pubsub.schemas.validate pubsub.snapshots.create pubsub. snapshots. createTagBinding pubsub.snapshots.delete pubsub. snapshots. deleteTagBinding pubsub.snapshots.get pubsub.snapshots.list pubsub. snapshots. listEffectiveTags pubsub. snapshots. listTagBindings pubsub.snapshots.seek pubsub.snapshots.update pubsub.subscriptions.consume pubsub.subscriptions.create pubsub. subscriptions. createTagBinding pubsub.subscriptions.delete pubsub. subscriptions. deleteTagBinding pubsub.subscriptions.get pubsub.subscriptions.list pubsub. subscriptions. listEffectiveTags pubsub. subscriptions. listTagBindings pubsub.subscriptions.update pubsub. topics. attachSubscription pubsub.topics.create pubsub.topics.createTagBinding pubsub.topics.delete pubsub.topics.deleteTagBinding pubsub. topics. detachSubscription pubsub.topics.get pubsub.topics.list pubsub. topics. listEffectiveTags pubsub.topics.listTagBindings pubsub.topics.publish pubsub.topics.update pubsub.topics.updateTag recommender.locations. recommender.locations.get recommender.locations.list recommender. runServiceCostInsights. recommender. runServiceCostInsights. get recommender. runServiceCostInsights. list recommender. runServiceCostInsights. update recommender. runServiceCostRecommendations. recommender. runServiceCostRecommendations. get recommender. runServiceCostRecommendations. list recommender. runServiceCostRecommendations. update recommender. runServiceIdentityInsights. recommender. runServiceIdentityInsights. get recommender. runServiceIdentityInsights. list recommender. runServiceIdentityInsights. update recommender. runServiceIdentityRecommendations. recommender. runServiceIdentityRecommendations. get recommender. runServiceIdentityRecommendations. list recommender. runServiceIdentityRecommendations. update recommender. runServicePerformanceInsights. recommender. runServicePerformanceInsights. get recommender. runServicePerformanceInsights. list recommender. runServicePerformanceInsights. update recommender. runServicePerformanceRecommendations. recommender. runServicePerformanceRecommendations. get recommender. runServicePerformanceRecommendations. list recommender. runServicePerformanceRecommendations. update recommender. runServiceSecurityInsights. recommender. runServiceSecurityInsights. get recommender. runServiceSecurityInsights. list recommender. runServiceSecurityInsights. update recommender. runServiceSecurityRecommendations. recommender. runServiceSecurityRecommendations. get recommender. runServiceSecurityRecommendations. list recommender. runServiceSecurityRecommendations. update remotebuildexecution.blobs.get resourcemanager.projects.get resourcemanager.projects.list run.configurations. run.configurations.get run.configurations.list run.executions. run.executions.cancel run.executions.delete run.executions.get run.executions.list run.jobs.create run.jobs.delete run.jobs.get run.jobs.getIamPolicy run.jobs.list run.jobs.listEffectiveTags run.jobs.listTagBindings run.jobs.run run.jobs.runWithOverrides run.jobs.update run.locations.list run.operations. run.operations.delete run.operations.get run.operations.list run.prompts.get run.revisions. run.revisions.delete run.revisions.get run.revisions.list run.routes. run.routes.get run.routes.invoke run.routes.list run.services.create run.services.delete run.services.get run.services.getIamPolicy run.services.list run.services.listEffectiveTags run.services.listTagBindings run.services.update run.tasks. run.tasks.get run.tasks.list run.workerpools.create run.workerpools.delete run.workerpools.get run.workerpools.getIamPolicy run.workerpools.list run.workerpools.update serviceusage. consumerpolicy. analyze serviceusage. consumerpolicy. get serviceusage. effectivepolicy. get serviceusage.groups. serviceusage.groups.list serviceusage. groups. listExpandedMembers serviceusage. groups. listMembers serviceusage.quotas.get serviceusage.services.get serviceusage.services.list serviceusage.services.use serviceusage.values.test storage.buckets.create storage.buckets.get storage.buckets.list storage.folders.create storage.folders.get storage.folders.list storage.managedFolders.create storage.managedFolders.get storage.managedFolders.list storage.multipartUploads.abort storage. multipartUploads. create storage. multipartUploads. listParts storage.objects.create storage.objects.createContext storage.objects.get storage.objects.list Cloud Run Source Viewer ( roles/ run.sourceViewer ) View Cloud Run source deployed resources. artifactregistry. repositories. get artifactregistry. repositories. list cloudbuild.builds.get cloudbuild.builds.list cloudbuild.locations. cloudbuild.locations.get cloudbuild.locations.list cloudbuild.operations. cloudbuild.operations.get cloudbuild.operations.list eventarc. channelConnections. get eventarc. channelConnections. getIamPolicy eventarc. channelConnections. list eventarc.channels.get eventarc.channels.getIamPolicy eventarc.channels.list eventarc.enrollments.get eventarc. enrollments. getIamPolicy eventarc.enrollments.list eventarc.googleApiSources.get eventarc. googleApiSources. getIamPolicy eventarc.googleApiSources.list eventarc. googleChannelConfigs. get eventarc.kafkaSources.get eventarc. kafkaSources. getIamPolicy eventarc.kafkaSources.list eventarc.locations. eventarc.locations.get eventarc.locations.list eventarc.messageBuses.get eventarc. messageBuses. getIamPolicy eventarc.messageBuses.list eventarc.messageBuses.use eventarc. multiProjectSources. collectGoogleApiEvents eventarc.operations.get eventarc.operations.list eventarc.pipelines.get eventarc. pipelines. getIamPolicy eventarc.pipelines.list eventarc.providers. eventarc.providers.get eventarc.providers.list eventarc.triggers.get eventarc.triggers.getIamPolicy eventarc.triggers.list pubsub. messageTransforms. validate pubsub.schemas.get pubsub.schemas.list pubsub.schemas.listRevisions pubsub.schemas.validate pubsub.snapshots.get pubsub.snapshots.list pubsub. snapshots. listEffectiveTags pubsub. snapshots. listTagBindings pubsub.subscriptions.get pubsub.subscriptions.list pubsub. subscriptions. listEffectiveTags pubsub. subscriptions. listTagBindings pubsub.topics.get pubsub.topics.list pubsub. topics. listEffectiveTags pubsub.topics.listTagBindings recommender.locations. recommender.locations.get recommender.locations.list recommender. runServiceCostInsights. get recommender. runServiceCostInsights. list recommender. runServiceCostRecommendations. get recommender. runServiceCostRecommendations. list recommender. runServiceIdentityInsights. get recommender. runServiceIdentityInsights. list recommender. runServiceIdentityRecommendations. get recommender. runServiceIdentityRecommendations. list recommender. runServicePerformanceInsights. get recommender. runServicePerformanceInsights. list recommender. runServicePerformanceRecommendations. get recommender. runServicePerformanceRecommendations. list recommender. runServiceSecurityInsights. get recommender. runServiceSecurityInsights. list recommender. runServiceSecurityRecommendations. get recommender. runServiceSecurityRecommendations. list remotebuildexecution.blobs.get resourcemanager.projects.get resourcemanager.projects.list run.configurations. run.configurations.get run.configurations.list run.executions.get run.executions.list run.jobs.get run.jobs.getIamPolicy run.jobs.list run.jobs.listEffectiveTags run.jobs.listTagBindings run.locations.list run.operations.get run.operations.list run.prompts.get run.revisions.get run.revisions.list run.routes.get run.routes.list run.services.get run.services.getIamPolicy run.services.list run.services.listEffectiveTags run.services.listTagBindings run.tasks. run.tasks.get run.tasks.list run.workerpools.get run.workerpools.getIamPolicy run.workerpools.list serviceusage. consumerpolicy. analyze serviceusage. consumerpolicy. get serviceusage. effectivepolicy. get serviceusage.groups. serviceusage.groups.list serviceusage. groups. listExpandedMembers serviceusage. groups. listMembers serviceusage.quotas.get serviceusage.services.get serviceusage.services.list serviceusage.values.test storage.folders.get storage.folders.list storage.managedFolders.get storage.managedFolders.list storage.objects.get storage.objects.list Service agent roles Service agent roles should only be granted to service agents .",
+          "Lowest-level resources where you can grant this role: Cloud Run service Cloud Run job recommender.locations. recommender.locations.get recommender.locations.list recommender. runServiceCostInsights. recommender. runServiceCostInsights. get recommender. runServiceCostInsights. list recommender. runServiceCostInsights. update recommender. runServiceCostRecommendations. recommender. runServiceCostRecommendations. get recommender. runServiceCostRecommendations. list recommender. runServiceCostRecommendations. update recommender. runServiceIdentityInsights. recommender. runServiceIdentityInsights. get recommender. runServiceIdentityInsights. list recommender. runServiceIdentityInsights. update recommender. runServiceIdentityRecommendations. recommender. runServiceIdentityRecommendations. get recommender. runServiceIdentityRecommendations. list recommender. runServiceIdentityRecommendations. update recommender. runServicePerformanceInsights. recommender. runServicePerformanceInsights. get recommender. runServicePerformanceInsights. list recommender. runServicePerformanceInsights. update recommender. runServicePerformanceRecommendations. recommender. runServicePerformanceRecommendations. get recommender. runServicePerformanceRecommendations. list recommender. runServicePerformanceRecommendations. update recommender. runServiceSecurityInsights. recommender. runServiceSecurityInsights. get recommender. runServiceSecurityInsights. list recommender. runServiceSecurityInsights. update recommender. runServiceSecurityRecommendations. recommender. runServiceSecurityRecommendations. get recommender. runServiceSecurityRecommendations. list recommender. runServiceSecurityRecommendations. update resourcemanager.projects.get resourcemanager.projects.list run.configurations. run.configurations.get run.configurations.list run.executions. run.executions.cancel run.executions.delete run.executions.get run.executions.list run.jobs.create run.jobs.delete run.jobs.get run.jobs.getIamPolicy run.jobs.list run.jobs.listEffectiveTags run.jobs.listTagBindings run.jobs.run run.jobs.runWithOverrides run.jobs.update run.locations.list run.operations. run.operations.delete run.operations.get run.operations.list run.prompts.get run.revisions. run.revisions.delete run.revisions.get run.revisions.list run.routes. run.routes.get run.routes.invoke run.routes.list run.services.create run.services.delete run.services.get run.services.getIamPolicy run.services.list run.services.listEffectiveTags run.services.listTagBindings run.services.update run.tasks. run.tasks.get run.tasks.list run.workerpools.create run.workerpools.delete run.workerpools.get run.workerpools.getIamPolicy run.workerpools.list run.workerpools.update Run Editor ( roles/ run.editor ) Editor role for run recommender.locations. recommender.locations.get recommender.locations.list recommender. runServiceCostInsights. recommender. runServiceCostInsights. get recommender. runServiceCostInsights. list recommender. runServiceCostInsights. update recommender. runServiceCostRecommendations. recommender. runServiceCostRecommendations. get recommender. runServiceCostRecommendations. list recommender. runServiceCostRecommendations. update recommender. runServiceIdentityInsights. recommender. runServiceIdentityInsights. get recommender. runServiceIdentityInsights. list recommender. runServiceIdentityInsights. update recommender. runServiceIdentityRecommendations. recommender. runServiceIdentityRecommendations. get recommender. runServiceIdentityRecommendations. list recommender. runServiceIdentityRecommendations. update recommender. runServicePerformanceInsights. recommender. runServicePerformanceInsights. get recommender. runServicePerformanceInsights. list recommender. runServicePerformanceInsights. update recommender. runServicePerformanceRecommendations. recommender. runServicePerformanceRecommendations. get recommender. runServicePerformanceRecommendations. list recommender. runServicePerformanceRecommendations. update recommender. runServiceSecurityInsights. recommender. runServiceSecurityInsights. get recommender. runServiceSecurityInsights. list recommender. runServiceSecurityInsights. update recommender. runServiceSecurityRecommendations. recommender. runServiceSecurityRecommendations. get recommender. runServiceSecurityRecommendations. list recommender. runServiceSecurityRecommendations. update resourcemanager.projects.get resourcemanager.projects.list run.configurations. run.configurations.get run.configurations.list run.executions. run.executions.cancel run.executions.delete run.executions.get run.executions.list run.jobs.create run.jobs.delete run.jobs.get run.jobs.getIamPolicy run.jobs.list run.jobs.listEffectiveTags run.jobs.listTagBindings run.jobs.run run.jobs.runWithOverrides run.jobs.update run.locations.list run.operations. run.operations.delete run.operations.get run.operations.list run.prompts.get run.revisions. run.revisions.delete run.revisions.get run.revisions.list run.routes. run.routes.get run.routes.invoke run.routes.list run.services.create run.services.delete run.services.get run.services.getIamPolicy run.services.list run.services.listEffectiveTags run.services.listTagBindings run.services.update run.tasks. run.tasks.get run.tasks.list run.workerpools.create run.workerpools.delete run.workerpools.get run.workerpools.getIamPolicy run.workerpools.list run.workerpools.update Cloud Run Invoker ( roles/ run.invoker ) Can invoke Cloud Run services and execute Cloud Run jobs.",
+          "Lowest-level resources where you can grant this role: Cloud Run service Cloud Run job recommender.locations. recommender.locations.get recommender.locations.list recommender. runServiceCostInsights. recommender. runServiceCostInsights. get recommender. runServiceCostInsights. list recommender. runServiceCostInsights. update recommender. runServiceCostRecommendations. recommender. runServiceCostRecommendations. get recommender. runServiceCostRecommendations. list recommender. runServiceCostRecommendations. update recommender. runServiceIdentityInsights. recommender. runServiceIdentityInsights. get recommender. runServiceIdentityInsights. list recommender. runServiceIdentityInsights. update recommender. runServiceIdentityRecommendations. recommender. runServiceIdentityRecommendations. get recommender. runServiceIdentityRecommendations. list recommender. runServiceIdentityRecommendations. update recommender. runServicePerformanceInsights. recommender. runServicePerformanceInsights. get recommender. runServicePerformanceInsights. list recommender. runServicePerformanceInsights. update recommender. runServicePerformanceRecommendations. recommender. runServicePerformanceRecommendations. get recommender. runServicePerformanceRecommendations. list recommender. runServicePerformanceRecommendations. update recommender. runServiceSecurityInsights. recommender. runServiceSecurityInsights. get recommender. runServiceSecurityInsights. list recommender. runServiceSecurityInsights. update recommender. runServiceSecurityRecommendations. recommender. runServiceSecurityRecommendations. get recommender. runServiceSecurityRecommendations. list recommender. runServiceSecurityRecommendations. update resourcemanager.projects.get resourcemanager.projects.list run. run.configurations.get run.configurations.list run.executions.cancel run.executions.delete run.executions.get run.executions.list run.jobs.create run.jobs.createTagBinding run.jobs.delete run.jobs.deleteTagBinding run.jobs.get run.jobs.getIamPolicy run.jobs.list run.jobs.listEffectiveTags run.jobs.listTagBindings run.jobs.run run.jobs.runWithOverrides run.jobs.setIamPolicy run.jobs.update run.locations.list run.operations.delete run.operations.get run.operations.list run.prompts.get run.revisions.delete run.revisions.get run.revisions.list run.routes.get run.routes.invoke run.routes.list run.services.create run.services.createTagBinding run.services.delete run.services.deleteTagBinding run.services.get run.services.getIamPolicy run.services.list run.services.listEffectiveTags run.services.listTagBindings run.services.setIamPolicy run.services.update run.tasks.get run.tasks.list run.workerpools.create run.workerpools.delete run.workerpools.get run.workerpools.getIamPolicy run.workerpools.list run.workerpools.setIamPolicy run.workerpools.update Cloud Run Builder ( roles/ run.builder ) Can build Cloud Run functions and source deployed services. artifactregistry. repositories. deleteArtifacts artifactregistry. repositories. downloadArtifacts artifactregistry. repositories. uploadArtifacts logging.logEntries.create source.repos.get storage.objects.get Cloud Run Developer ( roles/ run.developer ) Read and write access to all Cloud Run resources."
+        ]
+      },
+      {
+        "title": "\"Class JobsAsyncClient (0.16.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 121,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A role is a named list of permissions; each role can be an IAM predefined role or a user-created custom role.",
+          "A role is a named list of permissions; each role can be an IAM predefined role or a user-created custom role.",
+          "JSON example: :literal: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [ \"user:eve@example.com\" ], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ],=\"\" \"etag\":=\"\" \"bwwwja0yfja=\", \" version\":=\"\" 3=\"\"> \\ \\ YAML example: :literal: bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01t00:00:00.000z')=\"\" etag:=\"\" bwwwja0yfja=\"version:\"> \\ \\ For a description of IAM and its features, see the IAM documentation. test iam permissions test iam permissions ( request : typing ."
+        ]
+      },
+      {
+        "title": "\"Class JobsClient (0.16.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient",
+        "source_id": "site-python-reference",
+        "final_score": 121,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A role is a named list of permissions; each role can be an IAM predefined role or a user-created custom role.",
+          "A role is a named list of permissions; each role can be an IAM predefined role or a user-created custom role.",
+          "JSON example: :literal: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [ \"user:eve@example.com\" ], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ],=\"\" \"etag\":=\"\" \"bwwwja0yfja=\", \" version\":=\"\" 3=\"\"> \\ \\ YAML example: :literal: bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01t00:00:00.000z')=\"\" etag:=\"\" bwwwja0yfja=\"version:\"> \\ \\ For a description of IAM and its features, see the IAM documentation. test iam permissions test iam permissions ( request : typing ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "artifactregistry.files.get",
+      "artifactregistry.files.list",
+      "artifactregistry.locations",
+      "artifactregistry.locations.get",
+      "artifactregistry.npmpackages",
+      "artifactregistry.packages.get",
+      "artifactregistry.packages.list",
+      "artifactregistry.reader",
+      "artifactregistry.repositories.downloadArtifacts",
+      "artifactregistry.rules.get",
+      "artifactregistry.rules.list",
+      "artifactregistry.tags.get",
+      "artifactregistry.tags.list",
+      "artifactregistry.versions.get",
+      "artifactregistry.versions.list",
+      "cloudbuild.builds.create",
+      "cloudbuild.builds.get",
+      "cloudbuild.builds.list",
+      "cloudbuild.builds.update",
+      "cloudbuild.locations",
+      "cloudbuild.locations.get",
+      "cloudbuild.locations.list",
+      "cloudbuild.operations",
+      "cloudbuild.operations.get",
+      "cloudbuild.operations.list",
+      "cloudkms.keyHandles",
+      "cloudkms.keyHandles.create",
+      "cloudkms.keyHandles.get",
+      "cloudkms.keyHandles.list",
+      "cloudkms.operations.get",
+      "eventarc.channels.attach",
+      "eventarc.channels.create",
+      "eventarc.channels.delete",
+      "eventarc.channels.get",
+      "eventarc.channels.getIamPolicy",
+      "eventarc.channels.list",
+      "eventarc.channels.publish",
+      "eventarc.channels.undelete",
+      "eventarc.channels.update",
+      "eventarc.enrollments.create",
+      "eventarc.enrollments.delete",
+      "eventarc.enrollments.get",
+      "eventarc.enrollments.list",
+      "eventarc.enrollments.update",
+      "eventarc.googleApiSources.get",
+      "eventarc.googleApiSources.list",
+      "eventarc.kafkaSources.create",
+      "eventarc.kafkaSources.delete",
+      "eventarc.kafkaSources.get",
+      "eventarc.kafkaSources.list",
+      "eventarc.locations",
+      "eventarc.locations.get",
+      "eventarc.locations.list",
+      "eventarc.messageBuses.get",
+      "eventarc.messageBuses.list",
+      "eventarc.messageBuses.use",
+      "eventarc.operations",
+      "eventarc.operations.cancel",
+      "eventarc.operations.delete",
+      "eventarc.operations.get",
+      "eventarc.operations.list",
+      "eventarc.pipelines.create",
+      "eventarc.pipelines.delete",
+      "eventarc.pipelines.get",
+      "eventarc.pipelines.list",
+      "eventarc.pipelines.update",
+      "eventarc.providers",
+      "eventarc.providers.get",
+      "eventarc.providers.list",
+      "eventarc.triggers.create",
+      "eventarc.triggers.delete",
+      "eventarc.triggers.get",
+      "eventarc.triggers.getIamPolicy",
+      "eventarc.triggers.list",
+      "eventarc.triggers.undelete",
+      "eventarc.triggers.update",
+      "example.com",
+      "iam.serviceAccounts.actAs",
+      "iam.serviceAccountUser",
+      "logging.logEntries.create",
+      "orgpolicy.policy.get",
+      "pubsub.schemas.attach",
+      "pubsub.schemas.commit",
+      "pubsub.schemas.create",
+      "pubsub.schemas.delete",
+      "pubsub.schemas.get",
+      "pubsub.schemas.list",
+      "pubsub.schemas.listRevisions",
+      "pubsub.schemas.rollback",
+      "pubsub.schemas.validate",
+      "pubsub.snapshots.create",
+      "pubsub.snapshots.delete",
+      "pubsub.snapshots.get",
+      "pubsub.snapshots.list",
+      "pubsub.snapshots.seek",
+      "pubsub.snapshots.update",
+      "pubsub.subscriptions.consume",
+      "pubsub.subscriptions.create",
+      "pubsub.subscriptions.delete",
+      "pubsub.subscriptions.get",
+      "pubsub.subscriptions.list",
+      "pubsub.subscriptions.update",
+      "pubsub.topics.create",
+      "pubsub.topics.createTagBinding",
+      "pubsub.topics.delete",
+      "pubsub.topics.deleteTagBinding",
+      "pubsub.topics.get",
+      "pubsub.topics.list",
+      "pubsub.topics.listTagBindings",
+      "pubsub.topics.publish",
+      "pubsub.topics.update",
+      "pubsub.topics.updateTag",
+      "recommender.locations",
+      "recommender.locations.get",
+      "recommender.locations.list",
+      "remotebuildexecution.blobs.get",
+      "request.time",
+      "resourcemanager.organizationAdmin",
+      "resourcemanager.organizationViewer",
+      "run.builder",
+      "run.configurations",
+      "run.configurations.get",
+      "run.configurations.list",
+      "run.developer",
+      "run.editor",
+      "run.executions",
+      "run.executions.cancel",
+      "run.executions.delete",
+      "run.executions.get",
+      "run.executions.list",
+      "run.invoker",
+      "run.jobs.create",
+      "run.jobs.createTagBinding",
+      "run.jobs.delete",
+      "run.jobs.deleteTagBinding",
+      "run.jobs.get",
+      "run.jobs.getIamPolicy",
+      "run.jobs.list",
+      "run.jobs.listEffectiveTags",
+      "run.jobs.listTagBindings",
+      "run.jobs.run",
+      "run.jobs.runWithOverrides",
+      "run.jobs.setIamPolicy",
+      "run.jobs.update",
+      "run.jobsExecutor",
+      "run.jobsExecutorWithOverrides",
+      "run.locations.list",
+      "run.operations",
+      "run.operations.delete",
+      "run.operations.get",
+      "run.operations.list",
+      "run.prompts.get",
+      "run.revisions",
+      "run.revisions.delete",
+      "run.revisions.get",
+      "run.revisions.list",
+      "run.routes",
+      "run.routes.get",
+      "run.routes.invoke",
+      "run.routes.list",
+      "run.services.create",
+      "run.services.createTagBinding",
+      "run.services.delete",
+      "run.services.deleteTagBinding",
+      "run.services.get",
+      "run.services.getIamPolicy",
+      "run.services.list",
+      "run.services.listEffectiveTags",
+      "run.services.listTagBindings",
+      "run.services.setIamPolicy",
+      "run.services.update",
+      "run.servicesInvoker",
+      "run.sourceDeveloper",
+      "run.sourceViewer",
+      "run.tasks",
+      "run.tasks.get",
+      "run.tasks.list",
+      "run.workerpools.create",
+      "run.workerpools.delete",
+      "run.workerpools.get",
+      "run.workerpools.getIamPolicy",
+      "run.workerpools.list",
+      "run.workerpools.setIamPolicy",
+      "run.workerpools.update",
+      "serviceusage.groups",
+      "serviceusage.groups.list",
+      "serviceusage.quotas.get",
+      "serviceusage.services.get",
+      "serviceusage.services.list",
+      "serviceusage.services.use",
+      "serviceusage.values.test",
+      "source.repos.get",
+      "storage.buckets.create",
+      "storage.buckets.get",
+      "storage.buckets.list",
+      "storage.folders.create",
+      "storage.folders.get",
+      "storage.folders.list",
+      "storage.managedFolders.create",
+      "storage.managedFolders.get",
+      "storage.managedFolders.list",
+      "storage.multipartUploads.abort",
+      "storage.objects.create",
+      "storage.objects.createContext",
+      "storage.objects.get",
+      "storage.objects.list"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.reader",
+      "roles/iam.serviceAccountUser",
+      "roles/resourcemanager.organizationAdmin",
+      "roles/resourcemanager.organizationViewer",
+      "roles/run.developer",
+      "roles/run.invoker"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:35.569Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run"
+}

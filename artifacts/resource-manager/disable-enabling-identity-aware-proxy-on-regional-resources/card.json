@@ -1,0 +1,144 @@
+{
+  "feature_name": "Disable enabling Identity-Aware Proxy on regional resources",
+  "feature_slug": "disable-enabling-identity-aware-proxy-on-regional-resources",
+  "summary": "This organization policy constraint blocks enabling Identity-Aware Proxy on regional resources.",
+  "extended_definition": "This organization policy constraint blocks enabling Identity-Aware Proxy on regional resources.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+      "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs",
+      "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage multiple organization resources \\_|\\_ Resource Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs",
+        "source_id": "site-iam-reference",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "Effects of using multiple organization resources Use multiple organization resources when you don't want users from one Google Cloud, Google Workspace, or Cloud Identity account to access resources created by users from another account.",
+          "Operating multiple Cloud Identity organization resources therefore requires multiple Google Workspace accounts and the ability to manage identities across them.",
+          "Console To add an Organization Administrator: Sign in to the Google Cloud console as a Google Workspace or Cloud Identity super administrator and navigate to the IAM & Admin page: Open the IAM & admin page Select the organization resource you want to edit: Click the project drop-down list at the top of the page."
+        ]
+      },
+      {
+        "title": "\"Introduction to organization restrictions \\_|\\_ Resource Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "This proxy configuration prevents users from accessing any Google Cloud resources in non-authorized Google Cloud organizations.",
+          "How organization restrictions works In Google Cloud, Identity and Access Management (IAM) governs access to resources.",
+          "Common use cases Here are some common organization restrictions use cases: Restrict access to employees in your organization so that employees can access resources only in your Google Cloud organization and not other organizations."
+        ]
+      },
+      {
+        "title": "\"Manage resources with custom constraints \\_|\\_ Resource Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "source_id": "site-docs-reference-2",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "Disable creation of a folder within another folder to control the depth of the resource hierarchy tree. name : organizations/ ORGANIZATION ID /customConstraints/custom.disableFolderCreation resourceTypes : - cloudresourcemanager.googleapis.com/Folder methodTypes : - CREATE condition : \"resource.parent.startsWith(\" folders\")\" actionType : DENY displayName : Disable creation of a folder inside another folder description : Do not allow creation of a folder within another folder when the resource hierarchy is set to a maximum value of 1.",
+          "Description Constraint syntax Deny creation of new projects in folder 1234 (secure admin folder). name : organizations/ ORGANIZATION ID /customConstraints/custom.disableNewProjectInSecureAdminFolder resourceTypes : - cloudresourcemanager.googleapis.com/Project methodTypes : - CREATE condition : \"resource.parent == \" organizations/1234\"\" actionType : DENY displayName : Disable new project creation in the secure admin folder description : Do not allow creation of new projects in the secure folders.",
+          "This page shows you how to use Organization Policy Service custom constraints to restrict specific operations on the following Google Cloud resources: cloudresourcemanager.googleapis.com/Project cloudresourcemanager.googleapis.com/Folder To learn more about Organization Policy, see Custom organization policies ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudresourcemanager.googleapis.com",
+      "custom.disableFolderCreation",
+      "custom.disableNewProjectInSecureAdminFolder",
+      "resource.parent",
+      "resource.parent.startsWith"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/managing-multiple-orgs",
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:33.880Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager"
+}

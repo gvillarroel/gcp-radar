@@ -1,0 +1,117 @@
+{
+  "feature_name": "Transit routing",
+  "feature_slug": "transit-routing",
+  "summary": "The Routes API can compute routes for transit travel modes.",
+  "extended_definition": "The Routes API can compute routes for transit travel modes.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/routes/compute-route-over",
+      "https://developers.google.com/maps/documentation/routes/overview",
+      "https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRouteMatrix",
+      "https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Method: computeRoutes \\_|\\_ Routes API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes",
+        "source_id": "site-api-reference",
+        "final_score": 276,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Request body The request body contains data with the following structure: JSON representation { \"origin\" : { object ( Waypoint ) } , \"destination\" : { object ( Waypoint ) } , \"intermediates\" : [ { object ( Waypoint ) } ] , \"travelMode\" : enum ( RouteTravelMode ) , \"routingPreference\" : enum ( RoutingPreference ) , \"polylineQuality\" : enum ( PolylineQuality ) , \"polylineEncoding\" : enum ( PolylineEncoding ) , \"departureTime\" : string , \"arrivalTime\" : string , \"computeAlternativeRoutes\" : boolean , \"routeModifiers\" : { object ( RouteModifiers ) } , \"languageCode\" : string , \"regionCode\" : string , \"units\" : enum ( Units ) , \"optimizeWaypointOrder\" : boolean , \"requestedReferenceRoutes\" : [ enum ( ReferenceRoute ) ] , \"extraComputations\" : [ enum ( ExtraComputation ) ] , \"trafficModel\" : enum ( TrafficModel ) , \"transitPreferences\" : { object ( TransitPreferences ) } } Fields origin object ( Waypoint ) Required.",
+          "This field is only populated for requests when the request has a TRAFFIC AWARE or TRAFFIC AWARE OPTIMAL ComputeRoutesRequest.routing preference value, and TRAFFIC ON POLYLINE is included in the ComputeRoutesRequest.extra computations .",
+          "JSON representation { \"name\" : { object ( LocalizedText ) } , \"type\" : enum ( TransitVehicleType ) , \"iconUri\" : string , \"localIconUri\" : string } Fields name object ( LocalizedText ) The name of this vehicle, capitalized. type enum ( TransitVehicleType ) The type of vehicle used. iconUri string The URI for an icon associated with this vehicle type. localIconUri string The URI for the icon associated with this vehicle type, based on the local transport signage."
+        ]
+      },
+      {
+        "title": "Compute Routes Overview \\_|\\_ Routes API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/routes/compute-route-over",
+        "source_id": "site-docs-reference",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "With the Routes API Compute Routes method, you can do the following things: Get directions for different ways to travel , and for a single or multiple destinations: Modes of transportation: transit, driving, two-wheel vehicles, walking, or bicycling.",
+          "Example curl - X POST - d ' { \"origin\" : { \"address\" : \"1800 Amphitheatre Parkway, Mountain View, CA 94043\" }, \"destination\" : { \"address\" : \"Sloat Blvd &, Upper Great Hwy, San Francisco, CA 94132\" }, \"travelMode\" : \"DRIVE\" } ' \\ - H 'Co ntent - Type : applica t io n /jso n ' - H 'X - Goog - Api - Key : YOUR API KEY ' \\ - H 'X - Goog - FieldMask : rou tes .dura t io n , rou tes .dis tan ceMe ters ' \\ 'h tt ps : //routes.googleapis.com/directions/v2:computeRoutes' The service then calculates the requested route, and returns the fields you've requested.",
+          "What's next Get a route Available route options Choose what information to return Migrate from Directions API (Legacy) Migrate from the Routes API preview to GA Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Compute Routes Overview \\_|\\_ Routes API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/routes/overview",
+        "source_id": "site-docs-root",
+        "final_score": 253,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "With the Routes API Compute Routes method, you can do the following things: Get directions for different ways to travel , and for a single or multiple destinations: Modes of transportation: transit, driving, two-wheel vehicles, walking, or bicycling.",
+          "Example curl - X POST - d ' { \"origin\" : { \"address\" : \"1800 Amphitheatre Parkway, Mountain View, CA 94043\" }, \"destination\" : { \"address\" : \"Sloat Blvd &, Upper Great Hwy, San Francisco, CA 94132\" }, \"travelMode\" : \"DRIVE\" } ' \\ - H 'Co ntent - Type : applica t io n /jso n ' - H 'X - Goog - Api - Key : YOUR API KEY ' \\ - H 'X - Goog - FieldMask : rou tes .dura t io n , rou tes .dis tan ceMe ters ' \\ 'h tt ps : //routes.googleapis.com/directions/v2:computeRoutes' The service then calculates the requested route, and returns the fields you've requested.",
+          "What's next Get a route Available route options Choose what information to return Migrate from Directions API (Legacy) Migrate from the Routes API preview to GA Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Method: computeRouteMatrix \\_|\\_ Routes API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRouteMatrix",
+        "source_id": "site-api-reference",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-10-21 UTC.\"],[],[\"This API computes route information for combinations of origins and destinations.",
+          "Home Products Google Maps Platform Documentation Web Services Routes API Reference Send feedback Method: computeRouteMatrix Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request POST https://routes.googleapis.com/distanceMatrix/v2:computeRouteMatrix The URL uses gRPC Transcoding syntax."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "routes.googleapis.com",
+      "v2.computeRouteMatrix"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes",
+        "https://developers.google.com/maps/documentation/routes/compute-route-over",
+        "https://developers.google.com/maps/documentation/routes/overview",
+        "https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRouteMatrix"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes",
+        "https://developers.google.com/maps/documentation/routes/compute-route-over",
+        "https://developers.google.com/maps/documentation/routes/overview",
+        "https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRouteMatrix"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:35.135Z",
+  "source_step08_card": "data/step-08/current/products/routes-api/card.json",
+  "product_name": "Routes API",
+  "product_slug": "routes-api"
+}

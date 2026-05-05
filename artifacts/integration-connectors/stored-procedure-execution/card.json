@@ -1,0 +1,94 @@
+{
+  "feature_name": "Stored procedure execution",
+  "feature_slug": "stored-procedure-execution",
+  "summary": "Connectors can execute stored procedures.",
+  "extended_definition": "Connectors can execute stored procedures.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/db2/configure"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Couchbase \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 189,
+        "relevance": "",
+        "evidence_snippets": [
+          "Actions This connector supports execution of the following actions: User-defined stored procedures and functions.",
+          "If you have any stored procedures and functions in your backend, those are listed in the Actions column of the Configure connector task dialog.",
+          "Supported values are: N1QL, Analytics create table ram quota STRING False The default RAM quota, in megabytes, to use when inserting buckets via the CREATE TABLE syntax. dataverse separator STRING False The character or characters used to denote Analytics dataverses and scopes/collections. flavor separator STRING False The character or characters used to denote flavors. n1 qlport STRING False The port for connecting to the Couchbase N1QL Endpoint. periods separator STRING False The character or characters used to denote hierarchy. query execution timeout STRING False This sets the server-side timeout for the query, which governs how long Couchbase will execute the query before returning a timeout error. strict comparison STRING False Adjusts how precisely to translate filters on SQL input queries into Couchbase queries."
+        ]
+      },
+      {
+        "title": "IBM Db2 \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/db2/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 181,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Actions This connector supports execution of the following actions: User-defined stored procedures and functions.",
+          "If you have any stored procedures and functions in your backend, those are listed in the Actions column of the Configure connector task dialog.",
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { \"$1\" : 1.0 , \"$2\" : 5.0 } If the action execution is successful, the connector task's connectorOutputPayload field will have a value similar to the following: [{ \"bignum\" : 5.0 }] Entity operation examples Example - List records of an entity This example lists the records of the Users entity."
+        ]
+      },
+      {
+        "title": "\"Cloud SQL for PostgreSQL \\_|\\_ Integration Connectors \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 173,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported data types The following are the supported data types for this connector: BIGINT BINARY BIT BOOLEAN CHAR DATE DECIMAL DOUBLE FLOAT INTEGER LONGN VARCHAR LONG VARCHAR NCHAR NUMERIC NVARCHAR REAL SMALL INT TIME TIMESTAMP TINY INT VARBINARY VARCHAR Actions This connector supports execution of the following actions: User-defined stored procedures and functions.",
+          "If you have any stored procedures and functions in your backend, those are listed in the Actions column of the Configure connector task dialog.",
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { \"$1\" : 1.0 , \"$2\" : 5.0 } If the action execution is successful, the connector task's connectorOutputPayload field will have a value similar to the following: [{ \"bignum\" : 5.0 }] Entity operation examples Example - List records of an entity This example lists the records of the Users entity."
+        ]
+      },
+      {
+        "title": "Cloud SQL for MySQL \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 173,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported data types The following are the supported data types for this connector: BIGINT BINARY BIT BOOLEAN CHAR DATE DECIMAL DOUBLE FLOAT INTEGER LONGN VARCHAR LONG VARCHAR NCHAR NUMERIC NVARCHAR REAL SMALL INT TIME TIMESTAMP TINY INT VARBINARY VARCHAR Actions This connector supports execution of the following actions: User-defined stored procedures and functions.",
+          "If you have any stored procedures and functions in your backend, those are listed in the Actions column of the Configure connector task dialog.",
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { \"$1\" : 1.0 , \"$2\" : 5.0 } If the action execution is successful, the connector task's connectorOutputPayload field will have a value similar to the following: [{ \"bignum\" : 5.0 }] Entity operation examples Example - List records of an entity This example lists the records of the Users entity."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:22.663Z",
+  "source_step08_card": "data/step-08/current/products/integration-connectors/card.json",
+  "product_name": "Integration Connectors",
+  "product_slug": "integration-connectors"
+}

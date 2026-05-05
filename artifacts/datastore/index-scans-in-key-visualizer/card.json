@@ -1,0 +1,238 @@
+{
+  "feature_name": "Index scans in Key Visualizer",
+  "feature_slug": "index-scans-in-key-visualizer",
+  "summary": "Key Visualizer can display index scan activity.",
+  "extended_definition": "Key Visualizer can display index scan activity.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/access/iam",
+      "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore",
+      "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+      "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Optimizing Indexes \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+        "source_id": "site-iam-reference",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Firestore in Datastore mode databases execute a query using a perfect index using the following steps: Identifies the index corresponding to the query's kind, filter properties, filter operators, and sort orders Scans from the beginning of the index to the first entity that meets all or a subset of the query's filter conditions Continues scanning the index, returning each entity that satisfies all the filter conditions, until it encounters an entity that does not meet the filter conditions, or reaches the end of the index, or has collected the maximum number of results requested by the query For example, consider the following query: SELECT FROM Task WHERE category = 'Personal' AND priority < 3 ORDER BY priority DESC The perfect composite index for this query is an index of keys for entities of kind Task , with columns for the values of the category and priority properties.",
+          "Client () query owner size tag = client . query ( kind = \"Photo\" , filters = [ ( \"owner id\" , \"=\" , \"username\" ), ( \"size\" , \"=\" , 2 ), ( \"tag\" , \"=\" , \"family\" ), ], ) Each filter maps to one index scan in the following built-in indexes: Index(Photo, owner id) Index(Photo, size) Index(Photo, tag) If you add the composite index Index(Photo, owner id, size) , the query maps to two index scans instead of three: Satisfies both 'owner id=username' and 'size=2' Index(Photo, owner id, size) Index(Photo, tag) Consider a scenario with many large images, many black-and-white images, but few large, panoramic images.",
+          "When two or more indexes are sorted by the same criteria, Firestore in Datastore mode can merge the results of multiple index scans to find the results that are common to all such indexes."
+        ]
+      },
+      {
+        "title": "\"Identity and Access Management (IAM) \\_|\\_ Datastore \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "source_id": "site-iam-reference",
+        "final_score": 187,
+        "relevance": "",
+        "evidence_snippets": [
+          "Intended for application developers and service accounts. roles/datastore.viewer appengine.applications.get datastore.databases.get datastore.databases.getMetadata datastore.databases.list datastore.entities.get datastore.entities.list datastore.schemas.get datastore.schemas.list datastore.namespaces.get datastore.namespaces.list datastore.statistics.get datastore.statistics.list resourcemanager.projects.get resourcemanager.projects.list datastore.insights.get Read access to all Datastore mode database resources. roles/datastore.importExportAdmin appengine.applications.get datastore.databases.export datastore.databases.getMetadata datastore.databases.import datastore.operations.cancel datastore.operations.get datastore.operations.list resourcemanager.projects.get resourcemanager.projects.list Full access to manage imports and exports. roles/datastore.bulkAdmin resourcemanager.projects.get resourcemanager.projects.list datastore.databases.getMetadata datastore.databases.bulkDelete datastore.operations.cancel datastore.operations.get datastore.operations.list Full access to manage bulk operations. roles/datastore.indexAdmin appengine.applications.get datastore.databases.getMetadata datastore.schemas. datastore.operations.get datastore.operations.list resourcemanager.projects.get resourcemanager.projects.list Full access to manage index definitions. roles/datastore.keyVisualizerViewer datastore.databases.getMetadata datastore.keyVisualizerScans.get datastore.keyVisualizerScans.list resourcemanager.projects.get resourcemanager.projects.list Full access to Key Visualizer scans. roles/datastore.backupSchedulesViewer datastore.backupSchedules.get datastore.backupSchedules.list Read access to backup schedules in a Datastore mode database. roles/datastore.backupSchedulesAdmin datastore.backupSchedules.get datastore.backupSchedules.list datastore.backupSchedules.create datastore.backupSchedules.update datastore.backupSchedules.delete datastore.databases.list datastore.databases.getMetadata Full access to backup schedules in a Datastore mode database. roles/datastore.backupsViewer datastore.backups.get datastore.backups.list Read access to backup information in a Datastore mode location. roles/datastore.backupsAdmin datastore.backups.get datastore.backups.list datastore.backups.delete Full access to backups in a Datastore mode location. roles/datastore.restoreAdmin datastore.backups.get datastore.backups.list datastore.backups.restoreDatabase datastore.databases.list datastore.databases.create datastore.databases.getMetadata datastore.operations.list datastore.operations.get Ability to restore a Datastore mode backup into a new database.",
+          "This role also gives the ability to create new databases, not necessarily by cloning. roles/datastore.statisticsViewer resourcemanager.projects.get resourcemanager.projects.list datastore.databases.getMetadata datastore.insights.get datastore.keyVisualizerScans.get datastore.keyVisualizerScans.list datastore.statistics.list datastore.statistics.get Read access to Insights, Stats, and Key Visualizer scans.",
+          "Key Visualizer permission name Description datastore.keyVisualizerScans.get Get details about Key Visualizer scans. datastore.keyVisualizerScans.list List available Key Visualizer scans."
+        ]
+      },
+      {
+        "title": "Indexes \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "source_id": "site-iam-reference",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "Index configuration Firestore in Datastore mode provides built-in , or automatic, indexes for queries of the following forms: Kindless queries using only ancestor and key filters Queries using only ancestor and equality filters Queries using only inequality filters (which are limited to a single property ) Queries using only ancestor filters, equality filters on properties, and inequality filters on keys Queries with no filters and only one sort order on a property, either ascending or descending As an example, by default, Datastore mode databases automatically predefine two single property indexes for each property of each entity kind, one in ascending order and one in descending order.",
+          "Composite indexes are required for queries of the following form: Queries with ancestor and inequality filters Queries with one or more inequality filters on a property and one or more equality filters on other properties Queries with a sort order on keys in descending order Queries with multiple sort orders Queries with one or more filters and one or more sort orders Composite indexes are defined in the application's index configuration file ( index.yaml ). (Built-in indexes are not contained in the index configuration file.) Composite indexes are composed of multiple properties and require that each individual property must not be excluded from your indexes .",
+          "In this case, you can circumvent the exploding index by manually configuring an index in your index configuration file: indexes: - kind: Task properties: - name: tags - name: created - kind: Task properties: - name: collaborators - name: created This reduces the number of entries needed to only ( tags created + collaborators created ) , or 6 entries instead of 9: ( 'fun' , NOW() ) ( 'programming' , NOW() ) ( 'learn' , NOW() ) ( 'alice' , NOW() ) ( 'bob' , NOW() ) ( 'charlie' , NOW() ) Any commit operation that would cause an index to exceed the index entry or size limit will fail."
+        ]
+      },
+      {
+        "title": "Fast and Reliable Ranking in Google Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore",
+        "source_id": "site-iam-reference",
+        "final_score": 159,
+        "relevance": "",
+        "evidence_snippets": [
+          "Rather than calculating the rank for every request, he set up a scheduled task that scanned and updated the rank of every player once an hour.",
+          "Looking for an O(log n) Algorithm The simple query solution requires scanning all players with a higher score to count the rank of one player.",
+          "Because Datastore maintains a sorted index on the player scores, this count can be computed efficiently."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.applications.get",
+      "datastore.backups.delete",
+      "datastore.backups.get",
+      "datastore.backups.list",
+      "datastore.backups.restoreDatabase",
+      "datastore.backupsAdmin",
+      "datastore.backupSchedules.create",
+      "datastore.backupSchedules.delete",
+      "datastore.backupSchedules.get",
+      "datastore.backupSchedules.list",
+      "datastore.backupSchedules.update",
+      "datastore.backupSchedulesAdmin",
+      "datastore.backupSchedulesViewer",
+      "datastore.backupsViewer",
+      "datastore.bulkAdmin",
+      "datastore.databases.bulkDelete",
+      "datastore.databases.create",
+      "datastore.databases.export",
+      "datastore.databases.get",
+      "datastore.databases.getMetadata",
+      "datastore.databases.import",
+      "datastore.databases.list",
+      "datastore.entities.get",
+      "datastore.entities.list",
+      "datastore.importExportAdmin",
+      "datastore.indexAdmin",
+      "datastore.insights.get",
+      "datastore.keyVisualizerScans.get",
+      "datastore.keyVisualizerScans.list",
+      "datastore.keyVisualizerViewer",
+      "datastore.namespaces.get",
+      "datastore.namespaces.list",
+      "datastore.operations.cancel",
+      "datastore.operations.get",
+      "datastore.operations.list",
+      "datastore.restoreAdmin",
+      "datastore.schemas",
+      "datastore.schemas.get",
+      "datastore.schemas.list",
+      "datastore.statistics.get",
+      "datastore.statistics.list",
+      "datastore.statisticsViewer",
+      "datastore.viewer",
+      "index.yaml"
+    ],
+    "missing_inventory_roles": [
+      "roles/datastore.backupsAdmin",
+      "roles/datastore.backupSchedulesAdmin",
+      "roles/datastore.backupSchedulesViewer",
+      "roles/datastore.backupsViewer",
+      "roles/datastore.bulkAdmin",
+      "roles/datastore.importExportAdmin",
+      "roles/datastore.indexAdmin",
+      "roles/datastore.keyVisualizerViewer",
+      "roles/datastore.restoreAdmin",
+      "roles/datastore.statisticsViewer",
+      "roles/datastore.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/concepts/indexes",
+        "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:56.488Z",
+  "source_step08_card": "data/step-08/current/products/datastore/card.json",
+  "product_name": "Datastore",
+  "product_slug": "datastore"
+}

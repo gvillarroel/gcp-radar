@@ -1,0 +1,147 @@
+{
+  "feature_name": "Bulk HL7v2 message retrieval",
+  "feature_slug": "bulk-hl7v2-message-retrieval",
+  "summary": "The Cloud Healthcare API added support for retrieving HL7v2 messages in bulk.",
+  "extended_definition": "The Cloud Healthcare API added support for retrieving HL7v2 messages in bulk.",
+  "lifecycle": {
+    "latest_feature_date": "2021-02-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/concepts/hl7v2",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Transmitting HL7v2 messages over TCP/IP connections \\_|\\_ Cloud Healthcare\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "source_id": "site-docs-root",
+        "final_score": 154,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To view the message published to the Pub/Sub topic, run the gcloud pubsub subscriptions pull command: gcloud pubsub subscriptions pull --auto-ack PUBSUB SUBSCRIPTION The command returns the following output about the ingested HL7v2 message: ┌----------------------------------------------------------------------------------------------------------------- ----------------- ---------------┐ DATA MESSAGE ID ATTRIBUTES ├----------------------------------------------------------------------------------------------------------------- ----------------- --------------- projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ HL7V2 MESSAGE ID 123456789012345 msgType = ADT └----------------------------------------------------------------------------------------------------------------- ----------------- ---------------┘ You can also list the messages in your HL7v2 store to see if the message was added: curl curl -X GET \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages\" If the request is successful, the server returns the message's ID in a resource path: { \"hl7V2Messages\": [ { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID \" } ] } PowerShell $cred = gcloud auth application-default print-access-token $headers = @ { Authorization = \"Bearer $cred \" } Invoke-WebRequest -Method Get -Headers $headers -ContentType: \"application/json; charset=utf-8\" ` -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages\" Select-Object -Expand Content If the request is successful, the server returns the message's ID in a resource path: { \"hl7V2Messages\": [ { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID \" } ] } After completing this section, you have successfully deployed the MLLP adapter to GKE and, over a VPN, securely sent an HL7v2 message from an \"on-premises\" instance through the adapter and to the Cloud Healthcare API.",
+          "To view the message published to the Pub/Sub topic, run the gcloud pubsub subscriptions pull command: gcloud pubsub subscriptions pull --auto-ack PUBSUB SUBSCRIPTION The command returns the following output about the ingested HL7v2 message: ┌----------------------------------------------------------------------------------------------------------------- ----------------- ---------------┐ DATA MESSAGE ID ATTRIBUTES ├----------------------------------------------------------------------------------------------------------------- ----------------- --------------- projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ HL7V2 MESSAGE ID 123456789012345 msgType = ADT └----------------------------------------------------------------------------------------------------------------- ----------------- ---------------┘ You can also list the messages in your HL7v2 store to see if the message was added: curl curl -X GET \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages\" If the request is successful, the server returns the message's ID in a resource path: { \"hl7V2Messages\": [ { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID \" } ] } PowerShell $cred = gcloud auth application-default print-access-token $headers = @ { Authorization = \"Bearer $cred \" } Invoke-WebRequest -Method Get -Headers $headers -ContentType: \"application/json; charset=utf-8\" -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages\" Select-Object -Expand Content If the request is successful, the server returns the message's ID in a resource path: { \"hl7V2Messages\": [ { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID \" } ] } After completing this section, you have successfully deployed the MLLP adapter to GKE and sent an HL7v2 message from a remote instance through the adapter and to the Cloud Healthcare API.",
+          "In the directory where you downloaded the file, call the messages.create method to create the message in an HL7v2 store: curl To create an HL7v2 message, make a POST request and specify the following information: The name of the parent dataset The name of the HL7v2 store A message An access token The following sample shows a POST request using curl and a sample JSON file called hl7v2-sample.json . curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ --data-binary @hl7v2-sample.json \\ \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages\" If the request is successful, the server returns the response in JSON format: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID \", \"data\": \"TVNIfF5+XCZ8QXxTRU5EX0ZBQ0lMSVRZfEF8QXwyMDE4MDEwMTAwMDAwMHx8VFlQRV5BfDIwMTgwMTAxMDAwMDAwfFR8MC4wfHx8QUF8fDAwfEFTQ0lJDUVWTnxBMDB8MjAxODAxMDEwNDAwMDANUElEfHwxNAExMTFeXl5eTVJOfDExMTExMTExXl5eXk1STn4xMTExMTExMTExXl5eXk9SR05NQlI=\", \"sendFacility\": \"SEND FACILITY\", \"sendTime\": \"2018-01-01T00:00:00Z\", \"messageType\": \"TYPE\", \"createTime\": \"1970-01-01T00:00:00Z\", \"patientIds\": [ { \"value\": \"14\\u0001111\", \"type\": \"MRN\" }, { \"value\": \"11111111\", \"type\": \"MRN\" }, { \"value\": \"1111111111\", \"type\": \"ORGNMBR\" } ] } PowerShell To create an HL7v2 message, make a POST request and specify the following information: The name of the parent dataset The name of the HL7v2 store A message An access token The following sample shows a POST request using Windows PowerShell and a sample JSON file called hl7v2-sample.json . $cred = gcloud auth application-default print-access-token $headers = @ { Authorization = \"Bearer $cred \" } Invoke-WebRequest -Method Post -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile hl7v2-sample.json -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages\" Select-Object -Expand Content If the request is successful, the server returns the response in JSON format: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/ MESSAGE ID \", \"data\": \"TVNIfF5+XCZ8QXxTRU5EX0ZBQ0lMSVRZfEF8QXwyMDE4MDEwMTAwMDAwMHx8VFlQRV5BfDIwMTgwMTAxMDAwMDAwfFR8MC4wfHx8QUF8fDAwfEFTQ0lJDUVWTnxBMDB8MjAxODAxMDEwNDAwMDANUElEfHwxNAExMTFeXl5eTVJOfDExMTExMTExXl5eXk1STn4xMTExMTExMTExXl5eXk9SR05NQlI=\", \"sendFacility\": \"SEND FACILITY\", \"sendTime\": \"2018-01-01T00:00:00Z\", \"messageType\": \"TYPE\", \"createTime\": \"1970-01-01T00:00:00Z\", \"patientIds\": [ { \"value\": \"14\\u0001111\", \"type\": \"MRN\" }, { \"value\": \"11111111\", \"type\": \"MRN\" }, { \"value\": \"1111111111\", \"type\": \"ORGNMBR\" } ] } After creating the message, the MLLP adapter returns a response similar to the following: I0214 00:00:00.000000 1 healthapiclient.go:244] Started to fetch message from the Cloud Healthcare API HL7V2 Store I0214 00:00:00.000000 1 healthapiclient.go:283] Message was successfully fetched from the Cloud Healthcare API HL7V2 Store."
+        ]
+      },
+      {
+        "title": "\"Using the DICOMweb standard \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "source_id": "site-docs-root",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "HttpResponse response = request . executeUnparsed (); String outputPath = \"image.png\" ; OutputStream outputStream = new FileOutputStream ( new File ( outputPath )); try { response . download ( outputStream ); System . out . println ( \"DICOM rendered PNG image written to file \" + outputPath ); } finally { outputStream . close (); } if ( ! response . isSuccessStatusCode ()) { System . err . print ( String . format ( \"Exception retrieving DICOM rendered image: %s\\n\" , response . getStatusMessage ())); throw new RuntimeException (); } } private static CloudHealthcare createClient () throws IOException { // Use Application Default Credentials (ADC) to authenticate the requests // For more information see https://cloud.google.com/docs/authentication/production GoogleCredentials credential = GoogleCredentials . getApplicationDefault () . createScoped ( Collections . singleton ( CloudHealthcareScopes .",
+          "HttpResponse response = request . executeUnparsed (); String outputPath = \"instance.dcm\" ; OutputStream outputStream = new FileOutputStream ( new File ( outputPath )); try { response . download ( outputStream ); System . out . println ( \"DICOM instance written to file \" + outputPath ); } finally { outputStream . close (); } if ( ! response . isSuccessStatusCode ()) { System . err . print ( String . format ( \"Exception retrieving DICOM instance: %s\\n\" , response . getStatusMessage ())); throw new RuntimeException (); } } private static CloudHealthcare createClient () throws IOException { // Use Application Default Credentials (ADC) to authenticate the requests // For more information see https://cloud.google.com/docs/authentication/production GoogleCredentials credential = GoogleCredentials . getApplicationDefault () . createScoped ( Collections . singleton ( CloudHealthcareScopes .",
+          "String outputPath = \"study.multipart\" ; OutputStream outputStream = new FileOutputStream ( new File ( outputPath )); try { response . download ( outputStream ); System . out . println ( \"DICOM study written to file \" + outputPath ); } finally { outputStream . close (); } if ( ! response . isSuccessStatusCode ()) { System . err . print ( String . format ( \"Exception retrieving DICOM study: %s\\n\" , response . getStatusMessage ())); throw new RuntimeException (); } } private static CloudHealthcare createClient () throws IOException { // Use Application Default Credentials (ADC) to authenticate the requests // For more information see https://cloud.google.com/docs/authentication/production GoogleCredentials credential = GoogleCredentials . getApplicationDefault () . createScoped ( Collections . singleton ( CloudHealthcareScopes ."
+        ]
+      },
+      {
+        "title": "HL7v2 \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/concepts/hl7v2",
+        "source_id": "site-docs-root-2",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The adapter does not parse or inspect the HL7v2 messages; the Cloud Healthcare API parses and validates the messages as they are ingested into an HL7v2 store .",
+          "It includes information such as: The time when the message was created Who created the message What data the message contains The Message resource for the preceding message looks like this: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /hl7V2Stores/ HL7V2 STORE ID /messages/W5 pxOBkoLoCxiFxE4cg8zwEWRzMlOzIfaLBrZPf0Zg=\", \"data\": \"TVNIfF5+XCZ8RlJPTV9BUFB8RlJPTV9GQUNJTElUWXxUT19BUFB8VE9fRkFDSUxJVFl8MjAxODAxMDEwMDAwMDB8fEFEVF5BMDF8MjAxODAxMDEwMDAwMDB8UHwyLjV8DUVWTnxBMDF8MjAxMTA2MTMwODM2MTd8DVBJRHwxfDg0MzEyNV5eXl5NUk58MjEwMDQwNTNeXl5eTVJOfjIyNjkwMzAzMDNeXl5eT1JHTk1CUnx8U1VMTFleQlJJQU58fDE5NjExMjA5fE18fHwxMjMgTUFJTiBTVF5eQ0lUWV5TVEFURV4xMjM0NXwNUFYxfHxJfEg3MyBSTTFeMV5eSElHSFdBWSAwMSBDTElOSUN8fHx8NTE0OF5NQVJZIFFVSU5OfHx8fHx8fHx8WXx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHwyMDE4MDEwMTAwMDAwMHw=\", \"sendFacility\": \"FROM FACILITY\", \"sendTime\": \"2018-01-01T00:00:00Z\", \"messageType\": \"ADT\", \"createTime\": \"2018-01-01T00:00:00Z\", \"patientIds\": [ { \"value\": \"843125\", \"type\": \"MRN\" }, { \"value\": \"21004053\", \"type\": \"MRN\" }, { \"value\": \"2269030303\", \"type\": \"ORGNMBR\" } ], \"parsedData\": { \"segments\": [ { \"segmentId\": \"MSH\", \"fields\": { \"5\": \"TO FACILITY\", \"2\": \"FROM APP\", \"3\": \"FROM FACILITY\", \"0\": \"MSH\", \"1\": \"^ \\\\&\", \"10\": \"P\", \"4\": \"TO APP\", \"9\": \"20180101000000\", \"8.1\": \"ADT\", \"11\": \"2.5\", \"8.2\": \"A01\", \"6\": \"20180101000000\" } }, { \"segmentId\": \"EVN\", \"fields\": { \"1\": \"A01\", \"2\": \"20110613083617\", \"0\": \"EVN\" } }, { \"segmentId\": \"PID\", \"fields\": { \"1\": \"1\", \"3[0].1\": \"21004053\", \"3[1].1\": \"2269030303\", \"3[0].5\": \"MRN\", \"0\": \"PID\", \"11.4\": \"STATE\", \"11.5\": \"12345\", \"2.1\": \"843125\", \"2.5\": \"MRN\", \"5.1\": \"SULLY\", \"11.3\": \"CITY\", \"8\": \"M\", \"11.1\": \"123 MAIN ST\", \"3[1].5\": \"ORGNMBR\", \"7\": \"19611209\", \"5.2\": \"BRIAN\" } }, { \"segmentId\": \"PV1\", \"fields\": { \"44\": \"20180101000000\", \"7.1\": \"5148\", \"16\": \"Y\", \"2\": \"I\", \"3.2\": \"1\", \"3.4\": \"HIGHWAY 01 CLINIC\", \"7.2\": \"MARY QUINN\", \"3.1\": \"H73 RM1\", \"0\": \"PV1\" } } ] } } Creating and ingesting messages You can store HL7v2 messages in an HL7v2 store using the following methods: messages.create : creates a Message resource and stores it in the HL7v2 store.",
+          "MLLP and the Google Cloud MLLP adapter The minimal lower layer protocol (MLLP) is the standard used for transmitting HL7v2 messages over TCP/IP connections within a network, such as a hospital."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "healthapiclient.go",
+      "healthcare.googleapis.com",
+      "image.png",
+      "instance.dcm",
+      "messages.create",
+      "sample.json",
+      "sample1.json",
+      "study.multipart"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/hl7v2"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/hl7v2"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/hl7v2"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/hl7v2"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/hl7v2"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/hl7v2"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/mllp-adapter",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/hl7v2"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:29.484Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api"
+}

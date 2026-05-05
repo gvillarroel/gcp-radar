@@ -1,0 +1,94 @@
+{
+  "feature_name": "Ruby 3.4 runtime",
+  "feature_slug": "ruby-3-4-runtime",
+  "summary": "Cloud Run supports the Ruby 3.4 runtime for deployed workloads; Cloud Run supports the Ruby 3.4 runtime for deployed workloads.",
+  "extended_definition": "Cloud Run supports the Ruby 3.4 runtime for deployed workloads; Cloud Run supports the Ruby 3.4 runtime for deployed workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/run/latest",
+      "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-ruby-service",
+      "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Authenticate to Cloud Run Admin API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api",
+        "source_id": "site-docs-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Quickstart: Build and deploy a Ruby web app to Google Cloud with Cloud Run\\",
+        "url": "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-ruby-service",
+        "source_id": "site-docs-reference-2",
+        "final_score": 31,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dockerfile README . md . ruby - version . bundle / vendor / Your app is finished and ready to be deployed.",
+          "Success: You deployed a Ruby web app to Cloud Run.",
+          "Write the sample application To write a Ruby application: Create a new directory named helloworld and change directory into it: mkdir helloworld cd helloworld Create a file named app.rb and paste the following code into it: require \"sinatra\" set :bind , \"0.0.0.0\" port = ENV [ \"PORT\" ] \"8080\" set :port , port get \"/\" do name = ENV [ \"NAME\" ] \"World\" \"Hello #{ name } !\" end This code creates a basic web server that listens on the port defined by the PORT environment variable ."
+        ]
+      },
+      {
+        "title": "\"Python Client for Cloud Run \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/run/latest",
+        "source_id": "site-python-reference",
+        "final_score": 26,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.rb",
+      "rubygems.org"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-ruby-service",
+        "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:35.569Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run"
+}

@@ -1,0 +1,158 @@
+{
+  "feature_name": "Storage Transfer Service gcloud command-line interface support",
+  "feature_slug": "storage-transfer-service-gcloud-command-line-interface-support",
+  "summary": "Support in Preview for creating and managing transfer jobs, including agent installation and agent pool lifecycle operations, using the gcloud command-line tool.",
+  "extended_definition": "Support in Preview for creating and managing transfer jobs, including agent installation and agent pool lifecycle operations, using the gcloud command-line tool.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iam/docs/authentication",
+      "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+      "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Transfer from HDFS to Cloud Storage \\_|\\_ Storage Transfer Service \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "source_id": "site-docs-root",
+        "final_score": 108,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about the agent's command-line options, see Agent command-line options . gcloud CLI To install one or more agents using the gcloud CLI, run gcloud transfer agents install : gcloud transfer agents install --pool = POOL NAME \\ --count = NUM AGENTS \\ --mount-directories = MOUNT DIRECTORIES \\ --hdfs-namenode-uri = HDFS NAMENODE URI \\ --hdfs-username = HDFS USERNAME \\ --hdfs-data-transfer-protection = HDFS DATA TRANSFER PROTECTION \\ --kerberos-config-file = KERBEROS CONFIG FILE \\ --kerberos-keytab-file = KERBEROS KEYTAB FILE \\ --kerberos-user-principal = KERBEROS USER PRINCIPAL \\ --kerberos-service-principal = KERBEROS SERVICE PRINCIPAL \\ Replace the following: --hdfs-namenode-uri specifies an HDFS cluster including a schema, namenode, and port, in URI format.",
+          "Creating a new job initiates the specified transfer, unless a schedule or --do-not-run is specified. gcloud transfer jobs create \\ hdfs:// /PATH / gs:// BUCKET NAME/PATH / --source-agent-pool = AGENT POOL NAME Replace the following: PATH is an absolute path from the root of the HDFS cluster.",
+          "Additional options include: --do-not-run prevents Storage Transfer Service from running the job upon submission of the command."
+        ]
+      },
+      {
+        "title": "\"Manage transfer agents \\_|\\_ Storage Transfer Service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "source_id": "site-docs-root",
+        "final_score": 107,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about the agent's command-line options, see Agent command-line options . gcloud CLI To install one or more agents using the gcloud CLI, run gcloud transfer agents install : gcloud transfer agents install --pool = POOL NAME --count = NUM AGENTS \\ --mount-directories = MOUNT DIRECTORIES The tool walks you through any required steps to install the agent(s).",
+          "This file is mounted by the -v <var>HOST PATH/TO/KEY.JSON</var>:/etc/gcloud/key.json:ro flag in the command. --enable-s3 specifies that this agent is for transfers from S3-compatible storage .",
+          "This file is mounted by the -v <var>HOST PATH/TO/KEY.JSON</var>:/etc/gcloud/key.json:ro flag in the command. --enable-s3 specifies that this agent is for transfers from S3-compatible storage ."
+        ]
+      },
+      {
+        "title": "\"Authenticate to IAM \\_|\\_ Identity and Access Management (IAM) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/iam/docs/authentication",
+        "source_id": "site-iam-reference",
+        "final_score": 104,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST requests from the command line When you make a REST request from the command line, you can use your gcloud CLI credentials by including gcloud auth print-access-token as part of the command that sends the request.",
+          "To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Execute the following command: curl -X GET \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ \"https://iam.googleapis.com/v1/projects/ PROJECT ID /serviceAccounts\" PowerShell (Windows) Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers ` -Uri \"https://iam.googleapis.com/v1/projects/ PROJECT ID /serviceAccounts\" Select-Object -Expand Content For more information about authenticating using REST and gRPC, see Authenticate for using REST .",
+          "For a local development environment You can set up credentials for a local development environment in the following ways: User credentials for client libraries or third-party tools User credentials for REST requests from the command line Service account impersonation Client libraries or third-party tools Set up Application Default Credentials (ADC) in your local environment: Install the Google Cloud CLI."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcr.io",
+      "iam.googleapis.com",
+      "key.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/iam/docs/authentication"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/iam/docs/authentication"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/iam/docs/authentication"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/iam/docs/authentication"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/iam/docs/authentication"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/iam/docs/authentication"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/iam/docs/authentication"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/iam/docs/authentication"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/iam/docs/authentication"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:40.458Z",
+  "source_step08_card": "data/step-08/current/products/storage-transfer-service/card.json",
+  "product_name": "Storage Transfer Service",
+  "product_slug": "storage-transfer-service"
+}

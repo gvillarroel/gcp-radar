@@ -1,0 +1,276 @@
+{
+  "feature_name": "Release abandonment",
+  "feature_slug": "release-abandonment",
+  "summary": "Release abandonment lets you permanently abandon a release in Cloud Deploy.",
+  "extended_definition": "Release abandonment lets you permanently abandon a release in Cloud Deploy.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deploy/docs/abandon-release",
+      "https://docs.cloud.google.com/deploy/docs/iam-roles-permissions",
+      "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.types.AbandonReleaseRequest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Abandon a release \\_|\\_ Cloud Deploy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/abandon-release",
+        "source_id": "site-docs-reference-2",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "This page describes how to permanently abandon a Cloud Deploy release.",
+          "Reasons for abandoning a release include the following, for example: There's a bug in the release There's a security issue in the release A feature included in the release has been deprecated To abandon a release, run the following command: gcloud deploy releases abandon RELEASE NAME --delivery-pipeline = PIPELINE NAME --region = REGION Where: RELEASE NAME Is the name of the release to abandon.",
+          "IAM permissions The IAM permissions required for abandoning a release are included in the following roles: roles/clouddeploy.admin roles/clouddeploy.operator roles/clouddeploy.developer Rollouts from abandoned releases When you abandon a release, any rollouts created from that release that are in progress or queued continue to completion—they are not cancelled."
+        ]
+      },
+      {
+        "title": "\"Class AbandonReleaseRequest (2.10.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.types.AbandonReleaseRequest",
+        "source_id": "site-python-reference",
+        "final_score": 101,
+        "relevance": "",
+        "evidence_snippets": [
+          "2.10.0 (latest) 2.9.0 2.8.0 2.7.1 2.6.3 2.5.0 2.4.1 2.3.0 2.2.0 2.1.0 2.0.0 1.19.1 1.18.1 1.17.3 1.16.0 1.15.0 1.14.0 1.13.0 1.12.0 1.11.1 1.10.1 1.9.0 1.8.0 1.7.0 1.6.1 1.5.0 1.4.1 1.3.1 1.2.1 1.1.1 1.0.0 0.3.2 0.2.0 0.1.1 AbandonReleaseRequest ( mapping = None , , ignore unknown fields = False , kwargs ) The request object used by AbandonRelease .",
+          "Home Documentation Developer tools Python Client libraries Send feedback Class AbandonReleaseRequest (2.10.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "Format is projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release} ."
+        ]
+      },
+      {
+        "title": "IAM roles and permissions \\_|\\_ Cloud Deploy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/iam-roles-permissions",
+        "source_id": "site-iam-reference",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table lists the Cloud Deploy IAM roles and the permissions that they include: Role Permissions Cloud Deploy Admin ( roles/ clouddeploy.admin ) Full control of Cloud Deploy resources. clouddeploy. clouddeploy. automationRuns. cancel clouddeploy.automationRuns.get clouddeploy. automationRuns. list clouddeploy.automations.create clouddeploy.automations.delete clouddeploy.automations.get clouddeploy.automations.list clouddeploy.automations.update clouddeploy.config.get clouddeploy. customTargetTypes. create clouddeploy. customTargetTypes. delete clouddeploy. customTargetTypes. get clouddeploy. customTargetTypes. getIamPolicy clouddeploy. customTargetTypes. list clouddeploy. customTargetTypes. setIamPolicy clouddeploy. customTargetTypes. update clouddeploy. deliveryPipelines. create clouddeploy. deliveryPipelines. createTagBinding clouddeploy. deliveryPipelines. delete clouddeploy. deliveryPipelines. deleteTagBinding clouddeploy. deliveryPipelines. get clouddeploy. deliveryPipelines. getIamPolicy clouddeploy. deliveryPipelines. list clouddeploy. deliveryPipelines. listEffectiveTags clouddeploy. deliveryPipelines. listTagBindings clouddeploy. deliveryPipelines. setIamPolicy clouddeploy. deliveryPipelines. update clouddeploy. deployPolicies. create clouddeploy. deployPolicies. delete clouddeploy.deployPolicies.get clouddeploy. deployPolicies. getIamPolicy clouddeploy. deployPolicies. list clouddeploy. deployPolicies. override clouddeploy. deployPolicies. setIamPolicy clouddeploy. deployPolicies. update clouddeploy.jobRuns.get clouddeploy.jobRuns.list clouddeploy.jobRuns.terminate clouddeploy.locations.get clouddeploy.locations.list clouddeploy.operations.cancel clouddeploy.operations.delete clouddeploy.operations.get clouddeploy.operations.list clouddeploy.releases.abandon clouddeploy.releases.create clouddeploy.releases.get clouddeploy.releases.list clouddeploy.rollouts.advance clouddeploy.rollouts.approve clouddeploy.rollouts.cancel clouddeploy.rollouts.create clouddeploy.rollouts.get clouddeploy.rollouts.ignoreJob clouddeploy.rollouts.list clouddeploy.rollouts.retryJob clouddeploy.rollouts.rollback clouddeploy.targets.create clouddeploy. targets. createTagBinding clouddeploy.targets.delete clouddeploy. targets. deleteTagBinding clouddeploy.targets.get clouddeploy. targets. getIamPolicy clouddeploy.targets.list clouddeploy. targets. listEffectiveTags clouddeploy. targets. listTagBindings clouddeploy. targets. setIamPolicy clouddeploy.targets.update resourcemanager.projects.get resourcemanager.projects.list Clouddeploy Editor ( roles/ clouddeploy.editor ) Editor role for clouddeploy clouddeploy.automationRuns. clouddeploy. automationRuns. cancel clouddeploy.automationRuns.get clouddeploy. automationRuns. list clouddeploy.automations. clouddeploy.automations.create clouddeploy.automations.delete clouddeploy.automations.get clouddeploy.automations.list clouddeploy.automations.update clouddeploy.config.get clouddeploy. customTargetTypes. create clouddeploy. customTargetTypes. delete clouddeploy. customTargetTypes. get clouddeploy. customTargetTypes. getIamPolicy clouddeploy. customTargetTypes. list clouddeploy. customTargetTypes. update clouddeploy. deliveryPipelines. create clouddeploy. deliveryPipelines. delete clouddeploy. deliveryPipelines. get clouddeploy. deliveryPipelines. getIamPolicy clouddeploy. deliveryPipelines. list clouddeploy. deliveryPipelines. listEffectiveTags clouddeploy. deliveryPipelines. listTagBindings clouddeploy. deliveryPipelines. update clouddeploy. deployPolicies. create clouddeploy. deployPolicies. delete clouddeploy.deployPolicies.get clouddeploy. deployPolicies. getIamPolicy clouddeploy. deployPolicies. list clouddeploy. deployPolicies. override clouddeploy. deployPolicies. update clouddeploy.jobRuns. clouddeploy.jobRuns.get clouddeploy.jobRuns.list clouddeploy.jobRuns.terminate clouddeploy.locations. clouddeploy.locations.get clouddeploy.locations.list clouddeploy.operations. clouddeploy.operations.cancel clouddeploy.operations.delete clouddeploy.operations.get clouddeploy.operations.list clouddeploy.releases. clouddeploy.releases.abandon clouddeploy.releases.create clouddeploy.releases.get clouddeploy.releases.list clouddeploy.rollouts. clouddeploy.rollouts.advance clouddeploy.rollouts.approve clouddeploy.rollouts.cancel clouddeploy.rollouts.create clouddeploy.rollouts.get clouddeploy.rollouts.ignoreJob clouddeploy.rollouts.list clouddeploy.rollouts.retryJob clouddeploy.rollouts.rollback clouddeploy.targets.create clouddeploy.targets.delete clouddeploy.targets.get clouddeploy. targets. getIamPolicy clouddeploy.targets.list clouddeploy. targets. listEffectiveTags clouddeploy. targets. listTagBindings clouddeploy.targets.update resourcemanager.projects.get resourcemanager.projects.list Cloud Deploy Viewer ( roles/ clouddeploy.viewer ) Can view Cloud Deploy resources. clouddeploy.automationRuns.get clouddeploy. automationRuns. list clouddeploy.automations.get clouddeploy.automations.list clouddeploy.config.get clouddeploy. customTargetTypes. get clouddeploy. customTargetTypes. getIamPolicy clouddeploy. customTargetTypes. list clouddeploy. deliveryPipelines. get clouddeploy. deliveryPipelines. getIamPolicy clouddeploy. deliveryPipelines. list clouddeploy. deliveryPipelines. listEffectiveTags clouddeploy. deliveryPipelines. listTagBindings clouddeploy.deployPolicies.get clouddeploy. deployPolicies. getIamPolicy clouddeploy. deployPolicies. list clouddeploy.jobRuns.get clouddeploy.jobRuns.list clouddeploy.locations. clouddeploy.locations.get clouddeploy.locations.list clouddeploy.operations.get clouddeploy.operations.list clouddeploy.releases.get clouddeploy.releases.list clouddeploy.rollouts.get clouddeploy.rollouts.list clouddeploy.targets.get clouddeploy. targets. getIamPolicy clouddeploy.targets.list clouddeploy. targets. listEffectiveTags clouddeploy. targets. listTagBindings resourcemanager.projects.get resourcemanager.projects.list Cloud Deploy Approver ( roles/ clouddeploy.approver ) Permission to approve or reject rollouts. clouddeploy.config.get clouddeploy.jobRuns.get clouddeploy.jobRuns.list clouddeploy.locations. clouddeploy.locations.get clouddeploy.locations.list clouddeploy.operations. clouddeploy.operations.cancel clouddeploy.operations.delete clouddeploy.operations.get clouddeploy.operations.list clouddeploy.rollouts.approve clouddeploy.rollouts.get clouddeploy.rollouts.list resourcemanager.projects.get resourcemanager.projects.list Cloud Deploy Custom Target Type Admin ( roles/ clouddeploy.customTargetTypeAdmin ) Permission to manage CustomTargetType resources clouddeploy.config.get clouddeploy. customTargetTypes. clouddeploy. customTargetTypes. create clouddeploy. customTargetTypes. delete clouddeploy. customTargetTypes. get clouddeploy. customTargetTypes. getIamPolicy clouddeploy. customTargetTypes. list clouddeploy. customTargetTypes. setIamPolicy clouddeploy. customTargetTypes. update resourcemanager.projects.get resourcemanager.projects.list Cloud Deploy Developer ( roles/ clouddeploy.developer ) Permission to manage deployment configuration without permission to access operational resources, such as targets. clouddeploy.automationRuns.get clouddeploy. automationRuns. list clouddeploy.automations.get clouddeploy.automations.list clouddeploy.config.get clouddeploy. deliveryPipelines. create clouddeploy. deliveryPipelines. createTagBinding clouddeploy. deliveryPipelines. delete clouddeploy. deliveryPipelines. deleteTagBinding clouddeploy. deliveryPipelines. get clouddeploy. deliveryPipelines. getIamPolicy clouddeploy. deliveryPipelines. list clouddeploy. deliveryPipelines. listEffectiveTags clouddeploy. deliveryPipelines. listTagBindings clouddeploy. deliveryPipelines. update clouddeploy.deployPolicies.get clouddeploy. deployPolicies. list clouddeploy.jobRuns.get clouddeploy.jobRuns.list clouddeploy.locations. clouddeploy.locations.get clouddeploy.locations.list clouddeploy.operations. clouddeploy.operations.cancel clouddeploy.operations.delete clouddeploy.operations.get clouddeploy.operations.list clouddeploy.releases. clouddeploy.releases.abandon clouddeploy.releases.create clouddeploy.releases.get clouddeploy.releases.list clouddeploy.rollouts.get clouddeploy.rollouts.list resourcemanager.projects.get resourcemanager.projects.list Cloud Deploy Runner ( roles/ clouddeploy.jobRunner ) Permission to execute Cloud Deploy work without permission to deliver to a target. clouddeploy.config.get logging.logEntries.create storage.objects.create storage.objects.get storage.objects.list Cloud Deploy Operator ( roles/ clouddeploy.operator ) Permission to manage deployment configuration. clouddeploy.automationRuns. clouddeploy. automationRuns. cancel clouddeploy.automationRuns.get clouddeploy. automationRuns. list clouddeploy.automations. clouddeploy.automations.create clouddeploy.automations.delete clouddeploy.automations.get clouddeploy.automations.list clouddeploy.automations.update clouddeploy.config.get clouddeploy. customTargetTypes. get clouddeploy. customTargetTypes. getIamPolicy clouddeploy. customTargetTypes. list clouddeploy. deliveryPipelines. create clouddeploy. deliveryPipelines. createTagBinding clouddeploy. deliveryPipelines. delete clouddeploy. deliveryPipelines. deleteTagBinding clouddeploy. deliveryPipelines. get clouddeploy. deliveryPipelines. getIamPolicy clouddeploy. deliveryPipelines. list clouddeploy. deliveryPipelines. listEffectiveTags clouddeploy. deliveryPipelines. listTagBindings clouddeploy. deliveryPipelines. update clouddeploy.deployPolicies.get clouddeploy. deployPolicies. getIamPolicy clouddeploy. deployPolicies. list clouddeploy.jobRuns. clouddeploy.jobRuns.get clouddeploy.jobRuns.list clouddeploy.jobRuns.terminate clouddeploy.locations. clouddeploy.locations.get clouddeploy.locations.list clouddeploy.operations. clouddeploy.operations.cancel clouddeploy.operations.delete clouddeploy.operations.get clouddeploy.operations.list clouddeploy.releases. clouddeploy.releases.abandon clouddeploy.releases.create clouddeploy.releases.get clouddeploy.releases.list clouddeploy.rollouts.advance clouddeploy.rollouts.cancel clouddeploy.rollouts.create clouddeploy.rollouts.get clouddeploy.rollouts.ignoreJob clouddeploy.rollouts.list clouddeploy.rollouts.retryJob clouddeploy.rollouts.rollback clouddeploy.targets.create clouddeploy. targets. createTagBinding clouddeploy.targets.delete clouddeploy. targets. deleteTagBinding clouddeploy.targets.get clouddeploy. targets. getIamPolicy clouddeploy.targets.list clouddeploy. targets. listEffectiveTags clouddeploy. targets. listTagBindings clouddeploy.targets.update resourcemanager.projects.get resourcemanager.projects.list Cloud Deploy Policy Admin ( roles/ clouddeploy.policyAdmin ) Permission to manage Deploy Policies. clouddeploy.deployPolicies. clouddeploy. deployPolicies. create clouddeploy. deployPolicies. delete clouddeploy.deployPolicies.get clouddeploy. deployPolicies. getIamPolicy clouddeploy. deployPolicies. list clouddeploy. deployPolicies. override clouddeploy. deployPolicies. setIamPolicy clouddeploy. deployPolicies. update clouddeploy.locations. clouddeploy.locations.get clouddeploy.locations.list clouddeploy.operations. clouddeploy.operations.cancel clouddeploy.operations.delete clouddeploy.operations.get clouddeploy.operations.list resourcemanager.projects.get resourcemanager.projects.list Cloud Deploy Policy Overrider ( roles/ clouddeploy.policyOverrider ) Permission to override Deploy Policies. clouddeploy.deployPolicies.get clouddeploy. deployPolicies. list clouddeploy. deployPolicies. override clouddeploy.locations. clouddeploy.locations.get clouddeploy.locations.list clouddeploy.operations. clouddeploy.operations.cancel clouddeploy.operations.delete clouddeploy.operations.get clouddeploy.operations.list resourcemanager.projects.get resourcemanager.projects.list Cloud Deploy Releaser ( roles/ clouddeploy.releaser ) Permission to create Cloud Deploy releases and rollouts. clouddeploy.config.get clouddeploy. customTargetTypes. get clouddeploy. deliveryPipelines. get clouddeploy.jobRuns.get clouddeploy.jobRuns.list clouddeploy.locations. clouddeploy.locations.get clouddeploy.locations.list clouddeploy.operations. clouddeploy.operations.cancel clouddeploy.operations.delete clouddeploy.operations.get clouddeploy.operations.list clouddeploy.releases.create clouddeploy.releases.get clouddeploy.releases.list clouddeploy.rollouts.advance clouddeploy.rollouts.cancel clouddeploy.rollouts.create clouddeploy.rollouts.get clouddeploy.rollouts.list clouddeploy.rollouts.rollback clouddeploy.targets.get resourcemanager.projects.get resourcemanager.projects.list Service agent roles Service agent roles should only be granted to service agents .",
+          "Permissions The following table lists the permissions that the caller must have to call each method: API Method Required permission Description automations.create() clouddeploy.automations.create Create a new automation resource. automations.delete() clouddeploy.automations.delete Delete an existing automation resource. automations.get() clouddeploy.automations.get Retrieve details for an individual automation resource. automations.list() clouddeploy.automations.list List automation resources and their metadata. automations.update() clouddeploy.automations.update Update an existing automation resource. automationRuns.cancel() clouddeploy.automationRuns.cancel Cancel a running automation. automationRuns.get() clouddeploy.automationRuns.get Retrieve details for an individual automation run. automationRuns.list() clouddeploy.automationRuns.list List automation runs and their metadata. customTargetTypes.create() clouddeploy.customTargetTypes.create Create a custom target type resource. customTargetTypes.delete() clouddeploy.customTargetTypes.delete Delete a custom target type resource. customTargetTypes.get() clouddeploy.customTargetTypes.get Retrieve details for a custom target type. customTargetTypes.getIamPolicy() clouddeploy.customTargetTypes.getIamPolicy Get the IAM policy for a custom target type resource. customTargetTypes.list() clouddeploy.customTargetTypes.list List available custom target types and their metadata. customTargetTypes.patch() clouddeploy.customTargetTypes.patch Update an existing custom target type. customTargetTypes.setIamPolicy() clouddeploy.customTargetTypes.setIamPolicy Set the IAM policy for a custom target type resource. deliveryPipelines.create() clouddeploy.deliveryPipelines.create Create a new delivery pipeline resource. deliveryPipelines.delete() clouddeploy.deliveryPipelines.delete Delete an existing delivery pipeline resource. deliveryPipelines.get() clouddeploy.deliveryPipelines.get Retrieve details for an individual delivery pipeline. deliveryPipelines.getIamPolicy() clouddeploy.deliveryPipelines.getIamPolicy Get the IAM policy for a delivery pipeline resource. deliveryPipelines.list() clouddeploy.deliveryPipelines.list List delivery pipelines and their metadata. deliveryPipelines.rollbackTarget() clouddeploy.rollouts.rollback Rolls back a target. deliveryPipelines.setIamPolicy() clouddeploy.deliveryPipelines.setIamPolicy Set the IAM policy for a delivery pipeline resource. deliveryPipelines.update() clouddeploy.deliveryPipelines.update Update an existing delivery pipeline resource. deployPolicies.create() clouddeploy.deployPolicies.create Create a deploy policy resource. deployPolicies.delete() clouddeploy.deployPolicies.delete Delete a deploy policy resource. deployPolicies.get() clouddeploy.deployPolicies.get Retrieve details for a deploy policy resource. deployPolicies.list() clouddeploy.deployPolicies.list List available deploy policies and their metadata. jobRuns.get() clouddeploy.jobRuns.get Retrieve a JobRuns resource. jobRuns.list() clouddeploy.jobRuns.list List JobRuns resources and their metadata. jobRuns.terminate() clouddeploy.jobRuns.terminate Terminate an in-progress job run. operations.cancel() clouddeploy.operations.cancel Cancel a long-running operation. operation.delete() clouddeploy.operations.delete Delete a long-running operation. operations.get() clouddeploy.operations.get Get a specific long-running operation (for example, to return the status of a release's creation). operations.list() clouddeploy.operations.list List long-running operations. releases.abandon() clouddeploy.releases.abandon Abandon a release and prevent further rollouts against the release. releases.create() clouddeploy.releases.create Create a new release resource.",
+          "The caller also requires iam.serviceAccounts.actAs permission on the service account used to render the manifest. releases.get() clouddeploy.releases.get Retrieve details for individual release. releases.list() clouddeploy.releases.list List releases and metadata. rollouts.advance() clouddeploy.rollouts.advance Advance a rollout to the next phase. rollouts.approve() clouddeploy.rollouts.approve Approve or reject a rollout with approval state of required . rollouts.cancel() clouddeploy.rollouts.cancel Cancel a rollout. rollouts.create() clouddeploy.rollouts.create Create a new rollout resource or promote a release."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "automations.create",
+      "automations.delete",
+      "automations.get",
+      "automations.list",
+      "automations.update",
+      "clouddeploy.admin",
+      "clouddeploy.approver",
+      "clouddeploy.automationRuns",
+      "clouddeploy.automationRuns.cancel",
+      "clouddeploy.automationRuns.get",
+      "clouddeploy.automationRuns.list",
+      "clouddeploy.automations",
+      "clouddeploy.automations.create",
+      "clouddeploy.automations.delete",
+      "clouddeploy.automations.get",
+      "clouddeploy.automations.list",
+      "clouddeploy.automations.update",
+      "clouddeploy.config.get",
+      "clouddeploy.customTargetTypeAdmin",
+      "clouddeploy.customTargetTypes.create",
+      "clouddeploy.customTargetTypes.delete",
+      "clouddeploy.customTargetTypes.get",
+      "clouddeploy.customTargetTypes.getIamPolicy",
+      "clouddeploy.customTargetTypes.list",
+      "clouddeploy.customTargetTypes.patch",
+      "clouddeploy.customTargetTypes.setIamPolicy",
+      "clouddeploy.deliveryPipelines.create",
+      "clouddeploy.deliveryPipelines.delete",
+      "clouddeploy.deliveryPipelines.get",
+      "clouddeploy.deliveryPipelines.getIamPolicy",
+      "clouddeploy.deliveryPipelines.list",
+      "clouddeploy.deliveryPipelines.setIamPolicy",
+      "clouddeploy.deliveryPipelines.update",
+      "clouddeploy.deployPolicies",
+      "clouddeploy.deployPolicies.create",
+      "clouddeploy.deployPolicies.delete",
+      "clouddeploy.deployPolicies.get",
+      "clouddeploy.deployPolicies.list",
+      "clouddeploy.deployPolicies.override",
+      "clouddeploy.deployPolicies.update",
+      "clouddeploy.developer",
+      "clouddeploy.editor",
+      "clouddeploy.jobRunner",
+      "clouddeploy.jobRuns",
+      "clouddeploy.jobRuns.get",
+      "clouddeploy.jobRuns.list",
+      "clouddeploy.jobRuns.terminate",
+      "clouddeploy.locations",
+      "clouddeploy.locations.get",
+      "clouddeploy.locations.list",
+      "clouddeploy.operations",
+      "clouddeploy.operations.cancel",
+      "clouddeploy.operations.delete",
+      "clouddeploy.operations.get",
+      "clouddeploy.operations.list",
+      "clouddeploy.operator",
+      "clouddeploy.policyAdmin",
+      "clouddeploy.policyOverrider",
+      "clouddeploy.releaser",
+      "clouddeploy.releases",
+      "clouddeploy.releases.abandon",
+      "clouddeploy.releases.create",
+      "clouddeploy.releases.get",
+      "clouddeploy.releases.list",
+      "clouddeploy.rollouts",
+      "clouddeploy.rollouts.advance",
+      "clouddeploy.rollouts.approve",
+      "clouddeploy.rollouts.cancel",
+      "clouddeploy.rollouts.create",
+      "clouddeploy.rollouts.get",
+      "clouddeploy.rollouts.ignoreJob",
+      "clouddeploy.rollouts.list",
+      "clouddeploy.rollouts.retryJob",
+      "clouddeploy.rollouts.rollback",
+      "clouddeploy.targets.create",
+      "clouddeploy.targets.delete",
+      "clouddeploy.targets.get",
+      "clouddeploy.targets.getIamPolicy",
+      "clouddeploy.targets.list",
+      "clouddeploy.targets.setIamPolicy",
+      "clouddeploy.targets.update",
+      "clouddeploy.viewer",
+      "iam.serviceAccounts.actAs",
+      "logging.logEntries.create",
+      "operation.delete",
+      "operations.cancel",
+      "operations.get",
+      "operations.list",
+      "releases.abandon",
+      "releases.create",
+      "releases.get",
+      "releases.list",
+      "rollouts.advance",
+      "rollouts.approve",
+      "rollouts.cancel",
+      "rollouts.create",
+      "rollouts.get",
+      "rollouts.ignoreJob",
+      "rollouts.list",
+      "rollouts.retryJob",
+      "storage.objects.create",
+      "storage.objects.get",
+      "storage.objects.list",
+      "targets.create",
+      "targets.delete",
+      "targets.get",
+      "targets.getIamPolicy",
+      "targets.list",
+      "targets.setIamPolicy",
+      "targets.update"
+    ],
+    "missing_inventory_roles": [
+      "roles/clouddeploy.admin",
+      "roles/clouddeploy.developer",
+      "roles/clouddeploy.operator"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/abandon-release",
+        "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.types.AbandonReleaseRequest",
+        "https://docs.cloud.google.com/deploy/docs/iam-roles-permissions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/abandon-release",
+        "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.types.AbandonReleaseRequest",
+        "https://docs.cloud.google.com/deploy/docs/iam-roles-permissions"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/abandon-release",
+        "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.types.AbandonReleaseRequest",
+        "https://docs.cloud.google.com/deploy/docs/iam-roles-permissions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/abandon-release",
+        "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.types.AbandonReleaseRequest",
+        "https://docs.cloud.google.com/deploy/docs/iam-roles-permissions"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/abandon-release",
+        "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.types.AbandonReleaseRequest",
+        "https://docs.cloud.google.com/deploy/docs/iam-roles-permissions"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/abandon-release",
+        "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.types.AbandonReleaseRequest",
+        "https://docs.cloud.google.com/deploy/docs/iam-roles-permissions"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/abandon-release",
+        "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.types.AbandonReleaseRequest",
+        "https://docs.cloud.google.com/deploy/docs/iam-roles-permissions"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:28.700Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deploy/card.json",
+  "product_name": "Cloud Deploy",
+  "product_slug": "cloud-deploy"
+}

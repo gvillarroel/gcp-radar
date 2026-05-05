@@ -1,0 +1,258 @@
+{
+  "feature_name": "GKEHubFeatureMembership mesh control plane",
+  "feature_slug": "gkehubfeaturemembership-mesh-control-plane",
+  "summary": "GKEHubFeatureMembership supports configuring the mesh control plane through spec.mesh.controlPlane.",
+  "extended_definition": "GKEHubFeatureMembership supports configuring the mesh control plane through spec.mesh.controlPlane.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubfeaturemembership"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "GKEHubFeatureMembership | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubfeaturemembership",
+        "source_id": "feature-recovery-http",
+        "final_score": 90,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Property Value Google Cloud Service Name GKE Hub Google Cloud Service Documentation /anthos/multicluster-management/connect/overview Google Cloud REST Resource Name v1beta1.projects.locations.features Google Cloud REST Resource Documentation https://gkehub.googleapis.com/$discovery/rest?version=v1beta Config Connector Resource Short Names gcpgkehubfeaturemembership gcpgkehubfeaturememberships gkehubfeaturemembership Config Connector Service Name gkehub.googleapis.com Config Connector Resource Fully Qualified Name gkehubfeaturememberships.gkehub.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema configmanagement : binauthz : enabled : boolean configSync : git : gcpServiceAccountRef : external : string name : string namespace : string httpsProxy : string policyDir : string secretType : string syncBranch : string syncRepo : string syncRev : string syncWaitSecs : string metricsGcpServiceAccountRef : external : string name : string namespace : string oci : gcpServiceAccountRef : external : string name : string namespace : string policyDir : string secretType : string syncRepo : string syncWaitSecs : string preventDrift : boolean sourceFormat : string stopSyncing : boolean hierarchyController : enableHierarchicalResourceQuota : boolean enablePodTreeLabels : boolean enabled : boolean management : string policyController : auditIntervalSeconds : string enabled : boolean exemptableNamespaces : - string logDeniesEnabled : boolean monitoring : backends : - string mutationEnabled : boolean referentialRulesEnabled : boolean templateLibraryInstalled : boolean version : string featureRef : external : string name : string namespace : string location : string membershipLocation : string membershipRef : external : string name : string namespace : string mesh : controlPlane : string management : string policycontroller : policyControllerHubConfig : auditIntervalSeconds : integer constraintViolationLimit : integer deploymentConfigs : admission : containerResources : limits : cpu : string memory : string requests : cpu : string memory : string podAffinity : string podTolerations : - effect : string key : string operator : string value : string replicaCount : integer audit : containerResources : limits : cpu : string memory : string requests : cpu : string memory : string podAffinity : string podTolerations : - effect : string key : string operator : string value : string replicaCount : integer mutation : containerResources : limits : cpu : string memory : string requests : cpu : string memory : string podAffinity : string podTolerations : - effect : string key : string operator : string value : string replicaCount : integer exemptableNamespaces : - string installSpec : string logDeniesEnabled : boolean monitoring : backends : - string mutationEnabled : boolean policyContent : templateLibrary : installation : string referentialRulesEnabled : boolean version : string projectRef : external : string name : string namespace : string Fields configmanagement Optional object Config Management-specific spec. configmanagement.binauthz Optional object **DEPRECATED** Binauthz configuration for the cluster.",
+          "GKEHubFeatureMembership | Config Connector | Google Cloud Documentation Skip to main content テクノロジー分野 close AI と ML アプリケーション開発 アプリケーションのホスティング コンピューティング データ分析とパイプライン データベース 分散型クラウド、ハイブリッド クラウド、マルチクラウド 業種別ソリューション 移行 ネットワーキング オブザーバビリティとモニタリング セキュリティ Storage プロダクト横断型のツール close アクセスとリソースの管理 費用と使用量の管理 Infrastructure as code SDK、言語、フレームワーク、ツール / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Config Connector 無料で利用開始 概要 ガイド API とリファレンス リソース テクノロジー分野 More 概要 ガイド API とリファレンス リソース プロダクト横断型のツール More Console Config Connector API リソースの概要 AccessContextManager AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AccessContextManagerServicePerimeterResource AlloyDB AlloyDBBackup AlloyDBCluster AlloyDBInstance AlloyDBUser API Gateway APIGatewayAPI App Hub AppHubApplication Apigee ApigeeEndpointAttachment ApigeeEnvgroup ApigeeEnvgroupAttachment ApigeeEnvironment ApigeeInstance ApigeeInstanceAttachment ApigeeOrganization ArtifactRegistry ArtifactRegistryRepository Backup & DR BackupDRBackupPlan BackupDRBackupPlanAssociation BackupDRBackupVault BigQueryAnalyticsHub BigQueryAnalyticsHubDataExchange BigQueryAnalyticsHubListing BigQuery BigLake BigLakeTable BigQuery BigqueryConnectionConnection BigQueryDataset BigQueryJob BigQueryRoutine BigQueryTable BigQueryDataTransferConfig BigQuery Reservation BigQueryReservationAssignment BigQueryReservationReservation BillingBudgets BillingBudgetsBudget BinaryAuthorization BinaryAuthorizationAttestor BinaryAuthorizationPolicy Certificate Manager CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CertificateManagerDNSAuthorization Cloud Asset Inventory AssetFeed AssetSavedQuery Cloud Bigtable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable Cloud Build CloudBuildTrigger CloudBuildWorkerPool Cloud Composer ComposerEnvironment Cloud Deploy CloudDeployDeliveryPipeline Cloud Quotas APIQuotaAdjusterSettings APIQuotaPreference Cloud Functions CloudFunctionsFunction Cloud Identity CloudIdentityGroup CloudIdentityMembership Cloud Intrusion Detection System CloudIDSEndpoint Cloud Scheduler CloudSchedulerJob Config Controller ConfigControllerInstance Cloud DLP DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType Cloud DNS DNSManagedZone DNSPolicy DNSRecordSet Cloud Key Management Service KMSAutokeyConfig KMSCryptoKey KMSImportJob KMSKeyHandle KMSKeyRing Eventarc EventarcTrigger Identity and Access Management（IAM） IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider Identity-Aware Proxy（IAP） IAPBrand IAPIdentityAwareProxyClient IAPSettings Identity Platform IdentityPlatformConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig IdentityPlatformOAuthIDPConfig Cloud Logging LoggingLink LoggingLogBucket LoggingLogExclusion LoggingLogMetric LoggingLogSink LoggingLogView Cloud Memorystore for Memcached MemcacheInstance Cloud Monitoring MonitoringAlertPolicy MonitoringDashboard MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig OS Config OSConfigGuestPolicy OSConfigOSPolicyAssignment 組織ポリシー OrgPolicyCustomConstraint Cloud Source Repositories SourceRepoRepository Speech-to-Text SpeechCustomClass SpeechPhraseSet SpeechRecognizer Cloud Spanner SpannerBackupSchedule SpannerDatabase SpannerInstance Cloud SQL SQLDatabase SQLInstance SQLSSLCert SQLUser Cloud Storage StorageBucket StorageAnywhereCache StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification Compute Engine ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeFirewallPolicyRule ComputeForwardingRule ComputeHealthCheck ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeManagedSSLCertificate ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkFirewallPolicyAssociation ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSSLCertificate ComputeSSLPolicy ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel Container Analysis ContainerAnalysisNote コンテナがアタッチされました ContainerAttachedCluster Data Catalog DataCatalogPolicyTag DataCatalogTaxonomy Dataflow DataflowJob DataflowFlexTemplateJob Dataform DataformRepository Data Fusion DataFusionInstance Dataproc DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate Dataproc Metastore MetastoreBackup Filestore FilestoreBackup FilestoreInstance Firestore FirestoreDatabase FirestoreIndex Google Kubernetes Engine（GKE） ContainerCluster ContainerNodePool Distributed Cloud Edge EdgeContainerCluster EdgeContainerNodePool EdgeContainerVPNConnection EdgeNetworkNetwork EdgeNetworkSubnet Document AI DocumentAIProcessorVersion 重要な連絡先 EssentialContactsContact GKE Hub GKEHubFeature GKEHubFeatureMembership GKEHubMembership Managed Kafka ManagedKafkaCluster ManagedKafkaTopic Memorystore（Redis） RedisCluster RedisInstance Memorystore for Valkey MemorystoreInstance Network Connectivity NetworkConnectivityHub NetworkConnectivitySpoke ネットワーク セキュリティ NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy ネットワーク サービス NetworkServicesEndpointPolicy NetworkServicesGateway NetworkServicesGRPCRoute NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute ノートブック NotebooksInstance プライベート CA PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Privileged Access Manager PrivilegedAccessManagerEntitlement Pub/Sub PubSubSchema PubSubSnapshot PubSubSubscription PubSubTopic Pub/Sub Lite PubSubLiteReservation reCAPTCHA Enterprise RecaptchaEnterpriseKey Resource Manager フォルダ プロジェクト ResourceManagerLien ResourceManagerPolicy Cloud Run RunJob RunService SecretManager SecretManagerSecret SecretManagerSecretVersion SecureSourceManager SecureSourceManagerInstance SecureSourceManagerRepository Service Directory ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService サービス ネットワーキング ServiceNetworkingConnection Service Usage サービス ServiceIdentity Storage Transfer Service StorageTransferJob タグ TagsLocationTagBinding TagsTagBinding TagsTagKey TagsTagValue Vertex AI VertexAIDataset VertexAIEndpoint VertexAIIndex VertexAIMetadataStore VMware Engine VMwareEngineExternalAddress VPC アクセス VPCAccessConnector ワークステーション WorkstationCluster WorkstationConfig ワークステーション アノテーション AI と ML アプリケーション開発 アプリケーションのホスティング コンピューティング データ分析とパイプライン データベース 分散型クラウド、ハイブリッド クラウド、マルチクラウド 業種別ソリューション 移行 ネットワーキング オブザーバビリティとモニタリング セキュリティ Storage アクセスとリソースの管理 費用と使用量の管理 Infrastructure as code SDK、言語、フレームワーク、ツール Home Documentation Access and resource management Config Connector API とリファレンス Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Your ContainerCluster is one. issuer : https://container.googleapis.com/v1/projects/gkehubfeaturemembership-dep-csau/locations/us-central1-a/clusters/gkehubfeaturemembership-dep-csau description : A sample GKE Hub membership endpoint : gkeCluster : resourceRef : name : gkehubfeaturemembership-dep-csau --- apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project metadata : name : gkehubfeaturemembership-dep-csau spec : name : Config Connector Sample organizationRef : # Replace \"${ORG_ID?}\" with the numeric ID for your organization external : \"${ORG_ID?}\" billingAccountRef : # Replace \"${BILLING_ACCOUNT_ID?}\" with the numeric ID for your billing account external : \"${BILLING_ACCOUNT_ID?}\" --- apiVersion : serviceusage.cnrm.cloud.google.com/v1beta1 kind : Service metadata : annotations : cnrm.cloud.google.com/project-id : gkehubfeaturemembership-dep-csau cnrm.cloud.google.com/deletion-policy : \"abandon\" name : gkehubfeaturemembership-dep1-csau spec : resourceID : container.googleapis.com --- apiVersion : serviceusage.cnrm.cloud.google.com/v1beta1 kind : Service metadata : annotations : cnrm.cloud.google.com/project-id : gkehubfeaturemembership-dep-csau cnrm.cloud.google.com/deletion-policy : \"abandon\" name : gkehubfeaturemembership-dep2-csau spec : resourceID : gkehub.googleapis.com --- apiVersion : serviceusage.cnrm.cloud.google.com/v1beta1 kind : Service metadata : annotations : cnrm.cloud.google.com/project-id : gkehubfeaturemembership-dep-csau cnrm.cloud.google.com/deletion-policy : \"abandon\" name : gkehubfeaturemembership-dep3-csau spec : resourceID : anthosconfigmanagement.googleapis.com Service Mesh Feature Membership # Copyright 2021 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : gkehub.cnrm.cloud.google.com/v1beta1 kind : GKEHubFeatureMembership metadata : name : gkehubfeaturemembership-sample-asm spec : projectRef : name : gkehubfeaturemembership-dep-asm location : global membershipRef : name : gkehubfeaturemembership-dep-asm featureRef : name : gkehubfeaturemembership-dep-asm mesh : management : MANAGEMENT_AUTOMATIC --- apiVersion : container.cnrm.cloud.google.com/v1beta1 kind : ContainerCluster metadata : annotations : cnrm.cloud.google.com/project-id : gkehubfeaturemembership-dep-asm labels : # Replace ${PROJECT_NUMBER?} with the number of the project once created, # this will give you access to the ASM UI in the Google Cloud Console mesh_id : proj-${PROJECT_NUMBER?} name : gkehubfeaturemembership-dep-asm spec : location : us-east4-a initialNodeCount : 1 workloadIdentityConfig : workloadPool : gkehubfeaturemembership-dep-asm.svc.id.goog --- apiVersion : gkehub.cnrm.cloud.google.com/v1beta1 kind : GKEHubFeature metadata : name : gkehubfeaturemembership-dep-asm spec : projectRef : name : gkehubfeaturemembership-dep-asm location : global # The resourceID must be \"servicemesh\" if you want to use Anthos Service Mesh feature. resourceID : servicemesh --- apiVersion : gkehub.cnrm.cloud.google.com/v1beta1 kind : GKEHubMembership metadata : annotations : cnrm.cloud.google.com/project-id : gkehubfeaturemembership-dep-asm name : gkehubfeaturemembership-dep-asm spec : location : global authority : issuer : https://container.googleapis.com/v1/projects/gkehubfeaturemembership-dep-asm/locations/us-east4-a/clusters/gkehubfeaturemembership-dep-asm endpoint : gkeCluster : resourceRef : name : gkehubfeaturemembership-dep-asm --- apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project metadata : name : gkehubfeaturemembership-dep-asm spec : name : Config Connector Sample organizationRef : # Replace \"${ORG_ID?}\" with the numeric ID for your organization external : \"${ORG_ID?}\" billingAccountRef : # Replace \"${BILLING_ACCOUNT_ID?}\" with the numeric ID for your billing account external : \"${BILLING_ACCOUNT_ID?}\" --- apiVersion : serviceusage.cnrm.cloud.google.com/v1beta1 kind : Service metadata : annotations : cnrm.cloud.google.com/disable-dependent-services : \"false\" name : gkehubfeaturemembership-dep-asm spec : resourceID : mesh.googleapis.com projectRef : name : gkehubfeaturemembership-dep-asm Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector ."
+        ]
+      },
+      {
+        "title": "\"Configure the controller manager rate limit \\_|\\_ Config Connector \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "source_id": "site-docs-reference",
+        "final_score": 78,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The usage is similar to the namespaced mode, but in this case, you should use the ControllerReconciler CR instead of NamespacedControllerReconciler , as in the following example: apiVersion : customize.core.cnrm.cloud.google.com/v1alpha1 kind : ControllerReconciler metadata : name : cnrm-controller-manager spec : rateLimit : qps : 80 # the default value is 20 burst : 40 # the default value is 30 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Create a file named configure-rate-limit.yaml and copy the following YAML into it: apiVersion : customize.core.cnrm.cloud.google.com/v1beta1 kind : NamespacedControllerReconciler metadata : name : cnrm-controller-manager # name must not contain the namespace ID suffix namespace : NAMESPACE spec : rateLimit : qps : 80 # the default value is 20 burst : 40 # the default value is 30 Replace NAMESPACE with the name of your namespace.",
+          "Verify that the --qps and --burst flags are added to the cnrm-controller-manager controller's manager container by running the following command: kubectl describe statefulsets -n cnrm-system -l \"cnrm.cloud.google.com/scoped-namespace= NAMESPACE \" The output should contain the following: Containers : manager : Image : gcr.io/gke-release/cnrm/controller:fd4c42c Port : 23232/TCP Host Port : 0/TCP Command : /configconnector/manager Args : --qps=80 --burst=40 --scoped-namespace=config-control --prometheus-scrape-endpoint=:8888 Configure the rate limit in cluster mode Starting in version 1.125, if Config Connector is configured to run in cluster mode, you can configure the rate limit of the cnrm-controller-manager controller's Kubernetes client using the ControllerReconciler custom resource."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions",
+        "source_id": "site-docs-reference",
+        "final_score": 77,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Organization owner permission To expand Config Connector's permissions so it can manage all projects and folders for a given organization, complete the following steps: Create the following YAML manifest: apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPolicyMember metadata : name : iampolicymember-orglevel-permission namespace : NAMESPACE spec : member : serviceAccount: SERVICE ACCOUNT NAME @ HOST PROJECT ID . iam.gserviceaccount.com role : roles/owner resourceRef : kind : Organization external : ORGANIZATION ID Replace the following: NAMESPACE with the name of your namespace SERVICE ACCOUNT NAME with your service account name HOST PROJECT ID with the host project ID of your service account roles/owner with the appropriate role ORGANIZATION ID with your organization ID Apply the YAML manifest to your cluster using kubectl or any config management tools of your choice.",
+          "Folder owner permission To expand Config Connector's permissions so it can manage all projects and folders in a given folder, complete the following steps: Create the following YAML manifest: apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPolicyMember metadata : name : iampolicymember-orglevel-permission namespace : NAMESPACE spec : member : serviceAccount: SERVICE ACCOUNT NAME @ HOST PROJECT ID . iam.gserviceaccount.com role : roles/owner resourceRef : kind : Folder external : folders/ FOLDER ID Replace the following: NAMESPACE with the name of your namespace SERVICE ACCOUNT NAME with your service account name HOST PROJECT ID with the host project ID of your service account roles/owner with the appropriate role FOLDER ID with your folder ID Apply the YAML manifest to your cluster using kubectl or any config management tools of your choice.",
+          "Project owner permissions To allow Config Connector to manage a specific project's resources, complete the following steps: Create the following YAML manifest: apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPolicyMember metadata : name : iampolicymember-orglevel-permission namespace : NAMESPACE spec : member : serviceAccount: SERVICE ACCOUNT NAME @ HOST PROJECT ID . iam.gserviceaccount.com role : roles/owner resourceRef : kind : Project external : projects/ PROJECT ID Replace the following: NAMESPACE with the name of your namespace SERVICE ACCOUNT NAME with your service account name HOST PROJECT ID with the host project ID of your service account roles/owner with the appropriate role PROJECT ID with your target project ID Apply the YAML manifest to your cluster using kubectl or any config management tools of your choice."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "anthosconfigmanagement.googleapis.com",
+      "asm.svc.id.goog",
+      "cnrm.cloud.google.com",
+      "configmanagement.binauthz",
+      "container.cnrm.cloud.google.com",
+      "container.googleapis.com",
+      "customize.core.cnrm.cloud.google.com",
+      "gcr.io",
+      "gkehub.cnrm.cloud.google.com",
+      "gkehub.googleapis.com",
+      "gkehubfeaturememberships.gkehub.cnrm.cloud.google.com",
+      "iam.cnrm.cloud.google.com",
+      "iam.gserviceaccount.com",
+      "limit.yaml",
+      "mesh.googleapis.com",
+      "mesh.management",
+      "resourcemanager.cnrm.cloud.google.com",
+      "serviceusage.cnrm.cloud.google.com",
+      "spec.mesh.controlPlane",
+      "status.healthy",
+      "v1beta1.projects.locations.features"
+    ],
+    "missing_inventory_roles": [
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubfeaturemembership",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubfeaturemembership",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubfeaturemembership",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubfeaturemembership",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubfeaturemembership",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubfeaturemembership",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubfeaturemembership",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubfeaturemembership",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubfeaturemembership",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubfeaturemembership",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubfeaturemembership",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubfeaturemembership",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubfeaturemembership",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubfeaturemembership",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubfeaturemembership",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubfeaturemembership",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubfeaturemembership",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubfeaturemembership",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/gkehub/gkehubfeaturemembership",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/configure-iam-permissions"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:47.576Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector"
+}

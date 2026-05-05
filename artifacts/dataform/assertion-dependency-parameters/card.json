@@ -1,0 +1,103 @@
+{
+  "feature_name": "Assertion dependency parameters",
+  "feature_slug": "assertion-dependency-parameters",
+  "summary": "Assertion dependency parameters let Dataform actions automatically add assertions from selected dependencies or all dependency actions as dependencies.",
+  "extended_definition": "Assertion dependency parameters let Dataform actions automatically add assertions from selected dependencies or all dependency actions as dependencies.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataform/docs/dependencies",
+      "https://docs.cloud.google.com/dataform/docs/reference/dataform-core-reference",
+      "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class DataformAsyncClient (0.10.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DeleteTeamFolderTreeRequest ( name=\"name value\", ) Make the request operation = client. delete team folder tree (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.dataform v1.types.DeleteTeamFolderTreeRequest , dict]] The request object.",
+          "DeleteFolderTreeRequest ( name=\"name value\", ) Make the request operation = client. delete folder tree (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.dataform v1.types.DeleteFolderTreeRequest , dict]] The request object.",
+          "QueryWorkflowInvocationActionsRequest ( name=\"name value\", ) Make the request page result = client. query workflow invocation actions (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.dataform v1.types.QueryWorkflowInvocationActionsRequest , dict]] The request object."
+        ]
+      },
+      {
+        "title": "\"Class DataformClient (0.10.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient",
+        "source_id": "site-python-reference",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DeleteTeamFolderTreeRequest ( name=\"name value\", ) Make the request operation = client. delete team folder tree (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.dataform v1.types.DeleteTeamFolderTreeRequest , dict] The request object.",
+          "DeleteFolderTreeRequest ( name=\"name value\", ) Make the request operation = client. delete folder tree (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.dataform v1.types.DeleteFolderTreeRequest , dict] The request object.",
+          "QueryWorkflowInvocationActionsRequest ( name=\"name value\", ) Make the request page result = client. query workflow invocation actions (request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[ google.cloud.dataform v1.types.QueryWorkflowInvocationActionsRequest , dict] The request object."
+        ]
+      },
+      {
+        "title": "Set dependencies \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/dependencies",
+        "source_id": "site-docs-root-2",
+        "final_score": 219,
+        "relevance": "",
+        "evidence_snippets": [
+          "Dataform automatically adds the direct assertions of the dependency actions as dependencies during compilation.",
+          "The following code sample shows sometableE , which depends on sometableA , sometableB , sometableC , sometableD , and all the direct assertions of the dependency tables: // filename is sometableE.sqlx config { type: \"table\", dependOnDependencyAssertions: true, dependencies: [ \"sometableA\", \"sometableB\" ] } SELECT FROM ${ref(\"sometableC\")} SELECT FROM ${ref(\"sometableD\")} In the preceding code sample, Dataform automatically adds all the direct assertions of sometableA , sometableB , sometableC , and sometableD as dependencies to sometableE during compilation.",
+          "The following code sample shows the dependOnDependencyAssertions and includeDependentAssertions parameters set in the same table definition file: // filename is tableName.sqlx config { type: \"table\", dependOnDependencyAssertions: true, dependencies: [ \"actionA\", {name: \"actionB\", includeDependentAssertions: false} ] } SELECT FROM ${ref(\"actionC\")} In the preceding code sample, Dataform adds all the direct assertions of actionA and actionC to the dependencies of tableName during compilation."
+        ]
+      },
+      {
+        "title": "Dataform core reference \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/reference/dataform-core-reference",
+        "source_id": "site-docs-root",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example: // definitions/file.js assert ( \"name\" ). query ( ctx = > \"select 1\" ); CommonContext Context methods are available when evaluating contextable SQL code, such as within SQLX files, or when using a Contextable argument with Dataform core. database () => string Returns the database of this dataset, if applicable. name () => string Returns the name of this table. ref (ref: Resolvable string[], rest: string[]) => string References another action, adding it as a dependency to this action, returning valid SQL to be used in a from expression.",
+          "ITableContext Context methods are available when evaluating contextable SQL code, such as within SQLX files, or when using a Contextable argument with Dataform core. incremental () => boolean Returns true when the current context indicates that the table will be built incrementally. name () => string Returns the fully qualified name of this table. ref (ref: Resolvable string[], rest: string[]) => string References another action, adding it as a dependency to this action, returning valid SQL to be used in a from expression.",
+          "If configured, relevant assertions are automatically created and run as a dependency of this table. bigquery IBigQueryOptions BigQuery-specific warehouse options. columns IColumnsDescriptor A description of columns within the table. database string The database (Google Cloud project ID) in which to create the output of this action. description string A description of the table. disabled boolean If set to true , this action is not run."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dataform.v1",
+      "file.js",
+      "operation.result",
+      "v1.types.DeleteFolderTreeRequest",
+      "v1.types.DeleteTeamFolderTreeRequest",
+      "v1.types.MoveRepositoryRequest",
+      "v1.types.QueryCompilationResultActionsRequest",
+      "v1.types.QueryWorkflowInvocationActionsRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:54.747Z",
+  "source_step08_card": "data/step-08/current/products/dataform/card.json",
+  "product_name": "Dataform",
+  "product_slug": "dataform"
+}

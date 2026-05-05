@@ -1,0 +1,190 @@
+{
+  "feature_name": "Customer-managed encryption keys",
+  "feature_slug": "customer-managed-encryption-keys",
+  "summary": "Customer-managed encryption keys let Cloud Storage use Cloud KMS keys to encrypt objects.",
+  "extended_definition": "Customer-managed encryption keys let Cloud Storage use Cloud KMS keys to encrypt objects.",
+  "lifecycle": {
+    "latest_feature_date": "2018-05-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+      "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+      "https://docs.cloud.google.com/storage/docs/gsutil-transition-to-gcloud",
+      "https://docs.cloud.google.com/storage/docs/introduction"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class BucketEncryption (3.10.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "source_id": "site-python-reference",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Parameters Name Description bucket Bucket Bucket for which this instance is the policy. default kms key name str (Optional) Resource name of KMS key used to encrypt bucket's content. google managed encryption enforcement config EncryptionEnforcementConfig (Optional) Encryption enforcement configuration for Google managed encryption. customer managed encryption enforcement config EncryptionEnforcementConfig (Optional) Encryption enforcement configuration for Customer managed encryption. customer supplied encryption enforcement config EncryptionEnforcementConfig (Optional) Encryption enforcement configuration for Customer supplied encryption.",
+          "3.10.0 (latest) 3.9.0 3.8.0 3.7.0 3.6.0 3.5.0 3.4.1 3.3.1 3.2.0 3.1.1 3.0.0 2.19.0 2.17.0 2.16.0 2.15.0 2.14.0 2.13.0 2.12.0 2.11.0 2.10.0 2.9.0 2.8.0 2.7.0 2.6.0 2.5.0 2.4.0 2.3.0 2.2.1 2.1.0 2.0.0 1.44.0 1.43.0 1.42.3 1.41.1 1.40.0 1.39.0 1.38.0 1.37.1 1.36.2 1.35.1 1.34.0 1.33.0 1.32.0 1.31.2 1.30.0 1.29.0 1.28.1 1.27.0 1.26.0 1.25.0 1.24.1 1.23.0 1.22.0 1.21.0 1.20.0 1.19.0 1.18.0 1.17.0 BucketEncryption ( bucket , default kms key name = None , google managed encryption enforcement config = None , customer managed encryption enforcement config = None , customer supplied encryption enforcement config = None , ) Map a bucket's encryption configuration.",
+          "Returns Type Description BucketEncryption Instance created from resource. fromkeys fromkeys ( value = None , / ) Create a new dictionary with keys from iterable and values set to value. get get ( key , default = None , / ) Return the value for key if key is in the dictionary, else default. items items () API documentation for storage.bucket.BucketEncryption.items method. keys keys () API documentation for storage.bucket.BucketEncryption.keys method. pop pop ( k [, d ]) If the key is not found, return the default if given; otherwise, raise a KeyError. popitem popitem () Remove and return a (key, value) pair as a 2-tuple."
+        ]
+      },
+      {
+        "title": "\"Transition from gsutil to gcloud storage \\_|\\_ Cloud Storage \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/storage/docs/gsutil-transition-to-gcloud",
+        "source_id": "site-docs-reference",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The object is then encrypted with the bucket's default KMS key or with Google-managed encryption. gsutil rewrite includes logic to skip rewriting an object if the requested transformation wouldn't change its state (for example, if the object is already in a target storage class). gcloud storage objects update might not perform the same checks, potentially leading to unnecessary operations.",
+          "This removes any customer-supplied encryption keys (CSEK) or customer-managed encryption keys (CMEK) from the object.",
+          "Operation gsutil command gcloud storage command Manage Access Control Lists (ACLs) gsutil acl get gsutil acl set gsutil acl ch gcloud storage RESOURCE describe --format=\"multi(acl:format=json)\" gcloud storage RESOURCE update --acl-file= ACL FILE PATH gcloud storage RESOURCE update --add-acl-grant= GRANT gcloud storage RESOURCE update --remove-acl-grant= GRANT Operation gsutil command gcloud storage command Concatenate objects and display object content gsutil cat gcloud storage cat Operation gsutil command gcloud storage command Concatenate objects by combining them into a new object gsutil compose gcloud storage objects compose Notes To apply preconditions in gcloud storage objects compose , use specific flags, such as --if-generation-match or --if-metageneration-match ."
+        ]
+      },
+      {
+        "title": "Cloud Storage overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/introduction",
+        "source_id": "site-docs-root",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can also use supplemental data encryption options such as customer-managed encryption keys and customer-supplied encryption keys .",
+          "While buckets are suitable for most data storage use cases, you can set up optional configurations and features on a bucket to make it more suitable for high-performance workloads specifically: Hierarchical namespace : Buckets can have hierarchical namespace enabled, which lets you store your data in a logical file system structure by using folders.",
+          "For more information, see Provision resources with Cloud Storage . gRPC : gRPC lets you interact with Cloud Storage. gRPC is a high performance, open source universal RPC framework developed by Google that you can use to define your services using Protocol Buffers."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.storage (2.64.0) \\_|\\_ Java client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "source_id": "site-java-reference",
+        "final_score": 208,
+        "relevance": "",
+        "evidence_snippets": [
+          "Customer Managed Encryption Enforcement Config Customer Managed Encryption (CMEK) enforcement config of a bucket. com. google. cloud. storage.",
+          "Customer Encryption Objects of this class hold information on the customer-supplied encryption key, if the blob is encrypted using such a key. com. google. cloud. storage.",
+          "Use a LifecycleRule with a DeleteLifecycleAction and a LifecycleCondition which is equivalent to a subclass of DeleteRule instead. com. google. cloud. storage."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.storage",
+      "storage.bucket.BucketEncryption.items",
+      "storage.bucket.BucketEncryption.keys",
+      "storage.bucket.BucketEncryption.values"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "https://docs.cloud.google.com/storage/docs/gsutil-transition-to-gcloud",
+        "https://docs.cloud.google.com/storage/docs/introduction",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "https://docs.cloud.google.com/storage/docs/gsutil-transition-to-gcloud",
+        "https://docs.cloud.google.com/storage/docs/introduction",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "https://docs.cloud.google.com/storage/docs/gsutil-transition-to-gcloud",
+        "https://docs.cloud.google.com/storage/docs/introduction",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "https://docs.cloud.google.com/storage/docs/gsutil-transition-to-gcloud",
+        "https://docs.cloud.google.com/storage/docs/introduction",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "https://docs.cloud.google.com/storage/docs/gsutil-transition-to-gcloud",
+        "https://docs.cloud.google.com/storage/docs/introduction",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "https://docs.cloud.google.com/storage/docs/gsutil-transition-to-gcloud",
+        "https://docs.cloud.google.com/storage/docs/introduction",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "https://docs.cloud.google.com/storage/docs/gsutil-transition-to-gcloud",
+        "https://docs.cloud.google.com/storage/docs/introduction",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "https://docs.cloud.google.com/storage/docs/gsutil-transition-to-gcloud",
+        "https://docs.cloud.google.com/storage/docs/introduction",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "https://docs.cloud.google.com/storage/docs/gsutil-transition-to-gcloud",
+        "https://docs.cloud.google.com/storage/docs/introduction",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.BucketEncryption",
+        "https://docs.cloud.google.com/storage/docs/gsutil-transition-to-gcloud",
+        "https://docs.cloud.google.com/storage/docs/introduction",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:43.359Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage"
+}

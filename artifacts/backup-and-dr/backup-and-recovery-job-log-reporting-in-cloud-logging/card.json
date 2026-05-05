@@ -1,0 +1,116 @@
+{
+  "feature_name": "Backup and recovery job log reporting in Cloud Logging",
+  "feature_slug": "backup-and-recovery-job-log-reporting-in-cloud-logging",
+  "summary": "Backup and DR Service added comprehensive job reporting access via backup and recovery job logs in Cloud Logging.",
+  "extended_definition": "Backup and DR Service added comprehensive job reporting access via backup and recovery job logs in Cloud Logging.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/appliance-events",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Backup/recovery appliance event logs \\_|\\_ Backup and DR \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/appliance-events",
+        "source_id": "site-docs-reference",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "Console In the Google Cloud console, you can use the Logs Explorer to retrieve the Backup and DR event log entries for your backup/recovery appliances: In the Google Cloud console, go to the Logging > Logs Explorer .",
+          "This page explains how to view the event logs created on a backup/recovery appliance in Cloud Logging .",
+          "The following sample is an example log entry logged on a backup/recovery appliance ba-1-52973 for a failed snapshot job. { \"insertId\" : \"aop2oko38hsami1c\" , \"jsonPayload\" : { \"appName\" : \"instance-2\" , \"srcid\" : \"111428\" , \"jobName\" : \"Job 0110906c\" , \"appType\" : \"GCPInstance\" , \"eventId\" : 43901 , \"component\" : \"udp\" , \"eventTime\" : \"2023-02-06T20:24:52.450Z\" , \"errorMessage\" : \"Failed snapshot Job 0110906c for application instance-2 on host instance-2, Error: 1249: Failed to get VM details , sltname: pd snaps, slpname: ba-1-52973 Profile. \" }, \"resource\" : { \"type\" : \"backupdr.googleapis.com/BackupRecoveryAppliance\" , \"labels\" : { \"backup recovery appliance id\" : \"test-backup-recovery-appliances\" , \"resource container\" : \"projects/1234567\" , \"management server id\" : \"abcd-efgh-1234-5678-6789\" , \"location\" : \"\" } }, \"timestamp\" : \"2023-02-06T20:24:55.275029393Z\" , \"severity\" : \"ERROR\" , \"logName\" : \"projects/project1/logs/backupdr.googleapis.com %2F backup recovery appliance events\" , \"receiveTimestamp\" : \"2023-02-06T20:24:56.388937247Z\" } Note: Event logs are not generated for successfully completed backup jobs."
+        ]
+      },
+      {
+        "title": "\"Configure log-based alerts for a backup/recovery appliance \\_|\\_ Backup\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+        "source_id": "site-docs-reference",
+        "final_score": 88,
+        "relevance": "",
+        "evidence_snippets": [
+          "If your alert policy includes or excludes specific event IDs then you need to modify the event ID as well: \"entries\" : [ { \"jsonPayload\" : { \"eventId\" : 10046 , \"errorMessage\" : \"this is a manually generated error message created for testing\" }, \"resource\" : { \"type\" : \"backupdr.googleapis.com/BackupRecoveryAppliance\" , }, \"severity\" : \"ERROR\" , \"logName\" : \"projects/ PROJECT ID /logs/backupdr.googleapis.com %2F backup recovery appliance events\" , } ] Copy the log entry you configured previously.",
+          "Policyname = 'Backup/DR event has occurred' Notification rate limit = 6 hr logName = \"projects/ PROJECT ID /logs/backupdr.googleapis.com %2F backup recovery appliance events\" AND NOT jsonPayload . eventId = ( 10085 OR 10229 OR 42356 OR 43901 ) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Policyname = 'Snapshot job has failed' Notification rate limit = 30 min logName = \"projects/ PROJECT ID /logs/backupdr.googleapis.com %2F backup recovery appliance events\" AND jsonPayload . eventId = 43901 Events that are less urgent and hence require less frequent notifications."
+        ]
+      },
+      {
+        "title": "\"Deploy a backup/recovery appliance \\_|\\_ Backup and DR \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 85,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "It is in this format: projects/test-project/locations/us-central1/operations/operationID The output is displayed as: Terraform You can use the following Terraform resource links to deploy an appliance management console and a backup/recovery appliance: Deploy a appliance management console using Terraform resource Deploy a backup/recovery appliance using Terraform resource Caution: When deploying multiple backup/recovery appliances using Terraform, each appliance must be associated with a unique Service Account.",
+          "Resizing the appliance or changing its machine configuration—changing the series, CPU, memory—can make the backup/recovery appliance unusable. gcloud You can use gcloud CLI to create an appliance management console.",
+          "Home Documentation Storage Backup and DR Guides Send feedback Deploy a backup/recovery appliance Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backupdr.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/appliance-events",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-guide"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/appliance-events",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-guide"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/appliance-events",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-guide"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/appliance-events",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-guide"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:17.348Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr"
+}

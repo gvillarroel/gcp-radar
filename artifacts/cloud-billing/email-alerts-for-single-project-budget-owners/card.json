@@ -1,0 +1,130 @@
+{
+  "feature_name": "Email alerts for single-project budget owners",
+  "feature_slug": "email-alerts-for-single-project-budget-owners",
+  "summary": "Adds an email notification option that sends budget alerts to project owners for budgets scoped to a single project.",
+  "extended_definition": "Adds an email notification option that sends budget alerts to project owners for budgets scoped to a single project.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+      "https://docs.cloud.google.com/billing/docs/how-to/budgets-notification-recipients",
+      "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create, edit, or delete budgets and budget alerts \\_|\\_ Cloud Billing \\_\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+        "source_id": "site-docs-root",
+        "final_score": 239,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Using the role-based option for single-project budgets, you can send email alerts to Project Owners of the budget's project.",
+          "For single-project budgets, the email alerts can also be sent to the project's Project Owners.",
+          "In this document, you can learn how to: Create a budget View a list of budgets and their status Modify or delete a budget Create and manage budgets using an API Customize budget alert email recipients Automate cost control responses using programmatic notifications Permissions required to manage budgets Budgets can be configured for a Cloud Billing account (which can include multiple linked projects), or for individual projects."
+        ]
+      },
+      {
+        "title": "\"Customize budget alert email recipients \\_|\\_ Cloud Billing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/budgets-notification-recipients",
+        "source_id": "site-docs-root-2",
+        "final_score": 239,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For budgets scoped to a single project, you can also send email alerts to Project Owners of the budget's project ( Preview ), when the budget alert threshold rules trigger an email notification.",
+          "To manage budgets for a project and customize the email recipients of budget alerts, you need a role that includes these specific permissions: resourcemanager.projects.get on your project, to view the projects associations (such as the linked billing account) for your project. billing.resourceCosts.get on your project (optional), to view costs and usage for your project. billing.resourcebudgets.read on your project, to view a billing account's single-project budgets that are scoped to your project. billing.resourcebudgets.write on your project, to create or modify single-project budgets that are scoped to your project. roles/monitoring.editor on the project where you want to create notification channels, or roles/monitoring.viewer on the project that stores the notification channels.",
+          "Link your budget to email notification channels After you create an email notification channel, follow these steps to link your budget to it: Using the procedure that fits your level of access to Cloud Billing accounts, sign in to the Budgets & alerts page in the Billing section of the Google Cloud console: Users with Cloud Billing account permissions Users with project-level permissions only ( Preview ) If you have Cloud Billing account permissions, you can select from a list of billing accounts that you have permissions to access."
+        ]
+      },
+      {
+        "title": "\"REST Resource: billingAccounts.budgets \\_|\\_ Cloud Billing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets",
+        "source_id": "site-api-reference",
+        "final_score": 205,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Resource: Budget JSON representation Filter JSON representation CreditTypesTreatment CalendarPeriod CustomPeriod JSON representation BudgetAmount JSON representation LastPeriodAmount ThresholdRule JSON representation Basis NotificationsRule JSON representation OwnershipScope Methods Resource: Budget A budget is a plan that describes what you expect to spend on Cloud projects, plus the rules to execute as spend is tracked against that plan, (for example, send an alert when 90% of the target spend is met).",
+          "When set to true, and when the budget has a single project configured, notifications will be sent to project level recipients of that project.",
+          "For Cloud Billing budget alerts, you must use email notification channels ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.resourcebudgets.read",
+      "billing.resourcebudgets.write",
+      "billing.resourceCosts.get",
+      "com.google.cloud.billing.budgets.v1.Budget.Builder",
+      "monitoring.editor",
+      "monitoring.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/monitoring.editor",
+      "roles/monitoring.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-notification-recipients",
+        "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-notification-recipients",
+        "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets",
+        "https://docs.cloud.google.com/billing/docs/how-to/budgets-notification-recipients",
+        "https://docs.cloud.google.com/billing/docs/reference/budget/rest/v1/billingAccounts.budgets"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:27.261Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing"
+}

@@ -1,0 +1,259 @@
+{
+  "feature_name": "BigQueryDataset projectRef",
+  "feature_slug": "bigquerydataset-projectref",
+  "summary": "Config Connector supports the projectRef field on BigQueryDataset.",
+  "extended_definition": "Config Connector supports the projectRef field on BigQueryDataset.",
+  "lifecycle": {
+    "latest_feature_date": "2021-04-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerydataset",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "BigQueryDataset | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerydataset",
+        "source_id": "feature-recovery-http",
+        "final_score": 32,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Property Value Google Cloud Service Name BigQuery Google Cloud Service Documentation /bigquery/docs/ Google Cloud REST Resource Name bigquery/v2/datasets Google Cloud REST Resource Documentation /bigquery/docs/reference/rest/v2/datasets Config Connector Resource Short Names gcpbigquerydataset gcpbigquerydatasets bigquerydataset Config Connector Service Name bigquery.googleapis.com Config Connector Resource Fully Qualified Name bigquerydatasets.bigquery.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Annotations Fields cnrm.cloud.google.com/delete-contents-on-destroy Spec Schema access : - dataset : dataset : datasetId : string projectId : string targetTypes : - string domain : string groupByEmail : string iamMember : string role : string routine : datasetId : string projectId : string routineId : string specialGroup : string userByEmail : string view : datasetId : string projectId : string tableId : string defaultCollation : string defaultEncryptionConfiguration : kmsKeyRef : external : string name : string namespace : string defaultPartitionExpirationMs : integer defaultTableExpirationMs : integer description : string friendlyName : string isCaseInsensitive : boolean location : string maxTimeTravelHours : string projectRef : external : string kind : string name : string namespace : string resourceID : string storageBillingModel : string Fields access Optional list (object) An array of objects that define dataset access for one or more entities. access[] Optional object access[].dataset Optional object [Pick one] A grant authorizing all resources of a particular type in a particular dataset access to this dataset.",
+          "The project that this resource belongs to. projectRef.external Optional string The `projectID` field of a project, when not managed by Config Connector. projectRef.kind Optional string The kind of the Project resource; optional but must be `Project` if provided. projectRef.name Optional string The `name` field of a `Project` resource. projectRef.namespace Optional string The `namespace` field of a `Project` resource. resourceID Optional string The BigQueryDataset name.",
+          "BigQueryDataset Note: Resource-level IAM permissions for BigQueryDataset must be set through the resource's spec.access field."
+        ]
+      },
+      {
+        "title": "Monitoring Config Connector with Prometheus \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "source_id": "site-docs-reference",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "IAMPolicyMember \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "source_id": "site-docs-root-2",
+        "final_score": 22,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: Resource-level IAM permissions for BigQueryDataset must be set through the resource's spec.access field.",
+          "You cannot reference BigQueryDataset resources using IAMPolicy , IAMPartialPolicy , and IAMPolicyMember since BigQueryDataset does not support IAM.",
+          "Kind Supports Conditions AccessContextManagerAccessPolicy ApigeeEnvironment ArtifactRegistryRepository BigQueryTable Y BigtableInstance Y BigtableTable Y BillingAccount Y BinaryAuthorizationPolicy CloudFunctionsFunction ComputeBackendBucket ComputeDisk ComputeImage Y ComputeInstance Y ComputeSnapshot ComputeSubnetwork Y DNSManagedZone DataprocCluster Folder Y IAMServiceAccount Y IAMWorkforcePool KMSCryptoKey Y KMSKeyRing Y NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy Organization Y Project Y PubSubSubscription PubSubTopic RunJob RunService SecretManagerSecret ServiceDirectoryNamespace ServiceDirectoryService SourceRepoRepository SpannerDatabase Y SpannerInstance StorageBucket Y Kind External Reference Formats AccessContextManagerAccessPolicy {{name}} ApigeeEnvironment organizations/{{apigee organization}}/environments/{{name}} ArtifactRegistryRepository projects/{{project}}/locations/{{location}}/repositories/{{repository id}} BigQueryTable projects/{{project}}/datasets/{{dataset id}}/tables/{{table id}} BigtableInstance projects/{{project}}/instances/{{name}} BigtableTable projects/{{project}}/instances/{{instance name}}/tables/{{name}} BillingAccount {{billing account id}} BinaryAuthorizationPolicy projects/{{project}}/policy CloudFunctionsFunction projects/{{project}}/locations/{{region}}/functions/{{name}} ComputeBackendBucket projects/{{project}}/global/backendBuckets/{{name}} ComputeDisk projects/{{project}}/regions/{{region}}/disks/{{name}} projects/{{project}}/zones/{{zone}}/disks/{{name}} ComputeImage projects/{{project}}/global/images/{{name}} ComputeInstance projects/{{project}}/zones/{{zone}}/instances/{{name}} ComputeSnapshot projects/{{project}}/global/snapshots/{{name}} ComputeSubnetwork projects/{{project}}/regions/{{region}}/subnetworks/{{name}} DNSManagedZone projects/{{project}}/managedZones/{{name}} DataprocCluster projects/{{project}}/regions/{{location}}/clusters/{{name}} Folder folders/{{folder id}} IAMServiceAccount projects/{{project}}/serviceAccounts/{{account id}}@{{project}}.iam.gserviceaccount.com IAMWorkforcePool locations/{{location}}/workforcePools/{{name}} KMSCryptoKey projects/{{project}}/locations/{{location}}/keyRings/{{key ring id}}/cryptoKeys/{{name}} KMSKeyRing projects/{{project}}/locations/{{location}}/keyRings/{{name}} NetworkSecurityAuthorizationPolicy projects/{{project}}/locations/{{location}}/authorizationPolicies/{{name}} NetworkSecurityClientTLSPolicy projects/{{project}}/locations/{{location}}/clientTlsPolicies/{{name}} NetworkSecurityServerTLSPolicy projects/{{project}}/locations/{{location}}/serverTlsPolicies/{{name}} Organization {{org id}} Project projects/{{project id}} PubSubSubscription projects/{{project}}/subscriptions/{{name}} PubSubTopic projects/{{project}}/topics/{{name}} RunJob projects/{{project}}/locations/{{location}}/jobs/{{name}} RunService projects/{{project}}/locations/{{location}}/services/{{name}} SecretManagerSecret projects/{{project}}/secrets/{{secret id}} ServiceDirectoryNamespace projects/{{project}}/locations/{{location}}/namespaces/{{namespace id}} ServiceDirectoryService {{namespace}}/services/{{service id}} SourceRepoRepository projects/{{project}}/repos/{{name}} SpannerDatabase projects/{{project}}/instances/{{instance}}/databases/{{name}} SpannerInstance projects/{{project}}/instances/{{name}} StorageBucket {{name}} Custom Resource Definition Properties Spec Schema condition : description : string expression : string title : string member : string memberFrom : bigQueryConnectionConnectionRef : name : string namespace : string type : string logSinkRef : name : string namespace : string serviceAccountRef : name : string namespace : string serviceIdentityRef : name : string namespace : string sqlInstanceRef : name : string namespace : string resourceRef : apiVersion : string external : string kind : string name : string namespace : string role : string Fields condition Optional object Immutable."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.googleapis.com",
+      "bigqueryconnection.cnrm.cloud.google.com",
+      "bigquerydatasets.bigquery.cnrm.cloud.google.com",
+      "cnrm.cloud.google.com",
+      "iam.cnrm.cloud.google.com",
+      "iam.gserviceaccount.com",
+      "kubernetes.io",
+      "spec.access",
+      "sql.cnrm.cloud.google.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerydataset",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerydataset",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerydataset",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerydataset",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerydataset",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerydataset",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerydataset",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerydataset",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerydataset",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerydataset",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerydataset",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerydataset",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerydataset",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerydataset",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerydataset",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerydataset",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerydataset",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerydataset",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerydataset",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerydataset",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:47.576Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector"
+}

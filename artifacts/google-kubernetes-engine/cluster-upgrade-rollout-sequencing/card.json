@@ -1,0 +1,90 @@
+{
+  "feature_name": "Cluster upgrade rollout sequencing",
+  "feature_slug": "cluster-upgrade-rollout-sequencing",
+  "summary": "Sequences cluster upgrades across fleets or scopes.",
+  "extended_definition": "Sequences cluster upgrades across fleets or scopes.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/rollout-sequencing-custom-stages/about-rollout-sequencing",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About rollout sequencing with custom stages \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/rollout-sequencing-custom-stages/about-rollout-sequencing",
+        "source_id": "site-docs-reference-2",
+        "final_score": 270,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Overview GKE rollout sequencing lets you define a specific, ordered sequence for cluster upgrades across environments—such as first upgrading the clusters in the development environment, then the testing environment, and finally production.",
+          "Fleet-based rollout sequencing provides a stable and supported method for progressively rolling out upgrades across environments (such as testing, staging, and production), and uses a linear sequence of fleets.",
+          "You can manage the order of automatic cluster upgrades across Google Kubernetes Engine (GKE) clusters in multiple environments by using rollout sequencing."
+        ]
+      },
+      {
+        "title": "\"Deploy a stateful MySQL cluster on GKE \\_|\\_ Kubernetes Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql",
+        "source_id": "site-docs-root-2",
+        "final_score": 147,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Plan for GKE upgrades You can take proactive steps and set configurations to mitigate risk and facilitate a smoother cluster upgrade when you are running stateful services, including: Standard clusters : Follow GKE best practices for upgrading clusters .",
+          "Follow this tutorial to learn how to deploy a MySQL InnoDB Cluster and a MySQL InnoDB ClusterSet , in addition to MySQL Router middleware on your GKE cluster, and how to perform upgrades.",
+          "Manage GKE and MySQL InnoDB Cluster upgrades Updates for both MySQL and Kubernetes are released on a regular schedule."
+        ]
+      },
+      {
+        "title": "\"About release channels \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels",
+        "source_id": "site-docs-reference-2",
+        "final_score": 142,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Learn about managing automatic cluster upgrades across environments with rollout sequencing .",
+          "You are responsible for ensuring your cluster adheres to version and version skew policies You can disable node-upgrades at cluster level for up to 30 days by creating maintenance exclusion with the \"No upgrades\" scope Maintenance windows Available Available Maintenance exclusions Available maintenance exclusion scopes : \"No upgrades\" (30 days) \"No minor upgrades\" (until the end of support) \"No minor or node upgrades\" (until the end of support) Restricted to \"No upgrades\" scope (30 days) Rollout sequencing Available Not available Long-term support Available with the Extended release channel only Not available Autopilot Available Not available Differences between Rapid-channel clusters and alpha clusters Clusters created using the Rapid release channel are not alpha clusters .",
+          "We recommend enrolling your cluster in a release channel, as this gives you the most control with regards to the scope of maintenance exclusions —preventing specific types of upgrades instead of all upgrades—and sequencing the rollout of cluster upgrades ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/rollout-sequencing-custom-stages/about-rollout-sequencing",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:15.353Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

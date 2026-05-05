@@ -1,0 +1,184 @@
+{
+  "feature_name": "backup management",
+  "feature_slug": "backup-management",
+  "summary": "You can manage Memorystore for Valkey backups in the Google Cloud console.",
+  "extended_definition": "You can manage Memorystore for Valkey backups in the Google Cloud console.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/backups",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create instances \\_|\\_ Memorystore for Valkey \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "source_id": "site-docs-root",
+        "final_score": 274,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable the Memorystore for Valkey API Memorystore for Valkey Enable the Network Connectivity API Network Connectivity API Enable the Service Consumer Management API Service Consumer Management API Other prerequisites You must have one of these IAM roles in the Google Cloud project you're using: roles/memorystore.admin (the Memorystore Admin predefined IAM role) roles/owner (the Owner basic IAM role) roles/editor (the Editor basic IAM role) Set up networking Read the Networking page to determine if you need to set up a service connection policy.",
+          "Cloud KMS key : you want to manage the encryption of your data by using customer-managed encryption keys (CMEKs) in Cloud Key Management Service (Cloud KMS) with CMEK-integrated services, such as Memorystore for Valkey.",
+          "Cloud KMS key : you want to manage the encryption of your data by using customer-managed encryption keys (CMEKs) in Cloud Key Management Service (Cloud KMS) with CMEK-integrated services, such as Memorystore for Valkey."
+        ]
+      },
+      {
+        "title": "\"About customer-managed encryption keys (CMEK) \\_|\\_ Memorystore for Valkey\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 272,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Memorystore for Valkey.",
+          "If the Memorystore for Valkey API is in the Deny policy list of services for this constraint, then you can't create non-CMEK-protected instances. constraints/gcp.restrictCmekCryptoKeyProjects : use this constraint to limit which Cloud KMS keys you can use for CMEK protection.",
+          "Home Documentation Databases Memorystore Memorystore for Valkey Guides Send feedback About customer-managed encryption keys (CMEK) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Best practices for Memorystore for Valkey \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "source_id": "site-docs-root",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Memory management best practices This section describes strategies for managing instance memory so that Memorystore for Valkey works efficiently for your application.",
+          "RDB persistence and adding replicas For best results of backing up your instance with RDB snapshots or adding replicas to your instance, use the following best practices: Memory management RDB snapshots use a process fork and 'copy-on-write' mechanism to take a snapshot of node data.",
+          "Home Documentation Databases Memorystore Memorystore for Valkey Guides Send feedback Best practices for Memorystore for Valkey Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "About backups \\_|\\_ Memorystore for Valkey \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/backups",
+        "source_id": "site-iam-reference",
+        "final_score": 259,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can also restore backups from Memorystore for Valkey instances.",
+          "Home Documentation Databases Memorystore Memorystore for Valkey Guides Send feedback About backups Stay organized with collections Save and categorize content based on your preferences.",
+          "If you delete an instance, then Memorystore for Valkey doesn't delete the corresponding backup collection automatically."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcp.restrictCmekCryptoKeyProjects",
+      "memorystore.admin",
+      "memorystore.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/editor",
+      "roles/memorystore.admin",
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/backups"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/backups"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/backups"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/backups"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/backups"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/backups"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/backups"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/backups"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/general-best-practices",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/backups"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:26.694Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-valkey/card.json",
+  "product_name": "Memorystore for Valkey",
+  "product_slug": "memorystore-for-valkey"
+}

@@ -1,0 +1,92 @@
+{
+  "feature_name": "Workflow Templates",
+  "feature_slug": "workflow-templates",
+  "summary": "Workflow Templates let users define and run reusable Dataproc workflow definitions; Workflow Templates let users define job graphs that can create clusters, run jobs, and delete clusters automatically.",
+  "extended_definition": "Workflow Templates let users define and run reusable Dataproc workflow definitions; Workflow Templates let users define job graphs that can create clusters, run jobs, and delete clusters automatically.",
+  "lifecycle": {
+    "latest_feature_date": "2018-09-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview",
+      "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/workflow-schedule-solutions",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListWorkflowTemplatesResponse"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Overview of Managed Service for Apache Spark Workflow Templates \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview",
+        "source_id": "site-docs-root",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Workflow Templates replace the steps involved in a typical flow, which include: creating the cluster submitting jobs polling deleting the cluster Workflow Templates use a single token to track progress from cluster creation to deletion, and automate error handling and recovery.",
+          "Parameterized If you will run a workflow template multiple times with different values, use parameters to avoid editing the workflow template for each run: define parameters in the template, then pass different values for the parameters for each run.",
+          "Home Documentation Data analytics Managed Service for Apache Spark Guides Send feedback Overview of Managed Service for Apache Spark Workflow Templates Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"ListWorkflowTemplatesResponse \\_|\\_ Managed Service for Apache Spark \\_\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListWorkflowTemplatesResponse",
+        "source_id": "site-docs-reference",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Managed Service for Apache Spark Reference Send feedback ListWorkflowTemplatesResponse Stay organized with collections Save and categorize content based on your preferences.",
+          "JSON representation { \"templates\" : [ { object ( WorkflowTemplate ) } ] , \"nextPageToken\" : string , \"unreachable\" : [ string ] } Fields templates[] object ( WorkflowTemplate ) Output only.",
+          "To fetch additional results, provide this value as the pageToken in a subsequent ListWorkflowTemplatesRequest . unreachable[] string Output only."
+        ]
+      },
+      {
+        "title": "\"Workflow scheduling solutions \\_|\\_ Managed Service for Apache Spark \\_\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/workflow-schedule-solutions",
+        "source_id": "site-docs-root",
+        "final_score": 144,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dataproc Workflow Templates Managed Service for Apache Spark Workflow templates provide a flexible and easy-to-use mechanism for managing and executing workflows.",
+          "Advantages: Enables time-based instantiation of workflow templates based on familiar cron expressions No code to write Tutorial: Workflow using Cloud Scheduler Cloud Functions Cloud Run functions is a lightweight compute solution you can use to create single-purpose, stand-alone functions that respond to Cloud events without the need to manage a server or runtime environment.",
+          "A Workflow Template is a reusable workflow configuration."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dataproc.v1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/overview",
+        "https://docs.cloud.google.com/dataproc/docs/concepts/workflows/workflow-schedule-solutions",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ListWorkflowTemplatesResponse"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:55.306Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc"
+}

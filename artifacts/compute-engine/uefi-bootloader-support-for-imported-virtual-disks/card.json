@@ -1,0 +1,83 @@
+{
+  "feature_name": "UEFI bootloader support for imported virtual disks",
+  "feature_slug": "uefi-bootloader-support-for-imported-virtual-disks",
+  "summary": "Compute Engine can import virtual disks that use a UEFI bootloader by enabling UEFI booting with guest OS features.",
+  "extended_definition": "Compute Engine can import virtual disks that use a UEFI bootloader by enabling UEFI booting with guest OS features.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/compute/docs/disks/local-ssd",
+      "https://docs.cloud.google.com/compute/docs/disks/local-ssd",
+      "https://docs.cloud.google.com/compute/docs/disks/persistent-disks"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About Local SSD disks \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/disks/local-ssd",
+        "source_id": "site-docs-root",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "Scenarios where Compute Engine might not persist Local SSD data Data on Local SSD disks might be lost if a host error occurs on the instance and Compute Engine can't recover the data on the Local SSD disks attached to the instance within a specified time.",
+          "Committed use discounts for Local SSD disks Resource-based commitments provide deep discounts for Compute Engine resources in return for committing to using the resources in a specific region for at least one year.",
+          "If Compute Engine can't recover the data on the Local SSD disks before the timeout expires, the instance restarts with blank, unformatted Local SSD disks attached, and the original data is unrecoverable."
+        ]
+      },
+      {
+        "title": "About Local SSD disks \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://developers.google.com/compute/docs/disks/local-ssd",
+        "source_id": "site-docs-root-3",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "Scenarios where Compute Engine might not persist Local SSD data Data on Local SSD disks might be lost if a host error occurs on the instance and Compute Engine can't recover the data on the Local SSD disks attached to the instance within a specified time.",
+          "Committed use discounts for Local SSD disks Resource-based commitments provide deep discounts for Compute Engine resources in return for committing to using the resources in a specific region for at least one year.",
+          "If Compute Engine can't recover the data on the Local SSD disks before the timeout expires, the instance restarts with blank, unformatted Local SSD disks attached, and the original data is unrecoverable."
+        ]
+      },
+      {
+        "title": "Persistent Disk \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/disks/persistent-disks",
+        "source_id": "site-docs-root",
+        "final_score": 82,
+        "relevance": "",
+        "evidence_snippets": [
+          "Reliability Compute Engine replicates data of your regional Persistent Disk to the zones you selected when you created your disks.",
+          "For most Compute Engine machine types, these disks have the same maximum IOPS as SSD Persistent Disk and lower IOPS per GiB.",
+          "Compute Engine manages the physical disks and the data distribution for you to ensure redundancy and optimal performance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:45.884Z",
+  "source_step08_card": "data/step-08/current/products/compute-engine/card.json",
+  "product_name": "Compute Engine",
+  "product_slug": "compute-engine"
+}

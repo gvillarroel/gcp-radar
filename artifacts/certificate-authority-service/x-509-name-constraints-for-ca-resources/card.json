@@ -1,0 +1,140 @@
+{
+  "feature_name": "X.509 name constraints for CA resources",
+  "feature_slug": "x-509-name-constraints-for-ca-resources",
+  "summary": "Certificate Authority Service introduced GA support for X.509 name constraints on certificate authorities and CA pools, enforced during certificate issuance.",
+  "extended_definition": "Certificate Authority Service introduced GA support for X.509 name constraints on certificate authorities and CA pools, enforced during certificate issuance.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/certificate-authority-service/docs/custom-constraints",
+      "https://docs.cloud.google.com/certificate-authority-service/docs/reference/rest/v1/X509Parameters",
+      "https://docs.cloud.google.com/certificate-authority-service/docs/reference/rpc/google.cloud.security.privateca.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Package google.cloud.security.privateca.v1 | Certificate Authority Service | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/certificate-authority-service/docs/reference/rpc/google.cloud.security.privateca.v1",
+        "source_id": "feature-recovery-http",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "NameConstraints Describes the X.509 name constraints extension, per https://tools.ietf.org/html/rfc5280#section-4.2.1.10 Fields critical bool Indicates whether or not the name constraints are marked critical. permitted_dns_names[] string Contains permitted DNS names.",
+          "Describes the X.509 name constraints extension. additional_extensions[] X509Extension Optional.",
+          "NAME_CONSTRAINTS Refers to Name Constraints extension as described in RFC 5280 section 4.2.1.10 CertificateIdentityConstraints Describes constraints on a Certificate 's Subject and SubjectAltNames ."
+        ]
+      },
+      {
+        "title": "X509Parameters | Certificate Authority Service | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/certificate-authority-service/docs/reference/rest/v1/X509Parameters",
+        "source_id": "feature-recovery-http",
+        "final_score": 77,
+        "relevance": "",
+        "evidence_snippets": [
+          "NameConstraints Describes the X.509 name constraints extension, per https://tools.ietf.org/html/rfc5280#section-4.2.1.10 JSON representation { \"critical\" : boolean , \"permittedDnsNames\" : [ string ] , \"excludedDnsNames\" : [ string ] , \"permittedIpRanges\" : [ string ] , \"excludedIpRanges\" : [ string ] , \"permittedEmailAddresses\" : [ string ] , \"excludedEmailAddresses\" : [ string ] , \"permittedUris\" : [ string ] , \"excludedUris\" : [ string ] } Fields critical boolean Indicates whether or not the name constraints are marked critical. permittedDnsNames[] string Contains permitted DNS names.",
+          "Describes the X.509 name constraints extension. additionalExtensions[] object ( X509Extension ) Optional."
+        ]
+      },
+      {
+        "title": "\"Manage CA Service resources using custom constraints \\_|\\_ Certificate Authority\\",
+        "url": "https://docs.cloud.google.com/certificate-authority-service/docs/custom-constraints",
+        "source_id": "site-docs-root",
+        "final_score": 76,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.caPools.certificateAuthorities",
+      "projects.locations.caPools.certificateAuthorities.certificateRevocationLists",
+      "projects.locations.caPools.certificateAuthorities.certificateRevocationLists.list",
+      "projects.locations.caPools.certificateAuthorities.delete",
+      "projects.locations.caPools.certificateAuthorities.disable",
+      "tools.ietf.org"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/reference/rpc/google.cloud.security.privateca.v1",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/reference/rest/v1/X509Parameters",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/reference/rpc/google.cloud.security.privateca.v1",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/reference/rest/v1/X509Parameters",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/reference/rpc/google.cloud.security.privateca.v1",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/reference/rest/v1/X509Parameters",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/reference/rpc/google.cloud.security.privateca.v1",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/reference/rest/v1/X509Parameters",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/reference/rpc/google.cloud.security.privateca.v1",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/reference/rest/v1/X509Parameters",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/reference/rpc/google.cloud.security.privateca.v1",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/reference/rest/v1/X509Parameters",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/reference/rpc/google.cloud.security.privateca.v1",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/reference/rest/v1/X509Parameters",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/custom-constraints"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:26.467Z",
+  "source_step08_card": "data/step-08/current/products/certificate-authority-service/card.json",
+  "product_name": "Certificate Authority Service",
+  "product_slug": "certificate-authority-service"
+}

@@ -1,0 +1,140 @@
+{
+  "feature_name": "Ops Agent OTLP receiver",
+  "feature_slug": "ops-agent-otlp-receiver",
+  "summary": "The Ops Agent includes an OTLP receiver for collecting custom traces and metrics from applications instrumented with OpenTelemetry SDKs.",
+  "extended_definition": "The Ops Agent includes an OTLP receiver for collecting custom traces and metrics from applications instrumented with OpenTelemetry SDKs.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+      "https://docs.cloud.google.com/trace/docs/otlp",
+      "https://docs.cloud.google.com/trace/docs/setup",
+      "https://docs.cloud.google.com/trace/docs/setup/sample-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the Ops Agent and OpenTelemetry Protocol (OTLP) \\_|\\_ Cloud Trace \\_\\",
+        "url": "https://docs.cloud.google.com/trace/docs/otlp",
+        "source_id": "site-docs-root-2",
+        "final_score": 338,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Open a PowerShell terminal with administrator privileges by right-clicking the PowerShell icon and selecting Run as Administrator To restart the agent, run the following PowerShell command: Restart-Service google-cloud-ops-agent -Force To confirm that the agent restarted, run the following command and verify that the components \"Metrics Agent\" and \"Logging Agent\" started: Get-Service google-cloud-ops-agent Collect OTLP metrics When you use the OTLP receiver to collect metrics from your OpenTelemetry applications, the primary configuration choice for the receiver is the API that you want to use to ingest the metrics.",
+          "To disable the collection of OTLP metrics and traces by the Ops Agent, do the following: Remove the OTLP configuration from the user configuration file: Delete the entire combined section, which includes the otlp receiver.",
+          "Overview of using the OTLP receiver With the Ops Agent OTLP receiver, you can do the following: Instrument your application by using one of the language-specific SDKs for OpenTelemetry."
+        ]
+      },
+      {
+        "title": "View and manage metric usage \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "source_id": "site-iam-reference",
+        "final_score": 236,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Prometheus prometheus.googleapis.com Samples Metrics collected by using Google Cloud Managed Service for Prometheus , or by using the Ops Agent and the Prometheus receiver or the OTLP receiver .",
+          "What's next Use the Ops Agent to collect metrics: Configure the Ops Agent Monitor third-party applications Collect Prometheus metrics Collect OTLP telemetry Use the Google Cloud Managed Service for Prometheus to collect metrics: Use managed collection Use self-deployed collection Use the OpenTelemetry Collector Use custom metrics in Cloud Run Collect on-premises and hybrid-cloud metrics by using BindPlane Create user-defined metrics by using the Monitoring API Google Cloud Observability pricing Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For lists of these metrics, see Ops Agent metrics and Legacy Monitoring and Logging metrics ."
+        ]
+      },
+      {
+        "title": "Instrument for Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/setup",
+        "source_id": "site-docs-root-2",
+        "final_score": 198,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you are writing applications that run on Compute Engine, then you can use the Ops Agent and the OpenTelemetry Protocol (OTLP) receiver to collect traces and metrics from your application.",
+          "For more information, see Use the Ops Agent and OTLP and Ops Agent overview .",
+          "The Ops Agent can also collect logs, but not by using OTLP."
+        ]
+      },
+      {
+        "title": "\"Overview of collector-based instrumentation samples \\_|\\_ Cloud Trace \\_\\",
+        "url": "https://docs.cloud.google.com/trace/docs/setup/sample-overview",
+        "source_id": "site-docs-root-2",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use the Ops Agent and OpenTelemetry Protocol (OTLP) describes how you can configure the Ops Agent and an OTLP receiver to collect metrics and traces from an application.",
+          "The same receiver, otlp , is used for metrics and traces.",
+          "The instrumentation in these samples, which includes using the OpenTelemetry SDK and the SDK's in-process OTLP exporter, is vendor neutral."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "logging.logWriter",
+      "monitoring.metricWriter",
+      "prometheus.googleapis.com",
+      "telemetry.tracesWriter"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.logWriter",
+      "roles/monitoring.metricWriter",
+      "roles/telemetry.tracesWriter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/otlp",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/trace/docs/setup",
+        "https://docs.cloud.google.com/trace/docs/setup/sample-overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/otlp",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/trace/docs/setup",
+        "https://docs.cloud.google.com/trace/docs/setup/sample-overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/otlp",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/trace/docs/setup",
+        "https://docs.cloud.google.com/trace/docs/setup/sample-overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/otlp",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/trace/docs/setup",
+        "https://docs.cloud.google.com/trace/docs/setup/sample-overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:44.599Z",
+  "source_step08_card": "data/step-08/current/products/cloud-trace/card.json",
+  "product_name": "Cloud Trace",
+  "product_slug": "cloud-trace"
+}

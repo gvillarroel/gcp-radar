@@ -1,0 +1,108 @@
+{
+  "feature_name": "local vSphere source containerization",
+  "feature_slug": "local-vsphere-source-containerization",
+  "summary": "Containerization from local vSphere sources is deprecated; deprecated on 2022-12-06.",
+  "extended_definition": "Containerization from local vSphere sources is deprecated; deprecated on 2022-12-06.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-06",
+    "deprecation_date": "2022-12-06",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/copy-file-system",
+      "https://docs.cloud.google.com/migrate/containers/docs/resources",
+      "https://docs.cloud.google.com/migrate/containers/docs/support"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Resources \\_|\\_ Migrate to Containers \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/resources",
+        "source_id": "site-docs-root",
+        "final_score": 123,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Migration Migrate to Containers Resources Send feedback Resources Stay organized with collections Save and categorize content based on your preferences.",
+          "Additional resources About Linux system containers Details about migration artifacts and maintenance best practices for Migrate to Containers Linux system containers.",
+          "Pricing and quotas Pricing Migrate to Containers pricing is based on the Google Cloud resources used."
+        ]
+      },
+      {
+        "title": "Resources \\_|\\_ Migrate to Containers \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/support",
+        "source_id": "site-docs-root",
+        "final_score": 103,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Migration Migrate to Containers Resources Send feedback Resources Stay organized with collections Save and categorize content based on your preferences.",
+          "Additional resources About Linux system containers Details about migration artifacts and maintenance best practices for Migrate to Containers Linux system containers.",
+          "Pricing and quotas Pricing Migrate to Containers pricing is based on the Google Cloud resources used."
+        ]
+      },
+      {
+        "title": "\"Copy the source machine's file system \\_|\\_ Migrate to Containers \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/copy-file-system",
+        "source_id": "site-docs-reference",
+        "final_score": 80,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Direct SSH To copy using direct SSH access, run the following command: ./m2c copy ssh [ USERNAME @] HOSTNAME \\ -i PATH TO PRIVATE KEY \\ -o OUTPUT FILESYSTEM DIR Replace the following: USERNAME : your username HOSTNAME : the hostname PATH TO PRIVATE KEY : the path to private key OUTPUT FILESYSTEM DIR : the path for the output directory on your local machine where you want to copy the source machine's file system gcloud If the source machine has a public IP, run the following command: ./m2c copy gcloud \\ -p PROJECT ID \\ -z ZONE \\ -n VM NAME \\ -o OUTPUT FILESYSTEM DIR Replace the following: PROJECT ID : the project ID ZONE : the zone of your VM VM NAME : the name of the source VM OUTPUT FILESYSTEM DIR : the path for the directory output on your local machine where you want to copy the source machine's file system If the source machine doesn't have a public IP, you can do one of the following: If you are running the Migrate to Containers CLI from a machine in the same internal network, Use the --internal-ip flag.",
+          "Direct SSH ./m2c copy ssh [ USERNAME @] HOSTNAME \\ -i PATH TO PRIVATE KEY \\ -o OUTPUT FILESYSTEM DIR \\ --filters filters.txt gcloud ./m2c copy gcloud \\ -p PROJECT ID \\ -z ZONE \\ -n VM NAME \\ -o OUTPUT FILESYSTEM DIR \\ --filters filters.txt Create a local copy of the Windows source machine file system For Windows source machines, you need to copy the disk images in VHD or VHDX format for the migration process.",
+          "Create a local copy of the Linux source machine file system The Migrate to Containers CLI supports access to source machines using either direct SSH connection or by using gcloud ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "filters.txt"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/resources",
+        "https://docs.cloud.google.com/migrate/containers/docs/support",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/copy-file-system"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/resources",
+        "https://docs.cloud.google.com/migrate/containers/docs/support",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/copy-file-system"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/resources",
+        "https://docs.cloud.google.com/migrate/containers/docs/support",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/copy-file-system"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:27.030Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-containers/card.json",
+  "product_name": "Migrate to Containers",
+  "product_slug": "migrate-to-containers"
+}

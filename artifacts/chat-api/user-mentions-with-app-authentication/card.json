@@ -1,0 +1,108 @@
+{
+  "feature_name": "User mentions with app authentication",
+  "feature_slug": "user-mentions-with-app-authentication",
+  "summary": "The Chat API supports mentioning users in messages sent with app authentication, including users who have not joined a space or are in import-mode spaces.",
+  "extended_definition": "The Chat API supports mentioning users in messages sent with app authentication, including users who have not joined a space or are in import-mode spaces.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/chat/api/reference",
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/DriveDataRef",
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/HostApp"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "DriveDataRef \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/DriveDataRef",
+        "source_id": "site-api-reference",
+        "final_score": 58,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Google Chat Reference Send feedback DriveDataRef Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Google Chat API overview \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference",
+        "source_id": "site-api-reference",
+        "final_score": 52,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-01 UTC.\"],[],[\"The Google Chat API offers gRPC and REST interfaces, with corresponding client libraries or the option to create custom ones.",
+          "Type, method, and field names Depending on whether you're using client libraries, gRPC, or REST, the type, method, and field names for the Google Chat API vary somewhat: Cloud Client Libraries are arranged by gRPC services and their methods.",
+          "Related topics Call the Google Chat API Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "HostApp \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/HostApp",
+        "source_id": "site-api-reference",
+        "final_score": 50,
+        "relevance": "",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-10-10 UTC.\"],[],[\"The content defines the host applications for Google Workspace add-ons and Google Chat apps.",
+          "Home Google Workspace Google Chat Reference Send feedback HostApp Stay organized with collections Save and categorize content based on your preferences.",
+          "Page Summary outlined flag The HostApp enum indicates the Google Workspace application from which a Google Workspace Add-on or Google Chat app launches."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "media.download"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/DriveDataRef",
+        "https://developers.google.com/workspace/chat/api/reference",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/HostApp"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/DriveDataRef",
+        "https://developers.google.com/workspace/chat/api/reference",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/HostApp"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:26.701Z",
+  "source_step08_card": "data/step-08/current/products/chat-api/card.json",
+  "product_name": "Chat API",
+  "product_slug": "chat-api"
+}

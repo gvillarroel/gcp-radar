@@ -1,0 +1,190 @@
+{
+  "feature_name": "Manual-to-dynamic protection migration using tags",
+  "feature_slug": "manual-to-dynamic-protection-migration-using-tags",
+  "summary": "Added support for migrating manual protection to tag-based dynamic protection across all backup/recovery appliance types.",
+  "extended_definition": "Added support for migrating manual protection to tag-based dynamic protection across all backup/recovery appliance types.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Automate protection of Compute Engine instances \\_|\\_ Backup and DR \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "source_id": "site-docs-reference",
+        "final_score": 178,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Migrate manual protection to Dynamic Protection If you intend to migrate your already protected resources to using dynamic protection using Tags, you must enable the migration flag in your project.",
+          "You can wait for the scheduled dynamic protection job to run at 4:15 AM or 4:15 PM local time for it to take effect, or you can run a dynamic protection job on-demand by following the steps in Run Manual Auto Protection . variable \"project id\" { description = \"The ID of the existing Google Cloud project\" type = string } variable \"region\" { description = \"The Google Cloud region where demo-instance should be created\" type = string } variable \"zone\" { description = \"The Google Cloud zone where demo-instance should be created\" type = string } provider \"google\" { project = var.project id region = var.region zone = var.zone } data \"google project\" \"project\" { project id = var.project id } Reference: https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/tags tag key resource \"google tags tag key\" \"key\" { parent = \"projects/${var.project id}\" short name = \"backupdr-dynamicprotect\" description = \"Tag key for Dynamic Protection.\" } Reference: https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/tags tag value resource \"google tags tag value\" \"value\" { parent = \"tagKeys/${google tags tag key.key.name}\" short name = \"backupdr-gold\" # This value should be present in the \"Management Console UI\" > \"Backup Plans\" > \"Dynamic Protection Tags\" description = \"Tag value for gold plan.\" } Reference: https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute instance Ensure not to define tag in \"resource manager tags\" block while creating VM instance.",
+          "For example, https://bmc-PROJECT NUMBER-GENERATED ID-dot-REGION.backupdr.googleusercontent.com #!/bin/bash export MC ENDPOINT = \" MC ENDPOINT edited value \" Enable migration. curl -H \"Authorization: Bearer $BEARER TOKEN \" -H \"backupdr-management-session: Actifio $SESSION ID \" -H \"Content-Type: application/json\" -XPATCH -d '{ \"enableMigrationToTagBasedProtection\":\"true\"}' \" $MC ENDPOINT /actifio/dynamicprotection/jobconfig\" Appliance management console To enable migration of manually protected Compute Engine instances to tag-based protection, follow these steps: Toggle Enable migration to tag based protection to ON status Confirm the Enable Migration dialog."
+        ]
+      },
+      {
+        "title": "\"Automate protection of Google Cloud VMware Engine \\_|\\_ Backup and DR \\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "source_id": "site-docs-reference",
+        "final_score": 178,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The triggered job can take a few minutes depending on the number of changes pending for your workloads. echo \"Triggering dynamic protection job..\" curl -H \"Authorization: Bearer $BEARER TOKEN \" -H \"backupdr-management-session: Actifio $SESSION ID \" -H \"Content-Type: application/json\" -XPOST -d '{}' \" $MC ENDPOINT /actifio/dynamicprotection/job/vmwarevm\" echo \"Dynamic protection job triggered.\" Migrate manual protection to dynamic protection If you intend to migrate your already protected resources to use dynamic protection using tags, you must enable the migration flag in your project.",
+          "For example, https://bmc-PROJECT NUMBER-GENERATED ID-dot-REGION.backupdr.googleusercontent.com #!/bin/bash export MC ENDPOINT = \" MC ENDPOINT edited value \" Enable migration. curl -H \"Authorization: Bearer $BEARER TOKEN \" -H \"backupdr-management-session: Actifio $SESSION ID \" -H \"Content-Type: application/json\" -XPATCH -d '{ \"enableMigrationToTagBasedProtection\":\"true\"}' \" $MC ENDPOINT /actifio/dynamicprotection/jobconfig\" Appliance management console To enable migration of manually protected VMware VMs to tag-based protection, follow these steps: Toggle Enable migration to tag based protection to ON status Confirm the Enable Migration dialog.",
+          "After you've enabled migration, any manually protected VMs can now use dynamic protection."
+        ]
+      },
+      {
+        "title": "\"Monitor jobs in the appliance management console \\_|\\_ Backup and DR \\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "source_id": "site-docs-root",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "If the constraints continue to be present until it is time to run the next instance of the same policy, the job is given notrun status, and a new job instance with the same job ID and a letter appended to it is added in the queued state.",
+          "For example, you might need to manually perform log replication if the log for a database image did not properly replicate to the backup/recovery appliance or if there is no log for the database image on the backup/recovery appliance.",
+          "When adding multiple new applications or VMs, try to stagger the initial protection jobs for each new application over time, to prevent all of the new data from being ingested simultaneously."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backupdr.googleusercontent.com",
+      "backupdr.managementServers.createDynamicProtection",
+      "backupdr.managementServers.deleteDynamicProtection",
+      "backupdr.managementServers.getDynamicProtection",
+      "backupdr.managementServers.listDynamicProtection",
+      "compute.instances.listEffectiveTags",
+      "key.key.name",
+      "registry.terraform.io",
+      "var.project",
+      "var.region",
+      "var.zone"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:17.348Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr"
+}

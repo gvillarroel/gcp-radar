@@ -1,0 +1,92 @@
+{
+  "feature_name": "Updated health checks",
+  "feature_slug": "updated-health-checks",
+  "summary": "App Engine flexible environment uses updated health checks with split liveness and readiness checks for new projects; App Engine flexible environment provides separate liveness and readiness checks through updated health checks.",
+  "extended_definition": "App Engine flexible environment uses updated health checks with split liveness and readiness checks for new projects; App Engine flexible environment provides separate liveness and readiness checks through updated health checks.",
+  "lifecycle": {
+    "latest_feature_date": "2017-09-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app",
+      "https://docs.cloud.google.com/appengine/docs/flexible/how-instances-are-managed",
+      "https://docs.cloud.google.com/appengine/docs/flexible/known-issues"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"How instances are managed \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/how-instances-are-managed",
+        "source_id": "site-docs-reference",
+        "final_score": 107,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback How instances are managed Stay organized with collections Save and categorize content based on your preferences.",
+          "App Engine continues to send health check requests and restarts the instance if an unhealthy instance continues to fail to respond to a predetermined number of consecutive health checks.",
+          "NTP with App Engine flexible environment The App Engine flexible environment has network time protocol (NTP) services which use Google NTP servers."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a custom runtime app in the App Engine flexible environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app",
+        "source_id": "site-docs-reference",
+        "final_score": 87,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The app.yaml file must reside in the same directory as the Dockerfile file. runtime : custom env : flex The runtime: custom entry tells App Engine to look for a Dockerfile that will define your runtime's image and env: flex specifies that you are deploying to the flexible environment.",
+          "Create a custom runtime app in the App Engine flexible environment Region ID The REGION ID is an abbreviated code that Google assigns based on the region you select when you create your app.",
+          "By using a Dockerfile, you can use languages and packages that are not part of the Google Cloud and use the same resources and tooling that are used in the App Engine flexible environment."
+        ]
+      },
+      {
+        "title": "Known issues in the App Engine flexible environment \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/known-issues",
+        "source_id": "site-docs-reference-2",
+        "final_score": 70,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Some events that may affect App Engine flexible environment minimum number of instances are: Rolling out updates to flexible environment instances Zonal failure (Stockout issues, such as when your region is at capacity for your selected CPU, etc.) App Engine flexible environment uses 3 zones to distribute your instances and in such a configuration, we recommend provisioning 50% more instances than required.",
+          "The global external Application Load Balancer sends requests to a service in the App Engine flexible environment regardless of the health of individual instances.",
+          "However, even with such organization policies set, you can deploy a private App Engine flexible environment app that uses only its internal IP address."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-instances-are-managed",
+        "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app",
+        "https://docs.cloud.google.com/appengine/docs/flexible/known-issues"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:08.270Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-custom-runtimes/card.json",
+  "product_name": "App Engine flexible environment custom runtimes",
+  "product_slug": "app-engine-flexible-environment-custom-runtimes"
+}

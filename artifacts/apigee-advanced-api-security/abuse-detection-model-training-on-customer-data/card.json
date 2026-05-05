@@ -1,0 +1,114 @@
+{
+  "feature_name": "Abuse detection model training on customer data",
+  "feature_slug": "abuse-detection-model-training-on-customer-data",
+  "summary": "Apigee now supports optional training of abuse-detection machine learning models on a customer’s own data to improve incident-detection accuracy.",
+  "extended_definition": "Apigee now supports optional training of abuse-detection machine learning models on a customer’s own data to improve incident-detection accuracy.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+      "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+      "https://docs.cloud.google.com/apigee/docs/api-security/security-scores"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Abuse detection \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "source_id": "site-docs-reference-required-7",
+        "final_score": 198,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "When you first open the Abuse detection page in the Apigee UI, you will see an opt-in request to allow Advanced API Security's machine learning models to use your API traffic data for model training.",
+          "To opt in to use your API traffic data for anomaly detection model training, select that option when adding anomaly detection to your Abuse Detection configuration.",
+          "Change permissions for allowing Apigee to improve your machine learning models You can change your permissions for allowing Apigee to improve your machine learning models at any time, by clicking Settings at the top right of the Abuse detection page and selecting the option to either enable or disable this feature."
+        ]
+      },
+      {
+        "title": "Detection rules \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 148,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Note: Use of Advanced Anomaly Detection requires opting in to training the model on your API traffic data.",
+          "Advanced Anomaly Detection starts surfacing anomalies within six hours of opting in to model training.",
+          "For more information, see Opt in for machine learning models for Abuse Detection ."
+        ]
+      },
+      {
+        "title": "Risk assessment overview and UI \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Security scores assessment types There are three assessment types that contribute to the overall security score calculated by Advanced API Security: Source assessment: Assesses the detected abuse traffic, using the Advanced API Security detection rules . \"Abuse\" refers to requests sent to the API for purposes other than what the API is intended for.",
+          "To get more information about the abuse, you can use either of the following resources: The Abuse detection page, which displays information about security incidents involving abuse traffic.",
+          "Click Detected Traffic to view the Detected traffic tab in the Abuse detection page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:05.451Z",
+  "source_step08_card": "data/step-08/current/products/apigee-advanced-api-security/card.json",
+  "product_name": "Apigee Advanced API Security",
+  "product_slug": "apigee-advanced-api-security"
+}

@@ -1,0 +1,106 @@
+{
+  "feature_name": "and M3 machine type migration support",
+  "feature_slug": "and-m3-machine-type-migration-support",
+  "summary": "Migrates VMs to Compute Engine C3, H3, and M3 machine types that support NVMe and gVNIC.",
+  "extended_definition": "Migrates VMs to Compute Engine C3, H3, and M3 machine types that support NVMe and gVNIC.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Import machine images \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "source_id": "site-docs-root",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You should see an operation completion response similar to the following sample response. { \"done\": true, \"name\": \"projects/HOST PROJECT ID/locations/REGION ID/operations/OPERATION ID\", \"response\": { \"@type\": \"type.googleapis.com/google.cloud.vmmigration.v1.ImageImport\", \"name\": \"projects/HOST PROJECT ID/locations/us-central1/imageImports/IMPORT NAME\", \"cloudStorageUri\": \"SOURCE FILE\", \"createTime\": \"2023-10-31T09:04:04.413664947Z\", \"machineImageTargetDefaults\": { \"imageName\": \"IMAGE NAME\", \"targetProject\": \"projects/HOST PROJECT ID/locations/global/targetProjects/TARGET PROJECT\" }, \"recentImageImportJobs\": [ { \"name\": \"projects/HOST PROJECT ID/locations/us-central1/imageImports/IMPORT NAME/imageImportJobs/image-import-job\", \"diskImageTargetDetails\": { \"imageName\": \"IMAGE NAME\", \"targetProject\": \"projects/HOST PROJECT ID/locations/global/targetProjects/TARGET PROJECT\" }, \"state\": \"PENDING\" } ] }, \"metadata\": { \"createTime\": \"2023-10-31T09:04:04.416740716Z\", \"endTime\": \"2023-10-31T09:05:36.79987142Z\", \"target\": \"projects/HOST PROJECT ID/locations/us-central1/imageImports/IMPORT NAME\", \"verb\": \"create\", \"apiVersion\": \"v1\", \"@type\": \"type.googleapis.com/google.cloud.vmmigration.v1.OperationMetadata\" } } Monitor the machine image import job for completion using the following command.",
+          "You should see a response similar to the following sample response. { \"name\": \"projects/HOST PROJECT ID/locations/REGION ID/operations/OPERATION ID\", \"metadata\": { \"createTime\": \"2023-10-31T09:12:26.94928636Z\", \"target\": \"projects/HOST PROJECT ID/locations/us-central1/imageImports/IMPORT NAME\", \"verb\": \"create\", \"apiVersion\": \"v1\", \"@type\": \"type.googleapis.com/google.cloud.vmmigration.v1.OperationMetadata\" } } Check if the machine image import job is complete by polling the operation using the following command.",
+          "You can't create machine images from source VMs with any of the following: Attached disks greater than 200 TB A4, A3, C3D, H3, or Z3 machine types Machine image import process To import a machine image to Compute Engine machine image using Migrate to Virtual Machines, use the following steps: Prepare a machine image file for import Choose a target project Import a machine image to Compute Engine Prepare a machine file for import To import a machine image to a Compute Engine image, you must first prepare the machine image file for import."
+        ]
+      },
+      {
+        "title": "\"Import machine images \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "source_id": "site-docs-root-2",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You should see an operation completion response similar to the following sample response. { \"done\": true, \"name\": \"projects/HOST PROJECT ID/locations/REGION ID/operations/OPERATION ID\", \"response\": { \"@type\": \"type.googleapis.com/google.cloud.vmmigration.v1.ImageImport\", \"name\": \"projects/HOST PROJECT ID/locations/us-central1/imageImports/IMPORT NAME\", \"cloudStorageUri\": \"SOURCE FILE\", \"createTime\": \"2023-10-31T09:04:04.413664947Z\", \"machineImageTargetDefaults\": { \"imageName\": \"IMAGE NAME\", \"targetProject\": \"projects/HOST PROJECT ID/locations/global/targetProjects/TARGET PROJECT\" }, \"recentImageImportJobs\": [ { \"name\": \"projects/HOST PROJECT ID/locations/us-central1/imageImports/IMPORT NAME/imageImportJobs/image-import-job\", \"diskImageTargetDetails\": { \"imageName\": \"IMAGE NAME\", \"targetProject\": \"projects/HOST PROJECT ID/locations/global/targetProjects/TARGET PROJECT\" }, \"state\": \"PENDING\" } ] }, \"metadata\": { \"createTime\": \"2023-10-31T09:04:04.416740716Z\", \"endTime\": \"2023-10-31T09:05:36.79987142Z\", \"target\": \"projects/HOST PROJECT ID/locations/us-central1/imageImports/IMPORT NAME\", \"verb\": \"create\", \"apiVersion\": \"v1\", \"@type\": \"type.googleapis.com/google.cloud.vmmigration.v1.OperationMetadata\" } } Monitor the machine image import job for completion using the following command.",
+          "You should see a response similar to the following sample response. { \"name\": \"projects/HOST PROJECT ID/locations/REGION ID/operations/OPERATION ID\", \"metadata\": { \"createTime\": \"2023-10-31T09:12:26.94928636Z\", \"target\": \"projects/HOST PROJECT ID/locations/us-central1/imageImports/IMPORT NAME\", \"verb\": \"create\", \"apiVersion\": \"v1\", \"@type\": \"type.googleapis.com/google.cloud.vmmigration.v1.OperationMetadata\" } } Check if the machine image import job is complete by polling the operation using the following command.",
+          "You can't create machine images from source VMs with any of the following: Attached disks greater than 200 TB A4, A3, C3D, H3, or Z3 machine types Machine image import process To import a machine image to Compute Engine machine image using Migrate to Virtual Machines, use the following steps: Prepare a machine image file for import Choose a target project Import a machine image to Compute Engine Prepare a machine file for import To import a machine image to a Compute Engine image, you must first prepare the machine image file for import."
+        ]
+      },
+      {
+        "title": "\"Migrate VM disks and attach them to a new VM \\_|\\_ Migrate to Virtual Machines\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+        "source_id": "site-docs-root",
+        "final_score": 239,
+        "relevance": "",
+        "evidence_snippets": [
+          "Step 3: Configure the target for a migrated VM disk Migrate to Virtual Machines lets you migrate the disks of a source VM to Persistent Disk volumes on Google Cloud with the following options: Migrate the disks to Persistent Disk volumes Migrate the disks to Persistent Disk volumes and attach them to a new VM instance You must configure the target details such as project, zone, disk type, and more based on the option you choose.",
+          "Home Documentation Migration Migrate to Virtual Machines Guides Send feedback Migrate VM disks and attach them to a new VM Stay organized with collections Save and categorize content based on your preferences.",
+          "Below the drop-down you see the Source status of the migration source as follows: Active : The source is active and connected to Migrate to Virtual Machines."
+        ]
+      },
+      {
+        "title": "\"Migrate VM disks and attach them to a new VM \\_|\\_ Migrate to Virtual Machines\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+        "source_id": "site-docs-root-2",
+        "final_score": 239,
+        "relevance": "",
+        "evidence_snippets": [
+          "Step 3: Configure the target for a migrated VM disk Migrate to Virtual Machines lets you migrate the disks of a source VM to Persistent Disk volumes on Google Cloud with the following options: Migrate the disks to Persistent Disk volumes Migrate the disks to Persistent Disk volumes and attach them to a new VM instance You must configure the target details such as project, zone, disk type, and more based on the option you choose.",
+          "Home Documentation Migration Migrate to Virtual Machines Guides Send feedback Migrate VM disks and attach them to a new VM Stay organized with collections Save and categorize content based on your preferences.",
+          "Below the drop-down you see the Source status of the migration source as follows: Active : The source is active and connected to Migrate to Virtual Machines."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:28.107Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-virtual-machines/card.json",
+  "product_name": "Migrate to Virtual Machines",
+  "product_slug": "migrate-to-virtual-machines"
+}

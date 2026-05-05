@@ -1,0 +1,109 @@
+{
+  "feature_name": "Backup/recovery appliance alert event: unable to sync with host",
+  "feature_slug": "backup-recovery-appliance-alert-event-unable-to-sync-with-host",
+  "summary": "A new monitoring alert event (11006) is added to report when a backup/recovery appliance is unable to sync with its host.",
+  "extended_definition": "A new monitoring alert event (11006) is added to report when a backup/recovery appliance is unable to sync with its host.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/appliance-events",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Backup/recovery appliance event logs \\_|\\_ Backup and DR \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/appliance-events",
+        "source_id": "site-docs-reference",
+        "final_score": 188,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following sample is an example log entry logged on a backup/recovery appliance ba-1-52973 for a failed snapshot job. { \"insertId\" : \"aop2oko38hsami1c\" , \"jsonPayload\" : { \"appName\" : \"instance-2\" , \"srcid\" : \"111428\" , \"jobName\" : \"Job 0110906c\" , \"appType\" : \"GCPInstance\" , \"eventId\" : 43901 , \"component\" : \"udp\" , \"eventTime\" : \"2023-02-06T20:24:52.450Z\" , \"errorMessage\" : \"Failed snapshot Job 0110906c for application instance-2 on host instance-2, Error: 1249: Failed to get VM details , sltname: pd snaps, slpname: ba-1-52973 Profile. \" }, \"resource\" : { \"type\" : \"backupdr.googleapis.com/BackupRecoveryAppliance\" , \"labels\" : { \"backup recovery appliance id\" : \"test-backup-recovery-appliances\" , \"resource container\" : \"projects/1234567\" , \"management server id\" : \"abcd-efgh-1234-5678-6789\" , \"location\" : \"\" } }, \"timestamp\" : \"2023-02-06T20:24:55.275029393Z\" , \"severity\" : \"ERROR\" , \"logName\" : \"projects/project1/logs/backupdr.googleapis.com %2F backup recovery appliance events\" , \"receiveTimestamp\" : \"2023-02-06T20:24:56.388937247Z\" } Note: Event logs are not generated for successfully completed backup jobs.",
+          "Make sure you use uppercase AND . logName = \"projects/ PROJECT ID /logs/backupdr.googleapis.com %2F backup recovery appliance events\" AND jsonPayload . app name = appname What's next To configure log-based alerts for Backup and DR Service, create a log query, using the filter event logs , and then Configure log-based alerts .",
+          "Event log format Backup and DR event log entries include the following fields: appName : This field displays the name of the application associated with the event. srcid : This field displays a unique ID of the event occurring in the backup/recovery appliance. jobName : This field displays the name of the job associated with the event. appType : This field displays the type of the application associated with the event. eventId : This field displays a unique ID associated with the error. component : This field displays the source of the event. eventTime : This field displays the time when the event was reported. errorMessage : This field describes the detailed error associated with the event."
+        ]
+      },
+      {
+        "title": "\"Configure log-based alerts for a backup/recovery appliance \\_|\\_ Backup\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+        "source_id": "site-docs-reference",
+        "final_score": 181,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If your alert policy includes or excludes specific event IDs then you need to modify the event ID as well: \"entries\" : [ { \"jsonPayload\" : { \"eventId\" : 10046 , \"errorMessage\" : \"this is a manually generated error message created for testing\" }, \"resource\" : { \"type\" : \"backupdr.googleapis.com/BackupRecoveryAppliance\" , }, \"severity\" : \"ERROR\" , \"logName\" : \"projects/ PROJECT ID /logs/backupdr.googleapis.com %2F backup recovery appliance events\" , } ] Copy the log entry you configured previously.",
+          "The following is the sample query to get notified on an event with a specific event ID. logName = \"projects/ PROJECT ID /logs/backupdr.googleapis.com %2F backup recovery appliance events\" jsonPayload . eventId = 10046 In the header of the Query results pane, click Create alert .",
+          "The log entry matches the filter specified for the alert in the following ways: The logName value specifies the backup/recovery appliance event sign in for your Cloud project."
+        ]
+      },
+      {
+        "title": "\"Monitor jobs in the appliance management console \\_|\\_ Backup and DR \\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "source_id": "site-docs-root",
+        "final_score": 177,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, you might need to manually perform log replication if the log for a database image did not properly replicate to the backup/recovery appliance or if there is no log for the database image on the backup/recovery appliance.",
+          "To perform on-demand log replication of just the database log to a remote backup/recovery appliance, select the Replicate Logs menu command described in Running On-Demand Database Log Replication .",
+          "Failback failback Performs an unmount and delete of an image created by a failover job, removes any syncback images for the application, and triggers a Failover Delete job on the remote appliance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backupdr.googleapis.com",
+      "resource.labels.backup"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/appliance-events",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/appliance-events",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/appliance-events",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:17.348Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr"
+}

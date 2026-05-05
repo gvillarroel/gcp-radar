@@ -1,0 +1,200 @@
+{
+  "feature_name": "Block Extension",
+  "feature_slug": "block-extension",
+  "summary": "Adds an action that blocks a browser extension.",
+  "extended_definition": "Adds an action that blocks a browser extension.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Integrate Atlassian Confluence Server with Google SecOps \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "source_id": "site-docs-root",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON result { \"id\" : \" PAGE ID \" , \"type\" : \"page\" , \"status\" : \"current\" , \"title\" : \"title\" , \"body\" : { \"storage\" : { \"value\" : \"<p>test page</p><p>11</p><p>aa</p><p>aa</p><p>aa</p><p><br /></p><p><br /></p>\" , \"representation\" : \"storage\" , \" expandable\" : { \"content\" : \"/rest/api/content/ PAGE ID \" } }, \" expandable\" : { \"editor\" : \"\" , \"view\" : \"\" , \"export view\" : \"\" , \"styled view\" : \"\" , \"anonymous export view\" : \"\" } }, \"extensions\" : { \"position\" : \"none\" }, \" links\" : { \"webui\" : \"/display/SIEM/111\" , \"edit\" : \"/pages/resumedraft.action?draftId= PAGE ID &draftShareId=cf8b3a21-8e36-4a83-a696-51fcb4428d1c\" , \"tinyui\" : \"/x/TIAB\" , \"collection\" : \"/rest/api/content\" , \"base\" : \"http://192.0.2.45:8090\" , \"context\" : \"\" , \"self\" : \"http://192.0.2.45:8090/rest/api/content/ PAGE ID \" }, \" expandable\" : { \"container\" : \"/rest/api/space/SIEM\" , \"metadata\" : \"\" , \"operations\" : \"\" , \"children\" : \"/rest/api/content/ PAGE ID /child\" , \"restrictions\" : \"/rest/api/content/ PAGE ID /restriction/byOperation\" , \"history\" : \"/rest/api/content/ PAGE ID /history\" , \"ancestors\" : \"\" , \"version\" : \"\" , \"descendants\" : \"/rest/api/content/ PAGE ID /descendant\" , \"space\" : \"/rest/api/space/SIEM\" } } Case wall Result type Value/Description Type (Entity/General) Output message The action should not fail nor stop a playbook execution: If page is found (is success = true): print \"Successfully fetched page information with id: <id>\" If data is not available (is success=false): print \"The following page id was not found in the Atlassian Confluence Server: <page id>\" The action should fail and stop a playbook execution: If fatal error, like wrong credentials, no connection to server, other: \"Error executing action \"<Action name>\".",
+          "JSON result { \"results\" : [ { \"id\" : \" PAGE ID \" , \"type\" : \"page\" , \"status\" : \"current\" , \"title\" : \"Tell people what you think in a comment (step 8 of 9)\" , \"space\" : { \"id\" : 131073 , \"key\" : \"ds\" , \"name\" : \"Demonstration Space\" , \"type\" : \"global\" , \" links\" : { \"webui\" : \"/display/ds\" , \"self\" : \"http://192.0.2.45:8090/rest/api/space/ds\" }, \" expandable\" : { \"metadata\" : \"\" , \"icon\" : \"\" , \"description\" : \"\" , \"retentionPolicy\" : \"\" , \"homepage\" : \"/rest/api/content/ PAGE ID \" } }, \"extensions\" : { \"position\" : 7 }, \" links\" : { \"webui\" : \"/pages/viewpage.action?pageId= PAGE ID \" , \"edit\" : \"/pages/resumedraft.action?draftId= DRAFT ID \" , \"tinyui\" : \"/x/AYAB\" , \"self\" : \"http://192.0.2.45:8090/rest/api/content/ PAGE ID \" }, \" expandable\" : { \"container\" : \"/rest/api/space/ds\" , \"metadata\" : \"\" , \"operations\" : \"\" , \"children\" : \"/rest/api/content/ PAGE ID /child\" , \"restrictions\" : \"/rest/api/content/ PAGE ID /restriction/byOperation\" , \"history\" : \"/rest/api/content/ PAGE ID /history\" , \"ancestors\" : \"\" , \"body\" : \"\" , \"version\" : \"\" , \"descendants\" : \"/rest/api/content/ PAGE ID /descendant\" } }, ... ], \"start\" : 0 , \"limit\" : 5 , \"size\" : 5 , \" links\" : { \"self\" : \"http://192.0.2.45:8090/rest/api/content?expand=space\" , \"next\" : \"/rest/api/content?expand=space&limit=5&start=5\" , \"base\" : \"http://192.0.2.45:8090\" , \"context\" : \"\" } } Case wall Result type Value/Description Type (Entity/General) Output message The action should not fail nor stop a playbook execution: If data is available(is success = true): print \"Successfully found pages for the provided criteria in Atlassian Confluence Server\".",
+          "JSON result { \"results\" : [ { \"id\" : \" ID \" , \"type\" : \"comment\" , \"status\" : \"current\" , \"title\" : \"Re: 111\" , \"body\" : { \"storage\" : { \"value\" : \"<p>comment1</p>\" , \"representation\" : \"storage\" , \" expandable\" : { \"content\" : \"/rest/api/content/ ID \" } }, \" expandable\" : { \"editor\" : \"\" , \"view\" : \"\" , \"export view\" : \"\" , \"styled view\" : \"\" , \"anonymous export view\" : \"\" } }, \"extensions\" : { \"location\" : \"footer\" , \" expandable\" : { \"resolution\" : \"\" } }, \" links\" : { \"webui\" : \"/display/SIEM/111?focusedCommentId=98387#comment- ID \" , \"self\" : \"http://203.0.113.1:8090/rest/api/content/ ID \" }, \" expandable\" : { \"container\" : \"/rest/api/content/ ID \" , \"metadata\" : \"\" , \"operations\" : \"\" , \"children\" : \"/rest/api/content/ ID /child\" , \"restrictions\" : \"/rest/api/content/ ID /restriction/byOperation\" , \"history\" : \"/rest/api/content/ ID /history\" , \"ancestors\" : \"\" , \"version\" : \"\" , \"descendants\" : \"/rest/api/content/ ID /descendant\" , \"space\" : \"/rest/api/space/SIEM\" } }, ... ], \"start\" : 0 , \"limit\" : 10 , \"size\" : 2 , \" links\" : { \"self\" : \"http://203.0.113.1:8090/rest/api/content/ ID /child/comment?expand=body.storage\" , \"base\" : \"http://203.0.113.1:8090\" , \"context\" : \"\" } } Case wall Result type Value/Description Type (Entity/General) Output message The action should not fail nor stop a playbook execution: If data is available(is success = true): print \"Successfully fetched page comments for the provided Atlassian Confluence Server page id: <page id>\"."
+        ]
+      },
+      {
+        "title": "\"AWS Identity and Access Management (IAM) \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "source_id": "site-docs-root",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "Please note, there are additional policies that match the provided filter.\" If no data: Print \"No Policies were found in AWS IAM\" The action should fail and stop a playbook execution: if not successful (wrong credentials, no connection to server, other server error, max>1000): print \"Error executing action 'List Policies.",
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result { \"PolicyName\" : \"S3-read-only-bucket\" , \"PolicyId\" : \"ANPAYPE7MW7AFKUDK3HD7\" , \"Arn\" : \"arn:aws:iam::582302349248:policy/S3-read-only-bucket\" , \"Path\" : \"/\" , \"DefaultVersionId\" : \"v1\" , \"AttachmentCount\" : 0 , \"PermissionsBoundaryUsageCount\" : 0 , \"IsAttachable\" : true , \"CreateDate\" : \"2020-12-6T17:16:45\" , \"UpdateDate\" : \"2020-12-6T17:16:45\" } Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print \"<Policy name> policy was successfully created\" The action should fail and stop a playbook execution: If error - Policy already exists: Print \"Could not create <policy name> policy.",
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result [{ \"Arn\" : \"arn:aws:iam::582302349248:group/ZivGroup\" , \"CreateDate\" : \"2020-12-05 16:18:36+00:00\" , \"Path\" : \"/\" , \"GroupId\" : \"AGPAYPE7MW7AMKCWMJPMX\" , \"GroupName\" : \"ZivGroup\" }] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print \"Successfully listed available groups in AWS IAM\" If no data available: Print \"No Groups found in AWS IAM\" The action should fail and stop a playbook execution: if not successful (wrong credentials, no connection to server, other server error, If 'Max Groups'> 1000): print \"Error executing action 'List Groups'."
+        ]
+      },
+      {
+        "title": "\"Integrate AWS WAF with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "source_id": "site-docs-root",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "Default Action DDL Allow Possible values: Allow Block Yes Specify the default action for requests that don't match any rules.",
+          "Run On This action runs on the following entities: IP Address URL Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True Case Wall Result type Value/Description Type (Entity \\ General) Output message The action should not fail nor stop a playbook execution: If successful and at least one entity was removed from one IP set: \"Successfully removed the following entity patterns from the {0} Regex Pattern Set '{1}' in AWS WAF: \\n {2}\".format(\"Regional\"/\"Cloudfront\", full name, list of entity patterns) If entity never existed in that Regex Pattern Set: \"The following patterns were not found in the {0} Regex Pattern Set '{1}' in AWS WAF: \\n {2}\".format(\"Regional\"/\"Cloudfront\", full name, list of entity patterns) If fail to remove all entities on all IP sets: \"No patterns were removed from the provided Regex Pattern Sets.\" If fail to find one of the IP sets: \"Action wasn't able to find the following '{0}' Regex Pattern Sets in the AWS WAF:\\n {1}\".format(\"Regional\"/Cloudfront\",list of IP sets that were not found in that scope) If fail to find all of the provided Regex Pattern sets in the desired scope or scopes: \"Action didn't find the provided Regex Pattern sets.\" The action should fail and stop a playbook execution: If a fatal error, SDK error, like wrong credentials, no connection to the server, other is reported: \"Error executing action \"Remove Entity From Regex Pattern Set\".",
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one rule was removed from one Rule Group: \"Successfully removed a rule from the following {0} Rule Groups '{1}' in AWS WAF.\".format(\"Regional\"/\"Cloudfront\", list of names) If unsuccessful for one Rule Group: \"Action wasn't able to remove a rule from the following {0} Rule Groups '{1}' in AWS WAF.\".format(\"Regional\"/\"Cloudfront\", list of names) If unsuccessful for one Rule Group, because rule wasn't found in one Rule Group: \"Action wasn't able to find the specified rule in the following {0} Rule Groups '{1}' in AWS WAF.\".format(\"Regional\"/\"Cloudfront\", list of rule group names) If fail to find one of the Rule Group: \"Action wasn't able to find the following '{0}' Rule Groups in the AWS WAF:\\n {1}\".format(\"Regional\"/Cloudfront\", list of Rule Group that were not found in that scope) If fail to find all of the provided sets in the desired scope or scopes: \"Action didn't find the provided Rule Groups.\" The action should fail and stop a playbook execution: If a fatal error, SDK error, like wrong credentials, no connection to the server, other is reported: \"Error executing action \"Remove Rule From Rule Group\"."
+        ]
+      },
+      {
+        "title": "\"Integrate Amazon Macie with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+        "source_id": "site-docs-root",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "Action results Script result Script result name Value options Example is success True or False is success:False JSON result { \"ResponseMetadata\" :{ \"HTTPHeaders\" :{ \"connection\" : \"keep-alive\" , \"content-length\" : \"2741\" , \"content-type\" : \"application/json\" , \"date\" : \"Thu, 22 Oct 2020 11:08:58 GMT\" , \"x-amz-apigw-id\" : \" ID \" , \"x-amzn-remapped-content-length\" : \"2741\" , \"x-amzn-remapped-date\" : \"Thu, 22 Oct \"\"2020 11:08:57 \"\"GMT\" , \"x-amzn-remapped-x-amzn-requestid\" : \"eaea00d2-11f8-40d8-adce-f6c9f17e9815\" , \"x-amzn-requestid\" : \"4102349a-a5da-4bfc-ad78-40f48885985f\" }, \"HTTPStatusCode\" : 200 , \"RequestId\" : \"4102349a-a5da-4bfc-ad78-40f48885985f\" , \"RetryAttempts\" : 0 }, \"findings\" :[ { \"accountId\" : \" ACCOUNT ID \" , \"archived\" : false , \"category\" : \"CLASSIFICATION\" , \"classificationDetails\" :{ \"detailedResultsLocation\" : \"s3://[export-config-not-set]/AWSLogs/ ACCOUNT ID /Macie/us-east-1/\" , \"jobArn\" : \"arn:aws:macie2:us-east-1\" , \"jobId\" : \"088009521d393eda440a24f3c7ad8fbd\" , \"result\" :{ \"additionalOccurrences\" : false , \"customDataIdentifiers\" :{ \"detections\" :[ ], \"totalCount\" : 0 }, \"mimeType\" : \"application/zip\" , \"sensitiveData\" :[ { \"category\" : \"PERSONAL INFORMATION\" , \"detections\" :[ { \"count\" : 80 , \"type\" : \"PHONE NUMBER\" }, { \"count\" : 5 , \"type\" : \"ADDRESS\" }, { \"count\" : 207 , \"type\" : \"NAME\" } ], \"totalCount\" : 292 }, { \"category\" : \"CREDENTIALS\" , \"detections\" :[ { \"count\" : 5 , \"type\" : \"AWS CREDENTIALS\" } ], \"totalCount\" : 5 } ], \"sizeClassified\" : 44213802 , \"status\" :{ \"code\" : \"PARTIAL\" , \"reason\" : \"ARCHIVE CONTAINS UNPROCESSED FILES\" } } }, \"count\" : 1 , \"createdAt\" : da tet ime.da tet ime( 2020 , 10 , 22 , 3 , 12 , 9 , 364000 , \"tzinfo=tzutc())\" , \"description\" : \"The object contains more than one type of \"\"sensitive information.\" , \"id\" : \" FINDING ID \" , \"partition\" : \"aws\" , \"region\" : \"us-east-1\" , \"resourcesAffected\" :{ \"s3Bucket\" :{ \"arn\" : \"arn:aws:s3:::testexample\" , \"createdAt\" : da tet ime.da tet ime( 2020 , 9 , 14 , 10 , 31 , 56 , \"tzinfo=tzutc())\" , \"defaultServerSideEncryption\" :{ \"encryptionType\" : \"NONE\" }, \"name\" : \"testexample\" , \"owner\" :{ \"displayName\" : \"lab aws\" , \"id\" : \" OWNER ID \" }, \"publicAccess\" :{ \"effectivePermission\" : \"PUBLIC\" , \"permissionConfiguration\" :{ \"accountLevelPermissions\" :{ \"blockPublicAccess\" :{ \"blockPublicAcls\" : false , \"blockPublicPolicy\" : false , \"ignorePublicAcls\" : false , \"restrictPublicBuckets\" : false } }, \"bucketLevelPermissions\" :{ \"accessControlList\" :{ \"allowsPublicReadAccess\" : false , \"allowsPublicWriteAccess\" : false }, \"blockPublicAccess\" :{ \"blockPublicAcls\" : false , \"blockPublicPolicy\" : false , \"ignorePublicAcls\" : false , \"restrictPublicBuckets\" : false }, \"bucketPolicy\" :{ \"allowsPublicReadAccess\" : true , \"allowsPublicWriteAccess\" : false } } } }, \"tags\" :[ ] }, \"s3Object\" :{ \"bucketArn\" : \"arn:aws:s3:::testsiemplify\" , \"eTag\" : \"8dfbe2ba101b3ca0a62f8fde823503b4-5\" , \"extension\" : \"zip\" , \"key\" : \"awscliv2.zip\" , \"lastModified\" : da tet ime.da tet ime( 2020 , 9 , 28 , 18 , 47 , 30 , \"tzinfo=tzutc())\" , \"path\" : \"testexample/awscliv2.zip\" , \"publicAccess\" : false , \"serverSideEncryption\" :{ \"encryptionType\" : \"NONE\" }, \"size\" : 33775890 , \"storageClass\" : \"STANDARD\" , \"tags\" :[ ], \"versionId\" : \"\" } }, \"sample\" : false , \"schemaVersion\" : \"1.0\" , \"severity\" :{ \"description\" : \"High\" , \"score\" : 3 }, \"title\" : \"The S3 object contains multiple types of sensitive \"\"information.\" , \"type\" : \"SensitiveData:S3Object/Multiple\" , \"updatedAt\" : da tet ime.da tet ime( 2020 , 10 , 22 , 3 , 12 , 9 , 364000 , \"tzinfo=tzutc())\" } ] } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful: \"Amazon Macie findings found\" If is success=False, for example no findings were found: \"No findings were returned.\" The action should fail and stop a playbook execution: If a critical error, like wrong credentials or lost connectivity is reported: \"Failed to connect to the Amazon Macie service!",
+          "This process ensures that every entity is correctly indexed as a unique asset, making it fully searchable and actionable in playbooks.",
+          "Action results Script result Script result name Value options Example is success True or False is success:False JSON Result { \"Policy\" : { \"Version\" : \"2012-10-17\" , \"Statement\" : [ { \"Sid\" : \"AddPerm\" , \"Effect\" : \"Allow\" , \"Principal\" : \" \" , \"Action\" : \"s3:GetObject\" , \"Resource\" : \"arn:aws:s3:::testexample/ \" } ] } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful: \"Amazon Macie findings found\" If is success=False, for example no findings were found: \"No findings were returned.\" The action should fail and stop a playbook execution: If a critical error, like wrong credentials or lost connectivity is reported: \"Failed to connect to the Amazon Macie service!"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "awscliv2.zip",
+      "body.storage",
+      "ime.da",
+      "resumedraft.action",
+      "viewpage.action"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:19.035Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-marketplace/card.json",
+  "product_name": "Google SecOps Marketplace",
+  "product_slug": "google-secops-marketplace"
+}

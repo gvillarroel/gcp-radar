@@ -1,0 +1,108 @@
+{
+  "feature_name": "GKE Cost Allocation",
+  "feature_slug": "gke-cost-allocation",
+  "summary": "GKE Cost Allocation shows cluster cost breakdowns by namespace and pod labels for CPU and memory usage.",
+  "extended_definition": "GKE Cost Allocation shows cluster cost breakdowns by namespace and pod labels for CPU and memory usage.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/reducing-costs-by-scaling-down-gke-off-hours"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Best practices for running batch workloads on GKE \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 149,
+        "relevance": "",
+        "evidence_snippets": [
+          "Set GKE cost allocation Use GKE cost allocation get insights about cluster resource requests for each tenant on a namespace basis.",
+          "The management of GKE resources might follow criteria such as tenant isolation, quotas and limit ranges , or cost allocation.",
+          "Autopilot Standard This page introduces the best practices for building and optimizing batch processing platforms with Google Kubernetes Engine (GKE), including best practices for: Architecture Job management Multi-tenancy Security Queueing Storage Performance Cost efficiency Monitoring GKE provides a powerful framework for orchestrating batch workloads such as data processing, training machine learning models , running scientific simulations , and other high performance computing workloads ."
+        ]
+      },
+      {
+        "title": "\"Reducing costs by scaling down GKE clusters during off-peak hours \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/reducing-costs-by-scaling-down-gke-off-hours",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 145,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Generate load to the example application In Cloud Shell, deploy the load generator: kubectl apply -f ./k8s/load-generator The following listing shows the load-generator script: command: [ \"/bin/sh\" , \"-c\" ] args: & #45; while true; do RESP = $( wget -q -O- http://php-apache.default.svc.cluster.local ) ; echo \" $( date +%H ) = $RESP \" ; sleep $( date +%H awk '{ print \"s(\"$0\"/3 a(1)) 0.5+0.5\" }' bc -l ) ; done ; This script runs in your cluster until you delete the load-generator deployment.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Documentation Guides Send feedback Reducing costs by scaling down GKE clusters during off-peak hours Stay organized with collections Save and categorize content based on your preferences.",
+          "This document shows how to scale GKE clusters up in the morning and down at night, but you can use a similar approach to increase and decrease capacity for any known events, such as peak scale events, ad campaigns, or weekend traffic."
+        ]
+      },
+      {
+        "title": "\"Analyze model serving performance and costs with GKE Inference Quickstart\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "source_id": "site-docs-reference-2",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: gcloud container ai profiles list \\ --model = openai/gpt-oss-20b \\ --pricing-model = on-demand \\ --target-ttft-milliseconds = 300 The output shows supported profiles with performance metrics like throughput, latency, and cost per million tokens at the inflection point.",
+          "Using Inference Quickstart Inference Quickstart lets you analyze the performance and cost-efficiency of your inference workloads, and make data-driven decisions about resource allocation and model deployment strategies.",
+          "The following is an example of a command to enable observability features: gcloud container clusters update $CLUSTER NAME \\ --project = $PROJECT ID \\ --location = $LOCATION \\ --enable-managed-prometheus \\ --logging = SYSTEM,WORKLOAD \\ --monitoring = SYSTEM,DEPLOYMENT,HPA,POD,DCGM \\ --auto-monitoring-scope = ALL For more information, see Monitor your inference workloads . (HPA only) Deploy a metrics adapter : A metrics adapter, such as the Custom Metrics Stackdriver Adapter , is necessary if HPA resources were generated in the deployment manifests."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apache.default.svc.cluster.local"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/reducing-costs-by-scaling-down-gke-off-hours",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/reducing-costs-by-scaling-down-gke-off-hours",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/reducing-costs-by-scaling-down-gke-off-hours",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:15.353Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

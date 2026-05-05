@@ -1,0 +1,108 @@
+{
+  "feature_name": "gitRepo volume driver",
+  "feature_slug": "gitrepo-volume-driver",
+  "summary": "The gitRepo volume driver clones a Git repository into a volume for use by a Pod; deprecated on 2025-05-09.",
+  "extended_definition": "The gitRepo volume driver clones a Git repository into a volume for use by a Pod; deprecated on 2025-05-09.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-09",
+    "deprecation_date": "2025-05-09",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/cloud-storage-fuse-csi-driver/volume-attr",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "If the git repository is maliciously constructed, a user with the ability to create a Pod and associate a gitRepo volume could execute arbitrary commands beyond the container boundary.",
+          "If the git repository is maliciously constructed, a user with the ability to create a Pod and associate a gitRepo volume could execute arbitrary commands beyond the container boundary.",
+          "If the git repository is maliciously constructed, a user with the ability to create a Pod and associate a gitRepo volume could execute arbitrary commands beyond the container boundary."
+        ]
+      },
+      {
+        "title": "\"Manually optimize Cloud Storage FUSE CSI driver for performance \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "source_id": "site-docs-reference-2",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "Inference serving example The following example shows how to enable parallel download for inference serving: Create a PersistentVolume and PersistentVolumeClaim manifest with the following specification: apiVersion : v1 kind : PersistentVolume metadata : name : serving-bucket-pv spec : accessModes : - ReadWriteMany capacity : storage : 64Gi persistentVolumeReclaimPolicy : Retain storageClassName : example-storage-class claimRef : namespace : NAMESPACE name : serving-bucket-pvc mountOptions : - implicit-dirs #avoid if list cache enabled and doing metadata prefetch - metadata-cache:ttl-secs:-1 - metadata-cache:stat-cache-max-size-mb:-1 - metadata-cache:type-cache-max-size-mb:-1 - file-cache:max-size-mb:-1 - file-cache:cache-file-for-range-read:true - file-system:kernel-list-cache-ttl-secs:-1 - file-cache:enable-parallel-downloads:true - read ahead kb=1024 csi : driver : gcsfuse.csi.storage.gke.io volumeHandle : BUCKET NAME volumeAttributes : skipCSIBucketAccessCheck : \"true\" gcsfuseMetadataPrefetchOnMount : \"true\" --- apiVersion : v1 kind : PersistentVolumeClaim metadata : name : serving-bucket-pvc namespace : NAMESPACE spec : accessModes : - ReadWriteMany resources : requests : storage : 64Gi volumeName : serving-bucket-pv storageClassName : example-storage-class Replace the following values: NAMESPACE : the Kubernetes namespace where you want to deploy your Pod.",
+          "To use a RAM disk with the Cloud Storage FUSE CSI driver, add the following to your manifest: volumes : - name : gke-gcsfuse-cache emptyDir : medium : Memory Stat cache The Cloud Storage FUSE CSI driver enhances performance by caching file metadata, like size and modification time.",
+          "Use metadata prefetch to pre-populate the metadata cache The metadata prefetch feature lets the Cloud Storage FUSE CSI driver proactively load relevant metadata about the objects in your Cloud Storage bucket into Cloud Storage FUSE caches."
+        ]
+      },
+      {
+        "title": "\"Cloud Storage FUSE CSI driver volume attributes \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/cloud-storage-fuse-csi-driver/volume-attr",
+        "source_id": "site-api-reference",
+        "final_score": 110,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Reference Send feedback Cloud Storage FUSE CSI driver volume attributes Stay organized with collections Save and categorize content based on your preferences.",
+          "If you want to fine-tune specific behavior of the Cloud Storage FUSE CSI driver, you can use volume attributes .",
+          "Valid values (ordered from lowest severity to highest severity): trace debug info warning error Default value : info . gcsfuseMetadataPrefetchOnMount Description : Enable the prefetch of the metadata caches for a specified volume."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcsfuse.csi.storage.gke.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/cloud-storage-fuse-csi-driver/volume-attr"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/cloud-storage-fuse-csi-driver/volume-attr"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cloud-storage-fuse-csi-driver-perf",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/cloud-storage-fuse-csi-driver/volume-attr"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:15.353Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

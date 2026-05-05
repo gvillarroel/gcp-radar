@@ -1,0 +1,138 @@
+{
+  "feature_name": "Cloud Run worker pool deployments",
+  "feature_slug": "cloud-run-worker-pool-deployments",
+  "summary": "Cloud Deploy can deploy containerized workloads to Cloud Run worker pools.",
+  "extended_definition": "Cloud Deploy can deploy containerized workloads to Cloud Run worker pools.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deploy/docs/deploy-app-run",
+      "https://docs.cloud.google.com/deploy/docs/execution-environment",
+      "https://docs.cloud.google.com/deploy/docs/gke-targets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Deploy an app to Cloud Run using Cloud Deploy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deploy/docs/deploy-app-run",
+        "source_id": "site-docs-reference-2",
+        "final_score": 85,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following command from the deploy-run-quickstart directory to create a release resource that represents the container image to deploy: Services gcloud deploy releases create test - release - 001 \\ --project= PROJECT ID \\ --region=us-central1 \\ --delivery-pipeline=my-run-demo-app-1 \\ --images=my-app-image=us-docker.pkg.dev/cloudrun/container/hello@sha256:95ade4b17adcd07623b0a0c68359e344fe54e65d0cb01b989e24c39f2fcd296a Jobs gcloud deploy releases create test - release - 001 \\ --project= PROJECT ID \\ --region=us-central1 \\ --delivery-pipeline=my-run-demo-app-1 \\ --images=my-app-image=us-docker.pkg.dev/cloudrun/container/job@sha256:8eb3f5e72586de6375abe95aa67511c57c61d35fb37d5670e4d68624a68ef916 Worker pools (Preview) gcloud deploy releases create test - release - 001 \\ --project= PROJECT ID \\ --region=us-central1 \\ --delivery-pipeline=my-run-demo-app-1 \\ --skaffold-version=2.17.0 \\ --images=my-app-image=us-docker.pkg.dev/cloudrun/container/hello@sha256:95ade4b17adcd07623b0a0c68359e344fe54e65d0cb01b989e24c39f2fcd296a Notice the --images= flag , which you use to replace the placeholder ( my-app-image ) in the service, job, or worker pool definition with the specific, SHA-qualified image.",
+          "Delete the deploy-qs-dev Cloud Run service, job, or worker pool: Services gcloud run services delete deploy - run - service - dev -- region = us - central1 -- project = PROJECT ID Jobs gcloud run jobs delete deploy - run - job - dev -- region = us - central1 -- project = PROJECT ID Worker pools (Preview) gcloud beta run worker-pools delete deploy-run-worker-pool-dev --region=us-central1 --project= PROJECT ID Delete the deploy-qs-prod service, job, or worker pool: Services gcloud run services delete deploy - run - service - prod -- region = us - central1 -- project = PROJECT ID Jobs gcloud run jobs delete deploy - run - job - prod -- region = us - central1 -- project = PROJECT ID Worker pools (Preview) gcloud beta run worker - pools delete deploy - run - worker - pool - prod -- region = us - central1 -- project = PROJECT ID Delete the delivery pipeline, targets, release and rollouts: gcloud deploy delete -- file = clouddeploy . yaml -- force -- region = us - central1 -- project = PROJECT ID Delete the Cloud Storage buckets that Cloud Deploy created.",
+          "Create a new directory, named deploy-run-quickstart and navigate into it. mkdir deploy-run-quickstart cd deploy-run-quickstart Create a file named skaffold.yaml with the following contents: Services apiVersion: skaffold/v4beta7 kind: Config metadata: name: deploy-run-quickstart profiles: - name: dev manifests: rawYaml: - run-service-dev.yaml - name: prod manifests: rawYaml: - run-service-prod.yaml deploy: cloudrun: {} Jobs apiVersion: skaffold/v4beta7 kind: Config metadata: name: deploy-run-quickstart profiles: - name: dev manifests: rawYaml: - run-job-dev.yaml - name: prod manifests: rawYaml: - run-job-prod.yaml deploy: cloudrun: {} Worker pools (Preview) apiVersion: skaffold/v4beta7 kind: Config metadata: name: deploy-run-quickstart profiles: - name: dev manifests: rawYaml: - run-worker-pool-dev.yaml - name: prod manifests: rawYaml: - run-worker-pool-prod.yaml deploy: cloudrun: {} This file is a minimal Skaffold config, identifying your Cloud Run services, jobs, or worker pools."
+        ]
+      },
+      {
+        "title": "Deploy to a Google Kubernetes Engine cluster \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/gke-targets",
+        "source_id": "site-docs-reference-2",
+        "final_score": 83,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Here's an example that uses RENDER and DEPLOY : executionConfigs : - usages : - RENDER - DEPLOY workerPool : \"projects/p123/locations/us-central1/workerPools/wp123\" See Access private GKE clusters from Cloud Build private pools using Identity Service for GKE and Access private GKE clusters with Cloud Build private pools for more information.",
+          "When Cloud Deploy and the worker pool are in separate projects To communicate with a private pool that has access to a VPC and that's in a different project from your target, the Cloud Deploy service agent needs sufficient permissions to talk to that project.",
+          "Project and permissions considerations You can configure a target to use a private worker pool that can deploy to a private cluster."
+        ]
+      },
+      {
+        "title": "Using Cloud Deploy execution environments \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/execution-environment",
+        "source_id": "site-docs-reference-2",
+        "final_score": 81,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The execution environment consists of the following components: The Cloud Build worker pool (default or private) in which Cloud Deploy executes render, predeploy, deploy, verify, and postdeploy operations The service account (default or alternate) that calls Cloud Deploy to perform these actions The storage location (default or alternate) for rendered manifests in Cloud Storage The Cloud Build timeout for operations (default or custom) This document describes the default execution environment, service accounts, and storage for Cloud Deploy, as well as why and how you can change these defaults.",
+          "The following is a sample target configuration that specifies a private worker pool for DEPLOY , and the default worker pool for RENDER , PREDEPLOY , POSTDEPLOY and VERIFY : executionConfigs : - usages : - DEPLOY privatePool : workerPool : \"projects/p123/locations/us-central1/workerPools/wp123\" - usages : - RENDER - PREDEPLOY - VERIFY - POSTDEPLOY Note: if Cloud Deploy is running in a different project from the worker pool's project, make sure the service agent has permission on the worker pool in that project.",
+          "Changing the storage location To change the storage bucket from the Cloud Deploy default, add the following line to the target definition in the workerPool stanza: artifactStorage: \"gs://[bucket name]/[dir]\" This configuration changes where the rendered manifests are stored, but does not affect where the rendering source is stored ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "clouddeploy.jobRunner",
+      "dev.yaml",
+      "docker.pkg.dev",
+      "iam.gserviceaccount.com",
+      "prod.yaml",
+      "run.googleapis.com",
+      "skaffold.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/deploy-app-run",
+        "https://docs.cloud.google.com/deploy/docs/execution-environment",
+        "https://docs.cloud.google.com/deploy/docs/gke-targets"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/deploy-app-run",
+        "https://docs.cloud.google.com/deploy/docs/execution-environment",
+        "https://docs.cloud.google.com/deploy/docs/gke-targets"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/deploy-app-run",
+        "https://docs.cloud.google.com/deploy/docs/execution-environment",
+        "https://docs.cloud.google.com/deploy/docs/gke-targets"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/deploy-app-run",
+        "https://docs.cloud.google.com/deploy/docs/execution-environment",
+        "https://docs.cloud.google.com/deploy/docs/gke-targets"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/deploy-app-run",
+        "https://docs.cloud.google.com/deploy/docs/execution-environment",
+        "https://docs.cloud.google.com/deploy/docs/gke-targets"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/deploy-app-run",
+        "https://docs.cloud.google.com/deploy/docs/execution-environment",
+        "https://docs.cloud.google.com/deploy/docs/gke-targets"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:28.700Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deploy/card.json",
+  "product_name": "Cloud Deploy",
+  "product_slug": "cloud-deploy"
+}

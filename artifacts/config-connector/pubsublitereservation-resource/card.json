@@ -1,0 +1,98 @@
+{
+  "feature_name": "PubSubLiteReservation resource",
+  "feature_slug": "pubsublitereservation-resource",
+  "summary": "PubSubLiteReservation is a Config Connector resource for managing Pub/Sub Lite reservations.",
+  "extended_definition": "PubSubLiteReservation is a Config Connector resource for managing Pub/Sub Lite reservations.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/concepts/managing-conflicts",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Managing resources with the resourceID field \\_|\\_ Config Connector \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids",
+        "source_id": "site-docs-reference",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "Managing resources with the resourceID field This page explains how to manage resources with the resourceID field.",
+          "Acquiring a folder To acquire a folder using Config Connector with the resourceID field, complete the following steps: Copy the following contents into a file named folder.yaml . apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Folder metadata : annotations : cnrm.cloud.google.com/organization-id : ORG ID Remove the deletion-policy annotation if it is safe to delete the folder when the resource is deleted from your cluster. cnrm.cloud.google.com/deletion-policy : \"abandon\" name : folder-sample-for-acquisition spec : resourceID : ACQUIRED FOLDER ID displayName : ACQUIRED FOLDER DISPLAY NAME Replace the following: ORG ID with the numeric ID for your organization.",
+          "Copy the following contents into a file named bigquery-dataset.yaml . apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryDataset metadata : name : bigquerydataset-sample-for-creation spec : resourceID : bigquerydataset sample with resourceid defaultTableExpirationMs : 3600000 description : \"BigQuery Dataset Sample with the ResourceID Field\" friendlyName : bigquerydataset-sample-with-resourceid location : US Apply the YAML file to your cluster. kubectl apply --namespace CC NAMESPACE -f bigquery-dataset.yaml Replace CC NAMESPACE with the namespace Config Connector manages resources from."
+        ]
+      },
+      {
+        "title": "\"Managing and deleting resources \\_|\\_ Config Connector \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources",
+        "source_id": "site-docs-reference",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "Managing and deleting resources This page explains how Config Connector manages an existing resource and handles deleting resources .",
+          "If a resource with the same name already exists, Config Connector acquires that resource and starts managing it.",
+          "To learn about how to use the resourceID field, see Managing resources with the resourceID field ."
+        ]
+      },
+      {
+        "title": "\"Managing conflicts with multiple Config Connector resources \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/concepts/managing-conflicts",
+        "source_id": "site-docs-reference",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you are Managing resources with the resourceID field you can create multiple resources with the same Google Cloud resource name, created under the same namespace.",
+          "Managing conflicts with multiple Config Connector resources This page describes how Config Connector handles conflicts.",
+          "In the following example, a manifest for the default ComputeNetwork uses a management policy of none , which means that conflicts are not prevented: apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : annotations : cnrm.cloud.google.com/management-conflict-prevention-policy : \"none\" cnrm.cloud.google.com/project-id : \" PROJECT-ID \" cnrm.cloud.google.com/deletion-policy : \"abandon\" name : default spec : description : Default network for the project Limitations Conflict prevention has the following limitations: Conflict prevention does not work for resources that don't support labels."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.cnrm.cloud.google.com",
+      "cnrm.cloud.google.com",
+      "compute.cnrm.cloud.google.com",
+      "dataset.yaml",
+      "folder.yaml",
+      "pubsub.cnrm.cloud.google.com",
+      "resourcemanager.cnrm.cloud.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-deleting-resources",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/managing-conflicts"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:47.576Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector"
+}

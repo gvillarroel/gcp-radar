@@ -1,0 +1,274 @@
+{
+  "feature_name": "Key Visualizer heatmap for entity keys",
+  "feature_slug": "key-visualizer-heatmap-for-entity-keys",
+  "summary": "Key Visualizer can visualize heatmap patterns for entity keys to help predict workload patterns.",
+  "extended_definition": "Key Visualizer can visualize heatmap patterns for entity keys to help predict workload patterns.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/access/iam",
+      "https://docs.cloud.google.com/datastore/docs/cmek",
+      "https://docs.cloud.google.com/datastore/docs/concepts/entities",
+      "https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.key.Key"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Identity and Access Management (IAM) \\_|\\_ Datastore \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "source_id": "site-iam-reference",
+        "final_score": 215,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Intended for application developers and service accounts. roles/datastore.viewer appengine.applications.get datastore.databases.get datastore.databases.getMetadata datastore.databases.list datastore.entities.get datastore.entities.list datastore.schemas.get datastore.schemas.list datastore.namespaces.get datastore.namespaces.list datastore.statistics.get datastore.statistics.list resourcemanager.projects.get resourcemanager.projects.list datastore.insights.get Read access to all Datastore mode database resources. roles/datastore.importExportAdmin appengine.applications.get datastore.databases.export datastore.databases.getMetadata datastore.databases.import datastore.operations.cancel datastore.operations.get datastore.operations.list resourcemanager.projects.get resourcemanager.projects.list Full access to manage imports and exports. roles/datastore.bulkAdmin resourcemanager.projects.get resourcemanager.projects.list datastore.databases.getMetadata datastore.databases.bulkDelete datastore.operations.cancel datastore.operations.get datastore.operations.list Full access to manage bulk operations. roles/datastore.indexAdmin appengine.applications.get datastore.databases.getMetadata datastore.schemas. datastore.operations.get datastore.operations.list resourcemanager.projects.get resourcemanager.projects.list Full access to manage index definitions. roles/datastore.keyVisualizerViewer datastore.databases.getMetadata datastore.keyVisualizerScans.get datastore.keyVisualizerScans.list resourcemanager.projects.get resourcemanager.projects.list Full access to Key Visualizer scans. roles/datastore.backupSchedulesViewer datastore.backupSchedules.get datastore.backupSchedules.list Read access to backup schedules in a Datastore mode database. roles/datastore.backupSchedulesAdmin datastore.backupSchedules.get datastore.backupSchedules.list datastore.backupSchedules.create datastore.backupSchedules.update datastore.backupSchedules.delete datastore.databases.list datastore.databases.getMetadata Full access to backup schedules in a Datastore mode database. roles/datastore.backupsViewer datastore.backups.get datastore.backups.list Read access to backup information in a Datastore mode location. roles/datastore.backupsAdmin datastore.backups.get datastore.backups.list datastore.backups.delete Full access to backups in a Datastore mode location. roles/datastore.restoreAdmin datastore.backups.get datastore.backups.list datastore.backups.restoreDatabase datastore.databases.list datastore.databases.create datastore.databases.getMetadata datastore.operations.list datastore.operations.get Ability to restore a Datastore mode backup into a new database.",
+          "Entity permission name Description datastore.entities.allocateIds Allocate IDs for keys with an incomplete key path. datastore.entities.create Create an entity. datastore.entities.delete Delete an entity. datastore.entities.get Read an entity. datastore.entities.list List the keys of entities in a project. ( datastore.entities.get is required to access the entity data.) datastore.entities.update Update an entity.",
+          "This role also gives the ability to create new databases, not necessarily by cloning. roles/datastore.statisticsViewer resourcemanager.projects.get resourcemanager.projects.list datastore.databases.getMetadata datastore.insights.get datastore.keyVisualizerScans.get datastore.keyVisualizerScans.list datastore.statistics.list datastore.statistics.get Read access to Insights, Stats, and Key Visualizer scans."
+        ]
+      },
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Datastore \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 177,
+        "relevance": "",
+        "evidence_snippets": [
+          "CMEK-protected databases support Key Visualizer only for entity and document data, not for index data.",
+          "If you have specific compliance or regulatory requirements related to the keys that protect your data, you can use customer-managed encryption keys (CMEK) for Datastore mode.",
+          "CMEK and key availability When keys are unavailable or disabled, be aware of the following behaviors that can occur in CMEK-enabled databases: You can change Datastore mode point-in-time recovery (PITR) settings on a CMEK-enabled database even if the key is unavailable because PITR settings are database metadata, which isn't encrypted by CMEK."
+        ]
+      },
+      {
+        "title": "Entities, Properties, and Keys \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/concepts/entities",
+        "source_id": "site-iam-reference",
+        "final_score": 172,
+        "relevance": "",
+        "evidence_snippets": [
+          "The key consists of the following components: The namespace of the entity, which allows for multitenancy The kind of the entity, which categorizes it for the purpose of queries An identifier for the individual entity, which can be either a key name string an integer numeric ID An optional ancestor path locating the entity within the database hierarchy An application can fetch an individual entity from the database using the entity's key, or it can retrieve one or more entities by issuing a query based on the entities' keys or property values.",
+          "For more information, see Set up authentication for a local development environment . task 1 = datastore . entity \"Task\" do t t [ \"category\" ] = \"Personal\" t [ \"done\" ] = false t [ \"priority\" ] = 4 t [ \"description\" ] = \"Learn Cloud Datastore\" end task 2 = datastore . entity \"Task\" do t t [ \"category\" ] = \"Personal\" t [ \"done\" ] = false t [ \"priority\" ] = 5 t [ \"description\" ] = \"Integrate Cloud Datastore\" end tasks = datastore . save task 1 , task 2 task key 1 = tasks [ 0 ]. key task key 2 = tasks [ 1 ]. key You can look up multiple entities: C# To learn how to install and use the client library for Cloud Datastore, see Cloud Datastore client libraries .",
+          "This operation increments properties by the specified values: REST POST https://datastore.googleapis.com/v1/projects/{projectId}:commit { \"mode\": \"NON TRANSACTIONAL\", \"mutations\": [ { \"propertyMask\": {}, // Empty write mask indicates only transforms can change the entity. \"propertyTransforms\": [ { \"property\": \"quantity\", \"increment\": { \"integerValue\": 2 } }, { \"property\": \"inStock\", \"maximum\": { \"integerValue\": 100 } }, ] \"upsert\": { \"key\": { \"path\": [ { \"kind\": \"Items\", \"name\": \"entity 1\" } ] } } } ] } The following example sets a property value to the time at which the server processed the request with millisecond precision."
+        ]
+      },
+      {
+        "title": "Class Key (2.24.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.key.Key",
+        "source_id": "site-python-reference",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Completed keys compare equal if they have the same path, project, database, and namespace. (Note that database=None is considered to refer to the default database.) Returns Type Description bool True if the keys compare equal, else False. hash hash () Hash this key for use in a dictionary lookup.",
+          "Returns Type Description int a hash of the key's state. ne ne ( other ) Compare two keys for inequality.",
+          "Methods eq eq ( other ) Compare two keys for equality."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.applications.get",
+      "client.key",
+      "com.google.cloud.datastore",
+      "com.google.cloud.datastore.Datastore",
+      "datastore.backups.delete",
+      "datastore.backups.get",
+      "datastore.backups.list",
+      "datastore.backups.restoreDatabase",
+      "datastore.backupsAdmin",
+      "datastore.backupSchedules.create",
+      "datastore.backupSchedules.delete",
+      "datastore.backupSchedules.get",
+      "datastore.backupSchedules.list",
+      "datastore.backupSchedules.update",
+      "datastore.backupSchedulesAdmin",
+      "datastore.backupSchedulesViewer",
+      "datastore.backupsViewer",
+      "datastore.bulkAdmin",
+      "datastore.Client",
+      "datastore.databases.bulkDelete",
+      "datastore.databases.create",
+      "datastore.databases.export",
+      "datastore.databases.get",
+      "datastore.databases.getMetadata",
+      "datastore.databases.import",
+      "datastore.databases.list",
+      "datastore.entities.allocateIds",
+      "datastore.entities.create",
+      "datastore.entities.delete",
+      "datastore.entities.get",
+      "datastore.entities.list",
+      "datastore.entities.update",
+      "datastore.googleapis.com",
+      "datastore.importExportAdmin",
+      "datastore.indexAdmin",
+      "datastore.insights.get",
+      "datastore.Key",
+      "datastore.keyVisualizerScans.get",
+      "datastore.keyVisualizerScans.list",
+      "datastore.keyVisualizerViewer",
+      "datastore.namespaces.get",
+      "datastore.namespaces.list",
+      "datastore.operations.cancel",
+      "datastore.operations.get",
+      "datastore.operations.list",
+      "datastore.restoreAdmin",
+      "datastore.schemas",
+      "datastore.schemas.get",
+      "datastore.schemas.list",
+      "datastore.statistics.get",
+      "datastore.statistics.list",
+      "datastore.statisticsViewer",
+      "datastore.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/datastore.backupsAdmin",
+      "roles/datastore.backupSchedulesAdmin",
+      "roles/datastore.backupSchedulesViewer",
+      "roles/datastore.backupsViewer",
+      "roles/datastore.bulkAdmin",
+      "roles/datastore.importExportAdmin",
+      "roles/datastore.indexAdmin",
+      "roles/datastore.keyVisualizerViewer",
+      "roles/datastore.restoreAdmin",
+      "roles/datastore.statisticsViewer",
+      "roles/datastore.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/concepts/entities",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.key.Key"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/concepts/entities",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.key.Key"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/concepts/entities",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.key.Key"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/concepts/entities",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.key.Key"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/concepts/entities",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.key.Key"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/concepts/entities",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.key.Key"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/concepts/entities",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.key.Key"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/concepts/entities",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.key.Key"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/concepts/entities",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.key.Key"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/concepts/entities",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.key.Key"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:56.488Z",
+  "source_step08_card": "data/step-08/current/products/datastore/card.json",
+  "product_name": "Datastore",
+  "product_slug": "datastore"
+}

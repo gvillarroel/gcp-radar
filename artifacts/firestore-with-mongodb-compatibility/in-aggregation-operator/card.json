@@ -1,0 +1,170 @@
+{
+  "feature_name": "$in aggregation operator",
+  "feature_slug": "in-aggregation-operator",
+  "summary": "Supports the $in aggregation operator.",
+  "extended_definition": "Supports the $in aggregation operator.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+      "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+      "https://docs.cloud.google.com/firestore/native/docs/query-data/queries"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported features: 8.0 \\_|\\_ Firestore with MongoDB compatibility \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "source_id": "site-docs-root",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "Array operators Operator Supported $ Yes $[] Yes $[<identifier>] Yes $addToSet Yes $percentile Yes $pop Yes $pull Yes $pullAll Yes $push Yes Bitwise operators Operator Supported $bit Yes Field operators Operator Supported $currentDate Yes $inc Yes $max Yes $min Yes $mul Yes $rename Yes $set Yes $setOnInsert Yes $unset Yes Update modifiers Modifier Supported $each Yes $position Yes $slice Yes $sort Yes Aggregation pipeline operators Firestore with MongoDB compatibility supports the following aggregation pipeline operators.",
+          "Operator Supported $abs Yes $add Yes $ceil Yes $divide Yes $exp Yes $floor Yes $ln Yes $log Yes $log10 Yes $mod Yes $multiply Yes $pow Yes $round Yes $sqrt Yes $subtract Yes $trunc Yes Array operators Operator Supported $arrayElemAt Yes $arrayToObject Yes $concatArrays Yes $filter Yes $firstN Yes $in Yes $indexOfArray Yes $isArray Yes $lastN Yes $map Yes $maxN Yes $minN Yes $objectToArray Yes $range Yes $reduce Yes $reverseArray Yes $size Yes $slice Yes $sortArray Yes $zip Yes Boolean operators Operator Supported $and Yes $not Yes $or Yes Comparison operators Operator Supported $cmp Yes $eq Yes $gt Yes $gte Yes $lt Yes $lte Yes $ne Yes Conditional expression operators Operator Supported $cond Yes $ifNull Yes $switch Yes Data size operators Operator Supported $binarySize Yes $bsonSize Yes Date operators Operator Supported $dateAdd Yes $dateDiff Yes $dateFromParts Yes $dateFromString Yes $dateSubtract Yes $dateToParts Yes $dateToString Yes $dateTrunc Yes $dayOfMonth Yes $dayOfWeek Yes $dayOfYear Yes $hour Yes $isoDayOfWeek Yes $isoWeek Yes $isoWeekYear Yes $millisecond Yes $minute Yes $month Yes $second Yes $toDate Yes $week Yes $year Yes Timestamp operators Operator Supported $tsIncrement No $tsSecond No Miscellaneous operators Operator Supported $getField Yes $natural Yes (ascending) $rand Yes $sampleRate No $toHashedIndexKey No Literal expression operators Operator Supported $literal Yes Object operators Operator Supported $mergeObjects Yes $objectToArray Yes $setField No Set operators Operator Supported $allElementsTrue Yes $anyElementTrue Yes $setDifference Yes $setEquals Yes $setIntersection Yes $setIsSubset Yes $setUnion Yes Stage operators Operator Supported $addFields Yes $bucket Yes $bucketAuto No $changeStream No $collStats No $count Yes $currentOp No $documents Yes $facet Yes $geoNear No $graphLookup No $group Yes $indexStats No $limit Yes $listLocalSessions No $listSessions No $lookup Yes $match Yes $merge No $out No $planCacheStats No $project Yes $redact No $replaceRoot Yes $replaceWith Yes $sample Yes $set Yes $search No $setWindowFields No $skip Yes $sort Yes $sortByCount Yes $unionWith Yes $unset Yes $unwind Yes String operators Operator Supported $concat Yes $dateFromString Yes $dateToString Yes $indexOfBytes Yes $indexOfCP Yes $ltrim Yes $regexFind Yes $regexFindAll Yes $regexMatch Yes $replaceAll Yes $replaceOne Yes $rtrim Yes $split Yes $strcasecmp Yes $strLenBytes Yes $strLenCP Yes $substr Yes $substrBytes Yes $substrCP Yes $toLower Yes $toString Yes $toUpper Yes $trim Yes System variables Variable Supported $$CLUSTERTIME No $$CURRENT No $$DESCEND No $$KEEP No $$NOW Yes $$PRUNE No $$REMOVE Yes $$ROOT Yes Text operators Operator Supported $meta No Trigonometry operators Operator Supported $acos No $acosh No $asin No $asinh No $atan No $atan2 No $atanh No $cos No $cosh No $degreesToRadians No $radiansToDegrees No $sin No $sinh No $tan No $tanh No Type operators Operator Supported $convert Yes $isNumber Yes $toBool Yes $toDate Yes $toDecimal Yes $toDouble Yes $toInt Yes $toLong Yes $toObjectId Yes $toString Yes $type Yes Variable operators Operator Supported $let Yes Geospatial Firestore with MongoDB compatibility supports the following Geospatial operators.",
+          "Query and projection operators Firestore with MongoDB compatibility supports the following query and projection operators: Array operators Operator Supported $all Yes $elemMatch Yes $size Yes Bitwise operators Operator Supported $bitsAllClear No $bitsAllSet No $bitsAnyClear No $bitsAnySet No Comment operator Operator Supported $comment No Comparison operators Operator Supported $eq Yes $gt Yes $gte Yes $in Yes $lt Yes $lte Yes $ne Yes $nin Yes Element operators Operator Supported $exists Yes $type Yes Evaluation query operators Operator Supported $expr Yes $jsonSchema No $mod Yes $regex Yes $text No $where No Logical operators Operator Supported $and Yes $nor Yes $not Yes $or Yes Projection operators Operator Supported $ Yes $elemMatch Yes $meta Partial (supports textScore) $slice Yes Update operators Firestore with MongoDB compatibility supports the following update operators."
+        ]
+      },
+      {
+        "title": "\"Query and filter data \\_|\\_ Firestore in Native mode \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/query-data/queries",
+        "source_id": "site-docs-root-2",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "Disjunctive normal form Firestore converts queries to disjunctive normal form by applying two rules: Flatten Given conditions A , B , and C : A and (B and C) => A and B and C Distributive Law Given conditions A , B , C , and D : A and (B or C) => (A and B) or (A and C) (A or B) and (C or D) => (A and C) or (A and D) or (B and C) or (B and D) When applying these rules to in and array-contains-any queries, remember that these operators are shorthands for OR .",
+          "Core operations support the following comparison operators: < less than <= less than or equal to == equal to greater than = greater than or equal to != not equal to array-contains array-contains-any in not-in Note: For Apple, Android, and Java, the comparison operator is explicitly named in the method.",
+          "To control the number of results returned, use a limit clause or paginate your query . array-contains-any Use the array-contains-any operator to combine up to 30 array-contains clauses on the same field with a logical OR ."
+        ]
+      },
+      {
+        "title": "\"Exporting and importing data \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "source_id": "site-docs-root-2",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "The PITR export operation supports all filters, including exporting all documents and exporting specific collection groups.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]",
+          "Note: Exporting a collection group won't automatically export subcollections of the collections within the group. gcloud firestore export gs:// [BUCKET NAME] \\ --collection-ids= [COLLECTION GROUP ID 1] , [COLLECTION GROUP ID 2] \\ --database= [DATABASE] For example, you can design a restaurants collection in the foo database to include multiple subcollections, such as ratings , reviews , or outlets ."
+        ]
+      },
+      {
+        "title": "\"Audit logging information \\_|\\_ Firestore with MongoDB compatibility \\_\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 101,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ google.cloud.location.Locations.GetLocation google.cloud.location.Locations.ListLocations google.firestore.admin.v1.FirestoreAdmin.GetBackup google.firestore.admin.v1.FirestoreAdmin.GetBackupSchedule google.firestore.admin.v1.FirestoreAdmin.GetDatabase google.firestore.admin.v1.FirestoreAdmin.GetField google.firestore.admin.v1.FirestoreAdmin.GetIndex google.firestore.admin.v1.FirestoreAdmin.ListBackupSchedules google.firestore.admin.v1.FirestoreAdmin.ListBackups google.firestore.admin.v1.FirestoreAdmin.ListDatabases google.firestore.admin.v1.FirestoreAdmin.ListFields google.firestore.admin.v1.FirestoreAdmin.ListIndexes google.firestore.admin.v1beta1.FirestoreAdmin.GetIndex google.firestore.admin.v1.MongoDBCompatible.ListIndexes google.firestore.admin.v1.MongoDBCompatible.ListDatabases ADMIN WRITE google.firestore.admin.v1.FirestoreAdmin.CreateBackupSchedule google.firestore.admin.v1.FirestoreAdmin.CreateDatabase google.firestore.admin.v1.FirestoreAdmin.CreateIndex google.firestore.admin.v1.FirestoreAdmin.DeleteBackup google.firestore.admin.v1.FirestoreAdmin.DeleteBackupSchedule google.firestore.admin.v1.FirestoreAdmin.DeleteDatabase google.firestore.admin.v1.FirestoreAdmin.DeleteIndex google.firestore.admin.v1.FirestoreAdmin.RestoreDatabase google.firestore.admin.v1.FirestoreAdmin.UpdateBackupSchedule google.firestore.admin.v1.FirestoreAdmin.UpdateDatabase google.firestore.admin.v1.FirestoreAdmin.UpdateField google.longrunning.Operations.CancelOperation google.longrunning.Operations.DeleteOperation DATA READ google.firestore.v1.MongoDBCompatible.Find google.firestore.v1.MongoDBCompatible.Aggregate google.firestore.v1.MongoDBCompatible.GetMore google.firestore.v1.MongoDBCompatible.ListCollections google.firestore.v1.MongoDBCompatible.Count google.firestore.v1.MongoDBCompatible.Distinct google.firestore.v1.MongoDBCompatible.CommitTransaction google.firestore.v1.MongoDBCompatible.AbortTransaction google.firestore.v1.MongoDBCompatible.EndSessions google.firestore.v1.MongoDBCompatible.KillCursors DATA WRITE google.firestore.v1.MongoDBCompatible.Insert google.firestore.v1.MongoDBCompatible.Update google.firestore.v1.MongoDBCompatible.Delete google.firestore.v1.MongoDBCompatible.FindAndModify google.firestore.v1.MongoDBCompatible.CreateCollection Identify request callers Audit Log entries include information about the identity that performed the logged operation.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]",
+          "For more information about Cloud Audit Logs, see the following: Types of audit logs Audit log entry structure Storing and routing audit logs Cloud Logging pricing summary Enable Data Access audit logs Notes When configuring audit logging, use the service name datastore.googleapis.com to configure both datastore.googleapis.com and firestore.googleapis.com."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datastore.googleapis.com",
+      "firestore.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:06.277Z",
+  "source_step08_card": "data/step-08/current/products/firestore-with-mongodb-compatibility/card.json",
+  "product_name": "Firestore with MongoDB compatibility",
+  "product_slug": "firestore-with-mongodb-compatibility"
+}

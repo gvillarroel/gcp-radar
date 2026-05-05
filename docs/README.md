@@ -77,9 +77,9 @@ flowchart TD
 
 ## Current Operational Shape
 
-The pipeline is implemented through Step 07. The practical challenge is no
-longer whether the middle stages exist; it is deciding which generated feature
-outputs are strong enough to promote into source-of-truth artifacts.
+The pipeline is implemented through final report generation. The practical
+challenge is now keeping the card, artifact, and radar layers aligned while
+continuing to improve upstream evidence coverage.
 
 The current working distinction is important:
 
@@ -88,7 +88,7 @@ The current working distinction is important:
 - `current/index.json` is the latest-run index and can represent only a
   targeted rerun
 
-The most important current operating loop is:
+The main upstream improvement loop remains:
 
 1. improve Step 03 URL discovery and classification
 2. rerun Step 04 corpus capture for targeted products
@@ -96,14 +96,10 @@ The most important current operating loop is:
 4. run Step 07 quality gate
 5. triage Step 07 failures and warnings before promotion
 6. push feedback back into Step 02, Step 03, Step 04, and Step 06
+7. regenerate Steps 08, 09, and 10, then run final-output validation
 
-That loop is what steadily reduces unsupported or duplicate feature
-definitions.
-
-The next strategic boundary is promotion: defining how Step 07-passing feature
-outputs become validated `artifacts/` entries and, later, `radar/` reports.
-
-That boundary now has executable stages:
+That loop steadily reduces unsupported or duplicate feature definitions. The
+promotion and reporting boundary now has executable stages:
 
 - Step 08 builds product and feature cards under `data/step-08/current/`.
 - Step 09 promotes reviewed cards into `artifacts/`.

@@ -1,0 +1,166 @@
+{
+  "feature_name": "Kafka Connector library for Pub/Sub and Pub/Sub Lite",
+  "feature_slug": "kafka-connector-library-for-pub-sub-and-pub-sub-lite",
+  "summary": "The Kafka Connector library supports integration with Pub/Sub and Pub/Sub Lite; The Kafka Connector library supports integration with Pub/Sub and Pub/Sub Lite.",
+  "extended_definition": "The Kafka Connector library supports integration with Pub/Sub and Pub/Sub Lite; The Kafka Connector library supports integration with Pub/Sub and Pub/Sub Lite.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+      "https://docs.cloud.google.com/pubsub/docs/connect_kafka",
+      "https://docs.cloud.google.com/pubsub/docs/create-amazon-msk-import-topic",
+      "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Choose Pub/Sub or Cloud Managed Service for Apache Kafka \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "source_id": "site-docs-root-2",
+        "final_score": 282,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Open source Kafka compatibility for lift and shift No Yes Identity and Access Management and security Yes Yes Automatic network configuration Yes Yes Multi-cloud: identical across clouds No Yes Uptime SLA Yes Yes Data plane SLA Yes Not at this time Logging and monitoring Yes Yes Partition rebalancing across brokers Not applicable Yes Automatic capacity Pub/Sub dynamically adjusts capacity based on the incoming message rate and subscriber demand.",
+          "Feature Pub/Sub Managed Service for Apache Kafka Ease of use Easier to set up and maintain Requires more operational effort Cost model Pay-for-use Pay-for-capacity for compute Pay-for-use for networking and storage.",
+          "Home Documentation Data analytics Pub/Sub Guides Send feedback Choose Pub/Sub or Cloud Managed Service for Apache Kafka Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Connect Pub/Sub to Apache Kafka \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/connect_kafka",
+        "source_id": "site-docs-root-2",
+        "final_score": 272,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use the gcloud CLI to read the events from Pub/Sub. gcloud pubsub subscriptions pull PUBSUB SUBSCRIPTION --auto-ack Forward messages from Pub/Sub to Kafka This section describes how to start the source connector, publish messages to Pub/Sub, and read the forwarded messages from Kafka.",
+          "Example: offset.storage.file.filename = /tmp/connect.offsets Forward events from Kafka to Pub/Sub This section describes how to start the sink connector, publish events to Kafka, and then read the forwarded messages from Pub/Sub.",
+          "For integer, float, string, and bytes schemas, the connector passes the bytes of the Kafka record value directly into the Pub/Sub message body."
+        ]
+      },
+      {
+        "title": "\"Create a Amazon Managed Streaming for Apache Kafka import topic \\_|\\_ Pub/Sub\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/create-amazon-msk-import-topic",
+        "source_id": "site-docs-root-2",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see the Pub/Sub Node.js API reference documentation . / TODO ( developer ): Uncomment these variables before running the sample . / // const topicNameOrId = 'YOUR TOPIC NAME OR ID' ; // const clusterArn = 'arn:aws:kafka:...' ; // const mskTopic = 'YOUR MSK TOPIC' ; // const roleArn = 'arn:aws:iam:...' ; // const gcpServiceAccount = 'ingestion-account@...' ; // Imports the Google Cloud client library import { PubSub } from '@google-cloud/pubsub' ; // Creates a client ; cache this for further use const pubSubClient = new PubSub (); async function createTopicWithAwsMskIngestion ( topicNameOrId : string , clusterArn : string , mskTopic : string , awsRoleArn : string , gcpServiceAccount : string , ) { // Creates a new topic with AWS MSK ingestion . await pubSubClient . createTopic ({ name : topicNameOrId , ingestionDataSourceSettings : { awsMsk : { clusterArn , topic : mskTopic , awsRoleArn , gcpServiceAccount , }, }, }); console . log ( Topic $ { topicNameOrId } created with AWS MSK ingestion . ); } Python Before trying this sample, follow the Python setup instructions in Quickstart: Using Client Libraries .",
+          "For more information, see the Pub/Sub Node.js API reference documentation . / TODO ( developer ): Uncomment these variables before running the sample . / // const topicNameOrId = 'YOUR TOPIC NAME OR ID' ; // const clusterArn = 'arn:aws:kafka:...' ; // const mskTopic = 'YOUR MSK TOPIC' ; // const roleArn = 'arn:aws:iam:...' ; // const gcpServiceAccount = 'ingestion-account@...' ; // Imports the Google Cloud client library const { PubSub } = require ( '@google-cloud/pubsub' ); // Creates a client ; cache this for further use const pubSubClient = new PubSub (); async function createTopicWithAwsMskIngestion ( topicNameOrId , clusterArn , mskTopic , awsRoleArn , gcpServiceAccount , ) { // Creates a new topic with AWS MSK ingestion . await pubSubClient . createTopic ({ name : topicNameOrId , ingestionDataSourceSettings : { awsMsk : { clusterArn , topic : mskTopic , awsRoleArn , gcpServiceAccount , }, }, }); console . log ( Topic $ { topicNameOrId } created with AWS MSK ingestion . ); } Node.ts Before trying this sample, follow the Node.js setup instructions in Quickstart: Using Client Libraries .",
+          "Home Documentation Data analytics Pub/Sub Guides Send feedback Create a Amazon Managed Streaming for Apache Kafka import topic Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Publish and receive messages in Pub/Sub by using a client library\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library",
+        "source_id": "site-docs-root",
+        "final_score": 261,
+        "relevance": "",
+        "evidence_snippets": [
+          "MINUTES ); } } } } Node.js / TODO(developer): Uncomment these variables before running the sample. / // const topicNameOrId = 'YOUR TOPIC NAME OR ID'; // const data = JSON.stringify({foo: 'bar'}); // Imports the Google Cloud client library const { PubSub } = require ( ' @google-cloud/pubsub ' ); // Creates a client; cache this for further use const pubSubClient = new PubSub (); async function publishMessage ( topicNameOrId , data ) { // Publishes the message as a string, e.g. \"Hello, world!\" or JSON.stringify(someObject) const dataBuffer = Buffer . from ( data ); // Cache topic objects (publishers) and reuse them. const topic = pubSubClient . topic ( topicNameOrId ); try { const messageId = await topic . publishMessage ({ data : dataBuffer }); console . log ( Message ${ messageId } published. ); } catch ( error ) { console . error ( Received error while publishing: ${ error . message } ); process . exitCode = 1 ; } } Node.js / TODO(developer): Uncomment these variables before running the sample. / // const topicNameOrId = 'YOUR TOPIC NAME OR ID'; // const data = JSON.stringify({foo: 'bar'}); // Imports the Google Cloud client library import { PubSub } from '@google-cloud/pubsub' ; // Creates a client; cache this for further use const pubSubClient = new PubSub (); async function publishMessage ( topicNameOrId : string , data : string ) { // Publishes the message as a string, e.g. \"Hello, world!\" or JSON.stringify(someObject) const dataBuffer = Buffer . from ( data ); // Cache topic objects (publishers) and reuse them. const topic = pubSubClient . topic ( topicNameOrId ); try { const messageId = await topic . publishMessage ({ data : dataBuffer }); console . log ( Message ${ messageId } published. ); } catch ( error ) { console . error ( Received error while publishing: ${ ( error as Error ). message } , ); process . exitCode = 1 ; } } PHP use Google\\Cloud\\PubSub\\MessageBuilder; use Google\\Cloud\\PubSub\\PubSubClient; / Publishes a message for a Pub/Sub topic. @param string $projectId The Google project ID. @param string $topicName The Pub/Sub topic name. @param string $message The message to publish. / function publish message($projectId, $topicName, $message) { $pubsub = new PubSubClient([ 'projectId' => $projectId, ]); $topic = $pubsub->topic($topicName); $topic->publish((new MessageBuilder)->setData($message)->build()); print('Message published' .",
+          "Stop receiving messages. subscriber . stopAsync (); } } } Node.js / TODO(developer): Uncomment these variables before running the sample. / // const subscriptionNameOrId = 'YOUR SUBSCRIPTION NAME OR ID'; // const timeout = 60; // Imports the Google Cloud client library const { PubSub } = require ( ' @google-cloud/pubsub ' ); // Creates a client; cache this for further use const pubSubClient = new PubSub (); function listenForMessages ( subscriptionNameOrId , timeout ) { // References an existing subscription; if you are unsure if the // subscription will exist, try the optimisticSubscribe sample. const subscription = pubSubClient . subscription ( subscriptionNameOrId ); // Create an event handler to handle messages let messageCount = 0 ; const messageHandler = message = > { console . log ( Received message ${ message . id } : ); console . log ( \\tData: ${ message . data } ); console . log ( \\tAttributes: ${ message . attributes } ); messageCount += 1 ; // \"Ack\" (acknowledge receipt of) the message message . ack (); }; // Listen for new messages until timeout is hit subscripti on . on ( 'message' , messageHandler ); // Wait a while for the subscription to run. (Part of the sample only.) setTimeout (() = > { subscription . removeListener ( 'message' , messageHandler ); console . log ( ${ messageCount } message(s) received. ); }, timeout 1000 ); } PHP use Google\\Cloud\\PubSub\\PubSubClient; / Pulls all Pub/Sub messages for a subscription. @param string $projectId The Google project ID. @param string $subscriptionName The Pub/Sub subscription name. / function pull messages($projectId, $subscriptionName) { $pubsub = new PubSubClient([ 'projectId' => $projectId, ]); $subscription = $pubsub->subscription($subscriptionName); foreach ($subscription->pull() as $message) { printf('Message: %s' .",
+          "For more information about BOMs, see The Google Cloud Platform Libraries BOM . <dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>libraries-bom</artifactId> <version>26.76.0</version> <type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-pubsub</artifactId> </dependency> </dependencies> If you are using Gradle , add the following to your dependencies: implementation platform('com.google.cloud:libraries-bom:26.78.0') implementation 'com.google.cloud:google-cloud-pubsub' If you are using sbt , add the following to your dependencies: libraryDependencies += \"com.google.cloud\" % \"google-cloud-pubsub\" % \"1.150.0\" If you're using Visual Studio Code or IntelliJ, you can add client libraries to your project using the following IDE plugins: Cloud Code for VS Code Cloud Code for IntelliJ The plugins provide additional functionality, such as key management for service accounts."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud",
+      "connect.offsets",
+      "connector.git",
+      "e.g",
+      "github.com",
+      "offset.storage.file.filename",
+      "pom.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "https://docs.cloud.google.com/pubsub/docs/connect_kafka",
+        "https://docs.cloud.google.com/pubsub/docs/create-amazon-msk-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "https://docs.cloud.google.com/pubsub/docs/connect_kafka",
+        "https://docs.cloud.google.com/pubsub/docs/create-amazon-msk-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "https://docs.cloud.google.com/pubsub/docs/connect_kafka",
+        "https://docs.cloud.google.com/pubsub/docs/create-amazon-msk-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "https://docs.cloud.google.com/pubsub/docs/connect_kafka",
+        "https://docs.cloud.google.com/pubsub/docs/create-amazon-msk-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "https://docs.cloud.google.com/pubsub/docs/connect_kafka",
+        "https://docs.cloud.google.com/pubsub/docs/create-amazon-msk-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "https://docs.cloud.google.com/pubsub/docs/connect_kafka",
+        "https://docs.cloud.google.com/pubsub/docs/create-amazon-msk-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/choose-pubsub-kafka",
+        "https://docs.cloud.google.com/pubsub/docs/connect_kafka",
+        "https://docs.cloud.google.com/pubsub/docs/create-amazon-msk-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:32.606Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub"
+}

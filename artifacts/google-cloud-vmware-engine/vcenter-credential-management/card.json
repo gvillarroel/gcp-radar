@@ -1,0 +1,174 @@
+{
+  "feature_name": "vCenter credential management",
+  "feature_slug": "vcenter-credential-management",
+  "summary": "VCenter credentials can be managed with Terraform resources.",
+  "extended_definition": "VCenter credentials can be managed with Terraform resources.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient",
+      "https://docs.cloud.google.com/vmware-engine/docs/public/reference/rest",
+      "https://docs.cloud.google.com/vmware-engine/docs/vmware-platform/howto-access-management"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Accessing management appliances \\_|\\_ Google Cloud VMware Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/vmware-platform/howto-access-management",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 155,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the prompt that appears and contains your access credentials, click Reset Password . gcloud To reset the password to a management appliance using the Google Cloud CLI, do the following: Reset vCenter user credentials by running the gcloud vmware private-clouds vcenter credentials reset command : gcloud vmware private-clouds vcenter credentials reset \\ --private-cloud= PRIVATE CLOUD ID \\ --project= PROJECT ID \\ --location= REGION Reset NSX user credentials by running the gcloud vmware private-clouds nsx credentials reset command : gcloud vmware private-clouds nsx credentials reset \\ --private-cloud= PRIVATE CLOUD ID \\ --project= PROJECT ID \\ --location= REGION Replace the following: PRIVATE CLOUD ID : the private cloud private cloud ID for this request.",
+          "Copy the credentials for vCenter Server or NSX Manager from the prompt that appears. gcloud To get the password to a management appliance using the Google Cloud CLI, do the following: To show vCenter user credentials, run the gcloud vmware private-clouds vcenter credentials describe command : gcloud vmware private-clouds vcenter credentials describe \\ --private-cloud= PRIVATE CLOUD ID \\ --project= PROJECT ID \\ --location= REGION To show NSX user credentials, run the gcloud vmware private-clouds nsx credentials describe command : gcloud vmware private-clouds nsx credentials describe \\ --private-cloud= PRIVATE CLOUD ID \\ --project= PROJECT ID \\ --location= REGION Replace the following: PRIVATE CLOUD ID : the private cloud private cloud ID for this request.",
+          "Reset access credentials If you misplace the credentials to vCenter Server or NSX Manager, you can reset the password to your management appliances for your private cloud using the Google Cloud CLI or Google Cloud VMware Engine by doing the following: Important: If you change the password that VMware Engine generates for either vCenter Server or NSX Manager, those changes won't be reflected in the Google Cloud console."
+        ]
+      },
+      {
+        "title": "VMware Engine API \\_|\\_ Google Cloud VMware Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/public/reference/rest",
+        "source_id": "site-docs-root",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1.projects.locations.privateClouds Methods create POST /v1/{parent=projects/ /locations/ }/privateClouds Creates a new PrivateCloud resource in a given project and location. delete DELETE /v1/{name=projects/ /locations/ /privateClouds/ } Schedules a PrivateCloud resource for deletion. get GET /v1/{name=projects/ /locations/ /privateClouds/ } Retrieves a PrivateCloud resource by its resource name. getDnsForwarding GET /v1/{name=projects/ /locations/ /privateClouds/ /dnsForwarding} Gets details of the DnsForwarding config. getIamPolicy GET /v1/{resource=projects/ /locations/ /privateClouds/ }:getIamPolicy Gets the access control policy for a resource. list GET /v1/{parent=projects/ /locations/ }/privateClouds Lists PrivateCloud resources in a given project and location. patch PATCH /v1/{privateCloud.name=projects/ /locations/ /privateClouds/ } Modifies a PrivateCloud resource. privateCloudDeletionNow POST /v1/{name=projects/ /locations/ /privateClouds/ }:privateCloudDeletionNow Accelerates the deletion of a private cloud that is currently in soft deletion A PrivateCloud resource in soft deletion has PrivateCloud.state set to SOFT DELETED and PrivateCloud.expireTime set to the time when deletion can no longer be reversed. resetNsxCredentials POST /v1/{privateCloud=projects/ /locations/ /privateClouds/ }:resetNsxCredentials Resets credentials of the NSX appliance. resetVcenterCredentials POST /v1/{privateCloud=projects/ /locations/ /privateClouds/ }:resetVcenterCredentials Resets credentials of the Vcenter appliance. setIamPolicy POST /v1/{resource=projects/ /locations/ /privateClouds/ }:setIamPolicy Sets the access control policy on the specified resource. showNsxCredentials GET /v1/{privateCloud=projects/ /locations/ /privateClouds/ }:showNsxCredentials Gets details of credentials for NSX appliance. showVcenterCredentials GET /v1/{privateCloud=projects/ /locations/ /privateClouds/ }:showVcenterCredentials Gets details of credentials for Vcenter appliance. testIamPermissions POST /v1/{resource=projects/ /locations/ /privateClouds/ }:testIamPermissions Returns permissions that a caller has on the specified resource. undelete POST /v1/{name=projects/ /locations/ /privateClouds/ }:undelete Restores a private cloud that was previously scheduled for deletion by DeletePrivateCloud . updateDnsForwarding PATCH /v1/{dnsForwarding.name=projects/ /locations/ /privateClouds/ /dnsForwarding} Updates the parameters of the DnsForwarding config, like associated domains.",
+          "REST Resource: v1.projects.locations.privateClouds.clusters Methods create POST /v1/{parent=projects/ /locations/ /privateClouds/ }/clusters Creates a new cluster in a given private cloud. delete DELETE /v1/{name=projects/ /locations/ /privateClouds/ /clusters/ } Deletes a Cluster resource. get GET /v1/{name=projects/ /locations/ /privateClouds/ /clusters/ } Retrieves a Cluster resource by its resource name. getIamPolicy GET /v1/{resource=projects/ /locations/ /privateClouds/ /clusters/ }:getIamPolicy Gets the access control policy for a resource. list GET /v1/{parent=projects/ /locations/ /privateClouds/ }/clusters Lists Cluster resources in a given private cloud. mountDatastore POST /v1/{name=projects/ /locations/ /privateClouds/ /clusters/ }:mountDatastore Mounts a Datastore on a cluster resource patch PATCH /v1/{cluster.name=projects/ /locations/ /privateClouds/ /clusters/ } Modifies a Cluster resource. setIamPolicy POST /v1/{resource=projects/ /locations/ /privateClouds/ /clusters/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1/{resource=projects/ /locations/ /privateClouds/ /clusters/ }:testIamPermissions Returns permissions that a caller has on the specified resource. unmountDatastore POST /v1/{name=projects/ /locations/ /privateClouds/ /clusters/ }:unmountDatastore Unmounts a Datastore on a cluster resource REST Resource: v1.projects.locations.privateClouds.clusters.nodes Methods get GET /v1/{name=projects/ /locations/ /privateClouds/ /clusters/ /nodes/ } Gets details of a single node. list GET /v1/{parent=projects/ /locations/ /privateClouds/ /clusters/ }/nodes Lists nodes in a given cluster.",
+          "REST Resource: v1.projects.locations REST Resource: v1.projects.locations.announcements REST Resource: v1.projects.locations.datastores REST Resource: v1.projects.locations.dnsBindPermission REST Resource: v1.projects.locations.networkPeerings REST Resource: v1.projects.locations.networkPeerings.peeringRoutes REST Resource: v1.projects.locations.networkPolicies REST Resource: v1.projects.locations.networkPolicies.externalAccessRules REST Resource: v1.projects.locations.nodeTypes REST Resource: v1.projects.locations.operations REST Resource: v1.projects.locations.privateClouds REST Resource: v1.projects.locations.privateClouds.clusters REST Resource: v1.projects.locations.privateClouds.clusters.nodes REST Resource: v1.projects.locations.privateClouds.externalAddresses REST Resource: v1.projects.locations.privateClouds.hcxActivationKeys REST Resource: v1.projects.locations.privateClouds.loggingServers REST Resource: v1.projects.locations.privateClouds.managementDnsZoneBindings REST Resource: v1.projects.locations.privateClouds.subnets REST Resource: v1.projects.locations.privateClouds.upgrades REST Resource: v1.projects.locations.privateConnections REST Resource: v1.projects.locations.privateConnections.peeringRoutes REST Resource: v1.projects.locations.vmwareEngineNetworks Service: vmwareengine.googleapis.com Service endpoint A service endpoint is a base URL that specifies the network address of an API service."
+        ]
+      },
+      {
+        "title": "\"Class VmwareEngineAsyncClient (1.11.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "It contains FQDNs and corresponding IP addresses for the private cloud's ESXi hosts and management VM appliances like vCenter and NSX Manager. reset nsx credentials reset nsx credentials ( request : typing .",
+          "Private clouds of type STANDARD and TIME LIMITED are zonal resources, STRETCHED private clouds are regional. reset vcenter credentials reset vcenter credentials ( request : typing .",
+          "ResetVcenterCredentialsRequest ( private cloud=\"private cloud value\", ) Make the request operation = client. reset vcenter credentials (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.vmwareengine v1.types.ResetVcenterCredentialsRequest , dict]] The request object."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cluster.name",
+      "googleapis.dev",
+      "options.html",
+      "v1.projects.locations",
+      "v1.projects.locations.announcements",
+      "v1.projects.locations.datastores",
+      "v1.projects.locations.dnsBindPermission",
+      "v1.projects.locations.networkPeerings",
+      "v1.projects.locations.networkPeerings.peeringRoutes",
+      "v1.projects.locations.networkPolicies",
+      "v1.projects.locations.networkPolicies.externalAccessRules",
+      "v1.projects.locations.nodeTypes",
+      "v1.projects.locations.operations",
+      "v1.projects.locations.privateClouds",
+      "v1.projects.locations.privateClouds.clusters",
+      "v1.projects.locations.privateClouds.clusters.nodes",
+      "v1.projects.locations.privateClouds.externalAddresses",
+      "v1.projects.locations.privateClouds.hcxActivationKeys",
+      "v1.projects.locations.privateClouds.loggingServers",
+      "v1.projects.locations.privateClouds.managementDnsZoneBindings",
+      "v1.projects.locations.privateClouds.subnets",
+      "v1.projects.locations.privateClouds.upgrades",
+      "v1.projects.locations.privateConnections",
+      "v1.projects.locations.privateConnections.peeringRoutes",
+      "v1.projects.locations.vmwareEngineNetworks",
+      "v1.types.ResetVcenterCredentialsRequest",
+      "vmwareengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/vmware-platform/howto-access-management",
+        "https://docs.cloud.google.com/vmware-engine/docs/public/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/vmware-platform/howto-access-management",
+        "https://docs.cloud.google.com/vmware-engine/docs/public/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/vmware-platform/howto-access-management",
+        "https://docs.cloud.google.com/vmware-engine/docs/public/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/vmware-platform/howto-access-management",
+        "https://docs.cloud.google.com/vmware-engine/docs/public/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/vmware-platform/howto-access-management",
+        "https://docs.cloud.google.com/vmware-engine/docs/public/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/vmware-platform/howto-access-management",
+        "https://docs.cloud.google.com/vmware-engine/docs/public/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/vmware-platform/howto-access-management",
+        "https://docs.cloud.google.com/vmware-engine/docs/public/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/vmware-platform/howto-access-management",
+        "https://docs.cloud.google.com/vmware-engine/docs/public/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:14.452Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine"
+}

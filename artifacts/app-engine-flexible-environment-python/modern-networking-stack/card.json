@@ -1,0 +1,148 @@
+{
+  "feature_name": "Modern networking stack",
+  "feature_slug": "modern-networking-stack",
+  "summary": "The modern networking stack provides increased network throughput for flexible environment applications.",
+  "extended_definition": "The modern networking stack provides increased network throughput for flexible environment applications.",
+  "lifecycle": {
+    "latest_feature_date": "2016-11-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users",
+      "https://docs.cloud.google.com/appengine/docs/flexible/communicating-between-services",
+      "https://docs.cloud.google.com/appengine/docs/flexible/python/understanding-firewalls"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Understanding the App Engine firewall \\_|\\_ App Engine flexible environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/python/understanding-firewalls",
+        "source_id": "site-docs-reference-2",
+        "final_score": 43,
+        "relevance": "",
+        "evidence_snippets": [
+          "If your App Engine flexible app uses Shared VPC , the App Engine flexible environment does not automatically create firewall rules. if you need to control access and allow traffic on the VPC network, you can create firewall rules on the Shared VPC network.",
+          "In cases where your app is configured to use other networking services or products, you might need to create rules for controlling incoming traffic in both the App Engine firewall and the firewall or security settings of other products.",
+          "These hidden firewall rules allow serving traffic and health check traffic to the flexible environment: Network name : The network specified in app.yaml , or the default network if no network is configured."
+        ]
+      },
+      {
+        "title": "\"Communicating between your services \\_|\\_ App Engine flexible environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/communicating-between-services",
+        "source_id": "site-docs-reference",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the flexible environment, deploy each client version to the same Shared VPC network.",
+          "Learn how to authorize the requests between your services and other Google Cloud services: Provide credentials for Application Default Credentials Using user-managed service accounts Your App Engine services can also communicate using Pub/Sub , which provides reliable asynchronous many-to-many messaging between processes, including App Engine.",
+          "Private Communication Communication between services in the same project You can allow an App Engine flexible service to communicate with another App Engine service in the same project without having to expose the destination service to the public internet."
+        ]
+      },
+      {
+        "title": "\"Authenticating users \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users",
+        "source_id": "site-docs-reference",
+        "final_score": 34,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Similar to Identity Platform, Firebase Authentication supports multiple authentication methods (SAML, OIDC, email/password, social, mobile, and custom auth) to provide flexible integration options for any identity solution.",
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Authenticating users Stay organized with collections Save and categorize content based on your preferences.",
+          "Identity Platform is built on Google Cloud's global scale, performance, network, and security, and comes with an enterprise-grade support and SLA to meet the demands of virtually any app or service."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/python/understanding-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/communicating-between-services",
+        "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/python/understanding-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/communicating-between-services",
+        "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/python/understanding-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/communicating-between-services",
+        "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/python/understanding-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/communicating-between-services",
+        "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/python/understanding-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/communicating-between-services",
+        "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/python/understanding-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/communicating-between-services",
+        "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/python/understanding-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/communicating-between-services",
+        "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/python/understanding-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/communicating-between-services",
+        "https://docs.cloud.google.com/appengine/docs/flexible/authenticating-users"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:09.450Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-python/card.json",
+  "product_name": "App Engine flexible environment Python",
+  "product_slug": "app-engine-flexible-environment-python"
+}

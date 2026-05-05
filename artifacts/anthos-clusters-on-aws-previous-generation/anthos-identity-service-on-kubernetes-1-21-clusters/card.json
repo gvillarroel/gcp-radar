@@ -1,0 +1,176 @@
+{
+  "feature_name": "Anthos Identity Service on Kubernetes 1.21+ clusters",
+  "feature_slug": "anthos-identity-service-on-kubernetes-1-21-clusters",
+  "summary": "Anthos Identity Service is available for Anthos clusters on AWS running Kubernetes version 1.21 and above.",
+  "extended_definition": "Anthos Identity Service is available for Anthos clusters on AWS running Kubernetes version 1.21 and above.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity",
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Workload identity overview \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity",
+        "source_id": "site-iam-reference",
+        "final_score": 129,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE Multi-Cloud GKE on AWS Guides Send feedback Workload identity overview Stay organized with collections Save and categorize content based on your preferences.",
+          "Kubernetes service accounts Workload identity implements identity federation , or delegating trust or roles to an external provider.",
+          "With this provider, you can provide Kubernetes service account credentials to services that support identity federation using OIDC."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.awsClusters \\_|\\_ GKE Multi-Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters",
+        "source_id": "site-api-reference",
+        "final_score": 113,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"name\" : string , \"description\" : string , \"networking\" : { object ( AwsClusterNetworking ) } , \"awsRegion\" : string , \"controlPlane\" : { object ( AwsControlPlane ) } , \"authorization\" : { object ( AwsAuthorization ) } , \"state\" : enum ( State ) , \"endpoint\" : string , \"uid\" : string , \"reconciling\" : boolean , \"createTime\" : string , \"updateTime\" : string , \"etag\" : string , \"annotations\" : { string : string , ... } , \"workloadIdentityConfig\" : { object ( WorkloadIdentityConfig ) } , \"clusterCaCertificate\" : string , \"fleet\" : { object ( Fleet ) } , \"loggingConfig\" : { object ( LoggingConfig ) } , \"errors\" : [ { object ( AwsClusterError ) } ] , \"monitoringConfig\" : { object ( MonitoringConfig ) } , \"binaryAuthorization\" : { object ( BinaryAuthorization ) } } Fields name string The name of this resource.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE Multi-Cloud GKE Multi-Cloud Reference Send feedback REST Resource: projects.locations.awsClusters Stay organized with collections Save and categorize content based on your preferences.",
+          "For more info on RBAC, see https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles adminGroups[] object ( AwsClusterGroup ) Optional."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.attachedClusters \\_|\\_ GKE Multi-Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+        "source_id": "site-api-reference",
+        "final_score": 111,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"name\" : string , \"description\" : string , \"oidcConfig\" : { object ( AttachedOidcConfig ) } , \"platformVersion\" : string , \"distribution\" : string , \"clusterRegion\" : string , \"fleet\" : { object ( Fleet ) } , \"state\" : enum ( State ) , \"uid\" : string , \"reconciling\" : boolean , \"createTime\" : string , \"updateTime\" : string , \"etag\" : string , \"kubernetesVersion\" : string , \"annotations\" : { string : string , ... } , \"workloadIdentityConfig\" : { object ( WorkloadIdentityConfig ) } , \"loggingConfig\" : { object ( LoggingConfig ) } , \"errors\" : [ { object ( AttachedClusterError ) } ] , \"authorization\" : { object ( AttachedClustersAuthorization ) } , \"monitoringConfig\" : { object ( MonitoringConfig ) } , \"proxyConfig\" : { object ( AttachedProxyConfig ) } , \"binaryAuthorization\" : { object ( BinaryAuthorization ) } , \"securityPostureConfig\" : { object ( SecurityPostureConfig ) } , \"tags\" : { string : string , ... } , \"systemComponentsConfig\" : { object ( SystemComponentsConfig ) } } Fields name string The name of this resource.",
+          "Resource: AttachedCluster JSON representation AttachedOidcConfig JSON representation State AttachedClusterError JSON representation AttachedClustersAuthorization JSON representation AttachedClusterUser JSON representation AttachedClusterGroup JSON representation AttachedProxyConfig JSON representation KubernetesSecret JSON representation SecurityPostureConfig JSON representation VulnerabilityMode SystemComponentsConfig JSON representation Toleration JSON representation KeyOperator Effect Label JSON representation Methods Resource: AttachedCluster An Anthos cluster running on customer own infrastructure.",
+          "The secret must be a JSON encoded proxy configuration as described in https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/use-a-proxy#configure-proxy-support for EKS clusters and https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/use-a-proxy#configure-proxy-support for AKS clusters."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "kubernetes.io",
+      "projects.locations.attachedClusters",
+      "projects.locations.awsClusters",
+      "v1.21",
+      "v1.22"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.attachedClusters",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:04.861Z",
+  "source_step08_card": "data/step-08/current/products/anthos-clusters-on-aws-previous-generation/card.json",
+  "product_name": "Anthos clusters on AWS (previous generation)",
+  "product_slug": "anthos-clusters-on-aws-previous-generation"
+}

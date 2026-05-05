@@ -1,0 +1,105 @@
+{
+  "feature_name": "LookML parser",
+  "feature_slug": "lookml-parser",
+  "summary": "Customer-hosted Looker 26.4 instances use a new optimized LookML parser, matching the parser already used by Looker-hosted instances.",
+  "extended_definition": "Customer-hosted Looker 26.4 instances use a new optimized LookML parser, matching the parser already used by Looker-hosted instances.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/action-hub",
+      "https://docs.cloud.google.com/looker/docs/actions-overview",
+      "https://docs.cloud.google.com/looker/docs/additional-lookml-basics"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Sharing data through an action hub \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/action-hub",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "Admins of customer-hosted instances may need to consider additional factors when choosing to enable Looker integrations from the Looker Action Hub, especially integrations that support streamed results or that use OAuth .",
+          "Considerations for customer-hosted instances To use Looker integrations , the Looker Action Hub must be able to communicate with the Looker instance and fulfill the Looker Action hub requirements .",
+          "This is not always possible with customer-hosted Looker instances, for various reasons."
+        ]
+      },
+      {
+        "title": "Common LookML patterns \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/additional-lookml-basics",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 93,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you wanted a field that counted users from the EU, you could use something like this: measure: eu count { type: count # COUNT(CASE WHEN users.countrycode IN 'UK','FR','ES' THEN 1 ELSE NULL END) drill fields: [detail] filters: [users.countrycode: \"UK,FR,ES\"] } If you want to filter with a mathematical expression , be sure to enclose it in double quotes: measure: total orders above 100 dollars { type: sum # SUM(CASE WHEN order.value > 100 THEN order.value ELSE NULL END) sql: ${order.value} ;; drill fields: [detail] filters: [order.value: \">100\"] } Percentages Many key performance indicators are expressed in the form of percentages, such as \"the percent of items returned,\" \"the percent of emails that resulted in a sale,\" or other instances of \"the percent of X that Y.\" In LookML, the design pattern is to create counts for the two conditions and create a third field that computes the percentage between the two. dimension: returned { type: yesno } measure: count { # total count of items type: count distinct sql: ${TABLE}.id ;; drill fields: [detail] } measure: returned count { # count of returned items type: count distinct sql: ${TABLE}.id ;; drill fields: [detail] filters: [returned: \"Yes\"] } measure: percent returned { type: number sql: 100.0 ${returned count} / NULLIF(${count}, 0) ;; value format: \"0.00\" } Use the following format to compute percentages.",
+          "The following code creates a set customers.detail and points both counts to the same set of fields. view: customers { set: detail { fields: [id, name, city] # creates named set customers.detail } measure: count { type: count drill fields: [detail ] # show fields in the set \"customers.detail\" } measure: in california count { type: count filters: [state: \"California\"] drill fields: [detail ] # show fields in the set \"customers.detail\" } } LookML sets are powerful in the following ways: Redeclaration of sets is additive.",
+          "If the user didn't filter on any of those fields, Looker will automatically add a filter of 1 day on orders.created time . filters: [orders.created time: \"1 day\"] unless: [created date, shipped time, shipped date, orders.id, customer.name] } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Looker actions overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/actions-overview",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 87,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Customer-hosted instances may be unable to enable actions from the Looker Action Hub that use Google OAuth.",
+          "Customer-hosted instances may be unable to enable actions from the Looker Action Hub that stream results.",
+          "Integrated service Description Link to README file How to use this integration Required LookML tags Action type Content available for scheduled deliveries Uses Google OAuth authentication (Yes/No) Uses data streaming (Yes/No) Minimum supported Looker version Airtable Add records to a table in Airtable."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "customer.name",
+      "customers.detail",
+      "order.value",
+      "orders.created",
+      "orders.id",
+      "users.countrycode"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/action-hub",
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics",
+        "https://docs.cloud.google.com/looker/docs/actions-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/action-hub",
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics",
+        "https://docs.cloud.google.com/looker/docs/actions-overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:23.337Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker"
+}

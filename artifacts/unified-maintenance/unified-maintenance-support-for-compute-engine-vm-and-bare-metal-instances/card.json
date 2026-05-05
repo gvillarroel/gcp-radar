@@ -1,0 +1,181 @@
+{
+  "feature_name": "Unified Maintenance support for Compute Engine VM and bare metal instances",
+  "feature_slug": "unified-maintenance-support-for-compute-engine-vm-and-bare-metal-instances",
+  "summary": "Unified Maintenance now displays maintenance activities for Compute Engine virtual machine and bare-metal instances.",
+  "extended_definition": "Unified Maintenance now displays maintenance activities for Compute Engine virtual machine and bare-metal instances.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "support_matrix_only_evidence",
+        "message": "The feature is backed only by broad support-matrix style evidence, not a dedicated page for the supported target.",
+        "suggested_steps": [
+          "step-02",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/unified-maintenance/docs/reference/rpc/google.cloud.maintenance.api.v1",
+      "https://docs.cloud.google.com/unified-maintenance/docs/reschedule-and-on-demand-updates",
+      "https://docs.cloud.google.com/unified-maintenance/docs/set-up-unified-maintenance",
+      "https://docs.cloud.google.com/unified-maintenance/docs/supported-services"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Control maintenance \\_|\\_ Unified Maintenance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/unified-maintenance/docs/reschedule-and-on-demand-updates",
+        "source_id": "site-docs-reference",
+        "final_score": 238,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "During planned maintenance, the host maintenance policy configured for the instance will be used to perform the update. https://cloud.google.com/compute/docs/instances/setting-vm-host-options#viewoptions You can perform on-demand maintenance ahead of this schedule with this instance. https://cloud.google.com/compute/docs/instances/trigger-host-maintenance-event What's next Configure alerts and notifications Implement common alert policies Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The description might look similar to the following: Description: A Google Cloud Compute Engine instance undergoes planned maintenance to update important hardware and/or software components.",
+          "Learn more: https://cloud.google.com/sql/docs/mysql/maintenance For rescheduling the maintenance see - https://cloud.google.com/sql/docs/mysql/maintenance#reschedule-maintenance Perform on-demand updates Some Google Cloud products allow the user to apply maintenance on-demand."
+        ]
+      },
+      {
+        "title": "Supported services \\_|\\_ Unified Maintenance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/unified-maintenance/docs/supported-services",
+        "source_id": "site-docs-reference",
+        "final_score": 226,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Monitored Resource Type Description Cloud SQL - MySQL sqladmin.googleapis.com/Instance Yes Yes cloudsql database Cloud SQL - Postgres sqladmin.googleapis.com/Instance Yes Yes cloudsql database Cloud SQL - SQL Server sqladmin.googleapis.com/Instance Yes Yes cloudsql database AlloyDB for PostgreSQL alloydb.googleapis.com/Cluster No No alloydb.googleapis.com/Cluster Looker looker.googleapis.com/Instance No No looker.googleapis.com/Instance Compute Engine compute.googleapis.com/Instance No Yes gce instance Unified Maintenance supports these Compute Engine virtual machine instances or bare metal instances types.",
+          "Accelerator-optimized A2, A3, A4, A4X, CT4P, CT5P, CT5LP, CT6E, G2 Cloud TPU V4, V5E, V5P, V6E Compute-optimized C2, C2D, H3, H4D General-purpose C3, C3D, C4, C4A, C4D, N1, N2, N2D Memory-optimized M1, M2, M3, M4, X4 Storage-optimized Z3 Google Kubernetes Engine container.googleapis.com/Cluster container.googleapis.com/NodePool No Yes gke cluster gke nodepool Cloud Interconnect compute.googleapis.com/Interconnect No No interconnect Cloud Composer composer.googleapis.com/Environment No No environment Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Security Unified Maintenance Resources Send feedback Supported services Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Package google.cloud.maintenance.api.v1 \\_|\\_ Unified Maintenance \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/unified-maintenance/docs/reference/rpc/google.cloud.maintenance.api.v1",
+        "source_id": "site-api-reference",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported fields include: - state - resource.location - resource.resourceName - resource.type - maintenance.maintenanceName - maintenanceStartTime - maintenanceCompleteTime Examples: - state=\"SCHEDULED\" - resource.location=\"us-central1-c\" - resource.resourceName= \" /instance-20241212-211259\" - maintenanceStartTime>\"2000-10-11T20:44:51Z\" - state=\"SCHEDULED\" OR resource.type=\"compute.googleapis.com/Instance\" - maintenance.maitenanceName=\"eb3b709c-9ca1-5472-9fb6-800a3849eda1\" AND maintenanceCompleteTime>\"2000-10-11T20:44:51Z\" order by string Order results as specified in https://google.aip.dev/132 .",
+          "Google Cloud Interconnect These events are usually scheduled in advance and we provide notification, when possible, so that users can plan for the infrastructure maintenance event and prevent downtime.",
+          "Home Documentation Security Unified Maintenance Reference Send feedback Package google.cloud.maintenance.api.v1 Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Set up Unified Maintenance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/unified-maintenance/docs/set-up-unified-maintenance",
+        "source_id": "site-docs-reference",
+        "final_score": 190,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security Unified Maintenance Guides Send feedback Set up Unified Maintenance Stay organized with collections Save and categorize content based on your preferences.",
+          "If you have been granted one of the basic roles (Viewer, Editor, or Owner) in Cloud Logging for your project, you have the necessary permissions to access Unified Maintenance logs.",
+          "It explains how to enable the Unified Maintenance API, query it directly, and how to manage maintenance event logs that are automatically sent to Cloud Logging."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.googleapis.com",
+      "composer.googleapis.com",
+      "compute.googleapis.com",
+      "container.googleapis.com",
+      "i.e",
+      "looker.googleapis.com",
+      "maintenance.maintenanceName",
+      "maintenance.maitenanceName",
+      "resource.location",
+      "resource.resourceName",
+      "resource.type",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/unified-maintenance/docs/reschedule-and-on-demand-updates",
+        "https://docs.cloud.google.com/unified-maintenance/docs/supported-services",
+        "https://docs.cloud.google.com/unified-maintenance/docs/reference/rpc/google.cloud.maintenance.api.v1",
+        "https://docs.cloud.google.com/unified-maintenance/docs/set-up-unified-maintenance"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/unified-maintenance/docs/reschedule-and-on-demand-updates",
+        "https://docs.cloud.google.com/unified-maintenance/docs/supported-services",
+        "https://docs.cloud.google.com/unified-maintenance/docs/reference/rpc/google.cloud.maintenance.api.v1",
+        "https://docs.cloud.google.com/unified-maintenance/docs/set-up-unified-maintenance"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/unified-maintenance/docs/reschedule-and-on-demand-updates",
+        "https://docs.cloud.google.com/unified-maintenance/docs/supported-services",
+        "https://docs.cloud.google.com/unified-maintenance/docs/reference/rpc/google.cloud.maintenance.api.v1",
+        "https://docs.cloud.google.com/unified-maintenance/docs/set-up-unified-maintenance"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/unified-maintenance/docs/reschedule-and-on-demand-updates",
+        "https://docs.cloud.google.com/unified-maintenance/docs/supported-services",
+        "https://docs.cloud.google.com/unified-maintenance/docs/reference/rpc/google.cloud.maintenance.api.v1",
+        "https://docs.cloud.google.com/unified-maintenance/docs/set-up-unified-maintenance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/unified-maintenance/docs/reschedule-and-on-demand-updates",
+        "https://docs.cloud.google.com/unified-maintenance/docs/supported-services",
+        "https://docs.cloud.google.com/unified-maintenance/docs/reference/rpc/google.cloud.maintenance.api.v1",
+        "https://docs.cloud.google.com/unified-maintenance/docs/set-up-unified-maintenance"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/unified-maintenance/docs/reschedule-and-on-demand-updates",
+        "https://docs.cloud.google.com/unified-maintenance/docs/supported-services",
+        "https://docs.cloud.google.com/unified-maintenance/docs/reference/rpc/google.cloud.maintenance.api.v1",
+        "https://docs.cloud.google.com/unified-maintenance/docs/set-up-unified-maintenance"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/unified-maintenance/docs/reschedule-and-on-demand-updates",
+        "https://docs.cloud.google.com/unified-maintenance/docs/supported-services",
+        "https://docs.cloud.google.com/unified-maintenance/docs/reference/rpc/google.cloud.maintenance.api.v1",
+        "https://docs.cloud.google.com/unified-maintenance/docs/set-up-unified-maintenance"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:42.266Z",
+  "source_step08_card": "data/step-08/current/products/unified-maintenance/card.json",
+  "product_name": "Unified Maintenance",
+  "product_slug": "unified-maintenance"
+}

@@ -1,0 +1,141 @@
+{
+  "feature_name": "In-place update of deployed model scaling and container logging settings",
+  "feature_slug": "in-place-update-of-deployed-model-scaling-and-container-logging-settings",
+  "summary": "Vertex AI Prediction now allows updating certain scaling and container logging configuration settings on a DeployedModel without undeploying and redeploying it to an endpoint.",
+  "extended_definition": "Vertex AI Prediction now allows updating certain scaling and container logging configuration settings on a DeployedModel without undeploying and redeploying it to an endpoint.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+      "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Vertex AI model evaluation notebook tutorials \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "source_id": "site-docs-reference-2",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Learn how to construct a Vertex AI pipeline, which evaluates new production data from a deployed model against other versions of the model, to determine if a contender model becomes the champion model for replacement in production.",
+          "Learn to use Vertex AI Training to create a custom-trained model from a Python script in a Docker container, and learn to use Vertex AI Inference to do a prediction on the deployed model by sending data.",
+          "Learn how to create a custom-trained model from a Python script in a Docker container using the Vertex AI SDK for Python, and then get a prediction from the deployed model by sending data."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "source_id": "site-api-reference-2",
+        "final_score": 188,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DeployedModel JSON representation { \"id\" : string , \"model\" : string , \"gdcConnectedModel\" : string , \"modelVersionId\" : string , \"displayName\" : string , \"createTime\" : string , \"explanationSpec\" : { object ( ExplanationSpec ) } , \"disableExplanations\" : boolean , \"serviceAccount\" : string , \"enableContainerLogging\" : boolean , \"disableContainerLogging\" : boolean , \"enableAccessLogging\" : boolean , \"privateEndpoints\" : { object ( PrivateEndpoints ) } , \"fasterDeploymentConfig\" : { object ( FasterDeploymentConfig ) } , \"rolloutOptions\" : { object ( RolloutOptions ) } , \"status\" : { object ( Status ) } , \"systemLabels\" : { string : string , ... } , \"checkpointId\" : string , \"speculativeDecodingSpec\" : { object ( SpeculativeDecodingSpec ) } , // Union field prediction resources can be only one of the following: \"dedicatedResources\" : { object ( DedicatedResources ) } , \"automaticResources\" : { object ( AutomaticResources ) } , \"sharedResources\" : string , \"fullFineTunedResources\" : { object ( FullFineTunedResources ) } // End of list of possible types for union field prediction resources . } Fields id string Immutable.",
+          "Endpoint JSON representation { \"name\" : string , \"displayName\" : string , \"description\" : string , \"deployedModels\" : [ { object ( DeployedModel ) } ] , \"trafficSplit\" : { string : integer , ... } , \"etag\" : string , \"labels\" : { string : string , ... } , \"createTime\" : string , \"updateTime\" : string , \"encryptionSpec\" : { object ( EncryptionSpec ) } , \"network\" : string , \"enablePrivateServiceConnect\" : boolean , \"privateServiceConnectConfig\" : { object ( PrivateServiceConnectConfig ) } , \"modelDeploymentMonitoringJob\" : string , \"predictRequestResponseLoggingConfig\" : { object ( PredictRequestResponseLoggingConfig ) } , \"dedicatedEndpointEnabled\" : boolean , \"dedicatedEndpointDns\" : string , \"clientConnectionConfig\" : { object ( ClientConnectionConfig ) } , \"satisfiesPzs\" : boolean , \"satisfiesPzi\" : boolean , \"genAiAdvancedFeaturesConfig\" : { object ( GenAiAdvancedFeaturesConfig ) } } Fields name string Identifier.",
+          "Only supported for custom-trained Models and AutoML Tabular Models. disableContainerLogging boolean For custom-trained Models and AutoML Tabular Models, the container of the DeployedModel instances will send stderr and stdout streams to Cloud Logging by default."
+        ]
+      },
+      {
+        "title": "\"Vertex ML Metadata notebook tutorials \\_|\\_ Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials",
+        "source_id": "site-docs-reference-2",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Learn how to construct a Vertex AI pipeline, which evaluates new production data from a deployed model against other versions of the model, to determine if a contender model becomes the champion model for replacement in production.",
+          "Learn to use Vertex AI Training to create a custom-trained model from a Python script in a Docker container, and learn to use Vertex AI Inference to do a prediction on the deployed model by sending data.",
+          "Learn how to create a custom-trained model from a Python script in a Docker container using the Vertex AI SDK for Python, and then get a prediction from the deployed model by sending data."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "iam.serviceAccounts.actAs"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:42.435Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai"
+}

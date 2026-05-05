@@ -1,0 +1,196 @@
+{
+  "feature_name": "Crashlytics export to Cloud Logging",
+  "feature_slug": "crashlytics-export-to-cloud-logging",
+  "summary": "Crashlytics data and optional Firebase sessions data can be exported to Cloud Logging for use across observability workflows.",
+  "extended_definition": "Crashlytics data and optional Firebase sessions data can be exported to Cloud Logging for use across observability workflows.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+      "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python",
+      "https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.client.Client"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Monitored resources and services \\_|\\_ Cloud Logging \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "source_id": "site-docs-reference",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": [
+          "For v1 backends, this will be \"global\". backend id : An identifier for the App Hosting Backend within a project. firebasecrashlytics.googleapis.com/App Firebase Crashlytics App A Firebase client using Crashlytics. resource container : The Firebase project for the application. location : Location for Firebase Apps is global. app id : A Firebase App ID. firebaserules release Releases for Firebase Rules Mapping of the ruleset to a release name. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". release name : Name of the release. region : The region in which the ruleset is on. firebaserules ruleset Ruleset for Firebase Rules Definition of the ruleset for firebase rules. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". ruleset name : Name of the ruleset. region : The region in which the ruleset is on. firebasevertexai.googleapis.com/Model Firebase AI Logic Model A Model supported by Firebase AI Logic. resource container : The GCP container associated with the model. location : The zone that served the model. publisher id : The publisher ID of the model, such as \"google\". model id : The model ID, such as \"gemini-0.0-flash-002\". firebasevertexai.googleapis.com/PromptTemplate Firebase AI Logic Server Prompt Template A Firebase AI Logic Server Prompt Template. resource container : The GCP container associated with the prompt template. location : The region that served the prompt template. template id : The prompt template ID. firestore.googleapis.com/Database Firestore Database A Firestore Database. resource container : The identifier of the GCP project associated with this resource. location : The location of the database. database id : The database id. fleetengine.googleapis.com/DeliveryFleet Fleet Engine Last Mile Fleet Solution A top-level resource for Fleet Engine Last Mile Fleet Solution metrics and logs. resource container : The identifier of the GCP container associated with DeliveryFleet. location : The region in which the Fleet Engine instance is running. fleetengine.googleapis.com/Fleet Fleet Engine On Demand Rides and Deliveries A top-level resource for Fleet Engine On Demand Rides and Deliveries metrics and logs. resource container : The identifier of the GCP container associated with Fleet. location : The region in which the Fleet Engine instance is running. folder Google Folder A Google Cloud Platform folder. folder id : Numeric id of the folder. gae app GAE Application An application running in Google App Engine (GAE). project id : The identifier of the GCP project associated with this resource, such as \"my-project\". module id : The service/module name. version id : The version name. zone : The GAE zone where the application is running. gateway scope Gateway Scope GatewayScope represents a set of Gateways with the same merged configs. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". location : The location of the control plane scope : The name of the gateway scope gce autoscaler Autoscaler A Google Compute Engine autoscaler. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". autoscaler id : Unique identifier of the autoscaler. location : Compute Engine zone or region where the autoscaler is running. gce backend bucket Backend Bucket A Google Compute Engine backend bucket. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". backend bucket id : Unique identifier of the backend bucket. gce backend service Cloud Load Balancing Backend Service A Compute Engine backend service. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". backend service id : Unique identifier of the backend service. location : Global or Compute Engine region containing the backend service gce client ssl policy Client SSL Policy A Google Compute Engine client SSL policy. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". client ssl policy id : Unique identifier of the client SSL policy. gce commitment Committed Use Discount A Google Compute Engine committed use discount. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". commitment id : Unique identifier of the committed use discount. location : Compute Engine region where the committed use discount is active. gce disk Disk A disk belonging to a Compute Engine instance. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". disk id : Unique identifier of the disk. zone : The Compute Engine zone where the disk resides. gce firewall rule Firewall Rule A Google Compute Engine firewall rule. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". firewall rule id : Unique identifier of the firewall rule. gce forwarding rule Forwarding Rule A Google Compute Engine Forwarding Rule. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". forwarding rule id : Unique identifier of the forewarding rule. region : Compute Engine region where the forwarding rule resides. gce health check Health Check A Google Compute Engine health check. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". health check id : Unique identifier of the health check. gce image Image A Google Compute Engine image resource. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". image id : Unique numerical identifier of the image. gce instance VM Instance A virtual machine instance hosted in Compute Engine. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". instance id : The numeric VM instance identifier assigned by Compute Engine. zone : The Compute Engine zone in which the VM is running. gce instance group Instance Group A Google Compute Engine instance group resource. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". instance group id : The unique numerical identifier of the instance group. instance group name : The unique user provided name of the instance group. location : Compute Engine zone containing the instance group. gce instance group manager Instance Group Manager A Google Compute Engine instance group manager resource. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". instance group manager id : The unique numerical identifier of the instance group manager. instance group manager name : The unique user provided name of the instance group manager. location : Compute Engine zone or region where the instance group manager is located. gce instance template Instance Template A Google Compute Engine instance template resource. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". instance template id : The unique numerical identifier of the instance template. instance template name : The unique user provided name of the instance template. gce license License A Google Compute Engine license. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". license id : Unique identifier of the license. gce network Network A Google Compute Engine network. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". network id : Unique identifier of the network. gce network endpoint group Network Endpoint Group A Compute Engine network endpoint group resource. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". zone : The name of the zone where the network endpoint group is located. network endpoint group id : The ID of the network endpoint group. gce network region Network Region A region of a Compute Engine network. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". network id : The ID of the Compute Engine network. region : The name of the network region. gce node group Node Group A Compute Engine node group. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". node group id : Unique identifier of the node group. zone : Zone of the node group. gce node template Node Template A Compute Engine node template. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". node template id : Unique identifier of the node template. region : Region of the node template. gce operation Operation A Google Compute Engine operation resource. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". operation name : The unique user provided name of the operation. location : Location of the resource. gce packet mirroring Packet Mirroring A Google Compute Engine packet mirroring. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". packet mirroring id : Unique identifier of the packet mirroring. region : Region of the packet mirroring. gce project Project A Google Compute Engine project resource. project id : Compute Engine specific numeric identifier of the project resource. gce reserved address Reserved Address A Google Compute Engine reserved address. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". reserved address id : Unique identifier of the reserved address. location : Global or Compute Engine region containing the reserved address gce resource policy Resource Policy A Compute Engine resource policy. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". resource policy id : Unique identifier of the resource policy. region : Region of the resource policy. gce route Route A Google Compute Engine route. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". route id : Unique identifier of the route. gce router Router A Google Compute Engine router. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". router id : Unique identifier of the router. region : Region of the router. gce service attachment Service Attachment A Private Service Connect Service Attachment. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". region : The region where the service attachment resides. service attachment id : Unique identifier of the service attachment. gce snapshot Snapshot A Google Compute Engine snapshot. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". snapshot id : Unique identifier of the snapshot. gce ssl certificate SSL Certificate A Google Compute Engine SSL certificate. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". ssl certificate id : The unique numerical identifier of the SSL certificate. ssl certificate name : The unique user provided name of the SSL Certificate. gce subnetwork Subnetwork A Compute Engine subnetwork. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". subnetwork id : The unique numerical identifier of the subnetwork. subnetwork name : The unique user provided name of the subnetwork. location : Location of the resource. gce target http instance Target HTTP Instance A Google Compute Engine target http instance. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". target http instance id : Unique identifier of the target http instance. zone : Compute Engine zone where the target http instance resides. gce target http proxy Target HTTP Proxy A Google Compute Engine target http proxy. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". target http proxy id : Unique identifier of the target http proxy. gce target https proxy Target HTTPS Proxy A Google Compute Engine target https proxy. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". target https proxy id : Unique identifier of the target https proxy. gce target pool Target Pool A Google Compute Engine target pool. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". target pool id : Unique identifier of the target pool. zone : Compute Engine zone where the pool resides. gce target ssl proxy Target SSL Proxy A Google Compute Engine target SSL proxy. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". target ssl proxy id : Unique identifier of the target ssl proxy. gce url map URL Map A Google Compute Engine URL map. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". url map id : Unique identifier of the url map. gcs bucket GCS Bucket A Google Cloud Storage (GCS) bucket. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". bucket name : An immutable name of the bucket. location : Location of the bucket. geminidataanalytics.googleapis.com/Location Gemini Data Analytics Location A Gemini Data Analytics Location. resource container : The identifier of the GCP project associated with this resource. location : The location of the GCP project associated with this resource. generic node Generic Node A generic node identifies a machine or other computational resource for which no more specific resource type is applicable.",
+          "The format is \"projects/project id\" monitored resource type : The type field of the monitored resource in the log entry that is destined for the log bucket. logging exclusion Log Exclusion An exclusion in Cloud Logging. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". name : The unique name of the exclusion. logging log Log stream A Google Cloud Logging log. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". name : Unique identifier of the log. logging sink Logging export sink An export sink in Cloud Logging. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". name : The unique name of the sink. destination : The destination of the sink. lustre.googleapis.com/Instance Lustre instance A Lustre Instance. resource container : The identifier of the GCP consumer project associated with this resource, such as 'my-project'. location : The Google Cloud location in which the managed instance is running. instance id : The ID of the managed instance. managed service Managed Service A service managed by Google Service Management. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". service name : The name of the service. producer project id : The id of the project which produces and owns this service. managedflink.googleapis.com/Deployment Managed Flink Deployment A managed Flink cluster. resource container : The identifier of the GCP project associated with this resource. location : The location of the GCP project associated with this resource. deployment id : The user-specified or system generated deployment identifier. managedflink.googleapis.com/Job Managed Flink Job A job running on a deployment. resource container : The identifier of the GCP project associated with this resource. location : The location of the GCP project associated with this resource. deployment id : The user-specified or system generated deployment identifier. job id : The system-generated job identifier. managedkafka.googleapis.com/Cluster Apache Kafka Cluster A Managed Kafka cluster. resource container : The identifier of the project or container associated with this cluster. location : The region in which the cluster is created. cluster id : The user-specified cluster id. managedkafka.googleapis.com/ConnectCluster Apache Kafka Connect Cluster A Managed Kafka Connect cluster. resource container : The identifier of the project or container associated with this cluster. location : The region in which the cluster is created. cluster id : The user-specified cluster id. managedkafka.googleapis.com/Location Apache Kafka Location A Managed Kafka location. resource container : The identifier of the project or container associated with this location. location : The location in the API. managedkafka.googleapis.com/SchemaRegistry Apache Kafka Schema Registry A Managed Kafka Schema Registry. resource container : The identifier of the GCP project associated with this schema registry. location : The region in which the schema registry is created. schema registry id : The user-specified schema registry id. memcache.googleapis.com/MemcacheNode Memorystore Memcached Node Node of a Memorystore Memcached instance. resource container : The identifier of the GCP project associated with this resource, such as 'my-project'. service : The API service name. location : Google Cloud zone where the Memcached node is located. memcache region : Cloud region where this memcache node is located, e.g. us-east1 or us-west1.",
+          "Can be 'UNKNOWN' if the backend wasn't assigned. backend scope type : The type of the scope of the backend group, one of ['ZONE'; 'REGION'; 'UNKNOWN' - in case the backend wasn't assigned]. livestream.googleapis.com/Channel Live Stream API Channel A Live Stream API Channel. resource container : The identifier of the GCP project associated with this channel resource. location : The GCP location where the channel resource resides. channel id : ID of the channel resource. loadbalancing.googleapis.com/ExternalNetworkLoadBalancerRule External Passthrough Network Load Balancer Rule A set of definitions for multi protocol network load balancing behavior. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". region : The Google Cloud Platform region of the backend instance that connected to network load balancing forwarding rule. backend network name : The network name of the NIC of the instance that received the Net LB flow. backend target type : The type of the backend target that handled the connection. backend service name : The name of the backend service that handled the connection. primary target pool : The name of the primary target pool. target pool : The name of the target pool. forwarding rule name : The name of the forwarding rule. backend group name : The name of the backend group that handled the connection. backend group type : The type of the backend group that handled the connection. backend group scope : The scope (zone or region) of the backend group that handled the connection. backend subnetwork name : The name of the subnetwork of the instance that handled the connection. backend zone : The zone of the endpoint (VM instance) that handled the connection. loadbalancing.googleapis.com/InternalNetworkLoadBalancerRule Internal Passthrough Network Load Balancer Rule A set of definitions for multi protocol internal load balancing behavior. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". region : The Google Cloud Platform region of the backend instance that connected to network load balancing forwarding rule. backend network name : The network name of the NIC of the instance that received the Net LB flow. backend service name : The name of the backend service that handled the connection. forwarding rule name : The name of the forwarding rule. backend group name : The name of the backend group that handled the connection. backend group type : The type of the backend group that handled the connection. backend group scope : The scope (zone or region) of the backend group that handled the connection. backend subnetwork name : The name of the subnetwork of the instance that handled the connection. logging bucket Logging Bucket An export bucket in Cloud Logging. project id : The identifier of the GCP project associated with this resource, such as \"my-project\". bucket id : The name of the log bucket. location : The location of the log bucket. source resource container : The source resource container (e.g. project, folder, organization) of the log entry that is destined for the log bucket."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Write and query log entries using a Python script \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python",
+        "source_id": "site-docs-root",
+        "final_score": 63,
+        "relevance": "",
+        "evidence_snippets": [
+          "The contents are similar to: { \"insertId\" : \"yf1cshfoivz48\" , \"logName\" : \"projects/loggingproject-222616/logs/my-log\" , \"receiveTimestamp\" : \"2018-11-15T23:06:14.738729911Z\" , \"resource\" :{ \"labels\" :{ \"project id\" : \"loggingproject-222616\" }, \"type\" : \"global\" }, \"severity\" : \"ERROR\" , \"textPayload\" : \"Goodbye, world!\" , \"timestamp\" : \"2018-11-15T23:06:14.738729911Z\" } Because the severity level of ERROR is greater than the severity level of INFO , the log entry containing the string '\"Goodbye, world!\"' is exported to the sink destination.",
+          "To create the sink mysink that exports all log entries with a severity of at least INFO to the Cloud Storage bucket myloggingproject-1 , run the following command: python export . py create mysink myloggingproject - 1 \"severity>=INFO\" The script returns the following: Created sink mysink To view your sinks, run the export.py script with the list option: python export . py list The script returns the following: mysink: severity>=INFO -> storage.googleapis.com/myloggingproject-1 Update destination permissions The permissions of the destination, in this case, your Cloud Storage bucket, aren't modified when you create a sink by using the export.py script.",
+          "Clone source To configure your Cloud Shell for this quickstart, do the following: Clone the GitHub project python-logging : git clone https : // github . com / GoogleCloudPlatform / python - docs - samples The directory samples/snippets contains the two scripts used in this quickstart: snippets.py lets you manage entries in a log. export.py lets you manage log exports."
+        ]
+      },
+      {
+        "title": "Class Client (3.15.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.client.Client",
+        "source_id": "site-python-reference",
+        "final_score": 61,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Parameters Name Description name str the name of the sink to be constructed. filter Optional[str] the advanced logs filter expression defining the entries exported by the sink.",
+          "See https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.sinks Methods Client Client ( , project = None , credentials = None , http = None , use grpc = None , client info = None , client options = None ) Parameters Name Description project Optional[str] the project which the client acts on behalf of.",
+          "See https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.sinks/list Parameters Name Description parent Optional[str] The parent resource whose sinks are to be listed: :: \"projects/[PROJECT ID]\" \"organizations/[ORGANIZATION ID]\" \"billingAccounts/[BILLING ACCOUNT ID]\" \"folders/[FOLDER ID]\"."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g",
+      "export.py",
+      "firebasecrashlytics.googleapis.com",
+      "firebasevertexai.googleapis.com",
+      "firestore.googleapis.com",
+      "fleetengine.googleapis.com",
+      "geminidataanalytics.googleapis.com",
+      "livestream.googleapis.com",
+      "loadbalancing.googleapis.com",
+      "lustre.googleapis.com",
+      "managedflink.googleapis.com",
+      "managedkafka.googleapis.com",
+      "memcache.googleapis.com",
+      "projects.sinks",
+      "snippets.py",
+      "storage.googleapis.com",
+      "v2.Resource"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.client.Client",
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.client.Client",
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.client.Client",
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.client.Client",
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.client.Client",
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.client.Client",
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.client.Client",
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.client.Client",
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.client.Client",
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.client.Client",
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.client.Client",
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/v2/resource-list",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.client.Client",
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:31.891Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging"
+}

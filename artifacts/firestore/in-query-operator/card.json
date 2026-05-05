@@ -1,0 +1,101 @@
+{
+  "feature_name": "in query operator",
+  "feature_slug": "in-query-operator",
+  "summary": "Firestore supports the in query operator.",
+  "extended_definition": "Firestore supports the in query operator.",
+  "lifecycle": {
+    "latest_feature_date": "2019-11-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/native/docs/enterprise-optimize-query-performance",
+      "https://docs.cloud.google.com/firestore/native/docs/enterprise-query-explain",
+      "https://docs.cloud.google.com/firestore/native/docs/enterprise-query-insights"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Optimize query performance \\_|\\_ Firestore in Native mode \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/enterprise-optimize-query-performance",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 32,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use forceIndex with Query Explain You can use Query Explain , especially with the analyze option, to observe the effects of forceIndex : Verify that Firestore in Native Mode used the specified index in forceIndex by checking the leaf nodes of the execution tree for the index ID.",
+          "Optimize query performance Preview — Firestore in Native mode (with Pipeline Operations) for Enterprise Edition This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "You can use the forceIndex option on any input stage in Pipeline operations to override Firestore in Native Mode's default query plan and specify an index to use, or to force a table scan."
+        ]
+      },
+      {
+        "title": "\"Analyze query execution with Query Explain \\_|\\_ Firestore in Native mode\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/enterprise-query-explain",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 31,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Analyze query execution with Query Explain Preview — Firestore in Native mode (with Pipeline Operations) for Enterprise Edition This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "The following is an example of an execution tree: Tree: • Compute $out 1: map set($record 1, \" name \", $ name 1, \" key \", unset) is query result: true Execution: records returned: 2 latency: 5.96 ms (local <1 ms) └── • Compute $ name 1: map get($record 1, \" key \") Execution: records returned: 2 latency: 5.88 ms (local <1 ms) └── • MajorSort fields: [$v 1 ASC] output: [$record 1] limit: 100 Execution: records returned: 2 latency: 5.86 ms (local <1 ms) peak memory usage: 20.25 KiB (20,736 B) └── • Compute $v 1: map get($record 1, \"status\") Execution: records returned: 2 latency: 5.23 ms (local <1 ms) └── • TableScan source: /users order: UNDEFINED properties: row range: (-∞..+∞) output record: $record 1 variables: [$record 1] Execution: records returned: 2 latency: 4.68 ms records scanned: 2 data bytes read: 148 B What's next To learn about the execution tree nodes, see the Query execution reference .",
+          "Execution: results returned: 2 request peak memory usage: 20.25 KiB (20,736 B) data bytes read: 148 B entity row scanned: 2 Billing: read units: 1 Execution Tree The execution tree describes the query execution as a series of nodes."
+        ]
+      },
+      {
+        "title": "\"Analyze query performance statistics \\_|\\_ Firestore in Native mode \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/enterprise-query-insights",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 31,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Analyze query performance statistics Preview — Firestore in Native mode (with Pipeline Operations) for Enterprise Edition This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "View Query insights To view query insights for a Firestore database, open the database Query insights pane in the Google Cloud console.",
+          "Query insights data Query insights includes data from the following API methods: listDocuments listCollectionIds runQuery runAggregationQuery partitionQuery executePipeline You can view data about the queries that use these methods for a given project, database, and time duration ranging from 10 minutes to 30 days."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "db.pipeline"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/enterprise-optimize-query-performance",
+        "https://docs.cloud.google.com/firestore/native/docs/enterprise-query-explain",
+        "https://docs.cloud.google.com/firestore/native/docs/enterprise-query-insights"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:05.644Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore"
+}

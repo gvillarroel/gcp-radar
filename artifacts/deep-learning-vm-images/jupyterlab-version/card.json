@@ -1,0 +1,97 @@
+{
+  "feature_name": "JupyterLab version",
+  "feature_slug": "jupyterlab-version",
+  "summary": "JupyterLab was upgraded from version 3.2 to 3.4.",
+  "extended_definition": "JupyterLab was upgraded from version 3.2 to 3.4.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deep-learning-vm/docs/introduction",
+      "https://docs.cloud.google.com/deep-learning-vm/docs/jupyter",
+      "https://docs.cloud.google.com/deep-learning-vm/docs/pytorch_start_instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Connect to JupyterLab \\_|\\_ Deep Learning VM Images \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/jupyter",
+        "source_id": "site-docs-reference",
+        "final_score": 47,
+        "relevance": "",
+        "evidence_snippets": [
+          "To set up SSH port forwarding , complete the following steps, and then access your JupyterLab session through a local browser: Run the following command by using the Google Cloud CLI in your preferred terminal or in Cloud Shell : gcloud compute ssh \\ --project PROJECT ID \\ --zone ZONE \\ INSTANCE NAME \\ -- -L 8080 :localhost:8080 Replace the following: PROJECT ID : your Google Cloud project ID ZONE : the zone where your instance is located INSTANCE NAME : the name of your instance Note: If using Cloud Shell to run the command, add a -4 to the SSH flags to use IPv4 to connect.",
+          "Example: -- -4 -L LOCAL PORT :localhost: REMOTE PORT Access your JupyterLab session through a local browser: If you ran the command on your local machine, visit https://localhost:8080 to access JupyterLab.",
+          "Home Documentation Compute Compute Engine Deep Learning VM Images Guides Send feedback Connect to JupyterLab Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Introduction to Deep Learning VM \\_|\\_ Deep Learning VM Images \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/introduction",
+        "source_id": "site-docs-reference",
+        "final_score": 38,
+        "relevance": "",
+        "evidence_snippets": [
+          "Python 3.10 with the following packages: numpy scipy matplotlib pandas nltk pillow scikit-image opencv-python scikit-learn many more JupyterLab notebook environments for quick prototyping Nvidia packages with the latest Nvidia driver for GPU-enabled instances: CUDA 11. x and 12. x (the version depends on the framework) CuDNN 7. x and NCCL 2. x (the version depends on the CUDA version) Updates Deep Learning VM images are updated regularly with bug fixes and package updates.",
+          "There are currently images supporting TensorFlow Enterprise , TensorFlow, PyTorch, and generic high-performance computing, with versions for both CPU-only and GPU-enabled workflows."
+        ]
+      },
+      {
+        "title": "\"Create a PyTorch Deep Learning VM instance \\_|\\_ Deep Learning VM Images\\",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/pytorch_start_instance",
+        "source_id": "site-docs-reference",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "To create a Deep Learning VM instance with the latest PyTorch image family and one or more attached GPUs, enter the following at the command line: export IMAGE FAMILY = \"pytorch-latest-gpu\" export ZONE = \"us-west1-b\" export INSTANCE NAME = \"my-instance\" gcloud compute instances create $ INSTANCE NAME \\ -- zone =$ ZONE \\ -- image - family =$ IMAGE FAMILY \\ -- image - project = deeplearning - platform - release \\ -- maintenance - policy = TERMINATE \\ -- accelerator = \"type=nvidia-tesla-v100,count=1\" \\ -- metadata = \"install-nvidia-driver=True\" Options: --image-family must be either pytorch-latest-gpu or pytorch- VERSION - CUDA-VERSION (for example, pytorch-1-10-cu110 ). --image-project must be deeplearning-platform-release . --maintenance-policy must be TERMINATE .",
+          "Without GPUs To create a Deep Learning VM instance with the latest PyTorch image family and a CPU, enter the following at the command line: export IMAGE FAMILY = \"pytorch-latest-cpu\" export ZONE = \"us-west1-b\" export INSTANCE NAME = \"my-instance\" gcloud compute instances create $ INSTANCE NAME \\ -- zone =$ ZONE \\ -- image - family =$ IMAGE FAMILY \\ -- image - project = deeplearning - platform - release Options: --image-family must be either pytorch-latest-cpu or pytorch- VERSION -cpu (for example, pytorch-1-13-cpu ). --image-project must be deeplearning-platform-release .",
+          "You have the option to select Enable access to JupyterLab via URL instead of SSH (Beta) ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deep-learning-vm/docs/jupyter",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/introduction",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/pytorch_start_instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deep-learning-vm/docs/jupyter",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/introduction",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/pytorch_start_instance"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:57.849Z",
+  "source_step08_card": "data/step-08/current/products/deep-learning-vm-images/card.json",
+  "product_name": "Deep Learning VM Images",
+  "product_slug": "deep-learning-vm-images"
+}

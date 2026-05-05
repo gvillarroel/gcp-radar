@@ -1,0 +1,173 @@
+{
+  "feature_name": "Ingress rules for VPC Service Controls",
+  "feature_slug": "ingress-rules-for-vpc-service-controls",
+  "summary": "VPC Service Controls now support ingress rules for access control.",
+  "extended_definition": "VPC Service Controls now support ingress rules for access control.",
+  "lifecycle": {
+    "latest_feature_date": "2021-04-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/access-context-manager/docs/access-control",
+      "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+      "https://docs.cloud.google.com/access-context-manager/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Apply policies to user groups using access bindings \\_|\\_ Access Context\\",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+        "source_id": "site-iam-reference",
+        "final_score": 72,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Preview — Session controls feature only This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "Define configurations for specific applications This method lets you apply different access levels and session controls to different applications.",
+          "If you also define session controls in the YAML file, those session controls override the default settings for those specific applications."
+        ]
+      },
+      {
+        "title": "Access Context Manager Overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 71,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can configure and enforce Access Context Manager policies across the following Chrome Enterprise Premium solution components: VPC Service Controls Identity-Aware Proxy Context-Aware Access for Google Workspace Identity and Access Management (IAM) conditions Benefits Many companies rely on a perimeter security model such as a firewall to secure internal resources.",
+          "For example, you can use this scenario to enable a Cloud Function to access data protected by VPC Service Controls.",
+          "Policy is configured and enforced across various points, such as VPC Service Controls ."
+        ]
+      },
+      {
+        "title": "\"Access control with IAM \\_|\\_ Access Context Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "To grant one of these roles, use the Google Cloud console or use the gcloud command-line tool: Admin allows read-write access gcloud organizations add-iam-policy-binding ORGANIZATION ID \\ --member = \"user:example@customer.org\" \\ --role = \"roles/accesscontextmanager.policyAdmin\" Editor allows read-write access gcloud organizations add-iam-policy-binding ORGANIZATION ID \\ --member = \"user:example@customer.org\" \\ --role = \"roles/accesscontextmanager.policyEditor\" Reader allows read-only access gcloud organizations add-iam-policy-binding ORGANIZATION ID \\ --member = \"user:example@customer.org\" \\ --role = \"roles/accesscontextmanager.policyReader\" Organization Viewer allows access to VPC Service Controls using the Google Cloud console gcloud organizations add-iam-policy-binding ORGANIZATION ID \\ --member = \"user:example@customer.org\" \\ --role = \"roles/resourcemanager.organizationViewer\" What's next Access Context Manager overview Create an access policy Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Security Access Context Manager Guides Send feedback Access control with IAM Stay organized with collections Save and categorize content based on your preferences.",
+          "The access control for scoped policies is independent of the projects or folders in their scopes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accesscontextmanager.policyAdmin",
+      "accesscontextmanager.policyEditor",
+      "accesscontextmanager.policyReader",
+      "customer.org",
+      "resourcemanager.organizationViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/accesscontextmanager.policyAdmin",
+      "roles/accesscontextmanager.policyEditor",
+      "roles/accesscontextmanager.policyReader",
+      "roles/resourcemanager.organizationViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+        "https://docs.cloud.google.com/access-context-manager/docs/access-control"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+        "https://docs.cloud.google.com/access-context-manager/docs/access-control"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+        "https://docs.cloud.google.com/access-context-manager/docs/access-control"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+        "https://docs.cloud.google.com/access-context-manager/docs/access-control"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+        "https://docs.cloud.google.com/access-context-manager/docs/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+        "https://docs.cloud.google.com/access-context-manager/docs/access-control"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+        "https://docs.cloud.google.com/access-context-manager/docs/access-control"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+        "https://docs.cloud.google.com/access-context-manager/docs/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+        "https://docs.cloud.google.com/access-context-manager/docs/access-control"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+        "https://docs.cloud.google.com/access-context-manager/docs/access-control"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:03.795Z",
+  "source_step08_card": "data/step-08/current/products/access-context-manager/card.json",
+  "product_name": "Access Context Manager",
+  "product_slug": "access-context-manager"
+}

@@ -1,0 +1,92 @@
+{
+  "feature_name": "Spanner partitioned DML query statistics",
+  "feature_slug": "spanner-partitioned-dml-query-statistics",
+  "summary": "Provides query statistics for previously executed partitioned DML statements in Spanner.",
+  "extended_definition": "Provides query statistics for previously executed partitioned DML statements in Spanner.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+      "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat",
+      "https://docs.cloud.google.com/spanner/docs/query-operators-binary"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"JDBC session management commands (GoogleSQL) \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "source_id": "site-docs-reference",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "SHOW VARIABLE AUTO PARTITION MODE SET AUTO PARTITION MODE = { true false } Set this variable to true if you want the connection to use partitioned query for all queries that are executed.",
+          "The Spanner JDBC driver supports three alternatives for executing partitioned queries: SET AUTO PARTITION MODE = true RUN PARTITIONED QUERY sql PARTITION sql followed by multiple RUN PARTITION 'partition-token' Each of these methods are described in the following sections.",
+          "Ensure that DATA BOOST ENABLED is set to true to execute the query with Data Boost : SET DATA BOOST ENABLED = true RUN PARTITIONED QUERY SELECT FirstName , LastName FROM Singers The Spanner JDBC driver internally partitions the query and executes partitions in parallel."
+        ]
+      },
+      {
+        "title": "\"JDBC session management commands (PostgreSQL) \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat",
+        "source_id": "site-docs-reference",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "AUTO PARTITION MODE { TO = } { true false } Set this variable to true if you want the connection to use partitioned query for all queries that are executed.",
+          "The JDBC driver supports three alternatives for executing partitioned queries: SET SPANNER.AUTO PARTITION MODE = true RUN PARTITIONED QUERY sql PARTITION sql followed by multiple RUN PARTITION 'partition-token' Each of these methods are described in the following sections.",
+          "This statement returns a timestamp only when either a read-only transaction is still active and has executed at least one query, or immediately after a read-only transaction is committed and before a new transaction starts."
+        ]
+      },
+      {
+        "title": "Binary operators \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/query-operators-binary",
+        "source_id": "site-docs-reference",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "Properties and execution statistics A property of an operator describes a trait that is used when the operator is executed.",
+          "Properties and execution statistics A property of an operator describes a trait that is used when the operator is executed.",
+          "Properties and execution statistics A property of an operator describes a trait that is used when the operator is executed."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.spanner"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "https://docs.cloud.google.com/spanner/docs/query-operators-binary"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:37.939Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

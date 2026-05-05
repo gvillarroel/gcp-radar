@@ -1,0 +1,109 @@
+{
+  "feature_name": "Kubernetes 1.18 support",
+  "feature_slug": "kubernetes-1-18-support",
+  "summary": "Anthos clusters on AWS supports Kubernetes version 1.18, including CoreDNS 1.7.1 and Cluster Autoscaler 1.18.",
+  "extended_definition": "Anthos clusters on AWS supports Kubernetes version 1.18, including CoreDNS 1.7.1 and Cluster Autoscaler 1.18.",
+  "lifecycle": {
+    "latest_feature_date": "2020-12-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/apis",
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/getting-support",
+      "https://docs.cloud.google.com/service-mesh/v1.21/docs/supported-features-in-cluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Get support \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/getting-support",
+        "source_id": "site-docs-root-2",
+        "final_score": 115,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For the list of the Kubernetes versions that GKE on AWS supports, see Kubernetes version notes .",
+          "For the list of the Kubernetes versions that GKE on AWS supports, see Kubernetes version notes .",
+          "Google's responsibilities Maintain and distribute the GKE on AWS software package including Kubernetes, base images, the AWS integration features, the Ingress controller, the Connect agent, and the anthos-gke command line tool."
+        ]
+      },
+      {
+        "title": "Reference \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/apis",
+        "source_id": "site-docs-root-2",
+        "final_score": 95,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Kubernetes version notes archive See an archive of Kubernetes version notes for versions that GKE on AWS no longer supports.",
+          "Kubernetes version notes See the Kubernetes version notes for versions that GKE on AWS supports.",
+          "Operating system details Information about the operating system running on AWS EC2 instances managed by GKE on AWS. gcloud container aws Create and manage Google Kubernetes Engine (GKE) containers and clusters running on AWS."
+        ]
+      },
+      {
+        "title": "\"In-cluster control plane supported features \\_|\\_ Cloud Service Mesh v1.21\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.21/docs/supported-features-in-cluster",
+        "source_id": "site-docs-reference",
+        "final_score": 93,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Feature GKE clusters on Google Cloud Other GKE Enterprise clusters Ingress Gateway with class: istio HttpRoute using parentRef Mesh traffic Configuring Istio CRDs using the targetRef field including AuthorizationPolicy, RequestAuthentication, Telemetry and WasmPlugin Warning: Microsoft AKS attached and GKE on Azure clusters require an additional step to use the Kubernetes Gateway API.",
+          "For managed Cloud Service Mesh with an ISTIOD control plane implementation , Google supports the current Cloud Service Mesh versions available in each release channel .",
+          "For self-installed in-cluster Cloud Service Mesh , Google supports the current and previous two (n-2) minor versions of Cloud Service Mesh."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "v1.21",
+      "v1.22"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/getting-support",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/apis"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/getting-support",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/apis"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/getting-support",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/apis"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:04.861Z",
+  "source_step08_card": "data/step-08/current/products/anthos-clusters-on-aws-previous-generation/card.json",
+  "product_name": "Anthos clusters on AWS (previous generation)",
+  "product_slug": "anthos-clusters-on-aws-previous-generation"
+}

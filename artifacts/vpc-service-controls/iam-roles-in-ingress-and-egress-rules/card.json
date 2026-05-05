@@ -1,0 +1,227 @@
+{
+  "feature_name": "IAM roles in ingress and egress rules",
+  "feature_slug": "iam-roles-in-ingress-and-egress-rules",
+  "summary": "VPC Service Controls lets you use IAM roles in ingress and egress rules to allow access to resources protected by service perimeters.",
+  "extended_definition": "VPC Service Controls lets you use IAM roles in ingress and egress rules to allow access to resources protected by service perimeters.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/configuring-ingress-egress-policies",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure IAM roles in ingress and egress rules \\_|\\_ VPC Service Controls\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "source_id": "site-docs-reference",
+        "final_score": 459,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking VPC Service Controls Guides Send feedback Configure IAM roles in ingress and egress rules Stay organized with collections Save and categorize content based on your preferences.",
+          "However, there are a few IAM roles in these services that are either partially supported or not supported for use in the ingress and egress rules, because some or all of the underlying permissions are not supported: Using a partially supported IAM role in an ingress or egress rule makes the rule ineffective for requests or actions specific to the underlying unsupported permissions .",
+          "Supported products You can use the IAM roles of the following Google Cloud services in the ingress and egress rules: Product Limitations Artifact Registry artifactregistry.googleapis.com No known limitations."
+        ]
+      },
+      {
+        "title": "Ingress and egress rules \\_|\\_ VPC Service Controls \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "source_id": "site-docs-reference",
+        "final_score": 361,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can configure identity groups and third-party identities and IAM roles ( Preview ) in ingress and egress rules.",
+          "Home Documentation Networking VPC Service Controls Guides Send feedback Ingress and egress rules Stay organized with collections Save and categorize content based on your preferences.",
+          "VPC Service Controls uses ingress and egress rules to allow access to and from the resources and clients protected by service perimeters."
+        ]
+      },
+      {
+        "title": "\"Configuring ingress and egress policies \\_|\\_ VPC Service Controls \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/configuring-ingress-egress-policies",
+        "source_id": "site-docs-reference",
+        "final_score": 315,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more details, see Get the name and etag of an access policy Run the following command during the creation of a perimeter to create an ingress/egress policy: gcloud access-context-manager perimeters create PERIMETER NAME --title= TITLE --ingress-policies= INGRESS-FILENAME .yaml --restricted-services= SERVICE --resources=\"projects/ PROJECT \" gcloud access-context-manager perimeters create PERIMETER NAME --title= TITLE --egress-policies= -EGRESS-FILENAME .yaml --restricted-services= SERVICE --resources=\"projects/ PROJECT \" For example: gcloud access-context-manager perimeters create my-perimeter --title=perimeter-for-project-1 --ingress-policies=my-ingress-rule.yaml --restricted-services=storage.googelapis.com --resources=\"projects/myproject\" For information about configuring ingress and egress rules as YAML files, see Ingress rules reference and Egress rules reference .",
+          "For more details, see Get the name and etag of an access policy To update a perimeter policy, run one of the following commands replacing variables with appropriate values: gcloud access-context-manager perimeters update PERIMETER NAME --set-ingress-policies= INGRESS-FILENAME .yaml gcloud access-context-manager perimeters update PERIMETER NAME --set-egress-policies= EGRESS-FILENAME .yaml For example: gcloud access-context-manager perimeters update my-perimeter --set-ingress-policies=my-ingress-rule.yaml For information about configuring ingress and egress rules as YAML files, see Ingress rules reference and Egress rules reference .",
+          "Home Documentation Networking VPC Service Controls Guides Send feedback Configuring ingress and egress policies Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Supported identities for ingress and egress rules \\_|\\_ VPC Service Controls\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities",
+        "source_id": "site-docs-reference-2",
+        "final_score": 292,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking VPC Service Controls Guides Send feedback Supported identities for ingress and egress rules Stay organized with collections Save and categorize content based on your preferences.",
+          "VPC Service Controls uses ingress and egress rules to control access to and from resources and clients within service perimeters.",
+          "ORGANIZATION ID .workload.id.goog/ What's next Configure identity groups and third-party identities in ingress and egress rules Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "artifactregistry.googleapis.com",
+      "cloudkms.googleapis.com",
+      "rule.yaml",
+      "storage.googelapis.com",
+      "workload.id.goog"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configuring-ingress-egress-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configuring-ingress-egress-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configuring-ingress-egress-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configuring-ingress-egress-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configuring-ingress-egress-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configuring-ingress-egress-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configuring-ingress-egress-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configuring-ingress-egress-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configuring-ingress-egress-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configuring-ingress-egress-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configuring-ingress-egress-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configuring-ingress-egress-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configuring-ingress-egress-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configuring-ingress-egress-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:47.928Z",
+  "source_step08_card": "data/step-08/current/products/vpc-service-controls/card.json",
+  "product_name": "VPC Service Controls",
+  "product_slug": "vpc-service-controls"
+}

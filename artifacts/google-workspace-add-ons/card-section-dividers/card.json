@@ -1,0 +1,172 @@
+{
+  "feature_name": "Card section dividers",
+  "feature_slug": "card-section-dividers",
+  "summary": "Lets Google Workspace Add-ons omit the divider between card sections.",
+  "extended_definition": "Lets Google Workspace Add-ons omit the divider between card sections.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+      "https://developers.google.com/workspace/add-ons/guides/workspace-restrictions",
+      "https://developers.google.com/workspace/add-ons/guides/workspace-style",
+      "https://developers.google.com/workspace/add-ons/reference/rpc/google.apps.card.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Package google.apps.card.v1 \\_|\\_ Google Workspace add-ons \\_|\\_ Google\\",
+        "url": "https://developers.google.com/workspace/add-ons/reference/rpc/google.apps.card.v1",
+        "source_id": "site-api-reference",
+        "final_score": 269,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Index Action (message) Action.ActionParameter (message) Action.Interaction (enum) Action.LoadIndicator (enum) AuthorizationError (message) BasicAuthorizationAction (message) BorderStyle (message) BorderStyle.BorderType (enum) Button (message) Button.Type (enum) ButtonList (message) Card (message) Card.CardAction (message) Card.CardFixedFooter (message) Card.CardHeader (message) Card.DisplayStyle (enum) Card.DividerStyle (enum) Card.NestedWidget (message) Card.Section (message) Card.Visibility (enum) Carousel (message) Carousel.CarouselCard (message) Chip (message) ChipList (message) ChipList.Layout (enum) CollapseControl (message) Columns (message) Columns.Column (message) Columns.Column.HorizontalSizeStyle (enum) Columns.Column.VerticalAlignment (enum) Columns.Column.Widgets (message) Condition (message) Condition.ExpressionDataCondition (message) Condition.ExpressionDataCondition.ConditionType (enum) DataActions (message) DataSourceConfig (message) DateTimePicker (message) DateTimePicker.DateTimePickerType (enum) DecoratedText (message) DecoratedText.SwitchControl (message) DecoratedText.SwitchControl.ControlType (enum) Divider (message) EndNavigation (message) EndNavigation.Action (enum) EventAction (message) EventAction.CommonWidgetAction (message) EventAction.CommonWidgetAction.UpdateVisibilityAction (message) ExpressionData (message) GetAutocompletionResponse (message) Grid (message) Grid.GridItem (message) Grid.GridItem.GridItemLayout (enum) Icon (message) Image (message) ImageComponent (message) ImageCropStyle (message) ImageCropStyle.ImageCropType (enum) Link (message) LinkPreview (message) MaterialIcon (message) ModifyCard (message) ModifyCard.UpdateWidget (message) ModifyCard.UpdateWidget.SelectionInputWidgetSuggestions (message) Navigation (message) Notification (message) OnClick (message) OpenLink (message) OpenLink.OnClose (enum) OpenLink.OpenAs (enum) OverflowMenu (message) OverflowMenu.OverflowMenuItem (message) RenderActions (message) RenderActions.Action (message) RequestingGoogleScopes (message) SelectionInput (message) SelectionInput.PlatformDataSource (message) SelectionInput.PlatformDataSource.CommonDataSource (enum) SelectionInput.SelectionItem (message) SelectionInput.SelectionType (enum) SubmitFormResponse (message) Suggestions (message) Suggestions.SuggestionItem (message) TextInput (message) TextInput.Type (enum) TextParagraph (message) TextParagraph.TextSyntax (enum) Trigger (message) Validation (message) Validation.InputType (enum) Widget (message) Widget.HorizontalAlignment (enum) Widget.ImageType (enum) Widget.VerticalAlignment (enum) Action An action that describes the behavior when the form is submitted.",
+          "Example: Card message for a Google Chat app To create the sample card message in Google Chat, use the following JSON: { \"cardsV2\": [ { \"cardId\": \"unique-card-id\", \"card\": { \"header\": { \"title\": \"Sasha\", \"subtitle\": \"Software Engineer\", \"imageUrl\": \"https://developers.google.com/workspace/chat/images/quickstart-app-avatar.png\", \"imageType\": \"CIRCLE\", \"imageAltText\": \"Avatar for Sasha\" }, \"sections\": [ { \"header\": \"Contact Info\", \"collapsible\": true, \"uncollapsibleWidgetsCount\": 1, \"widgets\": [ { \"decoratedText\": { \"startIcon\": { \"knownIcon\": \"EMAIL\" }, \"text\": \"sasha@example.com\" } }, { \"decoratedText\": { \"startIcon\": { \"knownIcon\": \"PERSON\" }, \"text\": \"<font color=\\\"#80e27e\\\">Online</font>\" } }, { \"decoratedText\": { \"startIcon\": { \"knownIcon\": \"PHONE\" }, \"text\": \"+1 (555) 555-1234\" } }, { \"buttonList\": { \"buttons\": [ { \"text\": \"Share\", \"onClick\": { \"openLink\": { \"url\": \"https://example.com/share\" } } }, { \"text\": \"Edit\", \"onClick\": { \"action\": { \"function\": \"goToView\", \"parameters\": [ { \"key\": \"viewType\", \"value\": \"EDIT\" } ] } } } ] } } ] } ] } } ] } Fields header CardHeader The header of the card.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-03-25 UTC.\"],[],[\"This content outlines UI components for Google Chat apps and Workspace add-ons, structured within cards."
+        ]
+      },
+      {
+        "title": "Restrictions \\_|\\_ Google Workspace add-ons \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/add-ons/guides/workspace-restrictions",
+        "source_id": "site-docs-root",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google Workspace add-ons are limited to Gmail, Calendar, Drive, Meet, Docs, Sheets, and Slides, and must use card-based interfaces, not HTML/CSS.",
+          "Google Workspace add-ons The following restrictions only apply to Google Workspace add-ons and the use of the Card service .",
+          "Google Workspace add-ons use a card-based interface system, rather than traditional HTML, CSS, or client-side scripting."
+        ]
+      },
+      {
+        "title": "UI style guide for Google Workspace add-ons \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/add-ons/guides/workspace-style",
+        "source_id": "site-docs-root",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Add-ons Send feedback UI style guide for Google Workspace add-ons Stay organized with collections Save and categorize content based on your preferences.",
+          "Page Summary outlined flag Google Workspace add-ons should seamlessly integrate with the host application's style and layout using familiar controls and behaviors.",
+          "Universal and card actions If you use universal actions or card actions in your add-on, they appear as menu items in the cards you define."
+        ]
+      },
+      {
+        "title": "\"Create third-party resources from the @ menu \\_|\\_ Google Workspace add-ons\\",
+        "url": "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+        "source_id": "site-docs-root",
+        "final_score": 214,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "As an example, see the addons section of a manifest that configures resource creation for the following support case service: { \"oauthScopes\" : [ \"https://www.googleapis.com/auth/workspace.linkpreview\" , \"https://www.googleapis.com/auth/workspace.linkcreate\" ], \"addOns\" : { \"docs\" : { \"linkPreviewTriggers\" : [ ... ], \"createActionTriggers\" : [ { \"id\" : \"createCase\" , \"labelText\" : \"Create support case\" , \"localizedLabelText\" : { \"es\" : \"Crear caso de soporte\" }, \"runFunction\" : \"createCaseInputCard\" , \"logoUrl\" : \"https://www.example.com/images/case.png\" } ] } } } In the example, the Google Workspace add-on lets users create support cases.",
+          "Returns: The resulting card or action response. \"\"\" card header1 = { \"title\" : \"Create a support case\" } card section1 text input1 = { \"textInput\" : { \"name\" : \"name\" , \"label\" : \"Name\" } } card section1 text input2 = { \"textInput\" : { \"name\" : \"description\" , \"label\" : \"Description\" , \"type\" : \"MULTIPLE LINE\" } } card section1 selection input1 = { \"selectionInput\" : { \"name\" : \"priority\" , \"label\" : \"Priority\" , \"type\" : \"DROPDOWN\" , \"items\" : [{ \"text\" : \"P0\" , \"value\" : \"P0\" }, { \"text\" : \"P1\" , \"value\" : \"P1\" }, { \"text\" : \"P2\" , \"value\" : \"P2\" }, { \"text\" : \"P3\" , \"value\" : \"P3\" }] } } card section1 selection input2 = { \"selectionInput\" : { \"name\" : \"impact\" , \"label\" : \"Impact\" , \"items\" : [{ \"text\" : \"Blocks a critical customer operation\" , \"value\" : \"Blocks a critical customer operation\" }] } } card section1 button list1 button1 action1 = { \"function\" : os . environ [ \"URL\" ], \"parameters\" : [ { \"key\" : \"submitCaseCreationForm\" , \"value\" : True } ], \"persistValues\" : True } card section1 button list1 button1 = { \"text\" : \"Create\" , \"onClick\" : { \"action\" : card section1 button list1 button1 action1 } } card section1 button list1 = { \"buttonList\" : { \"buttons\" : [ card section1 button list1 button1 ] } } Builds the creation form and adds error text for invalid inputs. card section1 = [] if \"name\" in errors : card section1 . append ( create error text paragraph ( errors [ \"name\" ])) card section1 . append ( card section1 text input1 ) if \"description\" in errors : card section1 . append ( create error text paragraph ( errors [ \"description\" ])) card section1 . append ( card section1 text input2 ) if \"priority\" in errors : card section1 . append ( create error text paragraph ( errors [ \"priority\" ])) card section1 . append ( card section1 selection input1 ) if \"impact\" in errors : card section1 . append ( create error text paragraph ( errors [ \"impact\" ])) card section1 . append ( card section1 selection input2 ) card section1 . append ( card section1 button list1 ) card = { \"header\" : card header1 , \"sections\" : [{ \"widgets\" : card section1 }] } if isUpdate : return { \"renderActions\" : { \"action\" : { \"navigations\" : [{ \"updateCard\" : card }] } } } else : return { \"action\" : { \"navigations\" : [{ \"pushCard\" : card }] } } Java java/3p-resources/src/main/java/Create3pResources.java View on GitHub / Produces a support case creation form. @param event The event object. @param errors A map of per-field error messages. @param isUpdate Whether to return the form as an update card navigation. @return The resulting card or action response. / JsonObject createCaseInputCard ( JsonObject event , Map<String , String > errors , boolean isUpdate ) { JsonObject cardHeader = new JsonObject (); cardHeader . add ( \"title\" , new JsonPrimitive ( \"Create a support case\" )); JsonObject cardSectionTextInput1 = new JsonObject (); cardSectionTextInput1 . add ( \"name\" , new JsonPrimitive ( \"name\" )); cardSectionTextInput1 . add ( \"label\" , new JsonPrimitive ( \"Name\" )); JsonObject cardSectionTextInput1Widget = new JsonObject (); cardSectionTextInput1Widget . add ( \"textInput\" , cardSectionTextInput1 ); JsonObject cardSectionTextInput2 = new JsonObject (); cardSectionTextInput2 . add ( \"name\" , new JsonPrimitive ( \"description\" )); cardSectionTextInput2 . add ( \"label\" , new JsonPrimitive ( \"Description\" )); cardSectionTextInput2 . add ( \"type\" , new JsonPrimitive ( \"MULTIPLE LINE\" )); JsonObject cardSectionTextInput2Widget = new JsonObject (); cardSectionTextInput2Widget . add ( \"textInput\" , cardSectionTextInput2 ); JsonObject cardSectionSelectionInput1ItemsItem1 = new JsonObject (); cardSectionSelectionInput1ItemsItem1 . add ( \"text\" , new JsonPrimitive ( \"P0\" )); cardSectionSelectionInput1ItemsItem1 . add ( \"value\" , new JsonPrimitive ( \"P0\" )); JsonObject cardSectionSelectionInput1ItemsItem2 = new JsonObject (); cardSectionSelectionInput1ItemsItem2 . add ( \"text\" , new JsonPrimitive ( \"P1\" )); cardSectionSelectionInput1ItemsItem2 . add ( \"value\" , new JsonPrimitive ( \"P1\" )); JsonObject cardSectionSelectionInput1ItemsItem3 = new JsonObject (); cardSectionSelectionInput1ItemsItem3 . add ( \"text\" , new JsonPrimitive ( \"P2\" )); cardSectionSelectionInput1ItemsItem3 . add ( \"value\" , new JsonPrimitive ( \"P2\" )); JsonObject cardSectionSelectionInput1ItemsItem4 = new JsonObject (); cardSectionSelectionInput1ItemsItem4 . add ( \"text\" , new JsonPrimitive ( \"P3\" )); cardSectionSelectionInput1ItemsItem4 . add ( \"value\" , new JsonPrimitive ( \"P3\" )); JsonArray cardSectionSelectionInput1Items = new JsonArray (); cardSectionSelectionInput1Items . add ( cardSectionSelectionInput1ItemsItem1 ); cardSectionSelectionInput1Items . add ( cardSectionSelectionInput1ItemsItem2 ); cardSectionSelectionInput1Items . add ( cardSectionSelectionInput1ItemsItem3 ); cardSectionSelectionInput1Items . add ( cardSectionSelectionInput1ItemsItem4 ); JsonObject cardSectionSelectionInput1 = new JsonObject (); cardSectionSelectionInput1 . add ( \"name\" , new JsonPrimitive ( \"priority\" )); cardSectionSelectionInput1 . add ( \"label\" , new JsonPrimitive ( \"Priority\" )); cardSectionSelectionInput1 . add ( \"type\" , new JsonPrimitive ( \"DROPDOWN\" )); cardSectionSelectionInput1 . add ( \"items\" , cardSectionSelectionInput1Items ); JsonObject cardSectionSelectionInput1Widget = new JsonObject (); cardSectionSelectionInput1Widget . add ( \"selectionInput\" , cardSectionSelectionInput1 ); JsonObject cardSectionSelectionInput2ItemsItem = new JsonObject (); cardSectionSelectionInput2ItemsItem . add ( \"text\" , new JsonPrimitive ( \"Blocks a critical customer operation\" )); cardSectionSelectionInput2ItemsItem . add ( \"value\" , new JsonPrimitive ( \"Blocks a critical customer operation\" )); JsonArray cardSectionSelectionInput2Items = new JsonArray (); cardSectionSelectionInput2Items . add ( cardSectionSelectionInput2ItemsItem ); JsonObject cardSectionSelectionInput2 = new JsonObject (); cardSectionSelectionInput2 . add ( \"name\" , new JsonPrimitive ( \"impact\" )); cardSectionSelectionInput2 . add ( \"label\" , new JsonPrimitive ( \"Impact\" )); cardSectionSelectionInput2 . add ( \"items\" , cardSectionSelectionInput2Items ); JsonObject cardSectionSelectionInput2Widget = new JsonObject (); cardSectionSelectionInput2Widget . add ( \"selectionInput\" , cardSectionSelectionInput2 ); JsonObject cardSectionButtonListButtonActionParametersParameter = new JsonObject (); cardSectionButtonListButtonActionParametersParameter . add ( \"key\" , new JsonPrimitive ( \"submitCaseCreationForm\" )); cardSectionButtonListButtonActionParametersParameter . add ( \"value\" , new JsonPrimitive ( true )); JsonArray cardSectionButtonListButtonActionParameters = new JsonArray (); cardSectionButtonListButtonActionParameters . add ( cardSectionButtonListButtonActionParametersParameter ); JsonObject cardSectionButtonListButtonAction = new JsonObject (); cardSectionButtonListButtonAction . add ( \"function\" , new JsonPrimitive ( System . getenv (). get ( \"URL\" ))); cardSectionButtonListButtonAction . add ( \"parameters\" , cardSectionButtonListButtonActionParameters ); cardSectionButtonListButtonAction . add ( \"persistValues\" , new JsonPrimitive ( true )); JsonObject cardSectionButtonListButtonOnCLick = new JsonObject (); cardSectionButtonListButtonOnCLick . add ( \"action\" , cardSectionButtonListButtonAction ); JsonObject cardSectionButtonListButton = new JsonObject (); cardSectionButtonListButton . add ( \"text\" , new JsonPrimitive ( \"Create\" )); cardSectionButtonListButton . add ( \"onClick\" , cardSectionButtonListButtonOnCLick ); JsonArray cardSectionButtonListButtons = new JsonArray (); cardSectionButtonListButtons . add ( cardSectionButtonListButton ); JsonObject cardSectionButtonList = new JsonObject (); cardSectionButtonList . add ( \"buttons\" , cardSectionButtonListButtons ); JsonObject cardSectionButtonListWidget = new JsonObject (); cardSectionButtonListWidget . add ( \"buttonList\" , cardSectionButtonList ); // Builds the form inputs with error texts for invalid values.",
+          "See the License for the specific language governing permissions and limitations under the License. / import java.util.Arrays ; import java.util.HashMap ; import java.util.Map ; import org.apache.http.client.utils.URIBuilder ; import com.google.cloud.functions.HttpFunction ; import com.google.cloud.functions.HttpRequest ; import com.google.cloud.functions.HttpResponse ; import com.google.gson.Gson ; import com.google.gson.JsonArray ; import com.google.gson.JsonObject ; import com.google.gson.JsonPrimitive ; public class Create3pResources implements HttpFunction { private static final Gson gson = new Gson (); / Responds to any HTTP request related to 3p resource creations. @param request An HTTP request context. @param response An HTTP response context. / @Override public void service ( HttpRequest request , HttpResponse response ) throws Exception { JsonObject event = gson . fromJson ( request . getReader (), JsonObject . class ); JsonObject parameters = event . getAsJsonObject ( \"commonEventObject\" ). getAsJsonObject ( \"parameters\" ); if ( parameters != null && parameters . has ( \"submitCaseCreationForm\" ) && parameters . get ( \"submitCaseCreationForm\" ). getAsBoolean ()) { response . getWriter (). write ( gson . toJson ( submitCaseCreationForm ( event ))); } else { response . getWriter (). write ( gson . toJson ( createCaseInputCard ( event , new HashMap<String , String > (), false ))); } } / Produces a support case creation form. @param event The event object. @param errors A map of per-field error messages. @param isUpdate Whether to return the form as an update card navigation. @return The resulting card or action response. / JsonObject createCaseInputCard ( JsonObject event , Map<String , String > errors , boolean isUpdate ) { JsonObject cardHeader = new JsonObject (); cardHeader . add ( \"title\" , new JsonPrimitive ( \"Create a support case\" )); JsonObject cardSectionTextInput1 = new JsonObject (); cardSectionTextInput1 . add ( \"name\" , new JsonPrimitive ( \"name\" )); cardSectionTextInput1 . add ( \"label\" , new JsonPrimitive ( \"Name\" )); JsonObject cardSectionTextInput1Widget = new JsonObject (); cardSectionTextInput1Widget . add ( \"textInput\" , cardSectionTextInput1 ); JsonObject cardSectionTextInput2 = new JsonObject (); cardSectionTextInput2 . add ( \"name\" , new JsonPrimitive ( \"description\" )); cardSectionTextInput2 . add ( \"label\" , new JsonPrimitive ( \"Description\" )); cardSectionTextInput2 . add ( \"type\" , new JsonPrimitive ( \"MULTIPLE LINE\" )); JsonObject cardSectionTextInput2Widget = new JsonObject (); cardSectionTextInput2Widget . add ( \"textInput\" , cardSectionTextInput2 ); JsonObject cardSectionSelectionInput1ItemsItem1 = new JsonObject (); cardSectionSelectionInput1ItemsItem1 . add ( \"text\" , new JsonPrimitive ( \"P0\" )); cardSectionSelectionInput1ItemsItem1 . add ( \"value\" , new JsonPrimitive ( \"P0\" )); JsonObject cardSectionSelectionInput1ItemsItem2 = new JsonObject (); cardSectionSelectionInput1ItemsItem2 . add ( \"text\" , new JsonPrimitive ( \"P1\" )); cardSectionSelectionInput1ItemsItem2 . add ( \"value\" , new JsonPrimitive ( \"P1\" )); JsonObject cardSectionSelectionInput1ItemsItem3 = new JsonObject (); cardSectionSelectionInput1ItemsItem3 . add ( \"text\" , new JsonPrimitive ( \"P2\" )); cardSectionSelectionInput1ItemsItem3 . add ( \"value\" , new JsonPrimitive ( \"P2\" )); JsonObject cardSectionSelectionInput1ItemsItem4 = new JsonObject (); cardSectionSelectionInput1ItemsItem4 . add ( \"text\" , new JsonPrimitive ( \"P3\" )); cardSectionSelectionInput1ItemsItem4 . add ( \"value\" , new JsonPrimitive ( \"P3\" )); JsonArray cardSectionSelectionInput1Items = new JsonArray (); cardSectionSelectionInput1Items . add ( cardSectionSelectionInput1ItemsItem1 ); cardSectionSelectionInput1Items . add ( cardSectionSelectionInput1ItemsItem2 ); cardSectionSelectionInput1Items . add ( cardSectionSelectionInput1ItemsItem3 ); cardSectionSelectionInput1Items . add ( cardSectionSelectionInput1ItemsItem4 ); JsonObject cardSectionSelectionInput1 = new JsonObject (); cardSectionSelectionInput1 . add ( \"name\" , new JsonPrimitive ( \"priority\" )); cardSectionSelectionInput1 . add ( \"label\" , new JsonPrimitive ( \"Priority\" )); cardSectionSelectionInput1 . add ( \"type\" , new JsonPrimitive ( \"DROPDOWN\" )); cardSectionSelectionInput1 . add ( \"items\" , cardSectionSelectionInput1Items ); JsonObject cardSectionSelectionInput1Widget = new JsonObject (); cardSectionSelectionInput1Widget . add ( \"selectionInput\" , cardSectionSelectionInput1 ); JsonObject cardSectionSelectionInput2ItemsItem = new JsonObject (); cardSectionSelectionInput2ItemsItem . add ( \"text\" , new JsonPrimitive ( \"Blocks a critical customer operation\" )); cardSectionSelectionInput2ItemsItem . add ( \"value\" , new JsonPrimitive ( \"Blocks a critical customer operation\" )); JsonArray cardSectionSelectionInput2Items = new JsonArray (); cardSectionSelectionInput2Items . add ( cardSectionSelectionInput2ItemsItem ); JsonObject cardSectionSelectionInput2 = new JsonObject (); cardSectionSelectionInput2 . add ( \"name\" , new JsonPrimitive ( \"impact\" )); cardSectionSelectionInput2 . add ( \"label\" , new JsonPrimitive ( \"Impact\" )); cardSectionSelectionInput2 . add ( \"items\" , cardSectionSelectionInput2Items ); JsonObject cardSectionSelectionInput2Widget = new JsonObject (); cardSectionSelectionInput2Widget . add ( \"selectionInput\" , cardSectionSelectionInput2 ); JsonObject cardSectionButtonListButtonActionParametersParameter = new JsonObject (); cardSectionButtonListButtonActionParametersParameter . add ( \"key\" , new JsonPrimitive ( \"submitCaseCreationForm\" )); cardSectionButtonListButtonActionParametersParameter . add ( \"value\" , new JsonPrimitive ( true )); JsonArray cardSectionButtonListButtonActionParameters = new JsonArray (); cardSectionButtonListButtonActionParameters . add ( cardSectionButtonListButtonActionParametersParameter ); JsonObject cardSectionButtonListButtonAction = new JsonObject (); cardSectionButtonListButtonAction . add ( \"function\" , new JsonPrimitive ( System . getenv (). get ( \"URL\" ))); cardSectionButtonListButtonAction . add ( \"parameters\" , cardSectionButtonListButtonActionParameters ); cardSectionButtonListButtonAction . add ( \"persistValues\" , new JsonPrimitive ( true )); JsonObject cardSectionButtonListButtonOnCLick = new JsonObject (); cardSectionButtonListButtonOnCLick . add ( \"action\" , cardSectionButtonListButtonAction ); JsonObject cardSectionButtonListButton = new JsonObject (); cardSectionButtonListButton . add ( \"text\" , new JsonPrimitive ( \"Create\" )); cardSectionButtonListButton . add ( \"onClick\" , cardSectionButtonListButtonOnCLick ); JsonArray cardSectionButtonListButtons = new JsonArray (); cardSectionButtonListButtons . add ( cardSectionButtonListButton ); JsonObject cardSectionButtonList = new JsonObject (); cardSectionButtonList . add ( \"buttons\" , cardSectionButtonListButtons ); JsonObject cardSectionButtonListWidget = new JsonObject (); cardSectionButtonListWidget . add ( \"buttonList\" , cardSectionButtonList ); // Builds the form inputs with error texts for invalid values."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appsscript.json",
+      "avatar.png",
+      "case.png",
+      "cases.example.com",
+      "com.google.cloud.functions.HttpFunction",
+      "com.google.cloud.functions.HttpRequest",
+      "com.google.cloud.functions.HttpResponse",
+      "com.google.gson.Gson",
+      "com.google.gson.JsonArray",
+      "com.google.gson.JsonObject",
+      "com.google.gson.JsonPrimitive",
+      "deployment.json",
+      "developers.google.com",
+      "example.com",
+      "icon.png",
+      "java.util.Arrays",
+      "java.util.HashMap",
+      "java.util.Map",
+      "org.apache.http.client.utils.URIBuilder",
+      "resources.gs",
+      "workspace.linkcreate",
+      "workspace.linkpreview"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/add-ons/guides/workspace-restrictions",
+        "https://developers.google.com/workspace/add-ons/guides/workspace-style",
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/add-ons/guides/workspace-restrictions",
+        "https://developers.google.com/workspace/add-ons/guides/workspace-style",
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/add-ons/guides/workspace-restrictions",
+        "https://developers.google.com/workspace/add-ons/guides/workspace-style",
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/add-ons/guides/workspace-restrictions",
+        "https://developers.google.com/workspace/add-ons/guides/workspace-style",
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/add-ons/guides/workspace-restrictions",
+        "https://developers.google.com/workspace/add-ons/guides/workspace-style",
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/add-ons/guides/workspace-restrictions",
+        "https://developers.google.com/workspace/add-ons/guides/workspace-style",
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:20.974Z",
+  "source_step08_card": "data/step-08/current/products/google-workspace-add-ons/card.json",
+  "product_name": "Google Workspace add-ons",
+  "product_slug": "google-workspace-add-ons"
+}

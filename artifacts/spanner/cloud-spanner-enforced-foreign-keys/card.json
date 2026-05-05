@@ -1,0 +1,106 @@
+{
+  "feature_name": "Cloud Spanner enforced foreign keys",
+  "feature_slug": "cloud-spanner-enforced-foreign-keys",
+  "summary": "Cloud Spanner enforced foreign keys are available to enforce referential integrity constraints between tables.",
+  "extended_definition": "Cloud Spanner enforced foreign keys are available to enforce referential integrity constraints between tables.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/bulk-loading",
+      "https://docs.cloud.google.com/spanner/docs/information-schema",
+      "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Information schema for PostgreSQL-dialect databases \\_|\\_ Spanner \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "source_id": "site-docs-reference",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "This view also identifies the PRIMARY KEY and UNIQUE constraints on the referenced tables that the foreign keys use for constraint enforcement and referential actions.",
+          "Possible values are: CHECK FOREIGN KEY PLACEMENT KEY PRIMARY KEY UNIQUE is deferrable character varying The value is always NO . initially deferred character varying The value is always NO . enforced character varying Whether the constraint is enforced.",
+          "If a constraint is enforced, (after it reaches a certain state), it's validated both at write time and by a background integrity verifier."
+        ]
+      },
+      {
+        "title": "\"Information schema for GoogleSQL-dialect databases \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "source_id": "site-docs-reference",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "YES for enforced foreign keys or any other constraint type.",
+          "ENFORCED STRING NO if the constraint is an informational ( NOT ENFORCED ) foreign key .",
+          "KEY COLUMN USAGE This row-filtered table contains one row about each column of the tables from TABLE CONSTRAINTS that are constrained as keys by a PRIMARY KEY , FOREIGN KEY or UNIQUE constraint."
+        ]
+      },
+      {
+        "title": "Bulk loading best practices \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/bulk-loading",
+        "source_id": "site-docs-root",
+        "final_score": 103,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "In Spanner, these relationships are enforced using INTERLEAVE IN PARENT , or foreign keys.",
+          "However, for INTERLEAVE IN PARENT tables it is recommended that you create all tables using INTERLEAVE IN semantics during bulk load, which physically interleaves rows, but does not enforce referential integrity.",
+          "Use INTERLEAVE IN during bulk load For schemas with many parent child references across tables, you must always load the parent before the children to ensure referential integrity."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/spanner/docs/bulk-loading"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/spanner/docs/bulk-loading"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/spanner/docs/bulk-loading"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:37.939Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

@@ -1,0 +1,192 @@
+{
+  "feature_name": "Oracle Base Database Service",
+  "feature_slug": "oracle-base-database-service",
+  "summary": "Oracle Base Database Service lets you create DB systems through Google Cloud Console and the Google Cloud API.",
+  "extended_definition": "Oracle Base Database Service lets you create DB systems through Google Cloud Console and the Google Cloud API.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/oracle/database/docs/create-base-db-system",
+      "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+      "https://docs.cloud.google.com/oracle/database/docs/create-odb-network",
+      "https://docs.cloud.google.com/oracle/database/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create DB systems \\_|\\_ Oracle Database at Google Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/oracle/database/docs/create-base-db-system",
+        "source_id": "site-docs-reference",
+        "final_score": 358,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Oracle Database@Google Cloud lets you create an DB systems in the Google Cloud using Google Cloud console and Oracle Database@Google Cloud API.",
+          "API To create a DB system, run the following curl command: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://oracledatabase.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /dbSystems/ DB SYSTEM ID \" -d \\ '{ \"display name\": \" DB SYSTEM DISPLAY NAME \", \"gcp oracle zone\": \" GCP ORACLE ZONE \", \"name\": \"projects/ PROJECT ID /locations/ REGION /dbSystems/ DB SYSTEM NAME \", \"entitlement id\": \" ENTITLEMENT ID \", \"odb subnet\": \"projects/ ODB NETWORK PROJECT ID /locations/ REGION /odbNetworks/ ODB NETWORK ID /odbSubnets/ ODB SUBNET ID \", \"properties\": { \"shape\": \"VM.Standard.X86\", \"computeCount\": COMPUTE COUNT , \"node count\": NODE COUNT , \"initial data storage size gb\": INITIAL STORAGE SIZE , \"database edition\": \" DATABASE EDITION \", \"license model\": \" LICENSE TYPE \", \"hostname prefix\": \" HOSTNAME PREFIX \", \"db home\": { \"display name\": \" DB DISPLAY NAME \", \"db version\": \" DB VERSION \", \"database\": { \"db name\": \" DB NAME \", \"admin password\": \" PASSWORD \", \"character set\": \" CHARACTER SET \", \"database id\": \" DB ID \", }, }, \"ssh public keys\": [\" SSH PUBLIC KEY \"], \"data collection options\": { \"is diagnostics events enabled\": EVENTS ENABLED , \"is incident logs enabled\": INCIDENT LOGS ENABLE }, \"time zone\": { \"id\": \" TIMEZONE \" }, } }' Replace the following: PROJECT ID : the ID of your Google Cloud project in which to create the DB system.",
+          "Home Documentation Databases Oracle Database at Google Cloud Guides Send feedback Create DB systems Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Create databases \\_|\\_ Oracle Database at Google Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "source_id": "site-docs-reference",
+        "final_score": 334,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "API To create an Autonomous AI Database, run the following curl command: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://oracledatabase.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /autonomousDatabases/ DATABASE ID \" -d \\ '{ \"database\": \" DATABASE NAME \", \"displayName\": \" DISPLAY NAME \", \"admin password\": \" PASSWORD \", \"odb subnet\": \"projects/ ODB NETWORK PROJECT ID /locations/ REGION /odbNetworks/ ODB NETWORK ID /odbSubnets/ ODB SUBNET ID \", \"properties\": { \"licenseType\": \" LICENSE TYPE \", \"computeCount\": COMPUTE COUNT , \"dbVersion\": \" DATABASE VERSION \", \"dbWorkload\": \" WORKLOAD TYPE \", \"dataStorageSizeTb\": STORAGE SIZE } }' Replace the following: PROJECT ID : the ID of your Google Cloud project in which to create the database.",
+          "Click Create to create your database. gcloud Use the gcloud oracle-database autonomous-databases create command to create a database. gcloud oracle - database autonomous - databases create DATABASE ID \\ -- project = PROJECT ID \\ -- location = REGION \\ -- display - name = DISPLAY NAME \\ -- database = DATABASE NAME \\ -- admin - password = ADMIN PASSWORD \\ -- odb - subnet = projects / ODB NETWORK PROJECT ID / locations / REGION / odbNetworks / ODB NETWORK ID / odbSubnets / ODB SUBNET ID \\ -- properties - compute - count = COMPUTE COUNT \\ -- properties - db - version = DATABASE VERSION \\ -- properties - license - type = LICENSE TYPE \\ -- properties - db - workload = WORKLOAD TYPE \\ -- properties - data - storage - size - gb = STORAGE SIZE Replace the following: DATABASE ID : a permanent identifier for your instance.",
+          "Home Documentation Databases Oracle Database at Google Cloud Guides Send feedback Create databases Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Oracle Database@Google Cloud overview \\_|\\_ Oracle Database at Google Cloud\\",
+        "url": "https://docs.cloud.google.com/oracle/database/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 330,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create and manage Base Database Service resources Oracle Database@Google Cloud lets you create and manage DB system resources using Google Cloud console, Google Cloud CLI, or the Oracle Database@Google Cloud API.",
+          "Oracle Database@Google Cloud supports the following Oracle Cloud Infrastructure (OCI) products on Google Cloud: Exadata Database Service Autonomous AI Database Service Base Database Service Exadata Database Service on Exascale Infrastructure What Oracle Database@Google Cloud provides Oracle Database@Google Cloud offers many services to allow you to seamlessly integrate and manage your OCI resources in Google Cloud: ODB Network connectivity Manage access using Identity and Access Management (IAM) Create and manage Exadata Database Service resources Create and manage Exascale Infrastructure resources Create and manage Autonomous AI Database Service resources Create and manage Base Database Service resources Observe and Troubleshoot resources ODB Network connectivity Oracle Database@Google Cloud uses ODB Networks to manage connectivity to your resources.",
+          "Create and manage Oracle Exadata Database Service resources Oracle Database@Google Cloud lets you create and manage Exadata Infrastructure instances and Exadata VM Clusters using Google Cloud console, Google Cloud CLI, or the Oracle Database@Google Cloud API."
+        ]
+      },
+      {
+        "title": "\"Create ODB Network and ODB Subnets \\_|\\_ Oracle Database at Google Cloud\\",
+        "url": "https://docs.cloud.google.com/oracle/database/docs/create-odb-network",
+        "source_id": "site-docs-reference",
+        "final_score": 324,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Oracle Database@Google Cloud also lets you create up to five ODB Subnets within an ODB Network for the ease of network management.",
+          "API To create an ODB Subnet, run the following curl command: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://oracledatabase.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /odbNetworks/ ODB NETWORK ID /odbSubnets/ ODB SUBNET ID \" -d \\ '{ \"cidr range\": \" CIDR RANGE \", \"purpose\": \" PURPOSE \" }' Replace the following: PROJECT ID : the ID of your Google Cloud project that contains your ODB Network for which you want to create an ODB Subnet.",
+          "API To create an ODB Network, run the following curl command: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://oracledatabase.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /odbNetworks/ ODB NETWORK ID \" -d \\ '{ \"network\": \"projects/ PROJECT ID /global/networks/ VPC NETWORK \", \"gcp oracle zone\": \" GCP ORACLE ZONE \" }' Replace the following: PROJECT ID : the ID of your Google Cloud project in which to create the ODB Network."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "oracledatabase.dbSystemAdmin",
+      "oracledatabase.googleapis.com",
+      "projects.locations.autonomousDatabases",
+      "projects.locations.autonomousDatabases.create"
+    ],
+    "missing_inventory_roles": [
+      "roles/oracledatabase.dbSystemAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/create-base-db-system",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/overview",
+        "https://docs.cloud.google.com/oracle/database/docs/create-odb-network"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/create-base-db-system",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/overview",
+        "https://docs.cloud.google.com/oracle/database/docs/create-odb-network"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/create-base-db-system",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/overview",
+        "https://docs.cloud.google.com/oracle/database/docs/create-odb-network"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/create-base-db-system",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/overview",
+        "https://docs.cloud.google.com/oracle/database/docs/create-odb-network"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/create-base-db-system",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/overview",
+        "https://docs.cloud.google.com/oracle/database/docs/create-odb-network"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/create-base-db-system",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/overview",
+        "https://docs.cloud.google.com/oracle/database/docs/create-odb-network"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/create-base-db-system",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/overview",
+        "https://docs.cloud.google.com/oracle/database/docs/create-odb-network"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/create-base-db-system",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/overview",
+        "https://docs.cloud.google.com/oracle/database/docs/create-odb-network"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/create-base-db-system",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/overview",
+        "https://docs.cloud.google.com/oracle/database/docs/create-odb-network"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/create-base-db-system",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/overview",
+        "https://docs.cloud.google.com/oracle/database/docs/create-odb-network"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:30.918Z",
+  "source_step08_card": "data/step-08/current/products/oracle-database-google-cloud/card.json",
+  "product_name": "Oracle Database@Google Cloud",
+  "product_slug": "oracle-database-google-cloud"
+}

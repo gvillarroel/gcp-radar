@@ -1,0 +1,98 @@
+{
+  "feature_name": "GoogleSQL chained function call syntax",
+  "feature_slug": "googlesql-chained-function-call-syntax",
+  "summary": "GoogleSQL supports chained function call syntax to improve readability of deeply nested function calls.",
+  "extended_definition": "GoogleSQL supports chained function call syntax to improve readability of deeply nested function calls.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Legacy SQL Syntax, Functions and Operators \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "source_id": "site-docs-reference",
+        "final_score": 166,
+        "relevance": "",
+        "evidence_snippets": [
+          "The optional AS keyword can be added between the expression and the alias for improved readability.",
+          "The optional AS keyword can be added between the tableId and the alias for improved readability.",
+          "The preferred query syntax for BigQuery is GoogleSQL syntax ."
+        ]
+      },
+      {
+        "title": "Query syntax \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "source_id": "site-docs-reference",
+        "final_score": 163,
+        "relevance": "",
+        "evidence_snippets": [
+          "WITH Grid AS ( SELECT 1 x , 2 y ) SELECT Coordinate FROM Grid AS Coordinate ; / --------------+ Coordinate +--------------+ {x: 1, y: 2} +-------------- / Value tables In addition to standard SQL tables , GoogleSQL supports value tables .",
+          "The evaluation of a query with a QUALIFY clause is typically completed in this order: FROM WHERE GROUP BY and aggregation HAVING WINDOW QUALIFY DISTINCT ORDER BY LIMIT Evaluation order doesn't always match syntax order.",
+          "The evaluation of a query with a HAVING clause is typically completed in this order: FROM WHERE GROUP BY and aggregation HAVING WINDOW QUALIFY DISTINCT ORDER BY LIMIT Evaluation order doesn't always match syntax order."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "Syntax To create a GoogleSQL stored procedure , use the following syntax: CREATE [ OR REPLACE ] PROCEDURE [ IF NOT EXISTS ] [[ project name . ] dataset name . ] procedure name ( procedure argument [ , ... ] ) [ OPTIONS ( procedure option list ) ] BEGIN multi statement query END ; procedure argument : [ procedure argument mode ] argument name argument type procedure argument mode : IN OUT INOUT To create a stored procedure for Apache Spark , use the following syntax: CREATE [ OR REPLACE ] PROCEDURE [ IF NOT EXISTS ] [[ project name . ] dataset name . ] procedure name ( procedure argument [ , ... ] ) [ EXTERNAL SECURITY external security ] WITH CONNECTION connection project id . connection region . connection id [ OPTIONS ( procedure option list ) ] LANGUAGE language [ AS pyspark code ] procedure argument : [ procedure argument mode ] argument name argument type procedure argument mode : IN OUT INOUT external security : INVOKER Arguments OR REPLACE : Replaces any procedure with the same name if it exists.",
+          "See Table path syntax . view column name list : Lets you explicitly specify the column names of the view, which may be aliases to the column names in the underlying SQL query. view option list : Additional view creation options such as a label and an expiration time. query expression : The GoogleSQL query expression used to define the view.",
+          "Syntax: export function aggregate ( state , aggregateParam [, ...][, nonAggregateParam ]){...} Parameters: state : The aggregate state, which is initialState on the first invocation, and then the return value of the previous call to aggregate thereafter. aggregateParam : The name of an aggregation parameter in the JavaScript UDAF."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

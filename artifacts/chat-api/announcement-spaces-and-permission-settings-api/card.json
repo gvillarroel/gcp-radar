@@ -1,0 +1,177 @@
+{
+  "feature_name": "Announcement spaces and permission settings API",
+  "feature_slug": "announcement-spaces-and-permission-settings-api",
+  "summary": "The Chat API can create announcement spaces and read or update a space's permission settings; The Chat API can create announcement spaces and read or update a space's permission settings.",
+  "extended_definition": "The Chat API can create announcement spaces and read or update a space's permission settings; The Chat API can create announcement spaces and read or update a space's permission settings.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+      "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+      "https://developers.google.com/workspace/chat/create-spaces"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "REST Resource: spaces \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "source_id": "site-api-reference",
+        "final_score": 171,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Page Summary outlined flag Google Chat Spaces are categorized as SPACE, GROUP CHAT, or DIRECT MESSAGE and contain properties like name, display name, threading state, and permission settings.",
+          "Setting predefined permission settings supports: App authentication with administrator approval with the chat.app.spaces or chat.app.spaces.create scopes.",
+          "Reading and updating permission settings supports: App authentication with administrator approval with the chat.app.spaces scope."
+        ]
+      },
+      {
+        "title": "Create a named space in Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/create-spaces",
+        "source_id": "site-docs-root",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Here's how to create a named space: Node.js chat/client-libraries/cloud/create-space-user-cred.js View on GitHub import { createClientWithUserCredentials } from './authentication-utils.js' ; const USER AUTH OAUTH SCOPES = [ 'https://www.googleapis.com/auth/chat.spaces.create' , ]; // This sample shows how to create a named space with user credential async function main () { // Create a client const chatClient = await createClientWithUserCredentials ( USER AUTH OAUTH SCOPES , ); // Initialize request argument(s) const request = { space : { spaceType : 'SPACE' , // Replace DISPLAY NAME here. displayName : 'DISPLAY NAME' , }, }; // Make the request const response = await chatClient . createSpace ( request ); // Handle the response console . log ( response ); } await main (); Python chat/client-libraries/cloud/create space user cred.py View on GitHub from authentication utils import create client with user credentials from google.apps import chat v1 as google chat SCOPES = [ \"https://www.googleapis.com/auth/chat.spaces.create\" ] def create space with user cred (): Create a client client = create client with user credentials ( SCOPES ) Initialize request argument(s) request = google chat .",
+          "CreateSpaceRequest ( space = { \"space type\" : 'SPACE' , Replace DISPLAY NAME here. \"display name\" : 'DISPLAY NAME' } ) Make the request response = client . create space ( request ) Handle the response print ( response ) create space with user cred () Java chat/client-libraries/cloud/src/main/java/com/google/workspace/api/chat/samples/CreateSpaceUserCred.java View on GitHub import com.google.chat.v1.ChatServiceClient ; import com.google.chat.v1.CreateSpaceRequest ; import com.google.chat.v1.Space ; // This sample shows how to create space with user credential. public class CreateSpaceUserCred { private static final String SCOPE = \"https://www.googleapis.com/auth/chat.spaces.create\" ; public static void main ( String [] args ) throws Exception { try ( ChatServiceClient chatServiceClient = AuthenticationUtils . createClientWithUserCredentials ( ImmutableList . of ( SCOPE ))) { CreateSpaceRequest .",
+          "Credentials . from service account file ( 'credentials.json' ) . with scopes ( SCOPES ) ) Build a service endpoint for Chat API. chat = build ( 'chat' , 'v1' , credentials = creds ) Use the service endpoint to call Chat API. result = chat . spaces () . create ( Details about the space to create. body = { To create a named space, set spaceType to SPACE. 'spaceType' : 'SPACE' , The user-visible name of the space. 'displayName' : 'API-made' , The customer ID of the Workspace domain. 'customer' : ' CUSTOMER ' } ) . execute () Prints details about the created space. print ( result ) if name == ' main ' : main () In the code, replace the following: CUSTOMER : the customer ID of the domain of the space in the format customer/{customer} where {customer} is the ID from the Admin SDK customer resource ."
+        ]
+      },
+      {
+        "title": "Package google.chat.v1 \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "source_id": "site-docs-reference",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "Index ChatService (interface) AccessoryWidget (message) ActionResponse (message) ActionResponse.ResponseType (enum) ActionResponse.SelectionItems (message) ActionResponse.UpdatedWidget (message) ActionStatus (message) Annotation (message) AnnotationType (enum) AppCommandMetadata (message) AppCommandMetadata.AppCommandType (enum) AttachedGif (message) Attachment (message) Attachment.Source (enum) AttachmentDataRef (message) CalendarEventLinkData (message) CardWithId (message) ChatSpaceLinkData (message) CompleteImportSpaceRequest (message) CompleteImportSpaceResponse (message) ContextualAddOnMarkup (message) ContextualAddOnMarkup.Card (message) ContextualAddOnMarkup.Card.CardAction (message) ContextualAddOnMarkup.Card.CardHeader (message) ContextualAddOnMarkup.Card.CardHeader.ImageStyle (enum) ContextualAddOnMarkup.Card.Section (message) CreateCustomEmojiRequest (message) CreateMembershipRequest (message) CreateMessageRequest (message) CreateMessageRequest.MessageReplyOption (enum) CreateReactionRequest (message) CreateSectionRequest (message) CreateSpaceRequest (message) CustomEmoji (message) CustomEmoji.CustomEmojiPayload (message) CustomEmojiMetadata (message) DeleteCustomEmojiRequest (message) DeleteMembershipRequest (message) DeleteMessageRequest (message) DeleteReactionRequest (message) DeleteSectionRequest (message) DeleteSpaceRequest (message) DeletionMetadata (message) DeletionMetadata.DeletionType (enum) Dialog (message) DialogAction (message) DriveDataRef (message) DriveLinkData (message) Emoji (message) EmojiReactionSummary (message) FindDirectMessageRequest (message) FindGroupChatsRequest (message) FindGroupChatsResponse (message) ForwardedMetadata (message) GetAttachmentRequest (message) GetCustomEmojiRequest (message) GetMembershipRequest (message) GetMessageRequest (message) GetSpaceEventRequest (message) GetSpaceNotificationSettingRequest (message) GetSpaceReadStateRequest (message) GetSpaceRequest (message) GetThreadReadStateRequest (message) Group (message) HistoryState (enum) ListCustomEmojisRequest (message) ListCustomEmojisResponse (message) ListMembershipsRequest (message) ListMembershipsResponse (message) ListMessagesRequest (message) ListMessagesResponse (message) ListReactionsRequest (message) ListReactionsResponse (message) ListSectionItemsRequest (message) ListSectionItemsResponse (message) ListSectionsRequest (message) ListSectionsResponse (message) ListSpaceEventsRequest (message) ListSpaceEventsResponse (message) ListSpacesRequest (message) ListSpacesResponse (message) MatchedUrl (message) MeetSpaceLinkData (message) MeetSpaceLinkData.HuddleStatus (enum) MeetSpaceLinkData.Type (enum) Membership (message) Membership.MembershipRole (enum) Membership.MembershipState (enum) MembershipBatchCreatedEventData (message) MembershipBatchDeletedEventData (message) MembershipBatchUpdatedEventData (message) MembershipCreatedEventData (message) MembershipDeletedEventData (message) MembershipUpdatedEventData (message) Message (message) MessageBatchCreatedEventData (message) MessageBatchDeletedEventData (message) MessageBatchUpdatedEventData (message) MessageCreatedEventData (message) MessageDeletedEventData (message) MessageUpdatedEventData (message) MoveSectionItemRequest (message) MoveSectionItemResponse (message) PositionSectionRequest (message) PositionSectionRequest.Position (enum) PositionSectionResponse (message) QuotedMessageMetadata (message) QuotedMessageMetadata.QuoteType (enum) QuotedMessageSnapshot (message) Reaction (message) ReactionBatchCreatedEventData (message) ReactionBatchDeletedEventData (message) ReactionCreatedEventData (message) ReactionDeletedEventData (message) ReplaceMessageCardsRequest (message) ReplaceMessageCardsResponse (message) RichLinkMetadata (message) RichLinkMetadata.RichLinkType (enum) SearchSpacesRequest (message) SearchSpacesResponse (message) Section (message) Section.SectionType (enum) SectionItem (message) SetUpSpaceRequest (message) SlashCommand (message) SlashCommandMetadata (message) SlashCommandMetadata.Type (enum) Space (message) Space.AccessSettings (message) Space.AccessSettings.AccessState (enum) Space.MembershipCount (message) Space.PermissionSetting (message) Space.PermissionSettings (message) Space.PredefinedPermissionSettings (enum) Space.SpaceDetails (message) Space.SpaceThreadingState (enum) Space.SpaceType (enum) Space.Type (enum) SpaceBatchUpdatedEventData (message) SpaceEvent (message) SpaceNotificationSetting (message) SpaceNotificationSetting.MuteSetting (enum) SpaceNotificationSetting.NotificationSetting (enum) SpaceReadState (message) SpaceUpdatedEventData (message) SpaceView (enum) Thread (message) ThreadReadState (message) UpdateMembershipRequest (message) UpdateMessageRequest (message) UpdateSectionRequest (message) UpdateSpaceNotificationSettingRequest (message) UpdateSpaceReadStateRequest (message) UpdateSpaceRequest (message) User (message) User.Type (enum) UserMentionMetadata (message) UserMentionMetadata.Type (enum) WidgetMarkup (message) WidgetMarkup.Button (message) WidgetMarkup.FormAction (message) WidgetMarkup.FormAction.ActionParameter (message) WidgetMarkup.Icon (enum) WidgetMarkup.Image (message) WidgetMarkup.ImageButton (message) WidgetMarkup.KeyValue (message) WidgetMarkup.OnClick (message) WidgetMarkup.OpenLink (message) WidgetMarkup.TextButton (message) WidgetMarkup.TextParagraph (message) ChatService Enables developers to build Chat apps and integrations on Google Chat Platform.",
+          "Supports the following types of authentication : App authentication with one of the following authorization scopes: https://www.googleapis.com/auth/chat.bot https://www.googleapis.com/auth/chat.app.spaces with administrator approval User authentication with one of the following authorization scopes: https://www.googleapis.com/auth/chat.spaces.readonly https://www.googleapis.com/auth/chat.spaces User authentication grants administrator privileges when an administrator account authenticates, use admin access is true , and one of the following authorization scopes is used: https://www.googleapis.com/auth/chat.admin.spaces.readonly https://www.googleapis.com/auth/chat.admin.spaces App authentication has the following limitations: space.access settings is only populated when using the chat.app.spaces scope. space.predefind permission settings and space.permission settings are only populated when using the chat.app.spaces scope, and only for spaces the app created.",
+          "Setting predefined permission settings supports: App authentication with administrator approval with the chat.app.spaces or chat.app.spaces.create scopes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appsscript.json",
+      "chat.admin.spaces",
+      "chat.admin.spaces.readonly",
+      "chat.app.spaces",
+      "chat.app.spaces.create",
+      "chat.bot",
+      "chat.spaces",
+      "chat.spaces.create",
+      "chat.spaces.readonly",
+      "com.google.chat.v1.ChatServiceClient",
+      "com.google.chat.v1.CreateSpaceRequest",
+      "com.google.chat.v1.Space",
+      "cred.js",
+      "cred.py",
+      "credentials.json",
+      "developers.google.com",
+      "space.access",
+      "space.permission",
+      "space.predefind",
+      "spaces.members",
+      "spaces.messages",
+      "utils.js"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/create-spaces"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/create-spaces"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/create-spaces"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/create-spaces"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/create-spaces"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/create-spaces"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/create-spaces"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/create-spaces"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/create-spaces"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:26.701Z",
+  "source_step08_card": "data/step-08/current/products/chat-api/card.json",
+  "product_name": "Chat API",
+  "product_slug": "chat-api"
+}

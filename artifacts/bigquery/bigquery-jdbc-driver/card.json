@@ -1,0 +1,164 @@
+{
+  "feature_name": "BigQuery JDBC driver",
+  "feature_slug": "bigquery-jdbc-driver",
+  "summary": "The Google-developed open source JDBC driver lets Java applications connect to BigQuery.",
+  "extended_definition": "The Google-developed open source JDBC driver lets Java applications connect to BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+      "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+      "https://docs.cloud.google.com/bigquery/docs/reference/odbc-jdbc-drivers"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use the Simba ODBC and JDBC drivers for BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/odbc-jdbc-drivers",
+        "source_id": "site-docs-reference",
+        "final_score": 214,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use the Simba ODBC and JDBC drivers for BigQuery The Simba Open Database Connectivity (ODBC) and Java Database Connectivity (JDBC) drivers for BigQuery connect your applications to BigQuery, letting you use BigQuery features with your preferred tooling and infrastructure.",
+          "To see a list of previous driver versions, expand the following section: Previous Simba ODBC driver versions 3.1.6.1026 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 3.1.5.1022 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 3.1.4.1020 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 3.1.2.1009 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 3.1.2.1004 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 3.0.7.1016 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 3.0.5.1011 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 3.0.4.1008 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 3.0.3.1006 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 3.0.2.1005 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 3.0.0.1001 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 2.5.2.1004 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 2.5.0.1001 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 2.4.6.1015 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 2.4.5.1014 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 2.4.3.1012 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 2.4.1.1009 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 2.4.0.1002 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 2.3.5.1009 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 2.3.3.1005 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS 2.3.2.1003 Windows 32-bit Windows 64-bit Linux 32-bit and 64-bit macOS Install and configure the Simba JDBC driver for BigQuery Note: As an alternative to the Simba JDBC driver, a Google-developed JDBC driver for BigQuery is available in Preview .",
+          "As an alternative to the Simba JDBC driver, a Google-developed JDBC driver for BigQuery is available in Preview ."
+        ]
+      },
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 158,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner references Open-source ETL to BigQuery Getting started with BigQuery S3 to BigQuery in minutes Redshift to BigQuery in minutes Partner Advantage page Direct link Aiven Solution Aiven Data Platform Category ETL & Data Integration Description Aiven offers popular & proven open source database and messaging software as easy-to-adopt, fully managed, highly available, secure & compliant SaaS solutions like Kafka, Kafka Connect, Kafka MirrorMaker, PostgreSQL, MySQL, Elasticsearch, Cassandra, Redis and M3DB.",
+          "Partner references Data Intelligence Platform Cloud migration with Collibra & BigQuery Enterprise-wide data privacy: Collibra + BigQuery Enterprise-scale data quality: Collibra + BigQuery Data quality without the complexity: BigQuery & Collibra Partner Advantage page Direct link Datahub Solution DataHub Cloud Category Data Governance, Security, & MDM Description Datahub is an open source metadata platform that helps organizations discover, understand, and govern their data assets.",
+          "Partner references BigQuery agent BigQuery Agent Example Partner Advantage page Direct link Vanna.ai Solution Vanna.ai Category BI, ML, & Advanced Analytics Description Vanni.ai is the Leading open source Python package to query large SQL databases in natural language at production scale with access control that's auditable, accurate, fast, and locally deployable so that code is transparent, results are useful and immediate, and data never leaves your premise."
+        ]
+      },
+      {
+        "title": "Control access to resources with IAM \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "source_id": "site-docs-reference-5",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "TableId ; import java.util.HashMap ; import java.util.HashSet ; import java.util.Map ; import java.util.Set ; public class RevokeAccessToTableOrView { public static void main ( String [] args ) { // TODO(developer): Replace these variables before running the sample. // Project, dataset and resource (table or view) from which to get the access policy String projectId = \"MY PROJECT ID\" ; String datasetName = \"MY DATASET NAME\" ; String resourceName = \"MY RESOURCE NAME\" ; // Role to remove from the access policy Role role = Role . of ( \"roles/bigquery.dataViewer\" ); // Identity to remove from the access policy Identity user = Identity . user ( \"user-add@example.com\" ); revokeAccessToTableOrView ( projectId , datasetName , resourceName , role , user ); } public static void revokeAccessToTableOrView ( String projectId , String datasetName , String resourceName , Role role , Identity identity ) { try { // Initialize client that will be used to send requests.",
+          "Policy policy = bigquery . getIamPolicy ( tableId ); // Show policy details. // Find more information about the Policy Class here: // https://cloud.google.com/java/docs/reference/google-cloud-core/latest/com.google.cloud.Policy System . out . println ( \"IAM policy info of resource \\\"\" + resourceName + \"\\\" retrieved succesfully\" ); System . out . println (); System . out . println ( \"IAM policy info: \" + policy . toString ()); } catch ( BigQueryException e ) { System . out . println ( \"IAM policy info not retrieved. \\n\" + e . toString ()); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the BigQuery quickstart using client libraries .",
+          "Special cases Consider the following scenarios when you create IAM deny policies on a few BigQuery permissions: Access to authorized resources ( views , routines , datasets , or stored procedures ) lets you create , drop , or manipulate a table, along with reading and modifying table data, even if you don't have direct permission to perform those operations."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.dataViewer",
+      "com.google.cloud.Policy",
+      "example.com",
+      "java.util.HashMap",
+      "java.util.HashSet",
+      "java.util.Map",
+      "java.util.Set"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/odbc-jdbc-drivers",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/odbc-jdbc-drivers",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/odbc-jdbc-drivers",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/odbc-jdbc-drivers",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/odbc-jdbc-drivers",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/odbc-jdbc-drivers",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/odbc-jdbc-drivers",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/odbc-jdbc-drivers",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/odbc-jdbc-drivers",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

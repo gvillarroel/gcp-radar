@@ -1,0 +1,114 @@
+{
+  "feature_name": "Search result limit keyword",
+  "feature_slug": "search-result-limit-keyword",
+  "summary": "The limit keyword restricts the number of results returned by a search.",
+  "extended_definition": "The limit keyword restricts the number of results returned by a search.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+      "https://docs.cloud.google.com/chronicle/docs/reference/search-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Factors that limit search results When conducting searches, the following factors can limit the number of results returned: Maximum search results : 1M events.",
+          "Limit results You can limit search results by adding the limit keyword with the maximum number of search results you want to display.",
+          "For example, if you add the following to your search, it limits the results to a maximum of 25: limit: 25 Note: You can also add the limit keyword to custom dashboards."
+        ]
+      },
+      {
+        "title": "Search \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+        "source_id": "site-docs-reference-2",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For each API call, you can specify the page size property to limit the maximum number of returned results.",
+          "Request GET https://backstory.googleapis.com/v1/events:udmSearch?query=<query>&time range.start time=<start time>&time range.end time=<end time>&limit=<limit> Parameters Parameter Name Type Description query string UDM search query. time range.start time ISO 8601 format Inclusive start time. time range.end time ISO 8601 format Exclusive end time. limit integer (Optional) The maximum number of matched events to return.",
+          "Search API query submission rate limits The Search API enforces limits on the number of requests that you can send to the Google SecOps platform."
+        ]
+      },
+      {
+        "title": "Detection Engine \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "source_id": "site-docs-reference-2",
+        "final_score": 153,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The max results parameter only limits the number of detections returned, not the number of errors.",
+          "Request POST https://backstory.googleapis.com/v2/detect/rules:streamTestRule Request body { \"rule\": { \"ruleText\": \"<ruleText here>\" }, \"startTime\": \"<startTime here>\", \"endTime\": \"<endTime here>\", \"maxResults\": \"<maxResults here>\", } Body parameters Parameter Name Value Required Description rule.ruleText string Required Text of the new rule in YARA-L 2.0 format. startTime string Required Start time for the time range of logs being processed, in RFC 3339 format. endTime string Required End time for the time range of logs being processed, in RFC 3339 format. maxResults integer Optional Maximum number of results to return.",
+          "Sample request https://backstory.googleapis.com/v2/detect/rules:streamTestRule { \"rule\": { \"ruleText\": \"<ruleText here>\" }, \"startTime\": \"2021-01-01T00:00:00Z\", \"endTime\": \"2021-01-14T00:00:00Z\", \"maxResults\": 2 } Response When using the StreamTestRule method, be aware of the following limitations: Results either contain a detection { \"detection\": <detection> } or an error { \"error\": <error> } ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backstory.googleapis.com",
+      "enterprise.service.example.com",
+      "range.end",
+      "range.start",
+      "robots.txt",
+      "rule.ruleText",
+      "sample.backstory.chronicle.security"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:18.186Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops"
+}

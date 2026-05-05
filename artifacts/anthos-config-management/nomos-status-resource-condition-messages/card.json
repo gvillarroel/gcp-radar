@@ -1,0 +1,174 @@
+{
+  "feature_name": "nomos status resource condition messages",
+  "feature_slug": "nomos-status-resource-condition-messages",
+  "summary": "The nomos status command surfaces messages from resource conditions when managed resources are not ready or healthy.",
+  "extended_definition": "The nomos status command surfaces messages from resource conditions when managed resources are not ready or healthy.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use the nomos command-line tool \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "source_id": "site-docs-root",
+        "final_score": 203,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following example shows you some of the different conditions that the nomos status command might report: nomos status Example output: MANAGED CLUSTER 1 -------------------- <root> git@github.com:foo-corp/acme@main SYNCED f52a11e4 Managed resources: NAMESPACE NAME STATUS k8snoexternalservices.constraints.gatekeeper.sh/no-internet-services Current namespace/hello Current MANAGED CLUSTER 2 -------------------- <root> git@github.com:foo-corp/acme@main PENDING 9edf8444 MANAGED CLUSTER 3 -------------------- <root> git@github.com:foo-corp/acme@main ERROR f52a11e4 Error: KNV1021: No CustomResourceDefinition is defined for the resource in the cluster.",
+          "Using RootSync and RepoSync objects nomos-status-reader.yaml apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : name : nomos-status-reader rules : - apiGroups : [ \"configsync.gke.io\" ] resources : [ \"reposyncs\" , \"rootsyncs\" ] verbs : [ \"get\" ] - nonResourceURLs : [ \"/\" ] verbs : [ \"get\" ] Not using RootSync and RepoSync objects apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : name : nomos-status-reader rules : - apiGroups : [ \"configmanagement.gke.io\" ] resources : [ \"configmanagements\" , \"repos\" ] verbs : [ \"get\" , \"list\" ] - nonResourceURLs : [ \"/\" ] verbs : [ \"get\" ] Apply the nomos-status-reader.yaml file: kubectl apply -f nomos-status-reader.yaml Check for errors in the source of truth Before you commit a config to the source of truth, use the nomos vet command to check the syntax and validity of the configs in your source of truth: nomos vet --source-format unstructured If syntax errors are found, the nomos vet command exits with a non-zero status and logs error messages to STDERR . nomos vet flags To customize the nomos vet command, add the following flags: Flag Description --api-server-timeout Accepts a duration string.",
+          "To turn off showing the resource level status, add --resources=false to the nomos status command."
+        ]
+      },
+      {
+        "title": "\"Resource attributes for IAM Conditions \\_|\\_ Identity and Access Management\\",
+        "url": "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "source_id": "site-iam-reference",
+        "final_score": 148,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For more information about Identity and Access Management (IAM) Conditions, see the following: Conditions overview Managing conditional role bindings Resource service values The following table lists the values that the resource service attribute can contain.",
+          "Home Documentation Security IAM Reference Send feedback Resource attributes for IAM Conditions Stay organized with collections Save and categorize content based on your preferences.",
+          "When a role contains permissions that apply to different kinds of resources, a condition can grant a subset of the role's permissions based on the resource service, resource type, and resource name."
+        ]
+      },
+      {
+        "title": "Error reference \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors",
+        "source_id": "site-docs-reference",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "Change the metadata.name to satisfy the following conditions: Be shorter than 254 characters Consist of lower case alphanumeric characters, '-', or '.' Start and end with an alphanumeric character If metadata.name is invalid, and the original resource supports it, consider using the spec.resourceID field instead so that you're not restricted by these limitations.",
+          "Wait for a sync and then confirm that the corresponding resources are still available on the cluster, but not in nomos status .",
+          "If these errors are not transient (persisting multiple minutes), it might indicate a serious issue and nomos status reports controller fights ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "configmanagement.gke.io",
+      "configsync.gke.io",
+      "github.com",
+      "k8snoexternalservices.constraints.gatekeeper.sh",
+      "metadata.name",
+      "multi.yaml",
+      "rbac.authorization.k8s.io",
+      "reader.yaml",
+      "rootsyncs.configsync.gke.io",
+      "spec.resourceID",
+      "sync.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:05.054Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management"
+}

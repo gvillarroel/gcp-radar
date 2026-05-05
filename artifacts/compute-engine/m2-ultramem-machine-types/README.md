@@ -1,0 +1,30 @@
+# M2 ultramem machine types
+
+Product: Compute Engine
+Feature slug: `m2-ultramem-machine-types`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+M2 ultramem machine types are memory-optimized virtual machine types with very high memory capacity.
+
+## Lifecycle
+
+- Latest feature date: 2020-03-31
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- confidential (evidence: [https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines](https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines), [https://developers.google.com/compute/docs/machine-resource](https://developers.google.com/compute/docs/machine-resource), [https://docs.cloud.google.com/compute/docs/machine-resource](https://docs.cloud.google.com/compute/docs/machine-resource))
+
+## Official Evidence
+
+- [https://developers.google.com/compute/docs/machine-resource](https://developers.google.com/compute/docs/machine-resource)
+- [https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines](https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines)
+- [https://docs.cloud.google.com/compute/docs/machine-resource](https://docs.cloud.google.com/compute/docs/machine-resource)

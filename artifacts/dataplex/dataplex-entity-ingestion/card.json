@@ -1,0 +1,281 @@
+{
+  "feature_name": "Dataplex entity ingestion",
+  "feature_slug": "dataplex-entity-ingestion",
+  "summary": "Dataplex entity ingestion imports Dataplex entities, including entities created by Dataplex Discovery, into the catalog; deprecated on 2025-09-30.",
+  "extended_definition": "Dataplex entity ingestion imports Dataplex entities, including entities created by Dataplex Discovery, into the catalog; deprecated on 2025-09-30.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-03",
+    "deprecation_date": "2025-09-30",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+      "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+      "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Package com.google.cloud.dataplex.v1 (1.86.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "source_id": "site-java-reference",
+        "final_score": 186,
+        "relevance": "",
+        "evidence_snippets": [
+          "The primary resources offered by this service are Lakes, Zones and Assets which collectively allow a data administrator to organize, manage, secure and catalog data across their organization located across cloud projects in a variety of storage systems including Cloud Storage and BigQuery. com. google. cloud. dataplex. v1.",
+          "Builder Builder for projects/{project}/locations/{location}/lakes/{lake}/zones/{zone}/entities/{entity}/partitions/{partition}. com. google. cloud. dataplex. v1.",
+          "Builder Builder for projects/{project}/locations/{location}/lakes/{lake}/zones/{zone}/entities/{entity}. com. google. cloud. dataplex. v1."
+        ]
+      },
+      {
+        "title": "Use auto data quality \\_|\\_ Knowledge Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "source_id": "site-docs-root",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "Export table schema To export the data quality scan results to an existing BigQuery table, make sure that it is compatible with the following table schema: Column name Column data type Sub field name (if applicable) Sub field data type Mode Example data quality scan struct/record resource name string nullable //dataplex.googleapis.com/projects/test-project/locations/europe-west2/datascans/test-datascan project id string nullable dataplex-back-end-dev-project location string nullable us-central1 data scan id string nullable test-datascan display name string nullable datascan-display-name data source struct/record resource name string nullable Entity case: //dataplex.googleapis.com/projects/dataplex-back-end-dev-project/locations/europe-west2/lakes/a0-datascan-test-lake/zones/a0-datascan-test-zone/entities/table1 Table case: //bigquery.googleapis.com/projects/test-project/datasets/test-dataset/tables/test-table dataplex entity project id string nullable dataplex-back-end-dev-project dataplex entity project number integer nullable 123456789 dataplex lake id string nullable (Valid only if source is entity) test-lake dataplex zone id string nullable (Valid only if source is entity) test-zone dataplex entity id string nullable (Valid only if source is entity) test-entity table project id string nullable test-project table project number integer nullable 987654321 dataset id string nullable (Valid only if source is table) test-dataset table id string nullable (Valid only if source is table) test-table data quality job id string nullable caeba234-cfde-4fca-9e5b-fe02a9812e38 data quality job configuration json trigger string nullable ondemand / schedule incremental boolean nullable true / false sampling percent float nullable (0-100) 20.0 (indicates 20%) row filter string nullable col1 >= 0 AND col2 incremental column string nullable column name job labels json nullable {\"key1\":value1} job start time timestamp nullable 2023-01-01 00:00:00 UTC job end time timestamp nullable 2023-01-01 00:00:00 UTC job quality result struct/record passed boolean nullable true / false score float nullable 90.8 incremental start string nullable 2023-01-01T00:00:00 incremental end string nullable 2024-01-01T00:00:00 job dimension result json nullable {\"ACCURACY\":{\"passed\":true,\"score\":100},\"CONSISTENCY\":{\"passed\":false,\"score\":60}} job rows scanned integer nullable 7500 rule name string nullable test-rule rule description string nullable Test rule description rule type string nullable Range Check rule evaluation type string nullable Per row rule column string nullable Rule only attached to a certain column rule dimension string nullable UNIQUENESS rule threshold percent float nullable (0.0-100.0) Rule-threshold-pct in API 100 rule parameters json nullable {min: 24, max:5345} rule passed boolean nullable true rule rows evaluated integer nullable 7400 rule rows passed integer nullable 3 rule rows null integer nullable 4 rule failed records query string nullable \"SELECT FROM test-project.test-dataset.test-table WHERE (NOT((cTime >= '15:31:38.776361' and cTime created on timestamp nullable 2023-01-01 00:00:00 UTC last updated timestamp nullable 2023-01-01 00:00:00 UTC rule assertion row count integer nullable 10 debug queries struct/record description string nullable Test debug query description sql statement string nullable SELECT MIN(col1) AS min col1, AVG(col1) FROM ${data()} debug query results struct/record repeated [{\"name\": \"min col1\", \"type\": \"INTEGER\", \"value\": \"5\"}, {\"type\": \"FLOAT\", \"value\": \"7\"}] ↳ name string nullable The name of query result column, like min col1 ↳ type string nullable The type of query result column, like INTEGER ↳ value string nullable The value of query result column, like 5 Note: Column rule assertion row count is only applicable for SQL Assertion rule .",
+          "Knowledge Catalog service account roles and permissions If you haven't created any data quality or data profile scans or you don't have a Knowledge Catalog lake in this project, create a service identifier by running: gcloud beta services identity create --service=dataplex.googleapis.com .",
+          "The default is false. / // const validateOnly = true // Imports the Dataplex library const { DataScanServiceClient } = require ( ' @google-cloud/dataplex ' ). v1 ; // Instantiates a client const dataplexClient = new DataScanServiceClient (); async function callCreateDataScan () { // Construct request const request = { parent , dataScan , dataScanId , }; // Run request const [ operation ] = await dataplexClient . createDataScan ( request ); const [ response ] = await operation . promise (); console . log ( response ); } callCreateDataScan (); } process . on ( 'unhandledRejection' , err = > { console . error ( err . message ); process . exitCode = 1 ; }); main (... process . argv . slice ( 2 )); Python Python Before trying this sample, follow the Python setup instructions in the Knowledge Catalog quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "About metadata management in Knowledge Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "source_id": "site-docs-root",
+        "final_score": 171,
+        "relevance": "",
+        "evidence_snippets": [
+          "Search is performed over the following: All Google Cloud sources described in Entries and entry groups Custom entries that are created in Data Catalog Tags that are created in Data Catalog Data lineage Data lineage retrieves entry details for asset nodes by using the Dataplex API.",
+          "Data Catalog API method Dataplex API method projects.locations.tagTemplates.fields.create (REST) CreateTagTemplateField (RPC) projects.locations.aspectTypes.patch (REST) UpdateAspectType (RPC) projects.locations.tagTemplates.fields.patch (REST) UpdateTagTemplateField (RPC) projects.locations.aspectTypes.patch (REST) UpdateAspectType (RPC) projects.locations.tagTemplates.fields.rename (REST) RenameTagTemplateField (RPC) projects.locations.aspectTypes.patch (REST) UpdateAspectType (RPC) projects.locations.tagTemplates.fields.delete (REST) DeleteTagTemplateField (RPC) projects.locations.aspectTypes.patch (REST) UpdateAspectType (RPC) Tag template field enum values Similar to tag template fields, you can edit enum values in the Dataplex API by modifying the metadata template field in the corresponding aspect type.",
+          "You can enforce minimal metadata standards by defining the required metadata content for custom entries User-configurable metamodel for custom entries, which helps to make custom ingestion more robust and improves custom metadata consistency and comprehensiveness."
+        ]
+      },
+      {
+        "title": "\"Manage Dataplex Universal Catalog resources using custom constraints \\_\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "source_id": "site-docs-root-2",
+        "final_score": 170,
+        "relevance": "",
+        "evidence_snippets": [
+          "Resource Field dataplex.googleapis.com/AspectType resource.authorization.alternateUsePermission resource.description resource.displayName resource.metadataTemplate.annotations.deprecated resource.metadataTemplate.annotations.description resource.metadataTemplate.annotations.displayName resource.metadataTemplate.annotations.displayOrder resource.metadataTemplate.annotations.stringType resource.metadataTemplate.annotations.stringValues resource.metadataTemplate.constraints.required resource.metadataTemplate.enumValues.deprecated resource.metadataTemplate.enumValues.index resource.metadataTemplate.enumValues.name resource.metadataTemplate.index resource.metadataTemplate.name resource.metadataTemplate.type resource.metadataTemplate.typeId resource.metadataTemplate.typeRef dataplex.googleapis.com/DataScan resource.data.entity resource.data.resource resource.dataDiscoverySpec.bigqueryPublishingConfig.connection resource.dataDiscoverySpec.bigqueryPublishingConfig.location resource.dataDiscoverySpec.bigqueryPublishingConfig.tableType resource.dataDiscoverySpec.storageConfig.csvOptions.delimiter resource.dataDiscoverySpec.storageConfig.csvOptions.encoding resource.dataDiscoverySpec.storageConfig.csvOptions.headerRows resource.dataDiscoverySpec.storageConfig.csvOptions.quote resource.dataDiscoverySpec.storageConfig.csvOptions.typeInferenceDisabled resource.dataDiscoverySpec.storageConfig.excludePatterns resource.dataDiscoverySpec.storageConfig.includePatterns resource.dataDiscoverySpec.storageConfig.jsonOptions.encoding resource.dataDiscoverySpec.storageConfig.jsonOptions.typeInferenceDisabled resource.dataProfileSpec.excludeFields.fieldNames resource.dataProfileSpec.includeFields.fieldNames resource.dataProfileSpec.postScanActions.bigqueryExport.resultsTable resource.dataProfileSpec.rowFilter resource.dataProfileSpec.samplingPercent resource.dataQualitySpec.postScanActions.bigqueryExport.resultsTable resource.dataQualitySpec.postScanActions.notificationReport.recipients.emails resource.dataQualitySpec.postScanActions.notificationReport.scoreThresholdTrigger.scoreThreshold resource.dataQualitySpec.rowFilter resource.dataQualitySpec.rules.column resource.dataQualitySpec.rules.description resource.dataQualitySpec.rules.dimension resource.dataQualitySpec.rules.ignoreNull resource.dataQualitySpec.rules.name resource.dataQualitySpec.rules.rangeExpectation.maxValue resource.dataQualitySpec.rules.rangeExpectation.minValue resource.dataQualitySpec.rules.rangeExpectation.strictMaxEnabled resource.dataQualitySpec.rules.rangeExpectation.strictMinEnabled resource.dataQualitySpec.rules.regexExpectation.regex resource.dataQualitySpec.rules.rowConditionExpectation.sqlExpression resource.dataQualitySpec.rules.setExpectation.values resource.dataQualitySpec.rules.sqlAssertion.sqlStatement resource.dataQualitySpec.rules.statisticRangeExpectation.maxValue resource.dataQualitySpec.rules.statisticRangeExpectation.minValue resource.dataQualitySpec.rules.statisticRangeExpectation.statistic resource.dataQualitySpec.rules.statisticRangeExpectation.strictMaxEnabled resource.dataQualitySpec.rules.statisticRangeExpectation.strictMinEnabled resource.dataQualitySpec.rules.suspended resource.dataQualitySpec.rules.tableConditionExpectation.sqlExpression resource.dataQualitySpec.rules.threshold resource.dataQualitySpec.samplingPercent resource.description resource.displayName resource.executionSpec.field resource.executionSpec.trigger.schedule.cron dataplex.googleapis.com/EntryGroup resource.description resource.displayName dataplex.googleapis.com/EntryType resource.authorization.alternateUsePermission resource.description resource.displayName resource.platform resource.requiredAspects.type resource.system resource.typeAliases dataplex.googleapis.com/MetadataJob resource.exportSpec.outputPath resource.exportSpec.scope.aspectTypes resource.exportSpec.scope.entryGroups resource.exportSpec.scope.entryTypes resource.exportSpec.scope.organizationLevel resource.exportSpec.scope.projects resource.importSpec.aspectSyncMode resource.importSpec.entrySyncMode resource.importSpec.logLevel resource.importSpec.scope.aspectTypes resource.importSpec.scope.entryGroups resource.importSpec.scope.entryTypes resource.importSpec.sourceCreateTime resource.importSpec.sourceStorageUri resource.type What's next Learn more about Organization Policy Service .",
+          "The output is the following: Operation denied by custom org policy on resource 'projects/ PROJECT ID /locations/ LOCATION /entryGroups/org-policy-test': [\"customConstraints/custom.denyDataplexEntryGroup\"] Example custom organization policies for common use cases This table provides syntax examples for some common custom constraints.",
+          "A custom constraint can only contain letters (including upper and lowercase) or numbers, for example, custom.denyDataplexEntryGroup ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.googleapis.com",
+      "com.google.cloud.dataplex.v1",
+      "custom.denyDataplexEntryGroup",
+      "dataplex.googleapis.com",
+      "dataset.test",
+      "project.test",
+      "projects.locations.aspectTypes.patch",
+      "projects.locations.tagTemplates.fields.create",
+      "projects.locations.tagTemplates.fields.delete",
+      "projects.locations.tagTemplates.fields.patch",
+      "projects.locations.tagTemplates.fields.rename",
+      "resource.authorization.alternateUsePermission",
+      "resource.data.entity",
+      "resource.data.resource",
+      "resource.dataDiscoverySpec.bigqueryPublishingConfig.connection",
+      "resource.dataDiscoverySpec.bigqueryPublishingConfig.location",
+      "resource.dataDiscoverySpec.bigqueryPublishingConfig.tableType",
+      "resource.dataDiscoverySpec.storageConfig.csvOptions.delimiter",
+      "resource.dataDiscoverySpec.storageConfig.csvOptions.encoding",
+      "resource.dataDiscoverySpec.storageConfig.csvOptions.headerRows",
+      "resource.dataDiscoverySpec.storageConfig.csvOptions.quote",
+      "resource.dataDiscoverySpec.storageConfig.csvOptions.typeInferenceDisabled",
+      "resource.dataDiscoverySpec.storageConfig.excludePatterns",
+      "resource.dataDiscoverySpec.storageConfig.includePatterns",
+      "resource.dataDiscoverySpec.storageConfig.jsonOptions.encoding",
+      "resource.dataDiscoverySpec.storageConfig.jsonOptions.typeInferenceDisabled",
+      "resource.dataProfileSpec.excludeFields.fieldNames",
+      "resource.dataProfileSpec.includeFields.fieldNames",
+      "resource.dataProfileSpec.postScanActions.bigqueryExport.resultsTable",
+      "resource.dataProfileSpec.rowFilter",
+      "resource.dataProfileSpec.samplingPercent",
+      "resource.dataQualitySpec.postScanActions.bigqueryExport.resultsTable",
+      "resource.dataQualitySpec.postScanActions.notificationReport.recipients.emails",
+      "resource.dataQualitySpec.postScanActions.notificationReport.scoreThresholdTrigger.scoreThreshold",
+      "resource.dataQualitySpec.rowFilter",
+      "resource.dataQualitySpec.rules.column",
+      "resource.dataQualitySpec.rules.description",
+      "resource.dataQualitySpec.rules.dimension",
+      "resource.dataQualitySpec.rules.ignoreNull",
+      "resource.dataQualitySpec.rules.name",
+      "resource.dataQualitySpec.rules.rangeExpectation.maxValue",
+      "resource.dataQualitySpec.rules.rangeExpectation.minValue",
+      "resource.dataQualitySpec.rules.rangeExpectation.strictMaxEnabled",
+      "resource.dataQualitySpec.rules.rangeExpectation.strictMinEnabled",
+      "resource.dataQualitySpec.rules.regexExpectation.regex",
+      "resource.dataQualitySpec.rules.rowConditionExpectation.sqlExpression",
+      "resource.dataQualitySpec.rules.setExpectation.values",
+      "resource.dataQualitySpec.rules.sqlAssertion.sqlStatement",
+      "resource.dataQualitySpec.rules.statisticRangeExpectation.maxValue",
+      "resource.dataQualitySpec.rules.statisticRangeExpectation.minValue",
+      "resource.dataQualitySpec.rules.statisticRangeExpectation.statistic",
+      "resource.dataQualitySpec.rules.statisticRangeExpectation.strictMaxEnabled",
+      "resource.dataQualitySpec.rules.statisticRangeExpectation.strictMinEnabled",
+      "resource.dataQualitySpec.rules.suspended",
+      "resource.dataQualitySpec.rules.tableConditionExpectation.sqlExpression",
+      "resource.dataQualitySpec.rules.threshold",
+      "resource.dataQualitySpec.samplingPercent",
+      "resource.description",
+      "resource.displayName",
+      "resource.executionSpec.field",
+      "resource.executionSpec.trigger.schedule.cron",
+      "resource.exportSpec.outputPath",
+      "resource.exportSpec.scope.aspectTypes",
+      "resource.exportSpec.scope.entryGroups",
+      "resource.exportSpec.scope.entryTypes",
+      "resource.exportSpec.scope.organizationLevel",
+      "resource.exportSpec.scope.projects",
+      "resource.importSpec.aspectSyncMode",
+      "resource.importSpec.entrySyncMode",
+      "resource.importSpec.logLevel",
+      "resource.importSpec.scope.aspectTypes",
+      "resource.importSpec.scope.entryGroups",
+      "resource.importSpec.scope.entryTypes",
+      "resource.importSpec.sourceCreateTime",
+      "resource.importSpec.sourceStorageUri",
+      "resource.metadataTemplate.annotations.deprecated",
+      "resource.metadataTemplate.annotations.description",
+      "resource.metadataTemplate.annotations.displayName",
+      "resource.metadataTemplate.annotations.displayOrder",
+      "resource.metadataTemplate.annotations.stringType",
+      "resource.metadataTemplate.annotations.stringValues",
+      "resource.metadataTemplate.constraints.required",
+      "resource.metadataTemplate.enumValues.deprecated",
+      "resource.metadataTemplate.enumValues.index",
+      "resource.metadataTemplate.enumValues.name",
+      "resource.metadataTemplate.index",
+      "resource.metadataTemplate.name",
+      "resource.metadataTemplate.type",
+      "resource.metadataTemplate.typeId",
+      "resource.metadataTemplate.typeRef",
+      "resource.platform",
+      "resource.requiredAspects.type",
+      "resource.system",
+      "resource.type",
+      "resource.typeAliases"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:54.992Z",
+  "source_step08_card": "data/step-08/current/products/dataplex/card.json",
+  "product_name": "Dataplex",
+  "product_slug": "dataplex"
+}

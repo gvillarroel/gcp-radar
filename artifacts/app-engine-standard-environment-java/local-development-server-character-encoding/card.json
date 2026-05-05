@@ -1,0 +1,97 @@
+{
+  "feature_name": "Local development server character encoding",
+  "feature_slug": "local-development-server-character-encoding",
+  "summary": "The local development server now defaults to UTF-8 for Java 8 and supports explicit configuration with the appengine.file.encoding system property.",
+  "extended_definition": "The local development server now defaults to UTF-8 for Java 8 and supports explicit configuration with the appengine.file.encoding system property.",
+  "lifecycle": {
+    "latest_feature_date": "2017-12-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/java/tools/using-local-server",
+      "https://docs.cloud.google.com/appengine/docs/standard/tools/using-local-server"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Using the local development server \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java/tools/using-local-server",
+        "source_id": "site-docs-reference-4",
+        "final_score": 305,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example: if (SystemProperty.environment.value() == SystemProperty.Environment.Value.Production) { // Production } else { // Local development server // which is: SystemProperty.Environment.Value.Development } Using the local Datastore emulator The development web server simulates Datastore using a local file-backed Datastore on your computer.",
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Using the local development server Stay organized with collections Save and categorize content based on your preferences.",
+          "Detecting the application runtime environment To determine whether your code is running in production or in the local development server, you can check the value of the SystemProperty.environment.value() method."
+        ]
+      },
+      {
+        "title": "使用本地开发服务器 | App Engine standard environment | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/tools/using-local-server",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 215,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "使用本地开发服务器 | App Engine standard environment | Google Cloud Documentation 跳至主要内容 技术领域 close AI 和机器学习 应用开发 应用托管 计算 数据分析和流水线 数据库 分布式云、混合云和多云 生成式 AI 行业解决方案 网络 可观测性和监控 安全 Storage 跨产品工具 close 访问权限和资源管理 费用和用量管理 基础设施即代码 迁移 SDK、语言、框架和工具 / 控制台 English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어 登录 App Engine Standard environment 免费开始使用吧 概览 指南 参考文档 资源 App Engine 环境 App Engine 标准环境 了解标准环境 App Engine 柔性环境 了解柔性环境 App Engine Migration Center 了解如何迁移到最新受支持的版本 技术领域 更多 概览 指南 参考文档 资源 App Engine 环境 更多 跨产品工具 更多 控制台 App Engine 标准环境 App Engine 首页 标准环境概览 选择语言和环境 探索标准环境运行时 Go 运行时 概览 构建应用 升级现有应用 从第一代运行时迁移到第二代运行时 Java 运行时 概览 构建应用 概览 创建项目 编写 Web 服务 部署 Web 服务 升级现有应用 重新打包 WAR 文件 从第一代运行时迁移到第二代运行时 Node.js 运行时 概览 构建应用 概览 创建项目 编写 Web 服务 部署 Web 服务 更新您的 Web 服务 查看日志 PHP 运行时 概览 构建应用 升级现有应用 从第一代运行时迁移到第二代运行时 Python 运行时 概览 构建应用 概览 创建项目 编写 Web 服务 部署 Web 服务 处理数据 添加 Firebase 对用户进行身份验证 对数据进行个性化 清理 升级现有应用 概览 从第一代运行时迁移到第二代运行时 迁移到 Python 3 运行时 迁移旧版捆绑服务 为 Python 3 环境准备配置文件 测试和部署应用 Ruby 运行时 概览 创建应用 开始使用 设置您的环境 设置您的开发环境 设置 Java 版可选工具 Apache Maven 使用 Maven 和 App Engine 插件 Maven 插件目标和参数 Gradle 使用 App Engine 插件 任务和属性 设置 Cloud 项目 授予访问权限 设置访问权限控制 查看授予 App Engine 访问权限的角色 配置服务账号 Google 管理的服务代理 设计您的应用 设计 Web 服务的结构 托管静态网站 在服务之间通信 处理请求 路由请求 定义配置文件 Go 定义运行时设置 指定依赖项 Java 定义运行时设置 指定依赖项 Node.js 定义运行时设置 指定依赖项 运行自定义构建步骤 PHP 定义运行时设置 指定依赖项 Python 定义运行时设置 指定依赖项 Ruby 定义运行时设置 指定依赖项 测试和部署应用 在本地开发服务器上测试 使用本地开发服务器 命令选项 在停止提供支持后使用本地开发服务器 配置您的应用 设置网络 映射自定义网域 使用 SSL 保护自定义网域 使用最低 TLS 保护您的应用 虚拟私有云 (VPC) 连接到 VPC 网络 连接到共享 VPC 网络 在服务项目中具有连接器的共享 VPC 在宿主项目中具有连接器的共享 VPC 设置静态出站 IP 地址 存储数据和文件 概览 以 Datastore 模式使用 Cloud Firestore 使用 Cloud SQL 使用 Cloud Storage（云文件托管） 存储和传送静态文件 读取和写入临时文件 使用 Memorystore 缓存数据 创建触发器 编写和响应 Pub/Sub 消息 使用第三方服务发送消息 保护应用 概览 指定入站流量和出站流量设置 了解防火墙 创建防火墙规则 对用户进行身份验证 运营和维护 管理实例 为资源加标签 管理应用的流量 迁移流量 拆分流量 安排 Cron 作业 运行异步任务 配置预热请求 自动执行任务 Admin API 使用入门 监控、记录和调试 访问审核日志 写入和查看日志 监控和提醒延迟时间 使用 Cloud Profiler 了解性能 访问旧版捆绑服务 概览 Go 1.12+ Java 11+ PHP 7/8 Python 3 概览 Blobstore 概览 延迟概览 邮件概览 可用的 API 概览 应用身份 Blobstore 功能 Datastore 概览 客户端库概念 API 概览 异步操作 回调 创建、检索、更新和删除实体 创建和使用实体键 实体、属性和键 实体属性参考文档 索引 元数据 投影查询 查询 查询游标 查询数据一致性 查询限制 检索查询结果 统计信息 合理设计数据结构以实现强一致性 交易 从控制台管理 Datastore 概览 查看 Datastore 统计信息 配置 Datastore 索引 图像 邮件 Mail API 概览 群发邮件指南 发送邮件 接收邮件 接收退信通知 带有标题或附件的邮件 Memcache Memcache 概览 使用 Memcache Memcache 示例 Memcache 审核日志 模块 Namespaces API Namespaces API 概览 使用 Namespaces 实现多租户 Cloud Datastore 的 NDB 客户端库 概览 管理 异步操作 缓存 创建、检索、更新和删除实体 创建实体模型 创建和使用实体键 配置 Datastore 索引 投影查询 查询 交易 写入属性子类 NDB 客户端库参考文档 实体属性参考 上下文 例外情况 函数 未来 键 元数据 模型 PolyModel 查询 搜索 文档和索引 查询字符串 查询和排序选项 处理搜索结果 分面搜索 最佳实践 使用本地开发服务器 Python 参考文档 Cursor 文档 Facet 类 FacetOptions FacetRange FacetRefinement FacetResult FacetResultValue Field 类 FieldExpression GeoPoint GetResponse 索引 MatchScorer 查询 QueryOptions RescoringMatchScorer ScoredDocument SearchResults SortExpression SortOptions 函数 例外情况 任务队列 任务队列概览 使用推送队列 使用推送队列 创建推送队列 创建推送任务 创建任务处理程序 删除任务和队列 重试失败的推送任务 在开发服务器中测试推送队列 使用拉取队列 使用拉取队列 创建拉取队列 创建拉取任务 租用拉取任务 URL Fetch 出站请求 发出 HTTP(S) 请求 用户 概览 User 对象 登录网址 管理员用户 迁移中心 迁移时可参考的资源 排查问题 简介 部署 服务 延迟时间增加 连接 社区资源 AI 和机器学习 应用开发 应用托管 计算 数据分析和流水线 数据库 分布式云、混合云和多云 生成式 AI 行业解决方案 网络 可观测性和监控 安全 Storage 访问权限和资源管理 费用和用量管理 基础设施即代码 迁移 SDK、语言、框架和工具 App Engine 标准环境 App Engine 柔性环境 App Engine Migration Center Home Documentation Application hosting App Engine Standard environment 指南 发送反馈 使用本地开发服务器 使用集合让一切井井有条 根据您的偏好保存内容并对其进行分类。 Go Java Node.js PHP Python Ruby 注意： 对于已达到 支持终止 期限的运行时，您无法再使用最新版本的 dev_appserver.py 在本地运行应用。如需继续使用 dev_appserver.py 的归档版本，请参阅 在运行时达到支持终止期限后使用本地开发服务器 。 Java 版 Google Cloud CLI 包含一个本地开发服务器，用于在您的计算机上测试您的应用。本地开发服务器模拟 App Engine 的 Java 运行时环境及其所有服务，包括 Datastore。 警告 ：独立 SDK 已关闭 ，并且本地开发服务器命令已更改。以下说明假定您已安装 gcloud CLI 。 运行开发网络服务器 有关为应用设置系统属性和环境变量的信息，请参阅 请求的处理方式 。 您还可以通过命令提示符运行开发 Web 服务器。要运行的命令位于 SDK 的 google-cloud-sdk/bin/ 目录中。 Windows 命令语法： google - cloud - sdk \\ bin \\ java_dev_appserver . cmd [ options ] [ WAR_DIRECTORY_LOCATION ] Linux 或 macOS 命令语法： google - cloud - sdk / bin / java_dev_appserver . sh [ options ] [ WAR_DIRECTORY_LOCATION ] 该命令接受应用的 WAR 目录位置当作参数。 停止开发服务器 要停止 Web 服务器，请按 Ctrl-C 。 检测应用运行时环境 如需确定您的代码是在生产环境中运行还是在本地开发服务器中运行，您可以检查 SystemProperty.environment.value() 方法的值。例如： if (SystemProperty.environment.value() == SystemProperty.Environment.Value.Production) { // Production } else { // Local development server // which is: SystemProperty.Environment.Value.Development } 使用本地 Datastore 模拟器 开发 Web 服务器使用您计算机上本地基于文件的 Datastore 来模拟 Datastore。Datastore 名为 local_db.bin ，它是在您应用的 WAR 目录（ WEB-INF /appengine-generated/ 目录）中创建的。该 Datastore 不随应用一起上传。 此 Datastore 在前后两次调用网络服务器之间保持不变，因此在您下次运行网络服务器时，您存储的数据仍可用。要清除 Datastore 的内容，请关闭服务器，然后删除该文件。 如 Datastore 索引配置 中所述，开发服务器可以为您的应用所需的 Datastore 索引生成配置（根据应用在测试期间执行的查询确定）。这将会在 WAR 的 WEB-INF/appengine-generated/ 目录中生成一个名为 datastore-indexes-auto.xml 的文件。如需停用自动索引配置，请使用 <datastore-indexes> 元素的 autoGenerate=\"false\" 特性在 WEB-INF/ 目录中创建或修改 datastore-indexes.xml 文件。 在开发服务器中浏览 Datastore 如需使用开发 Web 服务器浏览本地 Datastore，请执行以下操作： 根据上文所述启动开发服务器。 转到 开发控制台 。 点击左侧导航窗格中的 Datastore 查看器 以查看本地 Datastore 内容。 Cloud Datastore 一致性模型 默认情况下，本地 Datastore 已配置，因此那些不会立即显示在全局查询中的 Datastore 写入所占百分比设置为 10%。 如需调整此一致性级别，请设置 datastore.default_high_rep_job_policy_unapplied_job_pct 系统属性，使其值对应于应用所需的最终一致性数量。 -Ddatastore.default_high_rep_job_policy_unapplied_job_pct=20 如果您使用命令提示符 java_dev_appserver.sh 设置此属性，则需要使用 --jvm_flag=... 进行设置： google_cloud_sdk/bin/java-dev_appserver.sh --jvm_flag=-Ddatastore.default_high_rep_job_policy_unapplied_job_pct=20 datastore.default_high_rep_job_policy_unapplied_job_pct 的有效范围介于 0 到 100 之间。如果您使用此范围之外的数字，则会收到错误消息。 注意 ：如果您要求查询结果具有强一致性，则需要使用祖先查询将结果限于单个实体组。如需了解详情，请参阅 设计数据结构以实现强一致性 。 指定自动 ID 分配政策 您可以配置本地 Datastore 分配 自动实体 ID 的方式。 开发服务器支持以下自动 ID 分配政策： sequential ID 从连续整数序列分配。 scattered ID 从大致均匀分布的整数的非重复序列分配。 注意 ：生产服务器的自动 ID 分配政策与开发服务器使用的政策完全不同。 default 生产服务器政策与 scattered 政策类似，但不同。没有与 sequential 相对应的政策。您的应用不应该对生产环境中分配的自动 ID 序列做任何假设。 本地 Datastore 中的默认政策是 scattered 。 如需指定自动 ID 政策，请将 datastore.auto_id_allocation_policy 系统属性设置为 sequential 或 scattered 。 -Ddatastore.auto_id_allocation_policy=scattered 如需通过传递给 dev_appserver 宏的标志来设置此系统属性，请使用以下命令： java_dev_appserver --jvm_flag=-Ddatastore.auto_id_allocation_policy=scattered 模拟用户账号 开发 Web 服务器使用自己的登录和退出登录页面模拟 Google 账号。在开发 Web 服务器中运行时，生成登录和退出登录网址的方法会在本地服务器上返回 /_ah/login 和 /_ah/logout 的网址。 开发登录页面包含一个表单，您可以在其中输入电子邮件地址。会话将使用您输入的电子邮件地址作为活跃用户。 要让应用认为登录用户是管理员，请选中表单上的“以管理员身份登录”(Sign in as Administrator) 复选框。 使用网址提取 当应用使用 URL Fetch API 发出 HTTP 请求时，开发 Web 服务器会直接从您的计算机中发出该请求。如果您使用代理服务器访问网站，该行为可能与在 App Engine 上运行应用时不同。 开发控制台 开发 Web 服务器包含一个控制台 Web 应用。借助该控制台，您可以浏览本地 Datastore。 如要访问该控制台，请在您的服务器上访问 /_ah/admin 网址： http://localhost:8080/_ah/admin 命令行参数 如需了解本地开发服务器命令选项，请参阅 此处 。 发送反馈 如未另行说明，那么本页面中的内容已根据 知识共享署名 4.0 许可 获得了许可，并且代码示例已根据 Apache 2.0 许可 获得了许可。有关详情，请参阅 Google 开发者网站政策 。Java 是 Oracle 和/或其关联公司的注册商标。 最后更新时间 (UTC)：2026-01-15。 需要向我们提供更多信息？ [[[\"易于理解\",\"easyToUnderstand\",\"thumb-up\"],[\"解决了我的问题\",\"solvedMyProblem\",\"thumb-up\"],[\"其他\",\"otherUp\",\"thumb-up\"]],[[\"很难理解\",\"hardToUnderstand\",\"thumb-down\"],[\"信息或示例代码不正确\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"没有我需要的信息/示例\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"翻译问题\",\"translationIssue\",\"thumb-down\"],[\"其他\",\"otherDown\",\"thumb-down\"]],[\"最后更新时间 (UTC)：2026-01-15。\"],[],[]] 产品和价格 查看所有产品 Google Cloud 价格 Google Cloud Marketplace 与销售人员联系 支持 社区论坛 支持 版本说明 系统状态 资源 GitHub Google Cloud 使用入门 代码示例 云架构中心 培训和认证 互动 博客 活动 X (Twitter) Google Cloud 在 YouTube 上的频道 YouTube 上的 Google Cloud Tech 关于 Google 隐私权政策 网站条款 Google Cloud 条款 Manage cookies 环境行动的第三个十年：加入我们 订阅 Google Cloud 简报 订阅 English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어"
+        ]
+      },
+      {
+        "title": "\"Understand performance with Cloud Profiler \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/cloud-profiler",
+        "source_id": "site-docs-reference",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.file.encoding",
+      "auto.xml",
+      "datastore.auto_id_allocation_policy",
+      "datastore.default_high_rep_job_policy_unapplied_job_pct",
+      "environment.value",
+      "indexes.xml",
+      "web.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/java/tools/using-local-server",
+        "https://docs.cloud.google.com/appengine/docs/standard/tools/using-local-server"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/java/tools/using-local-server",
+        "https://docs.cloud.google.com/appengine/docs/standard/tools/using-local-server"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:11.027Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-java/card.json",
+  "product_name": "App Engine standard environment Java",
+  "product_slug": "app-engine-standard-environment-java"
+}

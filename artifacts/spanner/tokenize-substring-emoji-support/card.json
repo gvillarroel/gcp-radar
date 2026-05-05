@@ -1,0 +1,141 @@
+{
+  "feature_name": "TOKENIZE_SUBSTRING emoji support",
+  "feature_slug": "tokenize-substring-emoji-support",
+  "summary": "TOKENIZE_SUBSTRING now supports emojis in full-text tokenization.",
+  "extended_definition": "TOKENIZE_SUBSTRING now supports emojis in full-text tokenization.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/backfill-embeddings",
+      "https://docs.cloud.google.com/spanner/docs/backup/manage-backups",
+      "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage backups \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/backup/manage-backups",
+        "source_id": "site-docs-root",
+        "final_score": 77,
+        "relevance": "",
+        "evidence_snippets": [
+          "WriteLine ( \"Backup deleted successfully.\" ); } } Go import ( \"context\" \"fmt\" \"io\" \"regexp\" database \"cloud.google.com/go/spanner/admin/database/apiv1\" adminpb \"cloud.google.com/go/spanner/admin/database/apiv1/databasepb\" ) func deleteBackup ( ctx context .",
+          "Node.js // Imports the Google Cloud client library const { Spanner } = require ( ' @google-cloud/spanner ' ); / TODO(developer): Uncomment the following lines before running the sample. / // const projectId = 'my-project-id'; // const instanceId = 'my-instance'; // const databaseId = 'my-database'; // const backupId = 'my-backup'; // Creates a client const spanner = new Spanner ({ projectId : projectId , }); // Gets a reference to a Cloud Spanner Database Admin Client object const databaseAdminClient = spanner . getDatabaseAdminClient (); try { // Get the parent(instance) of the database const parent = databaseAdminClient . instancePath ( projectId , instanceId ); // List all backups const [ allBackups ] = await databaseAdminClient . listBackups ({ parent : parent , }); console . log ( 'All backups:' ); allBackups . forEach ( backups = > { if ( backups . name ) { const backup = backups . name ; const delimiter = 'projects/' + projectId + '/instances/' + instanceId + '/backups/' ; const result = backup . substring ( delimiter . length ); console . log ( result ); } }); // List backups filtered by backup name const [ backupsByName ] = await databaseAdminClient . listBackups ({ parent : parent , filter : Name: ${ backupId } , }); console . log ( 'Backups matching backup name:' ); backupsByName . forEach ( backup = > { if ( backup . name ) { const backupName = backup . name ; const delimiter = 'projects/' + projectId + '/instances/' + instanceId + '/backups/' ; const result = backupName . substring ( delimiter . length ); console . log ( result ); } }); // List backups expiring within 30 days const expireTime = new Date (); expireTime . setDate ( expireTime . getDate () + 30 ); const [ backupsByExpiry ] = await databaseAdminClient . listBackups ({ parent : parent , filter : expire time < \" ${ expireTime . toISOString () } \" , }); console . log ( 'Backups expiring within 30 days:' ); backupsByExpiry . forEach ( backup = > { if ( backup . name ) { const backupName = backup . name ; const delimiter = 'projects/' + projectId + '/instances/' + instanceId + '/backups/' ; const result = backupName . substring ( delimiter . length ); console . log ( result ); } }); // List backups filtered by database name const [ backupsByDbName ] = await databaseAdminClient . listBackups ({ parent : parent , filter : Database: ${ databaseId } , }); console . log ( 'Backups matching database name:' ); backupsByDbName . forEach ( backup = > { if ( backup . name ) { const backupName = backup . name ; const delimiter = 'projects/' + projectId + '/instances/' + instanceId + '/backups/' ; const result = backupName . substring ( delimiter . length ); console . log ( result ); } }); // List backups filtered by backup size const [ backupsBySize ] = await databaseAdminClient . listBackups ({ parent : parent , filter : 'size bytes > 100' , }); console . log ( 'Backups filtered by size:' ); backupsBySize . forEach ( backup = > { if ( backup . name ) { const backupName = backup . name ; const delimiter = 'projects/' + projectId + '/instances/' + instanceId + '/backups/' ; const result = backupName . substring ( delimiter . length ); console . log ( result ); } }); // List backups that are ready that were created after a certain time const createTime = new Date (); createTime . setDate ( createTime . getDate () - 1 ); const [ backupsByCreateTime ] = await databaseAdminClient . listBackups ({ parent : parent , filter : (state:READY) AND (create time >= \" ${ createTime . toISOString () } \") , }); console . log ( 'Ready backups filtered by create time:' ); backupsByCreateTime . forEach ( backup = > { if ( backup . name ) { const backupName = backup . name ; const delimiter = 'projects/' + projectId + '/instances/' + instanceId + '/backups/' ; const result = backupName . substring ( delimiter . length ); console . log ( result ); } }); // List backups using pagination console . log ( 'Get backups paginated:' ); const [ backups ] = await databaseAdminClient . listBackups ({ parent : parent , pageSize : 3 , }); backups . forEach ( backup = > { if ( backup . name ) { const backupName = backup . name ; const delimiter = 'projects/' + projectId + '/instances/' + instanceId + '/backups/' ; const result = backupName . substring ( delimiter . length ); console . log ( result ); } }); } catch ( err ) { console . error ( 'ERROR:' , err ); } Note: The old client library interface code samples for Node.js are archived in GitHub .",
+          "Example: @param string $projectId The Google Cloud project ID. @param string $destInstanceId The Spanner instance ID where the copy backup will reside. @param string $destBackupId The Spanner backup ID of the new backup to be created. @param string $sourceInstanceId The Spanner instance ID of the source backup. @param string $sourceBackupId The Spanner backup ID of the source. / function copy backup( string $projectId, string $destInstanceId, string $destBackupId, string $sourceInstanceId, string $sourceBackupId ): void { $databaseAdminClient = new DatabaseAdminClient(); $destInstanceFullName = DatabaseAdminClient::instanceName($projectId, $destInstanceId); $expireTime = new Timestamp(); $expireTime->setSeconds((new \\DateTime('+8 hours'))->getTimestamp()); $sourceBackupFullName = DatabaseAdminClient::backupName($projectId, $sourceInstanceId, $sourceBackupId); $request = new CopyBackupRequest([ 'source backup' => $sourceBackupFullName, 'parent' => $destInstanceFullName, 'backup id' => $destBackupId, 'expire time' => $expireTime ]); $operationResponse = $databaseAdminClient->copyBackup($request); $operationResponse->pollUntilComplete(); if ($operationResponse->operationSucceeded()) { $destBackupInfo = $operationResponse->getResult(); printf( 'Backup %s of size %d bytes was copied at %d from the source backup %s' ."
+        ]
+      },
+      {
+        "title": "\"Build change streams connections using Dataflow \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "source_id": "site-docs-root",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "String elementKey = keyString . read (); if ( elementKey == null ) { Instant commitTimestamp = new Instant ( element . getValue (). getCommitTimestamp (). toSqlTimestamp ()); Instant outputTimestamp = commitTimestamp . plus ( Duration . standardSeconds ( incrementIntervalInSeconds )); timer . set ( outputTimestamp ); keyString . write ( element . getKey ()); } } @OnTimer ( \"timer\" ) public void onExpiry ( OnTimerContext context , @StateId ( \"buffer\" ) BagState<DataChangeRecord> buffer , @TimerId ( \"timer\" ) Timer timer , @StateId ( \"keyString\" ) ValueState<String> keyString ) { if ( ! buffer . isEmpty (). read ()) { String elementKey = keyString . read (); final List<DataChangeRecord> records = StreamSupport . stream ( buffer . read (). spliterator (), false ) . collect ( Collectors . toList ()); buffer . clear (); List<DataChangeRecord> recordsToOutput = new ArrayList <> (); for ( DataChangeRecord record : records ) { Instant recordCommitTimestamp = new Instant ( record . getCommitTimestamp (). toSqlTimestamp ()); final String recordString = record . getMods (). get ( 0 ). getNewValuesJson (). isEmpty () ? \"Deleted record\" : record . getMods (). get ( 0 ). getNewValuesJson (); // When the watermark passes time T, this means that all records with // event time < T have been processed and successfully committed.",
+          "These examples demonstrate how to filter change stream records based on user-defined transaction tags as well as system tags: User-defined tag filtering for my-tx-tag : pipeline . apply ( SpannerIO . readChangeStream () . withSpannerConfig ( SpannerConfig . create () . withProjectId ( \"my-project-id\" ) . withInstanceId ( \"my-instance-id\" ) . withDatabaseId ( \"my-database-id\" ) . withDatabaseRole ( \"my-database-role\" )) // Needed for fine-grained access control only . withChangeStreamName ( \"my-change-stream\" ) . withMetadataInstance ( \"my-metadata-instance-id\" ) . withMetadataDatabase ( \"my-metadata-database-id\" ) . withInclusiveStartAt ( Timestamp . now ())) . apply ( Filter . by ( record - > ! record . isSystemTransaction () && record . getTransactionTag (). equalsIgnoreCase ( \"my-tx-tag\" ))) // Subsequent processing goes here System tag filtering/ TTL auditing: pipeline . apply ( SpannerIO . readChangeStream () . withSpannerConfig ( SpannerConfig . create () . withProjectId ( \"my-project-id\" ) . withInstanceId ( \"my-instance-id\" ) . withDatabaseId ( \"my-database-id\" ) . withDatabaseRole ( \"my-database-role\" )) // Needed for fine-grained access control only . withChangeStreamName ( \"my-change-stream\" ) . withMetadataInstance ( \"my-metadata-instance-id\" ) . withMetadataDatabase ( \"my-metadata-database-id\" ) . withInclusiveStartAt ( Timestamp . now ())) . apply ( Filter . by ( record - > record . isSystemTransaction () && record . getTransactionTag (). equals ( \"RowDeletionPolicy\" ))) // Subsequent processing goes here Sample: Fetch full row This example works with a Spanner table named Singer that has the following definition: CREATE TABLE Singers ( SingerId INT64 NOT NULL , FirstName STRING ( 1024 ), LastName STRING ( 1024 ) ) PRIMARY KEY ( SingerId ); Under the default OLD AND NEW VALUES value capture mode of change streams, when there is an update to a Spanner row, the data change record received will contain only the columns that were changed.",
+          "For more information about the SortKey , see the sample implementation . private static class TransactionBoundaryFn extends DoFn<KV<String , DataChangeRecord > , KV<SortKey , Iterable<DataChangeRecord> >> { @StateId ( \"buffer\" ) private final StateSpec<BagState<DataChangeRecord> > buffer = StateSpecs . bag (); @StateId ( \"count\" ) private final StateSpec<ValueState<Integer> > countState = StateSpecs . value (); @ProcessElement public void process ( ProcessContext context , @StateId ( \"buffer\" ) BagState<DataChangeRecord> buffer , @StateId ( \"count\" ) ValueState<Integer> countState ) { final KV<String , DataChangeRecord > element = context . element (); final DataChangeRecord record = element . getValue (); buffer . add ( record ); int count = ( countState . read () != null ? countState . read () : 0 ); count = count + 1 ; countState . write ( count ); if ( count == record . getNumberOfRecordsInTransaction ()) { final List<DataChangeRecord> sortedRecords = StreamSupport . stream ( buffer . read (). spliterator (), false ) . sorted ( Comparator . comparing ( DataChangeRecord :: getRecordSequence )) . collect ( Collectors . toList ()); final Instant commitInstant = new Instant ( sortedRecords . get ( 0 ). getCommitTimestamp (). toSqlTimestamp () . getTime ()); context . outputWithTimestamp ( KV . of ( new SortKey ( sortedRecords . get ( 0 ). getCommitTimestamp (), sortedRecords . get ( 0 ). getServerTransactionId ()), sortedRecords ), commitInstant ); buffer . clear (); countState . clear (); } } } Sample: Filter by transaction tag When a transaction modifying user data is tagged, the corresponding tag and its type get stored as part of DataChangeRecord ."
+        ]
+      },
+      {
+        "title": "\"Generate vector embeddings for textual data in bulk using partitioned DML\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/backfill-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "ML PREDICT ROW ( 'projects/ PROJECT /locations/ LOCATION /publishers/google/models/ $MODEL NAME ' , JSONB BUILD OBJECT ( 'instances' , JSONB BUILD ARRAY ( JSONB BUILD OBJECT ( 'content' , description )))) FROM Products LIMIT 10 ; Replace the following: PROJECT : the project hosting the Vertex AI endpoint LOCATION : the location of the Vertex AI endpoint MODEL NAME : the name of the Vertex AI text embedding model Update the source table to include additional columns to store the embeddings Next, update the source table schema to include an additional column of the data type ARRAY<FLOAT32> to store the generated embeddings: GoogleSQL ALTER TABLE TABLE NAME ADD COLUMN EMBEDDING COLUMN NAME ARRAY<FLOAT32> ; Replace the following: TABLE NAME : the name of the source table EMBEDDING COLUMN NAME : the name of the column in which you want to add generated embeddings PostgreSQL ALTER TABLE TABLE NAME ADD COLUMN EMBEDDING COLUMN NAME real []; Replace the following: TABLE NAME : the name of the source table EMBEDDING COLUMN NAME : the name of the column in which you want to add generated embeddings For example, using the products table example, run: GoogleSQL ALTER TABLE Products ADD COLUMN desc embed ARRAY<FLOAT32> ; PostgreSQL ALTER TABLE Products ADD COLUMN desc embed real []; You can add another column to manage the version of the embedding model.",
+          "ML PREDICT ROW ( 'projects/ PROJECT /locations/ LOCATION /publishers/google/models/ $MODEL NAME ' , JSONB BUILD OBJECT ( 'instances' , JSONB BUILD ARRAY ( JSONB BUILD OBJECT ( 'content' , DATA COLUMN NAME ))) ) / @ remote udf max rows per rpc= MAX ROWS / - > 'predictions' - > 0 - > 'embeddings' - > 'values' ), EMBEDDING VERSION COLUMN = MODEL VERSION WHERE FILTER CONDITION ; Replace the following: TABLE NAME : the name of the table with the textual data EMBEDDING COLUMN NAME : the name of the column in which you want to add generated embeddings DATA COLUMN NAME : the name of the column with the textual data PROJECT : the project hosting the Vertex AI endpoint LOCATION : the location of the Vertex AI endpoint MODEL NAME : the name of the Vertex AI embedding model MODEL VERSION : the version of the Vertex AI embedding model MAX ROWS : the maximum number of rows per RPC EMBEDDING VERSION COLUMN : the column that manages the version of the text embedding model used to backfill your embeddings FILTER CONDITION : a partitionable filter condition that you want to apply An example backfill query for the products table: GoogleSQL UPDATE products SET products . desc embed = ( SELECT embeddings . values FROM SAFE .",
+          "EMBEDDING VERSION COLUMN = MODEL VERSION WHERE FILTER CONDITION ; Replace the following: TABLE NAME : the name of the table with the textual data EMBEDDING COLUMN NAME : the name of the column in which you want to add generated embeddings DATA COLUMN NAME : the name of the column with the textual data MODEL NAME : the name of the Vertex AI embedding model MAX ROWS : the maximum number of rows per RPC EMBEDDING VERSION COLUMN : the column that manages the version of the embedding model used to backfill your embeddings MODEL VERSION : the version of the text embedding model FILTER CONDITION : a partitionable filter condition that you want to apply Using SAFE.ML.PREDICT returns NULL for failed requests."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "com.google.cloud.spanner.AsyncTransactionManager.TransactionContextFuture"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/backup/manage-backups",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/backfill-embeddings"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/backup/manage-backups",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/backfill-embeddings"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/backup/manage-backups",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/backfill-embeddings"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/backup/manage-backups",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/backfill-embeddings"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/backup/manage-backups",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/backfill-embeddings"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/backup/manage-backups",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/backfill-embeddings"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/backup/manage-backups",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/backfill-embeddings"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:37.939Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

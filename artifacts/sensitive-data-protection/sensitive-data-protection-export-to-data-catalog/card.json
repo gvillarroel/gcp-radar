@@ -1,0 +1,125 @@
+{
+  "feature_name": "Sensitive Data Protection export to Data Catalog",
+  "feature_slug": "sensitive-data-protection-export-to-data-catalog",
+  "summary": "Sensitive Data Protection can send inspection and discovery results to Data Catalog, and this export path is deprecated; deprecated on 2025-09-30.",
+  "extended_definition": "Sensitive Data Protection can send inspection and discovery results to Data Catalog, and this export path is deprecated; deprecated on 2025-09-30.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-01",
+    "deprecation_date": "2025-09-30",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/add-aspects-inspection-job",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Enable inspection or risk analysis actions \\_|\\_ Sensitive Data Protection\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 146,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Publish to Knowledge Catalog Send the results of a BigQuery inspection job to Knowledge Catalog.",
+          "For more information, see Send inspection results to Knowledge Catalog as aspects .",
+          "Action BigQuery inspection Cloud Storage inspection Datastore inspection Hybrid inspection Risk analysis Save findings to BigQuery ✓ ✓ ✓ ✓ ✓ Save findings to Cloud Storage ✓ ✓ ✓ ✓ Publish to Pub/Sub ✓ ✓ ✓ ✓ ✓ Publish to Security Command Center ✓ ✓ ✓ Publish to Knowledge Catalog ✓ Publish to Data Catalog ( Deprecated ) ✓ Notify by email ✓ ✓ ✓ ✓ ✓ Publish to Cloud Monitoring ✓ ✓ ✓ ✓ De-identify findings ✓ Specify actions You can specify one or more actions when you configure a job: When you create a new inspection or risk analysis job using Sensitive Data Protection in the Google Cloud console, specify actions in the Add actions section of the job creation workflow."
+        ]
+      },
+      {
+        "title": "\"Send inspection results to Knowledge Catalog as aspects \\_|\\_ Sensitive\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/add-aspects-inspection-job",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security Sensitive Data Protection Guides Send feedback Send inspection results to Knowledge Catalog as aspects Stay organized with collections Save and categorize content based on your preferences.",
+          "This document describes how to inspect a BigQuery table for sensitive data and send the inspection results to Knowledge Catalog.",
+          "The Sensitive Data Protection feature that lets you send inspection results to Data Catalog is also deprecated."
+        ]
+      },
+      {
+        "title": "\"Profile Cloud SQL data in a single project \\_|\\_ Sensitive Data Protection\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql",
+        "source_id": "site-docs-reference-3",
+        "final_score": 140,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Send to Knowledge Catalog as aspects This action lets you add Knowledge Catalog aspects to profiled tables based on insights from data profiles.",
+          "To send the data profiles to Knowledge Catalog, make sure that the Send to Dataplex Catalog as aspects option is turned on.",
+          "If you select Send a Pub/Sub notification each time a profile is updated , Sensitive Data Protection sends a notification when there's a change in the sensitivity level, data risk level, detected infoTypes, public access, and other important metrics in the profile."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dlp.googleapis.com",
+      "request.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/add-aspects-inspection-job",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/add-aspects-inspection-job",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/add-aspects-inspection-job",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/add-aspects-inspection-job",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/add-aspects-inspection-job",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-sql"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:35.866Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection"
+}

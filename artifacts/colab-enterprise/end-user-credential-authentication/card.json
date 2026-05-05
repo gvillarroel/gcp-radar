@@ -1,0 +1,197 @@
+{
+  "feature_name": "End-user credential authentication",
+  "feature_slug": "end-user-credential-authentication",
+  "summary": "Colab Enterprise supports end-user credential authentication for notebook code execution; Colab Enterprise supports end-user credential authentication for notebook code execution.",
+  "extended_definition": "Colab Enterprise supports end-user credential authentication for notebook code execution; Colab Enterprise supports end-user credential authentication for notebook code execution.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/colab/docs/authentication",
+      "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+      "https://docs.cloud.google.com/colab/docs/runtimes",
+      "https://docs.cloud.google.com/colab/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Runtimes and runtime templates \\_|\\_ Colab Enterprise \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/colab/docs/runtimes",
+        "source_id": "site-docs-root",
+        "final_score": 270,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Idle shutdown Enabled, set to 180 minutes Enabled, set to 180 minutes Network Your project's default Virtual Private Cloud network Your project's default Virtual Private Cloud network Public internet access Enabled Enabled End user credential authentication Enabled Enabled Auto deletion Automatic deletion 18 hours after creation Automatic deletion 18 hours after creation Note: When your runtime is deleted, Colab Enterprise doesn't preserve changes that you've made to your runtime's files.",
+          "End of availability date : After this date, the following changes take place: This Python version isn't available in Colab Enterprise, even for users who were granted an extension.",
+          "HTTP method and URL: PATCH https:// REGION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /notebookRuntimeTemplates/ NOTEBOOK RUNTIME TEMPLATE ID ?updateMask=software config.colab image.release name Request JSON body: { softwareConfig: { colabImage: { releaseName: \" RELEASE NAME \" } } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "Authenticate to Vertex AI \\_|\\_ Colab Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/colab/docs/authentication",
+        "source_id": "site-api-reference",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you're using a local shell, then create local authentication credentials for your user account: gcloud auth application-default login You don't need to do this if you're using Cloud Shell.",
+          "For a local development environment You can set up credentials for a local development environment in the following ways: User credentials for client libraries or third-party tools User credentials for REST requests from the command line Service account impersonation Client libraries or third-party tools Set up Application Default Credentials (ADC) in your local environment: Install the Google Cloud CLI.",
+          "Home Documentation AI and ML Colab Enterprise Reference Send feedback Authenticate to Vertex AI Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Troubleshoot Colab Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/colab/docs/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Sign in dialog (consent screen) that appears when you first connect to a runtime that has end-user credentials enabled, you didn't select your user account to grant Colab Enterprise access to your user credentials.",
+          "User credentials not found when running code This issue occurs when you try to run code in a notebook that interacts with Google Cloud services and APIs, but you haven't granted Colab Enterprise access to your user credentials.",
+          "See the following common reasons for this issue and their resolutions: You didn't complete a Sign in dialog that appears when you first connect to a runtime that has end-user credentials enabled."
+        ]
+      },
+      {
+        "title": "Create a runtime template in Colab Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "source_id": "site-docs-root",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following sample uses the google colab runtime template Terraform resource to create a Colab Enterprise runtime template. resource \"google compute network\" \"my network\" { name = \"{{index $.Vars \"network name\"}}\" auto create subnetworks = false } resource \"google compute subnetwork\" \"my subnetwork\" { name = \"{{index $.Vars \"network name\"}}\" network = google compute network.my network.id region = \"us-central1\" ip cidr range = \"10.0.1.0/24\" } resource \"google colab runtime template\" \"{{$.PrimaryResourceId}}\" { name = \"{{index $.Vars \"runtime template name\"}}\" display name = \"Runtime template full\" location = \"us-central1\" description = \"Full runtime template\" machine spec { machine type = \"n1-standard-2\" accelerator type = \"NVIDIA TESLA T4\" accelerator count = \"1\" } data persistent disk spec { disk type = \"pd-standard\" disk size gb = 200 } network spec { enable internet access = true network = google compute network.my network.id subnetwork = google compute subnetwork.my subnetwork.id } labels = { k = \"val\" } idle shutdown config { idle timeout = \"3600s\" } euc config { euc disabled = false } shielded vm config { enable secure boot = false } network tags = [ \"abc\", \"def\" ] encryption spec { kms key name = \"{{index $.Vars \"key name\"}}\" } software config { env { name = \"TEST\" value = 1 } post startup script config { post startup script = \"echo 'hello world'\" post startup script url = \"gs://colab-enterprise-pss-secure/secure pss.sh\" post startup script behavior = \"RUN ONCE\" } colab image { release name = \"py312\" } } } Granting access to the runtime template After you create a runtime template, you must grant access to it for a principal to be able to use it.",
+          "Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud colab runtime-templates create --display-name = \" DISPLAY NAME \" \\ --project = PROJECT ID \\ --region = REGION \\ --machine-type = MACHINE TYPE \\ --accelerator-type = ACCELERATOR TYPE \\ --accelerator-count = ACCELERATOR COUNT Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud colab runtime-templates create --display-name = \" DISPLAY NAME \" --project = PROJECT ID --region = REGION --machine-type = MACHINE TYPE --accelerator-type = ACCELERATOR TYPE --accelerator-count = ACCELERATOR COUNT Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud colab runtime-templates create --display-name = \" DISPLAY NAME \" ^ --project = PROJECT ID ^ --region = REGION ^ --machine-type = MACHINE TYPE ^ --accelerator-type = ACCELERATOR TYPE ^ --accelerator-count = ACCELERATOR COUNT For more information about the command for creating a runtime template from the command line, see the gcloud CLI documentation .",
+          "HTTP method and URL: POST https:// REGION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /notebookRuntimeTemplates Request JSON body: { \"displayName\": \" DISPLAY NAME \", \"machineSpec\": { { \"machineType\": MACHINE TYPE \"acceleratorType\": ACCELERATOR TYPE , \"acceleratorCount\": ACCELERATOR COUNT , } }, } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "aiplatform.iam.gserviceaccount.com",
+      "aiplatform.notebookRuntimeTemplates.create",
+      "cmd.exe",
+      "config.colab",
+      "image.release",
+      "network.id",
+      "network.my",
+      "pss.sh",
+      "subnetwork.id",
+      "subnetwork.my"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/authentication",
+        "https://docs.cloud.google.com/colab/docs/troubleshooting",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/authentication",
+        "https://docs.cloud.google.com/colab/docs/troubleshooting",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/authentication",
+        "https://docs.cloud.google.com/colab/docs/troubleshooting",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/authentication",
+        "https://docs.cloud.google.com/colab/docs/troubleshooting",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/authentication",
+        "https://docs.cloud.google.com/colab/docs/troubleshooting",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/authentication",
+        "https://docs.cloud.google.com/colab/docs/troubleshooting",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/authentication",
+        "https://docs.cloud.google.com/colab/docs/troubleshooting",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/authentication",
+        "https://docs.cloud.google.com/colab/docs/troubleshooting",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/authentication",
+        "https://docs.cloud.google.com/colab/docs/troubleshooting",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/authentication",
+        "https://docs.cloud.google.com/colab/docs/troubleshooting",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:45.696Z",
+  "source_step08_card": "data/step-08/current/products/colab-enterprise/card.json",
+  "product_name": "Colab Enterprise",
+  "product_slug": "colab-enterprise"
+}

@@ -1,0 +1,172 @@
+{
+  "feature_name": "time_zone parameter timezone names",
+  "feature_slug": "time-zone-parameter-timezone-names",
+  "summary": "Cloud SQL for MySQL supports setting timezone names as values for the time_zone parameter.",
+  "extended_definition": "Cloud SQL for MySQL supports setting timezone names as values for the time_zone parameter.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect",
+      "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore",
+      "https://docs.cloud.google.com/sql/docs/mysql/client-side-encryption"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About client-side encryption \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/client-side-encryption",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "KmsEnvelopeAead , table name : str , team : str , email : str , ) - > None : \"\"\" Inserts a vote into the database with email address previously encrypted using a KmsEnvelopeAead object. \"\"\" time cast = datetime . datetime . now ( tz = datetime . timezone . utc ) Use the envelope AEAD primitive to encrypt the email, using the team name as associated data.",
+          "Create a connection pool and create a new table in the database Java import com.zaxxer.hikari.HikariConfig ; import com.zaxxer.hikari.HikariDataSource ; import java.sql.Connection ; import java.sql.PreparedStatement ; import java.sql.SQLException ; import javax.sql.DataSource ; public class CloudSqlConnectionPool { public static DataSource createConnectionPool ( String dbUser , String dbPass , String dbName , String instanceConnectionName ) { HikariConfig config = new HikariConfig (); config . setJdbcUrl ( String . format ( \"jdbc:mysql:///%s\" , dbName )); config . setUsername ( dbUser ); config . setPassword ( dbPass ); config . addDataSourceProperty ( \"socketFactory\" , \"com.google.cloud.sql.mysql.SocketFactory\" ); config . addDataSourceProperty ( \"cloudSqlInstance\" , instanceConnectionName ); DataSource pool = new HikariDataSource ( config ); return pool ; } public static void createTable ( DataSource pool , String tableName ) throws SQLException { // Safely attempt to create the table schema. try ( Connection conn = pool . getConnection ()) { String stmt = String . format ( \"CREATE TABLE IF NOT EXISTS %s ( \" + \"vote id SERIAL NOT NULL, time cast timestamp NOT NULL, team CHAR(6) NOT NULL,\" + \"voter email VARBINARY(255), PRIMARY KEY (vote id) );\" , tableName ); try ( PreparedStatement createTableStatement = conn . prepareStatement ( stmt );) { createTableStatement . execute (); } } } } Python import sqlalchemy def init tcp connection engine ( db user : str , db pass : str , db name : str , db host : str ) - > sqlalchemy . engine . base .",
+          "String email = new String ( envAead . decrypt ( voteResults . getBytes ( 3 ), team . getBytes ())); System . out . println ( String . format ( \"%s\\t%s\\t%s\" , team , timeCast , email )); } } } } } Python import os import sqlalchemy import tink from .cloud kms env aead import init tink env aead from .cloud sql connection pool import init db from .encrypt and insert data import encrypt and insert data def main () - > None : \"\"\" Connects to the database, inserts encrypted data and retrieves encrypted data. \"\"\" db user = os . environ [ \"DB USER\" ] # e.g. \"root\", \"mysql\" db pass = os . environ [ \"DB PASS\" ] # e.g. \"mysupersecretpassword\" db name = os . environ [ \"DB NAME\" ] # e.g. \"votes db\" Set if connecting using TCP: db host = os . environ [ \"DB HOST\" ] # e.g. \"127.0.0.1\" Set if connecting using Unix sockets: db socket dir = os . environ . get ( \"DB SOCKET DIR\" , \"/cloudsql\" ) instance connection name = os . environ [ \"INSTANCE CONNECTION NAME\" ] e.g. \"project-name:region:instance-name\" credentials = os . environ . get ( \"GOOGLE APPLICATION CREDENTIALS\" , \"\" ) key uri = \"gcp-kms://\" + os . environ [ \"GCP KMS URI\" ] e.g. \"gcp-kms://projects/...path/to/key Tink uses the \"gcp-kms://\" prefix for paths to keys stored in Google Cloud KMS."
+        ]
+      },
+      {
+        "title": "\"Private Service Connect overview \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect",
+        "source_id": "site-docs-reference-3",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "Limitations When using a Private Service Connect interface with a network attachment to create outbound connections to your network from your Cloud SQL instance, note the following limitations: Enabling or disabling Private Service Connect outbound connectivity requires downtime.",
+          "DNS names and records For instances with Private Service Connect enabled, we recommend that you use the DNS name because different networks can connect to the same instance and Private Service Connect endpoints in each network might have different IP addresses.",
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback Private Service Connect overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Restore an instance overview \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore",
+        "source_id": "site-docs-reference-3",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "Since instance names can be reused after an instance is deleted in Cloud SQL, retained PITR logs can be identified in Google Cloud with the following fields: instance deletion time log retention days These fields allow you to identify if a PITR log belongs to a deleted instance.",
+          "MySQL PostgreSQL SQL Server Cloud SQL lets you restore your instances from a backup, or by performing point-in-time recovery (PITR).",
+          "What's next Perform a restore from a backup Use point-in-time recovery (PITR) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.sql.mysql.SocketFactory",
+      "com.zaxxer.hikari.HikariConfig",
+      "com.zaxxer.hikari.HikariDataSource",
+      "e.g",
+      "java.sql.Connection",
+      "java.sql.PreparedStatement",
+      "java.sql.SQLException",
+      "javax.sql.DataSource"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/restore",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:38.345Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql"
+}

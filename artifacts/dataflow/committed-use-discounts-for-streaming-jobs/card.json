@@ -1,0 +1,90 @@
+{
+  "feature_name": "Committed use discounts for streaming jobs",
+  "feature_slug": "committed-use-discounts-for-streaming-jobs",
+  "summary": "Dataflow streaming jobs support committed use discounts for discounted pricing in exchange for long-term compute commitments.",
+  "extended_definition": "Dataflow streaming jobs support committed use discounts for discounted pricing in exchange for long-term compute commitments.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/cuds",
+      "https://docs.cloud.google.com/dataflow/docs/guides/customize-monitoring-dashboard",
+      "https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Committed use discounts \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/cuds",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dataflow committed use discounts automatically apply to your spending on the Dataflow compute capacity used by streaming jobs across projects.",
+          "Committed use discounts (CUDs) for Dataflow provide discounted prices in exchange for your commitment to continuously spend a minimum hourly amount on Dataflow capacity for a year or longer.",
+          "Dataflow CUDs apply to your spending on the following resources: Worker CPU and memory for streaming jobs Streaming Engine data processed Streaming Engine compute units Data Compute Units (DCUs) for Dataflow Prime streaming jobs Dataflow CUDs don't apply to your spending on the following resources: Worker CPU and memory for batch and FlexRS jobs Dataflow Shuffle data processed Data Compute Units (DCUs) for Dataflow Prime batch jobs Persistent Disk storage GPUs and TPUs Snapshots Confidential VMs For a list of applicable SKUs, see Dataflow CUD Eligible SKUs ."
+        ]
+      },
+      {
+        "title": "Customize the Dataflow monitoring dashboard \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/customize-monitoring-dashboard",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 116,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To get the top 25 jobs, use a top K filter: topk(25, Sum the individual values. ) Write the complete query The following shows the complete query: topk(25, sum( max over time( dataflow googleapis com:job total vcpu time[1m]) / 3600 CPU PRICE ) by (job id) + sum( max over time( dataflow googleapis com:job total memory usage time[1m]) / 3600 MEMORY PRICE ) by (job id) + sum( max over time( dataflow googleapis com:job total streaming data processed[1m]) / 1000000000 SHUFFLE PRICE ) by (job id) + sum( max over time( dataflow googleapis com:job total pd usage time{storage type=\"HDD\"}[1m]) / 3600 STANDARD PD PRICE ) by (job id) + sum( max over time( dataflow googleapis com:job total pd usage time{storage type=\"SSD\"}[1m]) / 3600 SSD PD PRICE ) by (job id) ) Replace the following variables with values from the Dataflow pricing page for your region.",
+          "Important: The actual cost to run a job depends on factors such as Dataflow pricing model, committed use discounts (CUDs) , and contractual discounts.",
+          "Choose metrics The following metrics are needed to estimate the cost of a job, given the assumptions listed the previous section: Resource Relevant metric CPU (vCPU per hour) job/total vcpu time Memory (GB per hour) job/total memory usage time Data processed during shuffle (GB) job/total streaming data processed Persistent Disk usage (GB per hour, Standard and SSD) job/total pd usage time For more information, see Dataflow pricing ."
+        ]
+      },
+      {
+        "title": "\"Set the pipeline streaming mode \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes",
+        "source_id": "site-docs-reference-2",
+        "final_score": 110,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see the following sections in the Dataflow templates documentation: Flex templates: Metadata Classic templates: Use metadata in your pipeline code View a job's streaming mode To view the streaming mode for a job, go to the Jobs page in the Google Cloud console.",
+          "Select the streaming mode for a template To select the streaming mode when you run a Dataflow streaming template, perform the following steps: Console In the Google Cloud console, go to the Dataflow Jobs page.",
+          "Set the streaming mode Exactly-once processing is the default setting for all Dataflow jobs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/cuds",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customize-monitoring-dashboard",
+        "https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:53.762Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow"
+}

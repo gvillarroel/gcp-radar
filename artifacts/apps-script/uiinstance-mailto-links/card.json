@@ -1,0 +1,96 @@
+{
+  "feature_name": "UiInstance mailto links",
+  "feature_slug": "uiinstance-mailto-links",
+  "summary": "UiInstance.createAnchor now supports links that use the mailto scheme.",
+  "extended_definition": "UiInstance.createAnchor now supports links that use the mailto scheme.",
+  "lifecycle": {
+    "latest_feature_date": "2013-01-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/admin/monitor-use",
+      "https://developers.google.com/apps-script/guides/macro-converter/fix-conversion-errors",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "Issue 619 : UiInstance 's createAnchor method now allows links using the mailto scheme.",
+          "The Slides service has been extended with the following new methods to support concrete color schemes: ColorScheme.setConcreteColor(type, color) ColorScheme.setConcreteColor(type, red, green, blue) ColorScheme.setConcreteColor(type, hexColor) The Spreadsheet service has been extended with the following new methods to support trimming whitespace and removing duplicate values: RangeList.trimWhitespace() Range.removeDuplicates() Range.removeDuplicates(columnsToCompare) Range.trimWhitespace() May 20, 2019 Feature The Gmail service has been updated with the GmailMessage.getHeader(name) method that can retrieve a RFC 2822 header from a message.",
+          "A new Card service supports Gmail add-ons by defining several UI widget elements that you can use to create a Gmail add-on interface without HTML or CSS."
+        ]
+      },
+      {
+        "title": "\"Monitor and control Google Apps Script use in your Google Workspace organization\\",
+        "url": "https://developers.google.com/apps-script/guides/admin/monitor-use",
+        "source_id": "site-docs-root",
+        "final_score": 34,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "Fix errors in your converted code \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/macro-converter/fix-conversion-errors",
+        "source_id": "site-docs-root",
+        "final_score": 33,
+        "relevance": "",
+        "evidence_snippets": [
+          "It is partially supported in Apps Scripts that supports only a subset of the values ( does not support xlLegendPositionCorner and xlLegendPositionCustom ). @ param { string } position / function handle legend position error ( position ) { // Please comment the throw statement and return a supported position value // instead. // Values that are supported here are xlLegendPositionTop, // xlLegendPositionLeft, xlLegendPositionBottom, xlLegendPositionRight. throw new Error ( 'Google Sheets does not support legend position: ' + position ); } Fix partially supported API errors Define the handle <API name> error function to replace the unsupported values with an acceptable workaround for your needs.",
+          "It is partially supported in Apps Scripts that supports only a subset of the values ( does not support xlLegendPositionCorner and xlLegendPositionCustom ). @ param { string } position / function handle legend position error ( position ) { // Please comment the throw statement and return a supported position value // instead. // Values that are supported here are xlLegendPositionTop, // xlLegendPositionLeft, xlLegendPositionBottom, xlLegendPositionRight. throw new Error ( 'Google Sheets does not support legend position: ' + position ); } Manual work needed Manual work needed means that the VBA API can be converted into Apps Script, but it needs a workaround.",
+          "Apps Script APIs : FindReplaceRequest , onEdit Apps Script documentation links : https://developers.google.com/apps-script/reference/script/spreadsheet-trigger-builder#onedit https://developers.google.com/sheets/api/eap/reference/rest/v4/spreadsheets/request?hl=en#findreplacerequest Comments : AutoCorrect.AddReplacement was not converted, but there is an equivalent option you can implement manually."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/macro-converter/fix-conversion-errors",
+        "https://developers.google.com/apps-script/guides/admin/monitor-use"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/macro-converter/fix-conversion-errors",
+        "https://developers.google.com/apps-script/guides/admin/monitor-use"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:15.255Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script"
+}

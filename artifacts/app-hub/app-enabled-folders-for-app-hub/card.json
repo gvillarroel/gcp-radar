@@ -1,0 +1,122 @@
+{
+  "feature_name": "App-enabled folders for App Hub",
+  "feature_slug": "app-enabled-folders-for-app-hub",
+  "summary": "App Hub now allows standard Google Cloud folders to be enabled as app-enabled folders that serve as application management boundaries.",
+  "extended_definition": "App Hub now allows standard Google Cloud folders to be enabled as app-enabled folders that serve as application management boundaries.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/app-hub/docs/enabled-apis",
+      "https://docs.cloud.google.com/app-hub/docs/key-concepts",
+      "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-folder"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Set up a folder \\_|\\_ App Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-folder",
+        "source_id": "site-docs-root-2",
+        "final_score": 79,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To control which resources are available, you can create, move, or delete projects and folders in the app-enabled folder: Create a project Shutting down (deleting) projects Moving a project Moving a folder It is important to understand the resource hierarchy in your app-enabled folder.",
+          "App-enabled folders contain a management project and support all Application-centric Google Cloud features, including application design in Application Design Center, insights in Cloud Hub, and assistance from Gemini Cloud Assist.",
+          "Manage projects in your app-enabled folder App-enabled folders automatically make infrastructure resources from all descendant projects and folders available to group into an application."
+        ]
+      },
+      {
+        "title": "Enable APIs on the management project \\_|\\_ App Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/enabled-apis",
+        "source_id": "site-docs-root-2",
+        "final_score": 73,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "API Required or recommended More information App Hub API ( apphub.googleapis.com ) Organize existing resources into applications Required App Hub pricing VPC Service Controls App Design Center API ( designcenter.googleapis.com ) Design, deploy, and update applications Required App Design Center pricing Cloud Asset API ( cloudasset.googleapis.com ) Manage the global metadata inventory of Google Cloud resources and other assets Required Cloud Asset Inventory pricing VPC Service Controls Cloud Resource Manager API ( cloudresourcemanager.googleapis.com ) Manage container resources such as organizations, folders, and projects Required Cloud Resource Manager API pricing VPC Service Controls Infrastructure Manager API ( config.googleapis.com ) Automate deployment and management of Google Cloud infrastructure resources Required Infra Manager pricing VPC Service Controls Cloud Build API ( cloudbuild.googleapis.com ) Run builds for Infra Manager deployments Required Cloud Build pricing VPC Service Controls Cloud Storage API ( storage.googleapis.com ) Store data for Google Cloud services, including App Design Center and Cloud Logging Required Cloud Storage pricing VPC Service Controls Google Cloud Observability APIs The following APIs provide capabilities for observability features.",
+          "For example, when you enable the Developer Connect API, other APIs that depend on it are enabled, including Secret Manager.",
+          "Your costs for services in the management project depend on which services are enabled and the features that you use."
+        ]
+      },
+      {
+        "title": "Key concepts \\_|\\_ App Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/key-concepts",
+        "source_id": "site-docs-root",
+        "final_score": 71,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In this legacy model, the host project is equivalent to the management project , and the collection of the host project and service projects serves as an example of a multiple-project application management boundary .",
+          "Application management boundary (also, boundary) The collection of one or more Google Cloud projects or folders whose underlying resources App Hub can discover and you can group in applications .",
+          "This connection is what allows App Hub to see and manage the resources residing in those service projects, enabling you to group them into logical applications within App Hub."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apphub.googleapis.com",
+      "cloudasset.googleapis.com",
+      "cloudbuild.googleapis.com",
+      "cloudresourcemanager.googleapis.com",
+      "config.googleapis.com",
+      "designcenter.googleapis.com",
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-folder",
+        "https://docs.cloud.google.com/app-hub/docs/key-concepts",
+        "https://docs.cloud.google.com/app-hub/docs/enabled-apis"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-folder",
+        "https://docs.cloud.google.com/app-hub/docs/key-concepts",
+        "https://docs.cloud.google.com/app-hub/docs/enabled-apis"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-folder",
+        "https://docs.cloud.google.com/app-hub/docs/key-concepts",
+        "https://docs.cloud.google.com/app-hub/docs/enabled-apis"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-folder",
+        "https://docs.cloud.google.com/app-hub/docs/key-concepts",
+        "https://docs.cloud.google.com/app-hub/docs/enabled-apis"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:14.406Z",
+  "source_step08_card": "data/step-08/current/products/app-hub/card.json",
+  "product_name": "App Hub",
+  "product_slug": "app-hub"
+}

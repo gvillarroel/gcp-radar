@@ -1,0 +1,94 @@
+{
+  "feature_name": "Cross-project and cross-region Bigtable backup copy",
+  "feature_slug": "cross-project-and-cross-region-bigtable-backup-copy",
+  "summary": "Cloud Bigtable now supports creating a backup copy in any project or region where a Bigtable instance exists.",
+  "extended_definition": "Cloud Bigtable now supports creating a backup copy in any project or region where a Bigtable instance exists.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/backups",
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.models.CopyBackupRequest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Bigtable backups overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/backups",
+        "source_id": "site-docs-reference-2",
+        "final_score": 145,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Restore from a standard or hot backup to a new table Any instance Any Bigtable region Any project Copy a backup 1, 2 Any instance Any Bigtable region Any project See Manage backups for step-by-step instructions on these actions as well as operations such as updating and deleting backups.",
+          "If you restore to a different instance than where the backup was created, and the backup's instance and the destination instance don't have at least one cluster in the same region, you are charged a one-time cost for the initial data copy to the destination cluster at the standard network rates .",
+          "Alternatively, create backups on a regular basis and then periodically create a copy of the most recent backup and store it on one or more clusters in different zones (optionally in a different instance or project)."
+        ]
+      },
+      {
+        "title": "\"Class CopyBackupRequest (2.74.0) \\_|\\_ Java client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.models.CopyBackupRequest",
+        "source_id": "site-java-reference",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "Parameters Name Description sourceClusterId String sourceBackupId String Returns Type Description CopyBackupRequest Methods equals(Object o) public boolean equals ( Object o ) Parameter Name Description o Object Returns Type Description boolean Overrides Object.equals(Object) hashCode() public int hashCode () Returns Type Description int Overrides Object.hashCode() setDestination(String clusterId, String backupId) public CopyBackupRequest setDestination ( String clusterId , String backupId ) Parameters Name Description clusterId String backupId String Returns Type Description CopyBackupRequest setExpireTime(Instant expireTime) public CopyBackupRequest setExpireTime ( Instant expireTime ) Parameter Name Description expireTime org.threeten.bp.Instant Returns Type Description CopyBackupRequest setSourceInstance(String instanceId) public CopyBackupRequest setSourceInstance ( String instanceId ) Parameter Name Description instanceId String Returns Type Description CopyBackupRequest setSourceInstance(String projectId, String instanceId) public CopyBackupRequest setSourceInstance ( String projectId , String instanceId ) Parameters Name Description projectId String instanceId String Returns Type Description CopyBackupRequest toProto(String projectId, String instanceId) public CopyBackupRequest toProto ( String projectId , String instanceId ) Internal Only : This feature is not stable for application use.",
+          "Parameters Name Description projectId String instanceId String Returns Type Description com.google.bigtable.admin.v2.CopyBackupRequest Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Inheritance Object > CopyBackupRequest Inherited Members Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Static Methods of(String sourceClusterId, String sourceBackupId) public static CopyBackupRequest of ( String sourceClusterId , String sourceBackupId ) Create a CopyBackupRequest object."
+        ]
+      },
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 135,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can place instance clusters in any combination of zones across any regions that Google Cloud offers.",
+          "Clusters in an instance can be created in any supported cloud region across the globe.",
+          "Nodes are given temporary responsibility for serving various ranges of data based on the operation load and the health of other nodes in the cluster. data center : similar to a Bigtable cluster, except some aspects of topology and replication strategy are configurable in Cassandra. rack : a grouping of nodes in a data center that influences replica placement. cluster : a group of nodes in the same geographic Google Cloud zone, colocated for latency and replication concerns. cluster : a Cassandra deployment consisting of a collection of data centers. instance : a group of Bigtable clusters in different Google Cloud zones or regions between which replication and connection routing occur. vnode : a fixed range of hash values assigned to a specific physical node."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.bigtable.admin.v2.CopyBackupRequest",
+      "com.google.cloud.bigtable.admin.v2.models.CopyBackupRequest",
+      "org.threeten.bp.Instant"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/backups",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.models.CopyBackupRequest",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:24.978Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable"
+}

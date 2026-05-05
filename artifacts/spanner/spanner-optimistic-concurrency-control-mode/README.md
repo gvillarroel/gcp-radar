@@ -1,0 +1,44 @@
+# Spanner optimistic concurrency control mode
+
+Product: Spanner
+Feature slug: `spanner-optimistic-concurrency-control-mode`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Spanner optimistic concurrency control mode enables lock-free transactional reads and writes optimized for low-contention workloads.
+
+## Lifecycle
+
+- Latest feature date: 2026-03-10
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access (evidence: [https://docs.cloud.google.com/spanner/docs/concurrency-control](https://docs.cloud.google.com/spanner/docs/concurrency-control), [https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog](https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog), [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner))
+- allow (evidence: [https://docs.cloud.google.com/spanner/docs/concurrency-control](https://docs.cloud.google.com/spanner/docs/concurrency-control), [https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog](https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog), [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner))
+- audit (evidence: [https://docs.cloud.google.com/spanner/docs/concurrency-control](https://docs.cloud.google.com/spanner/docs/concurrency-control), [https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog](https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog), [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner))
+- auth (evidence: [https://docs.cloud.google.com/spanner/docs/concurrency-control](https://docs.cloud.google.com/spanner/docs/concurrency-control), [https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog](https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog), [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner))
+- certificate (evidence: [https://docs.cloud.google.com/spanner/docs/concurrency-control](https://docs.cloud.google.com/spanner/docs/concurrency-control), [https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog](https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog), [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner))
+- credential (evidence: [https://docs.cloud.google.com/spanner/docs/concurrency-control](https://docs.cloud.google.com/spanner/docs/concurrency-control), [https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog](https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog), [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner))
+- encrypt (evidence: [https://docs.cloud.google.com/spanner/docs/concurrency-control](https://docs.cloud.google.com/spanner/docs/concurrency-control), [https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog](https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog), [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner))
+- iam (evidence: [https://docs.cloud.google.com/spanner/docs/concurrency-control](https://docs.cloud.google.com/spanner/docs/concurrency-control), [https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog](https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog), [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner))
+- key (evidence: [https://docs.cloud.google.com/spanner/docs/concurrency-control](https://docs.cloud.google.com/spanner/docs/concurrency-control), [https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog](https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog), [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner))
+- kms (evidence: [https://docs.cloud.google.com/spanner/docs/concurrency-control](https://docs.cloud.google.com/spanner/docs/concurrency-control), [https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog](https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog), [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner))
+- logging (evidence: [https://docs.cloud.google.com/spanner/docs/concurrency-control](https://docs.cloud.google.com/spanner/docs/concurrency-control), [https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog](https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog), [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner))
+- permission (evidence: [https://docs.cloud.google.com/spanner/docs/concurrency-control](https://docs.cloud.google.com/spanner/docs/concurrency-control), [https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog](https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog), [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner))
+- policy (evidence: [https://docs.cloud.google.com/spanner/docs/concurrency-control](https://docs.cloud.google.com/spanner/docs/concurrency-control), [https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog](https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog), [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner))
+- role (evidence: [https://docs.cloud.google.com/spanner/docs/concurrency-control](https://docs.cloud.google.com/spanner/docs/concurrency-control), [https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog](https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog), [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner))
+- token (evidence: [https://docs.cloud.google.com/spanner/docs/concurrency-control](https://docs.cloud.google.com/spanner/docs/concurrency-control), [https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog](https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog), [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner))
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner](https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner)
+- [https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog](https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog)
+- [https://docs.cloud.google.com/spanner/docs/concurrency-control](https://docs.cloud.google.com/spanner/docs/concurrency-control)

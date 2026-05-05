@@ -1,0 +1,423 @@
+{
+  "feature_name": "Dell PowerScale file share access",
+  "feature_slug": "dell-powerscale-file-share-access",
+  "summary": "Dell PowerScale file shares can be accessed in-guest from Google Cloud VMware Engine VMs using NFS or SMB.",
+  "extended_definition": "Dell PowerScale file shares can be accessed in-guest from Google Cloud VMware Engine VMs using NFS or SMB.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/filestore/filestore-instance-backup",
+      "https://docs.cloud.google.com/vmware-engine/docs/environment/howto-cloud-monitoring-standalone"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Set up Cloud Monitoring with a standalone agent \\_|\\_ Google Cloud VMware\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/environment/howto-cloud-monitoring-standalone",
+        "source_id": "site-docs-reference",
+        "final_score": 119,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Hosts that are unresponsive or in maintenance mode are not counted. cluster.hosts Number of hosts in a cluster cluster.vsan.latency vSAN latency of a cluster, in microseconds cluster.vsan.throughput vSAN read-write throughput of a cluster, in bytes cluster.vsan.iops vSAN IOPS of a cluster cluster.vsan.congestions vSAN congestion value of a cluster cluster.vsan.oio vSAN outstanding I/O (oio) in a cluster datacenter.cpu.average host utilization Average host utilization of a datacenter, as a percentage datacenter.clusters Number of clusters in a datacenter datacenter.datastores Number of datastores in a datacenter datacenter.hosts Number of hosts in a datacenter datacenter.host systems Number of host systems in a datacenter datacenter.hosts/powered on Number of powered on hosts in a datacenter datacenter.hosts/powered off Number of powered off hosts in a datacenter datacenter.disk/space Total disk space in a datacenter, in terabytes datastore.capacity bytes Capacity of a datastore, in bytes datastore.capacity utilization Capacity utilization of a datastore, as a percentage host system.network.transmitted packets Number of network packets transmitted by the host system host system.network.received packets Number of network packets received by the host system host system.dropped packets Number of network packets dropped by the host system host system.network.adapters Number of host system network adapters host system.memory.utilization Memory utilization of the host system, as a percentage host system.memory.utilization ratio Memory utilization ratio of the host system host system.memory.used Memory used by the host system, in megabytes host system.disk.read Disk read of the host system, in kilobytes per second host system.disk latency Disk latency of the host system, in milliseconds host system.cpu.usage CPU usage of the host system, as a percentage host system.cpu.utilization ratio CPU utilization ratio of the host system host system.cpu.capacity CPU capacity of the host system, in megahertz host system.cpu.reserved capacity Reserved CPU capacity of the host system, in megahertz host system.cpu.average speed Average CPU speed of the host system, in megahertz host system.cpu.used CPU used by the host system, in megahertz host system.vsan.throughput vSAN read-write throughput of the host system, in bytes host system.vsan.iops vSAN IOPS of the host system host system.vsan.latency vSAN latency of the host system, in microseconds host system.vsan.client cache hits vSAN client cache hits of the host system host system.vsan.client cache hit rate vSAN client cache hit rate of the host system, as a percentage host system.vsan.congestions vSAN congestion value of the host system resource pool.memory.swapped bytes vCenter swapped memory, in megabytes resource pool.memory.shared bytes vCenter shared memory, in megabytes resource pool.memory.private bytes vCenter private memory, in megabytes resource pool.memory.shares Number of vCenter memory shares resource pool.memory.overhead usage bytes vCenter memory overhead usage, in megabytes resource pool.memory.host usage bytes vCenter memory host usage, in megabytes resource pool.memory.active guest usage bytes vCenter memory active guest usage, in megabytes resource pool.memory.balloon size Size of the vCenter balloon memory, in megabytes resource pool.cpu.usage CPU used by vCenter, in megahertz resource pool.cpu.shares Number of CPU shares in the resource pool, in megabytes vm.memory.ballooned Size of the VM balloon memory, in megabytes vm.network.throughput bytes Network throughput of the VM, in kilobytes per second vm.memory.used percent Memory used by the VM, as a percentage of available memory vm.memory.usage bytes Memory used by the VM, in megabytes vm.disk.throughput bytes Disk read-write throughput of the VM, in kilobytes per second vm.disk.used percent Disk usage of the VM, as a percentage of available storage vm.disk.usage bytes Disk usage of the VM, in bytes vm.disk.free bytes Available disk space of the VM, in bytes vm.cpu.used percent CPU usage of the VM, as a percentage of available CPU vm.cpu.usage CPU usage of the VM, in megahertz vm.cpu.ready percent CPU of the VM that's ready but unable to run, as a percentage vm.vsan.throughput vSAN read-write throughput of the VM, in bytes vm.vsan.iops vSAN IOPS of the VM vm.vsan.latency vSAN latency of the VM, in microseconds vm.vsan.readCount vSAN read count of the VM vm.vsan.writeCount vSAN write count of the VM vsphere.cpu.available CPU available across clusters managed by vSphere, in gigahertz vsphere.memory.available Memory available across clusters managed by vSphere, in gigabytes vsphere.clusters.total Number of clusters managed by vSphere vsphere.clusters Count of clusters managed by vSphere with the cluster status color code (like green, grey, red, or yellow) vsphere.cpu.cpus Total number of host system CPU cores managed by vSphere vsphere.datacenters Number of datacenters managed by vSphere vsphere.datastores.total Number of datastores in vSphere vsphere.datastores Count of datastores managed by vSphere with the datastore status color code (like green, grey, red, or yellow) vsphere.disk.space Total attached disk space in vSphere, in terabytes vsphere.host systems Number of host systems in vSphere vsphere.hosts Count of host systems managed by vSphere with the host system status color code (like green, grey, red, or yellow) vsphere.network.adapters Number of network adapters in vSphere vsphere.hosts.powered off Number of powered off hosts in vSphere vsphere.hosts.powered on Number of powered on hosts in vSphere vsphere.virtual machines.total Number of VMs across all vSphere clusters vsphere.virtual machines Count of VMs managed by vSphere with the VM status color code (like green, grey, red, or yellow) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "On your agent host VM, set up access by copying and configuring the vmware vcenter.yaml file: Copy vmware vcenter.yaml to the config/metrics/sources directory: cp /opt/bpagent/config/metrics/examples/vmware vcenter.yaml /opt/bpagent/config/metrics/sources Edit the vmware vcenter.yaml to match the information in your VMware Engine environment: collection interval : 1m0s connection info : connection timeout : \"30\" enable performance counters : \"true\" host : VCSA FQDN password : SOLUTION USER PASSWORD performance counter end time : \"\" performance counter query timeout : \"15\" performance counter start time : \"\" port : \"443\" sdk path : \"\" ssl config : \"No Verify\" username : SOLUTION USER ACCOUNT Replace the following: VCSA FQDN : the fully qualified domain name (FQDN) of the vCenter Server Appliance in your private cloud SOLUTION USER PASSWORD : the password that corresponds to the solution user account being used SOLUTION USER ACCOUNT : the solution user account that the agent uses to report information Configure the agent to access the service account for reporting The standalone agent needs access to Google Cloud Observability to send metrics and logs.",
+          "Regardless of where you create your agent host VM, it must meet the following requirements: Requirements Your agent host VM must meet the following system requirements: Supported Linux operating systems: Red Hat Enterprise Linux 9 SLES 15 Ubuntu 20.04 LTS, 22.04 LTS, or 24.04 LTS At least 4 GB of RAM 300 MB installation space available Installation directory set to /opt/bpagent curl CLI utility installed Your agent host VM also needs access to the following addresses to collect and push metrics and logs: Port 443 (TCP) for the HTTPS connection to your vCenter Server (default) monitoring.googleapis.com:443 (external access) logging.googleapis.com:443 (external access) Enabling metrics forwarding To obtain agent binaries and installation steps, contact Cloud Customer Care."
+        ]
+      },
+      {
+        "title": "\"Back up Filestore instances to a backup vault \\_|\\_ Backup and DR \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/filestore/filestore-instance-backup",
+        "source_id": "site-docs-reference-2",
+        "final_score": 104,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table lists the dynamic permissions required for each API call: Resource Action to be Performed on the Resource Permissions required for each API call Project where it needs to be assigned Backup vault Create BackupVault backupdr.backupVaults.create Admin project Delete BackupVault backupdr.backupVaults.delete Admin project Update BackupVault backupdr.backupVaults.update Admin project List BackupVaults backupdr.backupVaults.list Admin project Get BackupVault backupdr.backupVaults.get Admin project Backup plan Create BackupPlan backupdr.backupPlans.create Admin project Delete BackupPlan backupdr.backupPlans.delete Admin project Get BackupPlan backupdr.backupPlans.get Admin project List Backup Plans backupdr.backupPlans.list Admin project Backup Plan Associations Create Backup Plan Association file.instances.updateBackupDrConfig Workload project backupdr.backupPlanAssociations.createForFilestoreInstance Workload project backupdr.backupPlans.useForFilestoreInstance Admin project Delete Backup Plan Association backupdr.backupPlanAssociations.deleteForFilestoreInstance Workload project file.instances.updateBackupDrConfig Workload project Trigger an on-demand backup on Backup Plan Association backupdr.backupPlanAssociations.triggerBackupForFilestoreInstance Workload project Get Backup Plan Association backupdr.backupPlanAssociations.getForFilestoreInstance Workload project List Backup Plan Associations backupdr.backupPlanAssociations.list Workload project Fetch Backup Plan Associations backupdr.backupPlanAssociations.fetchForFilestoreInstance Workload project Data Source Get DataSource backupdr.bvdataSources.get Admin project List DataSources backupdr.backupPlanAssociations.list Admin project Backups Get Backup backupdr.bvbackups.get Admin project List Backups backupdr.bvbackups.list Admin project Delete Backup backupdr.bvbackups.delete Admin project Restore Backup backupdr.bvbackups.useReadOnlyForFilestoreInstance Admin project Data Source References Get DataSource Reference backupdr.dataSourceReferences.getForFilestoreInstance Workload project Fetch DataSource References backupdr.dataSourceReferences.fetchForFilestoreInstance Workload project Operations List Operations backupdr.operations.list Respective project Get Operations backupdr.operations.get Respective project Grant backup vault access in the Filestore project To back up a Filestore instance in a project different from where the backup vault is created, you must grant the Backup and DR Filestore Operator (Beta) ( roles/backupdr.filestoreOperator ) IAM role for the backup vault service agent of the vault in the target project where the Filestore backup is to be performed.",
+          "This page provides instructions for how to back up Filestore instances to a Backup and DR Service backup vault including how to grant backup vault access in your Filestore project, configure scheduled backups, create on-demand backups, and how to manage your vaulted backups.",
+          "Enable the API Create a backup vault Create a backup plan Assign IAM roles and permission to the backup user Grant backup vault access in the Filestore project Set up Observability Analytics on your bucket to monitor Backup and DR backup jobs."
+        ]
+      },
+      {
+        "title": "Control access with IAM \\_|\\_ Backup and DR \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control",
+        "source_id": "site-docs-reference-2",
+        "final_score": 88,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Role Permissions Backup and DR Admin ( roles/ backupdr.admin ) Provides full access to all Backup and DR resources. backupdr. backupPlanAssociations. backupdr. backupPlanAssociations. createForAlloydbCluster backupdr. backupPlanAssociations. createForCloudSqlInstance backupdr. backupPlanAssociations. createForComputeDisk backupdr. backupPlanAssociations. createForComputeInstance backupdr. backupPlanAssociations. createForFilestoreInstance backupdr. backupPlanAssociations. deleteForAlloydbCluster backupdr. backupPlanAssociations. deleteForCloudSqlInstance backupdr. backupPlanAssociations. deleteForComputeDisk backupdr. backupPlanAssociations. deleteForComputeInstance backupdr. backupPlanAssociations. deleteForFilestoreInstance backupdr. backupPlanAssociations. fetchForAlloydbCluster backupdr. backupPlanAssociations. fetchForCloudSqlInstance backupdr. backupPlanAssociations. fetchForComputeDisk backupdr. backupPlanAssociations. fetchForComputeInstance backupdr. backupPlanAssociations. fetchForFilestoreInstance backupdr. backupPlanAssociations. getForAlloydbCluster backupdr. backupPlanAssociations. getForCloudSqlInstance backupdr. backupPlanAssociations. getForComputeDisk backupdr. backupPlanAssociations. getForComputeInstance backupdr. backupPlanAssociations. getForFilestoreInstance backupdr. backupPlanAssociations. list backupdr. backupPlanAssociations. triggerBackupForAlloydbCluster backupdr. backupPlanAssociations. triggerBackupForCloudSqlInstance backupdr. backupPlanAssociations. triggerBackupForComputeDisk backupdr. backupPlanAssociations. triggerBackupForComputeInstance backupdr. backupPlanAssociations. triggerBackupForFilestoreInstance backupdr. backupPlanAssociations. updateForAlloydbCluster backupdr. backupPlanAssociations. updateForComputeDisk backupdr. backupPlanAssociations. updateForComputeInstance backupdr. backupPlanAssociations. updateForFilestoreInstance backupdr.backupPlanRevisions. backupdr. backupPlanRevisions. get backupdr. backupPlanRevisions. list backupdr.backupPlans. backupdr.backupPlans.create backupdr.backupPlans.delete backupdr.backupPlans.get backupdr.backupPlans.list backupdr.backupPlans.update backupdr. backupPlans. useForAlloydbCluster backupdr. backupPlans. useForCloudSqlInstance backupdr. backupPlans. useForComputeDisk backupdr. backupPlans. useForComputeInstance backupdr. backupPlans. useForFilestoreInstance backupdr.backupVaults. backupdr. backupVaults. associate backupdr.backupVaults.create backupdr.backupVaults.delete backupdr.backupVaults.get backupdr.backupVaults.list backupdr.backupVaults.update backupdr.bvbackups. backupdr.bvbackups.delete backupdr. bvbackups. fetchForCloudSqlInstance backupdr. bvbackups. fetchForComputeDisk backupdr. bvbackups. fetchForComputeInstance backupdr.bvbackups.get backupdr.bvbackups.list backupdr.bvbackups.restore backupdr.bvbackups.update backupdr. bvbackups. useReadOnlyForAlloydbCluster backupdr. bvbackups. useReadOnlyForCloudSqlInstance backupdr. bvbackups. useReadOnlyForFilestoreInstance backupdr.bvdataSources. backupdr. bvdataSources. abandonBackup backupdr. bvdataSources. fetchAccessToken backupdr. bvdataSources. finalizeBackup backupdr.bvdataSources.get backupdr. bvdataSources. initiateBackup backupdr.bvdataSources.list backupdr.bvdataSources.remove backupdr. bvdataSources. setInternalStatus backupdr.bvdataSources.update backupdr. bvdataSources. useReadOnlyForAlloydbCluster backupdr. bvdataSources. useReadOnlyForCloudSqlInstance backupdr. compute. restoreFromBackupVault backupdr. dataSourceReferences. backupdr. dataSourceReferences. fetchForAlloydbCluster backupdr. dataSourceReferences. fetchForCloudSqlInstance backupdr. dataSourceReferences. fetchForFilestoreInstance backupdr. dataSourceReferences. getForAlloydbCluster backupdr. dataSourceReferences. getForCloudSqlInstance backupdr. dataSourceReferences. getForFilestoreInstance backupdr. dataSourceReferences. list backupdr.locations. backupdr.locations.get backupdr.locations.list backupdr.managementServers. backupdr. managementServers. access backupdr. managementServers. accessSensitiveData backupdr. managementServers. assignBackupPlans backupdr. managementServers. backupAccess backupdr. managementServers. create backupdr. managementServers. createConnection backupdr. managementServers. createDynamicProtection backupdr. managementServers. delete backupdr. managementServers. deleteDynamicProtection backupdr.managementServers.get backupdr. managementServers. getDynamicProtection backupdr. managementServers. getIamPolicy backupdr. managementServers. list backupdr. managementServers. listDynamicProtection backupdr. managementServers. manageApplications backupdr. managementServers. manageBackupPlans backupdr. managementServers. manageBackupServers backupdr. managementServers. manageBackups backupdr. managementServers. manageClones backupdr. managementServers. manageExpiration backupdr. managementServers. manageHosts backupdr. managementServers. manageInternalACL backupdr. managementServers. manageJobs backupdr. managementServers. manageLiveClones backupdr. managementServers. manageMigrations backupdr. managementServers. manageMirroring backupdr. managementServers. manageMounts backupdr. managementServers. manageRestores backupdr. managementServers. manageSensitiveData backupdr. managementServers. manageStorage backupdr. managementServers. manageSystem backupdr. managementServers. manageWorkflows backupdr. managementServers. refreshWorkflows backupdr. managementServers. runWorkflows backupdr. managementServers. setIamPolicy backupdr. managementServers. testFailOvers backupdr. managementServers. viewBackupPlans backupdr. managementServers. viewBackupServers backupdr. managementServers. viewReports backupdr. managementServers. viewStorage backupdr. managementServers. viewSystem backupdr. managementServers. viewWorkflows backupdr.operations. backupdr.operations.cancel backupdr.operations.delete backupdr.operations.get backupdr.operations.list backupdr. serviceConfig. initialize backupdr.trial. backupdr.trial.end backupdr.trial.get backupdr.trial.subscribe resourcemanager.projects.get resourcemanager.projects.list Backupdr Editor ( roles/ backupdr.editor ) Editor role for backupdr backupdr. backupPlanAssociations. backupdr. backupPlanAssociations. createForAlloydbCluster backupdr. backupPlanAssociations. createForCloudSqlInstance backupdr. backupPlanAssociations. createForComputeDisk backupdr. backupPlanAssociations. createForComputeInstance backupdr. backupPlanAssociations. createForFilestoreInstance backupdr. backupPlanAssociations. deleteForAlloydbCluster backupdr. backupPlanAssociations. deleteForCloudSqlInstance backupdr. backupPlanAssociations. deleteForComputeDisk backupdr. backupPlanAssociations. deleteForComputeInstance backupdr. backupPlanAssociations. deleteForFilestoreInstance backupdr. backupPlanAssociations. fetchForAlloydbCluster backupdr. backupPlanAssociations. fetchForCloudSqlInstance backupdr. backupPlanAssociations. fetchForComputeDisk backupdr. backupPlanAssociations. fetchForComputeInstance backupdr. backupPlanAssociations. fetchForFilestoreInstance backupdr. backupPlanAssociations. getForAlloydbCluster backupdr. backupPlanAssociations. getForCloudSqlInstance backupdr. backupPlanAssociations. getForComputeDisk backupdr. backupPlanAssociations. getForComputeInstance backupdr. backupPlanAssociations. getForFilestoreInstance backupdr. backupPlanAssociations. list backupdr. backupPlanAssociations. triggerBackupForAlloydbCluster backupdr. backupPlanAssociations. triggerBackupForCloudSqlInstance backupdr. backupPlanAssociations. triggerBackupForComputeDisk backupdr. backupPlanAssociations. triggerBackupForComputeInstance backupdr. backupPlanAssociations. triggerBackupForFilestoreInstance backupdr. backupPlanAssociations. updateForAlloydbCluster backupdr. backupPlanAssociations. updateForComputeDisk backupdr. backupPlanAssociations. updateForComputeInstance backupdr. backupPlanAssociations. updateForFilestoreInstance backupdr.backupPlanRevisions. backupdr. backupPlanRevisions. get backupdr. backupPlanRevisions. list backupdr.backupPlans. backupdr.backupPlans.create backupdr.backupPlans.delete backupdr.backupPlans.get backupdr.backupPlans.list backupdr.backupPlans.update backupdr. backupPlans. useForAlloydbCluster backupdr. backupPlans. useForCloudSqlInstance backupdr. backupPlans. useForComputeDisk backupdr. backupPlans. useForComputeInstance backupdr. backupPlans. useForFilestoreInstance backupdr.backupVaults. backupdr. backupVaults. associate backupdr.backupVaults.create backupdr.backupVaults.delete backupdr.backupVaults.get backupdr.backupVaults.list backupdr.backupVaults.update backupdr.bvbackups. backupdr.bvbackups.delete backupdr. bvbackups. fetchForCloudSqlInstance backupdr. bvbackups. fetchForComputeDisk backupdr. bvbackups. fetchForComputeInstance backupdr.bvbackups.get backupdr.bvbackups.list backupdr.bvbackups.restore backupdr.bvbackups.update backupdr. bvbackups. useReadOnlyForAlloydbCluster backupdr. bvbackups. useReadOnlyForCloudSqlInstance backupdr. bvbackups. useReadOnlyForFilestoreInstance backupdr.bvdataSources. backupdr. bvdataSources. abandonBackup backupdr. bvdataSources. fetchAccessToken backupdr. bvdataSources. finalizeBackup backupdr.bvdataSources.get backupdr. bvdataSources. initiateBackup backupdr.bvdataSources.list backupdr.bvdataSources.remove backupdr. bvdataSources. setInternalStatus backupdr.bvdataSources.update backupdr. bvdataSources. useReadOnlyForAlloydbCluster backupdr. bvdataSources. useReadOnlyForCloudSqlInstance backupdr. compute. restoreFromBackupVault backupdr. dataSourceReferences. backupdr. dataSourceReferences. fetchForAlloydbCluster backupdr. dataSourceReferences. fetchForCloudSqlInstance backupdr. dataSourceReferences. fetchForFilestoreInstance backupdr. dataSourceReferences. getForAlloydbCluster backupdr. dataSourceReferences. getForCloudSqlInstance backupdr. dataSourceReferences. getForFilestoreInstance backupdr. dataSourceReferences. list backupdr.locations. backupdr.locations.get backupdr.locations.list backupdr. managementServers. access backupdr. managementServers. accessSensitiveData backupdr. managementServers. assignBackupPlans backupdr. managementServers. backupAccess backupdr. managementServers. create backupdr. managementServers. createConnection backupdr. managementServers. createDynamicProtection backupdr. managementServers. delete backupdr. managementServers. deleteDynamicProtection backupdr.managementServers.get backupdr. managementServers. getDynamicProtection backupdr. managementServers. getIamPolicy backupdr. managementServers. list backupdr. managementServers. listDynamicProtection backupdr. managementServers. manageApplications backupdr. managementServers. manageBackupPlans backupdr. managementServers. manageBackupServers backupdr. managementServers. manageBackups backupdr. managementServers. manageClones backupdr. managementServers. manageExpiration backupdr. managementServers. manageHosts backupdr. managementServers. manageInternalACL backupdr. managementServers. manageJobs backupdr. managementServers. manageLiveClones backupdr. managementServers. manageMigrations backupdr. managementServers. manageMirroring backupdr. managementServers. manageMounts backupdr. managementServers. manageRestores backupdr. managementServers. manageStorage backupdr. managementServers. manageSystem backupdr. managementServers. manageWorkflows backupdr. managementServers. refreshWorkflows backupdr. managementServers. runWorkflows backupdr. managementServers. testFailOvers backupdr. managementServers. viewBackupPlans backupdr. managementServers. viewBackupServers backupdr. managementServers. viewReports backupdr. managementServers. viewStorage backupdr. managementServers. viewSystem backupdr. managementServers. viewWorkflows backupdr.operations. backupdr.operations.cancel backupdr.operations.delete backupdr.operations.get backupdr.operations.list backupdr. resourceBackupConfigs. backupdr. resourceBackupConfigs. get backupdr. resourceBackupConfigs. list backupdr. serviceConfig. initialize backupdr.trial. backupdr.trial.end backupdr.trial.get backupdr.trial.subscribe resourcemanager.projects.get resourcemanager.projects.list Backup and DR Viewer ( roles/ backupdr.viewer ) Provides read-only access to all Backup and DR resources. backupdr. backupPlanAssociations. fetchForAlloydbCluster backupdr. backupPlanAssociations. fetchForCloudSqlInstance backupdr. backupPlanAssociations. fetchForComputeDisk backupdr. backupPlanAssociations. fetchForComputeInstance backupdr. backupPlanAssociations. fetchForFilestoreInstance backupdr. backupPlanAssociations. getForAlloydbCluster backupdr. backupPlanAssociations. getForCloudSqlInstance backupdr. backupPlanAssociations. getForComputeDisk backupdr. backupPlanAssociations. getForComputeInstance backupdr. backupPlanAssociations. getForFilestoreInstance backupdr. backupPlanAssociations. list backupdr.backupPlanRevisions. backupdr. backupPlanRevisions. get backupdr. backupPlanRevisions. list backupdr.backupPlans.get backupdr.backupPlans.list backupdr.backupVaults.get backupdr.backupVaults.list backupdr. bvbackups. fetchForCloudSqlInstance backupdr. bvbackups. fetchForComputeDisk backupdr. bvbackups. fetchForComputeInstance backupdr.bvbackups.get backupdr.bvbackups.list backupdr.bvdataSources.get backupdr.bvdataSources.list backupdr. dataSourceReferences. backupdr. dataSourceReferences. fetchForAlloydbCluster backupdr. dataSourceReferences. fetchForCloudSqlInstance backupdr. dataSourceReferences. fetchForFilestoreInstance backupdr. dataSourceReferences. getForAlloydbCluster backupdr. dataSourceReferences. getForCloudSqlInstance backupdr. dataSourceReferences. getForFilestoreInstance backupdr. dataSourceReferences. list backupdr.locations. backupdr.locations.get backupdr.locations.list backupdr. managementServers. access backupdr. managementServers. backupAccess backupdr.managementServers.get backupdr. managementServers. getDynamicProtection backupdr. managementServers. getIamPolicy backupdr. managementServers. list backupdr. managementServers. listDynamicProtection backupdr. managementServers. viewBackupPlans backupdr. managementServers. viewBackupServers backupdr. managementServers. viewReports backupdr. managementServers. viewStorage backupdr. managementServers. viewSystem backupdr. managementServers. viewWorkflows backupdr.operations.get backupdr.operations.list backupdr.trial.get resourcemanager.projects.get resourcemanager.projects.list Backup and DR AlloyDB Operator ( roles/ backupdr.alloydbOperator ) Allows a Backup and DR service account to discover and backup AlloyDB clusters. alloydb.operations.get Backup and DR Backup Config Viewer Beta ( roles/ backupdr.backupConfigViewer ) Provides read access to resource backup config.",
+          "This role cannot create backup plans or restore from a backup. backupdr. backupPlanAssociations. backupdr. backupPlanAssociations. createForAlloydbCluster backupdr. backupPlanAssociations. createForCloudSqlInstance backupdr. backupPlanAssociations. createForComputeDisk backupdr. backupPlanAssociations. createForComputeInstance backupdr. backupPlanAssociations. createForFilestoreInstance backupdr. backupPlanAssociations. deleteForAlloydbCluster backupdr. backupPlanAssociations. deleteForCloudSqlInstance backupdr. backupPlanAssociations. deleteForComputeDisk backupdr. backupPlanAssociations. deleteForComputeInstance backupdr. backupPlanAssociations. deleteForFilestoreInstance backupdr. backupPlanAssociations. fetchForAlloydbCluster backupdr. backupPlanAssociations. fetchForCloudSqlInstance backupdr. backupPlanAssociations. fetchForComputeDisk backupdr. backupPlanAssociations. fetchForComputeInstance backupdr. backupPlanAssociations. fetchForFilestoreInstance backupdr. backupPlanAssociations. getForAlloydbCluster backupdr. backupPlanAssociations. getForCloudSqlInstance backupdr. backupPlanAssociations. getForComputeDisk backupdr. backupPlanAssociations. getForComputeInstance backupdr. backupPlanAssociations. getForFilestoreInstance backupdr. backupPlanAssociations. list backupdr. backupPlanAssociations. triggerBackupForAlloydbCluster backupdr. backupPlanAssociations. triggerBackupForCloudSqlInstance backupdr. backupPlanAssociations. triggerBackupForComputeDisk backupdr. backupPlanAssociations. triggerBackupForComputeInstance backupdr. backupPlanAssociations. triggerBackupForFilestoreInstance backupdr. backupPlanAssociations. updateForAlloydbCluster backupdr. backupPlanAssociations. updateForComputeDisk backupdr. backupPlanAssociations. updateForComputeInstance backupdr. backupPlanAssociations. updateForFilestoreInstance backupdr.backupPlanRevisions. backupdr. backupPlanRevisions. get backupdr. backupPlanRevisions. list backupdr.backupPlans.get backupdr.backupPlans.list backupdr. backupPlans. useForAlloydbCluster backupdr. backupPlans. useForCloudSqlInstance backupdr. backupPlans. useForComputeDisk backupdr. backupPlans. useForComputeInstance backupdr. backupPlans. useForFilestoreInstance backupdr.backupVaults.get backupdr.backupVaults.list backupdr. bvbackups. fetchForCloudSqlInstance backupdr. bvbackups. fetchForComputeDisk backupdr. bvbackups. fetchForComputeInstance backupdr.bvbackups.get backupdr.bvbackups.list backupdr.bvdataSources.get backupdr.bvdataSources.list backupdr. dataSourceReferences. backupdr. dataSourceReferences. fetchForAlloydbCluster backupdr. dataSourceReferences. fetchForCloudSqlInstance backupdr. dataSourceReferences. fetchForFilestoreInstance backupdr. dataSourceReferences. getForAlloydbCluster backupdr. dataSourceReferences. getForCloudSqlInstance backupdr. dataSourceReferences. getForFilestoreInstance backupdr. dataSourceReferences. list backupdr.locations. backupdr.locations.get backupdr.locations.list backupdr. managementServers. access backupdr. managementServers. assignBackupPlans backupdr. managementServers. createDynamicProtection backupdr. managementServers. deleteDynamicProtection backupdr.managementServers.get backupdr. managementServers. getDynamicProtection backupdr. managementServers. list backupdr. managementServers. listDynamicProtection backupdr. managementServers. manageApplications backupdr. managementServers. manageBackups backupdr. managementServers. manageHosts backupdr. managementServers. viewBackupPlans backupdr. managementServers. viewReports backupdr. managementServers. viewStorage backupdr. managementServers. viewSystem backupdr.operations.get backupdr.operations.list resourcemanager.projects.get resourcemanager.projects.list Backup and DR Backup Vault Accessor ( roles/ backupdr.backupvaultAccessor ) Allows the Backup Appliance permissions to create and manage backups in a backup vault. backupdr.backupVaults.get backupdr.backupVaults.list backupdr.bvbackups.delete backupdr.bvbackups.get backupdr.bvbackups.list backupdr.bvbackups.update backupdr. bvdataSources. abandonBackup backupdr. bvdataSources. fetchAccessToken backupdr. bvdataSources. finalizeBackup backupdr.bvdataSources.get backupdr. bvdataSources. initiateBackup backupdr.bvdataSources.list backupdr.bvdataSources.remove backupdr. bvdataSources. setInternalStatus backupdr.bvdataSources.update backupdr.operations. backupdr.operations.cancel backupdr.operations.delete backupdr.operations.get backupdr.operations.list Backup and DR Backup Vault Admin ( roles/ backupdr.backupvaultAdmin ) Allows the Backup Appliance full administrative control of backup vault resources. backupdr.backupVaults. backupdr. backupVaults. associate backupdr.backupVaults.create backupdr.backupVaults.delete backupdr.backupVaults.get backupdr.backupVaults.list backupdr.backupVaults.update backupdr.bvbackups.delete backupdr.bvbackups.get backupdr.bvbackups.list backupdr.bvbackups.restore backupdr.bvbackups.update backupdr.bvdataSources.get backupdr.bvdataSources.list backupdr.bvdataSources.update backupdr. compute. restoreFromBackupVault backupdr.locations. backupdr.locations.get backupdr.locations.list backupdr.operations. backupdr.operations.cancel backupdr.operations.delete backupdr.operations.get backupdr.operations.list Backup and DR Backup Vault Lister ( roles/ backupdr.backupvaultLister ) Allows the Backup Appliance permission to list backup vaults in a given project. backupdr.backupVaults.list Backup and DR Backup Vault Viewer ( roles/ backupdr.backupvaultViewer ) Allows read-only permissions to access backup vault resources and backups. backupdr.backupVaults.get backupdr.backupVaults.list backupdr.bvbackups.get backupdr.bvbackups.list backupdr.bvdataSources.get backupdr.bvdataSources.list backupdr.operations.get backupdr.operations.list Backup and DR Cloud SQL Operator ( roles/ backupdr.cloudSqlOperator ) Allows a Backup and DR service account to discover and backup Cloud SQL instances. cloudsql. instances. createBackupDrBackup cloudsql.instances.get Backup and DR Cloud Storage Operator ( roles/ backupdr.cloudStorageOperator ) Allows a Backup and DR service account to store and manage data (backups or metadata) in Cloud Storage. storage.buckets.create storage.buckets.get storage.objects.create storage.objects.delete storage.objects.get storage.objects.list Backup and DR Compute Engine Operator ( roles/ backupdr.computeEngineOperator ) Allows a Backup and DR service account to discover, back up, and restore Compute Engine VM instances. backupdr. managementServers. createConnection compute.addresses.list compute.addresses.use compute.addresses.useInternal compute.diskTypes. compute.diskTypes.get compute.diskTypes.list compute.disks.create compute.disks.createSnapshot compute.disks.delete compute.disks.get compute.disks.setLabels compute.disks.use compute.disks.useReadOnly compute.firewalls.list compute.globalOperations.get compute.images.create compute.images.delete compute.images.get compute.images.useReadOnly compute.instances.attachDisk compute.instances.create compute. instances. createTagBinding compute.instances.delete compute.instances.detachDisk compute.instances.get compute.instances.list compute. instances. listEffectiveTags compute. instances. pscInterfaceCreate compute. instances. setDeletionProtection compute.instances.setLabels compute.instances.setMetadata compute. instances. setServiceAccount compute.instances.setTags compute.instances.start compute.instances.stop compute. instances. updateDisplayDevice compute.instances.useReadOnly compute.machineTypes. compute.machineTypes.get compute.machineTypes.list compute.networks.list compute.nodeGroups.get compute.nodeGroups.list compute.nodeTemplates.get compute.projects.get compute.regionOperations.get compute.regions. compute.regions.get compute.regions.list compute.resourcePolicies.use compute.snapshots.create compute.snapshots.delete compute.snapshots.get compute.snapshots.setLabels compute.snapshots.useReadOnly compute.subnetworks.list compute.subnetworks.use compute. subnetworks. useExternalIp compute.zoneOperations.get compute.zones.list iam.serviceAccounts.actAs iam.serviceAccounts.get iam.serviceAccounts.list resourcemanager.projects.get resourcemanager.projects.list Backup and DR Disk Operator ( roles/ backupdr.diskOperator ) Allows a Backup and DR service account to store and manage data (backups or metadata) in Disk. compute.disks.create compute.disks.createSnapshot compute.disks.createTagBinding compute.disks.get compute.disks.list compute.disks.setLabels compute.disks.useReadOnly compute.regionOperations.get compute.resourcePolicies.use compute.snapshots.setLabels compute.snapshots.useReadOnly compute.storagePools.use compute.zoneOperations.get Backup and DR Filestore Operator Beta ( roles/ backupdr.filestoreOperator ) Allows a Backup and DR service account to discover and backup Filestore instances. file.backups.create file. instances. createCrossProjectBackup file.instances.get Backup and DR Management Server Accessor ( roles/ backupdr.managementServerAccessor ) Grants the Backup and DR management server access role to Backup Appliances. backupdr. managementServers. createConnection Backup and DR Mount User ( roles/ backupdr.mountUser ) Allows the user to mount from a backup.",
+          "Granular Backup and DR permissions depend on ACL configuration provided by Backup and DR admin within the management console. backupdr. backupPlanAssociations. createForComputeInstance backupdr. backupPlanAssociations. deleteForComputeInstance backupdr. backupPlanAssociations. updateForComputeInstance backupdr. managementServers. access backupdr. managementServers. backupAccess backupdr.managementServers.get backupdr. managementServers. getDynamicProtection backupdr. managementServers. getIamPolicy backupdr. managementServers. list backupdr. managementServers. listDynamicProtection backupdr. managementServers. viewBackupPlans backupdr. managementServers. viewBackupServers backupdr. managementServers. viewReports backupdr. managementServers. viewStorage backupdr. managementServers. viewSystem backupdr. managementServers. viewWorkflows backupdr.operations.get backupdr.operations.list backupdr.trial.get resourcemanager.projects.get resourcemanager.projects.list Backup and DR User V2 ( roles/ backupdr.userv2 ) Provides full access to Backup and DR resources except deploying and managing backup infrastructure, expiring backups, changing data sensitivity and configuring on-premises billing. backupdr. backupPlanAssociations. backupdr. backupPlanAssociations. createForAlloydbCluster backupdr. backupPlanAssociations. createForCloudSqlInstance backupdr. backupPlanAssociations. createForComputeDisk backupdr. backupPlanAssociations. createForComputeInstance backupdr. backupPlanAssociations. createForFilestoreInstance backupdr. backupPlanAssociations. deleteForAlloydbCluster backupdr. backupPlanAssociations. deleteForCloudSqlInstance backupdr. backupPlanAssociations. deleteForComputeDisk backupdr. backupPlanAssociations. deleteForComputeInstance backupdr. backupPlanAssociations. deleteForFilestoreInstance backupdr. backupPlanAssociations. fetchForAlloydbCluster backupdr. backupPlanAssociations. fetchForCloudSqlInstance backupdr. backupPlanAssociations. fetchForComputeDisk backupdr. backupPlanAssociations. fetchForComputeInstance backupdr. backupPlanAssociations. fetchForFilestoreInstance backupdr. backupPlanAssociations. getForAlloydbCluster backupdr. backupPlanAssociations. getForCloudSqlInstance backupdr. backupPlanAssociations. getForComputeDisk backupdr. backupPlanAssociations. getForComputeInstance backupdr. backupPlanAssociations. getForFilestoreInstance backupdr. backupPlanAssociations. list backupdr. backupPlanAssociations. triggerBackupForAlloydbCluster backupdr. backupPlanAssociations. triggerBackupForCloudSqlInstance backupdr. backupPlanAssociations. triggerBackupForComputeDisk backupdr. backupPlanAssociations. triggerBackupForComputeInstance backupdr. backupPlanAssociations. triggerBackupForFilestoreInstance backupdr. backupPlanAssociations. updateForAlloydbCluster backupdr. backupPlanAssociations. updateForComputeDisk backupdr. backupPlanAssociations. updateForComputeInstance backupdr. backupPlanAssociations. updateForFilestoreInstance backupdr.backupPlanRevisions. backupdr. backupPlanRevisions. get backupdr. backupPlanRevisions. list backupdr.backupPlans. backupdr.backupPlans.create backupdr.backupPlans.delete backupdr.backupPlans.get backupdr.backupPlans.list backupdr.backupPlans.update backupdr. backupPlans. useForAlloydbCluster backupdr. backupPlans. useForCloudSqlInstance backupdr. backupPlans. useForComputeDisk backupdr. backupPlans. useForComputeInstance backupdr. backupPlans. useForFilestoreInstance backupdr. backupVaults. associate backupdr.backupVaults.get backupdr.backupVaults.list backupdr. bvbackups. fetchForCloudSqlInstance backupdr. bvbackups. fetchForComputeDisk backupdr. bvbackups. fetchForComputeInstance backupdr.bvbackups.get backupdr.bvbackups.list backupdr.bvbackups.restore backupdr. bvbackups. useReadOnlyForAlloydbCluster backupdr. bvbackups. useReadOnlyForCloudSqlInstance backupdr. bvbackups. useReadOnlyForFilestoreInstance backupdr.bvdataSources.get backupdr.bvdataSources.list backupdr. bvdataSources. useReadOnlyForAlloydbCluster backupdr. bvdataSources. useReadOnlyForCloudSqlInstance backupdr. compute. restoreFromBackupVault backupdr. dataSourceReferences. backupdr. dataSourceReferences. fetchForAlloydbCluster backupdr. dataSourceReferences. fetchForCloudSqlInstance backupdr. dataSourceReferences. fetchForFilestoreInstance backupdr. dataSourceReferences. getForAlloydbCluster backupdr. dataSourceReferences. getForCloudSqlInstance backupdr. dataSourceReferences. getForFilestoreInstance backupdr. dataSourceReferences. list backupdr.locations. backupdr.locations.get backupdr.locations.list backupdr. managementServers. access backupdr. managementServers. assignBackupPlans backupdr. managementServers. backupAccess backupdr. managementServers. createDynamicProtection backupdr. managementServers. deleteDynamicProtection backupdr.managementServers.get backupdr. managementServers. getDynamicProtection backupdr. managementServers. getIamPolicy backupdr. managementServers. list backupdr. managementServers. listDynamicProtection backupdr. managementServers. manageApplications backupdr. managementServers. manageBackupPlans backupdr. managementServers. manageBackups backupdr. managementServers. manageClones backupdr. managementServers. manageHosts backupdr. managementServers. manageJobs backupdr. managementServers. manageLiveClones backupdr. managementServers. manageMigrations backupdr. managementServers. manageMirroring backupdr. managementServers. manageMounts backupdr. managementServers. manageRestores backupdr. managementServers. manageWorkflows backupdr. managementServers. refreshWorkflows backupdr. managementServers. runWorkflows backupdr. managementServers. testFailOvers backupdr. managementServers. viewBackupPlans backupdr. managementServers. viewBackupServers backupdr. managementServers. viewReports backupdr. managementServers. viewStorage backupdr. managementServers. viewSystem backupdr. managementServers. viewWorkflows backupdr.operations.get backupdr.operations.list backupdr.trial.get resourcemanager.projects.get resourcemanager.projects.list Service agent roles Service agent roles should only be granted to service agents ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.operations.get",
+      "backupdr.admin",
+      "backupdr.alloydbOperator",
+      "backupdr.backupConfigViewer",
+      "backupdr.backupPlanAssociations.createForFilestoreInstance",
+      "backupdr.backupPlanAssociations.deleteForFilestoreInstance",
+      "backupdr.backupPlanAssociations.fetchForFilestoreInstance",
+      "backupdr.backupPlanAssociations.get",
+      "backupdr.backupPlanAssociations.getForFilestoreInstance",
+      "backupdr.backupPlanAssociations.list",
+      "backupdr.backupPlanAssociations.triggerBackupForFilestoreInstance",
+      "backupdr.backupPlanRevisions",
+      "backupdr.backupPlans",
+      "backupdr.backupPlans.create",
+      "backupdr.backupPlans.delete",
+      "backupdr.backupPlans.get",
+      "backupdr.backupPlans.list",
+      "backupdr.backupPlans.update",
+      "backupdr.backupPlans.useForFilestoreInstance",
+      "backupdr.backupvaultAccessor",
+      "backupdr.backupvaultAdmin",
+      "backupdr.backupvaultLister",
+      "backupdr.backupVaults",
+      "backupdr.backupVaults.create",
+      "backupdr.backupVaults.delete",
+      "backupdr.backupVaults.get",
+      "backupdr.backupVaults.list",
+      "backupdr.backupVaults.update",
+      "backupdr.backupvaultViewer",
+      "backupdr.bvbackups",
+      "backupdr.bvbackups.delete",
+      "backupdr.bvbackups.get",
+      "backupdr.bvbackups.list",
+      "backupdr.bvbackups.restore",
+      "backupdr.bvbackups.update",
+      "backupdr.bvbackups.useReadOnlyForFilestoreInstance",
+      "backupdr.bvdataSources",
+      "backupdr.bvdataSources.get",
+      "backupdr.bvdataSources.list",
+      "backupdr.bvdataSources.remove",
+      "backupdr.bvdataSources.update",
+      "backupdr.cloudSqlOperator",
+      "backupdr.cloudStorageOperator",
+      "backupdr.computeEngineOperator",
+      "backupdr.dataSourceReferences.fetchForFilestoreInstance",
+      "backupdr.dataSourceReferences.getForFilestoreInstance",
+      "backupdr.diskOperator",
+      "backupdr.editor",
+      "backupdr.filestoreOperator",
+      "backupdr.locations",
+      "backupdr.locations.get",
+      "backupdr.locations.list",
+      "backupdr.managementServerAccessor",
+      "backupdr.managementServers",
+      "backupdr.managementServers.accessSensitiveData",
+      "backupdr.managementServers.assignBackupPlans",
+      "backupdr.managementServers.get",
+      "backupdr.managementServers.manageApplications",
+      "backupdr.managementServers.manageBackupPlans",
+      "backupdr.managementServers.manageBackups",
+      "backupdr.managementServers.manageClones",
+      "backupdr.managementServers.manageHosts",
+      "backupdr.managementServers.manageLiveClones",
+      "backupdr.managementServers.manageMirroring",
+      "backupdr.managementServers.manageMounts",
+      "backupdr.managementServers.manageRestores",
+      "backupdr.managementServers.manageSensitiveData",
+      "backupdr.managementServers.manageStorage",
+      "backupdr.managementServers.manageSystem",
+      "backupdr.managementServers.manageWorkflows",
+      "backupdr.managementServers.refreshWorkflows",
+      "backupdr.managementServers.runWorkflows",
+      "backupdr.managementServers.testFailOvers",
+      "backupdr.managementServers.viewBackupPlans",
+      "backupdr.managementServers.viewStorage",
+      "backupdr.managementServers.viewSystem",
+      "backupdr.managementServers.viewWorkflows",
+      "backupdr.mountUser",
+      "backupdr.operations",
+      "backupdr.operations.cancel",
+      "backupdr.operations.delete",
+      "backupdr.operations.get",
+      "backupdr.operations.list",
+      "backupdr.trial",
+      "backupdr.trial.end",
+      "backupdr.trial.get",
+      "backupdr.trial.subscribe",
+      "backupdr.userv2",
+      "backupdr.viewer",
+      "cloudasset.assets.searchAllResources",
+      "cloudsql.instances.get",
+      "cluster.hosts",
+      "cluster.vsan.congestions",
+      "cluster.vsan.iops",
+      "cluster.vsan.latency",
+      "cluster.vsan.oio",
+      "cluster.vsan.throughput",
+      "compute.addresses.list",
+      "compute.addresses.use",
+      "compute.addresses.useInternal",
+      "compute.disks.create",
+      "compute.disks.createSnapshot",
+      "compute.disks.createTagBinding",
+      "compute.disks.delete",
+      "compute.disks.get",
+      "compute.disks.list",
+      "compute.disks.setLabels",
+      "compute.disks.use",
+      "compute.disks.useReadOnly",
+      "compute.diskTypes",
+      "compute.diskTypes.get",
+      "compute.diskTypes.list",
+      "compute.firewalls.list",
+      "compute.globalOperations.get",
+      "compute.images.create",
+      "compute.images.delete",
+      "compute.images.get",
+      "compute.images.useReadOnly",
+      "compute.instances.attachDisk",
+      "compute.instances.create",
+      "compute.instances.delete",
+      "compute.instances.detachDisk",
+      "compute.instances.get",
+      "compute.instances.list",
+      "compute.instances.setLabels",
+      "compute.instances.setMetadata",
+      "compute.instances.setTags",
+      "compute.instances.start",
+      "compute.instances.stop",
+      "compute.instances.useReadOnly",
+      "compute.machineTypes",
+      "compute.machineTypes.get",
+      "compute.machineTypes.list",
+      "compute.networks.list",
+      "compute.nodeGroups.get",
+      "compute.nodeGroups.list",
+      "compute.nodeTemplates.get",
+      "compute.projects.get",
+      "compute.regionOperations.get",
+      "compute.regions",
+      "compute.regions.get",
+      "compute.regions.list",
+      "compute.resourcePolicies.use",
+      "compute.snapshots.create",
+      "compute.snapshots.delete",
+      "compute.snapshots.get",
+      "compute.snapshots.setLabels",
+      "compute.snapshots.useReadOnly",
+      "compute.storagePools.use",
+      "compute.subnetworks.list",
+      "compute.subnetworks.use",
+      "compute.zoneOperations.get",
+      "compute.zones.list",
+      "datacenter.clusters",
+      "datacenter.cpu.average",
+      "datacenter.datastores",
+      "datacenter.disk",
+      "datacenter.host",
+      "datacenter.hosts",
+      "datastore.capacity",
+      "file.backups.create",
+      "file.instances.get",
+      "file.instances.updateBackupDrConfig",
+      "iam.serviceAccounts.actAs",
+      "iam.serviceAccounts.get",
+      "iam.serviceAccounts.list",
+      "logging.googleapis.com",
+      "machines.total",
+      "monitoring.googleapis.com",
+      "pool.cpu.shares",
+      "pool.cpu.usage",
+      "pool.memory.active",
+      "pool.memory.balloon",
+      "pool.memory.host",
+      "pool.memory.overhead",
+      "pool.memory.private",
+      "pool.memory.shared",
+      "pool.memory.shares",
+      "pool.memory.swapped",
+      "storage.buckets.create",
+      "storage.buckets.get",
+      "storage.objects.create",
+      "storage.objects.delete",
+      "storage.objects.get",
+      "storage.objects.list",
+      "system.cpu.average",
+      "system.cpu.capacity",
+      "system.cpu.reserved",
+      "system.cpu.usage",
+      "system.cpu.used",
+      "system.cpu.utilization",
+      "system.disk",
+      "system.disk.read",
+      "system.dropped",
+      "system.memory.used",
+      "system.memory.utilization",
+      "system.network.adapters",
+      "system.network.received",
+      "system.network.transmitted",
+      "system.vsan.client",
+      "system.vsan.congestions",
+      "system.vsan.iops",
+      "system.vsan.latency",
+      "system.vsan.throughput",
+      "vcenter.yaml",
+      "vm.cpu.ready",
+      "vm.cpu.usage",
+      "vm.cpu.used",
+      "vm.disk.free",
+      "vm.disk.throughput",
+      "vm.disk.usage",
+      "vm.disk.used",
+      "vm.memory.ballooned",
+      "vm.memory.usage",
+      "vm.memory.used",
+      "vm.network.throughput",
+      "vm.vsan.iops",
+      "vm.vsan.latency",
+      "vm.vsan.readCount",
+      "vm.vsan.throughput",
+      "vm.vsan.writeCount",
+      "vsphere.clusters",
+      "vsphere.clusters.total",
+      "vsphere.cpu.available",
+      "vsphere.cpu.cpus",
+      "vsphere.datacenters",
+      "vsphere.datastores",
+      "vsphere.datastores.total",
+      "vsphere.disk.space",
+      "vsphere.host",
+      "vsphere.hosts",
+      "vsphere.hosts.powered",
+      "vsphere.memory.available",
+      "vsphere.network.adapters",
+      "vsphere.virtual"
+    ],
+    "missing_inventory_roles": [
+      "roles/backupdr.filestoreOperator"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/environment/howto-cloud-monitoring-standalone",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/filestore/filestore-instance-backup",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/environment/howto-cloud-monitoring-standalone",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/filestore/filestore-instance-backup",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/environment/howto-cloud-monitoring-standalone",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/filestore/filestore-instance-backup",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/environment/howto-cloud-monitoring-standalone",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/filestore/filestore-instance-backup",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/environment/howto-cloud-monitoring-standalone",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/filestore/filestore-instance-backup",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/environment/howto-cloud-monitoring-standalone",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/filestore/filestore-instance-backup",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/environment/howto-cloud-monitoring-standalone",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/filestore/filestore-instance-backup",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/environment/howto-cloud-monitoring-standalone",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/filestore/filestore-instance-backup",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/environment/howto-cloud-monitoring-standalone",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/filestore/filestore-instance-backup",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/environment/howto-cloud-monitoring-standalone",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/filestore/filestore-instance-backup",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:14.452Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine"
+}

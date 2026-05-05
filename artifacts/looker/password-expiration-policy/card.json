@@ -1,0 +1,154 @@
+{
+  "feature_name": "Password expiration policy",
+  "feature_slug": "password-expiration-policy",
+  "summary": "Admins can enforce password expiration windows for users who authenticate with an email and password.",
+  "extended_definition": "Admins can enforce password expiration windows for users who authenticate with an email and password.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-password",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-users-users"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Admin settings - Password policy \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-password",
+        "source_id": "site-docs-reference",
+        "final_score": 179,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Password Policy page in the Authentication section of the Admin menu provides admins with additional control over password requirements for users on the instance.",
+          "Customizing password requirements Looker admins can enforce additional security requirements by specifying a minimum password length or requiring special characters in passwords.",
+          "To manage password requirements for users on your instance, select Password Policy in the Authentication section of the Looker Admin menu."
+        ]
+      },
+      {
+        "title": "Admin settings - Users \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "source_id": "site-docs-reference",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "From the Edit User page you can do the following: Enable or disable the service account Edit the service account name Manage the service account API keys Assign different groups and Roles Edit the user attributes that are associated with the service account Migrating user accounts to service accounts Important: Starting with the Looker 26.8 release, the following changes will occur: Looker (original) admins will no longer be able to access or manage the API credentials of their standard users.",
+          "API Keys Important: Starting with the Looker 26.8 release, the following changes will occur: Looker (original) admins will no longer be able to access or manage the API credentials of their standard users.",
+          "This is to ensure admins can either create or migrate service accounts from existing standard users if they require access to users' API credentials."
+        ]
+      },
+      {
+        "title": "Admin settings - LDAP authentication \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap",
+        "source_id": "site-docs-reference",
+        "final_score": 85,
+        "relevance": "",
+        "evidence_snippets": [
+          "Alternate login for admins and specified users Allow an alternate email-based login for admins and for users with the login special email permission (read more about setting this permission in the Roles documentation ).",
+          "The Advanced Role Management section contains these options: Prevent Individual LDAP Users from Receiving Direct Roles : Turning this option on prevents Looker admins from assigning Looker roles directly to LDAP users.",
+          "When all of the first three options are enabled, Looker admins cannot modify membership of mirrored groups and can only assign roles to users through LDAP mirrored groups."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-password",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-password",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-password",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-password",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-password",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-password",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-password",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-password",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-password",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:23.337Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker"
+}

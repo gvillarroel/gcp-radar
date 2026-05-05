@@ -1,0 +1,116 @@
+{
+  "feature_name": "Search editor auto-collapse",
+  "feature_slug": "search-editor-auto-collapse",
+  "summary": "The Search editor automatically collapses after a query runs to give results more space.",
+  "extended_definition": "The Search editor automatically collapses after a query runs to give results more space.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 206,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you run a query, the search editor panel automatically collapses to provide more space for the results.",
+          "To control the auto-suggestions shown in the query editor, adjust the following settings: Enable suggestions while typing : Enables auto-suggestion.",
+          "Use auto-suggestions to build queries When you write a query, the editor provides auto-suggestions to help you build queries efficiently."
+        ]
+      },
+      {
+        "title": "\"Integrate ArcSight with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "source_id": "site-api-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Data Flow between Google SecOps and ArcSight ESM Google SecOps automatically indexes and contextualizes correlations that were forwarded to Google SecOps and were triggered in ArcSight ESM through ArcSight Forwarding Connector module and API access.",
+          "Security Events Connector prerequisites This connector works with the reports that are being automatically generated in ArcSight.",
+          "Parameters Parameter name Type Default value Is mandatory Description Search Query String N/A Yes The search query."
+        ]
+      },
+      {
+        "title": "\"Integrate Active Directory with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "source_id": "site-api-reference",
+        "final_score": 100,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action outputs The Search Active Directory action provides the following outputs: Action output type Availability Case wall attachment Not available Case wall link Not available Case wall table Not available Enrichment table Not available JSON result Available Output messages Available Script result Available JSON result The following example shows the JSON result output received when using the Search Active Directory action: [ { \"primaryGroupID\" : [ 513 ], \"logonCount\" : [ 6505 ], \"cn\" : [ \"user name\" ], \"countryCode\" : [ 0 ], \"objectClass\" : [ \"top\" , \"person\" , \"organizationalPerson\" ], \"userPrincipalName\" : [ \"user@example.com\" ], \"adminCount\" : [ 1 ], \"lastLogonTimestamp\" : [ \"2019-01-09 08:42:03.540783+00:00\" ], \"manager\" : [ \"CN=user name,OU=R&D,OU=TLV,OU=host name,DC=domain,DC=LOCAL\" ], \"instanceType\" : [ 4 ], \"distinguishedName\" : [ \"CN=user name,OU=R&D,OU=TLV,OU=host,DC=domain,DC=LOCAL\" ], \"dSCorePropagationData\" : [ \"2019-01-14 14:39:16+00:00\" ], \"msDS-SupportedEncryptionTypes\" : [ 0 ], \"objectSid\" : [ \" ID \" ], \"whenCreated\" : [ \"2011-11-07 08:00:44+00:00\" ], \"uSNCreated\" : [ 7288202 ], \"lockoutTime\" : [ \"1601-01-01 00:00:00+00:00\" ], \"badPasswordTime\" : [ \"date\" ], \"pwdLastSet\" : [ \"date\" ], \"sAMAccountName\" : [ \"example\" ], \"objectCategory\" : [ \"CN=Person,CN=Schema,CN=Configuration,DC=host,DC=LOCAL\" ], \"lastLogon\" : [ \"2019-01-14 17:13:54.463070+00:00\" ], \"objectGUID\" : [ \" GUID \" ], \"whenChanged\" : [ \"2019-01-14 16:49:01+00:00\" ], \"badPwdCount\" : [ 1 ], \"accountExpires\" : [ \"9999-12-31 23:59:59.999999\" ], \"displayName\" : [ \"example\" ], \"name\" : [ \"user\" ], \"memberOf\" : [ \"CN=\\\\\\\\u05e7\\\\\\\\u05d1\\\\\\\\u05d5\\\\\\\\u05e6\\\\\\\\u05d4 \\\\\\\\u05d1\\\\\\\\u05e2\\\\\\\\u05d1\\\\\\\\u05e8\\\\\\\\u05d9\\\\\\\\u05ea,OU=TEST,OU=QA,OU=IT,OU=TLV,OU=host,DC=domain,DC=LOCAL\" , \"CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=domain,DC=LOCAL\" , \"CN=Local Admin,OU=Groups,OU=IT,OU=TLV,OU=host,DC=domain,DC=LOCAL\" ], \"codePage\" : [ 0 ], \"userAccountControl\" : [ 111 ], \"sAMAccountType\" : [ 805306368 ], \"uSNChanged\" : [ 15301168 ], \"sn\" : [ \"example\" ], \"givenName\" : [ \"user\" ], \"lastLogoff\" : [ \"1601-01-01 00:00:00+00:00\" ] } ] Output messages The Search Active Directory action can return the following output messages: Output message Message description Successfully performed the query \" QUERY STRING \" in Active Directory.",
+          "Script result The following table lists the value for the script result output when using the Remove User From Group action: Script result name Value is success True or False Search Active Directory Use the Search Active Directory action to search Active Directory using a specified query.",
+          "Reset passwords: use Google SecOps capabilities to automatically reset the user password in Active Directory and notify the user of the change."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:18.186Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops"
+}

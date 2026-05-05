@@ -1,0 +1,116 @@
+{
+  "feature_name": "App Engine flexible environment",
+  "feature_slug": "app-engine-flexible-environment",
+  "summary": "App Engine flexible environment provides a generally available managed runtime environment for Node.js, Ruby, Python, Java, and Go applications.",
+  "extended_definition": "App Engine flexible environment provides a generally available managed runtime environment for Node.js, Ruby, Python, Java, and Go applications.",
+  "lifecycle": {
+    "latest_feature_date": "2017-03-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/flexible/how-instances-are-managed",
+      "https://docs.cloud.google.com/appengine/docs/flexible/python/securing-custom-domains-with-ssl",
+      "https://docs.cloud.google.com/appengine/docs/flexible/quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"How instances are managed \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/how-instances-are-managed",
+        "source_id": "site-docs-reference",
+        "final_score": 74,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback How instances are managed Stay organized with collections Save and categorize content based on your preferences.",
+          "NTP with App Engine flexible environment The App Engine flexible environment has network time protocol (NTP) services which use Google NTP servers.",
+          "All flexible instances may be restarted on a weekly basis if there are updates available."
+        ]
+      },
+      {
+        "title": "\"Secure custom domains with SSL \\_|\\_ App Engine flexible environment \\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/python/securing-custom-domains-with-ssl",
+        "source_id": "site-docs-reference-2",
+        "final_score": 66,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Secure custom domains with SSL Stay organized with collections Save and categorize content based on your preferences.",
+          "To move from your own SSL certificates to Google-managed SSL certificates, or to add managed SSL certificates to an existing app with a custom domain, update your domain mapping: In the Google Cloud console, go to App Engine > Settings > Custom Domains : Go to Custom Domains Select the domain you want to secure, and click Enable managed security .",
+          "If you use Cloud Load Balancing and serverless network endpoint group (NEGS) to route traffic to your App Engine app, we recommend that you map your custom domain to the load balancer instead of directly to your app, and use Google-managed SSL certificates that are created for the load balancer."
+        ]
+      },
+      {
+        "title": "\"Quotas and limits \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/quotas",
+        "source_id": "site-docs-reference-2",
+        "final_score": 62,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Resources Send feedback Quotas and limits Stay organized with collections Save and categorize content based on your preferences.",
+          "Quotas for the App Engine flexible environment When you deploy an application to the App Engine flexible environment, some Google Cloud resources are consumed.",
+          "Only the App Engine standard environment provides free quotas."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.IsOverQuota"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-instances-are-managed",
+        "https://docs.cloud.google.com/appengine/docs/flexible/python/securing-custom-domains-with-ssl",
+        "https://docs.cloud.google.com/appengine/docs/flexible/quotas"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-instances-are-managed",
+        "https://docs.cloud.google.com/appengine/docs/flexible/python/securing-custom-domains-with-ssl",
+        "https://docs.cloud.google.com/appengine/docs/flexible/quotas"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-instances-are-managed",
+        "https://docs.cloud.google.com/appengine/docs/flexible/python/securing-custom-domains-with-ssl",
+        "https://docs.cloud.google.com/appengine/docs/flexible/quotas"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-instances-are-managed",
+        "https://docs.cloud.google.com/appengine/docs/flexible/python/securing-custom-domains-with-ssl",
+        "https://docs.cloud.google.com/appengine/docs/flexible/quotas"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:08.270Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-custom-runtimes/card.json",
+  "product_name": "App Engine flexible environment custom runtimes",
+  "product_slug": "app-engine-flexible-environment-custom-runtimes"
+}

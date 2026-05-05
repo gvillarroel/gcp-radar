@@ -1,0 +1,166 @@
+{
+  "feature_name": "Execute XQL Search",
+  "feature_slug": "execute-xql-search",
+  "summary": "Adds an action that executes an XQL search.",
+  "extended_definition": "Adds an action that executes an XQL search.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-anywhere",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Integrate ANY.RUN with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "source_id": "site-docs-root",
+        "final_score": 148,
+        "relevance": "",
+        "evidence_snippets": [
+          "Action results Script result Script result name Value options Example is success True or False is success:False JSON result { \"error\" : false , \"data\" :{ \"tasks\" :[ { \"verdict\" : \"No threats detected\" , \"name\" : \"http://users.tpg.com.au/locthuy/employment/qs/unix/Hardening%20your%20AIX%20Security.pdf\" , \"related\" : \"https://app.any.run/tasks/ ID \" , \"pcap\" : \"https://content.any.run/tasks/ ID /download/pcap\" , \"file\" : \"https://content.any.run/tasks/ ID /download/files/ FILE NAME \" , \"json\" : \"https://api.any.run/report/ ID /summary/json\" , \"misp\" : \"https://api.any.run/report/ ID /summary/misp\" , \"tags\" :[ ], \"date\" : \"2020-10-12T08:05:57.587Z\" , \"hashes\" :{ \"ssdeep\" : \"768:iSDksqjqvXbB/6rtilCec397sUiZc9Yky:TDegY539gUiCXy\" , \"head hash\" : \"3c90557306fa01f30693541b28db5785\" , \"sha256\" : \"8ebc1257f9155134bb00315bdd2380990cdc413ba298d0cf473579ccfe03d6e5\" , \"sha1\" : \"c125ba414416668b84ac737ec6db1b7f94bf32af\" , \"md5\" : \"5e19377a19ef7657707872377bea14b7\" } } ] } } Case wall Result type Description Type Output message Action should not fail and not stop playbook execution: If successful and found reports: \"Found ANY.RUN reports for the provided search parameters\".",
+          "For enhanced functionality, we strongly recommend that you transition to the following dedicated Partner Integrations : ANYRUN Sandbox ANYRUN TI Feeds ANYRUN TI Lookup Parameters Parameter name Type Default value Is mandatory Description Submission Name String N/A No Specific submission name to search for.",
+          "For enhanced functionality, we strongly recommend that you transition to the following dedicated Partner Integrations : ANYRUN Sandbox ANYRUN TI Feeds ANYRUN TI Lookup Parameters N/A Run on The action doesn't run on entities."
+        ]
+      },
+      {
+        "title": "\"Impact of data RBAC on Google SecOps features \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+        "source_id": "site-docs-reference",
+        "final_score": 136,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The access permissions are summarized in the following table: Action Global user Scoped user Can create scoped list Yes Yes (with scopes that match their assigned scopes or are a subset of their assigned scopes) For example, scoped user with scopes A and B can create a reference list with scope A or with scopes A and B, but not with scopes A, B, and C.",
+          "The access permissions are summarized in the following table: Action Global user Scoped user Can create scoped data table Yes Yes (only with scopes that match or are a subset of their assigned scopes) For example, scoped user with scopes A and B can create a data table with scope A or with scopes A and B, but not with scopes A, B, and C.",
+          "The actions that a user can take on a detection (for example, marking a detection as resolved) are also limited to the scope in which the detection occurred."
+        ]
+      },
+      {
+        "title": "\"Integrate Anomali ThreatStream with Google SecOps \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "source_id": "site-docs-root",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "This process ensures that every entity is correctly indexed as a unique asset, making it fully searchable and actionable in playbooks.",
+          "Run on This action runs on the following entities: Hash IP Address URL Email Address (user entity that matches email regex) Action results Script result Script result name Value options Example is success True or False is success:False Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one hash across entities is found (is success=true): \"Successfully reported the following entities as false positive in Anomali ThreatStream:\\n{0}\".format(entity.identifier list) If fail to mark specific entities (is success=true): \"Action was not able to report the following entities as false positive in Anomali ThreatStream\\n: {0}\".format([entity.identifier]) If fail to enrich all entities (is success=false): \"No entities were reported as false positive.\" The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: \"Error executing action \"Report As False Positive\".",
+          "Run on This action runs on the following entities: Hash IP Address URL Email (user entity that matches email regex) Threat Actor CVE Action results Script result Script result name Value options Example is success True or False is success:False JSON result { \"{} hashes.format(subtype)\" : [ \"\" ], \"all hashes\" : [ \"md5hash 1\" ], \"domains\" : [ \"\" ] \"urls\" : [] \"emails\" : [] \"ips\" : [] } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one hash across entities is found (is success=true): \"Successfully retrieved related hashes from Anomali ThreatStream\" If no hashes are found (is success=false): \"No related hashes were found.\" The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: \"Error executing action \"Get Related Hashes\"."
+        ]
+      },
+      {
+        "title": "\"Integrate LevelBlue USM Anywhere with Google SecOps \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-anywhere",
+        "source_id": "site-docs-root",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "Error is {}. action should fail.\" Action pass successfully: \"Successfully returned AlienVault Anywhere alarm {} details\" When Product version parameter is set to V1: \"Action should fail with clear message that is supported in V2.\" General CSV Table Columns: ID Priority Occurred Time Received Time Source Source Organization Source Country Destination Rule Attack ID Rule Strategy Rule ID Rule Attack Tactic Rule Attack Technique Rule Intent General List Events Search for AlienVault events.",
+          "This process ensures that every entity is correctly indexed as a unique asset, making it fully searchable and actionable in playbooks.",
+          "If the action is completed successfully: \"Successfully returned {len(events)} AlienVault Anywhere events\" If the action failed to run: \"Failed to list Endgame AlienVault Anywhere events!\" When Product version parameter is set to V1: \"Action should fail with clear message that is supported in V2.\" General CSV Table Table Title: Events Table Columns: ID Name Occurred Time Received Time Suppressed Severity Category Sub Category Access Control Outcome Destination Destination Port Source Source Port Values: id= uuid name = event name Occurred Time=timestamp occurred iso8601 Received Time=timestamp received iso8601 Suppressed =suppressed Severity = event severity Category = event category Sub Category = event subcategory Access Control Outcome = access control outcome Destination = destination name Destination Port = destination port Source = source name Source Port= source port General Ping Test connectivity."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "api.any.run",
+      "app.any.run",
+      "content.any.run",
+      "entity.identifier",
+      "hashes.format",
+      "kernelmodle.sh",
+      "users.tpg.com.au"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-anywhere"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-anywhere"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-anywhere"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-anywhere"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-anywhere"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-anywhere"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-anywhere"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:19.035Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-marketplace/card.json",
+  "product_name": "Google SecOps Marketplace",
+  "product_slug": "google-secops-marketplace"
+}

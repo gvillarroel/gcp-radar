@@ -1,0 +1,149 @@
+{
+  "feature_name": "Block storage with iSCSI",
+  "feature_slug": "block-storage-with-iscsi",
+  "summary": "NetApp Volumes supports block storage volumes over the iSCSI protocol for the Flex Unified service level; NetApp Volumes supports block storage volumes over the iSCSI protocol for the Flex Unified service level.",
+  "extended_definition": "NetApp Volumes supports block storage volumes over the iSCSI protocol for the Flex Unified service level; NetApp Volumes supports block storage volumes over the iSCSI protocol for the Flex Unified service level.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/create-volume",
+      "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/manage-auto-tiering",
+      "https://docs.cloud.google.com/netapp/volumes/docs/connect-clients/connect-nfs-clients",
+      "https://docs.cloud.google.com/netapp/volumes/docs/discover/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Cloud NetApp Volumes overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/netapp/volumes/docs/discover/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 284,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Storage NetApp Volumes Guides Send feedback Google Cloud NetApp Volumes overview Stay organized with collections Save and categorize content based on your preferences.",
+          "The iSCSI Linux and Windows Compute Engine VMs can consume iSCSI volumes as raw block devices, or they can choose to create the supported Linux or Windows file systems and configure applications that support block storage.",
+          "Service administrators create and manage these remote file systems as volumes and share them with NFS and SMB clients over a network, or create iSCSI volumes and attach them to Linux and Windows iSCSI clients."
+        ]
+      },
+      {
+        "title": "Manage auto-tiering \\_|\\_ NetApp Volumes \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/manage-auto-tiering",
+        "source_id": "site-docs-root",
+        "final_score": 242,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Storage NetApp Volumes Guides Send feedback Manage auto-tiering Stay organized with collections Save and categorize content based on your preferences.",
+          "On storage pools with auto-tiering enabled, the cold block tracking will occur on existing volumes that don't have auto-tiering enabled.",
+          "Once auto-tiering is enabled on a storage pool, you have the option to create new volumes with or without auto-tiering, though it is enabled by default."
+        ]
+      },
+      {
+        "title": "Create a volume \\_|\\_ NetApp Volumes \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/create-volume",
+        "source_id": "site-docs-root",
+        "final_score": 234,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create an iSCSI volume Create an iSCSI volume in the Flex service level of the Unified type pool: gcloud netapp volumes create VOLUME NAME \\ --project = PROJECT ID \\ --location = LOCATION \\ --storage-pool = STORAGE POOL \\ --capacity = CAPACITY \\ --protocols = ISCSI \\ --block-devices = name = LUN NAME ,host-groups = HOST GROUP NAME ,os-type = OS TYPE \\ --snapshot-directory = false Replace the following information: VOLUME NAME : the name of the volume.",
+          "Additional volumes generate within a few seconds to a few minutes. gcloud Create a volume Create a volume using the following command: gcloud netapp volumes create VOLUME NAME \\ --project = PROJECT ID \\ --location = LOCATION \\ --storage-pool = STORAGE POOL \\ --capacity = CAPACITY \\ --protocols = PROTOCOLS \\ --share-name = SHARE NAME Replace the following information: VOLUME NAME : the name of the volume.",
+          "Home Documentation Storage NetApp Volumes Guides Send feedback Create a volume Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Connect NFS clients \\_|\\_ NetApp Volumes \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/netapp/volumes/docs/connect-clients/connect-nfs-clients",
+        "source_id": "site-docs-root",
+        "final_score": 219,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Connect Linux to LDAP If you are using NFSv3 extended groups or NFSv4.1 with security identifiers, you configured NetApp Volumes to use your Active Directory as LDAP server using an Active Directory attached to a storage pool.",
+          "Home Documentation Storage NetApp Volumes Guides Send feedback Connect NFS clients Stay organized with collections Save and categorize content based on your preferences.",
+          "Manage export policies Use the following instructions to update a volume's export policy using the Google Cloud CLI. gcloud Update a volume with one export policy Update a volume with one export policy rule: gcloud netapp volumes update VOLUME ID \\ --project = PROJECT ID \\ --location = LOCATION \\ --export-policy = access-type = ACCESS TYPE ,allowed-clients = ALLOWED CLIENTS IP ADDRESSES ,has-root-access = TRUE OR FALSE ,nfsv3 = NFSV3 ,nfsv4 = NFSV4 Replace the following information: VOLUME ID : the ID of the volume."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/netapp/volumes/docs/discover/overview",
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/manage-auto-tiering",
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/create-volume",
+        "https://docs.cloud.google.com/netapp/volumes/docs/connect-clients/connect-nfs-clients"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/netapp/volumes/docs/discover/overview",
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/manage-auto-tiering",
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/create-volume",
+        "https://docs.cloud.google.com/netapp/volumes/docs/connect-clients/connect-nfs-clients"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/netapp/volumes/docs/discover/overview",
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/manage-auto-tiering",
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/create-volume",
+        "https://docs.cloud.google.com/netapp/volumes/docs/connect-clients/connect-nfs-clients"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/netapp/volumes/docs/discover/overview",
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/manage-auto-tiering",
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/create-volume",
+        "https://docs.cloud.google.com/netapp/volumes/docs/connect-clients/connect-nfs-clients"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/netapp/volumes/docs/discover/overview",
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/manage-auto-tiering",
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/create-volume",
+        "https://docs.cloud.google.com/netapp/volumes/docs/connect-clients/connect-nfs-clients"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/netapp/volumes/docs/discover/overview",
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/manage-auto-tiering",
+        "https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/create-volume",
+        "https://docs.cloud.google.com/netapp/volumes/docs/connect-clients/connect-nfs-clients"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:29.924Z",
+  "source_step08_card": "data/step-08/current/products/netapp-volumes/card.json",
+  "product_name": "NetApp Volumes",
+  "product_slug": "netapp-volumes"
+}

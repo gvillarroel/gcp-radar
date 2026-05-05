@@ -1,0 +1,96 @@
+{
+  "feature_name": "Google Maps links",
+  "feature_slug": "google-maps-links",
+  "summary": "Google Maps links now appear in Place results, route summaries, and text search responses; Google Maps links now appear in Place results, route summaries, and text search responses.",
+  "extended_definition": "Google Maps links now appear in Place results, route summaries, and text search responses; Google Maps links now appear in Place results, route summaries, and text search responses.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/places/ios-sdk/attributions",
+      "https://developers.google.com/maps/documentation/places/ios-sdk/reference",
+      "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes",
+      "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlace"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"GooglePlaces Framework Reference \\_|\\_ Places SDK for iOS \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSPlace",
+        "source_id": "site-docs-reference",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Declaration Swift var googleMapsLinks : GMSPlaceGoogleMapsLinks ? { get } Objective-C @property ( nonatomic , readonly , nullable ) GMSPlaceGoogleMapsLinks googleMapsLinks ; containingPlaces List of parent places in which the current place is located.",
+          "Declaration Swift var paymentOptions : GMSPlacePaymentOptions ? { get } Objective-C @property ( nonatomic , readonly , nullable ) GMSPlacePaymentOptions paymentOptions ; googleMapsLinks Returns the links to trigger different Google Maps actions.",
+          "Google Maps links information is only available through the Places API (New)."
+        ]
+      },
+      {
+        "title": "\"GooglePlaces Framework Reference \\_|\\_ Places SDK for iOS \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/places/ios-sdk/reference",
+        "source_id": "site-docs-reference",
+        "final_score": 199,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Declaration Swift class GMSPlaceRouteModifiers : NSObject Objective-C @interface GMSPlaceRouteModifiers : NSObject GMSPlaceRoutingParameters Parameters to configure the routing calculations to the places in the response, both along a route (where result ranking will be influenced) and for calculating travel times on results.",
+          "Declaration Swift class GMSAutocompleteRequest : NSObject Objective-C @interface GMSAutocompleteRequest : NSObject GMSAutocompleteResultsViewController Deprecated Use the placeAutocomplete View extension in Places Swift SDK ( https://developers.google.com/maps/documentation/places/ios-sdk/google-places-swift ) instead.",
+          "Declaration Swift class GMSPlaceGenerativeSummary : NSObject , GMSPlaceAISummary Objective-C @interface GMSPlaceGenerativeSummary : NSObject < GMSPlaceAISummary > GMSPlaceGoogleMapsLinks Links to trigger different Google Maps actions for a place."
+        ]
+      },
+      {
+        "title": "\"GooglePlaces Framework Reference \\_|\\_ Places SDK for iOS \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes",
+        "source_id": "site-docs-reference",
+        "final_score": 199,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Declaration Swift class GMSPlaceRouteModifiers : NSObject Objective-C @interface GMSPlaceRouteModifiers : NSObject GMSPlaceRoutingParameters Parameters to configure the routing calculations to the places in the response, both along a route (where result ranking will be influenced) and for calculating travel times on results.",
+          "Declaration Swift class GMSAutocompleteRequest : NSObject Objective-C @interface GMSAutocompleteRequest : NSObject GMSAutocompleteResultsViewController Deprecated Use the placeAutocomplete View extension in Places Swift SDK ( https://developers.google.com/maps/documentation/places/ios-sdk/google-places-swift ) instead.",
+          "Declaration Swift class GMSPlaceGenerativeSummary : NSObject , GMSPlaceAISummary Objective-C @interface GMSPlaceGenerativeSummary : NSObject < GMSPlaceAISummary > GMSPlaceGoogleMapsLinks Links to trigger different Google Maps actions for a place."
+        ]
+      },
+      {
+        "title": "Policies and attributions for Places SDK for iOS \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/ios-sdk/attributions",
+        "source_id": "site-docs-root",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Explainer text: Header: About these results Body: When you search for businesses or places near a location, Google Maps will show you local results.",
+          "Swift GMSPlacesClient . sharedClient (). lookUpPhotosForPlaceID ( placeID ) { ( photos , error ) - > Void in if let error = error { // TODO: handle the error. print ( \"Error: \\( error . description ) \" ) } else { // Get attribution for the first photo in the list. if let photo = photos ?. results . first { let attributions = photo . attributions } } } Objective-C [[ GMSPlacesClient sharedClient ] lookUpPhotosForPlaceID : placeID callback : ^ ( GMSPlacePhotoMetadataList Nullable photos , NSError Nullable error ) { if ( error ) { // TODO: handle the error.",
+          "Example of Google Maps attribution positioned at the top, at the bottom, and to the side of the content Example of three approaches to differentiating Google Maps Content (the place rating) from other content Don't obscure the Google Maps attribution or mix it with content from other sources Third-party data providers Some of the data and images on our mapping products come from providers other than Google."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:31.900Z",
+  "source_step08_card": "data/step-08/current/products/places-sdk-for-ios/card.json",
+  "product_name": "Places SDK for iOS",
+  "product_slug": "places-sdk-for-ios"
+}

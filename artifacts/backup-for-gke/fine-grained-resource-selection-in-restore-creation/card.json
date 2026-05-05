@@ -1,0 +1,96 @@
+{
+  "feature_name": "Fine-grained resource selection in restore creation",
+  "feature_slug": "fine-grained-resource-selection-in-restore-creation",
+  "summary": "Backup for GKE now provides more granular resource selection when creating restores.",
+  "extended_definition": "Backup for GKE now provides more granular resource selection when creating restores.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/errors",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Define custom backup and restore logic \\_|\\_ Backup for GKE \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application",
+        "source_id": "site-docs-root",
+        "final_score": 161,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "ProtectedApplication resources provide you with these capabilities when customizing backup and restore logic at the application level: More fine-grained backup and restore operations.",
+          "This example creates a ProtectedApplication resource that quiesces the file system before backing up the logs volume and unquiesces after the backup: kind : ProtectedApplication apiVersion : gkebackup.gke.io/v1 metadata : name : nginx namespace : sales spec : resourceSelection : type : Selector selector : matchLabels : app : nginx components : - name : nginx-app resourceKind : Deployment resourceNames : [ \"nginx-deployment\" ] strategy : type : BackupAllRestoreAll backupAllRestoreAll : backupPreHooks : - name : freeze container : nginx command : - bash - \"-c\" - Add application logic to flush data to disk before snapshot and freeze the application from further changes. echo \"Freezing the application\" Return 0 on successful freeze of application, and non-zero for errors exit 0 backupPostHooks : - name : unfreeze container : nginx command : - bash - \"-c\" - Add application logic to unfreeze the application. echo \"Unfreezing the application\" Return 0 on successful freeze of application, and non-zero for errors exit 0 Strategy: BackupOneAndRestoreAll This strategy backs up one copy of a selected Pod.",
+          "This example, assuming an architecture of one primary StatefulSet and a secondary StatefulSet, shows a backup of volumes of one Pod in secondary StatefulSet, and then a restore to all other volumes: kind : ProtectedApplication apiVersion : gkebackup.gke.io/v1 metadata : name : mariadb namespace : mariadb spec : resourceSelection : type : Selector selector : matchLabels : app : mariadb components : - name : mariadb resourceKind : StatefulSet resourceNames : [ \"mariadb-primary\" , \"mariadb-secondary\" ] strategy : type : BackupOneRestoreAll backupOneRestoreAll : backupTargetName : mariadb-secondary backupPreHooks : - name : quiesce container : mariadb command : [ ... ] backupPostHooks : - name : unquiesce container : mariadb command : [ ... ] Strategy: DumpAndLoad This strategy uses a dedicated volume for backup and restore processes and requires a dedicated PersistentVolumeClaim attached to a component that stores dump data."
+        ]
+      },
+      {
+        "title": "Backup for GKE API Version v1: Error Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/errors",
+        "source_id": "site-api-reference",
+        "final_score": 129,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "UNSUPPORTED MODE FOR RESTORE FILTER 400 Fine-grained filtering is supported only with the following namespaced resource restore modes: MERGE SKIP ON CONFLICT, MERGE REPLACE VOLUME ON CONFLICT, or MERGE REPLACE ON CONFLICT.",
+          "UNSUPPORTED RESOURCE FOR RESTORE 400 Cannot select provided resource: {resource name} for restore - {reason} INVALID NAMESPACED RESOURCE RESTORE SCOPE 400 Invalid Namespaced resource restore scope in this request.",
+          "MISSING NAMESPACED RESOURCE RESTORE MODE 400 Restore plans with namespaced resources selected to restore must also set namespaced resource restore mode."
+        ]
+      },
+      {
+        "title": "RestoreConfig \\_|\\_ Backup for GKE \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig",
+        "source_id": "site-api-reference",
+        "final_score": 126,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Any scope selection that would restore \"all valid\" resources automatically excludes these group kinds. - Node - ComponentStatus - gkebackup.gke.io/BackupJob - gkebackup.gke.io/RestoreJob - metrics.k8s.io/NodeMetrics - migration.k8s.io/StorageState - migration.k8s.io/StorageVersionMigration - snapshot.storage.k8s.io/VolumeSnapshotContent - storage.k8s.io/CSINode - storage.k8s.io/VolumeAttachment Some group kinds are driven by restore configuration elsewhere, and will cause an error if selected here. - Namespace - PersistentVolume JSON representation { \"selectedGroupKinds\" : [ { object ( GroupKind ) } ] , \"excludedGroupKinds\" : [ { object ( GroupKind ) } ] , \"allGroupKinds\" : boolean , \"noGroupKinds\" : boolean } Fields selectedGroupKinds[] object ( GroupKind ) Optional.",
+          "NamespacedResourceRestoreMode Defines the behavior for handling the situation where sets of namespaced resources being restored already exist in the target cluster.",
+          "ClusterResourceConflictPolicy Defines the behavior for handling the situation where cluster-scoped resources being restored already exist in the target cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gkebackup.gke.io",
+      "metrics.k8s.io",
+      "migration.k8s.io",
+      "snapshot.storage.k8s.io",
+      "storage.k8s.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/errors",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:17.802Z",
+  "source_step08_card": "data/step-08/current/products/backup-for-gke/card.json",
+  "product_name": "Backup for GKE",
+  "product_slug": "backup-for-gke"
+}

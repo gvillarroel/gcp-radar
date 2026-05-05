@@ -1,0 +1,116 @@
+{
+  "feature_name": "DocsList service",
+  "feature_slug": "docslist-service",
+  "summary": "DocsList service provided Apps Script access to Google Docs file listings and related operations; DocsList service provided Apps Script access to Google Docs file listings and related operations; deprecated on 2015-04-23.",
+  "extended_definition": "DocsList service provided Apps Script access to Google Docs file listings and related operations; DocsList service provided Apps Script access to Google Docs file listings and related operations; deprecated on 2015-04-23.",
+  "lifecycle": {
+    "latest_feature_date": "2015-04-23",
+    "deprecation_date": "2015-04-23",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/docs/tabs",
+      "https://developers.google.com/apps-script/reference/spreadsheet",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Change Increased the allowed file upload size in web apps to 50MB, to match the limit in the DocsList service.",
+          "Added the property DocsList.FileType.FORM to let DocsList access new Google Forms.",
+          "The following new data source type has been added: LOOKER The following new classes have been added: LookerDataSourceSpec LookerDataSourceSpecBuilder The following new methods have been added to existing classes: DataSourceSpec.asLooker() DataSourceSpecBuilder.asLooker() August 15, 2024 Feature Generally Available : You can now create and organize tabs in Google Docs documents using Apps Script's Document service."
+        ]
+      },
+      {
+        "title": "Work with tabs \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/docs/tabs",
+        "source_id": "site-docs-root",
+        "final_score": 80,
+        "relevance": "",
+        "evidence_snippets": [
+          "Page Summary outlined flag Apps Script for Google Docs allows access to content from any tab within a document.",
+          "Google Apps Script for Google Docs lets you access content from any tab in the document.",
+          "This is only relevant in bound scripts. / Changes the user's selection to select all tables within the tab with the provided ID. / function selectAllTables ( tabId ) { const doc = DocumentApp . getActiveDocument (); const tab = doc . getTab ( tabId ); const documentTab = tab . asDocumentTab (); // Build a range that encompasses all tables within the specified // tab . const rangeBuilder = documentTab . newRange (); const tables = documentTab . getBody (). getTables (); for ( let i = 0 ; i tables . length ; i ++ ) { rangeBuilder . addElement ( tables [ i ] ); } // Set the document 's selection to the tables within the specified // tab."
+        ]
+      },
+      {
+        "title": "Spreadsheet Service \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/spreadsheet",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 73,
+        "relevance": "",
+        "evidence_snippets": [
+          "Page Summary outlined flag The Google Sheets service in Apps Script allows creation, access, and modification of Google Sheets files with performance bundling.",
+          "Spreadsheet This service allows scripts to create, access, and modify Google Sheets files.",
+          "Spreadsheet Methods Method Return type Brief description add Developer Metadata(key) Spreadsheet Adds developer metadata with the specified key to the top-level spreadsheet. add Developer Metadata(key, visibility) Spreadsheet Adds developer metadata with the specified key and visibility to the spreadsheet. add Developer Metadata(key, value) Spreadsheet Adds developer metadata with the specified key and value to the spreadsheet. add Developer Metadata(key, value, visibility) Spreadsheet Adds developer metadata with the specified key, value, and visibility to the spreadsheet. add Editor(emailAddress) Spreadsheet Adds the given user to the list of editors for the Spreadsheet . add Editor(user) Spreadsheet Adds the given user to the list of editors for the Spreadsheet . add Editors(emailAddresses) Spreadsheet Adds the given array of users to the list of editors for the Spreadsheet . add Menu(name, subMenus) void Creates a new menu in the Spreadsheet UI. add Viewer(emailAddress) Spreadsheet Adds the given user to the list of viewers for the Spreadsheet . add Viewer(user) Spreadsheet Adds the given user to the list of viewers for the Spreadsheet . add Viewers(emailAddresses) Spreadsheet Adds the given array of users to the list of viewers for the Spreadsheet . append Row(rowContents) Sheet Appends a row to the bottom of the current data region in the sheet. auto Resize Column(columnPosition) Sheet Sets the width of the given column to fit its contents. copy(name) Spreadsheet Copies the spreadsheet and returns the new one. create Developer Metadata Finder() Developer Metadata Finder Returns a Developer Metadata Finder for finding developer metadata within the scope of this spreadsheet. create Text Finder(findText) Text Finder Creates a text finder for the spreadsheet, which can be used to find and replace text within the spreadsheet. delete Active Sheet() Sheet Deletes the currently active sheet. delete Column(columnPosition) Sheet Deletes the column at the given column position. delete Columns(columnPosition, howMany) void Deletes a number of columns starting at the given column position. delete Row(rowPosition) Sheet Deletes the row at the given row position. delete Rows(rowPosition, howMany) void Deletes a number of rows starting at the given row position. delete Sheet(sheet) void Deletes the specified sheet. duplicate Active Sheet() Sheet Duplicates the active sheet and makes it the active sheet. get Active Cell() Range Returns the active cell in this sheet. get Active Range() Range Returns the selected range in the active sheet, or null if there is no active range. get Active Range List() Range List null Returns the list of active ranges in the active sheet or null if there are no active ranges. get Active Sheet() Sheet Gets the active sheet in a spreadsheet. get As(contentType) Blob Return the data inside this object as a blob converted to the specified content type. get Bandings() Banding[] Returns all the bandings in this spreadsheet. get Blob() Blob Return the data inside this object as a blob. get Column Width(columnPosition) Integer Gets the width in pixels of the given column. get Current Cell() Range null Returns the current cell in the active sheet or null if there is no current cell. get Data Range() Range Returns a Range corresponding to the dimensions in which data is present. get Data Source Formulas() Data Source Formula[] Gets all the data source formulas. get Data Source Pivot Tables() Data Source Pivot Table[] Gets all the data source pivot tables. get Data Source Refresh Schedules() Data Source Refresh Schedule[] Gets the refresh schedules of this spreadsheet. get Data Source Sheets() Data Source Sheet[] Returns all the data source sheets in the spreadsheet. get Data Source Tables() Data Source Table[] Gets all the data source tables. get Data Sources() Data Source[] Returns all the data sources in the spreadsheet. get Developer Metadata() Developer Metadata[] Gets the developer metadata associated with the top-level spreadsheet. get Editors() User[] Gets the list of editors for this Spreadsheet . get Form Url() String Returns the URL for the form that sends its responses to this spreadsheet, or null if this spreadsheet has no associated form. get Frozen Columns() Integer Returns the number of frozen columns. get Frozen Rows() Integer Returns the number of frozen rows. get Id() String Gets a unique identifier for this spreadsheet. get Images() Over Grid Image[] Returns all over-the-grid images on the sheet. get Iterative Calculation Convergence Threshold() Number Returns the threshold value used during iterative calculation. get Last Column() Integer Returns the position of the last column that has content. get Last Row() Integer Returns the position of the last row that has content. get Max Iterative Calculation Cycles() Integer Returns the maximum number of iterations to use during iterative calculation. get Name() String Gets the name of the document. get Named Ranges() Named Range[] Gets all the named ranges in this spreadsheet. get Num Sheets() Integer Returns the number of sheets in this spreadsheet. get Owner() User Returns the owner of the document, or null for a document in a shared drive. get Predefined Spreadsheet Themes() Spreadsheet Theme[] Returns the list of predefined themes. get Protections(type) Protection[] Gets an array of objects representing all protected ranges or sheets in the spreadsheet. get Range(a1Notation) Range Returns the range as specified in A1 notation or R1C1 notation. get Range By Name(name) Range Returns a named range, or null if no range with the given name is found. get Range List(a1Notations) Range List Returns the Range List collection representing the ranges in the same sheet specified by a non-empty list of A1 notations or R1C1 notations. get Recalculation Interval() Recalculation Interval Returns the calculation interval for this spreadsheet. get Row Height(rowPosition) Integer Gets the height in pixels of the given row. get Selection() Selection Returns the current Selection in the spreadsheet. get Sheet By Id(id) Sheet null Gets the sheet with the given ID. get Sheet By Name(name) Sheet null Returns a sheet with the given name. get Sheet Id() Integer Returns the ID of the sheet represented by this object. get Sheet Name() String Returns the sheet name. get Sheet Values(startRow, startColumn, numRows, numColumns) Object[][] Returns the rectangular grid of values for this range starting at the given coordinates. get Sheets() Sheet[] Gets all the sheets in this spreadsheet. get Spreadsheet Locale() String Gets the spreadsheet locale. get Spreadsheet Theme() Spreadsheet Theme null Returns the current theme of the spreadsheet, or null if no theme is applied. get Spreadsheet Time Zone() String Gets the time zone for the spreadsheet. get Url() String Returns the URL for the given spreadsheet. get Viewers() User[] Gets the list of viewers and commenters for this Spreadsheet . hide Column(column) void Hides the column or columns in the given range. hide Row(row) void Hides the rows in the given range. insert Column After(afterPosition) Sheet Inserts a column after the given column position. insert Column Before(beforePosition) Sheet Inserts a column before the given column position. insert Columns After(afterPosition, howMany) Sheet Inserts a given number of columns after the given column position. insert Columns Before(beforePosition, howMany) Sheet Inserts a number of columns before the given column position. insert Data Source Sheet(spec) Data Source Sheet Inserts a new Data Source Sheet in the spreadsheet and starts data execution. insert Image(blobSource, column, row) Over Grid Image Inserts a Spreadsheet as an image in the document at a given row and column. insert Image(blobSource, column, row, offsetX, offsetY) Over Grid Image Inserts a Spreadsheet as an image in the document at a given row and column, with a pixel offset. insert Image(url, column, row) Over Grid Image Inserts an image in the document at a given row and column. insert Image(url, column, row, offsetX, offsetY) Over Grid Image Inserts an image in the document at a given row and column, with a pixel offset. insert Row After(afterPosition) Sheet Inserts a row after the given row position. insert Row Before(beforePosition) Sheet Inserts a row before the given row position. insert Rows After(afterPosition, howMany) Sheet Inserts a number of rows after the given row position. insert Rows Before(beforePosition, howMany) Sheet Inserts a number of rows before the given row position. insert Sheet() Sheet Inserts a new sheet into the spreadsheet, using a default sheet name. insert Sheet(sheetIndex) Sheet Inserts a new sheet into the spreadsheet at the given index. insert Sheet(sheetIndex, options) Sheet Inserts a new sheet into the spreadsheet at the given index and uses optional advanced arguments. insert Sheet(options) Sheet Inserts a new sheet into the spreadsheet, using a default sheet name and optional advanced arguments. insert Sheet(sheetName) Sheet Inserts a new sheet into the spreadsheet with the given name. insert Sheet(sheetName, sheetIndex) Sheet Inserts a new sheet into the spreadsheet with the given name at the given index. insert Sheet(sheetName, sheetIndex, options) Sheet Inserts a new sheet into the spreadsheet with the given name at the given index and uses optional advanced arguments. insert Sheet(sheetName, options) Sheet Inserts a new sheet into the spreadsheet with the given name and uses optional advanced arguments. insert Sheet With Data Source Table(spec) Sheet Inserts a new sheet in the spreadsheet, creates a Data Source Table spanning the entire sheet with the given data source specification, and starts data execution. is Column Hidden By User(columnPosition) Boolean Returns whether the given column is hidden by the user. is Iterative Calculation Enabled() Boolean Returns whether iterative calculation is activated in this spreadsheet. is Row Hidden By Filter(rowPosition) Boolean Returns whether the given row is hidden by a filter (not a filter view). is Row Hidden By User(rowPosition) Boolean Returns whether the given row is hidden by the user. move Active Sheet(pos) void Moves the active sheet to the given position in the list of sheets. move Chart To Object Sheet(chart) Sheet Creates a new Sheet Type.OBJECT sheet and moves the provided chart to it. refresh All Data Sources() void Refreshes all supported data sources and their linked data source objects, skipping invalid data source objects. remove Editor(emailAddress) Spreadsheet Removes the given user from the list of editors for the Spreadsheet . remove Editor(user) Spreadsheet Removes the given user from the list of editors for the Spreadsheet . remove Menu(name) void Removes a menu that was added by add Menu(name, subMenus) . remove Named Range(name) void Deletes a named range with the given name. remove Viewer(emailAddress) Spreadsheet Removes the given user from the list of viewers and commenters for the Spreadsheet . remove Viewer(user) Spreadsheet Removes the given user from the list of viewers and commenters for the Spreadsheet . rename(newName) void Renames the document. rename Active Sheet(newName) void Renames the current active sheet to the given new name. reset Spreadsheet Theme() Spreadsheet Theme Removes the applied theme and sets the default theme on the spreadsheet. set Active Range(range) Range Sets the specified range as the active range in the active sheet, with the top left cell in the range as the current cell . set Active Range List(rangeList) Range List Sets the specified list of ranges as the active ranges in the active sheet. set Active Selection(range) Range Sets the active selection region for this sheet. set Active Selection(a1Notation) Range Sets the active selection, as specified in A1 notation or R1C1 notation. set Active Sheet(sheet) Sheet Sets the given sheet to be the active sheet in the spreadsheet. set Active Sheet(sheet, restoreSelection) Sheet Sets the given sheet to be the active sheet in the spreadsheet, with an option to restore the most recent selection within that sheet. set Column Width(columnPosition, width) Sheet Sets the width of the given column in pixels. set Current Cell(cell) Range Sets the specified cell as the current cell . set Frozen Columns(columns) void Freezes the given number of columns. set Frozen Rows(rows) void Freezes the given number of rows. set Iterative Calculation Convergence Threshold(minThreshold) Spreadsheet Sets the minimum threshold value for iterative calculation. set Iterative Calculation Enabled(isEnabled) Spreadsheet Sets whether iterative calculation is activated in this spreadsheet. set Max Iterative Calculation Cycles(maxIterations) Spreadsheet Sets the maximum number of calculation iterations that should be performed during iterative calculation. set Named Range(name, range) void Names a range. set Recalculation Interval(recalculationInterval) Spreadsheet Sets how often this spreadsheet should recalculate. set Row Height(rowPosition, height) Sheet Sets the row height of the given row in pixels. set Spreadsheet Locale(locale) void Sets the spreadsheet locale. set Spreadsheet Theme(theme) Spreadsheet Theme Sets a theme on the spreadsheet. set Spreadsheet Time Zone(timezone) void Sets the time zone for the spreadsheet. show(userInterface) void Displays a custom user interface component in a dialog centered in the user's browser's viewport. sort(columnPosition) Sheet Sorts a sheet by column, ascending. sort(columnPosition, ascending) Sheet Sorts a sheet by column. toast(msg) void Shows a popup window in the lower right corner of the spreadsheet with the given message. toast(msg, title) void Shows a popup window in the lower right corner of the spreadsheet with the given message and title. toast(msg, title, timeoutSeconds) void Shows a popup window in the lower right corner of the spreadsheet with the given title and message, that stays visible for a certain length of time. unhide Column(column) void Unhides the column in the given range. unhide Row(row) void Unhides the row in the given range. update Menu(name, subMenus) void Updates a menu that was added by add Menu(name, subMenus) . wait For All Data Executions Completion(timeoutInSeconds) void Waits until all the current executions in the spreadsheet complete, timing out after the provided number of seconds."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/docs/tabs",
+        "https://developers.google.com/apps-script/reference/spreadsheet"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/docs/tabs",
+        "https://developers.google.com/apps-script/reference/spreadsheet"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/docs/tabs",
+        "https://developers.google.com/apps-script/reference/spreadsheet"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/docs/tabs",
+        "https://developers.google.com/apps-script/reference/spreadsheet"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:15.255Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script"
+}

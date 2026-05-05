@@ -1,0 +1,129 @@
+{
+  "feature_name": "Permanent failed stream recovery",
+  "feature_slug": "permanent-failed-stream-recovery",
+  "summary": "Datastream can recover a permanently failed stream.",
+  "extended_definition": "Datastream can recover a permanently failed stream.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastream/docs/manage-backfill-for-the-objects-of-a-stream",
+      "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+      "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "MCP Tools Reference: datastream \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+        "source_id": "site-api-reference",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Stream JSON representation { \"name\" : string , \"createTime\" : string , \"updateTime\" : string , \"labels\" : { string : string , ... } , \"displayName\" : string , \"sourceConfig\" : { object ( SourceConfig ) } , \"destinationConfig\" : { object ( DestinationConfig ) } , \"state\" : enum ( State ) , \"errors\" : [ { object ( Error ) } ] , \"lastRecoveryTime\" : string , \"ruleSets\" : [ { object ( RuleSet ) } ] , // Union field backfill strategy can be only one of the following: \"backfillAll\" : { object ( BackfillAllStrategy ) } , \"backfillNone\" : { object ( BackfillNoneStrategy ) } // End of list of possible types for union field backfill strategy . // Union field customer managed encryption key can be only one of the // following: \"customerManagedEncryptionKey\" : string // End of list of possible types for union field // customer managed encryption key . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . } Fields name string Output only.",
+          "Use to get streams that are currently in state FAILED or FAILED PERMANENTLY.",
+          "Errors on the Stream. lastRecoveryTime string ( Timestamp format) Output only."
+        ]
+      },
+      {
+        "title": "\"Class DatastreamAsyncClient (1.18.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 208,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.datastream v1.types.StopBackfillJobResponse Response for manually stop a backfill job for a specific stream object. stream object path stream object path ( project : str , location : str , stream : str , object : str ) - > str Returns a fully-qualified stream object string. stream path stream path ( project : str , location : str , stream : str ) - > str Returns a fully-qualified stream string. update connection profile update connection profile ( request : typing .",
+          "Returns Type Description google.cloud.datastream v1.types.StreamObject A specific stream object (e.g a specific DB table). network attachment path network attachment path ( project : str , region : str , network attachment : str ) - > str Returns a fully-qualified network attachment string. networks path networks path ( project : str , network : str ) - > str Returns a fully-qualified networks string. parse common billing account path parse common billing account path ( path : str ) - > typing .",
+          "CreateConnectionProfileRequest ( parent=\"parent value\", connection profile id=\"connection profile id value\", connection profile=connection profile, ) Make the request operation = client. create connection profile (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.datastream v1.types.CreateConnectionProfileRequest , dict]] The request object."
+        ]
+      },
+      {
+        "title": "\"Class DatastreamClient (1.18.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient",
+        "source_id": "site-python-reference",
+        "final_score": 208,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.datastream v1.types.StopBackfillJobResponse Response for manually stop a backfill job for a specific stream object. stream object path stream object path ( project : str , location : str , stream : str , object : str ) - > str Returns a fully-qualified stream object string. stream path stream path ( project : str , location : str , stream : str ) - > str Returns a fully-qualified stream string. update connection profile update connection profile ( request : typing .",
+          "Returns Type Description google.cloud.datastream v1.types.StreamObject A specific stream object (e.g a specific DB table). network attachment path network attachment path ( project : str , region : str , network attachment : str ) - > str Returns a fully-qualified network attachment string. networks path networks path ( project : str , network : str ) - > str Returns a fully-qualified networks string. parse common billing account path parse common billing account path ( path : str ) - > typing .",
+          "CreateConnectionProfileRequest ( parent=\"parent value\", connection profile id=\"connection profile id value\", connection profile=connection profile, ) Make the request operation = client. create connection profile (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.datastream v1.types.CreateConnectionProfileRequest , dict] The request object."
+        ]
+      },
+      {
+        "title": "\"Manage backfill for the objects of a stream \\_|\\_ Datastream \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/datastream/docs/manage-backfill-for-the-objects-of-a-stream",
+        "source_id": "site-docs-root",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A stream in Datastream can backfill historical data, as well as stream ongoing changes into a destination.",
+          "To learn how to recover a failed stream, see Recover a stream .",
+          "Datastream can run multiple backfills in parallel."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g",
+      "operation.result",
+      "v1.types.CreateConnectionProfileRequest",
+      "v1.types.CreatePrivateConnectionRequest",
+      "v1.types.StopBackfillJobResponse",
+      "v1.types.StreamObject"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient",
+        "https://docs.cloud.google.com/datastream/docs/manage-backfill-for-the-objects-of-a-stream"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient",
+        "https://docs.cloud.google.com/datastream/docs/manage-backfill-for-the-objects-of-a-stream"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient",
+        "https://docs.cloud.google.com/datastream/docs/manage-backfill-for-the-objects-of-a-stream"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:56.901Z",
+  "source_step08_card": "data/step-08/current/products/datastream/card.json",
+  "product_name": "Datastream",
+  "product_slug": "datastream"
+}

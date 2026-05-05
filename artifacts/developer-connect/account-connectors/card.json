@@ -1,0 +1,160 @@
+{
+  "feature_name": "Account connectors",
+  "feature_slug": "account-connectors",
+  "summary": "Account connectors link a Google Cloud account with individual accounts on supported non-Google developer tool providers.",
+  "extended_definition": "Account connectors link a Google Cloud account with individual accounts on supported non-Google developer tool providers.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/developer-connect/docs/account-connectors",
+      "https://docs.cloud.google.com/developer-connect/docs/configure-connectors",
+      "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.pagers.ListAccountConnectorsAsyncPager",
+      "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.pagers.ListAccountConnectorsPager"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure account connectors \\_|\\_ Developer Connect \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/developer-connect/docs/configure-connectors",
+        "source_id": "site-iam-reference",
+        "final_score": 304,
+        "relevance": "",
+        "evidence_snippets": [
+          "Once an account connector connection is created for an organization, users within that organization can use that connection to authorize their individual accounts to be used with that connection.",
+          "Home Documentation Application development Developer Connect Guides Send feedback Configure account connectors Stay organized with collections Save and categorize content based on your preferences.",
+          "An account connector is a Developer Connect feature that helps you connect your Google Cloud account with your individual account on an non-Google Developer Tools provider."
+        ]
+      },
+      {
+        "title": "Account connectors \\_|\\_ Developer Connect \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/developer-connect/docs/account-connectors",
+        "source_id": "site-iam-reference",
+        "final_score": 296,
+        "relevance": "",
+        "evidence_snippets": [
+          "Once an account connector connection is created for an organization, users within that organization can use that connection to authorize their individual accounts to be used with that connection.",
+          "In most cases, platform administrators configure account connectors within a Google Cloud service that integrates with Developer Connect, by following prompts and pop-ups without leaving their context.",
+          "Home Documentation Application development Developer Connect Guides Send feedback Account connectors Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Class ListAccountConnectorsAsyncPager (0.5.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.pagers.ListAccountConnectorsAsyncPager",
+        "source_id": "site-python-reference",
+        "final_score": 270,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.developerconnect v1.types.ListAccountConnectorsRequest The initial request object. response google.cloud.developerconnect v1.types.ListAccountConnectorsResponse The initial response object. retry google.api core.retry.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "Home Documentation Developer tools Python Client libraries Send feedback Class ListAccountConnectorsAsyncPager (0.5.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "If there are more pages, the aiter method will make additional ListAccountConnectors requests and continue to iterate through the account connectors field on the corresponding responses."
+        ]
+      },
+      {
+        "title": "\"Class ListAccountConnectorsPager (0.5.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.pagers.ListAccountConnectorsPager",
+        "source_id": "site-python-reference",
+        "final_score": 270,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.developerconnect v1.types.ListAccountConnectorsRequest The initial request object. response google.cloud.developerconnect v1.types.ListAccountConnectorsResponse The initial response object. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "Home Documentation Developer tools Python Client libraries Send feedback Class ListAccountConnectorsPager (0.5.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "If there are more pages, the iter method will make additional ListAccountConnectors requests and continue to iterate through the account connectors field on the corresponding responses."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "core.retry.AsyncRetry",
+      "core.retry.Retry",
+      "developerconnect.admin",
+      "projects.locations.accountConnectors",
+      "projects.locations.accountConnectors.create",
+      "projects.locations.accountConnectors.delete",
+      "v1.types.ListAccountConnectorsRequest",
+      "v1.types.ListAccountConnectorsResponse"
+    ],
+    "missing_inventory_roles": [
+      "roles/developerconnect.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/developer-connect/docs/configure-connectors",
+        "https://docs.cloud.google.com/developer-connect/docs/account-connectors",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.pagers.ListAccountConnectorsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.pagers.ListAccountConnectorsPager"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/developer-connect/docs/configure-connectors",
+        "https://docs.cloud.google.com/developer-connect/docs/account-connectors",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.pagers.ListAccountConnectorsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.pagers.ListAccountConnectorsPager"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/developer-connect/docs/configure-connectors",
+        "https://docs.cloud.google.com/developer-connect/docs/account-connectors",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.pagers.ListAccountConnectorsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.pagers.ListAccountConnectorsPager"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/developer-connect/docs/configure-connectors",
+        "https://docs.cloud.google.com/developer-connect/docs/account-connectors",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.pagers.ListAccountConnectorsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.pagers.ListAccountConnectorsPager"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/developer-connect/docs/configure-connectors",
+        "https://docs.cloud.google.com/developer-connect/docs/account-connectors",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.pagers.ListAccountConnectorsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.pagers.ListAccountConnectorsPager"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/developer-connect/docs/configure-connectors",
+        "https://docs.cloud.google.com/developer-connect/docs/account-connectors",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.pagers.ListAccountConnectorsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.pagers.ListAccountConnectorsPager"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:58.873Z",
+  "source_step08_card": "data/step-08/current/products/developer-connect/card.json",
+  "product_name": "Developer Connect",
+  "product_slug": "developer-connect"
+}

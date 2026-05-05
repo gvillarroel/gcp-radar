@@ -1,0 +1,98 @@
+{
+  "feature_name": "Channel Services API Billing and Voice Expense Report Generation",
+  "feature_slug": "channel-services-api-billing-and-voice-expense-report-generation",
+  "summary": "Adds the ability in the Channel Services API to generate reports for Google Cloud billing and Google Voice expense data.",
+  "extended_definition": "Adds the ability in the Channel Services API to generate reports for Google Cloud billing and Google Voice expense data.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/channel/docs/guides/multiple-billing-account-starter",
+      "https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery",
+      "https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Export Channel Services data to BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery",
+        "source_id": "site-docs-reference",
+        "final_score": 99,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "DATASET NAME . reseller billing detailed export v1 WHERE export time BETWEEN TIMESTAMP ( START DATE ) AND TIMESTAMP ( END DATE ) AND payer billing account id IN ( PAYER BILLING ACCOUNT IDS ) GROUP BY billing account id , currency , invoice . month ORDER BY billing account id , currency , invoice . month ; For more information on partitioning, clustering, and best practices, see the following links: Query Partitioned tables Query Clustered tables Optimize query computation Best Practices to control costs in BigQuery Finding payer's billing account ID To find the payer's billing account ID, open the billing accounts page of the Partner Sales Console and click the Partner billing tab.",
+          "For Google Workspace consumptive SKUs (Google Voice and Drive), this is the number of minutes used. usage.pricing unit For Google Cloud, learn more about Cloud Billing Catalog API {: track-type=\"tasks\" class=\"external\" track-name=\"externalLink\" track-metadata-position=\"body\"} For Google Workspace, this is count . credits.id For Google Cloud, this is either an alphanumeric unique identifier ( 12-b34-c56-d78 ), or a description of the credit type ( Committed Usage Discount: CPU ).",
+          "For example: \"202101\" is the same as January 2021. cost type String The type of cost this line item represents: regular, tax, adjustment, or rounding error. service.id String The ID of the service that the usage is associated with. service.description String The Google service that reported the billing data. sku.id String The SKU ID of the resource used by the service. sku.description String A description of the resource type used by the service."
+        ]
+      },
+      {
+        "title": "Rebilling overview \\_|\\_ Channel Services \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 84,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Since this report includes customer and channel partner costs, along with customer metadata and cost configured using Repricing configurations , you can use the exported data to improve your internal billing processes and financial analytics.",
+          "Rebilling consists of two main features: Repricing configurations BigQuery exports BigQuery exports You can export a comprehensive report of your customers' billing usage and cost data to a BigQuery dataset that you own.",
+          "Optimized queries : Channel Services data exports use the payer billing account id as the clustering column, so queries for one parent billing account are optimized to reduce the cost of querying data data."
+        ]
+      },
+      {
+        "title": "\"Reseller account with multiple Google Workspace billing account Account\\",
+        "url": "https://docs.cloud.google.com/channel/docs/guides/multiple-billing-account-starter",
+        "source_id": "site-docs-reference",
+        "final_score": 82,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, Google Workspace Business Subscriptions and Google Workspace Chrome Subscriptions must use the same Google Workspace billing account but Google Workspace Voice Subscriptions require a different Google Workspace billing account.",
+          "The Google Workspace and Voice Google Workspace billing account must still have the same currency to satisfy condition 1.",
+          "Otherwise, you must choose a specific Google Workspace Voice billing account, otherwise we will throw an exception."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "credits.id",
+      "invoice.month",
+      "service.description",
+      "service.id",
+      "sku.description",
+      "sku.id",
+      "usage.pricing"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery",
+        "https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview",
+        "https://docs.cloud.google.com/channel/docs/guides/multiple-billing-account-starter"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:26.585Z",
+  "source_step08_card": "data/step-08/current/products/channel-services/card.json",
+  "product_name": "Channel Services",
+  "product_slug": "channel-services"
+}

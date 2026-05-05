@@ -1,0 +1,145 @@
+{
+  "feature_name": "Grounding with Google Maps",
+  "feature_slug": "grounding-with-google-maps",
+  "summary": "Grounding with Google Maps grounds responses in Google Maps data.",
+  "extended_definition": "Grounding with Google Maps grounds responses in Google Maps data.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-elasticsearch",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Grounding with Google Maps in Vertex AI \\_|\\_ Generative AI on Vertex AI\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "source_id": "site-docs-root",
+        "final_score": 348,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It has a rating of 4.2 stars based on 411 reviews.\" } ] }, \"finishReason\": \"STOP\", \"groundingMetadata\": { \"groundingChunks\": [ { \"maps\": { \"uri\": \"https://maps.google.com/?cid=9001322937822692826\", \"title\": \"The Italian Place\", \"placeId\": \"places/ChIJOTRDf qwt4kR2kV WYUf63w\" } }, { \"maps\": { \"uri\": \"https://maps.google.com/?cid=9001322937822692826\", \"title\": \"Hank's Pasta Bar\", \"placeId\": \"places/MMVtPzn9FGcevML89\", \"placeAnswerSources\": { \"reviewSnippets\": [ { \"id\": \"places/ChIJOTRDf qwt4kR2kV WYUf63w\", \"title\": \"Google Maps Review\", \"uri\": \"https://maps.google.com/?cid=9001322937822692826\" }, ] } } }, ... ], \"groundingSupports\": [ { \"segment\": { \"endIndex\": 79, \"text\": \"\\\"The Italian Place\\\" in Alexandria, VA, is good for children and offers takeout.\" }, \"groundingChunkIndices\": [ 0 ] }, ], \"googleMapsWidgetContextToken\": \"widgetcontent/...\" } } ], ... } Place properties This section lists place properties that are used to describe locations and used by Grounding with Google Maps to generate responses.",
+          "Use Grounding with Google Maps to ground your model's responses This code sample demonstrates how to use Grounding with Google Maps to ground your model's responses.",
+          "This code sample demonstrates a place source and a place answer source in the response: \"groundingChunks\" : [ { \"maps\" : { \"uri\" : \"{Link to Maps Content}\" , \"title\" : \"{Name of Maps Place}\" , \"placeId\" : \"{Place ID}\" , \"placeAnswerSources\" : { \"reviewSnippets\" : [ { \"reviewId\" : \"{Review ID}\" , \"googleMapsUri\" : \"{Link to Maps Content}\" , \"title\" : \"{Title of review}\" } ] } }, } ], Routing Preview — Grounding with Google Search This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms ."
+        ]
+      },
+      {
+        "title": "\"Grounding with Elasticsearch \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-elasticsearch",
+        "source_id": "site-docs-root",
+        "final_score": 233,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "By grounding with Elasticsearch, you can take advantage of your existing Elasticsearch indexes to help enhance the quality and reliability of Gemini's output, reducing hallucinations and helping to ensure responses are relevant to your data.",
+          "If your model prompt successfully grounds to your Elasticsearch data source, then the responses include grounding metadata, which identifies the parts of the response that were derived from your Elasticsearch data.",
+          "Understand your response If your model prompt successfully grounds to Elasticsearch data stores using the Vertex AI Studio or the API, then the model's responses include metadata with citations and source content."
+        ]
+      },
+      {
+        "title": "\"Grounding with Vertex AI Search \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "source_id": "site-docs-root",
+        "final_score": 233,
+        "relevance": "",
+        "evidence_snippets": [
+          "If your model prompt successfully grounds to your data source, then the responses include grounding metadata, which identifies the parts of the response that were derived from your data.",
+          "Go to IAM To get the permissions that you need to use grounding with Vertex AI Search, ask your administrator to grant you the following IAM roles: To read all Discovery Engine resources: Discovery Engine Viewer ( roles/discoveryengine.viewer ).",
+          "Home Documentation AI and ML Vertex AI Generative AI on Vertex AI Guides Send feedback Grounding with Vertex AI Search Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Grounding with Google Search \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+        "source_id": "site-docs-root",
+        "final_score": 230,
+        "relevance": "",
+        "evidence_snippets": [
+          "This capability supports all grounding methods including Search, Google Maps, and Vertex AI Search, providing the precise source details required to display accurate, interactive citations within your application. response = client . models . generate content ( model = \"gemini-3.1-pro-preview\" , contents = \"Where will the next FIFA World Cup be held?\" , config = types .",
+          "Benefits The following complex prompts and workflows that require planning, reasoning, and thinking can be done when you use Grounding with Google Search as a tool: You can ground to help ensure responses are based on the latest and most accurate information.",
+          "Understand your response If your model prompt successfully uses Grounding with Google Search from the Vertex AI Studio or from the API, then the responses include metadata with source links (web URLs)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "discoveryengine.viewer",
+      "maps.google.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/discoveryengine.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-elasticsearch",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-elasticsearch",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-elasticsearch",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-elasticsearch",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-elasticsearch",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:10.639Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai"
+}

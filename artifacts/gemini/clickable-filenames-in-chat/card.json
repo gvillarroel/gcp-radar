@@ -1,0 +1,140 @@
+{
+  "feature_name": "Clickable filenames in chat",
+  "feature_slug": "clickable-filenames-in-chat",
+  "summary": "Filenames referenced in chat responses can be clicked to open the corresponding file in the IDE.",
+  "extended_definition": "Filenames referenced in chat responses can be clicked to open the corresponding file in the IDE.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/patch",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+      "https://docs.cloud.google.com/gemini/docs/configure-logging",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-geminidataanalytics/latest/com.google.cloud.geminidataanalytics.v1beta"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Chat with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 204,
+        "relevance": "",
+        "evidence_snippets": [
+          "Known issues This section outlines the known issues of Gemini Code Assist: VS Code Chat responses may be truncated when they include an updated version of a large open file To work around this issue, select a smaller section of code and include an additional directive in the chat prompt, such as only output the selected code.",
+          "A successful check results in the following output: $ grpc-health-probe -addr cloudaicompanion.googleapis.com:443 -tls error: this server does not implement the grpc health protocol (grpc.health.v1.Health): GRPC target method can't be resolved An unsuccessful check results in the following output: timeout: failed to connect service \"cloudaicompanion.googleapis.com:443\" within 1s To obtain more details, run the following before grpc-health-probe : export GRPC GO LOG SEVERITY LEVEL=info 'Activate Gemini Code Assist' still appears after selecting Gemini Code Assist project If you selected your project per the instructions in this guide, which includes enabling the Gemini for Google Cloud API, then there may be an issue with the LS server.",
+          "Stop in-progress chat VS Code You can stop an in-progress chat response by pressing stop Stop : IntelliJ You can stop an in-progress chat response by pressing stop Stop : Select the model If you use Gemini Code Assist Standard or Enterprise , or if you have a Google AI Pro or Ultra subscription, you can select the model that Gemini Code Assist uses when processing your prompts."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.geminidataanalytics.v1beta (0.16.0) \\_|\\_ Java\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-geminidataanalytics/latest/com.google.cloud.geminidataanalytics.v1beta",
+        "source_id": "site-java-reference",
+        "final_score": 196,
+        "relevance": "",
+        "evidence_snippets": [
+          "Data Chat Service Grpc Service to ask a natural language question on top of BigQuery and Looker Studio datasources to get back streamed responses of various kinds to help provide a rich conversational answer. com. google. cloud. geminidataanalytics. v1beta.",
+          "Async Service Service to ask a natural language question on top of BigQuery and Looker Studio datasources to get back streamed responses of various kinds to help provide a rich conversational answer. com. google. cloud. geminidataanalytics. v1beta.",
+          "Data Chat Service Client Service Description: Service to ask a natural language question on top of BigQuery and Looker Studio datasources to get back streamed responses of various kinds to help provide a rich conversational answer."
+        ]
+      },
+      {
+        "title": "\"Configure Gemini Code Assist Standard and Enterprise logging \\_|\\_ Gemini\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "source_id": "site-docs-root-2",
+        "final_score": 194,
+        "relevance": "",
+        "evidence_snippets": [
+          "Default\\nWHERE\\n JSON VALUE(labels, '$.user id') is not NULL\\n AND (\\n JSON VALUE(json payload, '$.chatExposure.originalRequestId') is not NULL\\n OR JSON VALUE(json payload, '$.codeAcceptance.originalRequestId') is not NULL\\n OR JSON VALUE(json payload, '$.codeExposure.originalRequestId') is not NULL\\n )\\n AND resource.type = \\\"cloudaicompanion.googleapis.com/Instance\\\"\\n AND (JSON VALUE(resource.labels, '$.resource container') in (' SOURCE PROJECT ID 1 ', ' SOURCE PROJECT ID 2 ') or JSON VALUE(resource.labels, '$.project id') in (' SOURCE PROJECT ID 1 ', ' SOURCE PROJECT ID 2 '))\\nGROUP BY\\nevent date\\nORDER BY\\nevent date\\n\" }, \"outputFullDuration\" : false , \"unitOverride\" : \"\" } } ], \"thresholds\" : [], \"yAxis\" : { \"label\" : \"\" , \"scale\" : \"LINEAR\" } } } }, { \"xPos\" : 24 , \"height\" : 16 , \"width\" : 24 , \"widget\" : { \"title\" : \"Acceptance Rate by Day\" , \"id\" : \"\" , \"xyChart\" : { \"chartOptions\" : { \"displayHorizontal\" : false , \"mode\" : \"COLOR\" , \"showLegend\" : false }, \"dataSets\" : [ { \"breakdowns\" : [], \"dimensions\" : [ { \"column\" : \"exposures date\" , \"columnType\" : \"DATE\" , \"maxBinCount\" : 0 , \"sortColumn\" : \"exposures date\" , \"sortOrder\" : \"SORT ORDER ASCENDING\" , \"timeBinSize\" : \"0s\" , \"xMax\" : 0 , \"xMin\" : 0 } ], \"legendTemplate\" : \"\" , \"measures\" : [ { \"aggregationFunction\" : { \"parameters\" : [], \"type\" : \"average\" }, \"column\" : \"acceptance rate\" } ], \"plotType\" : \"LINE\" , \"targetAxis\" : \"Y1\" , \"timeSeriesQuery\" : { \"opsAnalyticsQuery\" : { \"queryExecutionRules\" : { \"useReservedSlots\" : false }, \"queryHandle\" : \"\" , \"savedQueryId\" : \"\" , \"sql\" : \"SELECT\\nexposures date,\\nacceptances count / exposures count as acceptance rate\\nFROM\\n(\\nSELECT\\nCOUNT (DISTINCT JSON VALUE(json payload, '$.codeAcceptance.originalRequestId')) as acceptances count, CAST(timestamp AS DATE) AS acceptances date\\nFROM\\n CENTRALIZED PROJECT ID .global.",
+          "Default\\n WHERE\\n JSON VALUE(json payload, '$.codeAcceptance.originalRequestId') is not NULL\\n AND resource.type = \\\"cloudaicompanion.googleapis.com/Instance\\\"\\n AND (JSON VALUE(resource.labels, '$.resource container') in (' SOURCE PROJECT ID 1 ', ' SOURCE PROJECT ID 2 ') or JSON VALUE(resource.labels, '$.project id') in (' SOURCE PROJECT ID 1 ', ' SOURCE PROJECT ID 2 '))\\n GROUP BY\\n request id\\n )\\nGROUP BY\\n line count day\\nORDER BY\\n line count day\" }, \"outputFullDuration\" : false , \"unitOverride\" : \"\" } } ], \"thresholds\" : [], \"yAxis\" : { \"label\" : \"\" , \"scale\" : \"LINEAR\" } } } }, { \"yPos\" : 32 , \"xPos\" : 24 , \"height\" : 16 , \"width\" : 24 , \"widget\" : { \"title\" : \"Chat Exposures by Day\" , \"id\" : \"\" , \"xyChart\" : { \"chartOptions\" : { \"displayHorizontal\" : false , \"mode\" : \"COLOR\" , \"showLegend\" : false }, \"dataSets\" : [ { \"breakdowns\" : [], \"dimensions\" : [ { \"column\" : \"chat exposures date\" , \"columnType\" : \"DATE\" , \"maxBinCount\" : 0 , \"sortColumn\" : \"chat exposures date\" , \"sortOrder\" : \"SORT ORDER ASCENDING\" , \"timeBinSize\" : \"0s\" , \"xMax\" : 0 , \"xMin\" : 0 } ], \"legendTemplate\" : \"\" , \"measures\" : [ { \"aggregationFunction\" : { \"parameters\" : [], \"type\" : \"average\" }, \"column\" : \"chat exposures count\" } ], \"plotType\" : \"STACKED BAR\" , \"targetAxis\" : \"Y1\" , \"timeSeriesQuery\" : { \"opsAnalyticsQuery\" : { \"queryExecutionRules\" : { \"useReservedSlots\" : false }, \"queryHandle\" : \"\" , \"savedQueryId\" : \"\" , \"sql\" : \"SELECT\\n COUNT (DISTINCT JSON VALUE(json payload, '$.chatExposure.originalRequestId')) as chat exposures count, CAST(timestamp AS DATE) AS chat exposures date\\nFROM\\n CENTRALIZED PROJECT ID .global.",
+          "If the command succeeds, it returns a response body that shows the log prompts and responses and log metadata set to true : { \"name\": \"projects/ CONTAINER PROJECT NAME /locations/global/loggingSettings/ LOGS SETTING ID \", \"createTime\": \"2025-01-23T15:22:49.717166932Z\", \"updateTime\": \"2025-01-23T15:22:49.717166932Z\", \"log prompts and responses\": true, \"log metadata\": true } Run the following command to create the Gemini Code Assist Standard and Enterprise logs setting binding: curl -X POST \\ -H \"Authorization: Bearer $TOKEN\" \\ -H 'Content-Type: application/json' \\ -d '{ \"target\": \"projects/ TARGET PROJECT NAME \" }' \\ \"https://cloudaicompanion.googleapis.com/v1/projects/ CONTAINER PROJECT NAME /locations/global/loggingSettings/ LOGS SETTING ID /settingBindings?setting binding id= LOGS BINDING ID \" Replace the following: TARGET PROJECT NAME : Enter the target project to which the binding should be bound."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.codeToolsSettings.settingBindings.patch \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/patch",
+        "source_id": "site-api-reference",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request.",
+          "Field mask is used to specify the fields to be overwritten in the SettingBinding resource by the update.",
+          "If the user does not provide a mask then all fields present in the request will be overwritten."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaicompanion.googleapis.com",
+      "com.google.cloud.geminidataanalytics.v1beta",
+      "grpc.health.v1.Health",
+      "projects.locations.codeToolsSettings.settingBindings",
+      "projects.locations.codeToolsSettings.settingBindings.delete",
+      "projects.locations.codeToolsSettings.settingBindings.patch",
+      "resource.labels",
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-geminidataanalytics/latest/com.google.cloud.geminidataanalytics.v1beta",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/patch"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-geminidataanalytics/latest/com.google.cloud.geminidataanalytics.v1beta",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/patch"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-geminidataanalytics/latest/com.google.cloud.geminidataanalytics.v1beta",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/patch"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-geminidataanalytics/latest/com.google.cloud.geminidataanalytics.v1beta",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/patch"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:07.404Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini"
+}

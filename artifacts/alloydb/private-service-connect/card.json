@@ -1,0 +1,122 @@
+{
+  "feature_name": "Private Service Connect",
+  "feature_slug": "private-service-connect",
+  "summary": "Private Service Connect lets clients connect to an AlloyDB instance from multiple VPC networks across groups, projects, or organizations.",
+  "extended_definition": "Private Service Connect lets clients connect to an AlloyDB instance from multiple VPC networks across groups, projects, or organizations.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/about-private-service-connect",
+      "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+      "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Private Service Connect overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/about-private-service-connect",
+        "source_id": "site-docs-reference",
+        "final_score": 227,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can use Private Service Connect for the following purposes: Connect to an AlloyDB for PostgreSQL instance from multiple Virtual Private Cloud (VPC) networks that belong to different groups, teams, projects, or organizations.",
+          "Allowed Private Service Connect projects When you create an AlloyDB instance, you can define which projects from your VPC network can access the AlloyDB instance within the AlloyDB cluster.",
+          "Service connection policy A service connection policy lets you authorize AlloyDB to create a Private Service Connect connection between AlloyDB and consumer VPC networks."
+        ]
+      },
+      {
+        "title": "\"Private services access overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "source_id": "site-docs-reference",
+        "final_score": 167,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Through this connection, the AlloyDB clusters and instances in your project can connect to their internal resources using private IP addresses, just as if they were located within your own project's VPC.",
+          "This page describes how AlloyDB for PostgreSQL uses private services access to establish network connectivity between your AlloyDB instances and the various internal resources that they require to work.",
+          "Connectivity between clusters and internal resources Private services access lets the AlloyDB clusters communicate with the internal resources that enable them."
+        ]
+      },
+      {
+        "title": "\"Create a read pool instance in a cluster \\_|\\_ AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create",
+        "source_id": "site-docs-root",
+        "final_score": 157,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To enable managed connection pooling in your read pool instance, add the --enable-connection-pooling flag to the gcloud alloydb instances create command: gcloud alloydb instances create INSTANCE ID \\ --instance-type = READ POOL \\ --region = REGION ID \\ --cluster = CLUSTER ID \\ --cpu-count = CPU COUNT \\ --machine-type = MACHINE TYPE \\ --project = PROJECT ID \\ --enable-connection-pooling To create a read pool instance for a public IP-enabled cluster, add the --assign-inbound-public-ip= ASSIGN IPV4 parameter. gcloud alloydb instances create INSTANCE ID \\ --instance-type = READ POOL \\ --region = REGION ID \\ --cluster = CLUSTER ID \\ --cpu-count = CPU COUNT \\ --machine-type = MACHINE TYPE \\ --project = PROJECT ID \\ --assign-inbound-public-ip = ASSIGN IPV4 Optionally, you can pass the comma separated list of CIDR blocks, such as 64.233.160.0/16 to the --authorized-external-networks parameter to set authorized external networks on your instance.",
+          "To create a read pool instance for a Private Service Connect-enabled cluster, add the --allowed-psc-projects flag to set a comma separated list of project IDs or project numbers: The comma-separated list of project IDs or project numbers that you want to allow access to the instance—for example, my-project-1 , 12345 , my-project-n .",
+          "You must set a list of allowed projects or numbers, if your cluster uses Private Service Connect as the method of connecting to the instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/about-private-service-connect",
+        "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/about-private-service-connect",
+        "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/about-private-service-connect",
+        "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/about-private-service-connect",
+        "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/about-private-service-connect",
+        "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:04.004Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb"
+}

@@ -1,0 +1,122 @@
+{
+  "feature_name": "Cloud CDN content targeting",
+  "feature_slug": "cloud-cdn-content-targeting",
+  "summary": "Cloud CDN supports content targeting to customize caching and delivery by context, including device and geolocation characteristics.",
+  "extended_definition": "Cloud CDN supports content targeting to customize caching and delivery by context, including device and geolocation characteristics.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cdn/docs/apis",
+      "https://docs.cloud.google.com/cdn/docs/best-practices",
+      "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Content delivery best practices \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "source_id": "site-docs-reference-2",
+        "final_score": 23,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, the following Cache-Control header makes the associated content publicly readable and cacheable with a cache expiration of 72 hours (259200 seconds): Cache-Control: public, max-age=259200 To maximize caching, follow the guidelines in the Caching overview .",
+          "Home Documentation Networking Cloud CDN Guides Send feedback Content delivery best practices Stay organized with collections Save and categorize content based on your preferences.",
+          "This setting lets Cloud CDN cache common static content types when the origin does not specify any caching directives in the response headers."
+        ]
+      },
+      {
+        "title": "\"Logs and metrics for backend services \\_|\\_ Cloud CDN \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "source_id": "site-docs-root-2",
+        "final_score": 21,
+        "relevance": "",
+        "evidence_snippets": [
+          "To finish editing the load balancer, click Update . gcloud Create a backend service and enable logging by using the gcloud compute backend-services create command . gcloud compute backend-services create BACKEND SERVICE \\ --global \\ --enable-logging \\ --logging-sample-rate= VALUE \\ --load-balancing-scheme=EXTERNAL MANAGED \\ --logging-optional= LOGGING OPTIONAL MODE \\ --logging-optional-fields= OPTIONAL FIELDS The gcloud compute backend-services create command supports the following fields: --global indicates that the backend service is global.",
+          "This information is only available for global external Application Load Balancers using custom error responses . string Optional The cachePolicySource field holds the source of the caching policy that governs the caching behavior for a specific request: CACHE POLICY SOURCE ROUTE : A cache policy can be applied at different levels of the URL map, and that allows for more granular control over caching.",
+          "CACHE POLICY SOURCE BACKEND : The caching behavior determined by the Cloud CDN configuration on the backend service or bucket. integer Required The overrideResponseCode holds the override response code applied to the response sent to the client."
+        ]
+      },
+      {
+        "title": "API and gcloud references \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/apis",
+        "source_id": "site-docs-reference",
+        "final_score": 21,
+        "relevance": "",
+        "evidence_snippets": [
+          "Backend buckets gcloud API Backend services gcloud API URL maps gcloud API Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Networking Cloud CDN Reference Send feedback API and gcloud references Stay organized with collections Save and categorize content based on your preferences.",
+          "For contextual how-to information about using these commands, see the Cloud CDN How-to guides ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "https://docs.cloud.google.com/cdn/docs/apis",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "https://docs.cloud.google.com/cdn/docs/apis",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "https://docs.cloud.google.com/cdn/docs/apis",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "https://docs.cloud.google.com/cdn/docs/apis",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "https://docs.cloud.google.com/cdn/docs/apis",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:28.192Z",
+  "source_step08_card": "data/step-08/current/products/cloud-cdn/card.json",
+  "product_name": "Cloud CDN",
+  "product_slug": "cloud-cdn"
+}

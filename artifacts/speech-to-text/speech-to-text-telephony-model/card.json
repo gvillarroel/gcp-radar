@@ -1,0 +1,104 @@
+{
+  "feature_name": "Speech-to-Text telephony model",
+  "feature_slug": "speech-to-text-telephony-model",
+  "summary": "Introduces the telephony model for recognizing phone-call audio using the latest version of the legacy phone_call model.",
+  "extended_definition": "Introduces the telephony model for recognizing phone-call audio using the latest version of the legacy phone_call model.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+      "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/evaluate-model",
+      "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/train-model",
+      "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/use-model"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Overview of custom speech models \\_|\\_ Cloud Speech-to-Text \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "source_id": "site-docs-root",
+        "final_score": 330,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported models, languages and regions Custom Speech-to-Text models support the following combinations of models and languages and locales for training: Language BCP-47 Base model German (Germany) de-DE latest long English (Australia) en-AU latest long English (United Kingdom) en-GB latest long English (India) en-IN latest long English (United States) en-US latest long Spanish (United States) es-US latest long Spanish (Spain) es-ES latest long French (Canada) fr-CA latest long French (France) fr-FR latest long Hindi (India) hi-IN latest long Italian (Italy) it-IT latest long Japanese (Japan) ja-JP latest long Korean (South Korea) ko-KR latest long Dutch (Netherlands) nl-NL latest long Portuguese (Brazil) pt-BR latest long Portuguese (Portugal) pt-PT latest long Additionally, to comply with your data residency requirements we offer training and deployment hardware in different regions.",
+          "Dedicated hardware is supported in the following combinations of models and regions: Base model Google Cloud Region Supported tasks latest long us-east1 Training and Deployment latest long europe-west4 Training and Deployment Quota For Custom Speech-to-Text model training, each Google Cloud project should have enough default quota to run multiple training jobs concurrently and is intended to meet the needs of most projects without additional adjustments.",
+          "Following a successful training, you can deploy a Custom Speech-to-Text model in an endpoint with one click, and use it directly through the Cloud Cloud Speech-to-Text V2 API for inference and benchmarking."
+        ]
+      },
+      {
+        "title": "Evaluate models \\_|\\_ Cloud Speech-to-Text \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/evaluate-model",
+        "source_id": "site-docs-root",
+        "final_score": 308,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use the benchmarking functionality of the Cloud Cloud Speech-to-Text Console to measure the accuracy of any of the transcription models used in the Cloud Speech-to-Text V2 API.",
+          "Benchmark the model Using the Custom Speech-to-Text model and your benchmarking dataset to assess the accuracy of your model, follow the Measure and improve accuracy guide .",
+          "Cloud Cloud Speech-to-Text Console provides visual benchmarking for pre-trained and Custom Speech-to-Text models."
+        ]
+      },
+      {
+        "title": "Train and manage models \\_|\\_ Cloud Speech-to-Text \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/train-model",
+        "source_id": "site-docs-root",
+        "final_score": 308,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Delete a custom model Before you start, make sure that there is no traffic routed to your Custom Speech-to-Text model through any endpoint, because deleting it will stop it from serving any requests.",
+          "Similar to machine-learning models, training a Custom Speech-to-Text model is typically iterative and involves selecting a base model as a starting point, fine-tuning it with your text and audio datasets, then testing the recognition quality of the model.",
+          "Before you begin Ensure you have signed up for a Google Cloud account, created a Google Cloud project, and enabled the Cloud Speech-to-Text API: Go to Speech in the Google Cloud console, and navigate to the Cloud Speech-to-Text API."
+        ]
+      },
+      {
+        "title": "Use models \\_|\\_ Cloud Speech-to-Text \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/use-model",
+        "source_id": "site-docs-root",
+        "final_score": 308,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Perform inference in V2 For a Custom Speech-to-Text model to be ready for use, the state of the model in the Models tab should be Active , and the dedicated endpoint in the Endpoints tab must be Deployed .",
+          "RecognizeRequest ( recognizer = f \"projects/custom-models-walkthrough/locations/us-east1/recognizers/ \" , config = config , content = content , ) Transcribes the audio into text response = client . recognize ( request = request ) for result in response . results : print ( f \"Transcript: { result . alternatives [ 0 ] . transcript } \" ) return response Note: If you try to create a recognizer object in a different region than the one that the endpoint is created in, the request will fail.",
+          "In our example, where a Google Cloud project ID is custom-models-walkthrough , the endpoint that corresponds to the Custom Speech-to-Text model quantum-computing-lectures-custom-model is quantum-computing-lectures-custom-model-prod-endpoint ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/evaluate-model",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/train-model",
+        "https://docs.cloud.google.com/speech-to-text/docs/custom-speech-models/use-model"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:40.059Z",
+  "source_step08_card": "data/step-08/current/products/speech-to-text/card.json",
+  "product_name": "Speech-to-Text",
+  "product_slug": "speech-to-text"
+}

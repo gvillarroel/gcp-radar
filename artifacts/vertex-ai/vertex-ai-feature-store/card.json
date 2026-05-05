@@ -1,0 +1,114 @@
+{
+  "feature_name": "Vertex AI Feature Store",
+  "feature_slug": "vertex-ai-feature-store",
+  "summary": "Vertex AI Feature Store (Legacy/V1) is the legacy version of Vertex AI's managed feature store for storing and serving ML features; Vertex AI Feature Store is now available in preview and uses BigQuery as the offline store while enabling feature groups, feature views, and online serving options for low-latency and high-volume workloads; deprecated on 2026-02-17.",
+  "extended_definition": "Vertex AI Feature Store (Legacy/V1) is the legacy version of Vertex AI's managed feature store for storing and serving ML features; Vertex AI Feature Store is now available in preview and uses BigQuery as the offline store while enabling feature groups, feature views, and online serving options for low-latency and high-volume workloads; deprecated on 2026-02-17.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-04",
+    "deprecation_date": "2026-02-17",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/overview",
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Introduction to Vertex AI Feature Store (Legacy) \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/overview",
+        "source_id": "site-docs-reference-3",
+        "final_score": 273,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Managed solution for online serving at scale Vertex AI Feature Store (Legacy) provides a managed solution for online feature serving (low-latency serving), which is critical for making timely online predictions.",
+          "Vertex AI Feature Store (Legacy) is a fully managed solution, which manages and scales the underlying infrastructure such as storage and compute resources.",
+          "The following examples describe how Vertex AI Feature Store (Legacy) can address potential sources of training-serving skew: Vertex AI Feature Store (Legacy) ensures that a feature value is imported once into a featurestore and that same value is reused for both training and serving."
+        ]
+      },
+      {
+        "title": "\"Control access to Vertex AI Feature Store (Legacy) resources \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy",
+        "source_id": "site-docs-reference-3",
+        "final_score": 259,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can set resource-level Identity and Access Management (IAM) policies on the following Vertex AI Feature Store (Legacy) resources: Featurestore : When you set an Identity and Access Management policy on a featurestore, the policy applies to the featurestore and all entity types created in that featurestore.",
+          "Home Documentation AI and ML Vertex AI Send feedback Control access to Vertex AI Feature Store (Legacy) resources Stay organized with collections Save and categorize content based on your preferences.",
+          "You can control access to Vertex AI Feature Store (Legacy) resources by setting IAM policies at different levels of the resource hierarchy ."
+        ]
+      },
+      {
+        "title": "Manage featurestores \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "source_id": "site-docs-reference-3",
+        "final_score": 241,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, if you set the online serving node count for your featurestore to 0 and then provision online serving nodes by setting the node count to 1 or higher, Vertex AI Feature Store (Legacy) doesn't migrate the deleted feature data to the online store.",
+          "For guidelines and best practices to test the performance of online serving nodes, see Test the performance of online serving nodes for real-time serving in Best practices for Vertex AI Feature Store (Legacy) .",
+          "Allocating a fixed node count If you allocate a fixed node count, Vertex AI Feature Store (Legacy) maintains a consistent number of nodes regardless of the traffic patterns."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:42.435Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai"
+}

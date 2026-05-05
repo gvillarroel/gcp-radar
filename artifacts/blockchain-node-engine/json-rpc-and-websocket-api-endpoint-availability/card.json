@@ -1,0 +1,151 @@
+{
+  "feature_name": "JSON-RPC and WebSocket API endpoint availability",
+  "feature_slug": "json-rpc-and-websocket-api-endpoint-availability",
+  "summary": "Nodes expose both JSON-RPC and WebSocket endpoints for API access.",
+  "extended_definition": "Nodes expose both JSON-RPC and WebSocket endpoints for API access.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+      "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/list",
+      "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.blockchainNodes \\_|\\_ Blockchain Node\\",
+        "url": "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "source_id": "site-api-reference",
+        "final_score": 142,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "JSON representation { \"jsonRpcApiEndpoint\" : string , \"websocketsApiEndpoint\" : string } Fields jsonRpcApiEndpoint string Output only.",
+          "The assigned URL for the node JSON-RPC API endpoint. websocketsApiEndpoint string Output only.",
+          "JSON representation { // Union field execution client details can be only one of the following: \"gethDetails\" : { object ( GethDetails ) } // End of list of possible types for union field execution client details . \"network\" : enum ( Network ) , \"nodeType\" : enum ( NodeType ) , \"executionClient\" : enum ( ExecutionClient ) , \"consensusClient\" : enum ( ConsensusClient ) , \"apiEnableAdmin\" : boolean , \"apiEnableDebug\" : boolean , \"additionalEndpoints\" : { object ( EthereumEndpoints ) } , \"validatorConfig\" : { object ( ValidatorConfig ) } } Fields Union field execution client details ."
+        ]
+      },
+      {
+        "title": "\"Package google.cloud.blockchainnodeengine.v1 \\_|\\_ Blockchain Node Engine\\",
+        "url": "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "source_id": "site-api-reference",
+        "final_score": 108,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The assigned URL for the node JSON-RPC API endpoint. websockets api endpoint string Output only.",
+          "Index BlockchainNodeEngine (interface) BlockchainNode (message) BlockchainNode.BlockchainType (enum) BlockchainNode.ConnectionInfo (message) BlockchainNode.ConnectionInfo.EndpointInfo (message) BlockchainNode.EthereumDetails (message) BlockchainNode.EthereumDetails.ConsensusClient (enum) BlockchainNode.EthereumDetails.EthereumEndpoints (message) BlockchainNode.EthereumDetails.ExecutionClient (enum) BlockchainNode.EthereumDetails.GethDetails (message) BlockchainNode.EthereumDetails.GethDetails.GarbageCollectionMode (enum) BlockchainNode.EthereumDetails.Network (enum) BlockchainNode.EthereumDetails.NodeType (enum) BlockchainNode.EthereumDetails.ValidatorConfig (message) BlockchainNode.State (enum) CreateBlockchainNodeRequest (message) DeleteBlockchainNodeRequest (message) GetBlockchainNodeRequest (message) ListBlockchainNodesRequest (message) ListBlockchainNodesResponse (message) OperationMetadata (message) UpdateBlockchainNodeRequest (message) BlockchainNodeEngine This service is the control plane API for Blockchain Node Engine, and can be used to create, read, and delete blockchain nodes.",
+          "A service attachment that exposes a node, and has the following format: projects/{project}/regions/{region}/serviceAttachments/{service attachment name} EndpointInfo Contains endpoint information through which to interact with a blockchain node."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.blockchainNodes.list \\_|\\_ Blockchain Node Engine\\",
+        "url": "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/list",
+        "source_id": "site-api-reference",
+        "final_score": 72,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If successful, the response body contains data with the following structure: JSON representation { \"blockchainNodes\" : [ { object ( BlockchainNode ) } ] , \"nextPageToken\" : string , \"unreachable\" : [ string ] } Fields blockchainNodes[] object ( BlockchainNode ) The list of nodes nextPageToken string A token identifying a page of results the server should return. unreachable[] string Locations that could not be reached.",
+          "HTTP request Path parameters Query parameters Request body Response body JSON representation Authorization scopes IAM Permissions Lists blockchain nodes in a given project and location.",
+          "Home Documentation Application hosting Blockchain Node Engine Reference Send feedback Method: projects.locations.blockchainNodes.list Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "blockchainnodeengine.blockchainNodes.list",
+      "projects.locations.blockchainNodes",
+      "projects.locations.blockchainNodes.delete",
+      "projects.locations.blockchainNodes.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/list"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/list"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/list"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/list"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/list"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/list"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/list"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/list"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:25.982Z",
+  "source_step08_card": "data/step-08/current/products/blockchain-node-engine/card.json",
+  "product_name": "Blockchain Node Engine",
+  "product_slug": "blockchain-node-engine"
+}

@@ -1,0 +1,174 @@
+{
+  "feature_name": "Google-managed encryption keys as default encryption",
+  "feature_slug": "google-managed-encryption-keys-as-default-encryption",
+  "summary": "Application Integration now uses Google-managed encryption keys by default for provisioned regions.",
+  "extended_definition": "Application Integration now uses Google-managed encryption keys by default for provisioned regions.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-integration/docs/access-control",
+      "https://docs.cloud.google.com/application-integration/docs/cmek",
+      "https://docs.cloud.google.com/application-integration/docs/setup-application-integration"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customer-managed encryption keys \\_|\\_ Application Integration \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/cmek",
+        "source_id": "site-docs-root-2",
+        "final_score": 164,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Customer-managed encryption keys By default, Application Integration encrypts customer content at rest.",
+          "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Application Integration.",
+          "Tip: When you use Google-owned and Google-managed encryption keys in Application Integration, your tenant projects consumes Cloud KMS cryptographic requests quotas."
+        ]
+      },
+      {
+        "title": "Set up Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/setup-application-integration",
+        "source_id": "site-docs-root",
+        "final_score": 114,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The default configurations include enabling APIs ( Application Integration API , Secret manager API , and Connectors API ), creating a default service account , and using Google-owned and Google-managed encryption keys as the encryption method for the selected region.",
+          "Customer-managed encryption key (CMEK): Use this method if you want to control and manage the encryption keys that protect your data in the selected region.",
+          "This allows integration data to be encrypted with your own keys instead of Google-owned and Google-managed encryption keys."
+        ]
+      },
+      {
+        "title": "\"Access control overview \\_|\\_ Application Integration \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/access-control",
+        "source_id": "site-docs-root-2",
+        "final_score": 68,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Application Integration uses two types of service accounts: User-managed service account Default service account User-managed service account A user-managed service account can be attached to an integration to provide credentials to execute the task.",
+          "A user-managed service account has the following email address: service-account-name@ PROJECT ID .iam.gserviceaccount.com Default service account New Google Cloud projects that have provisioned Application Integration have an Application Integration default service account , which has the following email address: service- PROJECT NUMBER @gcp-sa-integrations.iam.gserviceaccount.com The Application Integration default service account is created during provisioning and is automatically added to your project with the basic IAM roles and permissions.",
+          "If neither OAuth 2.0 profile nor user-managed service account is configured, then the default service account ( service- PROJECT NUMBER @gcp-sa-integrations.iam.gserviceaccount.com ) is used."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.googleapis.com",
+      "iam.gserviceaccount.com",
+      "integrations.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/cmek",
+        "https://docs.cloud.google.com/application-integration/docs/setup-application-integration",
+        "https://docs.cloud.google.com/application-integration/docs/access-control"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/cmek",
+        "https://docs.cloud.google.com/application-integration/docs/setup-application-integration",
+        "https://docs.cloud.google.com/application-integration/docs/access-control"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/cmek",
+        "https://docs.cloud.google.com/application-integration/docs/setup-application-integration",
+        "https://docs.cloud.google.com/application-integration/docs/access-control"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/cmek",
+        "https://docs.cloud.google.com/application-integration/docs/setup-application-integration",
+        "https://docs.cloud.google.com/application-integration/docs/access-control"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/cmek",
+        "https://docs.cloud.google.com/application-integration/docs/setup-application-integration",
+        "https://docs.cloud.google.com/application-integration/docs/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/cmek",
+        "https://docs.cloud.google.com/application-integration/docs/setup-application-integration",
+        "https://docs.cloud.google.com/application-integration/docs/access-control"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/cmek",
+        "https://docs.cloud.google.com/application-integration/docs/setup-application-integration",
+        "https://docs.cloud.google.com/application-integration/docs/access-control"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/cmek",
+        "https://docs.cloud.google.com/application-integration/docs/setup-application-integration",
+        "https://docs.cloud.google.com/application-integration/docs/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/cmek",
+        "https://docs.cloud.google.com/application-integration/docs/setup-application-integration",
+        "https://docs.cloud.google.com/application-integration/docs/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/cmek",
+        "https://docs.cloud.google.com/application-integration/docs/setup-application-integration",
+        "https://docs.cloud.google.com/application-integration/docs/access-control"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/cmek",
+        "https://docs.cloud.google.com/application-integration/docs/setup-application-integration",
+        "https://docs.cloud.google.com/application-integration/docs/access-control"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:14.803Z",
+  "source_step08_card": "data/step-08/current/products/application-integration/card.json",
+  "product_name": "Application Integration",
+  "product_slug": "application-integration"
+}

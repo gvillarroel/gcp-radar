@@ -1,0 +1,254 @@
+{
+  "feature_name": "Cloud API Registry",
+  "feature_slug": "cloud-api-registry",
+  "summary": "Introduces Cloud API Registry in Google Cloud console to view and manage MCP servers and tools available to an agent.",
+  "extended_definition": "Introduces Cloud API Registry in Google Cloud console to view and manage MCP servers and tools available to an agent.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring",
+      "https://docs.cloud.google.com/agent-builder/overview",
+      "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Vertex AI Agent Builder overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/agent-builder/overview",
+        "source_id": "site-docs-root",
+        "final_score": 231,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Tools in the Cloud API Registry (Preview): Use Cloud API Registry in the Google Cloud console to view and manage the MCP servers and tools your agent has access to.",
+          "Agent Garden (Supported in preview ) is a library in the Google Cloud console where you can find and explore sample agents and tools that are designed to accelerate your development.",
+          "Agent Tools are tools that you can equip your ADK agent to use, including: Built-in tools such as Grounding with Google Search , Vertex AI Search , and Code Execution RAG Engine for retrieval-augmented generation (RAG) Google Cloud tools to connect to: Your APIs managed in Apigee API hub 100+ enterprise applications through Integration Connectors Custom integrations with Application Integration Model Context Protocol (MCP) tools Ecosystem tools such as LangChain tools, CrewAI tools, and GenAI Toolbox for Databases Govern : Monitor what your agents are doing with an audit trail for end-to-end observability."
+        ]
+      },
+      {
+        "title": "Introduction to the Vertex AI SDK for Python \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "source_id": "site-api-reference",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Write code with the Vertex AI SDK for Python To use the Vertex AI SDK for Python: Install the google-cloud-aiplatform package, which includes both the Vertex AI SDK for Python and the Vertex AI Python client library, by running the following command in your virtual environment: pip install -- upgrade google - cloud - aiplatform Use the following code to import the google.cloud.aiplatform namespace: from google.cloud import aiplatform Preview: To use features for the Vertex AI SDK for Python that are still in preview , import vertexai.preview : import vertexai.preview If you're using a local shell, then create local authentication credentials for your user account: gcloud auth application-default login You don't need to do this if you're using Cloud Shell.",
+          "To see an example of using the Vertex AI SDK as part of a more comprehensive workflow, run the \"Custom training and online prediction\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Understand the Vertex AI SDK and client library differences When you install the Vertex AI SDK for Python, the Vertex AI Python client library is also installed.",
+          "Learn about the Vertex AI SDK for Python See the following documentation: Vertex AI SDK class overview : introduces the key classes and functionality in the Vertex AI SDK."
+        ]
+      },
+      {
+        "title": "Monitor an agent \\_|\\_ Vertex AI Agent Builder \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring",
+        "source_id": "site-docs-root",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Once the data points are uploaded through the Cloud Monitoring API, you can view the new metric token count through the Google Cloud console: Go to Metrics Explorer page in the Google Cloud console: Go to Metrics Explorer Click Select a metric to open a search bar.",
+          "To view the tool calling count metric and its associated logs, do the following in the Google Cloud console: Go to Metrics Explorer page in the Google Cloud console: Go to Metrics Explorer Click Select a metric to open a search bar.",
+          "User-defined metrics The following steps demonstrate how to create and use a user-defined metric ( token count ) for an example workflow where multiple agents call multiple models, and you want to calculate the total count of consumed tokens (assuming that you track the number of tokens since application startup for each invoking agent and target model): Define the custom metric type by calling projects.metricDescriptors.create with the following parameters: name : a URL string, such as projects/ PROJECT ID Request body : a MetricDescriptor object: { \"name\" : \"token count\" , \"description\" : \"Token Consumed by models.\" , \"displayName\" : \"Token Count\" , \"type\" : \"custom.googleapis.com/token count\" , \"metricKind\" : \"CUMULATIVE\" , \"valueType\" : \"INT64\" , \"unit\" : \"1\" , \"labels\" : [ { \"key\" : \"model\" , \"valueType\" : \"STRING\" , \"description\" : \"Model.\" }, { \"key\" : \"agent\" , \"valueType\" : \"STRING\" , \"description\" : \"Agent.\" } ], \"monitoredResourceTypes\" : [ \"generic node\" ] } The new metric token count is created with the kind Cumulative , representing the total number of tokens since application startup."
+        ]
+      },
+      {
+        "title": "\"Use agent identity with Vertex AI Agent Engine \\_|\\_ Vertex AI Agent Builder\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "source_id": "site-docs-root",
+        "final_score": 189,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, the following commands grant basic roles to all agents in a project: gcloud projects add-iam-policy-binding PROJECT ID \\ --member=\"principalSet://agents.global.org- ORGANIZATION ID .system.id.goog/attribute.platformContainer/aiplatform/projects/ PROJECT NUMBER \" \\ --role=roles/serviceusage.serviceUsageConsumer gcloud projects add-iam-policy-binding PROJECT ID \\ --member=\"principalSet://agents.global.org- ORGANIZATION ID .system.id.goog/attribute.platformContainer/aiplatform/projects/ PROJECT NUMBER \" \\ --role=roles/browser gcloud projects add-iam-policy-binding PROJECT ID \\ --member=\"principalSet://agents.global.org- ORGANIZATION ID .system.id.goog/attribute.platformContainer/aiplatform/projects/ PROJECT NUMBER \" \\ --role=roles/aiplatform.expressUser gcloud projects add-iam-policy-binding PROJECT ID \\ --member=\"principalSet://agents.global.org- ORGANIZATION ID .system.id.goog/attribute.platformContainer/aiplatform/projects/ PROJECT NUMBER \" \\ --role=roles/cloudapiregistry.viewer gcloud projects add-iam-policy-binding PROJECT ID \\ --member=\"principalSet://agents.global.org- ORGANIZATION ID .system.id.goog/attribute.platformContainer/aiplatform/projects/ PROJECT NUMBER \" \\ --role=roles/logging.logWriter gcloud projects add-iam-policy-binding PROJECT ID \\ --member=\"principalSet://agents.global.org- ORGANIZATION ID .system.id.goog/attribute.platformContainer/aiplatform/projects/ PROJECT NUMBER \" \\ --role=roles/monitoring.metricWriter To grant a role to all Agent Engine agents across an organization: Grant all agents in an organization the following role gcloud RESOURCE TYPE add-iam-policy-binding RESOURCE ID \\ --member=\"principalSet://agents.global.org- ORGANIZATION ID .system.id.goog/attribute.platform/aiplatform\" \\ --role=\" ROLE NAME \" Deny access to an agent To deny an agent access to resources, you can use the IAM deny policy or set up a principal access boundary policy .",
+          "You first need to store the API Keys for access to the third party services into Secret Manager, and then retrieve these credentials from the Secret Manager. from google.adk.tools.openapi tool.auth.auth helpers import token to scheme credential from google.adk.tools.openapi tool.openapi spec parser.openapi toolset import OpenAPIToolset Access secret is defined in the code blocks above WEATHER DOT COM API KEY = access secret ( project id = 'foo' , secret id = 'weather dot com api key' ) auth scheme , auth credential = token to scheme credential ( \"apikey\" , \"query\" , \"apikey\" , WEATHER DOT COM API KEY ) sample api toolset = OpenAPIToolset ( spec str = \"...\" , spec str type = \"yaml\" , auth scheme = auth scheme , auth credential = auth credential , ) Log agent activity If you enable Cloud Logging, you can view logs of which agent and users have accessed a Google Cloud resource.",
+          "Additional permissions might be needed if you use logging, metrics, and Cloud API registry, and for any other resource you want to expose to your agent."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "agents.global.org",
+      "aiplatform.expressUser",
+      "aiplatform.googleapis.com",
+      "attribute.platform",
+      "attribute.platformContainer",
+      "cloudapiregistry.viewer",
+      "custom.googleapis.com",
+      "logging.logWriter",
+      "monitoring.metricWriter",
+      "parser.openapi",
+      "projects.metricDescriptors.create",
+      "serviceusage.serviceUsageConsumer",
+      "system.id.goog",
+      "tool.auth.auth",
+      "tool.openapi",
+      "vertexai.preview"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.expressUser",
+      "roles/browser",
+      "roles/cloudapiregistry.viewer",
+      "roles/logging.logWriter",
+      "roles/monitoring.metricWriter",
+      "roles/serviceusage.serviceUsageConsumer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/monitoring",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:43.725Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-agent-builder/card.json",
+  "product_name": "Vertex AI Agent Builder",
+  "product_slug": "vertex-ai-agent-builder"
+}

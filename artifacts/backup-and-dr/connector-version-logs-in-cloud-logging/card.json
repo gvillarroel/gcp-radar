@@ -1,0 +1,225 @@
+{
+  "feature_name": "Connector version logs in Cloud Logging",
+  "feature_slug": "connector-version-logs-in-cloud-logging",
+  "summary": "Backup and DR now supports viewing connector version logs in Cloud Logging.",
+  "extended_definition": "Backup and DR now supports viewing connector version logs in Cloud Logging.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging",
+      "https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs",
+      "https://docs.cloud.google.com/compute/docs/containers/migrate-containers"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Audit logs \\_|\\_ Backup and DR \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging",
+        "source_id": "site-docs-reference",
+        "final_score": 126,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ countApplianceUpdates countApplianceUpdatesInstallationJobs countApplications countBackups countCloudCredentials countClusters countCombinedJob countCombinedMatrix countConsistencyGroups countDiskPools countDynamicProtections countEvents countHosts countLogicalGroups countMatrix countSlps countSlts countWorkflows createSlaPreflight delegateGetCallDownloadLog discoverVolumes downloadLogStatus downloadOssNotice getAppClass getAppClassByAppclassName getAppliance getApplianceBandwidthStat getApplianceHotfixes getAppliancePolicyManager getApplianceResourceLimit getApplianceResourceWarning getApplianceSsdStatus getApplianceSystemStat getApplianceVersion getApplication getBVInfo getBackup getBackupPreservedStatus getCertificate getCloudCredentialMetaInfo getCloudTypes getCloudVmMetaInfo getCluster getClusterCalloutTest getClustersDetails getConfigParameter getConsistencyGroup getConsistencyGroupMember getCredential getDevice getDiscardedBackup getDiskPool getDiskPoolFromAppliance getDynamicProtection getEvent getExportStatusDetails getGCERegions getGCPProjects getGCPProjectsByProfile getHost getHostAvailableConnector getHostConnector getHostDatastores getHostDetails getInstanceInclusionRule getInstanceMemberRuleMembers getIscsiTestResults getJob getLocalAppliance getLogicalGroup getMSParameter getNfsOptions getNotifications getNotificationsV2 getParameter getPolicy getPreservedBackup getPreservedBackupHistory getProtectedESXINodeCount getReadMeForApplianceUpdate getReadMeForApplianceUpdateInstallationJob getRecoveryPools getRegions getReportExportPrereq getSLAComplianceCompatibility getSessionInfo getSla getSlp getSlt getThirdPartyCertAll getUpdateLogs getVaultPoolClusterApplicationsPerApplication getVaultPoolClusterApplicationsPerCluster getVaultPoolClusters getVaultTaskStatus getVmMetadataDetails getVsphereHost getWarning google.cloud.backupdr.v1.BackupDR.FetchBackupPlanAssociationsForResourceType google.cloud.backupdr.v1.BackupDR.FetchDataSourceReferencesForResourceType google.cloud.backupdr.v1.BackupDR.GetBackup google.cloud.backupdr.v1.BackupDR.GetBackupPlan google.cloud.backupdr.v1.BackupDR.GetBackupPlanAssociation google.cloud.backupdr.v1.BackupDR.GetBackupPlanRevision google.cloud.backupdr.v1.BackupDR.GetBackupVault google.cloud.backupdr.v1.BackupDR.GetDataSource google.cloud.backupdr.v1.BackupDR.GetDataSourceReference google.cloud.backupdr.v1.BackupDR.GetManagementServer google.cloud.backupdr.v1.BackupDR.ListBackupPlanAssociations google.cloud.backupdr.v1.BackupDR.ListBackupPlanRevisions google.cloud.backupdr.v1.BackupDR.ListBackupPlans google.cloud.backupdr.v1.BackupDR.ListBackupVaults google.cloud.backupdr.v1.BackupDR.ListBackups google.cloud.backupdr.v1.BackupDR.ListDataSources google.cloud.backupdr.v1.BackupDR.ListManagementServers google.cloud.backupdr.v1.BackupDrProtectionSummary.ListResourceBackupConfigs GetIamPolicy google.longrunning.Operations.GetOperation google.longrunning.Operations.ListOperations isApplianceUpgradeInProgress isInMigrationMode listApplianceUpdates listApplianceUpdatesInstallationjobs listAppliances listApplications listApplicationsFlatView listArchives listBackups listBwSchedule listCloudSupportedProfiles listCloudSupportedTemplates listClusters listCombinedJobs listConsistencyGroups listCredentials listDiskPools listDiskPoolsFromAppliance listDiskTypes listDynamicProtections listEffectiveMembers listEffectiveOptionsForApp listEffectiveOptionsForSla listEvents listGcpVaultPool listHosts listLogicalGroup listLogicalGroupMembers listOptionForApp listOptionForPolicy listOptionForSla listOptionsForAppType listOptionsForPolicyType listPolicies listProtectedDataAGM listProtectedDataAGMByAppliance listSlas listSlps listSlts listVMVolumes listWorkFlows listWorkflowsPerApp lsConfiguredInterface lsDns lsEtcHosts lsInterface lsNetworkCapability lsNtp lsOutboundPolicy settableOptionMetadataForApp settableOptionMetadataForPolicy settableOptionMetadataForSla showCustomSetting showRoute showTracePath triggerExport validateHypervisorCredential ADMIN WRITE addApplication addPort addVm appDiscovery appDiscoveryOnAppliance appliancePolicyManager backupNow callbackTestAppliance cloneBackup cloneTemplates clusterDiscovery configDns configNtp configureMountMigrate createApplication createConnection createConsistencyGroup createCredential createDiskPool createDiskPoolFromAppliance createDynamicProtection createHost createLogicalGroup createLogicalGroupSla createOptionForApp createOptionForPolicy createOptionForSla createPolicy createSla createSlp createSlt createWorkflow deleteApplication deleteBackup deleteCluster deleteConsistencyGroup deleteCredential deleteDiskPool deleteDiskPoolFromAppliance deleteDynamicProtection deleteHost deleteLogicalGroup deleteLogicalGroupSla deleteMembershipRule deleteOptionForApp deleteOptionForPolicy deletePolicy deletePorts deleteSla deleteSlp deleteSlt deleteWorkflow discover discoverCloudVm discoverUpdates dissolveAppliance downloadConnector enableConnectorUpgrade expireBackup fetchApplicationOptions generateOTP getCloudVmMountOptionMetaData getCloudVmRestoreOptionMetaData getDataRetentionDetails getDiskMapping getDynamicJsonForPoolManage getNfsTestTaskStatus getRecommendedComplianceSettingsForOnTheFlyPolicy getRecommendedComplianceSettingsForPolicy getVaultList google.cloud.backupdr.v1.BackupDR.AbandonBackup (LRO) google.cloud.backupdr.v1.BackupDR.CreateBackupPlan (LRO) google.cloud.backupdr.v1.BackupDR.CreateBackupPlanAssociation (LRO) google.cloud.backupdr.v1.BackupDR.CreateBackupVault (LRO) google.cloud.backupdr.v1.BackupDR.CreateManagementServer (LRO) google.cloud.backupdr.v1.BackupDR.DeleteBackup (LRO) google.cloud.backupdr.v1.BackupDR.DeleteBackupPlan (LRO) google.cloud.backupdr.v1.BackupDR.DeleteBackupPlanAssociation (LRO) google.cloud.backupdr.v1.BackupDR.DeleteBackupVault (LRO) google.cloud.backupdr.v1.BackupDR.DeleteManagementServer (LRO) google.cloud.backupdr.v1.BackupDR.FetchAccessToken google.cloud.backupdr.v1.BackupDR.FinalizeBackup (LRO) google.cloud.backupdr.v1.BackupDR.InitializeService (LRO) google.cloud.backupdr.v1.BackupDR.InitiateBackup google.cloud.backupdr.v1.BackupDR.RemoveDataSource (LRO) google.cloud.backupdr.v1.BackupDR.RestoreBackup (LRO) google.cloud.backupdr.v1.BackupDR.SetInternalStatus (LRO) google.cloud.backupdr.v1.BackupDR.TriggerBackup (LRO) google.cloud.backupdr.v1.BackupDR.UpdateBackup (LRO) google.cloud.backupdr.v1.BackupDR.UpdateBackupPlan (LRO) google.cloud.backupdr.v1.BackupDR.UpdateBackupPlanAssociation (LRO) google.cloud.backupdr.v1.BackupDR.UpdateBackupVault (LRO) google.cloud.backupdr.v1.BackupDR.UpdateDataSource (LRO) SetIamPolicy google.longrunning.Operations.CancelOperation google.longrunning.Operations.DeleteOperation importOrForgetVaultPoolBackupsPerApplication importOrForgetVaultPoolBackupsPerCluster importTemplates installApplianceUpdateNow iscsiTestA jobHistoryArchive joinAppliance liveCloneBackup migrate migrateBackup migrateRestoreMountBackup mkEtcHosts modifyConsistencyGroupMember modifyLogicalGroupMembers mountBackup mountMigratePreflight operateWorkflow recalcConsumedSize registerCluster replicateImage replicateLog restoreBackup restorePreflight revokeCertificate rmEtcHosts runDynamicProtectionJob setConfigParaMeter setDynamicProtectionJobConfig setSchedule stopAppliance testConnection testDns testNfsAsync uninstallHostConnector unmountBackup updateApplianceResourceWarning updateApplication updateBackup updateCloudVmMountOptionMetaData updateCloudVmRestoreOptionMetaData updateConsistencyGroup updateCredential updateDiskPool updateDiskPoolFromAppliance updateHost updateJob updateLogicalGroup updateLogicalGroupSla updateMembershipRule updateOptionForApp updateOptionForPolicy updateOptionForSla updatePolicy updateSchedule updateSla updateSlp updateSlt updateWorkflow upgradeHostConnector uploadThirdPartyCert validateCredential vmAddNew vmDiscoveryWithoutCluster API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Backup and DR Service. google.cloud.backupdr.v1.BackupDR The following audit logs are associated with methods belonging to google.cloud.backupdr.v1.BackupDR .",
+          "For more information about Cloud Audit Logs, see the following: Types of audit logs Audit log entry structure Storing and routing audit logs Cloud Logging pricing summary Enable Data Access audit logs Service name Backup and DR Service audit logs use the service name backupdr.googleapis.com .",
+          "Filter for this method : protoPayload.methodName=\"downloadConnector\" downloadLogStatus Method : downloadLogStatus Audit log type : Data access Permissions : backupdr.managementServers.viewBackupServers - ADMIN READ Method is a long-running or streaming operation : No."
+        ]
+      },
+      {
+        "title": "View autoscaler logs \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs",
+        "source_id": "site-docs-reference-2",
+        "final_score": 95,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example: gcloud logging read \"resource.type=autoscaler\" --limit 10 \\ --format json To view the autoscaler logs of a specific MIG, specify the instance group manager name as follows: gcloud logging read \"resource.type=autoscaler AND \\ resource.labels.instance group manager name=example-igm \" \\ --limit 10 --format json To view the log entries related to autoscaler resize actions , specify the compute.autoscalers.resize method name: gcloud logging read \"resource.type=autoscaler AND \\ resource.labels.instance group manager name=example-igm AND \\ protoPayload.methodName=compute.autoscalers.resize\" \\ --limit 10 --format json To view the log entries related to autoscaler status changes , specify the compute.autoscalers.changeStatus method name: gcloud logging read \"resource.type=autoscaler AND \\ resource.labels.instance group manager name=example-igm AND \\ protoPayload.methodName=compute.autoscalers.changeStatus\" \\ --limit 10 --format json REST Make a request to the Logging V2 API .",
+          "The log explorer opens with a default query to fetch all autoscaler logs of the MIG. gcloud To look up all logs related to autoscaling, use the logging read command .",
+          "So, the autoscaler limits the recommended size to 2 . { insertId: \"1l68z7sg4jw7kzo\" logName: \"projects/example-project/logs/cloudaudit.googleapis.com%2Fsystem event\" protoPayload: { @type: \"type.googleapis.com/google.cloud.audit.AuditLog\" metadata: { @type: \"type.googleapis.com/autoscaler.AutoscalerSizeChangeExplanation\" autoscalingMode: \"ON\" autoscalingReason : { scalingLimit: { limitPolicy: { maxNumReplicas: 2 } limitSize: 2 name: \"MAX INSTANCES\" } scalingSignal: { calculatedSize: 3 calculationDetails: { servingSize: 1 signalTarget: 0.35 signalValue: 1.03533 } name: \"PREDICTED CPU UTILIZATION\" signalPolicy: { coolDownPeriodSec: 15 cpuUtilization: { predictiveMethod: \"OPTIMIZE AVAILABILITY\" utilizationTarget: 0.35 } } } summary: \"The autoscaler's recommended size changed from 1 to 2 because the autoscaler predicted that in 15 seconds the average CPU utilization across 1 serving instance will be 103.533%, which is above the utilization target of 35%."
+        ]
+      },
+      {
+        "title": "\"Migrate containers that were deployed on VMs during VM creation \\_|\\_ Compute\\",
+        "url": "https://docs.cloud.google.com/compute/docs/containers/migrate-containers",
+        "source_id": "site-docs-reference-2",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "Alternatively, if you want to change the logging driver, you can include the --log-driver parameter with your docker run command: Use Cloud Logging logging driver docker run --log-driver = gcplogs nginx:latest For more information, see Using Cloud Logging with Container-Optimized OS Configure internal firewall Container-Optimized OS denies incoming traffic by default, so you must add iptables rules to allow that traffic.",
+          "Example: Create the instance template that uses a startup script gcloud compute instance-templates create startup-template \\ --machine-type=e2-medium \\ --image-family=cos-stable \\ --image-project=cos-cloud \\ --metadata-from-file=startup-script=./startup script.sh Create the managed instance group gcloud compute instance-groups managed create startup-mig \\ --template=startup-template \\ --size=2 \\ --zone=us-central1-a Terraform Use the google compute instance template and google compute instance group manager resources to create an instance template and a MIG, as shown in the following example: Example : resource \"google compute instance template\" \"startup template\" { name prefix = \"startup-template-\" machine type = \"e2-medium\" disk { source image = \"cos-cloud/cos-stable\" auto delete = true boot = true } network interface { network = \"default\" } metadata = { startup-script = file(\"./startup script.sh\") } } resource \"google compute instance group manager\" \"startup mig\" { name = \"startup-mig\" base instance name = \"startup-vm\" zone = \"us-central1-a\" version { instance template = google compute instance template.startup template.id } target size = 2 } Test and clean up After successful creation of a VM or a MIG, validate that your application is running on the container and working as expected.",
+          "Example 1 Run a standalone container in a VM based on Container-Optimized OS: #!/bin/bash A name for the container CONTAINER NAME = \"my-app-container\" Stop and remove the container if it exists docker stop $CONTAINER NAME true docker rm $CONTAINER NAME true Pull the latest version of the container image from Docker Hub docker pull busybox:latest Run docker container from image in docker hub docker run busybox:latest \\ echo \"hello world!\" Example 2 Run a web server container in a VM based on Container-Optimized OS: #!/bin/bash Enable incoming traffic iptables -A INPUT -j ACCEPT A name for the container CONTAINER NAME = \"my-app-container\" Stop and remove the container if it exists docker stop $CONTAINER NAME true docker rm $CONTAINER NAME true Pull the latest version of the container image from Docker Hub docker pull nginx:latest Run docker container from image in docker hub docker run \\ --name = $CONTAINER NAME \\ --privileged \\ --restart = always \\ --tty \\ --detach \\ --network = \"host\" \\ nginx:latest Additional configuration options for container deployment This section describes the additional configuration parameters for deploying containers on your VMs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "autoscaler.AutoscalerSizeChangeExplanation",
+      "backupdr.backupPlanAssociations.triggerBackupForComputeDisk",
+      "backupdr.backupPlanAssociations.triggerBackupForComputeInstance",
+      "backupdr.backupPlanAssociations.updateForComputeDisk",
+      "backupdr.backupPlanAssociations.updateForComputeInstance",
+      "backupdr.backupPlans.update",
+      "backupdr.backupPlans.useForComputeDisk",
+      "backupdr.backupPlans.useForComputeInstance",
+      "backupdr.backupVaults.update",
+      "backupdr.bvbackups.restore",
+      "backupdr.bvbackups.update",
+      "backupdr.bvdataSources.remove",
+      "backupdr.bvdataSources.setInternalStatus",
+      "backupdr.bvdataSources.update",
+      "backupdr.compute.restoreFromBackupVault",
+      "backupdr.googleapis.com",
+      "backupdr.managementServers.viewBackupServers",
+      "cloudaudit.googleapis.com",
+      "compute.autoscalers.changeStatus",
+      "compute.autoscalers.resize",
+      "containers.image",
+      "docker.io",
+      "logging.googleapis.com",
+      "metadata.items",
+      "resource.labels.instance",
+      "resource.type",
+      "script.sh",
+      "template.id",
+      "template.startup",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging",
+        "https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs",
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging",
+        "https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs",
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging",
+        "https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs",
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging",
+        "https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs",
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging",
+        "https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs",
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging",
+        "https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs",
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging",
+        "https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs",
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging",
+        "https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs",
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging",
+        "https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs",
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging",
+        "https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs",
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging",
+        "https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs",
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging",
+        "https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs",
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging",
+        "https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs",
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/audit-logging",
+        "https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs",
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:17.348Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr"
+}

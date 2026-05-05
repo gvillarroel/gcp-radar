@@ -1,0 +1,233 @@
+{
+  "feature_name": "Secure Source Manager connectivity",
+  "feature_slug": "secure-source-manager-connectivity",
+  "summary": "Developer Connect can connect to Secure Source Manager.",
+  "extended_definition": "Developer Connect can connect to Secure Source Manager.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-data-center-private",
+      "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise-private",
+      "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+      "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connect to Secure Source Manager \\_|\\_ Developer Connect \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager",
+        "source_id": "site-iam-reference",
+        "final_score": 359,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: triggers : - name : test-trigger project : my-project configFilePath : cloudbuild.yaml eventType : push serviceAccount : projects/my-project/serviceAccounts/my-sa@my-project. iam.gserviceaccount.com devConnectGitRepositoryLink : projects/my-project/locations/us-central1/connections/my-ssm-connection/gitRepositoryLinks/my-repo-link Operational scope and limitations After you configure the connection, you can perform secure git read operations, such as a clone , on Secure Source Manager instances by using the Developer Connect proxy URI.",
+          "You can update other configs of the connection, for example to enable or disable the Developer Connect proxy, but you cannot point the existing connection to a different Secure Source Manager instance.",
+          "INSTANCE ID is the ID of your Secure Source Manager instance. curl To create a Developer Connect connection with curl , make the following API call: curl -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ https://developerconnect.googleapis.com/v1/projects/ CONNECTION PROJECT ID /locations/ REGION /connections?connection id = CONNECTION ID \\ -X POST -H \"Content-Type: application/json\" \\ -d '{\"secure source manager instance config\":{\"instance\":\"projects/ INSTANCE PROJECT ID /locations/ REGION /instances/ INSTANCE ID \"}}' Where: CONNECTION ID is the ID of the Developer Connect connection you want to create."
+        ]
+      },
+      {
+        "title": "\"Connect to GitLab Enterprise repositories in a private network \\_|\\_ Developer\\",
+        "url": "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "source_id": "site-iam-reference",
+        "final_score": 286,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can create the Service Directory service resource in the same project that you're using with Developer Connect, or you can use a different project.",
+          "Grant permissions for the Developer Connect service account to use Service Directory by running the following commands: PROJECT NUMBER = $( gcloud projects describe PROJECT ID --format = \"value(projectNumber)\" ) SERVICE ACCOUNT = \"service- ${ PROJECT NUMBER } @gcp-sa-devconnect.iam.gserviceaccount.com\" gcloud projects add-iam-policy-binding SERVICE DIRECTORY RESOURCE PROJECT ID \\ --member = \"serviceAccount: ${ SERVICE ACCOUNT } \" \\ --role = \"roles/servicedirectory.viewer\" Replace the following: PROJECT ID : your Google Cloud project ID.",
+          "If your administrator won't allow you to have the Project IAM Admin role, then ask your administrator to grant Secret Manager Admin ( roles/secretmanager.admin ) on the Developer Connect Service Account ( service-{projectNumber}@gcp-sa-devconnect.iam.gserviceaccount.com )."
+        ]
+      },
+      {
+        "title": "\"Connect to Bitbucket Data Center repositories hosted in a private network\\",
+        "url": "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-data-center-private",
+        "source_id": "site-iam-reference",
+        "final_score": 272,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can create the Service Directory service resource in the same project that you're using with Developer Connect, or you can use a different project.",
+          "Grant permissions for the Developer Connect service account to use Service Directory by running the following commands: PROJECT NUMBER = $( gcloud projects describe PROJECT ID --format = \"value(projectNumber)\" ) SERVICE ACCOUNT = \"service- ${ PROJECT NUMBER } @gcp-sa-devconnect.iam.gserviceaccount.com\" gcloud projects add-iam-policy-binding SERVICE DIRECTORY RESOURCE PROJECT ID \\ --member = \"serviceAccount: ${ SERVICE ACCOUNT } \" \\ --role = \"roles/servicedirectory.viewer\" Replace the following: PROJECT ID : your Google Cloud project ID.",
+          "If your administrator won't allow you to have the Project IAM Admin role, then ask your administrator to grant Secret Manager Admin ( roles/secretmanager.admin ) on the Developer Connect Service Account ( service-{projectNumber}@gcp-sa-devconnect.iam.gserviceaccount.com )."
+        ]
+      },
+      {
+        "title": "\"Connect to GitHub Enterprise repositories hosted in a private network \\_\\",
+        "url": "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise-private",
+        "source_id": "site-iam-reference",
+        "final_score": 272,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can create the Service Directory service resource in the same project that you're using with Developer Connect, or you can use a different project.",
+          "Grant permissions for the Developer Connect service account to use Service Directory by running the following commands: PROJECT NUMBER = $( gcloud projects describe PROJECT ID --format = \"value(projectNumber)\" ) SERVICE ACCOUNT = \"service- ${ PROJECT NUMBER } @gcp-sa-devconnect.iam.gserviceaccount.com\" gcloud projects add-iam-policy-binding SERVICE DIRECTORY RESOURCE PROJECT ID \\ --member = \"serviceAccount: ${ SERVICE ACCOUNT } \" \\ --role = \"roles/servicedirectory.viewer\" Replace the following: PROJECT ID : your Google Cloud project ID.",
+          "Run the gcloud developer-connect connections create command to create a connection to GitHub Enterprise: gcloud developer-connect connections create CONNECTION NAME \\ --location = REGION \\ --project = PROJECT ID \\ --github-enterprise-config-host-uri = HOST URI --github-enterprise-config-service-directory = SERVICE DIRECTORY RESOURCE --git-proxy-config-enabled Replace the following: CONNECTION NAME : the name for your connection."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudbuild.yaml",
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "devconnect.iam.gserviceaccount.com",
+      "developerconnect.googleapis.com",
+      "iam.gserviceaccount.com",
+      "secretmanager.admin",
+      "servicedirectory.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter",
+      "roles/secretmanager.admin",
+      "roles/servicedirectory.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-data-center-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise-private"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-data-center-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise-private"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-data-center-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise-private"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-data-center-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise-private"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-data-center-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise-private"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-data-center-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise-private"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-data-center-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise-private"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-data-center-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise-private"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-data-center-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise-private"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-data-center-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise-private"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-data-center-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise-private"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-data-center-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise-private"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-data-center-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise-private"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/developer-connect/docs/connect-secure-source-manager",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-data-center-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise-private"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:58.873Z",
+  "source_step08_card": "data/step-08/current/products/developer-connect/card.json",
+  "product_name": "Developer Connect",
+  "product_slug": "developer-connect"
+}

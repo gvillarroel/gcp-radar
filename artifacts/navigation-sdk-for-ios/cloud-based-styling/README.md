@@ -1,0 +1,32 @@
+# Cloud-based styling
+
+Product: Navigation SDK for iOS
+Feature slug: `cloud-based-styling`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Cloud-based styling is supported for Navigation SDK versions 5.3.0 and higher.
+
+## Lifecycle
+
+- Latest feature date: 2023-11-22
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access (evidence: [https://developers.google.com/maps/documentation/navigation/ios-sdk/overview](https://developers.google.com/maps/documentation/navigation/ios-sdk/overview), [https://developers.google.com/maps/documentation/navigation/ios-sdk/events](https://developers.google.com/maps/documentation/navigation/ios-sdk/events), [https://developers.google.com/maps/documentation/navigation/ios-sdk/customize-map-styles](https://developers.google.com/maps/documentation/navigation/ios-sdk/customize-map-styles), [https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView](https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView))
+- allow (evidence: [https://developers.google.com/maps/documentation/navigation/ios-sdk/overview](https://developers.google.com/maps/documentation/navigation/ios-sdk/overview), [https://developers.google.com/maps/documentation/navigation/ios-sdk/events](https://developers.google.com/maps/documentation/navigation/ios-sdk/events), [https://developers.google.com/maps/documentation/navigation/ios-sdk/customize-map-styles](https://developers.google.com/maps/documentation/navigation/ios-sdk/customize-map-styles), [https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView](https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView))
+
+## Official Evidence
+
+- [https://developers.google.com/maps/documentation/navigation/ios-sdk/customize-map-styles](https://developers.google.com/maps/documentation/navigation/ios-sdk/customize-map-styles)
+- [https://developers.google.com/maps/documentation/navigation/ios-sdk/events](https://developers.google.com/maps/documentation/navigation/ios-sdk/events)
+- [https://developers.google.com/maps/documentation/navigation/ios-sdk/overview](https://developers.google.com/maps/documentation/navigation/ios-sdk/overview)
+- [https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView](https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView)

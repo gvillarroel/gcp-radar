@@ -1,0 +1,130 @@
+{
+  "feature_name": "Cloud Billing report saved views",
+  "feature_slug": "cloud-billing-report-saved-views",
+  "summary": "Enabled saving custom Cloud Billing Report views in the Console, including configured filters and dimension settings for reuse.",
+  "extended_definition": "Enabled saving custom Cloud Billing Report views in the Console, including configured filters and dimension settings for reuse.",
+  "lifecycle": {
+    "latest_feature_date": "2020-12-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+      "https://docs.cloud.google.com/billing/docs/how-to/gemini/overview",
+      "https://docs.cloud.google.com/billing/docs/how-to/reports"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Analyze billing data and cost trends with Reports \\_|\\_ Cloud Billing \\_\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "source_id": "site-docs-root",
+        "final_score": 213,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Also, for customers who have enabled Gemini Cloud Assist in Cloud Billing , the preset reports and your custom saved reports are accessible in a carousel that displays below the Ask Gemini Cloud Assist prompt field.",
+          "Also, for customers who have enabled Gemini Cloud Assist in Cloud Billing , your custom saved reports and the preset reports are accessible in a carousel that displays below the Ask Gemini Cloud Assist prompt field.",
+          "Update a custom saved report to use different report settings Go to the Cloud Billing Reports in the Google Cloud console."
+        ]
+      },
+      {
+        "title": "Gemini Cloud Assist in Cloud Billing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/gemini/overview",
+        "source_id": "site-docs-root-2",
+        "final_score": 169,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "When you're viewing the Reports page, if the Gemini Cloud Assist API is already enabled in a Google Cloud project where you have adequate project permissions to use Gemini assistants, you see the Gemini Cloud Assist in Cloud Billing features on the Reports page: What you can do if Gemini is not enabled in billing reports If Gemini Cloud Assist in Cloud Billing is not yet enabled, you can still access the preconfigured and saved reports in the See all reports tab.",
+          "FinOps-focused AI assistance in Cloud Billing To provide an integrated assistance experience, Gemini Cloud Assist in Cloud Billing is available on the following Billing pages in the Google Cloud console: Reports - Gemini Cloud Assist in Cost Reports provides insights into your cloud spending, allowing you to create custom reports, identify key trends, and uncover what's driving your costs.",
+          "Additionally, if you create and save custom cost reports (previously known as Saved views ), your saved reports are also available for you and your team in the See all reports tab."
+        ]
+      },
+      {
+        "title": "\"View and download the cost details of your invoice or statement \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+        "source_id": "site-docs-root",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "To gain this permission, ask your administrator to grant you one of the following Cloud Billing IAM roles on your Cloud Billing account: Billing Account Viewer Billing Account Costs Manager Billing Account Administrator For more information about billing permissions, see: Overview of Cloud Billing access control Create custom roles for Cloud Billing Understanding predefined IAM roles for Cloud Billing Access the report To view the Cost table report for your Cloud Billing account: In the Google Cloud console, go to your Cloud Billing account.",
+          "When viewing the report for an invoice month prior to January 2022 , if you delete a project or move the project to a different Cloud Billing account , the Project name and Project ID are removed from the Cost table report views, but the Project number persists in your reports.",
+          "Note that in the Cloud Billing reports available in the Google Cloud console, the discount credit type is listed as Spending-based discounts ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/overview",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/overview",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/overview",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/overview",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/overview",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/gemini/overview",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:27.261Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing"
+}

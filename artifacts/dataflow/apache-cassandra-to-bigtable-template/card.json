@@ -1,0 +1,133 @@
+{
+  "feature_name": "Apache Cassandra to Bigtable template",
+  "feature_slug": "apache-cassandra-to-bigtable-template",
+  "summary": "This Google-provided template migrates data from Apache Cassandra to Bigtable.",
+  "extended_definition": "This Google-provided template migrates data from Apache Cassandra to Bigtable.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigtable-to-vector-embeddings",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cassandra-to-bigtable",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-bigquery"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Apache Cassandra to Bigtable template \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cassandra-to-bigtable",
+        "source_id": "site-api-reference",
+        "final_score": 316,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BATCH , displayName = \"Cassandra to Cloud Bigtable\" , description = { \"The Apache Cassandra to Cloud Bigtable template copies a table from Apache Cassandra to Cloud Bigtable. \" + \"This template requires minimal configuration and replicates the table structure in Cassandra as closely as possible in Cloud Bigtable.\" , \"The Apache Cassandra to Cloud Bigtable template is useful for the following:\\n\" + \"- Migrating Apache Cassandra database when short downtime is acceptable.\\n\" + \"- Periodically replicating Cassandra tables to Cloud Bigtable for global serving.\" }, optionsClass = Options . class , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cassandra-to-bigtable\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"The target Bigtable table must exist before running the pipeline.\" , \"Network connection between Dataflow workers and Apache Cassandra nodes.\" }) public final class CassandraToBigtable { / TODO - refactor to extend BigtableCommonOptions.WriteOptions. / public interface Options extends PipelineOptions { @TemplateParameter.Text ( order = 1 , groupName = \"Source\" , regexes = { \"^[a-zA-Z0-9\\\\.\\\\-,] $\" }, description = \"Cassandra Hosts\" , helpText = \"The hosts of the Apache Cassandra nodes in a comma-separated list.\" ) ValueProvider<String> getCassandraHosts (); @SuppressWarnings ( \"unused\" ) void setCassandraHosts ( ValueProvider<String> hosts ); @TemplateParameter.Integer ( order = 2 , groupName = \"Source\" , optional = true , description = \"Cassandra Port\" , helpText = \"The TCP port to use to reach Apache Cassandra on the nodes.",
+          "LOCATION : the region where you want to deploy your Dataflow job—for example, us-central1 BIGTABLE PROJECT ID : your project ID where Bigtable is located BIGTABLE INSTANCE ID : the Bigtable instance id BIGTABLE TABLE ID : the name of your Bigtable table name CASSANDRA HOSTS : the Apache Cassandra host list; if multiple hosts are provided, follow the instruction on how to escape commas CASSANDRA KEYSPACE : the Apache Cassandra keyspace where table is located CASSANDRA TABLE : the Apache Cassandra table that needs to be migrated Template source code Java / Copyright (C) 2019 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License.",
+          "REGION NAME : the region where you want to deploy your Dataflow job—for example, us-central1 BIGTABLE PROJECT ID : your project ID where Bigtable is located BIGTABLE INSTANCE ID : the Bigtable instance id BIGTABLE TABLE ID : the name of your Bigtable table name CASSANDRA HOSTS : the Apache Cassandra host list; if multiple hosts are provided, follow the instruction on how to escape commas CASSANDRA KEYSPACE : the Apache Cassandra keyspace where table is located CASSANDRA TABLE : the Apache Cassandra table that needs to be migrated API To run the template using the REST API, send an HTTP POST request."
+        ]
+      },
+      {
+        "title": "\"Bigtable to Vertex AI Vector Search template \\_|\\_ Cloud Dataflow \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigtable-to-vector-embeddings",
+        "source_id": "site-api-reference",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BATCH , displayName = \"Cloud Bigtable to Vector Embeddings\" , description = \"The Bigtable to Vector Embedding template is a pipeline that reads data from a Bigtable table and writes it to a Cloud Storage bucket in JSON format, for vector embeddings\" , optionsClass = Options . class , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/bigtable-to-vector-embeddings\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"The Bigtable table must exist.\" , \"The output Cloud Storage bucket must exist before running the pipeline.\" }) public class BigtableToVectorEmbeddings { private static final Logger LOG = LoggerFactory . getLogger ( BigtableToVectorEmbeddings . class ); / Options for the export pipeline. / public interface Options extends PipelineOptions { @TemplateParameter.ProjectId ( order = 1 , groupName = \"Source\" , description = \"Project ID\" , helpText = \"The ID for the Google Cloud project that contains the Bigtable instance that you want to read data from.\" ) ValueProvider<String> getBigtableProjectId (); @SuppressWarnings ( \"unused\" ) void setBigtableProjectId ( ValueProvider<String> projectId ); @TemplateParameter.Text ( order = 2 , groupName = \"Source\" , regexes = { \"[a-z][a-z0-9\\\\-]+[a-z0-9]\" }, description = \"Instance ID\" , helpText = \"The ID of the Bigtable instance that contains the table.\" ) ValueProvider<String> getBigtableInstanceId (); @SuppressWarnings ( \"unused\" ) void setBigtableInstanceId ( ValueProvider<String> instanceId ); @TemplateParameter.Text ( order = 3 , groupName = \"Source\" , regexes = { \"[ a-zA-Z0-9][- .a-zA-Z0-9] \" }, description = \"Table ID\" , helpText = \"The ID of the Bigtable table to read from.\" ) ValueProvider<String> getBigtableTableId (); @SuppressWarnings ( \"unused\" ) void setBigtableTableId ( ValueProvider<String> tableId ); @TemplateParameter.GcsWriteFolder ( order = 4 , groupName = \"Target\" , description = \"Cloud Storage directory for storing JSON files\" , helpText = \"The Cloud Storage path where the output JSON files are stored.\" , example = \"gs://your-bucket/your-path/\" ) @Required ValueProvider<String> getOutputDirectory (); @SuppressWarnings ( \"unused\" ) void setOutputDirectory ( ValueProvider<String> outputDirectory ); @TemplateParameter.Text ( order = 5 , groupName = \"Target\" , optional = true , description = \"JSON file prefix\" , helpText = \"The prefix of the JSON filename.",
+          "LOCATION : the region where you want to deploy your Dataflow job—for example, us-central1 BIGTABLE PROJECT ID : the project ID BIGTABLE INSTANCE ID : the instance ID BIGTABLE TABLE ID : the table ID FILENAME PREFIX : the JSON file prefix ID COLUMN : the ID column EMBEDDING COLUMN : the embeddings column Template source code Java / Copyright (C) 2023 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License.",
+          "In the format cf:col->alias.\" ) ValueProvider<String> getDoubleNumericRestrictsMappings (); @SuppressWarnings ( \"unused\" ) void setDoubleNumericRestrictsMappings ( ValueProvider<String> value ); @TemplateParameter.Text ( order = 15 , regexes = { \"[ a-zA-Z0-9][- .a-zA-Z0-9] \" }, optional = true , description = \"App Profile ID\" , helpText = \"The ID of the Cloud Bigtable app profile to be used for the export\" ) @Default.String ( \"default\" ) ValueProvider<String> getBigtableAppProfileId (); @SuppressWarnings ( \"unused\" ) void setBigtableAppProfileId ( ValueProvider<String> value ); } / Runs a pipeline to export data from a Cloud Bigtable table to JSON files in GCS in JSON format, for use of Vertex Vector Search. @param args arguments to the pipeline / public static void main ( String [] args ) { Options options = PipelineOptionsFactory . fromArgs ( args ). withValidation (). as ( Options . class ); PipelineResult result = run ( options ); // Wait for pipeline to finish only if it is not constructing a template. if ( options . as ( DataflowPipelineOptions . class ). getTemplateLocation () == null ) { result . waitUntilFinish (); } LOG . info ( \"Completed pipeline setup\" ); } public static PipelineResult run ( Options options ) { Pipeline pipeline = Pipeline . create ( PipelineUtils . tweakPipelineOptions ( options )); BigtableIO ."
+        ]
+      },
+      {
+        "title": "\"Bigtable change streams to BigQuery template \\_|\\_ Cloud Dataflow \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-bigquery",
+        "source_id": "site-api-reference",
+        "final_score": 181,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Streams Bigtable data change records and writes them into BigQuery using Dataflow Runner V2.\" , optionsClass = BigtableChangeStreamToBigQueryOptions . class , optionsOrder = { BigtableChangeStreamToBigQueryOptions . class , ReadChangeStreamOptions . class , ReadOptions . class }, skipOptions = { \"bigtableReadAppProfile\" , \"bigtableAdditionalRetryCodes\" , \"bigtableRpcAttemptTimeoutMs\" , \"bigtableRpcTimeoutMs\" }, documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-bigquery\" , flexContainerName = \"googlecloud-to-googlecloud\" , contactInformation = \"https://cloud.google.com/support\" , streaming = true ) public final class BigtableChangeStreamsToBigQuery { private static final Logger LOG = LoggerFactory . getLogger ( BigtableChangeStreamsToBigQuery . class ); private static final String USE RUNNER V2 EXPERIMENT = \"use runner v2\" ; / Main entry point for executing the pipeline. @param args The command-line arguments to the pipeline. / public static void main ( String [] args ) { LOG . info ( \"Starting to replicate change records from Cloud Bigtable change streams to BigQuery\" ); BigtableChangeStreamToBigQueryOptions options = PipelineOptionsFactory . fromArgs ( args ) . withValidation () . as ( BigtableChangeStreamToBigQueryOptions . class ); run ( options ); } private static void setOptions ( BigtableChangeStreamToBigQueryOptions options ) { options . setStreaming ( true ); options . setEnableStreamingEngine ( true ); // Add use runner v2 to the experiments option, since change streams connector is only supported // on Dataflow runner v2.",
+          "POST h tt ps : //dataflow.googleapis.com/v1b3/projects/ PROJECT ID /locations/ LOCATION /flexTemplates:launch { \"launch parameter\" : { \"jobName\" : \" JOB NAME \" , \"containerSpecGcsPath\" : \"gs://dataflow-templates- REGION NAME / VERSION /flex/Bigtable Change Streams to BigQuery\" , \"parameters\" : { \"bigtableReadInstanceId\" : \" BIGTABLE INSTANCE ID \" , \"bigtableReadTableId\" : \" BIGTABLE TABLE ID \" , \"bigtableChangeStreamAppProfile\" : \" BIGTABLE APPLICATION PROFILE ID \" , \"bigQueryDataset\" : \" BIGQUERY DESTINATION DATASET \" } } } Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.",
+          "In your shell or terminal, run the template: gcloud dataflow flex-template run JOB NAME \\ --region = REGION NAME \\ --template-file-gcs-location = gs://dataflow-templates- REGION NAME / VERSION /flex/Bigtable Change Streams to BigQuery \\ --parameters \\ bigtableReadInstanceId = BIGTABLE INSTANCE ID , \\ bigtableReadTableId = BIGTABLE TABLE ID , \\ bigtableChangeStreamAppProfile = BIGTABLE APPLICATION PROFILE ID , \\ bigQueryDataset = BIGQUERY DESTINATION DATASET Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataflow.googleapis.com",
+      "java.io.IOException",
+      "java.io.StringWriter",
+      "java.util.ArrayList",
+      "java.util.HashMap",
+      "java.util.List",
+      "java.util.Map",
+      "java.util.Optional",
+      "org.apache.beam.runners.dataflow.options.DataflowPipelineOptions",
+      "org.apache.beam.sdk",
+      "org.apache.beam.sdk.io.FileSystems",
+      "org.apache.beam.sdk.io.fs.ResolveOptions.StandardResolveOptions",
+      "org.apache.beam.sdk.io.gcp.bigtable.BigtableIO",
+      "org.apache.beam.sdk.io.gcp.bigtable.BigtableIO.ExistingPipelineOptions",
+      "org.apache.beam.sdk.io.TextIO",
+      "org.apache.beam.sdk.options.Default",
+      "org.apache.beam.sdk.options.PipelineOptions",
+      "org.apache.beam.sdk.options.PipelineOptionsFactory",
+      "org.apache.beam.sdk.options.Validation.Required",
+      "org.apache.beam.sdk.options.ValueProvider",
+      "org.apache.beam.sdk.Pipeline",
+      "org.apache.beam.sdk.PipelineResult",
+      "org.apache.beam.sdk.transforms.DoFn",
+      "org.apache.beam.sdk.transforms.MapElements",
+      "org.apache.beam.sdk.transforms.ParDo",
+      "org.apache.beam.sdk.transforms.SerializableFunction",
+      "org.apache.beam.sdk.transforms.SimpleFunction",
+      "org.apache.beam.sdk.transforms.Values",
+      "org.apache.beam.sdk.values.PCollection",
+      "org.apache.commons.lang3.StringUtils",
+      "org.apache.hadoop.hbase.util.Bytes",
+      "org.joda.time.Instant",
+      "org.slf4j.Logger",
+      "org.slf4j.LoggerFactory"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cassandra-to-bigtable",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigtable-to-vector-embeddings",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-bigquery"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cassandra-to-bigtable",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigtable-to-vector-embeddings",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-bigquery"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:53.762Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow"
+}

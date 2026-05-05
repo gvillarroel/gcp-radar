@@ -1,0 +1,98 @@
+{
+  "feature_name": "Dataproc JupyterLab plugin",
+  "feature_slug": "dataproc-jupyterlab-plugin",
+  "summary": "The Dataproc JupyterLab plugin in Deep Learning VM Images was updated to version 0.1.85.",
+  "extended_definition": "The Dataproc JupyterLab plugin in Deep Learning VM Images was updated to version 0.1.85.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deep-learning-vm/docs/cli",
+      "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-gcloud",
+      "https://docs.cloud.google.com/deep-learning-vm/docs/jupyter"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Connect to JupyterLab \\_|\\_ Deep Learning VM Images \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/jupyter",
+        "source_id": "site-docs-reference",
+        "final_score": 59,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Compute Compute Engine Deep Learning VM Images Guides Send feedback Connect to JupyterLab Stay organized with collections Save and categorize content based on your preferences.",
+          "When you start a Deep Learning VM Images instance, a JupyterLab session is initialized.",
+          "To set up SSH port forwarding , complete the following steps, and then access your JupyterLab session through a local browser: Run the following command by using the Google Cloud CLI in your preferred terminal or in Cloud Shell : gcloud compute ssh \\ --project PROJECT ID \\ --zone ZONE \\ INSTANCE NAME \\ -- -L 8080 :localhost:8080 Replace the following: PROJECT ID : your Google Cloud project ID ZONE : the zone where your instance is located INSTANCE NAME : the name of your instance Note: If using Cloud Shell to run the command, add a -4 to the SSH flags to use IPv4 to connect."
+        ]
+      },
+      {
+        "title": "\"Create a Deep Learning VM instance from the command line \\_|\\_ Deep Learning\\",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/cli",
+        "source_id": "site-docs-reference",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Compute Compute Engine Deep Learning VM Images Guides Send feedback Create a Deep Learning VM instance from the command line Stay organized with collections Save and categorize content based on your preferences.",
+          "This topic contains instructions for creating a new Deep Learning VM Images instance from the command line.",
+          "To provision a Deep Learning VM instance with one or more GPUs: export IMAGE FAMILY = \"tf-ent-latest-gpu\" export ZONE = \"us-west1-b\" export INSTANCE NAME = \"my-instance\" gcloud compute instances create $ INSTANCE NAME \\ -- zone =$ ZONE \\ -- image - family =$ IMAGE FAMILY \\ -- image - project = deeplearning - platform - release \\ -- maintenance - policy = TERMINATE \\ -- accelerator = \"type=nvidia-tesla-v100,count=1\" \\ -- metadata = \"install-nvidia-driver=True\" Options: --image-family must be one of the GPU-specific image types."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a Deep Learning VM instance by using the gcloud CLI \\_\\",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-gcloud",
+        "source_id": "site-docs-reference",
+        "final_score": 26,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Compute Compute Engine Deep Learning VM Images Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Create a Deep Learning VM instance by using the gcloud CLI This page shows you how to create a Deep Learning VM Images instance by using the Google Cloud CLI.",
+          "At the command line, enter the following: export IMAGE FAMILY = \"tf-latest-cu92\" export ZONE = \"us-west1-b\" export INSTANCE NAME = \"my-new-instance\" export INSTANCE TYPE = \"n1-standard-8\" gcloud compute instances create $ INSTANCE NAME \\ -- zone =$ ZONE \\ -- image - family =$ IMAGE FAMILY \\ -- image - project = deeplearning - platform - release \\ -- maintenance - policy = TERMINATE \\ -- accelerator = \"type=nvidia-tesla-v100,count=8\" \\ -- machine - type =$ INSTANCE TYPE \\ -- boot - disk - size = 120 GB \\ -- metadata = \"install-nvidia-driver=True\" After some time, the VM instance is created and a summary of its configuration is shown."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deep-learning-vm/docs/jupyter",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/cli",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-gcloud"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deep-learning-vm/docs/jupyter",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/cli",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-gcloud"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:57.849Z",
+  "source_step08_card": "data/step-08/current/products/deep-learning-vm-images/card.json",
+  "product_name": "Deep Learning VM Images",
+  "product_slug": "deep-learning-vm-images"
+}

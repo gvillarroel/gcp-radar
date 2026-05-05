@@ -1,0 +1,149 @@
+{
+  "feature_name": "GVM real-time label patching",
+  "feature_slug": "gvm-real-time-label-patching",
+  "summary": "Adds support for applying label updates to GVM resources at runtime by patching labels on VM Pods.",
+  "extended_definition": "Adds support for applying label updates to GVM resources at runtime by patching labels on VM Pods.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/convert-image",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/list-view-vms",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"List and view VM information using VM Runtime on GDC \\_|\\_ Google Distributed\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/list-view-vms",
+        "source_id": "site-docs-reference",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following example output snippet shows the detailed information for the VM that you specify: Name: vm1 Namespace: default Labels: <none> Annotations: <none> API Version: vm.cluster.gke.io/v1 Kind: VirtualMachine Metadata: Creation Timestamp: 2022 -04-25T23:36:24Z Finalizers: vm.cluster.gke.io/vm-finalizer Generation: 1 Managed Fields: API Version: vm.cluster.gke.io/v1 Fields Type: FieldsV1 fieldsV1: ...",
+          "Spec: Compute: Interfaces: Name: eth0 Network Name: pod-network Virt Spec: Template: Metadata: Creation Timestamp: <nil> Labels: kubevirt.io/vm: vm1 Spec: Domain: Cpu: Cores: 2 Devices: Disks: Boot Order: 1 Disk: Bus: virtio Name: vm1-boot-dv Resources: Requests: Memory: 4Gi Volumes: Data Volume: Name: vm1-boot-dv Name: vm1-boot-dv Status: ...",
+          "View a list of all VMs using kubectl get gvm : kubectl get gvm --all-namespaces The following example output shows the VM information: NAME STATUS AGE IP vm1 Running 7m 192 .168.2.72 vm2 Running 4m 192 .168.2.73 Single namespace To view a list of VMs in a specific namespace, use the --namespace parameter with the kubectl command."
+        ]
+      },
+      {
+        "title": "\"Edit VM configuration in VM Runtime on GDC \\_|\\_ Google Distributed Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "source_id": "site-docs-reference",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following example output shows the condensed information for a VM, with a change to the network and IP address configuration successfully applied: Name : vm1 Namespace : default Labels : < none > Annotations : < none > API Version : vm.cluster.gke.io/v1 Kind : VirtualMachine ...",
+          "The following example output shows the condensed information for a VM, with a change to the number of vCPUs successfully applied: Name : vm1 Namespace : default Labels : < none > Annotations : < none > API Version : vm.cluster.gke.io/v1 Kind : VirtualMachine ...",
+          "The following example output shows the condensed information for a VM, with a change to the attached disks successfully applied: Name : vm1 Namespace : default Labels : < none > Annotations : < none > API Version : vm.cluster.gke.io/v1 Kind : VirtualMachine ..."
+        ]
+      },
+      {
+        "title": "\"Convert a virtual disk image to qcow2 format for use in VM Runtime on GDC\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/convert-image",
+        "source_id": "site-docs-reference",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Technology areas Google Distributed Cloud GDC for bare metal Guides Send feedback Convert a virtual disk image to qcow2 format for use in VM Runtime on GDC Stay organized with collections Save and categorize content based on your preferences.",
+          "This document shows you how to manually convert an existing virtual disk image to the qcow2 format so that you can create and run VMs in VM Runtime on GDC using that source image.",
+          "The qemu-img tool can convert virtual disk images from multiple formats, such as vmdk or vhdx , to the qcow2 format for use with VM Runtime on GDC."
+        ]
+      },
+      {
+        "title": "\"Role-based access control (RBAC) for VM Runtime on GDC \\_|\\_ Google Distributed\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac",
+        "source_id": "site-docs-root",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "Here are examples of the command output for each of the four predefined ClusterRoles: kubevm.admin apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : creationTimestamp : \"2022-10-11T21:10:31Z\" labels : kubevm : kubevm.admin rbac.authorization.k8s.io/aggregate-to-admin : \"true\" name : kubevm.admin resourceVersion : \"16654950\" uid : 3296c279-6e85-4ea6-b250-548bf0c3e935 rules : - apiGroups : - vm.cluster.gke.io resources : - virtualmachineaccessrequests - virtualmachinedisks - virtualmachines - gpuallocations - guestenvironmentdata - vmruntimes - virtualmachinetypes - vmhighavailabilitypolicies verbs : - get - delete - create - update - patch - list - watch - deletecollection - apiGroups : - networking.gke.io resources : - networkinterfaces - networks verbs : - get - delete - create - update - patch - list - watch - deletecollection kubevm.edit apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : creationTimestamp : \"2022-10-11T21:10:31Z\" labels : kubevm : kubevm.edit rbac.authorization.k8s.io/aggregate-to-edit : \"true\" name : kubevm.edit resourceVersion : \"16654951\" uid : 237bf9ae-b2c8-4303-94dc-e6425a2df331 rules : - apiGroups : - vm.cluster.gke.io resources : - virtualmachineaccessrequests - virtualmachinedisks - virtualmachines - gpuallocations - guestenvironmentdata - vmruntimes - virtualmachinetypes - vmhighavailabilitypolicies verbs : - get - delete - create - update - patch - list - watch - apiGroups : - networking.gke.io resources : - networkinterfaces - networks verbs : - get - delete - create - update - patch - list - watch kubevm.view apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : creationTimestamp : \"2022-10-11T21:10:31Z\" labels : kubevm : kubevm.view rbac.authorization.k8s.io/aggregate-to-view : \"true\" name : kubevm.view resourceVersion : \"16654953\" uid : b5b54e2d-0097-4698-abbd-aeac212d0a34 rules : - apiGroups : - vm.cluster.gke.io resources : - virtualmachineaccessrequests - virtualmachinedisks - virtualmachines - gpuallocations - guestenvironmentdata - vmruntimes - virtualmachinetypes - vmhighavailabilitypolicies verbs : - get - list - watch - apiGroups : - networking.gke.io resources : - networkinterfaces - networks verbs : - get - list - watch kubevm.cluster.view apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : creationTimestamp : \"2022-10-11T21:10:31Z\" labels : kubevm : kubevm.cluster.view name : kubevm.cluster.view resourceVersion : \"16654956\" uid : b25dde64-67da-488b-81d2-1a08f9a4a7c1 rules : - apiGroups : - vm.cluster.gke.io resources : - vmruntimes - virtualmachinetypes - vmhighavailabilitypolicies verbs : - get - list - watch - apiGroups : - networking.gke.io resources : - networks verbs : - get - list - watch Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Use the resource information in the following table if you want to create your own, customized roles: Resource Generated Cluster-wise virtualmachineinstances /console – – virtualmachineinstances /vnc – – virtualmachineinstances /portforward – – virtualmachineinstances /start – – virtualmachineinstances /stop – – virtualmachineinstances /restart – – virtualmachines Yes – virtualmachineinstances Yes – datavolumes – – storageprofiles – Yes cdiconfigs – Yes Kubernetes resources When you work with VM Runtime on GDC and VMs, you may need to manage access to the following Kubernetes resources.",
+          "Home Technology areas Google Distributed Cloud GDC for bare metal Guides Send feedback Role-based access control (RBAC) for VM Runtime on GDC Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "kubevirt.io",
+      "kubevm.admin",
+      "kubevm.cluster.view",
+      "kubevm.edit",
+      "kubevm.view",
+      "networking.gke.io",
+      "rbac.authorization.k8s.io",
+      "vm.cluster.gke.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/list-view-vms",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/convert-image",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/list-view-vms",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/convert-image",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/list-view-vms",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/convert-image",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/list-view-vms",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/convert-image",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/list-view-vms",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/convert-image",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:47.764Z",
+  "source_step08_card": "data/step-08/current/products/vm-runtime-on-google-distributed-cloud/card.json",
+  "product_name": "VM Runtime on Google Distributed Cloud",
+  "product_slug": "vm-runtime-on-google-distributed-cloud"
+}

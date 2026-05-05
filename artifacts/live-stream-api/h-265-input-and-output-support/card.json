@@ -1,0 +1,167 @@
+{
+  "feature_name": "H.265 input and output support",
+  "feature_slug": "h-265-input-and-output-support",
+  "summary": "Supports H.265 (HEVC) inputs and outputs for live streams.",
+  "extended_definition": "Supports H.265 (HEVC) inputs and outputs for live streams.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/livestream/docs/how-to/configure-backup-stream",
+      "https://docs.cloud.google.com/livestream/docs/how-to/configure-captions-and-translations",
+      "https://docs.cloud.google.com/livestream/docs/how-to/create-channels",
+      "https://docs.cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.channels"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create and manage channels \\_|\\_ Live Stream API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/livestream/docs/how-to/create-channels",
+        "source_id": "site-iam-reference",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"inputAttachments\": [ { \"key\": \"my-input\", \"input\": \"projects/ PROJECT NUMBER /locations/ LOCATION /inputs/ INPUT ID \" } ], \"output\": { \"uri\": \"gs:// BUCKET NAME \" }, \"elementaryStreams\": [ { \"key\": \"es video\", \"videoStream\": { \"h265\": { \"widthPixels\": 4096, \"heightPixels\": 2160, \"bitrateBps\": 25000000, \"frameRate\": 60 } } }, { \"key\": \"es audio\", \"audioStream\": { \"codec\": \"aac\", \"channelCount\": 2, \"bitrateBps\": 160000 } } ], \"muxStreams\": [ { \"key\": \"mux video ts\", \"container\": \"ts\", \"elementaryStreams\": [\"es video\", \"es audio\"], \"segmentSettings\": { \"segmentDuration\": \"2s\" } } ], \"manifests\": [ { \"key\": \"manifest hls\", \"fileName\": \"main.m3u8\", \"type\": \"HLS\", \"muxStreams\": [ \"mux video ts\" ], \"maxSegmentCount\": 5 } ] } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://livestream.googleapis.com/v1/projects/ PROJECT NUMBER /locations/ LOCATION /channels?channelId= CHANNEL ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.video.livestream.v1.OperationMetadata\", \"createTime\": CREATE TIME , \"target\": \"projects/ PROJECT NUMBER /locations/ LOCATION /channels/ CHANNEL ID \", \"verb\": \"create\", \"requestedCancellation\": false, \"apiVersion\": \"v1\" }, \"done\": false } This command creates a long-running operation (LRO) that you can use to track the progress of your request.",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: cat > request.json PROJECT NUMBER /locations/ LOCATION /inputs/ INPUT ID \" } ], \"output\": { \"uri\": \"gs:// BUCKET NAME \" }, \"elementaryStreams\": [ { \"key\": \"es video\", \"videoStream\": { \"h265\": { \"widthPixels\": 4096, \"heightPixels\": 2160, \"bitrateBps\": 25000000, \"frameRate\": 60 } } }, { \"key\": \"es audio\", \"audioStream\": { \"codec\": \"aac\", \"channelCount\": 2, \"bitrateBps\": 160000 } } ], \"muxStreams\": [ { \"key\": \"mux video ts\", \"container\": \"ts\", \"elementaryStreams\": [\"es video\", \"es audio\"], \"segmentSettings\": { \"segmentDuration\": \"2s\" } } ], \"manifests\": [ { \"key\": \"manifest hls\", \"fileName\": \"main.m3u8\", \"type\": \"HLS\", \"muxStreams\": [ \"mux video ts\" ], \"maxSegmentCount\": 5 } ] } EOF Then execute the following command to send your REST request: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https://livestream.googleapis.com/v1/projects/ PROJECT NUMBER /locations/ LOCATION /channels?channelId= CHANNEL ID \" PowerShell (Windows) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login .",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"inputAttachments\": [ { \"key\": \"my-input\", \"input\": \"projects/ PROJECT NUMBER /locations/ LOCATION /inputs/ INPUT ID \" } ], \"output\": { \"uri\": \"gs:// BUCKET NAME \" }, \"elementaryStreams\": [ { \"key\": \"es video\", \"videoStream\": { \"h264\": { \"profile\": \"high\", \"widthPixels\": 1280, \"heightPixels\": 720, \"bitrateBps\": 3000000, \"frameRate\": 30 } } }, { \"key\": \"es audio\", \"audioStream\": { \"codec\": \"aac\", \"channelCount\": 2, \"bitrateBps\": 160000 } } ], \"muxStreams\": [ { \"key\": \"mux video ts\", \"container\": \"ts\", \"elementaryStreams\": [\"es video\", \"es audio\"], \"segmentSettings\": { \"segmentDuration\": \"2s\" } } ], \"manifests\": [ { \"key\": \"manifest hls\", \"fileName\": \"main.m3u8\", \"type\": \"HLS\", \"muxStreams\": [ \"mux video ts\" ], \"maxSegmentCount\": 5 } ] } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://livestream.googleapis.com/v1/projects/ PROJECT NUMBER /locations/ LOCATION /channels?channelId= CHANNEL ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.video.livestream.v1.OperationMetadata\", \"createTime\": CREATE TIME , \"target\": \"projects/ PROJECT NUMBER /locations/ LOCATION /channels/ CHANNEL ID \", \"verb\": \"create\", \"requestedCancellation\": false, \"apiVersion\": \"v1\" }, \"done\": false } This command creates a long-running operation (LRO) that you can use to track the progress of your request."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.channels \\_|\\_ Live Stream API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.channels",
+        "source_id": "site-api-reference",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource: Channel JSON representation InputAttachment JSON representation AutomaticFailover JSON representation Output JSON representation ElementaryStream JSON representation VideoStream JSON representation H264CodecSettings JSON representation H265CodecSettings JSON representation AudioStream JSON representation AudioMapping JSON representation TextStream JSON representation TextMapping JSON representation MuxStream JSON representation SegmentSettings JSON representation Manifest JSON representation ManifestType DistributionStream JSON representation Distribution JSON representation State SrtPushOutputEndpoint JSON representation RtmpPushOutputEndpoint JSON representation SpriteSheet JSON representation StreamingState LogConfig JSON representation LogSeverity TimecodeConfig JSON representation TimecodeSource TimeZone JSON representation Encryption JSON representation DrmSystems JSON representation Widevine Fairplay Playready Clearkey Aes128Encryption SampleAesEncryption MpegCommonEncryption JSON representation InputConfig JSON representation InputSwitchMode RetentionConfig JSON representation StaticOverlay JSON representation NormalizedResolution JSON representation NormalizedCoordinate JSON representation AutoTranscriptionConfig JSON representation DisplayTiming QualityPreset Methods Resource: Channel Channel resource represents the processor that does a user-defined \"streaming\" operation, which includes getting an input stream through an input, transcoding it to multiple renditions, and publishing output live streams in certain formats (for example, HLS or DASH) to the specified location.",
+          "The key must begin and end with a letter (regardless of case) or a number, but can contain dashes or underscores in between. input string The resource name of an existing input, in the form of: projects/{project}/locations/{location}/inputs/{inputId} . automaticFailover object ( AutomaticFailover ) Automatic failover configurations.",
+          "The API will generate an output FPS that is divisible by the input FPS, and smaller or equal to the target FPS."
+        ]
+      },
+      {
+        "title": "\"Configure automatic captions and translations \\_|\\_ Live Stream API \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/livestream/docs/how-to/configure-captions-and-translations",
+        "source_id": "site-iam-reference",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "The elementary stream is used to create a MuxStream with key vtt english ai . { \"key\" : \"vtt english ai\" , \"container\" : \"vtt\" , \"elementaryStreams\" : [ \"webvtt english ai\" ], \"segmentSettings\" : { \"segmentDuration\" : \"2s\" } } This mux stream is then referenced in both HLS and DASH manifests . { \"fileName\" : \"main.m3u8\" , \"type\" : \"HLS\" , \"muxStreams\" : [ \"mux video ts\" , \"vtt english ai\" ], \"maxSegmentCount\" : 5 } Before using any of the request data, make the following replacements: PROJECT NUMBER : your Google Cloud project number; this is located in the Project number field on the IAM Settings page LOCATION : the location in which to create the channel; use one of the supported regions Show locations us-central1 us-east1 us-east4 us-west1 us-west2 northamerica-northeast1 southamerica-east1 asia-east1 asia-east2 asia-south1 asia-northeast1 asia-southeast1 australia-southeast1 europe-north1 europe-west1 europe-west2 europe-west3 europe-west4 CHANNEL ID : a user-defined identifier for the channel to create; this value must be 1-63 characters, begin and end with [a-z0-9] , and can contain dashes (-) between characters INPUT ID : the user-defined identifier for the input endpoint BUCKET NAME : the name of the Cloud Storage bucket you created to hold the live stream manifest and segment files Request JSON body: { \"inputAttachments\": [ { \"key\": \"my-input\", \"input\": \"projects/ PROJECT NUMBER /locations/ LOCATION /inputs/ INPUT ID \" } ], \"output\": { \"uri\": \"gs:// BUCKET NAME \" }, \"elementaryStreams\": [ { \"key\": \"es video\", \"videoStream\": { \"h264\": { \"profile\": \"high\", \"widthPixels\": 1280, \"heightPixels\": 720, \"bitrateBps\": 3000000, \"frameRate\": 30 } } }, { \"key\": \"es audio\", \"audioStream\": { \"codec\": \"aac\", \"channelCount\": 2, \"bitrateBps\": 160000 } }, { \"key\": \"webvtt english ai\", \"textStream\": { \"codec\": \"webvtt\", \"displayName\": \"English (AI captioned)\", \"languageCode\": \"en-US\", \"mapping\": [ { \"inputTrack\": 1 } ] } } ], \"muxStreams\": [ { \"key\": \"mux video fmp4\", \"container\": \"fmp4\", \"elementaryStreams\": [ \"es video\" ], \"segmentSettings\": { \"segmentDuration\": \"2s\" } }, { \"key\": \"mux audio fmp4\", \"container\": \"fmp4\", \"elementaryStreams\": [ \"es audio\" ], \"segmentSettings\": { \"segmentDuration\": \"2s\" } }, { \"key\": \"mux video ts\", \"container\": \"ts\", \"elementaryStreams\": [ \"es video\", \"es audio\" ], \"segmentSettings\": { \"segmentDuration\": \"2s\" } }, { \"key\": \"vtt english ai\", \"container\": \"vtt\", \"elementaryStreams\": [ \"webvtt english ai\" ], \"segmentSettings\": { \"segmentDuration\": \"2s\" } } ], \"manifests\": [ { \"key\": \"manifest dash\", \"fileName\": \"main.mpd\", \"type\": \"DASH\", \"muxStreams\": [ \"mux video fmp4\", \"mux audio fmp4\", \"vtt english ai\" ], \"maxSegmentCount\": 5 }, { \"key\": \"manifest hls\", \"fileName\": \"main.m3u8\", \"type\": \"HLS\", \"muxStreams\": [ \"mux video ts\", \"vtt english ai\" ], \"maxSegmentCount\": 5 } ] } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"inputAttachments\": [ { \"key\": \"my-input\", \"input\": \"projects/ PROJECT NUMBER /locations/ LOCATION /inputs/ INPUT ID \" } ], \"output\": { \"uri\": \"gs:// BUCKET NAME \" }, \"elementaryStreams\": [ { \"key\": \"es video\", \"videoStream\": { \"h264\": { \"profile\": \"high\", \"widthPixels\": 1280, \"heightPixels\": 720, \"bitrateBps\": 3000000, \"frameRate\": 30 } } }, { \"key\": \"es audio\", \"audioStream\": { \"codec\": \"aac\", \"channelCount\": 2, \"bitrateBps\": 160000 } }, { \"key\": \"webvtt english ai\", \"textStream\": { \"codec\": \"webvtt\", \"displayName\": \"English (AI captioned)\", \"languageCode\": \"en-US\", \"mapping\": [ { \"inputTrack\": 1 } ] } }, { \"key\": \"webvtt spanish ai\", \"textStream\": { \"codec\": \"webvtt\", \"displayName\": \"Spanish (AI captioned)\", \"languageCode\": \"es-MX\", \"mapping\": [ { \"inputTrack\": 1, \"fromLanguageCode\": \"en-US\" } ] } } ], \"muxStreams\": [ { \"key\": \"mux video fmp4\", \"container\": \"fmp4\", \"elementaryStreams\": [ \"es video\" ], \"segmentSettings\": { \"segmentDuration\": \"2s\" } }, { \"key\": \"mux audio fmp4\", \"container\": \"fmp4\", \"elementaryStreams\": [ \"es audio\" ], \"segmentSettings\": { \"segmentDuration\": \"2s\" } }, { \"key\": \"mux video ts\", \"container\": \"ts\", \"elementaryStreams\": [ \"es video\", \"es audio\" ], \"segmentSettings\": { \"segmentDuration\": \"2s\" } }, { \"key\": \"vtt english ai\", \"container\": \"vtt\", \"elementaryStreams\": [ \"webvtt english ai\" ], \"segmentSettings\": { \"segmentDuration\": \"2s\" } }, { \"key\": \"vtt spanish ai\", \"container\": \"vtt\", \"elementaryStreams\": [ \"webvtt spanish ai\" ], \"segmentSettings\": { \"segmentDuration\": \"2s\" } } ], \"manifests\": [ { \"key\": \"manifest dash\", \"fileName\": \"main.mpd\", \"type\": \"DASH\", \"muxStreams\": [ \"mux video fmp4\", \"mux audio fmp4\", \"vtt english ai\", \"vtt spanish ai\" ], \"maxSegmentCount\": 5 }, { \"key\": \"manifest hls\", \"fileName\": \"main.m3u8\", \"type\": \"HLS\", \"muxStreams\": [ \"mux video ts\", \"vtt english ai\", \"vtt spanish ai\" ], \"maxSegmentCount\": 5 } ] } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://livestream.googleapis.com/v1/projects/ PROJECT NUMBER /locations/ LOCATION /channels/ CHANNEL ID ?updateMask=elementary streams,mux streams,manifests\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.video.livestream.v1.OperationMetadata\", \"createTime\": CREATE TIME , \"target\": \"projects/ PROJECT NUMBER /locations/ LOCATION /channels/ CHANNEL ID \", \"verb\": \"update\", \"requestedCancellation\": false, \"apiVersion\": \"v1\" }, \"done\": false } You can check for the result of the operation using the new operation ID.",
+          "Before using any of the request data, make the following replacements: PROJECT NUMBER : your Google Cloud project number; this is located in the Project number field on the IAM Settings page LOCATION : the location in which to create the channel; use one of the supported regions Show locations us-central1 us-east1 us-east4 us-west1 us-west2 northamerica-northeast1 southamerica-east1 asia-east1 asia-east2 asia-south1 asia-northeast1 asia-southeast1 australia-southeast1 europe-north1 europe-west1 europe-west2 europe-west3 europe-west4 CHANNEL ID : a user-defined identifier for the channel to create; this value must be 1-63 characters, begin and end with [a-z0-9] , and can contain dashes (-) between characters Request JSON body: { \"inputAttachments\": [ { \"key\": \"my-input\", \"input\": \"projects/ PROJECT NUMBER /locations/ LOCATION /inputs/ INPUT ID \" } ], \"output\": { \"uri\": \"gs:// BUCKET NAME \" }, \"elementaryStreams\": [ { \"key\": \"es video\", \"videoStream\": { \"h264\": { \"profile\": \"high\", \"widthPixels\": 1280, \"heightPixels\": 720, \"bitrateBps\": 3000000, \"frameRate\": 30 } } }, { \"key\": \"es audio\", \"audioStream\": { \"codec\": \"aac\", \"channelCount\": 2, \"bitrateBps\": 160000 } }, { \"key\": \"webvtt english ai\", \"textStream\": { \"codec\": \"webvtt\", \"displayName\": \"English (AI captioned)\", \"languageCode\": \"en-US\", \"mapping\": [ { \"inputTrack\": 1 } ] } }, { \"key\": \"webvtt spanish ai\", \"textStream\": { \"codec\": \"webvtt\", \"displayName\": \"Spanish (AI captioned)\", \"languageCode\": \"es-MX\", \"mapping\": [ { \"inputTrack\": 1, \"fromLanguageCode\": \"en-US\" } ] } } ], \"muxStreams\": [ { \"key\": \"mux video fmp4\", \"container\": \"fmp4\", \"elementaryStreams\": [ \"es video\" ], \"segmentSettings\": { \"segmentDuration\": \"2s\" } }, { \"key\": \"mux audio fmp4\", \"container\": \"fmp4\", \"elementaryStreams\": [ \"es audio\" ], \"segmentSettings\": { \"segmentDuration\": \"2s\" } }, { \"key\": \"mux video ts\", \"container\": \"ts\", \"elementaryStreams\": [ \"es video\", \"es audio\" ], \"segmentSettings\": { \"segmentDuration\": \"2s\" } }, { \"key\": \"vtt english ai\", \"container\": \"vtt\", \"elementaryStreams\": [ \"webvtt english ai\" ], \"segmentSettings\": { \"segmentDuration\": \"2s\" } }, { \"key\": \"vtt spanish ai\", \"container\": \"vtt\", \"elementaryStreams\": [ \"webvtt spanish ai\" ], \"segmentSettings\": { \"segmentDuration\": \"2s\" } } ], \"manifests\": [ { \"key\": \"manifest dash\", \"fileName\": \"main.mpd\", \"type\": \"DASH\", \"muxStreams\": [ \"mux video fmp4\", \"mux audio fmp4\", \"vtt english ai\", \"vtt spanish ai\" ], \"maxSegmentCount\": 5 }, { \"key\": \"manifest hls\", \"fileName\": \"main.m3u8\", \"type\": \"HLS\", \"muxStreams\": [ \"mux video ts\", \"vtt english ai\", \"vtt spanish ai\" ], \"maxSegmentCount\": 5 } ] } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "\"Create a channel with a backup input stream \\_|\\_ Live Stream API \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/livestream/docs/how-to/configure-backup-stream",
+        "source_id": "site-iam-reference",
+        "final_score": 140,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"inputAttachments\": [ { \"key\": \"input-primary\", \"input\": \"projects/ PROJECT NUMBER /locations/ LOCATION /inputs/ INPUT ID \", \"automaticFailover\": { \"inputKeys\": [\"input-backup\"] } }, { \"key\": \"input-backup\", \"input\": \"projects/ PROJECT NUMBER /locations/ LOCATION /inputs/ BACKUP INPUT ID \" } ], \"output\": { \"uri\": \"gs:// BUCKET NAME \" }, \"elementaryStreams\": [ { \"key\": \"es video\", \"videoStream\": { \"h264\": { \"profile\": \"high\", \"widthPixels\": 1280, \"heightPixels\": 720, \"bitrateBps\": 3000000, \"frameRate\": 30 } } }, { \"key\": \"es audio\", \"audioStream\": { \"codec\": \"aac\", \"channelCount\": 2, \"bitrateBps\": 160000 } } ], \"muxStreams\": [ { \"key\": \"mux video\", \"elementaryStreams\": [ \"es video\" ], \"segmentSettings\": { \"segmentDuration\": \"2s\" } }, { \"key\": \"mux audio\", \"elementaryStreams\": [ \"es audio\" ], \"segmentSettings\": { \"segmentDuration\": \"2s\" } } ], \"manifests\": [ { \"key\": \"manifest dash\", \"fileName\": \"main.mpd\", \"type\": \"DASH\", \"muxStreams\": [ \"mux video\", \"mux audio\" ], \"maxSegmentCount\": 5 } ] } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://livestream.googleapis.com/v1/projects/ PROJECT NUMBER /locations/ LOCATION /channels?channelId= CHANNEL ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.video.livestream.v1.OperationMetadata\", \"createTime\": CREATE TIME , \"target\": \"projects/ PROJECT NUMBER /locations/ LOCATION /channels/ CHANNEL ID \", \"verb\": \"create\", \"requestedCancellation\": false, \"apiVersion\": \"v1\" }, \"done\": false } This command creates a long-running operation (LRO) that you can use to track the progress of your request.",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: cat > request.json PROJECT NUMBER /locations/ LOCATION /inputs/ INPUT ID \", \"automaticFailover\": { \"inputKeys\": [\"input-backup\"] } }, { \"key\": \"input-backup\", \"input\": \"projects/ PROJECT NUMBER /locations/ LOCATION /inputs/ BACKUP INPUT ID \" } ], \"output\": { \"uri\": \"gs:// BUCKET NAME \" }, \"elementaryStreams\": [ { \"key\": \"es video\", \"videoStream\": { \"h264\": { \"profile\": \"high\", \"widthPixels\": 1280, \"heightPixels\": 720, \"bitrateBps\": 3000000, \"frameRate\": 30 } } }, { \"key\": \"es audio\", \"audioStream\": { \"codec\": \"aac\", \"channelCount\": 2, \"bitrateBps\": 160000 } } ], \"muxStreams\": [ { \"key\": \"mux video\", \"elementaryStreams\": [ \"es video\" ], \"segmentSettings\": { \"segmentDuration\": \"2s\" } }, { \"key\": \"mux audio\", \"elementaryStreams\": [ \"es audio\" ], \"segmentSettings\": { \"segmentDuration\": \"2s\" } } ], \"manifests\": [ { \"key\": \"manifest dash\", \"fileName\": \"main.mpd\", \"type\": \"DASH\", \"muxStreams\": [ \"mux video\", \"mux audio\" ], \"maxSegmentCount\": 5 } ] } EOF Then execute the following command to send your REST request: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https://livestream.googleapis.com/v1/projects/ PROJECT NUMBER /locations/ LOCATION /channels?channelId= CHANNEL ID \" PowerShell (Windows) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login .",
+          "For more information, see Set up authentication for a local development environment . require \"google/cloud/video/live stream\" Create a channel with a failover backup input @param project id [String] Your Google Cloud project (e.g. \"my-project\") @param location [String] The location (e.g. \"us-central1\") @param channel id [String] Your channel name (e.g. \"my-channel\") @param primary input id [String] Your primary input name (e.g. \"my-primary-input\") @param backup input id [String] Your backup input name (e.g. \"my-backup-input\") @param output uri [String] Uri of the channel output folder in a Cloud Storage bucket. (e.g. \"gs://my-bucket/my-output-folder/\";) def create channel with backup input project id :, location :, channel id :, primary input id :, backup input id :, output uri : Create a Live Stream client. client = Google :: Cloud :: Video :: LiveStream . livestream service Build the resource name of the parent. parent = client . location path project : project id , location : location Build the resource name of the inputs. primary input path = client . input path project : project id , location : location , input : primary input id backup input path = client . input path project : project id , location : location , input : backup input id Set the channel fields. new channel = { input attachments : [ { key : \"my-primary-input\" , input : primary input path , automatic failover : { input keys : [ \"my-backup-input\" ] } }, { key : \"my-backup-input\" , input : backup input path } ] , output : { uri : output uri }, elementary streams : [ { key : \"es video\" , video stream : { h264 : { profile : \"high\" , bitrate bps : 3 000 000 , frame rate : 30 , height pixels : 720 , width pixels : 1280 } } }, { key : \"es audio\" , audio stream : { codec : \"aac\" , channel count : 2 , bitrate bps : 160 000 } } ] , mux streams : [ { key : \"mux video\" , elementary streams : [ \"es video\" ] , segment settings : { segment duration : { seconds : 2 } } }, { key : \"mux audio\" , elementary streams : [ \"es audio\" ] , segment settings : { segment duration : { seconds : 2 } } } ] , manifests : [ { file name : \"main.m3u8\" , type : Google :: Cloud :: Video :: LiveStream :: V1 :: Manifest :: ManifestType :: HLS , mux streams : [ \"mux video\" , \"mux audio\" ] , max segment count : 5 } ] } operation = client . create channel parent : parent , channel : new channel , channel id : channel id The returned object is of type Gapic::Operation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g",
+      "livestream.googleapis.com",
+      "main.m3u8",
+      "main.mpd",
+      "manifest.m3u8",
+      "projects.locations.channels",
+      "request.json",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/livestream/docs/how-to/create-channels",
+        "https://docs.cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.channels",
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-captions-and-translations",
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-backup-stream"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/livestream/docs/how-to/create-channels",
+        "https://docs.cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.channels",
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-captions-and-translations",
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-backup-stream"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/livestream/docs/how-to/create-channels",
+        "https://docs.cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.channels",
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-captions-and-translations",
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-backup-stream"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/livestream/docs/how-to/create-channels",
+        "https://docs.cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.channels",
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-captions-and-translations",
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-backup-stream"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/livestream/docs/how-to/create-channels",
+        "https://docs.cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.channels",
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-captions-and-translations",
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-backup-stream"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/livestream/docs/how-to/create-channels",
+        "https://docs.cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.channels",
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-captions-and-translations",
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-backup-stream"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/livestream/docs/how-to/create-channels",
+        "https://docs.cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.channels",
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-captions-and-translations",
+        "https://docs.cloud.google.com/livestream/docs/how-to/configure-backup-stream"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:23.229Z",
+  "source_step08_card": "data/step-08/current/products/live-stream-api/card.json",
+  "product_name": "Live Stream API",
+  "product_slug": "live-stream-api"
+}

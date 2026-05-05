@@ -1,0 +1,95 @@
+{
+  "feature_name": "Manifest XML data transformer function",
+  "feature_slug": "manifest-xml-data-transformer-function",
+  "summary": "Introduces a data transformer function that converts a JSON object into an XML string.",
+  "extended_definition": "Introduces a data transformer function that converts a JSON object into an XML string.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+      "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task",
+      "https://docs.cloud.google.com/application-integration/docs/data-transformer-functions-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Data Transformer task \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task",
+        "source_id": "site-docs-root-required-2",
+        "final_score": 99,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Jsonnet script local f = impor t \"functions\" ; // Import predefined Data Transformer function library local s tr 1 = f .ex t Var( \"inputVar1\" ); // Access integration input variable \"Inputstr1\" with value \"Hello\" local s tr 2 = f .ex t Var( \"inputVar2\" ); // Access integration input variable \"Inputstr2\" with value \"World\" { Ou t pu t Var : s tr 1 + \" \" + s tr 2 + \"!\" , // Write to Jsonnet output variable \"OutputVar\" \"output-str-var\" : s tr 1 + \" Integration \" + s tr 2 + \"!\" , // Write to Jsonnet output variable \"output-str-var\" } Output Jsonnet usage reference Jsonnet is a purely functional language and its programs are composed of expressions.",
+          "The Data Transformer Script editor by default imports functions , a predefined custom library containing a set of Jsonnet functions for data mapping in Application Integration.",
+          "The Data Transformer editor appears displaying a default commented Jsonnet template example."
+        ]
+      },
+      {
+        "title": "\"Data Transformer functions \\_|\\_ Application Integration \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/data-transformer-functions-reference",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 98,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Data Transformer functions This page describes the additional set of predefined Jsonnet functions for Data Transformer Script task available in Application Integration.",
+          "Importing the functions library lets you use both the standard Jsonnet functions and the predefined Data Transformer functions.",
+          "Recommendation Lean how to add and configure a Data Transformer Script task ( Preview ) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Ingest Microsoft Azure API data into API hub \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+        "source_id": "site-docs-root",
+        "final_score": 93,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "JavaScript Task taskId: 38 Executes a JavaScript task that transforms the raw Azure specification from $openaispecs-list$ into a valid OpenAPI 3.0 specification object and saves it to $specJson$ .",
+          "Data Mapping Task taskId: 39 Converts the $specJson$ object to a Base64-encoded string ( $finalBase64Content$ ), as required by the API hub ingestion endpoint.",
+          "The following diagram illustrates the workflow you'll be setting up: Objectives In this tutorial, you will complete the following steps: Step 1: Create an Azure App Step 2: Configure Google Cloud resources Step 3: Create and publish an integration in Application Integration Step 4: Execute the integration to ingest API data from Azure APIM to API hub Step 5: Verify and view the ingested API data in API hub Costs In this document, you use the following billable components of Google Cloud: Application Integration To generate a cost estimate based on your projected usage, use the pricing calculator ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "env.sh",
+      "integration.sh",
+      "setup.sh",
+      "template.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+        "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task",
+        "https://docs.cloud.google.com/application-integration/docs/data-transformer-functions-reference"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:06.218Z",
+  "source_step08_card": "data/step-08/current/products/apigee-integration/card.json",
+  "product_name": "Apigee Integration",
+  "product_slug": "apigee-integration"
+}

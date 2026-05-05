@@ -1,0 +1,92 @@
+{
+  "feature_name": "SQL Server 2022 Standard default version",
+  "feature_slug": "sql-server-2022-standard-default-version",
+  "summary": "SQL Server 2022 Standard becomes the default version when creating a Cloud SQL for SQL Server instance.",
+  "extended_definition": "SQL Server 2022 Standard becomes the default version when creating a Cloud SQL for SQL Server instance.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "Set the password for the user: gcloud sql users set-password sqlserver no-host --instance =[ INSTANCE NAME ] \\ --password =[ PASSWORD ] Terraform To create an instance, use a Terraform resource . resource \"google sql database instance\" \"default\" { name = \"sqlserver-instance\" region = \"us-central1\" database version = \"SQLSERVER 2019 STANDARD\" root password = \"INSERT-PASSWORD-HERE\" settings { tier = \"db-custom-2-7680\" } } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.",
+          "Machine type vCPU/Memory Not applicable 1 vCPU, 3.75 GB 2 vCPUs, 8 GB 4 vCPUs, 16 GB 8 vCPUs, 32 GB Custom 1 to 32 vCPUs, 3.75 GB to 208 GB SQL Server 2017 Standard, SQL Server 2019 Standard, SQL Server 2022 Standard, and SQL Server 2025 Standard Machine type vCPU/Memory Not applicable 1 vCPU, 3.75 GB 2 vCPUs, 8 GB 4 vCPUs, 16 GB 8 vCPUs, 32 GB Custom 1 to 48 vCPUs, 3.75 GB to 312 GB SQL Server 2017 Enterprise, SQL Server 2019 Enterprise, SQL Server 2022 Enterprise, and SQL Server 2025 Enterprise Machine type vCPU/Memory Not applicable 1 vCPU, 3.75 GB 2 vCPUs, 8 GB 4 vCPUs, 16 GB 8 vCPUs, 32 GB Custom 2 to 96 vCPUs, 3.75 GB to 624 GB Performance-optimized (Cloud SQL Enterprise Plus only) 2 vCPUs, 16 GB 4 vCPUs, 32 GB 8 vCPUs, 64 GB 16 vCPUs, 128 GB 32 vCPUs, 256 GB 48 vCPUs, 384 GB 64 vCPUs, 512 GB 80 vCPUs, 640 GB 96 vCPUs, 768 GB 128 vCPUs, 864 GB Memory-optimized (Cloud SQL Enterprise Plus only) 4 vCPUs, 128 GB 8 vCPUs, 256 GB 16 vCPUs, 512 GB Simultaneous multithreading Simultaneous multithreading (SMT) on Cloud SQL for SQL Server lets you run two virtual CPUs (vCPUs) as independent, separate threads on one physical core.",
+          "The following sections show the vCPU and memory configuration for each database version and machine type: SQL Server 2017 Express, SQL Server 2019 Express, SQL Server 2022 Express, and SQL Server 2025 Express Machine type vCPU/Memory Not applicable 1 vCPU, 3.75 GB 2 vCPUs, 8 GB 4 vCPUs, 16 GB 8 vCPUs, 32 GB Custom 1 to 8 vCPUs, 3.75 GB to 52 GB SQL Server 2017 Web, SQL Server 2019 Web, and SQL Server 2022 Web Important : SQL Server Web edition software can only be used to support public and internet-accessible pages, websites, and web services."
+        ]
+      },
+      {
+        "title": "\"Manage standard backups \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "The number can't be less than the default (seven). gcloud sql instances patch INSTANCE NAME \\ --retained-backups-count = NUM TO RETAIN Terraform To specify the number of automated backups to retain for a database instance, use a Terraform resource . resource \"google sql database instance\" \"default\" { name = \"sqlserver-instance-backup-retention\" region = \"us-central1\" database version = \"SQLSERVER 2019 STANDARD\" root password = \"INSERT-PASSWORD-HERE\" settings { tier = \"db-custom-2-7680\" backup configuration { enabled = true backup retention settings { retained backups = 365 retention unit = \"COUNT\" } } } } REST v1beta4 Before using any of the request data, make the following replacements: unit : Optional: The retention unit can either be an integer or a string.",
+          "Click Save . gcloud For reference information, see gcloud sql instances patch . gcloud sql instances patch INSTANCE NAME \\ --backup-location = BACKUP LOCATION Terraform To specify a custom location for a database instance backup, use a Terraform resource . resource \"google sql database instance\" \"default\" { name = \"sqlserver-instance-with-backup-location\" region = \"us-central1\" database version = \"SQLSERVER 2019 STANDARD\" root password = \"INSERT-PASSWORD-HERE\" settings { tier = \"db-custom-2-7680\" backup configuration { enabled = true location = \"us-central1\" } } } REST v1 Use the instance's settings.backupConfiguration.location parameter for the backup location.",
+          "Terraform To create a backup for a database, use a Terraform resource . resource \"google sql database instance\" \"default\" { name = \"sqlserver-instance-backup\" region = \"us-central1\" database version = \"SQLSERVER 2019 STANDARD\" root password = \"INSERT-PASSWORD-HERE\" settings { tier = \"db-custom-2-7680\" backup configuration { enabled = true start time = \"20:55\" } } } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections."
+        ]
+      },
+      {
+        "title": "SqlDatabaseVersion \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion",
+        "source_id": "site-api-reference",
+        "final_score": 125,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SQLSERVER 2022 STANDARD The database version is SQL Server 2022 Standard.",
+          "SQLSERVER 2022 ENTERPRISE The database version is SQL Server 2022 Enterprise.",
+          "SQLSERVER 2017 STANDARD The database version is SQL Server 2017 Standard."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "settings.backupConfiguration.location"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:41.951Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server"
+}

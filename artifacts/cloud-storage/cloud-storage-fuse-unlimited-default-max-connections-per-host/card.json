@@ -1,0 +1,167 @@
+{
+  "feature_name": "Cloud Storage FUSE unlimited default max connections per host",
+  "feature_slug": "cloud-storage-fuse-unlimited-default-max-connections-per-host",
+  "summary": "Cloud Storage FUSE sets max-conns-per-host to an unlimited default value subject to machine limits.",
+  "extended_definition": "Cloud Storage FUSE sets max-conns-per-host to an unlimited default value subject to machine limits.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+      "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+      "https://docs.cloud.google.com/storage/docs/gcsfuse-cli",
+      "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Storage FUSE configuration file \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "source_id": "site-docs-reference",
+        "final_score": 284,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Storage FUSE configuration file format and fields The following YAML configuration example shows the format and fields available in Cloud Storage FUSE. app-name : \"APP NAME\" logging : file-path : \"FILE PATH\" format : FORMAT severity : SEVERITY log-rotate : max-file-size-mb : MAX FILE SIZE backup-file-count : BACKUP FILE COUNT compress : COMPRESS cache-dir : \"CACHE DIR\" file-cache : max-size-mb : MAX SIZE cache-file-for-range-read : CACHE FILE FOR RANGE READ enable-parallel-downloads : ENABLE PARALLEL DOWNLOADS exclude-regex : EXCLUDE REGEX include-regex : INCLUDE REGEX parallel-downloads-per-file : PARALLEL DOWNLOADS PER FILE max-parallel-downloads : MAX PARALLEL DOWNLOADS download-chunk-size-mb : DOWNLOAD CHUNK SIZE metadata-cache : negative-ttl-secs : ENABLE NEGATIVE TTL SECS stat-cache-max-size-mb : STAT CACHE MAX SIZE ttl-secs : TTL SECS enable-metadata-prefetch : ENABLE METADATA PREFETCH metadata-prefetch-entries-limit : METADATA PREFETCH ENTRIES LIMIT metadata-prefetch-max-workers : METADATA PREFETCH MAX WORKERS only-dir : \"ONLY DIR\" gcs-auth : anonymous-access : ANONYMOUS ACCESS key-file : \"KEY FILE\" reuse-token-from-url : REUSE TOKEN FROM URL token-url : \"TOKEN URL\" gcs-connection : billing-project : \"BILLING PROJECT\" client-protocol : CLIENT PROTOCOL custom-endpoint : \"CUSTOM ENDPOINT\" http-client-timeout : HTTP CLIENT TIMEOUT limit-bytes-per-sec : \"LIMIT BYTES PER SEC\" limit-ops-per-sec : \"LIMIT OPS PER SEC\" max-conns-per-host : MAX CONNS PER HOST max-idle-conns-per-host : MAX IDLE CONNS PER HOST sequential-read-size-mb : SEQUENTIAL READ SIZE implicit-dirs : IMPLICIT DIRS file-system : kernel-list-cache-ttl-secs : KERNEL LIST CACHE TTL SECS ignore-interrupts : IGNORE INTERRUPTS dir-mode : \"DIR MODE\" file-mode : \"FILE MODE\" fuse-options : FUSE OPTIONS gid : GID rename-dir-limit : RENAME DIR LIMIT temp-dir : \"TEMP DIR\" uid : UID foreground : FOREGROUND gcs-retries : max-retry-attempts : MAX RETRY ATTEMPTS max-retry-sleep : MAX RETRY SLEEP multiplier : \"MULTIPLIER\" metrics : cloud-metrics-export-interval-secs : CLOUD METRICS EXPORT INTERVAL prometheus-port : PROMETHEUS PORT debug : log-mutex : LOG MUTEX exit-on-invariant-violation : EXIT ON INVARIANT VIOLATION write : enable-streaming-writes : STREAMING WRITES global-max-blocks : MAXIMUM GLOBAL BLOCKS read : enable-buffered-read : ENABLE BUFFERED READ global-max-blocks : MAXIMUM GLOBAL READ BLOCKS profile : PROFILE Cloud Storage FUSE configuration file fields The following table describes the fields you can specify in your Cloud Storage FUSE configuration file.",
+          "Floating point number. -1 specifies no limit. \"-1\" max-conns-per-host Specifies the maximum number of TCP connections allowed per server.",
+          "0 max-idle-conns-per-host Specifies the maximum number of idle connections allowed per server."
+        ]
+      },
+      {
+        "title": "Cloud Storage FUSE CLI reference \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+        "source_id": "site-docs-reference",
+        "final_score": 276,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When this option is not set, Application Default Credentials are used. --limit-bytes-per-sec Specifies the bandwidth limit at which Cloud Storage FUSE can read data from Cloud Storage, measured over a 30-second window.",
+          "This severity level also includes the details provided in debug , info , warning , and error severity levels. info --max-conns-per-host Specifies the maximum number of TCP connections allowed per server.",
+          "Note: For specific high-performance machine types, some gcsfuse command options are automatically set to specific values by default to maximize performance."
+        ]
+      },
+      {
+        "title": "Cloud Storage FUSE configuration file \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file",
+        "source_id": "site-docs-reference",
+        "final_score": 274,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Storage FUSE configuration file format and fields The following YAML configuration example shows the format and fields available in Cloud Storage FUSE. app-name : \"APP NAME\" logging : file-path : \"FILE PATH\" format : FORMAT severity : SEVERITY log-rotate : max-file-size-mb : MAX FILE SIZE backup-file-count : BACKUP FILE COUNT compress : COMPRESS cache-dir : \"CACHE DIR\" file-cache : max-size-mb : MAX SIZE cache-file-for-range-read : CACHE FILE FOR RANGE READ enable-parallel-downloads : ENABLE PARALLEL DOWNLOADS exclude-regex : EXCLUDE REGEX include-regex : INCLUDE REGEX parallel-downloads-per-file : PARALLEL DOWNLOADS PER FILE max-parallel-downloads : MAX PARALLEL DOWNLOADS download-chunk-size-mb : DOWNLOAD CHUNK SIZE metadata-cache : negative-ttl-secs : ENABLE NEGATIVE TTL SECS stat-cache-max-size-mb : STAT CACHE MAX SIZE ttl-secs : TTL SECS enable-metadata-prefetch : ENABLE METADATA PREFETCH metadata-prefetch-entries-limit : METADATA PREFETCH ENTRIES LIMIT metadata-prefetch-max-workers : METADATA PREFETCH MAX WORKERS only-dir : \"ONLY DIR\" gcs-auth : anonymous-access : ANONYMOUS ACCESS key-file : \"KEY FILE\" reuse-token-from-url : REUSE TOKEN FROM URL token-url : \"TOKEN URL\" gcs-connection : billing-project : \"BILLING PROJECT\" client-protocol : CLIENT PROTOCOL custom-endpoint : \"CUSTOM ENDPOINT\" http-client-timeout : HTTP CLIENT TIMEOUT limit-bytes-per-sec : \"LIMIT BYTES PER SEC\" limit-ops-per-sec : \"LIMIT OPS PER SEC\" max-conns-per-host : MAX CONNS PER HOST max-idle-conns-per-host : MAX IDLE CONNS PER HOST sequential-read-size-mb : SEQUENTIAL READ SIZE implicit-dirs : IMPLICIT DIRS file-system : kernel-list-cache-ttl-secs : KERNEL LIST CACHE TTL SECS ignore-interrupts : IGNORE INTERRUPTS dir-mode : \"DIR MODE\" file-mode : \"FILE MODE\" fuse-options : FUSE OPTIONS gid : GID rename-dir-limit : RENAME DIR LIMIT temp-dir : \"TEMP DIR\" uid : UID foreground : FOREGROUND gcs-retries : max-retry-attempts : MAX RETRY ATTEMPTS max-retry-sleep : MAX RETRY SLEEP multiplier : \"MULTIPLIER\" metrics : cloud-metrics-export-interval-secs : CLOUD METRICS EXPORT INTERVAL prometheus-port : PROMETHEUS PORT debug : log-mutex : LOG MUTEX exit-on-invariant-violation : EXIT ON INVARIANT VIOLATION write : enable-streaming-writes : STREAMING WRITES global-max-blocks : MAXIMUM GLOBAL BLOCKS read : enable-buffered-read : ENABLE BUFFERED READ global-max-blocks : MAXIMUM GLOBAL READ BLOCKS profile : PROFILE Cloud Storage FUSE configuration file fields The following table describes the fields you can specify in your Cloud Storage FUSE configuration file.",
+          "Floating point number. -1 specifies no limit. \"-1\" max-conns-per-host Specifies the maximum number of TCP connections allowed per server.",
+          "0 max-idle-conns-per-host Specifies the maximum number of idle connections allowed per server."
+        ]
+      },
+      {
+        "title": "Cloud Storage FUSE CLI reference \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/gcsfuse-cli",
+        "source_id": "site-docs-reference",
+        "final_score": 266,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When this option is not set, Application Default Credentials are used. --limit-bytes-per-sec Specifies the bandwidth limit at which Cloud Storage FUSE can read data from Cloud Storage, measured over a 30-second window.",
+          "This severity level also includes the details provided in debug , info , warning , and error severity levels. info --max-conns-per-host Specifies the maximum number of TCP connections allowed per server.",
+          "Note: For specific high-performance machine types, some gcsfuse command options are automatically set to specific values by default to maximize performance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-cli"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-cli"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-cli"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-cli"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-cli"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-cli"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-cli"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-config-file",
+        "https://docs.cloud.google.com/storage/docs/gcsfuse-cli"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:43.359Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage"
+}

@@ -1,0 +1,175 @@
+{
+  "feature_name": "UpgradeAvailableEvent notification",
+  "feature_slug": "upgradeavailableevent-notification",
+  "summary": "The UpgradeAvailableEvent notification is generally available.",
+  "extended_definition": "The UpgradeAvailableEvent notification is generally available.",
+  "lifecycle": {
+    "latest_feature_date": "2021-05-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/cluster-notifications-email",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/cluster-notifications-slack"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure cluster notifications for third-party services \\_|\\_ Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/cluster-notifications-slack",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 98,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You cannot verify setup manually for the SecurityBulletinEvent or the UpgradeAvailableEvent notification types.",
+          "SLACK WEBHOOK ; const webhook = new IncomingWebhook ( url ); // Optionally filter what notification types to forward to Slack. // If empty, all types will be allowed. const allowedTypeURLs = []; // Register a CloudEvent callback with the Functions Framework that will // be executed when the Pub/Sub trigger topic receives a // message. functions . cloudEvent ( 'slackNotifier' , pubSubEvent = > { const data = decode ( pubSubEvent . data . message . data ); // Send message to Slack. if ( isAllowedType ( pubSubEvent . data . message . attributes )) { const message = createSlackMessage ( data , pubSubEvent . data . message . attributes ); ( async () = > { await webhook . send ( message ); })(). catch (( e ) = > { console . log ( e ); }); } }); // decode decodes a pubsub event message from base64. const decode = ( data ) = > { return Buffer . from ( data , 'base64' ). toString (); } // isAllowedType can be used to filter out messages that don't match the // allowed type URLs.",
+          "The output is similar to the following: Deploying function… availableMemoryMb: 256 entryPoint: slackNotifier environmentVariables: SLACK WEBHOOK: https://hooks.slack.com/services/… eventTrigger: eventType: google.pubsub.topic.publish failurePolicy: {} resource: projects/ PROJECT ID /topics/ TOPIC NAME service: pubsub.googleapis.com labels: deployment-tool: cli-gcloud name: projects/ PROJECT ID /locations/us-central1/functions/slackNotifier runtime: nodejs10 serviceAccountEmail: PROJECT ID @appspot.gserviceaccount.com sourceUploadUrl: https://storage.googleapis.com/… status: ACTIVE timeout: 60s updateTime: 'YYYY-MM-DDThh:mm:ssZ' versionId: '1' Console Go to the Cloud Run functions page in the Google Cloud console."
+        ]
+      },
+      {
+        "title": "\"Configure clusters to receive notifications via email \\_|\\_ Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/cluster-notifications-email",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 77,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, if your project is named my-project and you named your topic gke-notifications , enter: projects/my-project/topics/gke-notifications To view all the available topics in your Google Cloud project, see the Topic name column in Topics .",
+          "Use the following example script as a template for the message body when notifications are sent from your cluster: local message data = std . extVar ( \"message data\" ); local cluster name = std . extVar ( \"cluster name\" ); local project id = std . extVar ( \"project id\" ); local cluster location = std . extVar ( \"cluster location\" ); local type url = std . extVar ( \"type url\" ); local payload = std . extVar ( \"payload\" ); { full message : \"Project ID: \" + project id + \"\\n\" + \"Cluster Name: \" + cluster name + \"\\n\" + \"Location: \" + cluster location + \"\\n\" + \"Event Type: \" + type url + \"\\n\" + \"Message: \" + message data + \"\\n\" + \"Payload: \" + std . manifestJson ( std . parseJson ( payload ))} Close the Data Mapping Editor once your mapping is complete.",
+          "Required roles To ensure that service-PROJECT NUMBER@gcp-sa-integrations.iam.gserviceaccount.com has the necessary permissions to set up email notifications for cluster notifications, ask your administrator to grant the following IAM roles to service-PROJECT NUMBER@gcp-sa-integrations.iam.gserviceaccount.com on your project: Important: You must grant these roles to service-PROJECT NUMBER@gcp-sa-integrations.iam.gserviceaccount.com, not to your user account."
+        ]
+      },
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "To get a notification as soon as a patch is available for your specific cluster, use cluster notifications .",
+          "To receive a Pub/Sub notification when a patch is available for your channel, enable cluster notifications .",
+          "To receive a Pub/Sub notification when a patch is available for your channel, enable cluster notifications ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "container.googleapis.com",
+      "gke.1001",
+      "gke.1012003",
+      "gke.1019001",
+      "gke.1022001",
+      "gke.1023004",
+      "gke.1038001",
+      "gke.1042001",
+      "gke.1043004",
+      "gke.1058001",
+      "gke.1059002",
+      "gke.1060001",
+      "gke.1069002",
+      "gke.1070002",
+      "gke.1075001",
+      "gke.1089002",
+      "gke.1090004",
+      "gke.1091002",
+      "gke.1100002",
+      "gke.1148001",
+      "gke.1166001",
+      "gke.1191001",
+      "gke.1201002",
+      "gke.1209001",
+      "gke.1289002",
+      "gke.1300001",
+      "gke.1320002",
+      "gke.1329003",
+      "gke.1381001",
+      "gke.1390001",
+      "gke.1404002",
+      "gke.1469001",
+      "gke.301",
+      "hooks.slack.com",
+      "integrations.editor",
+      "integrations.iam.gserviceaccount.com",
+      "pubsub.editor",
+      "pubsub.googleapis.com",
+      "storage.googleapis.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/integrations.editor",
+      "roles/pubsub.editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/cluster-notifications-slack",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/cluster-notifications-email"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/cluster-notifications-slack",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/cluster-notifications-email"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/cluster-notifications-slack",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/cluster-notifications-email"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/cluster-notifications-slack",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/cluster-notifications-email"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/cluster-notifications-slack",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/cluster-notifications-email"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/cluster-notifications-slack",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/cluster-notifications-email"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:15.353Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

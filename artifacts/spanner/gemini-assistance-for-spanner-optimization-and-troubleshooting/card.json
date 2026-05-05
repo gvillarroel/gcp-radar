@@ -1,0 +1,104 @@
+{
+  "feature_name": "Gemini assistance for Spanner optimization and troubleshooting",
+  "feature_slug": "gemini-assistance-for-spanner-optimization-and-troubleshooting",
+  "summary": "Spanner now supports Gemini-powered assistance to help optimize and troubleshoot Spanner resources using system insights.",
+  "extended_definition": "Spanner now supports Gemini-powered assistance to help optimize and troubleshoot Spanner resources using system insights.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli",
+      "https://docs.cloud.google.com/spanner/docs/change-streams/details",
+      "https://docs.cloud.google.com/spanner/docs/commit-timestamp"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Build context sets using Gemini CLI \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli",
+        "source_id": "site-docs-root",
+        "final_score": 63,
+        "relevance": "",
+        "evidence_snippets": [
+          "To update the DB Context Enrichment extension, run the following command: gemini extensions update mcp-db-context-enrichment To update the DB Context Enrichment extension or to replace the GEMINI API KEY , run the following command: gemini extensions config mcp-db-context-enrichment GEMINI API KEY Replace GEMINI API KEY with your Gemini API key.",
+          "To install the DB Context Enrichment extension, follow these steps: Install the DB Context Enrichment Gemini CLI extension: gemini extensions install https://github.com/GoogleCloudPlatform/db-context-enrichment Note: The extension requires a Gemini API key at installation to authenticate with the Gemini API and enable context generation.",
+          "Enable required services Enable the following services for your project: Data Analytics API with Gemini Gemini for Google Cloud API Dataplex Universal Catalog API Prepare a Spanner instance Make sure that a Spanner instance is available."
+        ]
+      },
+      {
+        "title": "\"Commit timestamps in GoogleSQL-dialect databases \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/commit-timestamp",
+        "source_id": "site-docs-root",
+        "final_score": 47,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, consider the following Performances table, which includes a commit timestamp column: CREATE TABLE Performances ( SingerId INT64 NOT NULL , VenueId INT64 NOT NULL , EventDate DATE , Revenue INT64 , LastUpdateTime TIMESTAMP NOT NULL OPTIONS ( allow commit timestamp = true ) ) PRIMARY KEY ( SingerId , VenueId , EventDate ); This query benefits from the commit-timestamp optimization described earlier, because it has a greater-than-or-equal-to comparison between the table's commit timestamp column and a constant expression—in this case, a literal: SELECT FROM Performances WHERE LastUpdateTime > = \"2022-05-01\" ; The following query also qualifies for the optimization, since it has a greater-than comparison between the commit timestamp and a function whose arguments all evaluate to constants during the query's execution: SELECT FROM Performances WHERE LastUpdateTime > TIMESTAMP SUB ( CURRENT TIMESTAMP (), INTERVAL 30 DAY ); What's next Use commit timestamps to create a change log with Go .",
+          "To activate this optimization, a query's WHERE clause must include a comparison between a table's commit timestamp column and a specific time that you provide, with the following attributes: Provide the specific time as a constant expression : a literal, a parameter, or a function whose own arguments evaluate to constants.",
+          "Create and delete a commit timestamp column Use the allow commit timestamp column option to add and remove support for commit timestamps: When creating a new table to specify that a column supports commit timestamps."
+        ]
+      },
+      {
+        "title": "\"Change stream partitions, records, and queries \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams/details",
+        "source_id": "site-docs-root",
+        "final_score": 46,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "github.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli",
+        "https://docs.cloud.google.com/spanner/docs/commit-timestamp",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/details"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli",
+        "https://docs.cloud.google.com/spanner/docs/commit-timestamp",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/details"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli",
+        "https://docs.cloud.google.com/spanner/docs/commit-timestamp",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/details"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:37.939Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

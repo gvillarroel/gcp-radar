@@ -1,0 +1,148 @@
+{
+  "feature_name": "Google Cloud Audit Logs analysis",
+  "feature_slug": "google-cloud-audit-logs-analysis",
+  "summary": "Google Cloud Audit Logs analysis lets BigQuery analyze audit logs to track usage and access.",
+  "extended_definition": "Google Cloud Audit Logs analysis lets BigQuery analyze audit logs to track usage and access.",
+  "lifecycle": {
+    "latest_feature_date": "2015-12-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/admin-intro",
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+      "https://docs.cloud.google.com/bigquery/docs/reference/auditlogs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "BigQuery audit logs overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/auditlogs",
+        "source_id": "site-docs-reference",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Querying exported logs BigQueryAuditMetadata examples The following examples show how you can use BigQueryAuditMetadata messages to analyze BigQuery usage.",
+          "Permission type Methods ADMIN WRITE datasetservice.delete datasetservice.insert datasetservice.update google.cloud.bigquery.v2.DatasetService.DeleteDataset google.cloud.bigquery.v2.DatasetService.InsertDataset google.cloud.bigquery.v2.DatasetService.PatchDataset google.cloud.bigquery.v2.DatasetService.UndeleteDataset google.cloud.bigquery.v2.DatasetService.UpdateDataset google.cloud.bigquery.v2.JobService.InsertJob (LRO) google.cloud.bigquery.v2.JobService.Query (LRO) google.cloud.bigquery.v2.RoutineService.DeleteRoutine google.cloud.bigquery.v2.RoutineService.InsertRoutine google.cloud.bigquery.v2.RowAccessPolicyService.CreateRowAccessPolicy google.cloud.bigquery.v2.RowAccessPolicyService.DeleteRowAccessPolicy google.cloud.bigquery.v2.TableService.DeleteTable google.cloud.bigquery.v2.TableService.InsertTable google.cloud.bigquery.v2.TableService.PatchTable google.cloud.bigquery.v2.TableService.UpdateTable google.iam.v1.IAMPolicy.SetIamPolicy jobservice.getqueryresults jobservice.insert jobservice.query tabledataservice.list tableservice.delete tableservice.insert tableservice.update DATA READ google.cloud.bigquery.v2.JobService.GetQueryResults google.cloud.bigquery.v2.TableDataService.List API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for BigQuery. datasetservice The following audit logs are associated with methods belonging to datasetservice . delete Method : datasetservice.delete Audit log type : Admin activity Permissions : bigquery.datasets.delete - ADMIN WRITE bigquery.models.delete - ADMIN WRITE bigquery.routines.delete - ADMIN WRITE bigquery.tables.delete - ADMIN WRITE Method is a long-running or streaming operation : No.",
+          "The following methods don't produce audit logs: google.cloud.bigquery.v2.DatasetService.GetDataset google.cloud.bigquery.v2.DatasetService.ListDatasets google.cloud.bigquery.v2.JobService.GetJob google.cloud.bigquery.v2.JobService.ListJobs google.cloud.bigquery.v2.ModelService.GetModel google.cloud.bigquery.v2.ModelService.ListModels google.cloud.bigquery.v2.ProjectService.GetServiceAccount google.cloud.bigquery.v2.ProjectService.ListProjects google.cloud.bigquery.v2.RoutineService.GetRoutine google.cloud.bigquery.v2.RoutineService.ListRoutines google.cloud.bigquery.v2.RowAccessPolicyService.GetRowAccessPolicy google.cloud.bigquery.v2.RowAccessPolicyService.ListRowAccessPolicies google.cloud.bigquery.v2.TableDataService.InsertAll google.cloud.bigquery.v2.TableService.GetTable google.cloud.bigquery.v2.TableService.ListTables google.iam.v1.IAMPolicy.GetIamPolicy Versions The audit log message system relies on structured logs, and the BigQuery service provides several types of messages: AuditData : The old version of logs, which reports API invocations."
+        ]
+      },
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 145,
+        "relevance": "",
+        "evidence_snippets": [
+          "It lets users ingest, join, and analyze streaming data with the same ease as a traditional database, offering seamless integration to sink processed data into BigQuery for long-term storage and analysis.",
+          "Partner references Creating a dataset using BigQuery Adding a new QuickSight dataset for BigQuery Unlock the power of unified business intelligence with BigQuery and Amazon QuickSight Amplitude Solution Amplitude Analytics Category BI, ML, & Advanced Analytics Description Amplitude is an event-based analytics tool that tracks the behaviors of users based on in-product interactions and analyzes user behavior in real-time.",
+          "The solution involves the following steps: Get the data Connect Analyze Automate Partner references Move your marketing data into BigQuery The easiest way to move data from your Google BigQuery warehouse Supermetrics for BigQuery: Overview Supermetrics for BigQuery (video tutorial) Partner Advantage page Direct link Tableau Solution Tableau Prep Builder Category ETL & Data Integration Description Tableau Prep Builder is a tool in the Tableau product suite designed to make preparing your data easy and intuitive."
+        ]
+      },
+      {
+        "title": "Introduction to BigQuery administration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/admin-intro",
+        "source_id": "site-docs-reference-2",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "Audit logs Cloud Audit Logs maintain a record of Google Cloud events, including BigQuery events.",
+          "Track data lineage Data lineage is a Knowledge Catalog feature that lets you track how data moves through your systems: where it comes from, where it is passed to, and what transformations are applied to it.",
+          "BigQuery lets you control access to your resources at many levels, including access to the organization, folders, projects, datasets, tables, table columns, and table rows."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.datasets.delete",
+      "bigquery.jobs.create",
+      "bigquery.models.delete",
+      "bigquery.routines.delete",
+      "bigquery.tables.delete",
+      "bigquery.tables.getData",
+      "bigquery.tables.updateData",
+      "datasetservice.delete",
+      "datasetservice.insert",
+      "datasetservice.update",
+      "jobservice.getqueryresults",
+      "jobservice.insert",
+      "jobservice.query",
+      "tabledataservice.list",
+      "tableservice.delete",
+      "tableservice.insert",
+      "tableservice.update"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/auditlogs",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/admin-intro"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/auditlogs",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/admin-intro"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/auditlogs",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/admin-intro"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/auditlogs",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/admin-intro"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/auditlogs",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/admin-intro"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/auditlogs",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/admin-intro"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

@@ -1,0 +1,132 @@
+{
+  "feature_name": "Dynamic compression",
+  "feature_slug": "dynamic-compression",
+  "summary": "Cloud CDN supports dynamic compression using Brotli and gzip to reduce network payload for compressible content; Cloud CDN can automatically compress responses in transit as they are served from origin to client.",
+  "extended_definition": "Cloud CDN supports dynamic compression using Brotli and gzip to reduce network payload for compressible content; Cloud CDN can automatically compress responses in transit as they are served from origin to client.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cdn/docs/caching",
+      "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+      "https://docs.cloud.google.com/cdn/docs/dynamic-compression"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Caching overview \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/caching",
+        "source_id": "site-docs-reference-2",
+        "final_score": 24,
+        "relevance": "",
+        "evidence_snippets": [
+          "Request type Default behavior Configurable Benefits of collapsing Chunk requests Enabled No Can significantly reduce origin bandwidth Item requests Enabled Yes Can reduce origin request volume To disable item request collapsing using the Google Cloud CLI for a backend bucket that references a Cloud Storage bucket: Note: Google Cloud CLI support for the --request-coalescing flag was introduced in Google Cloud CLI version 330.0.0 . gcloud Use the gcloud compute backend-services or backend-buckets command: gcloud compute backend-services update BACKEND SERVICE NAME \\ --no-request-coalescing To enable item request collapsing on a backend bucket using the Google Cloud CLI: gcloud Use the gcloud compute backend-buckets command: gcloud compute backend-buckets update BACKEND BUCKET NAME \\ --request-coalescing To enable item request collapsing using the Google Cloud CLI for a backend service, including VM groups and external backends: gcloud Use the gcloud compute backend-services command: gcloud compute backend-services update BACKEND SERVICE NAME \\ --request-coalescing Requests initiated by Cloud CDN When your origin server supports byte range requests , Cloud CDN can send multiple requests to your origin server in reaction to a single client request.",
+          "Feature GKE ingress through backend configuration GKE gateway using GCPHTTPFilter Basic Caching (Modes/TTLs) Cache Key Customization Negative Caching Serve While Stale Dynamic Compression Signed URLs & Cookies Request Coalescing Cacheable content Cloud CDN caches responses that meet all of the requirements in this section.",
+          "Cloud CDN does not compress or decompress responses itself (unless dynamic compression is enabled), but it can serve responses that the origin server has compressed."
+        ]
+      },
+      {
+        "title": "Enable dynamic compression \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/dynamic-compression",
+        "source_id": "site-docs-reference-2",
+        "final_score": 22,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, given an Accept-Encoding header in a client request, the response is compressed (or not) according to the information in the following table: Accept-Encoding request header Response encoding gzip, compress, br Brotli (br) deflate Not compressed deflate, gzip gzip identity Not compressed Not compressed Compressible content types Dynamic compression applies to the following MIME types, based on the Content-Type HTTP response header.",
+          "AUTOMATIC mode allows Cloud CDN to choose the best compression method based on the following: The client's accepted encoding The response's anticipated compression ratio Cloud CDN's compression speed (throughput) Brotli can yield an additional 10% to 20% reduction in download size for most content types over gzip, with similar decompression performance, making it faster overall when considering download time and decompression speed on the client.",
+          "Summary of response changes The following table summarizes the changes that Cloud CDN makes to a response's headers when compression has occurred: Response header Header value after compression Content-Encoding Set to gzip or brotli ."
+        ]
+      },
+      {
+        "title": "\"Logs and metrics for backend services \\_|\\_ Cloud CDN \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "source_id": "site-docs-root-2",
+        "final_score": 21,
+        "relevance": "",
+        "evidence_snippets": [
+          "To finish editing the load balancer, click Update . gcloud Create a backend service and enable logging by using the gcloud compute backend-services create command . gcloud compute backend-services create BACKEND SERVICE \\ --global \\ --enable-logging \\ --logging-sample-rate= VALUE \\ --load-balancing-scheme=EXTERNAL MANAGED \\ --logging-optional= LOGGING OPTIONAL MODE \\ --logging-optional-fields= OPTIONAL FIELDS The gcloud compute backend-services create command supports the following fields: --global indicates that the backend service is global.",
+          "Filter this table: Metric Name Description Backend configured rate ( Preview ) network.googleapis.com/loadbalancer/backend/configured rate The maximum rate in requests per second configured per backend group.",
+          "Backend load balancing custom metrics ( Preview ) network.googleapis.com/loadbalancer/backend/lb custom metric The current utilization by each backend group, based on your defined custom metrics."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "network.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/dynamic-compression",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/dynamic-compression",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/dynamic-compression",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/dynamic-compression",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/dynamic-compression",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/dynamic-compression",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:28.192Z",
+  "source_step08_card": "data/step-08/current/products/cloud-cdn/card.json",
+  "product_name": "Cloud CDN",
+  "product_slug": "cloud-cdn"
+}

@@ -1,0 +1,127 @@
+{
+  "feature_name": "Google Assistant integration",
+  "feature_slug": "google-assistant-integration",
+  "summary": "Dialogflow ES integrates with Google Assistant for conversational experiences; deprecated on 2023-06-13.",
+  "extended_definition": "Dialogflow ES integrates with Google Assistant for conversational experiences; deprecated on 2023-06-13.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-13",
+    "deprecation_date": "2023-06-13",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/docs/basics",
+      "https://docs.cloud.google.com/dialogflow/es/docs/access-control",
+      "https://docs.cloud.google.com/dialogflow/es/docs/console"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Dialogflow Console overview \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/console",
+        "source_id": "site-iam-reference",
+        "final_score": 96,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "View and manage your Actions on Google : This permission lets you optionally deploy your Dialogflow agent to the Google Assistant and Actions on Google as a conversational action(s).",
+          "With it, you can: Create agents that define the conversational experience Create intents that map user input to responses Create entities to extract useful data from user input Control conversation paths with contexts Add events that are triggered by occurrences outside of the conversation Integrate with other conversational platforms Implement fulfillment to connect your service when using integrations Analyze agent performance Test your agent via the simulator And more ...",
+          "View and manage your Google Assistant voice commands, dialog, and grammar : This permission lets you optionally test your Dialogflow agent on the Google Assistant."
+        ]
+      },
+      {
+        "title": "Access control \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 94,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table describes some of these service agents: IAM email form Purpose service- project-number @gcp-sa-dialogflow.iam.gserviceaccount.com Used to connect your agent to the services that handle integration traffic. firebase-adminsdk- alphanum @ project-id .iam.gserviceaccount.com Used to connect your agent to the services that handle Google Assistant integration traffic. project-id @appspot.gserviceaccount.com Used to connect your agent to the services that handle Google Assistant integration traffic.",
+          "If you have integrations with other Google Cloud resources, like Cloud Functions, and you don't want to grant full project access to an application, you must assign the Dialogflow API roles (Admin, Client, or Reader) in the Google Cloud console for IAM.",
+          "Cannot access Inline Editor for Cloud Functions or Google Assistant integration."
+        ]
+      },
+      {
+        "title": "Dialogflow ES basics \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/docs/basics",
+        "source_id": "site-docs-root-2",
+        "final_score": 88,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "User interactions with integrations Dialogflow integrates with many popular conversation platforms like Google Assistant, Slack, and Facebook Messenger.",
+          "Other end-users might also ask: \"What's the weather like right now?\" \"What's the temperature going to be in San Francisco tomorrow?\" \"What will the weather be on the 21st?\" Even with these simple questions, you can see that conversational experiences are hard to implement.",
+          "You must also directly interact with Dialogflow's API for each conversational turn to send end-user expressions and receive intent matches."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "com.google.cloud.dialogflow.v2",
+      "dialogflow.iam.gserviceaccount.com",
+      "iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/console",
+        "https://docs.cloud.google.com/dialogflow/es/docs/access-control",
+        "https://docs.cloud.google.com/dialogflow/docs/basics"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/console",
+        "https://docs.cloud.google.com/dialogflow/es/docs/access-control",
+        "https://docs.cloud.google.com/dialogflow/docs/basics"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/console",
+        "https://docs.cloud.google.com/dialogflow/es/docs/access-control",
+        "https://docs.cloud.google.com/dialogflow/docs/basics"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/console",
+        "https://docs.cloud.google.com/dialogflow/es/docs/access-control",
+        "https://docs.cloud.google.com/dialogflow/docs/basics"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/console",
+        "https://docs.cloud.google.com/dialogflow/es/docs/access-control",
+        "https://docs.cloud.google.com/dialogflow/docs/basics"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:58.946Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

@@ -1,0 +1,104 @@
+{
+  "feature_name": "API metadata curation",
+  "feature_slug": "api-metadata-curation",
+  "summary": "API hub introduces a metadata curation process to transform and enrich ingested API metadata for consistent governance, discovery, and management.",
+  "extended_definition": "API hub introduces a metadata curation process to transform and enrich ingested API metadata for consistent governance, discovery, and management.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/apihub/curations",
+      "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+      "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Curations overview \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/curations",
+        "source_id": "site-docs-reference-2",
+        "final_score": 164,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Curation is the process of transforming and enriching the API metadata ingested by plugins .",
+          "Curation types API hub offers two types of curation to cater to different levels of data transformation and enrichment needs: default curation for basic data transformation and custom curation for more tailored data transformation and enrichment.",
+          "Implement custom data transformation and enrichment : fully utilize Application Integration's capabilities to build integration flows that transform and map API metadata according to your specific needs."
+        ]
+      },
+      {
+        "title": "\"Enrich API data with custom curation in API hub \\_|\\_ Apigee \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "source_id": "site-docs-reference-2",
+        "final_score": 144,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Step 1: Create an integration for custom curation With the environment ready, you can now define the custom curation logic using Application Integration, which will handle the process of identifying, enriching, and transforming the API metadata.",
+          "JavaScript task (Enrich API metadata with spec contents) Script: / Processes and curates API metadata with spec contents. @param {object} event The event object containing API data and spec content. / function executeScript(event) { let apiMetadata = event.getParameter('apiMetadata'); let specContent = event.getParameter('specContent'); // Initialize curatedAPIMetadata directly from apiMetadata const curatedAPIMetadata = { ...apiMetadata }; // Construct the 'spec' object efficiently const spec = { displayName: \"open-api-spec\", specType: { enumValues: { values: [{ id: \"openapi\" }] } }, contents: { mimeType: \"application/yaml\", contents: specContent, }, }; // Create the specMetadata object const specMetadata = { // Ensure originalUpdateTime exists before assigning // provide a fallback if needed originalModifiedTime: curatedAPIMetadata.originalUpdateTime new Date().toISOString(), spec: spec, }; // Initialize or update the specs array within the first version // This assumes versions[0] always exists.",
+          "Finally, the enriched curatedAPIMetadata is returned through the event object for subsequent steps in the custom curation workflow."
+        ]
+      },
+      {
+        "title": "\"Ingest Microsoft Azure API data into API hub \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub",
+        "source_id": "site-docs-reference-2",
+        "final_score": 87,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Call REST Endpoint taskId: 37 Sends the transformed API data (including specification and metadata) to the API hub collectApiData endpoint using a POST request.",
+          "The following diagram illustrates the workflow you'll be setting up: Objectives In this tutorial, you will complete the following steps: Step 1: Create an Azure App Step 2: Configure Google Cloud resources Step 3: Create and publish an integration in Application Integration Step 4: Execute the integration to ingest API data from Azure APIM to API hub Step 5: Verify and view the ingested API data in API hub Costs In this document, you use the following billable components of Google Cloud: Application Integration To generate a cost estimate based on your projected usage, use the pricing calculator .",
+          "For Each Parallel Task taskId: 19 For each API ID in $api id-list$ , runs a sub-integration ( api trigger/INTEGRATION NAME API 5 ) in parallel to gather detailed metadata for that API, including operations, revisions, specifications, and deployments."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "event.getParameter",
+      "event.setParameter",
+      "integration.sh",
+      "specs.push",
+      "versions.length"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/curations",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/curations",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/ingest-azure-api-hub"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:05.893Z",
+  "source_step08_card": "data/step-08/current/products/apigee-api-hub/card.json",
+  "product_name": "Apigee API hub",
+  "product_slug": "apigee-api-hub"
+}

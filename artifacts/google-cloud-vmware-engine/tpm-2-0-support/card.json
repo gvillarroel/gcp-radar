@@ -1,0 +1,116 @@
+{
+  "feature_name": "TPM 2.0 support",
+  "feature_slug": "tpm-2-0-support",
+  "summary": "TPM 2.0 support lets VMware Engine private clouds add a virtual Trusted Platform Module to virtual machines; TPM 2.0 support lets VMware Engine private clouds add a virtual Trusted Platform Module to virtual machines.",
+  "extended_definition": "TPM 2.0 support lets VMware Engine private clouds add a virtual Trusted Platform Module to virtual machines; TPM 2.0 support lets VMware Engine private clouds add a virtual Trusted Platform Module to virtual machines.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+      "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-private-cloud-management-dns",
+      "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage private cloud resources and activity \\_|\\_ Google Cloud VMware Engine\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "source_id": "site-docs-root",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, the following updates the cluster to standard-72 node type. curl -L -X PATCH -H \"Authorization: Bearer TOKEN \" \\ -H \"Content-Type: application/json\" \\ \"https://vmwareengine.googleapis.com/v1/projects/ PROJECT ID /locations/ ZONE /privateClouds/ PRIVATE CLOUD ID /clusters/ CLUSTER ID ?updateMask=node type configs. .node count\" \\ -d '{ \"nodeTypeConfigs\": { \"standard-72\" : { \"nodeCount\": NODE COUNT } } }' Replace the following: PROJECT ID : the project ID for this request ZONE : the zone for the private cloud PRIVATE CLOUD ID : the private cloud ID for the private cloud CLUSTER ID : the cluster ID for the cluster to update in this private cloud NODE COUNT : the number of nodes to add Python The cluster update method lets you change the total node count for the cluster.",
+          "Click Save . gcloud To delete a whole cluster using the Google Cloud CLI, use the gcloud vmware private-clouds clusters delete command : gcloud vmware private-clouds clusters delete CLUSTER ID \\ --location= ZONE \\ --private-cloud= PRIVATE CLOUD ID Replace the following: CLUSTER ID : the cluster ID for the cluster to update in this private cloud ZONE : the zone for the private cloud PRIVATE CLOUD ID : the private cloud ID for the private cloud API To delete a whole cluster using the VMware Engine API, make a DELETE request: curl -L -X DELETE -H \"Authorization: Bearer TOKEN \" \\ -H \"Content-Type: application/json\" \\ \"https://vmwareengine.googleapis.com/v1/projects/ PROJECT ID /locations/ ZONE /privateClouds/ PRIVATE CLOUD ID /clusters/ CLUSTER ID \" Replace the following: PROJECT ID : the project ID for the private cloud ZONE : the zone for the private cloud PRIVATE CLOUD ID : the private cloud ID for the private cloud CLUSTER ID : the cluster ID for the cluster to update in this private cloud Python from google.api core import operation from google.cloud import vmwareengine v1 def delete cluster ( project id : str , zone : str , private cloud name : str , cluster name : str ) - > operation .",
+          "For example: curl -L -X POST -H \"Authorization: Bearer TOKEN \" -H \"Content-Type: application/json\" \\ \"https://vmwareengine.googleapis.com/v1/projects/ PROJECT ID /locations/ ZONE /privateClouds/ PRIVATE CLOUD ID /clusters?clusterId= CLUSTER ID \" \\ -d '{ \"nodeTypeConfigs\": { \"standard-72\": { \"nodeCount\": NODE COUNT } } }' Replace the following: CLUSTER ID : the cluster ID for the cluster that you are adding to the private cloud ZONE : the zone for the private cloud PRIVATE CLOUD ID : the private cloud ID for the private cloud NODE COUNT : the number of nodes to add Python Add the new cluster and give it a name. from google.api core import operation from google.cloud import vmwareengine v1 def create cluster ( project id : str , zone : str , private cloud name : str , cluster name : str , node count : int = 4 , ) - > operation ."
+        ]
+      },
+      {
+        "title": "\"About VMware Engine private clouds \\_|\\_ Google Cloud VMware Engine \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "source_id": "site-docs-reference",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following are common use cases for a single-node private cloud: Proof of concept: evaluating VMware Engine and its capabilities Disaster recovery testing: deploying your application from recent backups to periodically validate disaster recovery preparedness Application upgrade testing: test and validate application component upgrades before upgrading your application in production VMware Engine permits single-node private clouds without a time limit.",
+          "You can connect the private cloud to your on-premises environment using the following connections: Cloud VPN Cloud Interconnect Point-to-site VPN Single-node private clouds For pilot testing and proofs of concept with VMware Engine, you can create a private cloud that contains only a single node and cluster in any region where VMware Engine is available.",
+          "About VMware Engine private clouds A Google Cloud VMware Engine private cloud is an isolated VMware stack that consists of the following VMware components: ESXi hosts vCenter Server vSAN NSX HCX Private clouds help you address a variety of common needs for network infrastructure: Growth."
+        ]
+      },
+      {
+        "title": "\"Configure Management DNS for private clouds \\_|\\_ Google Cloud VMware Engine\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-private-cloud-management-dns",
+        "source_id": "site-docs-reference",
+        "final_score": 104,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To create a new private cloud management DNS zone binding by binding a VPC or a VMware Engine network using the Google Cloud CLI or VMware Engine API, do the following: gcloud To bind a VPC using the Google Cloud CLI, use the gcloud vmware private-clouds management-dns-zone-bindings create command : gcloud vmware private-clouds management-dns-zone-bindings create DNS ZONE BINDING ID \\ --private-cloud= PRIVATE CLOUD ID \\ --location= ZONE \\ --vpc-network=projects/ VPC PROJECT ID /global/networks/ VPC NETWORK To bind a VMware Engine network, use the gcloud vmware private-clouds management-dns-zone-bindings create command : gcloud vmware private-clouds management-dns-zone-bindings create DNS ZONE BINDING ID \\ --private-cloud= PRIVATE CLOUD ID \\ --location= ZONE \\ --vmware-engine-network=projects/ PROJECT ID /locations/global/vmwareEngineNetworks/ NETWORK ID Replace the following: DNS ZONE BINDING ID : the DNS zone binding ID.",
+          "API To bind a VPC using the VMware Engine API, make a POST request: POST \"https://vmwareengine.googleapis.com/v1/projects/ PROJECT ID /locations/ ZONE /privateClouds/ PRIVATE CLOUD ID /managementDnsZoneBindings?management dns zone binding id= DNS ZONE BINDING ID \" -d '{ \"vpc network\": \"projects/ VPC PROJECT ID /global/networks/ VPC NETWORK \" }' To bind a VMware Engine network using the VMware Engine API, make a POST request: POST \"https://vmwareengine.googleapis.com/v1/projects/ PROJECT ID /locations/ ZONE /privateClouds/ PRIVATE CLOUD ID /managementDnsZoneBindings?management dns zone binding id= DNS ZONE BINDING ID \" -d '{ \"vmware engine network\" : \" NETWORK ID \" }' Replace the following: PROJECT ID : the project for your private cloud.",
+          "Edit management DNS zone binding You can edit a management DNS zone binding description using the Google Cloud CLI or VMware Engine API by doing the following: gcloud If you want to edit the description of a management DNS zone binding using the Google Cloud CLI, use the gcloud vmware private-clouds management-dns-zone-bindings update command : gcloud vmware private-clouds management-dns-zone-bindings update DNS ZONE BINDING ID \\ --private-cloud= PRIVATE CLOUD ID \\ --location= ZONE \\ --description=\" DESCRIPTION \" Replace the following: DNS ZONE BINDING ID : the DNS zone binding ID for this request."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "vmwareengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-private-cloud-management-dns"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-private-cloud-management-dns"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-private-cloud-management-dns"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-private-cloud-management-dns"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:14.452Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine"
+}

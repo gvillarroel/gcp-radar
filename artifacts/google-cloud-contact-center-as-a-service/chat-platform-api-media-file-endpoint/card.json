@@ -1,0 +1,98 @@
+{
+  "feature_name": "Chat platform API media file endpoint",
+  "feature_slug": "chat-platform-api-media-file-endpoint",
+  "summary": "The chat platform API adds an endpoint that lets applications retrieve media files sent during a chat session.",
+  "extended_definition": "The chat platform API adds an endpoint that lets applications retrieve media files sent during a chat session.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-attachments-chat-api",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/chat-platform-api-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Agent file attachments with the chat platform API \\_|\\_ Google Cloud Contact\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-attachments-chat-api",
+        "source_id": "site-docs-reference",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Authenticate using basic authentication . https:// YOUR CCAAS HOST /apps/api/v1/chats/ CHAT ID /media/ MEDIA ID Replace the following: YOUR CCAAS HOST : your Contact Center AI Platform (CCAI Platform) host CHAT ID : the chat ID MEDIA ID : the ID of the file that you want to download.",
+          "With a chat platform API custom app, you can set up a workflow that lets your agents attach files during a chat session.",
+          "Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback Agent file attachments with the chat platform API Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Chat platform API Guide \\_|\\_ Google Cloud Contact Center as a Service \\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/chat-platform-api-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Sending the media file as a chat message : To send the media file as a chat message, send the following payload to the POST /chats/:id/message endpoint : { \"from user id\" : <id of end user>, \"message\" : \"type\" : < \"photo\" or \"video\" >, \"content\" : { \"media id\" : < media id returned as described in 2 .c > } } Expect unrecognized JSON keys in API responses All API updates are backward compatible.",
+          "It is recommended to save or cache a mapping of media id to URL in the API consumer, as all media in chat messages will be referenced by media id only. url : the read-only S3 or Cloud Storage URL where the file is located. media id : the ID of the media file in Contact Center AI Platform.",
+          "Adding the media file to the chat : To add the media file to the chat, use the POST /chats/:id/photos or POST /chats/:id/videos endpoint."
+        ]
+      },
+      {
+        "title": "\"Chat Settings and Features \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+        "source_id": "site-docs-reference",
+        "final_score": 182,
+        "relevance": "",
+        "evidence_snippets": [
+          "Reply back to this message to begin a new chat.\" OR \"ujet message chat dismissed\": \"Welcome Back!<br>Do you have the same issue or a new issue?\" \"ujet chat new\": \"New\" \"ujet chat same\": \"Same\" Mobile SDKs The string file names for customizing this UI are broken down below: ujet chat footer view message dismissed: \"Welcome back!\\nWe have not heard from you in a while.\\nDo you have the same issue or a new issue?\" OR ujet chat footer view message timeout: \"Your previous chat has ended, please click to start a new chat.\" ujet common same: \"Same\" ujet common new: \"New\" Configure rich messaging and file attachments You can configure CCAI Platform so that agents can use rich messaging, emojis, and file attachments in the chat adapter.",
+          "Configure rich messaging and file attachments for the chat adapter To configure rich messaging and file attachments for the chat adapter, follow these steps: In the CCAI Platform portal, click Settings > Chat .",
+          "For a custom CRM with a generic API, the chat transcript can be added as a file attachment if the Upload a file endpoint is configured, or posted as a comment if the Comment endpoint has been configured."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-attachments-chat-api",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/chat-platform-api-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-attachments-chat-api",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/chat-platform-api-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:12.756Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service"
+}

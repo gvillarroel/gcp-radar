@@ -1,0 +1,132 @@
+{
+  "feature_name": "RHEL 7.7 image availability on Bare Metal Solution",
+  "feature_slug": "rhel-7-7-image-availability-on-bare-metal-solution",
+  "summary": "Deprecates the RHEL 7.7 image for Bare Metal Solution servers, with availability restricted to certain SAP-subscription cases; deprecated on 2021-08-30.",
+  "extended_definition": "Deprecates the RHEL 7.7 image for Bare Metal Solution servers, with availability restricted to certain SAP-subscription cases; deprecated on 2021-08-30.",
+  "lifecycle": {
+    "latest_feature_date": "2021-08-30",
+    "deprecation_date": "2021-08-30",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+      "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+      "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Maintain the Bare Metal Solution environment \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "source_id": "site-docs-reference",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to Servers The Servers page lists all your servers with the following details: Field Description Example Status Indicates the availability of a server A green circle with a check mark indicates that the server is provisioned and available.",
+          "ProjectsClient () bms client = BareMetalSolutionClient () output = [] errors = [] try : for project in get projects ( parent , folders client , projects client ): volumes list request = ListVolumesRequest ( parent = \"projects/\" + project + \"/locations/global\" , filter = filter , ) try : for volume in bms client . list volumes ( request = volumes list request ): output . append ( f \" - { volume . name } \" ) This could happen because BMS API is not enabled in a certain project. except PermissionDenied as e : errors . append ( f \"Unable to list bms resources for project { project } : { e } \" ) except PermissionDenied as e : errors . append ( f \"Unable to access folder or project: { e } \" ) return \" \\n \" . join ( output ), \" \\n \" . join ( errors ) def main ( : Sequence [ str ]): if ORGANIZATION ID . value is not None and FOLDER ID . value is not None : raise Exception ( \"Only one of organization ID or folder ID must be provided\" ) elif ORGANIZATION ID . value is None and FOLDER ID . value is None : raise Exception ( \"Either one of organization ID or folder ID must be provided\" ) elif ORGANIZATION ID . value is not None : parent = f \"organizations/ { ORGANIZATION ID . value } \" else : parent = f \"folders/ { FOLDER ID . value } \" volumes , errors = get volumes list ( parent , filter = FILTER . value ) print ( \"=================== Flat list of volumes in the folder or organization\" \" ===================\" ) print ( volumes ) print ( \"=================== List of folders or projects with errors\" \" ===================\" ) print ( errors ) if name == \" main \" : app . run ( main ) Manage servers You can manage the servers in your Bare Metal Solution environment in the following ways: View servers Organize servers by using labels Rename a server Retrieve the initial password for a server View OS details Change the OS for a server Enable hyperthreading on a server View servers To view the details of your Bare Metal Solution servers, follow these steps: Console Go to the Servers page.",
+          "To list the servers in your Bare Metal Solution environment and see their status, enter your project ID and region into the following curl command, copy the command, paste it into the Cloud Shell prompt, and press the Enter or Return key: curl -X GET \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /instances\" To get network and storage information for a server in your Bare Metal Solution environment, issue the following command: curl -X GET \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /instances/ SERVER NAME \" Organize servers by using labels To help organize your servers, you can use labels."
+        ]
+      },
+      {
+        "title": "Plan for Bare Metal Solution \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "source_id": "site-docs-reference",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "OS version OS image code Machine series Machine type Lifecycle stage EOL and image deprecation date RHEL 7.7 for SAP LAMBRHEL77SAP o2-ultramem-672-metal o2-ultramem-896-metal Memory-optimized servers End of Life August 2023 RHEL 7.9 RHEL7x o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose GA June 2024 RHEL 8.4 (Minor version locked) RHEL84 o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose End of Life May 2023 RHEL 8 (Latest minor release) RHEL8x o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose GA May 2029 RHEL 8.0 for SAP RHEL80SAP o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose End of Life December 2020 RHEL 8.1 for SAP RHEL81SAP o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose End of Life November 2023 RHEL 9.4 (Minor version locked) RHEL94 o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose End of Life May 2023 RHEL 9 (Latest minor release) RHEL9x o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose GA May 2032 OEL 7.9 OEL7x o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose GA July 2024 OEL 8 (Latest minor release) OEL8x o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose GA July 2029 OEL 8.8 (Minor version locked) OEL88 o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose GA June 2025 OEL 9 OEL9x o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose GA June 2032 SLES 15 SP1 SLES15SPx o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose End of Life January 2024 SLES 12 SP4 for SAP SLES12SP4SAP o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal o2-ultramem-896-metal General-purpose & Memory-optimized servers End of Life June 2023 SLES 12 SP5 for SAP SLES12SP5SAP o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal o2-ultramem-896-metal General-purpose & Memory-optimized servers End of Support October 2027 SLES 15 for SAP SLES15SAP o2-standard-48-metal o2-standard-32-metal o2-standard-112-metal o2-standard-16-metal o2-highmem-224-metal General-purpose End of Life December 2022 SLES 15 SP1 for SAP SLES15SPxSAP o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal o2-ultramem-896-metal General-purpose & Memory-optimized servers End of Support January 2024 SLES 15 SP2 for SAP LAMBSLES15SP2SAP o2-ultramem-672-metal o2-ultramem-896-metal Memory-optimized servers GA December 2024 Bring Your Own Image (BYOI) The Bare Metal Solution servers are certified to run only the OS images of the following distributions: Red Hat Enterprise Linux (RHEL) Oracle Linux (OL) SUSE Linux Enterprise Server (SLES) Any other OS hasn't been tested or certified to run on the Bare Metal Solution servers.",
+          "For example, when Red Hat releases RHEL 8.10 , the existing RHEL 8.9 OS image is updated to RHEL 8.10 as part of the patch process.",
+          "Available OS images You can request the installation of the following OS images on your Bare Metal Solution servers."
+        ]
+      },
+      {
+        "title": "\"SAP NetWeaver planning guide \\_|\\_ SAP on Google Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide",
+        "source_id": "site-docs-reference-2",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you use the following RHEL or SLES \"for SAP\" OS images that Google Cloud provides, then Google Cloud's Agent for SAP is packaged with the OS images: RHEL: all \"for SAP\" images SLES: SLES 15 SP4 for SAP and later versions Scale-out of SAP NetWeaver application servers SAP supports a scale-out architecture that uses multiple application servers, which supports a higher workload.",
+          "To see the available versions in each image family, see the operating system details: Red Hat Enterprise Linux (RHEL) SUSE Linux Enterprise Server (SLES) Windows Server SQL Server Enterprise For more information about the support status of the operating system versions that are certified for SAP, see OS support for SAP NetWeaver on Google Cloud .",
+          "Regional availability of SAP-certified Bare Metal Solution machines The Bare Metal Solution servers that are certified for SAP applications are available only in Bare Metal Solution region extensions, which are not available for every Google Cloud region."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "baremetalsolution.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:17.932Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution"
+}

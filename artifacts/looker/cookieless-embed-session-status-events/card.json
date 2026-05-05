@@ -1,0 +1,114 @@
+{
+  "feature_name": "Cookieless embed session status events",
+  "feature_slug": "cookieless-embed-session-status-events",
+  "summary": "Looker now publishes status events for cookieless embed sessions.",
+  "extended_definition": "Looker now publishes status events for cookieless embed sessions.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+      "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/acquire_embed_cookieless_session",
+      "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/delete_embed_cookieless_session"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create Acquire cookieless embed session \\_|\\_ Looker \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/acquire_embed_cookieless_session",
+        "source_id": "site-api-reference",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Response 200: Embed cookieless acquire session response Datatype Description (object) EmbedCookielessSessionAcquireResponse authentication token string One time token used to create or to attach to an embedded session in the Looker application server. authentication token ttl integer Authentication token time to live in seconds. navigation token string Token used to load and navigate between Looker pages. navigation token ttl integer Navigation token time to live in seconds. api token string Token to used to call Looker APIs. api token ttl integer Api token time to live in seconds. session reference token string Token referencing the actual embed session.",
+          "Home Documentation Data analytics Looker API Reference Send feedback Create Acquire cookieless embed session Stay organized with collections Save and categorize content based on your preferences.",
+          "Request POST /embed/cookieless session/acquire Datatype Description Request HTTP Request body HTTP Body Expand HTTP Body definition... body EmbedCookielessSessionAcquire Embed user details Expand EmbedCookielessSessionAcquire definition... session length integer Number of seconds the signed embed session will be valid after the embed session is started."
+        ]
+      },
+      {
+        "title": "Delete cookieless embed session \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/delete_embed_cookieless_session",
+        "source_id": "site-api-reference",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Looker API Reference Send feedback Delete cookieless embed session Stay organized with collections Save and categorize content based on your preferences.",
+          "Request DELETE /embed/cookieless session/{session reference token} Datatype Description Request HTTP Request path HTTP Path Expand HTTP Path definition... session reference token string Embed session reference token Response 204: Successfully deleted.",
+          "Version 4.0.26.6 (latest) Delete cookieless embed session This will delete the session associated with the given session reference token."
+        ]
+      },
+      {
+        "title": "Admin settings - Embed \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+        "source_id": "site-docs-reference",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cookieless Embed Starting in Looker 23.8, the embed domain can be included when the cookieless session is acquired.",
+          "Embedded Domain Allowlist You need to use this setting to make use of JavaScript events to pass data or actions between a parent page and a Looker iframe.",
+          "Important: the Persistent Sessions setting on the Admin > Authentication > Sessions panel must also be enabled to use cookieless embedding."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/acquire_embed_cookieless_session",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/delete_embed_cookieless_session",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/acquire_embed_cookieless_session",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/delete_embed_cookieless_session",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/acquire_embed_cookieless_session",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/delete_embed_cookieless_session",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/acquire_embed_cookieless_session",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/delete_embed_cookieless_session",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:23.337Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker"
+}

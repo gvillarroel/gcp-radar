@@ -1,0 +1,172 @@
+{
+  "feature_name": "API enablement onboarding",
+  "feature_slug": "api-enablement-onboarding",
+  "summary": "Adds an onboarding flow in the VS Code Duet AI plug-in with an API enable button.",
+  "extended_definition": "Adds an onboarding flow in the VS Code Duet AI plug-in with an API enable button.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/overview",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Chat with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "source_id": "site-docs-reference",
+        "final_score": 207,
+        "relevance": "",
+        "evidence_snippets": [
+          "A successful check results in the following output: $ grpc-health-probe -addr cloudaicompanion.googleapis.com:443 -tls error: this server does not implement the grpc health protocol (grpc.health.v1.Health): GRPC target method can't be resolved An unsuccessful check results in the following output: timeout: failed to connect service \"cloudaicompanion.googleapis.com:443\" within 1s To obtain more details, run the following before grpc-health-probe : export GRPC GO LOG SEVERITY LEVEL=info 'Activate Gemini Code Assist' still appears after selecting Gemini Code Assist project If you selected your project per the instructions in this guide, which includes enabling the Gemini for Google Cloud API, then there may be an issue with the LS server.",
+          "Connectivity issues in the Gemini Code Assist output window If you see a connection error or other connectivity problems in the Gemini Code Assist output window, try the following: Configure your firewall to allow access to oauth2.googleapis.com and cloudaicompanion.googleapis.com .",
+          "Note: The behaviour of code generation, completion, and transformation are non-deterministic when used simultaneously with other plugins that either implement the same shortcuts and/or use the same platform API to process these actions."
+        ]
+      },
+      {
+        "title": "\"Manage Gemini Code Assist Standard and Enterprise licenses \\_|\\_ Gemini\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses",
+        "source_id": "site-docs-reference",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Verify the following header key-value pairs are present on all API calls: Authorization : your Google Cloud access token from the Google Cloud CLI x-goog-user-project : the project ID of your quota project Change the number of Gemini Code Assist Standard and Enterprise licenses in a subscription You can add or remove the number of Gemini for Google Cloud licenses directly through the Google Cloud console, or through your Google account representative or an authorized reseller.",
+          "To further prevent cross-organization usage of Gemini Code Assist Standard and Enterprise in a project, you can do one of the following: Disable the Gemini for Google Cloud API in the project.",
+          "If you want to manage licenses using an API rather than the Google Cloud console, then verify the following: Set up a quota project for your billing account."
+        ]
+      },
+      {
+        "title": "\"Security, privacy, and compliance for Gemini Code Assist Standard and Enterprise\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "source_id": "site-docs-root",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "These LLM instances are shared by all Google customers who enable the Gemini for Google Cloud API Standard and Enterprise.",
+          "This API enables these clients to access the stateless LLMs that power Gemini Code Assist Standard and Enterprise.",
+          "The Gemini for Google Cloud API doesn't have access to any of the other APIs or resources in your project."
+        ]
+      },
+      {
+        "title": "\"Gemini Code Assist Standard and Enterprise overview \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 187,
+        "relevance": "",
+        "evidence_snippets": [
+          "Gemini Code Assist code explained for Apigee policies. ( Preview ) Gemini in Application Integration The following table shows the types of generative AI assistance in Application Integration in the Google Cloud console: Integration creation assist Gemini Code Assist Standard Gemini Code Assist Enterprise AI-assisted visual editor for automation flow generation Enterprise context embedded AI-assisted automation authoring Generative AI Automation flow documentation generation and refinement Gemini in BigQuery features with Gemini Code Assist The following table shows the types of generative AI assistance for BigQuery in BigQuery Studio : Data insights Gemini Code Assist Standard Gemini Code Assist Enterprise Data insights provides an insightful library of queries generated from the metadata of your tables.",
+          "Gemini Cloud Assist The following table shows the types of generative AI assistance in Gemini Cloud Assist in the Google Cloud console: Gemini Cloud Assist assistance Gemini Code Assist Standard Gemini Code Assist Enterprise Gemini Cloud Assist features (including features available to all Google users and available to Gemini Code Assist Enterprise users) Gemini in Apigee The following table shows the types of generative AI assistance with API development in Apigee (IDE and the Google Cloud console): Gemini Code Assist for API management Gemini Code Assist Standard Gemini Code Assist Enterprise Create or edit OpenAPI specification using natural language prompts.",
+          "Extended integrations: Gemini Code Assist Enterprise provides AI assistance across Google Cloud like Apigee, Application Integration, and Gemini Cloud Assist, empowering cloud teams to build, design and operate, and optimize their applications and infrastructure more effectively on Google Cloud."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaicompanion.googleapis.com",
+      "grpc.health.v1.Health",
+      "oauth2.googleapis.com",
+      "orders.licensePool.enumerateLicensedUsers"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/overview"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/overview"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/overview"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:09.001Z",
+  "source_step08_card": "data/step-08/current/products/gemini-code-assist-standard-and-enterprise/card.json",
+  "product_name": "Gemini Code Assist Standard and Enterprise",
+  "product_slug": "gemini-code-assist-standard-and-enterprise"
+}

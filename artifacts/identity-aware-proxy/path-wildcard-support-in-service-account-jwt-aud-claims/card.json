@@ -1,0 +1,242 @@
+{
+  "feature_name": "Path wildcard support in service account JWT aud claims",
+  "feature_slug": "path-wildcard-support-in-service-account-jwt-aud-claims",
+  "summary": "Service account JWTs can use a path wildcard in the audience claim when authenticating to an IAP-secured resource.",
+  "extended_definition": "Service account JWTs can use a path wildcard in the audience claim when authenticating to an IAP-secured resource.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iap/docs/authentication-howto",
+      "https://docs.cloud.google.com/iap/docs/customizing",
+      "https://docs.cloud.google.com/iap/docs/reference/rest/Shared.Types/Binding",
+      "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Programmatic authentication \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "source_id": "site-docs-root",
+        "final_score": 184,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following Bash script demonstrates this process: Bash #!/usr/bin/env bash Example script that generates an OIDC token using a service account key file and uses it to access an IAP-secured resource. set -euo pipefail get token () { Get the bearer token in exchange for the service account credentials local service account key file path = \" ${ 1 } \" local iap client id = \" ${ 2 } \" Define the scope and token endpoint local iam scope = \"https://www.googleapis.com/auth/iam\" local oauth token uri = \"https://www.googleapis.com/oauth2/v4/token\" Extract data from service account key file local private key id = \" $( cat \" ${ service account key file path } \" jq -r '.private key id' ) \" local client email = \" $( cat \" ${ service account key file path } \" jq -r '.client email' ) \" local private key = \" $( cat \" ${ service account key file path } \" jq -r '.private key' ) \" Set token timestamps (current time and expiration 10 minutes later) local issued at = \" $( date +%s ) \" local expires at = \" $(( issued at + 600 )) \" Create JWT header and payload local header = \"{'alg':'RS256','typ':'JWT','kid':' ${ private key id } '}\" local header base64 = \" $( echo \" ${ header } \" base64 tr -d '\\n' ) \" local payload = \"{'iss':' ${ client email } ','aud':' ${ oauth token uri } ','exp': ${ expires at } ,'iat': ${ issued at } ,'sub':' ${ client email } ','target audience':' ${ iap client id } '}\" local payload base64 = \" $( echo \" ${ payload } \" base64 tr -d '\\n' ) \" Create JWT signature using the private key local signature base64 = \" $( printf %s \" ${ header base64 } . ${ payload base64 } \" openssl dgst -binary -sha256 -sign < ( printf '%s\\n' \" ${ private key } \" ) base64 tr -d '\\n')\" local assertion = \" ${ header base64 } . ${ payload base64 } . ${ signature base64 } \" Exchange the signed JWT assertion for an ID token local token payload = \" $( curl -s \\ --data-urlencode \"grant type=urn:ietf:params:oauth:grant-type:jwt-bearer\" \\ --data-urlencode \"assertion= ${ assertion } \" \\ https://www.googleapis.com/oauth2/v4/token ) \" Extract just the ID token from the response local bearer id token = \" $( echo \" ${ token payload } \" jq -r '.id token' ) \" echo \" ${ bearer id token } \" } main () { Check if required arguments are provided if [[ $# -lt 3 ]] ; then echo \"Usage: $0 <service account key file.json> <iap client id> <url>\" exit 1 fi Assign parameters to variables SERVICE ACCOUNT KEY = \" $1 \" IAP CLIENT ID = \" $2 \" URL = \" $3 \" Generate the ID token echo \"Generating token...\" ID TOKEN = $( get token \" ${ SERVICE ACCOUNT KEY } \" \" ${ IAP CLIENT ID } \" ) Access the IAP-secured resource with the token echo \"Accessing: ${ URL } \" curl --header \"Authorization: Bearer ${ ID TOKEN } \" \" ${ URL } \" } Run the main function with all provided arguments main \" $@ \" This script performs the following steps: Extracts the service account key information from your JSON key file Creates a JWT with the necessary fields, including the IAP client ID as the target audience Signs the JWT using the service account's private key Exchanges this JWT for an OIDC token through Google's OAuth service Uses the resulting token to make an authenticated request to your IAP-secured resource To use this script: Save it to a file, for example: get iap token.sh Make it executable: chmod +x get iap token.sh Run it with three parameters: ./get iap token.sh service-account-key.json \\ OAUTH CLIENT ID \\ URL Where: service-account-key.json is your downloaded service account key file OAUTH CLIENT ID is the OAuth client ID for your IAP-secured resource URL is the URL you want to access Obtain an OIDC token by using service account impersonation In all other cases, use the IAM credentials API to generate an OIDC token by impersonating a target service account right before accessing an IAP-secured resource.",
+          "Replacing the wildcard character with a project ID is invalid. name = iam client . service account path ( \"-\" , target sa ) Create and sign the JWT payload payload = generate jwt payload ( target sa , resource url ) Sign the JWT using the IAM credentials API response = iam client . sign jwt ( name = name , payload = payload ) return response . signed jwt curl Run the following command to prepare a request with the JWT payload: cat << EOF > request.json { \"payload\" : JWT PAYLOAD } EOF Sign the JWT using the IAM Service Account Credentials API: curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/ SERVICE ACCOUNT EMAIL ADDRESS :signJwt\" After a successful request, a signed JWT is returned in the response.",
+          "Returns: str: JSON string containing the JWT payload with properly formatted claims. \"\"\" Create current time and expiration time (1 hour later) in UTC iat = datetime . datetime . now ( tz = datetime . timezone . utc ) exp = iat + datetime . timedelta ( seconds = 3600 ) Convert datetime objects to numeric timestamps (seconds since epoch) as required by JWT standard (RFC 7519) payload = { \"iss\" : service account email , \"sub\" : service account email , \"aud\" : resource url , \"iat\" : int ( iat . timestamp ()), \"exp\" : int ( exp . timestamp ()), } return json . dumps ( payload ) def sign jwt ( target sa : str , resource url : str ) - > str : \"\"\"Signs JWT payload using ADC and IAM credentials API."
+        ]
+      },
+      {
+        "title": "IapSettings \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "source_id": "site-api-reference",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "JWT Propagate attributes in the JWT of the form: \"additional claims\": { \"my attribute\": [\"value1\", \"value2\"] } RCTOKEN Propagate attributes in the RCToken of the form: \"additional claims\": { \"my attribute\": [\"value1\", \"value2\"] } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The RCToken is primarily used for service mesh deployments, and can be scoped to a single mesh by configuring the audience field accordingly.",
+          "CorsSettings Allows customers to configure HTTP request paths that'll allow HTTP OPTIONS call to bypass authentication and authorization."
+        ]
+      },
+      {
+        "title": "Binding \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/reference/rest/Shared.Types/Binding",
+        "source_id": "site-api-reference",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example (Comparison): title: \"Summary size limit\" description: \"Determines if a summary is less than 100 chars\" expression: \"document.summary.size() < 100\" Example (Equality): title: \"Requestor is owner\" description: \"Determines if requestor is the document owner\" expression: \"document.owner == request.auth.claims.email\" Example (Logic): title: \"Public documents\" description: \"Determine whether the document should be publicly visible\" expression: \"document.type != 'private' && document.type != 'internal'\" Example (Data Manipulation): title: \"Notification string\" description: \"Create a notification string with a timestamp.\" expression: \"'New message received at ' + string(document.create time)\" The exact variables and functions that may be referenced within an expression are determined by the service that evaluates it.",
+          "For a list of the available pre-defined roles, see here . members[] string Specifies the principals requesting access for a Google Cloud resource. members can have the following values: allUsers : A special identifier that represents anyone who is on the internet; with or without a Google account. allAuthenticatedUsers : A special identifier that represents anyone who is authenticated with a Google account or a service account.",
+          "If the service account is undeleted, this value reverts to serviceAccount:{emailid} and the undeleted service account retains the role in the binding. deleted:group:{emailid}?uid={uniqueid} : An email address (plus unique identifier) representing a Google group that has been recently deleted."
+        ]
+      },
+      {
+        "title": "Customize IAP \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/customizing",
+        "source_id": "site-docs-root",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "To configure the IAP settings by using the Google Cloud console or the gcloud CLI, see Customizing IAP . gcloud iap settings get --project = PROJECT-ID gcloud iap settings get --folder = FOLDER-ID gcloud iap settings get --organization = ORGANIZATION-ID To get settings for a specific IAP resource type under a project: gcloud iap settings get --project = PROJECT-ID \\ --resource-type = RESOURCE-TYPE-NAME To set settings for a project, folder, or organization, or an IAP resource type under a project, create a JSON or YAML file that contains the desired new settings and specify the path to the file.",
+          "Customize IAP settings IAP provides the following customization settings: Field Description access settings.cors settings.allow http options Control HTTP OPTIONS (CORS preflight) access settings.oauth settings.login hint Simplify login for users of a G Suite domain application settings.access denied page settings.access denied page uri Show a custom error page when access is denied application settings.csm settings.rctoken aud Issue GKE Enterprise and Istio RCTokens access settings.gcip settings Authenticate with Identity Platform access settings.ReauthSettings Set a reauthentication policy.",
+          "This has several benefits: If a user is signed in with multiple accounts (such as work account and a personal account), the system will automatically select their work account instead of displaying the account selection UI."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "document.create",
+      "document.owner",
+      "document.summary.size",
+      "document.type",
+      "example.com",
+      "file.json",
+      "iamcredentials.googleapis.com",
+      "key.json",
+      "request.auth.claims.email",
+      "request.json",
+      "settings.access",
+      "settings.allow",
+      "settings.cors",
+      "settings.csm",
+      "settings.gcip",
+      "settings.login",
+      "settings.oauth",
+      "settings.rctoken",
+      "settings.ReauthSettings",
+      "token.sh"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:22.305Z",
+  "source_step08_card": "data/step-08/current/products/identity-aware-proxy/card.json",
+  "product_name": "Identity-Aware Proxy",
+  "product_slug": "identity-aware-proxy"
+}

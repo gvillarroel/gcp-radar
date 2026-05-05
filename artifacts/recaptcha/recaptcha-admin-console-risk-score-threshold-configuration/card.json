@@ -1,0 +1,186 @@
+{
+  "feature_name": "reCAPTCHA Admin console risk score threshold configuration",
+  "feature_slug": "recaptcha-admin-console-risk-score-threshold-configuration",
+  "summary": "The reCAPTCHA Admin console offers an improved interface for configuring risk score thresholds and reviewing transactions above those thresholds.",
+  "extended_definition": "The reCAPTCHA Admin console offers an improved interface for configuring risk score thresholds and reviewing transactions above those thresholds.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/recaptcha/docs/choose-key-type",
+      "https://docs.cloud.google.com/recaptcha/docs/fraud-prevention",
+      "https://docs.cloud.google.com/recaptcha/docs/integrate-account-verification",
+      "https://docs.cloud.google.com/recaptcha/docs/migrate-recaptcha"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Protect payment transactions with Transaction defense \\_|\\_ reCAPTCHA \\_\\",
+        "url": "https://docs.cloud.google.com/recaptcha/docs/fraud-prevention",
+        "source_id": "site-docs-root",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following are some examples of how you can use the transactionRisk score: Risk tolerance Recommended threshold Maximum false positive rate Example usage Low 0.5 5% Require additional verification, such as 2FA, before accepting transaction Medium 0.7 1% Send transaction to manual review High 0.9 0.1% Reject transaction What's next To improve the quality of fraud detection, learn about additional signals .",
+          "In the response of the create assessment API request, reCAPTCHA provides a score for transaction risk and additional Explainability reasons (for example, HIGH TRANSACTION VELOCITY ), if applicable.",
+          "The following example shows how to integrate a score-based key on a credit card transaction event: function submitForm() { grecaptcha.enterprise.ready(function() { grecaptcha.enterprise.execute( 'reCAPTCHA site key', {action: 'purchase'}).then(function(token) { document.getElementById(\"token\").value = token; document.getElementByID(\"paymentForm\").submit(); }); }); } <form id=\"paymentForm\" action=\"?\" method=\"POST\"> Total: $1.99 Credit Card Number: <input name=\"cc-number\" id=\"cc-number\" autocomplete=\"cc-number\"><br/> <input type=\"hidden\" id=\"token\" name=\"recaptcha token\"/> <button onclick=\"submitForm()\">Purchase</button> </form> <script src=\"https://www.google.com/recaptcha/enterprise.js\" async defer></script> You can experiment with this code in JSFiddle by clicking the <> icon in the top-right corner of the code window. <html> <head> <title>Protected Payment</title> <script src=\"https://www.google.com/recaptcha/enterprise.js\" async defer></script> <script> function submitForm() { grecaptcha.enterprise.ready(function() { grecaptcha.enterprise.execute( 'reCAPTCHA site key', {action: 'purchase'}).then(function(token) { document.getElementById(\"token\").value = token; document.getElementByID(\"paymentForm\").submit(); }); }); } </script> </head> <body> <form id=\"paymentForm\" action=\"?\" method=\"POST\"> Total: $1.99 Credit Card Number: <input name=\"cc-number\" id=\"cc-number\" autocomplete=\"cc-number\"><br/> <input type=\"hidden\" id=\"token\" name=\"recaptcha token\"/> <button onclick=\"submitForm()\">Purchase</button> </form> </body> </html> Frontend Integration - Create assessments with transaction data To receive payment fraud verdicts, create assessments with Transaction Data by using the additional fields in the projects.assessments.create method."
+        ]
+      },
+      {
+        "title": "Choose the appropriate key type \\_|\\_ reCAPTCHA \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/recaptcha/docs/choose-key-type",
+        "source_id": "site-iam-reference",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported reCAPTCHA version reCAPTCHA score-based and checkbox keys reCAPTCHA score-based keys reCAPTCHA challenge-based keys embedded in an interstitial page Choose reCAPTCHA express keys for APIs Use reCAPTCHA express when your environment does not support a reCAPTCHA client integration like the JavaScript API or the mobile SDKs. reCAPTCHA express is suitable for APIs, websites, mobile applications, and IoT devices such as TVs and gaming consoles, but can also be used to protect websites or mobile applications when a client-side integration is infeasible.",
+          "With policy-based challenge keys, CAPTCHA challenges are triggered if the initial score that is computed by reCAPTCHA is below the configured score threshold.",
+          "Score-based keys SCORE Checkbox keys CHECKBOX Policy-based challenge keys POLICY BASED CHALLENGE mobile For integration with Android and iOS apps. reCAPTCHA keys for Android SCORE reCAPTCHA keys for iOS SCORE WAF For web pages and APIs served through WAF or Edge compute servers. action-token keys SCORE and CHECKBOX session-token keys SCORE challenge-page keys INVISIBLE API For integration with APIs or clients like IoT devices that do not support the reCAPTCHA JavaScript or mobile SDKs. express keys SCORE Choose a reCAPTCHA key type for web To verify user interactions on websites, reCAPTCHA provides score-based keys , which don't trigger CAPTCHA challenges, checkbox keys, which trigger non-deterministic CAPTCHA challenges, and policy-based challenge keys, which trigger deterministic CAPTCHA challenges."
+        ]
+      },
+      {
+        "title": "\"Configure multi-factor authentication \\_|\\_ reCAPTCHA \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/recaptcha/docs/integrate-account-verification",
+        "source_id": "site-docs-root",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Append an additional twofactor parameter to your execute() function as shown in the following sample code: grecaptcha . enterprise . execute ( KEY ID , { action : 'login' , twofactor : true }). then ( token = > { // Handle the generated token. }); Replace KEY ID with the score-based key that you created for your website.",
+          "Instrument the critical workflow on your website Pass the necessary information to reCAPTCHA through the execute() function for the risk assessment.",
+          "Understand the configuration process of MFA The MFA feature of reCAPTCHA is implemented on top of the regular reCAPTCHA workflow."
+        ]
+      },
+      {
+        "title": "Migrate from reCAPTCHA Classic \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/recaptcha/docs/migrate-recaptcha",
+        "source_id": "site-docs-root",
+        "final_score": 162,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers ` -Uri \"https://recaptchaenterprise.googleapis.com/v1/projects/ PROJECT ID /keys/ SITE KEY :migrate\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT-ID /keys/6Ldqgs0UAAAAAIn4k7YxEB-LwEh5S9-Gv6IIWB8m\", \"displayName\": \"My site key\", \"webSettings\": { \"allowAllDomains\": false, \"allowedDomains\": [ recaptcha.net ], \"allowAmpTraffic\": false, \"integrationType\": \"SCORE\", \"challengeSecurityPreference\": \"CHALLENGE SECURITY PREFERENCE UNSPECIFIED\" } } To verify that the site key is migrated, do the following: Google Cloud console Go to the reCAPTCHA page and find the migrated site key in the reCAPTCHA keys section.",
+          "Use the gcloud recaptcha keys migrate command as shown in the following example: gcloud recaptcha keys migrate SITE KEY --project PROJECT-ID Provide the following values: SITE KEY : the active site key that you copied from the reCAPTCHA Admin console.",
+          "To execute the migration process, you must have a reCAPTCHA user account that satisfies the following requirements: In the reCAPTCHA Admin console, the user account is listed as an owner for the site key you want to migrate."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "document.getElementById",
+      "document.getElementByID",
+      "enterprise.js",
+      "example.com",
+      "grecaptcha.enterprise.execute",
+      "grecaptcha.enterprise.ready",
+      "projects.assessments.create",
+      "recaptcha.net",
+      "recaptchaenterprise.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/fraud-prevention",
+        "https://docs.cloud.google.com/recaptcha/docs/choose-key-type",
+        "https://docs.cloud.google.com/recaptcha/docs/integrate-account-verification",
+        "https://docs.cloud.google.com/recaptcha/docs/migrate-recaptcha"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/fraud-prevention",
+        "https://docs.cloud.google.com/recaptcha/docs/choose-key-type",
+        "https://docs.cloud.google.com/recaptcha/docs/integrate-account-verification",
+        "https://docs.cloud.google.com/recaptcha/docs/migrate-recaptcha"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/fraud-prevention",
+        "https://docs.cloud.google.com/recaptcha/docs/choose-key-type",
+        "https://docs.cloud.google.com/recaptcha/docs/integrate-account-verification",
+        "https://docs.cloud.google.com/recaptcha/docs/migrate-recaptcha"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/fraud-prevention",
+        "https://docs.cloud.google.com/recaptcha/docs/choose-key-type",
+        "https://docs.cloud.google.com/recaptcha/docs/integrate-account-verification",
+        "https://docs.cloud.google.com/recaptcha/docs/migrate-recaptcha"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/fraud-prevention",
+        "https://docs.cloud.google.com/recaptcha/docs/choose-key-type",
+        "https://docs.cloud.google.com/recaptcha/docs/integrate-account-verification",
+        "https://docs.cloud.google.com/recaptcha/docs/migrate-recaptcha"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/fraud-prevention",
+        "https://docs.cloud.google.com/recaptcha/docs/choose-key-type",
+        "https://docs.cloud.google.com/recaptcha/docs/integrate-account-verification",
+        "https://docs.cloud.google.com/recaptcha/docs/migrate-recaptcha"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/fraud-prevention",
+        "https://docs.cloud.google.com/recaptcha/docs/choose-key-type",
+        "https://docs.cloud.google.com/recaptcha/docs/integrate-account-verification",
+        "https://docs.cloud.google.com/recaptcha/docs/migrate-recaptcha"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/fraud-prevention",
+        "https://docs.cloud.google.com/recaptcha/docs/choose-key-type",
+        "https://docs.cloud.google.com/recaptcha/docs/integrate-account-verification",
+        "https://docs.cloud.google.com/recaptcha/docs/migrate-recaptcha"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/fraud-prevention",
+        "https://docs.cloud.google.com/recaptcha/docs/choose-key-type",
+        "https://docs.cloud.google.com/recaptcha/docs/integrate-account-verification",
+        "https://docs.cloud.google.com/recaptcha/docs/migrate-recaptcha"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:33.253Z",
+  "source_step08_card": "data/step-08/current/products/recaptcha/card.json",
+  "product_name": "reCAPTCHA",
+  "product_slug": "recaptcha"
+}

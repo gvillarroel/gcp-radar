@@ -1,0 +1,181 @@
+{
+  "feature_name": "Cloud EKM coordinated external keys",
+  "feature_slug": "cloud-ekm-coordinated-external-keys",
+  "summary": "Cloud EKM supports coordinated external keys so you can create and manage keys in a compatible external key management system from Cloud KMS over a VPC network.",
+  "extended_definition": "Cloud EKM supports coordinated external keys so you can create and manage keys in a compatible external key management system from Cloud KMS over a VPC network.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+      "https://docs.cloud.google.com/kms/docs/create-external-key",
+      "https://docs.cloud.google.com/kms/docs/ekm",
+      "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud External Key Manager \\_|\\_ Cloud Key Management Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kms/docs/ekm",
+        "source_id": "site-docs-root",
+        "final_score": 245,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If your EKM supports the Cloud EKM control plane, then you can enable EKM key management from Cloud KMS for your EKM connections to create coordinated external keys.",
+          "Compatibility Supported key managers You can store external keys in the following external key management partner systems: Supported today: Fortanix Futurex Thales Services that support CMEK with Cloud EKM The following services support integration with Cloud KMS for external (Cloud EKM) keys: Agent Assist AlloyDB for PostgreSQL Apigee API hub Application Integration Artifact Registry Backup and DR Service: Backup Vault Container and Backups at rest Backup for GKE BigQuery Bigtable Cloud Composer Cloud Data Fusion Cloud Healthcare API Cloud Logging: Data in the Log Router and Data in Logging storage Cloud Run Cloud Run functions Cloud SQL Cloud Storage Cloud Tasks Cloud Workstations Compute Engine: Persistent disks , Snapshots , Custom images , and Machine images Customer Experience Insights Database Migration Service: MySQL migrations - data written to databases , PostgreSQL migrations - Data written to databases , PostgreSQL to AlloyDB migrations - Data written to databases , SQL Server migrations - Data written to databases , and Oracle to PostgreSQL data at rest Dataflow Dataform Dataplex Universal Catalog Dataproc Metastore Datastream Dialogflow CX Document AI Eventarc Advanced ( Preview ) Eventarc Standard Filestore Firestore Google Cloud Managed Lustre Google Cloud Managed Service for Apache Kafka Google Cloud NetApp Volumes Google Distributed Cloud Google Kubernetes Engine: Data on VM disks and Application-layer secrets Integration Connectors Looker (Google Cloud core) Managed Service for Apache Spark: Dataproc clusters data on VM disks and Dataproc serverless data on VM disks Memorystore for Redis Memorystore for Redis Cluster Memorystore for Valkey Migrate to Virtual Machines: Data migrated from VMware, AWS, and Azure VM sources and Data migrated from disk and machine image sources Parameter Manager Pub/Sub Secret Manager Secure Source Manager Security Command Center Spanner Speech-to-Text Vertex AI Vertex AI Workbench instances Workflows Workload Manager Important: All other services are not compatible with Cloud External Key Manager for CMEK.",
+          "EKM key management from Cloud KMS When using Cloud EKM through a VPC with an external key management partner that supports the Cloud EKM control plane, you can use the Cloud KMS EKM management mode to simplify the process of maintaining external keys in your external key management partner and in Cloud EKM."
+        ]
+      },
+      {
+        "title": "\"Create an EKM connection \\_|\\_ Cloud Key Management Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "source_id": "site-iam-reference",
+        "final_score": 221,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To create an EKM connection for coordinated external keys, run the following command: curl \"https://cloudkms.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /ekmConnections\" \\ --request \"POST\" \\ --header \"authorization: Bearer TOKEN \" \\ --header \"content-type: application/json\" \\ --header \"x-goog-user-project: PROJECT ID \" \\ --data '{ \"name\": \" EKM CONNECTION \", \"serviceResolvers\": [ { \"serviceDirectoryService\": \" SERVICE DIRECTORY SERVICE \", \"hostname\": \" HOSTNAME \", \"serverCertificates\": [ { SERVER CERTIFICATES } ] } ] \"keyManagementMode\": \"CLOUD KMS\", \"cryptoSpacePath\": \" CRYPTO SPACE PATH \" }' Replace the following: PROJECT ID : the ID of the project where you want to create the EKM connection.",
+          "To create an EKM connection for manually managed external keys, run the following command: curl \"https://cloudkms.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /ekmConnections\" \\ --request \"POST\" \\ --header \"authorization: Bearer TOKEN \" \\ --header \"content-type: application/json\" \\ --header \"x-goog-user-project: PROJECT ID \" \\ --data '{ \"name\": \" EKM CONNECTION \", \"serviceResolvers\": [ { \"serviceDirectoryService\": \" SERVICE DIRECTORY SERVICE \", \"hostname\": \" HOSTNAME \", \"serverCertificates\": [ { SERVER CERTIFICATES } ] } ] }' Replace the following: PROJECT ID : the ID of the project where you want to create the EKM connection.",
+          "You can use external keys over VPC in Cloud KMS locations that support EKM via VPC."
+        ]
+      },
+      {
+        "title": "\"Create an external key \\_|\\_ Cloud Key Management Service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kms/docs/create-external-key",
+        "source_id": "site-iam-reference",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The key shows as Pending generation until the key path is returned by your EKM and the Cloud EKM key is available. gcloud To use Cloud KMS on the command line, first Install or upgrade to the latest version of Google Cloud CLI . gcloud kms keys create KEY NAME \\ --keyring KEY RING \\ --location LOCATION \\ --purpose PURPOSE \\ --default-algorithm ALGORITHM \\ --protection-level \"external-vpc\" \\ --crypto-key-backend VPC CONNECTION RESOURCE ID Replace the following: KEY NAME : the name of the key.",
+          "If you see the Key path field, the EKM via VPC connection that you selected isn't configured for coordinated external keys.",
+          "This page shows you how to create Cloud External Key Manager (Cloud EKM) keys on an existing key ring in Cloud Key Management Service (Cloud KMS)."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.cryptoKeys \\_|\\_ Cloud Key Management Service \\_\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "source_id": "site-api-reference",
+        "final_score": 202,
+        "relevance": "",
+        "evidence_snippets": [
+          "Resource: CryptoKey JSON representation CryptoKeyVersion JSON representation CryptoKeyVersionState ProtectionLevel CryptoKeyVersionAlgorithm KeyOperationAttestation JSON representation AttestationFormat CertificateChains JSON representation ExternalProtectionLevelOptions JSON representation CryptoKeyPurpose CryptoKeyVersionTemplate JSON representation Methods Resource: CryptoKey A CryptoKey represents a logical key that can be used for cryptographic operations.",
+          "JSON representation { \"externalKeyUri\" : string , \"ekmConnectionKeyPath\" : string } Fields externalKeyUri string The URI for an external resource that this CryptoKeyVersion represents. ekmConnectionKeyPath string The path to the external key material on the EKM when using [EkmConnection][] e.g., \"v0/my/key\".",
+          "Only applicable if CryptoKeyVersions have a ProtectionLevel of [EXTERNAL VPC][CryptoKeyVersion.ProtectionLevel.EXTERNAL VPC], with the resource name in the format projects/ /locations/ /ekmConnections/ ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.googleapis.com",
+      "e.g",
+      "projects.cryptoKeys",
+      "projects.locations.keyRings.cryptoKeys"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/create-external-key",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/create-external-key",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/create-external-key",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/create-external-key",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/create-external-key",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/create-external-key",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/create-external-key",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/create-external-key",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/create-ekm-connection",
+        "https://docs.cloud.google.com/kms/docs/create-external-key",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:30.283Z",
+  "source_step08_card": "data/step-08/current/products/cloud-key-management-service/card.json",
+  "product_name": "Cloud Key Management Service",
+  "product_slug": "cloud-key-management-service"
+}

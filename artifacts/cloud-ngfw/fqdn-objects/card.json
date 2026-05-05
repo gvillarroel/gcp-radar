@@ -1,0 +1,233 @@
+{
+  "feature_name": "FQDN objects",
+  "feature_slug": "fqdn-objects",
+  "summary": "FQDN objects let firewall policy rules filter incoming or outgoing traffic for specific domain names.",
+  "extended_definition": "FQDN objects let firewall policy rules filter incoming or outgoing traffic for specific domain names.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+      "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+      "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+      "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud NGFW overview \\_|\\_ Cloud Next Generation Firewall \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+        "source_id": "site-docs-reference",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud NGFW lets you group firewall rules into policy objects that you can apply consistently across multiple Virtual Private Cloud (VPC) networks, either globally or within a specific region.",
+          "Cloud NGFW lets you group firewall rules into policy objects that you can apply across your organization or to specific folders.",
+          "Cloud Next Generation Firewall Standard : extends the Essentials tier features with enhanced capabilities, such as fully qualified domain name (FQDN) objects and threat intelligence."
+        ]
+      },
+      {
+        "title": "\"Configure a global network firewall policy to allow egress traffic to an\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "source_id": "site-docs-root",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to create a custom VPC network, VM, Cloud Router, Cloud NAT, global network firewall policy and its rules, and to view the logs, ask your administrator to grant you the following IAM roles on the project: Compute Network Admin role ( roles/compute.networkAdmin ) Compute Instance Admin (v1) role ( roles/compute.instanceAdmin.v1 ) Compute Security Admin role ( roles/compute.securityAdmin ) Logs Viewer role ( roles/logging.viewer ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "This quickstart creates a Virtual Private Cloud (VPC) network with a subnet, creates a virtual machine (VM) instance in the VPC network, sets up a firewall policy that uses egress rules, and then tests the firewall policy from the VM.",
+          "Home Documentation Networking Cloud NGFW Guides Send feedback Configure a global network firewall policy to allow egress traffic to an FQDN Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Configure a hierarchical firewall policy to allow egress traffic from a\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "source_id": "site-docs-root",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Make sure that you have the following Identity and Access Management (IAM) roles: Organization Administrator role (roles/resourcemanager.organizationAdmin) Folder Admin role (roles/resourcemanager.folderAdmin) Project Creator role (roles/resourcemanager.projectCreator) Project Deleter role (roles/resourcemanager.projectDeleter) Compute Network Admin role ( roles/compute.networkAdmin ) Compute Organization Firewall Policy Admin role ( roles/compute.orgFirewallPolicyAdmin ) Enable the Compute Engine and Identity-Aware Proxy (IAP) APIs.",
+          "Create a hierarchical firewall policy and add firewall rules Create a hierarchical firewall policy and add the following firewall policy rules to it: Enable IAP for all the VMs in test-folder to enable administrative access to the VMs.",
+          "The page walks through an example of creating two VPC networks, creating virtual machine (VM) instances in the VPC networks, setting up a hierarchical firewall policy with firewall rules, and then testing the firewall policy."
+        ]
+      },
+      {
+        "title": "\"URL filtering service overview \\_|\\_ Cloud Next Generation Firewall \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+        "source_id": "site-docs-root",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "How the URL filtering service works The URL filtering service processes the HTTP(S) traffic in the following sequence: The URL filtering service applies firewall policy rules to the traffic to and from the VM instances or Google Kubernetes Engine (GKE) clusters in the network.",
+          "Firewall policy rules Firewall policy rules let you control the type of traffic that is intercepted and inspected.",
+          "To configure the URL filtering service, create a firewall policy rule that does the following: Identifies the type of traffic to be inspected by using multiple Layer 3 and Layer 4 firewall policy rule components ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ads.google.com",
+      "compute.instanceAdmin.v1",
+      "compute.networkAdmin",
+      "compute.orgFirewallPolicyAdmin",
+      "compute.securityAdmin",
+      "logging.viewer",
+      "resourcemanager.folderAdmin",
+      "resourcemanager.organizationAdmin",
+      "resourcemanager.projectCreator",
+      "resourcemanager.projectDeleter"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.instanceAdmin.v1",
+      "roles/compute.networkAdmin",
+      "roles/compute.orgFirewallPolicyAdmin",
+      "roles/compute.securityAdmin",
+      "roles/logging.viewer",
+      "roles/resourcemanager.folderAdmin",
+      "roles/resourcemanager.organizationAdmin",
+      "roles/resourcemanager.projectCreator",
+      "roles/resourcemanager.projectDeleter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-firewalls",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:35.079Z",
+  "source_step08_card": "data/step-08/current/products/cloud-ngfw/card.json",
+  "product_name": "Cloud NGFW",
+  "product_slug": "cloud-ngfw"
+}

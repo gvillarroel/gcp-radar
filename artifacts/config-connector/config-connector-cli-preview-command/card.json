@@ -1,0 +1,92 @@
+{
+  "feature_name": "config-connector CLI preview command",
+  "feature_slug": "config-connector-cli-preview-command",
+  "summary": "Config Connector added a preview command to the config-connector CLI.",
+  "extended_definition": "Config Connector added a preview command to the config-connector CLI.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/how-to/getting-started",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/overview",
+      "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Getting started with Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/getting-started",
+        "source_id": "site-docs-reference",
+        "final_score": 56,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, to check if your Pub/Sub topic resource is ready, run the following command: kubectl wait --for=condition=READY pubsubtopics TOPIC NAME Replace TOPIC NAME with the name of your Pub/Sub topic.",
+          "For example, to view all your Pub/Sub topic, run the following command: kubectl describe pubsubtopics In this list, you should see the Pub/Sub topic you created in the previous section.",
+          "Run the following command: kubectl apply -f pubsub-topic.yaml Check the Pub/Sub instance for the change in name: kubectl describe pubsubtopics Your topic should have the new label."
+        ]
+      },
+      {
+        "title": "\"Install the config-connector CLI tool \\_|\\_ Config Connector \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 44,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "Troubleshoot Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "source_id": "site-docs-reference",
+        "final_score": 44,
+        "relevance": "",
+        "evidence_snippets": [
+          "Check Config Connector status and conditions Check the version of Config Connector Run the following command to get the installed Config Connector version, and cross-reference the release notes to verify that the running version supports the features and resources that you want to use: kubectl get ns cnrm-system -o jsonpath = '{.metadata.annotations.cnrm\\.cloud\\.google\\.com/version}' Check the resource's status and events Usually, you can determine the issue with your Config Connector resources by inspecting the state of your resources in Kubernetes .",
+          "To confirm that Workload Identity Federation for GKE is not enabled, complete the following steps: Save the following Pod configuration as wi-test.yaml : apiVersion : v1 kind : Pod metadata : name : workload-identity-test namespace : cnrm-system spec : containers : - image : google/cloud-sdk:slim name : workload-identity-test command : [ \"sleep\" , \"infinity\" ] serviceAccountName : cnrm-controller-manager If you installed Config Connector using namespaced mode , serviceAccountName should be cnrm-controller-manager- NAMESPACE .",
+          "You can check the controller Pod's logs by running: kubectl logs -n cnrm-system \\ -l cnrm.cloud.google.com/component = cnrm-controller-manager \\ -c manager If you have Config Connector installed in namespaced-mode , then the previous command shows the logs of all controller Pods combined."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cnrm.cloud.google.com",
+      "googleapis.com",
+      "metadata.annotations.cnrm",
+      "test.yaml",
+      "topic.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/getting-started",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/overview",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:47.576Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector"
+}

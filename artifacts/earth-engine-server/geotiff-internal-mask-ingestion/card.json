@@ -1,0 +1,93 @@
+{
+  "feature_name": "GeoTIFF internal mask ingestion",
+  "feature_slug": "geotiff-internal-mask-ingestion",
+  "summary": "GeoTIFF uploads and ingestion can now use internal binary masks, with explicit mask bands taking precedence when present.",
+  "extended_definition": "GeoTIFF uploads and ingestion can now use internal binary masks, with explicit mask bands taking precedence when present.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/apidocs/ee-algorithms-fmask-matchclouds",
+      "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+      "https://developers.google.com/earth-engine/guides/auth"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud GeoTiff-Backed Earth Engine Assets \\_|\\_ Google Earth Engine \\_|\\_\\",
+        "url": "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+        "source_id": "site-docs-reference",
+        "final_score": 61,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If no bands are specified, the resulting asset will contain all the bands of the GeoTIFF with the band names encoded in the GeoTIFF (in this case, \"vis-red\", \"vis-green\", and \"vis-blue\"). request = { 'imageManifest' : { 'name' : f 'projects/ { ee project } /assets/cogdemo1' , 'tilesets' : [ { 'id' : '0' , 'sources' : [ { 'uris' : [ 'gs://ee-docs-demos/COG demo.tif' ] } ] } ], 'properties' : { 'version' : '1.1' }, 'startTime' : '2016-01-01T00:00:00.000000000Z' , 'endTime' : '2016-12-31T15:01:23.000000000Z' , }, } pprint ( request ) More than one Tileset It is possible to specify an ImageManifest with more than one Tileset where each band of the resulting asset is backed by one of the bands of a Tileset using the tilesetId and tilesetBandIndex fields.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-05-21 UTC.\"],[],[\"This document details how to create Earth Engine assets backed by Cloud Optimized GeoTIFFs (COGs).",
+          "The following gdal translate command will convert a raster into a band-interleaved, zstd-compressed, Cloud Optimized GeoTIFF that will perform well in Earth Engine: gdal translate in .tif out.tif \\ -co COPY SRC OVERVIEWS = YES \\ -co TILED = YES \\ -co BLOCKXSIZE = 512 \\ -co BLOCKYSIZE = 512 \\ -co COMPRESS = ZSTD \\ -co ZSTD LEVEL = 22 \\ -co INTERLEAVE = BAND \\ -co NUM THREADS = ALL CPUS It may be possible to reduce the output file size further by specifying a predictor ( -co PREDICTOR=2 for integer data types and -co PREDICTOR=3 for floating point data types)."
+        ]
+      },
+      {
+        "title": "\"ee.Algorithms.FMask.matchClouds \\_|\\_ Google Earth Engine \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/earth-engine/apidocs/ee-algorithms-fmask-matchclouds",
+        "source_id": "site-docs-reference",
+        "final_score": 61,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Expected to contain 1s for shadow pixels and masked pixels everywhere else. btemp Image Brightness temperature image, in Celsius. sceneLow Float The 0.175 percentile brightness temperature of the scene. sceneHigh Float The 0.825 percentile brightness temperature of the scene. neighborhood Integer, default: 50 The neighborhood to pad around each tile.",
+          "Usage Returns ee.Algorithms.FMask.matchClouds(input, cloud, shadow, btemp, sceneLow, sceneHigh, neighborhood ) Image Argument Type Details input Image The scene for which to compute cloud and shadow masks. cloud Image Potential cloud mask image.",
+          "Home Products Google Earth Engine Reference Send feedback ee.Algorithms.FMask.matchClouds Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Authentication and Initialization \\_|\\_ Google Earth Engine \\_|\\_ Google\\",
+        "url": "https://developers.google.com/earth-engine/guides/auth",
+        "source_id": "site-docs-root",
+        "final_score": 50,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "demo.tif",
+      "developers.google.com",
+      "ee.Algorithms.CannyEdgeDetector",
+      "ee.Algorithms.FMask.fillMinima",
+      "ee.Algorithms.FMask.matchClouds",
+      "out.tif"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+        "https://developers.google.com/earth-engine/apidocs/ee-algorithms-fmask-matchclouds",
+        "https://developers.google.com/earth-engine/guides/auth"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:03.772Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server"
+}

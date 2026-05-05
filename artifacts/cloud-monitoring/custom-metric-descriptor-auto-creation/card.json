@@ -1,0 +1,84 @@
+{
+  "feature_name": "Custom Metric Descriptor Auto-Creation",
+  "feature_slug": "custom-metric-descriptor-auto-creation",
+  "summary": "Custom metric descriptors are created automatically when time series data is written.",
+  "extended_definition": "Custom metric descriptors are created automatically when time series data is written.",
+  "lifecycle": {
+    "latest_feature_date": "2016-10-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent",
+      "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class MetricServiceAsyncClient (2.30.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 241,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "User-created metric descriptors define custom metrics <https://cloud.google.com/monitoring/custom-metrics> .",
+          "Iterating over this object will yield results and resolve additional pages automatically. metric descriptor path metric descriptor path ( project : str , metric descriptor : str ) - > str Returns a fully-qualified metric descriptor string. monitored resource descriptor path monitored resource descriptor path ( project : str , monitored resource descriptor : str ) - > str Returns a fully-qualified monitored resource descriptor string. parse common billing account path parse common billing account path ( path : str ) - > typing .",
+          "Iterating over this object will yield results and resolve additional pages automatically. list monitored resource descriptors list monitored resource descriptors ( request : typing ."
+        ]
+      },
+      {
+        "title": "\"Class MetricServiceClient (2.30.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 241,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "User-created metric descriptors define custom metrics <https://cloud.google.com/monitoring/custom-metrics> .",
+          "Iterating over this object will yield results and resolve additional pages automatically. metric descriptor path metric descriptor path ( project : str , metric descriptor : str ) - > str Returns a fully-qualified metric descriptor string. monitored resource descriptor path monitored resource descriptor path ( project : str , monitored resource descriptor : str ) - > str Returns a fully-qualified monitored resource descriptor string. parse common billing account path parse common billing account path ( path : str ) - > typing .",
+          "Iterating over this object will yield results and resolve additional pages automatically. list monitored resource descriptors list monitored resource descriptors ( request : typing ."
+        ]
+      },
+      {
+        "title": "\"User-defined metrics from the agent \\_|\\_ Cloud Monitoring \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent",
+        "source_id": "site-iam-reference",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The time series data for this metric descriptor must contain the following information, because of the way the metric descriptor is defined: Metric type: custom.googleapis.com/nginx/active connections Metric label values: service name : either \"my service a\" or \"my service b\" Other time series information, including the associated monitored resource —the VM instance sending the data—and the metric's data point, is automatically obtained by the agent for all metrics.",
+          "For more information, see Auto-creation of metric descriptors .",
+          "Kind: GAUGE Type: DOUBLE After you've designed the metric descriptor, you can create it by using projects.metricDescriptors.create , or you can let it be created for you from the time series metadata, discussed below."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "custom.googleapis.com",
+      "projects.metricDescriptors.create"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:33.032Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring"
+}

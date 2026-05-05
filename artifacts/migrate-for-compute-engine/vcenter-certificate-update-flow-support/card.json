@@ -1,0 +1,170 @@
+{
+  "feature_name": "vCenter certificate update flow support",
+  "feature_slug": "vcenter-certificate-update-flow-support",
+  "summary": "Supports updating the vCenter certificate during migration workflows.",
+  "extended_definition": "Supports updating the vCenter certificate during migration workflows.",
+  "lifecycle": {
+    "latest_feature_date": "2020-08-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Migrate to Virtual Machines best practices \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "source_id": "site-docs-reference",
+        "final_score": 97,
+        "relevance": "",
+        "evidence_snippets": [
+          "The best practices described in this document cover the following areas: Assessing your source environment Building your foundation Migrating your VMs Troubleshooting migration issues Assessment best practices This section describes best practices to address common issues that might arise during the migration assessment phase .",
+          "Involve the teams responsible for your workloads as early as possible During the first phase of the migration, gather information about the source environment by involving and interviewing all teams that are responsible for your environment, workloads, and VMs.",
+          "If there's no VMware host in the network, we recommend one of the following options to migrate your VMs to a source environment that Migrate to Virtual Machines supports: Migrate VMware VMs with VMware HCX to Google Cloud VMware Engine ."
+        ]
+      },
+      {
+        "title": "\"Supported operating systems \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+        "source_id": "site-docs-reference",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]",
+          "OS Version Default license License option BIOS to UEFI conversion supported Comments Oracle Linux 6.0 - 6.7 BYOL N/A No Requires kernel-uek version of at least 4.1.12-37.4.1 6.8 - 6.10 BYOL N/A No 7.0 - 7.9 BYOL N/A No 8.0 - 8.10 BYOL N/A No 9.0 - 9.3 BYOL N/A No 10.0 BYOL N/A No Oracle Linux on Google Cloud Google Cloud supports importing Oracle Linux images using the import virtual disk images capability of Migrate to Virtual Machines.",
+          "Operating systems with migration support only Migrate to Virtual Machines supports migrating VMs running the following operating systems that have reached end of life (EOL), or are not officially supported on Google Cloud."
+        ]
+      },
+      {
+        "title": "\"VM migration process \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle",
+        "source_id": "site-docs-reference",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]",
+          "Cut-over phase In the cut-over phase, the source VM is stopped by Migrate to Virtual Machines, replication is finalized, and a new VM instance is created on Compute Engine on Google Cloud: You should only perform the cut-over after you have performed all validations during the recommended testing phase.",
+          "However, because the source VM continues to run during the migration process, including during testing, Migrate to Virtual Machines continues to replicate data until you perform the final cut-over to your migrated VM."
+        ]
+      },
+      {
+        "title": "\"Roles and permissions reference \\_|\\_ Migrate to Virtual Machines \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference",
+        "source_id": "site-iam-reference",
+        "final_score": 39,
+        "relevance": "",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]",
+          "The following permissions are required to create a resource group associated with the source, verify that it exists, list the resources it contains, and delete it when the source is deleted: \"Microsoft.Resources/subscriptions/resourceGroups/write\", \"Microsoft.Resources/subscriptions/resourceGroups/read\", \"Microsoft.Resources/subscriptions/resourceGroups/delete\" The following permission is required in order to obtain the inventory list and to get the details of the VMs that are being migrated: \"Microsoft.Compute/virtualMachines/read\" The following permission is required to deallocate a VM when it is being cut over into a Google Cloud VM: \"Microsoft.Compute/virtualMachines/deallocate/action\" The following permissions are required to create, list, and delete snapshots / restore points of the VM being migrated: \"Microsoft.Compute/restorePointCollections/read\", \"Microsoft.Compute/restorePointCollections/write\", \"Microsoft.Compute/restorePointCollections/delete\", \"Microsoft.Compute/restorePointCollections/restorePoints/read\", \"Microsoft.Compute/restorePointCollections/restorePoints/write\", \"Microsoft.Compute/restorePointCollections/restorePoints/delete\", \"Microsoft.Compute/snapshots/delete\", \"Microsoft.Compute/snapshots/write\", \"Microsoft.Compute/snapshots/read\" The following permissions are required for reading snapshot / restore point data: \"Microsoft.Compute/restorePointCollections/restorePoints/diskRestorePoints/read\", \"Microsoft.Compute/restorePointCollections/restorePoints/diskRestorePoints/beginGetAccess/action\", \"Microsoft.Compute/restorePointCollections/restorePoints/diskRestorePoints/endGetAccess/action\", \"Microsoft.Compute/snapshots/beginGetAccess/action\", \"Microsoft.Compute/snapshots/endGetAccess/action\" Grant network access In addition to granting permissions, you must verify that access to your disks is not blocked or restricted to any specific network.",
+          "For details on how to implement migration permissions review the Create an AWS IAM policy section. { \"Version\": \"2012-10-17\", \"Statement\": [ { \"Effect\": \"Allow\", \"Action\": [ \"ec2:DescribeInstances\", \"ec2:DescribeVolumes\", \"ec2:DescribeInstanceTypes\", \"ec2:DescribeSnapshots\", \"ec2:CreateTags\", \"ec2:CreateSnapshots\", \"ec2:StopInstances\" ], \"Resource\": \" \" }, { \"Effect\": \"Allow\", \"Action\": [ \"ebs:ListSnapshotBlocks\", \"ebs:ListChangedBlocks\", \"ebs:GetSnapshotBlock\", \"ec2:DeleteSnapshot\", \"ec2:DeleteTags\" ], \"Resource\": \" \", \"Condition\": { \"StringEquals\": { \"aws:ResourceTag/m2vm-resource\": \"snapshot\" } } } ] } To show the inventory of the migration candidate instances grant Migrate to Virtual Machines permissions for ec2:DescribeInstances, ec2:DescribeVolumes and ec2:DescribeInstanceTypes ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "resourcemanager.projectIamAdmin",
+      "vmmigration.admin"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:26.886Z",
+  "source_step08_card": "data/step-08/current/products/migrate-for-compute-engine/card.json",
+  "product_name": "Migrate for Compute Engine",
+  "product_slug": "migrate-for-compute-engine"
+}

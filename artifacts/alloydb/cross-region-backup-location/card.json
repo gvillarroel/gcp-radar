@@ -1,0 +1,109 @@
+{
+  "feature_name": "Cross-region backup location",
+  "feature_slug": "cross-region-backup-location",
+  "summary": "AlloyDB lets you store backups in a cross-region backup location.",
+  "extended_definition": "AlloyDB lets you store backups in a cross-region backup location.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/backup/manage-enhanced-backups",
+      "https://docs.cloud.google.com/alloydb/docs/overview",
+      "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.clusters \\_|\\_ AlloyDB for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "source_id": "site-iam-reference",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "Methods create Creates a new Cluster in a given project and location. createsecondary Creates a cluster of type SECONDARY in the given location using the primary cluster as the source. delete Deletes a single Cluster. export Exports data from the cluster. get Gets details of a single Cluster. import Imports data to the cluster. list Lists Clusters in a given project and location. patch Updates the parameters of a single Cluster. promote Promotes a SECONDARY cluster. restore Creates a new Cluster in a given project and location, with a volume restored from the provided source, either a backup ID or a point-in-time and a source cluster. restoreFromCloudSQL Restores an AlloyDB cluster from a CloudSQL resource. switchover Switches the roles of PRIMARY and SECONDARY clusters without any data loss. upgrade Upgrades a single Cluster.",
+          "The name of the backup resource with the format: projects/{project}/locations/{region}/backups/{backupId} MigrationSource Subset of the source instance configuration that is available when reading the cluster resource.",
+          "Continuous backup properties for this cluster. secondaryConfig object ( SecondaryConfig ) Cross Region replication config specific to SECONDARY cluster. primaryConfig object ( PrimaryConfig ) Output only."
+        ]
+      },
+      {
+        "title": "\"Manage enhanced backups \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/backup/manage-enhanced-backups",
+        "source_id": "site-docs-reference-2",
+        "final_score": 152,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Your cluster is enabled for enhanced backups using the associated backup plan's backup and retention settings. gcloud To associate a backup plan with your AlloyDB cluster, run the following command: gcloud backup-dr backup-plan-associations create BPA ID \\ --project = WORKLOAD PROJECT ID \\ --location = REGION \\ --resource-type = alloydb.googleapis.com/Cluster \\ --resource = projects/ WORKLOAD PROJECT ID /locations/ REGION /clusters/ CLUSTER ID \\ --backup-plan = projects/ VAULT PROJECT ID /locations/ REGION /backupPlans/ BP ID Replace the following: BPA ID : the backup plan association ID.",
+          "Your cluster is enabled for enhanced backups using the associated backup plan's backup and retention settings. gcloud To associate the new backup plan with your cluster, follow these steps: gcloud backup-dr backup-plan-associations create BPA ID \\ --project = WORKLOAD PROJECT ID \\ --location = REGION \\ --resource-type = alloydb.googleapis.com/Cluster \\ --resource = projects/ WORKLOAD PROJECT ID /locations/ REGION /clusters/ CLUSTER ID \\ --backup-plan = projects/ VAULT PROJECT ID /locations/ REGION /backupPlans/ BP ID \\ Replace the following: BPA ID : the backup plan association ID.",
+          "To find your cluster's data-source , run the following command: gcloud backup-dr data-source-references fetch-for-resource-type alloydb.googleapis.com/Cluster \\ --location = REGION \\ --project = WORKLOAD PROJECT ID \\ --filter = 'dataSourceGcpResourceInfo.gcp resourcename=\"projects/ WORKLOAD PROJECT NUMBER /locations/ REGION /clusters/ CLUSTER ID \"' Replace the following: REGION : the Google Cloud REGION–for example, us-central1 ."
+        ]
+      },
+      {
+        "title": "AlloyDB overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 142,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Data backup and disaster recovery AlloyDB features a continuous backup and recovery system that lets you create a new cluster based on any point in time within an adjustable retention period.",
+          "At any time, you can restore from a backup to a new AlloyDB cluster that contains all the data from the original cluster at the moment of the backup's creation.",
+          "Database administration AlloyDB manages the underlying infrastructure of your database, such as automated backups, security patches, and resource allocation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.googleapis.com",
+      "projects.locations.clusters"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/backup/manage-enhanced-backups",
+        "https://docs.cloud.google.com/alloydb/docs/overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/backup/manage-enhanced-backups",
+        "https://docs.cloud.google.com/alloydb/docs/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/backup/manage-enhanced-backups",
+        "https://docs.cloud.google.com/alloydb/docs/overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:04.004Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb"
+}

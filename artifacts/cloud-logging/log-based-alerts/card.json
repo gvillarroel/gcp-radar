@@ -1,0 +1,114 @@
+{
+  "feature_name": "Log-Based Alerts",
+  "feature_slug": "log-based-alerts",
+  "summary": "Cloud Logging supports alerts that trigger when log contents match specified conditions and create incidents in Cloud Monitoring.",
+  "extended_definition": "Cloud Logging supports alerts that trigger when log contents match specified conditions and create incidents in Cloud Monitoring.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/active_directory_ds",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/activemq",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/aerospike"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Active Directory Domain Services (AD DS) \\_|\\_ Cloud Logging \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/active_directory_ds",
+        "source_id": "site-docs-root-2",
+        "final_score": 43,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Observability Cloud Logging Guides Send feedback Active Directory Domain Services (AD DS) Stay organized with collections Save and categorize content based on your preferences.",
+          "The active directory ds logs contain the following fields in the LogEntry : Field Type Description jsonPayload.Channel string The event log channel where the log was logged. jsonPayload.ComputerName string The name of the computer from which this log originates. jsonPayload.Data string Extra event-specific data included with the log. jsonPayload.EventCategory number The category of the event. jsonPayload.EventID number An ID identifying the type of the event. jsonPayload.EventType string The type of event. jsonPayload.Message string The log message. jsonPayload.Qualifiers number A qualifier number that is used for event identification. jsonPayload.RecordNumber number The sequence number of the event log. jsonPayload.Sid string The security identifier identifying a security principal or security group of the process that logged this message. jsonPayload.SourceName string The source component that logged this message. jsonPayload.StringInserts []string Dynamic string data that was used to construct the log message. jsonPayload.TimeGenerated string A timestamp representing when the record was generated. jsonPayload.TimeWritten string A timestamp representing when the record was written to the event log. severity string ( LogSeverity ) Log entry level (translated).",
+          "Open a PowerShell terminal with administrator privileges by right-clicking the PowerShell icon and selecting Run as Administrator To restart the agent, run the following PowerShell command: Restart-Service google-cloud-ops-agent -Force To confirm that the agent restarted, run the following command and verify that the components \"Metrics Agent\" and \"Logging Agent\" started: Get-Service google-cloud-ops-agent Configure logs collection To ingest logs from AD DS, you must create a receiver for the logs that AD DS produces and then create a pipeline for the new receiver."
+        ]
+      },
+      {
+        "title": "Aerospike \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/aerospike",
+        "source_id": "site-docs-root-2",
+        "final_score": 43,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Observability Cloud Logging Guides Send feedback Aerospike Stay organized with collections Save and categorize content based on your preferences.",
+          "You must restart the agent for the configuration to take effect . set - e Check if the file exists if [ ! - f / etc / google - cloud - ops - agent / config . yaml ]; then Create the file if it doesn ' t exist . sudo mkdir - p / etc / google - cloud - ops - agent sudo touch / etc / google - cloud - ops - agent / config . yaml fi Create a back up of the existing file so existing configurations are not lost . sudo cp / etc / google - cloud - ops - agent / config . yaml / etc / google - cloud - ops - agent / config . yaml . bak Configure the Ops Agent . sudo tee / etc / google - cloud - ops - agent / config . yaml > / dev / null << EOF metrics : receivers : aerospike : type : aerospike service : pipelines : aerospike : receivers : - aerospike EOF For these changes to take effect, you must restart the Ops Agent: Linux To restart the agent, run the following command on your instance: sudo systemctl restart google-cloud-ops-agent To confirm that the agent restarted, run the following command and verify that the components \"Metrics Agent\" and \"Logging Agent\" started: sudo systemctl status \"google-cloud-ops-agent \" Windows Connect to your instance using RDP or a similar tool and login to Windows.",
+          "Open a PowerShell terminal with administrator privileges by right-clicking the PowerShell icon and selecting Run as Administrator To restart the agent, run the following PowerShell command: Restart-Service google-cloud-ops-agent -Force To confirm that the agent restarted, run the following command and verify that the components \"Metrics Agent\" and \"Logging Agent\" started: Get-Service google-cloud-ops-agent Collect logs Aerospike writes logs to syslog , which is captured by the Ops Agent by default."
+        ]
+      },
+      {
+        "title": "Apache ActiveMQ \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/activemq",
+        "source_id": "site-docs-root-2",
+        "final_score": 43,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Observability Cloud Logging Guides Send feedback Apache ActiveMQ Stay organized with collections Save and categorize content based on your preferences.",
+          "You must restart the agent for the configuration to take effect . set - e Check if the file exists if [ ! - f / etc / google - cloud - ops - agent / config . yaml ]; then Create the file if it doesn ' t exist . sudo mkdir - p / etc / google - cloud - ops - agent sudo touch / etc / google - cloud - ops - agent / config . yaml fi Create a back up of the existing file so existing configurations are not lost . sudo cp / etc / google - cloud - ops - agent / config . yaml / etc / google - cloud - ops - agent / config . yaml . bak Configure the Ops Agent . sudo tee / etc / google - cloud - ops - agent / config . yaml > / dev / null << EOF metrics : receivers : activemq : type : activemq service : pipelines : activemq : receivers : - activemq EOF For these changes to take effect, you must restart the Ops Agent: Linux To restart the agent, run the following command on your instance: sudo systemctl restart google-cloud-ops-agent To confirm that the agent restarted, run the following command and verify that the components \"Metrics Agent\" and \"Logging Agent\" started: sudo systemctl status \"google-cloud-ops-agent \" Windows Connect to your instance using RDP or a similar tool and login to Windows.",
+          "Open a PowerShell terminal with administrator privileges by right-clicking the PowerShell icon and selecting Run as Administrator To restart the agent, run the following PowerShell command: Restart-Service google-cloud-ops-agent -Force To confirm that the agent restarted, run the following command and verify that the components \"Metrics Agent\" and \"Logging Agent\" started: Get-Service google-cloud-ops-agent Collect logs ActiveMQ writes logs to syslog , which is captured by the Ops Agent by default."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/active_directory_ds",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/activemq",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/aerospike"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/active_directory_ds",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/activemq",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/aerospike"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/active_directory_ds",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/activemq",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/aerospike"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/active_directory_ds",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/activemq",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/aerospike"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:31.891Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging"
+}

@@ -1,0 +1,104 @@
+{
+  "feature_name": "BIOS_PUR043.37.14.021 (TS24.02) firmware support",
+  "feature_slug": "bios-pur043-37-14-021-ts24-02-firmware-support",
+  "summary": "Support for BIOS_PUR043.37.14.021 (TS24.02) firmware on Bare Metal Solution is deprecated; deprecated on 2024-06-10.",
+  "extended_definition": "Support for BIOS_PUR043.37.14.021 (TS24.02) firmware on Bare Metal Solution is deprecated; deprecated on 2024-06-10.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-10",
+    "deprecation_date": "2024-06-10",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+      "https://docs.cloud.google.com/bare-metal/docs/configure-serial-console",
+      "https://docs.cloud.google.com/bare-metal/docs/troubleshooting/configure-serial-console"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Plan for Bare Metal Solution \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "source_id": "site-docs-reference",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "General information Firmware version Machine series Machine type Lifecycle stage EOL and firmware deprecation date BIOS PUR043.45.00.002 (TS54) o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose GA To be determined BIOS PUR043.37.14.021 (TS24.02) o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose End of Life April 2024 BIOS PUR043.37.16.023 (TS24.05) o2-standard-16-metal o2-standard-32-metal o2-standard-48-metal o2-standard-112-metal o2-highmem-224-metal General-purpose End of Life April 2024 3.50.58 o2-ultramem-672-metal o2-ultramem-896-metal Memory-optimized servers GA March 2024 3.80.24 o2-ultramem-672-metal o2-ultramem-896-metal Memory-optimized servers GA To be determined Features Firmware version Features BIOS PUR043.45.00.002 (TS54) Support for interactive serial console.",
+          "Identify your firmware version To identify the current firmware version of your Bare Metal Solution server, run the following command: sudo dmidecode -s bios-version Available firmware versions The following table provides details for the firmware versions available for Bare Metal Solution.",
+          "Server name CPU cores vCPUs Sockets Memory CPU platform Ethernet ports General-purpose servers o2-standard-16-metal 8 16 2 192 GB Intel Xeon Gold, 5200 series, 3.8 GHz 4 port 25GbE NIC o2-standard-32-metal 16 32 2 384 GB Intel Xeon Gold, 6200 series, 3.2 GHz 4 port 25GbE NIC o2-standard-48-metal 24 48 2 768 GB Intel Xeon Gold, 6200 series, 3.0 GHz 4 port 25GbE NIC o2-standard-112-metal 56 112 2 1.5 TB Intel Xeon Platinum, 8200 series, 2.2 GHz 4 port 25GbE NIC High-memory general-purpose servers o2-highmem-224-metal 112 224 4 3 TB Intel Xeon Platinum, 8200 series, 2.7 GHz 4 port 25GbE NIC Memory-optimized servers o2-ultramem-672-metal 336 672 12 18 TB Intel Xeon Platinum, 8200 series, 2.7 GHz 6 port 25GbE NIC o2-ultramem-896-metal 448 896 16 24 TB Intel Xeon Platinum, 8200 series, 2.7 GHz 8 port 25GbE NIC Firmware We recommend that you install the latest version of Bare Metal Solution firmware on your servers: TS54 ."
+        ]
+      },
+      {
+        "title": "\"Configure the interactive serial console \\_|\\_ Bare Metal Solution \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/configure-serial-console",
+        "source_id": "site-docs-reference",
+        "final_score": 71,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, in the case of a general-purpose server, the output shows a BIOS version of 43.45.00.002 or higher: Version: BIOS PUR043.45.00.002 If the BIOS version is lower than the required firmware, upgrade the firmware for your servers.",
+          "To perform all tasks in this document, you must have either of the following roles: roles/baremetalsolution.admin roles/baremetalsolution.editor Verify that you have the required version of the firmware: For general-purpose servers, TS54 ( 43.45.00.002 ) or higher.",
+          "Follow these steps: On your Bare Metal Solution server, run the following command: sudo dmidecode -s bios-version If successful, the output shows the required BIOS version or higher."
+        ]
+      },
+      {
+        "title": "\"Configure the interactive serial console \\_|\\_ Bare Metal Solution \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/troubleshooting/configure-serial-console",
+        "source_id": "site-docs-reference",
+        "final_score": 71,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, in the case of a general-purpose server, the output shows a BIOS version of 43.45.00.002 or higher: Version: BIOS PUR043.45.00.002 If the BIOS version is lower than the required firmware, upgrade the firmware for your servers.",
+          "To perform all tasks in this document, you must have either of the following roles: roles/baremetalsolution.admin roles/baremetalsolution.editor Verify that you have the required version of the firmware: For general-purpose servers, TS54 ( 43.45.00.002 ) or higher.",
+          "Follow these steps: On your Bare Metal Solution server, run the following command: sudo dmidecode -s bios-version If successful, the output shows the required BIOS version or higher."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "baremetalsolution.admin",
+      "baremetalsolution.editor"
+    ],
+    "missing_inventory_roles": [
+      "roles/baremetalsolution.admin",
+      "roles/baremetalsolution.editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "https://docs.cloud.google.com/bare-metal/docs/configure-serial-console",
+        "https://docs.cloud.google.com/bare-metal/docs/troubleshooting/configure-serial-console"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-planning",
+        "https://docs.cloud.google.com/bare-metal/docs/configure-serial-console",
+        "https://docs.cloud.google.com/bare-metal/docs/troubleshooting/configure-serial-console"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:17.932Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution"
+}

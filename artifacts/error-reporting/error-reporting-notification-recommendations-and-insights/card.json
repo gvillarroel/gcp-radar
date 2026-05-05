@@ -1,0 +1,161 @@
+{
+  "feature_name": "Error Reporting notification recommendations and insights",
+  "feature_slug": "error-reporting-notification-recommendations-and-insights",
+  "summary": "Error Reporting provides notification recommendations and insights.",
+  "extended_definition": "Error Reporting provides notification recommendations and insights.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/error-reporting/docs/check-app-crash",
+      "https://docs.cloud.google.com/error-reporting/docs/iam",
+      "https://docs.cloud.google.com/error-reporting/docs/notifications"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure and manage notifications \\_|\\_ Error Reporting \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/error-reporting/docs/notifications",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 72,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Select notification channels through the Google Cloud console To select an existing notification channel, you must have one of the following roles: Error Reporting User Error Reporting Admin Project Editor Project Owner To select where you want to send notifications when new error groups occur, complete the following steps.",
+          "Resolution status If an error event occurs in a error group that has a resolution status of Resolved , even if previous error events have been deleted , the status of the error group is set to Open and Error Reporting sends a notification.",
+          "Notification rate limit Error Reporting uses the following rules to limit the number of notifications you might receive due to error events: At most 5 notifications per error group can be sent in a 60-minute window."
+        ]
+      },
+      {
+        "title": "Control access with IAM \\_|\\_ Error Reporting \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/error-reporting/docs/iam",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 66,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: Project cloudnotifications. activities. list errorreporting. errorreporting. applications. list errorreporting. errorEvents. create errorreporting. errorEvents. delete errorreporting. errorEvents. list errorreporting. groupMetadata. get errorreporting. groupMetadata. update errorreporting.groups.list logging.notificationRules. logging. notificationRules. create logging. notificationRules. delete logging.notificationRules.get logging.notificationRules.list logging. notificationRules. update resourcemanager.projects.get resourcemanager.projects.list stackdriver.projects.get Error Reporting User Beta ( roles/ errorreporting.user ) Provides the permissions to read and write Error Reporting data, except for sending new error events.",
+          "Lowest-level resources where you can grant this role: Project cloudnotifications. activities. list errorreporting. applications. list errorreporting. errorEvents. delete errorreporting. errorEvents. list errorreporting.groupMetadata. errorreporting. groupMetadata. get errorreporting. groupMetadata. update errorreporting.groups.list logging.notificationRules. logging. notificationRules. create logging. notificationRules. delete logging.notificationRules.get logging.notificationRules.list logging. notificationRules. update resourcemanager.projects.get resourcemanager.projects.list stackdriver.projects.get Error Reporting Viewer Beta ( roles/ errorreporting.viewer ) Provides read-only access to Error Reporting data.",
+          "Lowest-level resources where you can grant this role: Project cloudnotifications. activities. list errorreporting. applications. list errorreporting. errorEvents. list errorreporting. groupMetadata. get errorreporting.groups.list logging.notificationRules.get logging.notificationRules.list resourcemanager.projects.get resourcemanager.projects.list stackdriver.projects.get Error Reporting Writer Beta ( roles/ errorreporting.writer ) Provides the permissions to send error events to Error Reporting."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Check a crashed app for errors by using Error Reporting \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/error-reporting/docs/check-app-crash",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 50,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Check a crashed app for errors by using Error Reporting Error Reporting provides a single place to monitor error conditions from all apps and services in a Google Cloud project and from Amazon Elastic Compute Cloud (EC2) applications.",
+          "Notifications aren't sent when there are new occurrences of existing errors: In the Google Cloud console, go to the Error Reporting page: Go to Error Reporting You can also find this page by using the search bar.",
+          "Configure notifications You can configure Error Reporting to notify you when a new type of error arrives."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.example.AnotherClass",
+      "com.example.TestClass.test",
+      "errorreporting.errorEvents.create",
+      "errorreporting.errorEvents.delete",
+      "errorreporting.groupMetadata",
+      "errorreporting.groups.list",
+      "errorreporting.user",
+      "errorreporting.viewer",
+      "errorreporting.writer",
+      "java.lang.RuntimeException",
+      "javax.servlet.http.HttpServlet.service",
+      "logging.notificationRules",
+      "logging.notificationRules.get",
+      "logging.notificationRules.list",
+      "stackdriver.projects.get"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/error-reporting/docs/notifications",
+        "https://docs.cloud.google.com/error-reporting/docs/iam",
+        "https://docs.cloud.google.com/error-reporting/docs/check-app-crash"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/error-reporting/docs/notifications",
+        "https://docs.cloud.google.com/error-reporting/docs/iam",
+        "https://docs.cloud.google.com/error-reporting/docs/check-app-crash"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/error-reporting/docs/notifications",
+        "https://docs.cloud.google.com/error-reporting/docs/iam",
+        "https://docs.cloud.google.com/error-reporting/docs/check-app-crash"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/error-reporting/docs/notifications",
+        "https://docs.cloud.google.com/error-reporting/docs/iam",
+        "https://docs.cloud.google.com/error-reporting/docs/check-app-crash"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/error-reporting/docs/notifications",
+        "https://docs.cloud.google.com/error-reporting/docs/iam",
+        "https://docs.cloud.google.com/error-reporting/docs/check-app-crash"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:04.849Z",
+  "source_step08_card": "data/step-08/current/products/error-reporting/card.json",
+  "product_name": "Error Reporting",
+  "product_slug": "error-reporting"
+}

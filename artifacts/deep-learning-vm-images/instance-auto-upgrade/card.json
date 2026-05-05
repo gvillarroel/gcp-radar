@@ -1,0 +1,98 @@
+{
+  "feature_name": "Instance auto upgrade",
+  "feature_slug": "instance-auto-upgrade",
+  "summary": "Deep Learning VM Images support automatic instance upgrades.",
+  "extended_definition": "Deep Learning VM Images support automatic instance upgrades.",
+  "lifecycle": {
+    "latest_feature_date": "2020-08-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-console",
+      "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-gcloud",
+      "https://docs.cloud.google.com/deep-learning-vm/docs/pytorch_start_instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create a Deep Learning VM instance by using the Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-console",
+        "source_id": "site-docs-reference",
+        "final_score": 100,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Access your new instance Once you've created your Deep Learning VM instance, it starts automatically.",
+          "Create a Deep Learning VM instance by using the Google Cloud console This page shows you how to create a Deep Learning VM Images instance by using Google Cloud Marketplace in the Google Cloud console.",
+          "Home Documentation Compute Compute Engine Deep Learning VM Images Guides Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a Deep Learning VM instance by using the gcloud CLI \\_\\",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-gcloud",
+        "source_id": "site-docs-reference",
+        "final_score": 92,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To view the status of just this instance: gcloud compute instances describe $INSTANCE NAME Access your new instance After you've created your Deep Learning VM instance, it starts automatically.",
+          "Create a Deep Learning VM instance by using the gcloud CLI This page shows you how to create a Deep Learning VM Images instance by using the Google Cloud CLI.",
+          "At the command line, enter the following: export IMAGE FAMILY = \"tf-latest-cu92\" export ZONE = \"us-west1-b\" export INSTANCE NAME = \"my-new-instance\" export INSTANCE TYPE = \"n1-standard-8\" gcloud compute instances create $ INSTANCE NAME \\ -- zone =$ ZONE \\ -- image - family =$ IMAGE FAMILY \\ -- image - project = deeplearning - platform - release \\ -- maintenance - policy = TERMINATE \\ -- accelerator = \"type=nvidia-tesla-v100,count=8\" \\ -- machine - type =$ INSTANCE TYPE \\ -- boot - disk - size = 120 GB \\ -- metadata = \"install-nvidia-driver=True\" After some time, the VM instance is created and a summary of its configuration is shown."
+        ]
+      },
+      {
+        "title": "\"Create a PyTorch Deep Learning VM instance \\_|\\_ Deep Learning VM Images\\",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/pytorch_start_instance",
+        "source_id": "site-docs-reference",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Compute Compute Engine Deep Learning VM Images Guides Send feedback Create a PyTorch Deep Learning VM instance Stay organized with collections Save and categorize content based on your preferences.",
+          "This page shows you how to create a PyTorch Deep Learning VM Images instance with PyTorch and other tools pre-installed.",
+          "To create a Deep Learning VM instance with the latest PyTorch image family and one or more attached GPUs, enter the following at the command line: export IMAGE FAMILY = \"pytorch-latest-gpu\" export ZONE = \"us-west1-b\" export INSTANCE NAME = \"my-instance\" gcloud compute instances create $ INSTANCE NAME \\ -- zone =$ ZONE \\ -- image - family =$ IMAGE FAMILY \\ -- image - project = deeplearning - platform - release \\ -- maintenance - policy = TERMINATE \\ -- accelerator = \"type=nvidia-tesla-v100,count=1\" \\ -- metadata = \"install-nvidia-driver=True\" Options: --image-family must be either pytorch-latest-gpu or pytorch- VERSION - CUDA-VERSION (for example, pytorch-1-10-cu110 ). --image-project must be deeplearning-platform-release . --maintenance-policy must be TERMINATE ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-console",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-gcloud",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/pytorch_start_instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-console",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-gcloud",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/pytorch_start_instance"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:57.849Z",
+  "source_step08_card": "data/step-08/current/products/deep-learning-vm-images/card.json",
+  "product_name": "Deep Learning VM Images",
+  "product_slug": "deep-learning-vm-images"
+}

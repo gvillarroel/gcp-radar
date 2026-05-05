@@ -1,0 +1,162 @@
+{
+  "feature_name": "Google Meet smart note event subscriptions",
+  "feature_slug": "google-meet-smart-note-event-subscriptions",
+  "summary": "Developers can subscribe to Google Meet smart note events through the Google Workspace Events API or Google Cloud Pub/Sub.",
+  "extended_definition": "Developers can subscribe to Google Meet smart note events through the Google Workspace Events API or Google Cloud Pub/Sub.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/meet/api/guides/events-overview",
+      "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview",
+      "https://developers.google.com/workspace/meet/api/guides/overview",
+      "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Observe meeting events with Python and the Google Meet REST API \\_|\\_ Google\\",
+        "url": "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "source_id": "site-docs-root",
+        "final_score": 235,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "AuthorizedSession ( USER CREDENTIALS ) body = { \"targetResource\" : f \"//cloudidentity.googleapis.com/users/ { user name } \" , \"eventTypes\" : [ \"google.workspace.meet.conference.v2.started\" , \"google.workspace.meet.conference.v2.ended\" , \"google.workspace.meet.participant.v2.joined\" , \"google.workspace.meet.participant.v2.left\" , \"google.workspace.meet.recording.v2.fileGenerated\" , \"google.workspace.meet.transcript.v2.fileGenerated\" , ], \"payloadOptions\" : { \"includeResource\" : False , }, \"notificationEndpoint\" : { \"pubsubTopic\" : topic name }, \"ttl\" : \"86400s\" , } response = session . post ( \"https://workspaceevents.googleapis.com/v1/subscriptions\" , json = body ) return response service = build ( \"people\" , \"v1\" , credentials = USER CREDENTIALS ) response = ( service . people () . get ( resourceName = \"people/me\" , personFields = \"names,emailAddresses\" ) . execute () ) resource name = response . get ( \"resourceName\" ) if resource name . startswith ( \"people/\" ): resource name = resource name [ len ( \"people/\" ) :] subscription = subscribe to user ( topic name = TOPIC NAME , user name = resource name ) Make sure to add \"https://www.googleapis.com/auth/userinfo.profile\" in the authorize method in the credential samples above.",
+          "Add the code to main.py : space = create space () print ( f \"Join the meeting at { space . meeting uri } \" ) TOPIC NAME = \"projects/ PROJECT ID /topics/ TOPIC ID \" SUBSCRIPTION NAME = \"projects/ PROJECT ID /subscriptions/ SUBSCRIPTION ID \" subscription = subscribe to space ( topic name = TOPIC NAME , space name = space . name ) if ( subscription . status code ) == 200 : listen for events ( subscription name = SUBSCRIPTION NAME ) else : print ( f \"Subscription to Meet events failed, response data: { subscription . content } \" ) Replace the following: PROJECT ID : The unique Cloud project ID for your app, such as my-sample-project-191923 .",
+          "Enable the Google Meet REST API, the Google Workspace Events API, and Google Cloud Pub/Sub with the gcloud services enable command: gcloud services enable meet.googleapis.com workspaceevents.googleapis.com pubsub.googleapis.com Install the Meet REST API client library Follow these steps to install the Meet REST API client library: Run the command: pip install google-apps-meet Edit the main.py file to import the client: from google.apps import meet v2 as meet Create a space Now that the Meet REST API is available, define a function to create a meeting space that can be subscribed to."
+        ]
+      },
+      {
+        "title": "Respond to events from Google Meet \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/meet/api/guides/events-overview",
+        "source_id": "site-docs-root",
+        "final_score": 211,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Related topics Google Workspace Events API overview Create a Google Workspace subscription Subscribe to Google Meet events Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "New conference record Receive event data from Google Meet To receive event data, your app can do either of the following: Subscribe to events using the Google Workspace Events API to receive events as they occur.",
+          "Subscribe to events To receive events in real time, the Meet app calls the Google Workspace Events API subscriptions.create method to subscribe to the meeting space for all types of events."
+        ]
+      },
+      {
+        "title": "Google Meet REST API overview \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/meet/api/guides/overview",
+        "source_id": "site-docs-root",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see: Respond to events from Google Meet Subscribe to events using the Google Workspace Events API Subscribe to Google Meet events Use cases Apps can integrate with the Meet REST API to perform the following tasks: Before a conference : Tailor the conference experience as needed by creating the meeting space.",
+          "You can also subscribe to Meet events using the Google Workspace Events API.",
+          "To be notified of changes, you can subscribe to a specified meeting space or to all meeting spaces belonging to a specified user."
+        ]
+      },
+      {
+        "title": "Google Meet meeting spaces overview \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview",
+        "source_id": "site-docs-root",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Instead of polling, you can also subscribe to Meet events to receive push notifications.",
+          "Instead of polling, you can subscribe to Meet events to receive push notifications.",
+          "Related topics Create and manage meeting spaces Configure meeting spaces and members Join a meeting Countries where you can use a phone with Meet Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudidentity.googleapis.com",
+      "developers.google.com",
+      "iam.gserviceaccount.com",
+      "main.py",
+      "meet.googleapis.com",
+      "pubsub.googleapis.com",
+      "pubsub.subscriber",
+      "subscriptions.create",
+      "userinfo.profile",
+      "workspaceevents.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/pubsub.subscriber"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/events-overview",
+        "https://developers.google.com/workspace/meet/api/guides/overview",
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/events-overview",
+        "https://developers.google.com/workspace/meet/api/guides/overview",
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/events-overview",
+        "https://developers.google.com/workspace/meet/api/guides/overview",
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/events-overview",
+        "https://developers.google.com/workspace/meet/api/guides/overview",
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/events-overview",
+        "https://developers.google.com/workspace/meet/api/guides/overview",
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/events-overview",
+        "https://developers.google.com/workspace/meet/api/guides/overview",
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:18.042Z",
+  "source_step08_card": "data/step-08/current/products/google-meet/card.json",
+  "product_name": "Google Meet",
+  "product_slug": "google-meet"
+}

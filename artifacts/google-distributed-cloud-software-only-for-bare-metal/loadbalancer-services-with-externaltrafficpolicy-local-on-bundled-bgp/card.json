@@ -1,0 +1,104 @@
+{
+  "feature_name": "LoadBalancer Services with externalTrafficPolicy=Local on bundled BGP",
+  "feature_slug": "loadbalancer-services-with-externaltrafficpolicy-local-on-bundled-bgp",
+  "summary": "Lets LoadBalancer Services use externalTrafficPolicy=Local with bundled BGP load balancing.",
+  "extended_definition": "Lets LoadBalancer Services use externalTrafficPolicy=Local with bundled BGP load balancing.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/bundled-lb",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/manual-lb",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure bundled load balancing with MetalLB \\_|\\_ Google Distributed Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/bundled-lb",
+        "source_id": "site-iam-reference",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "LoadBalancer Services When using externalTrafficPolicy: Local in your LoadBalancer Services, set your application pods to run exactly on the load balancer nodes.",
+          "The cluster configuration for separated load balancers should look similar to the following example: apiVersion : baremetal.cluster.gke.io/v1 kind : Cluster metadata : name : hybrid-ha-lb namespace : cluster-hybrid-ha-lb spec : type : hybrid profile : default anthosBareMetalVersion : 1.34 gkeConnect : projectID : project-fleet controlPlane : loadBalancer : mode : bundled nodePoolSpec : nodes : - address : 10.200.0.2 - address : 10.200.0.3 - address : 10.200.0.4 clusterNetwork : pods : cidrBlocks : - 192.168.0.0/16 services : cidrBlocks : - 10.96.0.0/20 ... loadBalancer : mode : bundled ... nodePoolSpec : nodes : - address : 10.200.0.5 - address : 10.200.0.6 - address : 10.200.0.7 clusterOperations : ...",
+          "For information about cluster configuration files and examples of valid configurations, see one of the following pages: Create admin clusters Create user clusters Create hybrid clusters Create standalone clusters loadBalancer.mode This value must be bundled to enable bundled load balancing. loadBalancer.ports.controlPlaneLBPort This value specifies the destination port to be used for traffic sent to the Kubernetes control plane (the Kubernetes API servers). loadBalancer.vips.controlPlaneVIP This value specifies the destination IP address to be used for traffic sent to the Kubernetes control plane (the Kubernetes API servers)."
+        ]
+      },
+      {
+        "title": "\"Cluster configuration field reference \\_|\\_ Google Distributed Cloud (software\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "source_id": "site-docs-root",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: loadBalancer : mode : bundled type : bgp localASN : 65001 bgpPeers : - ip : 10.0.1.254 asn : 65002 controlPlaneNodes : - 10.0.1.10 - 10.0.1.11 - ip : 10.0.2.254 asn : 65002 controlPlaneNodes : - 10.0.2.10 For more information, see Configure bundled load balancers with BGP .",
+          "For example: loadBalancer : mode : bundled ... addressPools : - name : pool1 addresses : - 10.200.0.92-10.200.0.100 nodePoolSpec : nodes : - address : 10.200.1.25 k8sIP : 10.200.0.25 - address : 10.200.0.26 - address : 10.200.0.27 This field can't be modified after cluster creation.",
+          "For example: loadBalancer : mode : bundled ... nodePoolSpec : nodes : - address : 10.200.0.25 - address : 10.200.0.26 - address : 10.200.0.27 Cluster resource Optional Mutable loadBalancer.nodePoolSpec.nodes.k8sIP Optional."
+        ]
+      },
+      {
+        "title": "\"Configure manual load balancing \\_|\\_ Google Distributed Cloud (software\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/manual-lb",
+        "source_id": "site-iam-reference",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following sample output shows the structure of the ports section: spec : clusterIP : 172.26.232.107 externalTrafficPolicy : Cluster loadBalancerIP : 21.0.101.77 ports : - name : status-port nodePort : 30281 port : 15021 protocol : TCP targetPort : 15021 - name : http nodePort : 30124 port : 80 protocol : TCP targetPort : 80 - name : https nodePort : 31858 port : 443 protocol : TCP targetPort : 443 There are ports for HTTP and HTTPS traffic.",
+          "Support LoadBalancer Services in user clusters You must configure load balancing to support Kubernetes LoadBalancer services In manual load-balancing mode, Google Distributed Cloud does not automatically provision load balancers so LoadBalancer services don't work unless you provision and configure load balancers to point the services.",
+          "Find its ports with this command: kubectl --kubeconfig KUBECONFIG -n gke-system get service istio-ingress -oyaml The ingress service is configured with a loadBalancerIP which is the IP supplied in the loadBalancer.vips.ingressVIP field in the initial cluster configuration."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "baremetal.cluster.gke.io",
+      "nodes.k8sIP",
+      "ports.controlPlaneLBPort",
+      "vips.controlPlaneVIP",
+      "vips.ingressVIP"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/bundled-lb",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/manual-lb"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/bundled-lb",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/manual-lb"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:14.869Z",
+  "source_step08_card": "data/step-08/current/products/google-distributed-cloud-software-only-for-bare-metal/card.json",
+  "product_name": "Google Distributed Cloud (software only) for bare metal",
+  "product_slug": "google-distributed-cloud-software-only-for-bare-metal"
+}

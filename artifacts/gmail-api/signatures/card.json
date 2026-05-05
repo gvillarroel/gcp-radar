@@ -1,0 +1,114 @@
+{
+  "feature_name": "Signatures",
+  "feature_slug": "signatures",
+  "summary": "New endpoints are available for managing signatures in mail settings.",
+  "extended_definition": "New endpoints are available for managing signatures in mail settings.",
+  "lifecycle": {
+    "latest_feature_date": "2016-07-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings",
+      "https://developers.google.com/workspace/gmail/api/guides/migrate-from-email-settings",
+      "https://developers.google.com/workspace/gmail/api/reference/rest/v1/LanguageSettings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Migrate from the Email Settings API \\_|\\_ Gmail \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/guides/migrate-from-email-settings",
+        "source_id": "site-docs-root",
+        "final_score": 151,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Old setting New setting contactsOnly restrictToContacts domainOnly restrictToDomain enable enableAutoReply endDate endTime message responseBodyHtml responseBodyPlainText startDate startTime subject responseSubject Manage signature settings To manage email signatures in the Gmail API, use the settings.sendAs resource.",
+          "Old setting New setting name displayName address sendAsEmail replyTo replyToAddress makeDefault isDefault Manage web clips Web Clip settings are not available in the Gmail API.",
+          "Manage general settings General settings are not available in the Gmail API."
+        ]
+      },
+      {
+        "title": "Manage aliases and signatures with the Gmail API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings",
+        "source_id": "site-docs-root",
+        "final_score": 133,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Builder ( new NetHttpTransport (), GsonFactory . getDefaultInstance (), requestInitializer ) . setApplicationName ( \"Gmail samples\" ) . build (); try { SendAs primaryAlias = null ; ListSendAsResponse aliases = service . users (). settings (). sendAs (). list ( \"me\" ). execute (); for ( SendAs alias : aliases . getSendAs ()) { if ( alias . getIsPrimary ()) { primaryAlias = alias ; break ; } } // Updating a new signature SendAs aliasSettings = new SendAs (). setSignature ( \"Automated Signature\" ); SendAs result = service . users (). settings (). sendAs (). patch ( \"me\" , primaryAlias . getSendAsEmail (), aliasSettings ) . execute (); //Prints the updated signature System . out . println ( \"Updated signature - \" + result . getSignature ()); return result . getSignature (); } catch ( GoogleJsonResponseException e ) { // TODO(developer) - handle error appropriately GoogleJsonError error = e . getDetails (); if ( error . getCode () == 403 ) { System . err . println ( \"Unable to update signature: \" + e . getDetails ()); } else { throw e ; } } return null ; } } Python gmail/snippet/settings snippets/update signature.py View on GitHub import google.auth from googleapiclient.discovery import build from googleapiclient.errors import HttpError def update signature (): \"\"\"Create and update signature in gmail.",
+          "TODO(developer) - See https://developers.google.com/identity for guides on implementing OAuth2 for the application. \"\"\" creds , = google . auth . default () try : create gmail api client service = build ( \"gmail\" , \"v1\" , credentials = creds ) primary alias = None pylint: disable=E1101 aliases = service . users () . settings () . sendAs () . list ( userId = \"me\" ) . execute () for alias in aliases . get ( \"sendAs\" ): if alias . get ( \"isPrimary\" ): primary alias = alias break send as configuration = { \"displayName\" : primary alias . get ( \"sendAsEmail\" ), \"signature\" : \"Automated Signature\" , } pylint: disable=E1101 result = ( service . users () . settings () . sendAs () . patch ( userId = \"me\" , sendAsEmail = primary alias . get ( \"sendAsEmail\" ), body = send as configuration , ) . execute () ) print ( f 'Updated signature for: { result . get ( \"displayName\" ) } ' ) except HttpError as error : print ( f \"An error occurred: { error } \" ) result = None return result . get ( \"signature\" ) if name == \" main \" : update signature () Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Google Workspace Gmail Guides Send feedback Manage aliases and signatures with the Gmail API Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "LanguageSettings \\_|\\_ Gmail \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/LanguageSettings",
+        "source_id": "site-docs-reference",
+        "final_score": 102,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The set of languages supported by Gmail evolves over time, so please refer to the \"Language\" dropdown in the Gmail settings for all available options, as described in the language settings help article .",
+          "Home Google Workspace Gmail Reference Send feedback LanguageSettings Stay organized with collections Save and categorize content based on your preferences.",
+          "JSON representation { \"displayLanguage\" : string } Fields displayLanguage string The language to display Gmail in, formatted as an RFC 3066 Language Tag (for example en-GB , fr or ja for British English, French, or Japanese respectively)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apis.google.com",
+      "developers.google.com",
+      "googleapiclient.discovery",
+      "googleapiclient.errors",
+      "schemas.google.com",
+      "settings.sendAs",
+      "signature.py"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/guides/migrate-from-email-settings",
+        "https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings",
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/LanguageSettings"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/guides/migrate-from-email-settings",
+        "https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings",
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/LanguageSettings"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/guides/migrate-from-email-settings",
+        "https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings",
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/LanguageSettings"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:12.025Z",
+  "source_step08_card": "data/step-08/current/products/gmail-api/card.json",
+  "product_name": "Gmail API",
+  "product_slug": "gmail-api"
+}

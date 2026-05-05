@@ -1,0 +1,139 @@
+{
+  "feature_name": "Queue task retention period configuration",
+  "feature_slug": "queue-task-retention-period-configuration",
+  "summary": "Cloud Tasks lets queues configure the maximum retention time for tasks with the taskTtl field.",
+  "extended_definition": "Cloud Tasks lets queues configure the maximum retention time for tasks with the taskTtl field.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesFixedSizeCollection",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesPage",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesPagedResponse",
+      "https://docs.cloud.google.com/tasks/docs/deleting-appengine-queues-and-tasks"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage queues and tasks \\_|\\_ Cloud Tasks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tasks/docs/deleting-appengine-queues-and-tasks",
+        "source_id": "site-docs-root",
+        "final_score": 292,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To resume the queue, click play arrow Resume queue . gcloud Pause a queue using the gcloud tasks queues pause command: gcloud tasks queues pause QUEUE ID \\ --location = LOCATION Replace the following: QUEUE ID : the name of the queue that you want to pause LOCATION : the region in which the queue is deployed—for example, us-central1 Resume a queue using the gcloud tasks queues resume command: gcloud tasks queues resume QUEUE ID \\ --location = LOCATION REST To pause a queue, use the projects.locations.queues.pause method.",
+          "At the prompt, click Delete . gcloud Delete a task using the gcloud tasks delete command: gcloud tasks delete TASK NAME \\ --queue = QUEUE ID \\ --location = LOCATION Replace the following: TASK NAME : the name of the task that you want to delete QUEUE ID : the name of the queue that the task belongs to LOCATION : the region in which the queue is deployed—for example, us-central1 REST To delete a task, use the projects.locations.queues.tasks.delete method.",
+          "Execute the following command: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d \"\" \\ \"https://cloudtasks.googleapis.com/v2/projects/ PROJECT ID /locations/ LOCATION /queues/ QUEUE ID :resume\" PowerShell (Windows) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login ."
+        ]
+      },
+      {
+        "title": "\"Class CloudTasksClient.ListQueuesFixedSizeCollection (2.88.0) \\_|\\_ Java\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesFixedSizeCollection",
+        "source_id": "site-java-reference",
+        "final_score": 256,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ListQueuesFixedSizeCollection > Inheritance java.lang.Object > AbstractFixedSizeCollection > CloudTasksClient.ListQueuesFixedSizeCollection Inherited Members AbstractFixedSizeCollection.createCollection(List<PageT>,int) AbstractFixedSizeCollection.getCollectionSize() AbstractFixedSizeCollection.getNextCollection() AbstractFixedSizeCollection.getNextPageToken() AbstractFixedSizeCollection.getValues() AbstractFixedSizeCollection.hasNextCollection() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createCollection(List<CloudTasksClient.ListQueuesPage> pages, int collectionSize) protected CloudTasksClient .",
+          "ListQueuesPage > pages , int collectionSize ) Parameters Name Description pages List < ListQueuesPage > collectionSize int Returns Type Description CloudTasksClient.ListQueuesFixedSizeCollection Overrides AbstractFixedSizeCollection<RequestT,ResponseT,ResourceT,PageT,CollectionT>.createCollection(List<PageT> pages, int collectionSize) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Developer tools Java Client libraries Send feedback Class CloudTasksClient.ListQueuesFixedSizeCollection (2.88.0) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Class CloudTasksClient.ListQueuesPage (2.88.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesPage",
+        "source_id": "site-java-reference",
+        "final_score": 256,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ListQueuesPage > Inheritance java.lang.Object > AbstractPage > CloudTasksClient.ListQueuesPage Inherited Members AbstractPage.createPage(PageContext<RequestT,ResponseT,ResourceT>,ResponseT) AbstractPage.createPageAsync(PageContext<RequestT,ResponseT,ResourceT>,ApiFuture<ResponseT>) AbstractPage.getNextPage() AbstractPage.getNextPage(int) AbstractPage.getNextPageAsync() AbstractPage.getNextPageToken() AbstractPage.getPageElementCount() AbstractPage.getRequest() AbstractPage.getResponse() AbstractPage.getValues() AbstractPage.hasNextPage() AbstractPage.iterateAll() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createPage(PageContext<ListQueuesRequest,ListQueuesResponse,Queue> context, ListQueuesResponse response) protected CloudTasksClient .",
+          "ListQueuesPage createPage ( PageContext<ListQueuesRequest , ListQueuesResponse , Queue > context , ListQueuesResponse response ) Parameters Name Description context PageContext < ListQueuesRequest , ListQueuesResponse , Queue > response ListQueuesResponse Returns Type Description CloudTasksClient.ListQueuesPage Overrides AbstractPage<RequestT,ResponseT,ResourceT,PageT>.createPage(PageContext<RequestT,ResponseT,ResourceT> context, ResponseT response) createPageAsync(PageContext<ListQueuesRequest,ListQueuesResponse,Queue> context, ApiFuture<ListQueuesResponse> futureResponse) public ApiFuture<CloudTasksClient .",
+          "Home Documentation Developer tools Java Client libraries Send feedback Class CloudTasksClient.ListQueuesPage (2.88.0) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Class CloudTasksClient.ListQueuesPagedResponse (2.88.0) \\_|\\_ Java client\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesPagedResponse",
+        "source_id": "site-java-reference",
+        "final_score": 256,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ListQueuesFixedSizeCollection > Inheritance java.lang.Object > AbstractPagedListResponse > CloudTasksClient.ListQueuesPagedResponse Inherited Members AbstractPagedListResponse.expandToFixedSizeCollection(int) AbstractPagedListResponse.getNextPageToken() AbstractPagedListResponse.getPage() AbstractPagedListResponse.iterateAll() AbstractPagedListResponse.iterateFixedSizeCollections(int) AbstractPagedListResponse.iteratePages() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Static Methods createAsync(PageContext<ListQueuesRequest,ListQueuesResponse,Queue> context, ApiFuture<ListQueuesResponse> futureResponse) public static ApiFuture<CloudTasksClient .",
+          "Home Documentation Developer tools Java Client libraries Send feedback Class CloudTasksClient.ListQueuesPagedResponse (2.88.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "ListQueuesPagedResponse extends AbstractPagedListResponse<ListQueuesRequest , ListQueuesResponse , Queue , CloudTasksClient ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudtasks.googleapis.com",
+      "com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesFixedSizeCollection",
+      "com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesPage",
+      "com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesPagedResponse",
+      "java.lang.Object",
+      "projects.locations.queues.pause",
+      "projects.locations.queues.tasks.delete"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/deleting-appengine-queues-and-tasks",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesFixedSizeCollection",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesPage",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesPagedResponse"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/deleting-appengine-queues-and-tasks",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesFixedSizeCollection",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesPage",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesPagedResponse"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/deleting-appengine-queues-and-tasks",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesFixedSizeCollection",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesPage",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesPagedResponse"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/deleting-appengine-queues-and-tasks",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesFixedSizeCollection",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesPage",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesPagedResponse"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:44.322Z",
+  "source_step08_card": "data/step-08/current/products/cloud-tasks/card.json",
+  "product_name": "Cloud Tasks",
+  "product_slug": "cloud-tasks"
+}

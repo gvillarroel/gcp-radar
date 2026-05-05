@@ -1,0 +1,90 @@
+{
+  "feature_name": "Storage snapshot selection in Bare Metal Solution Order Form",
+  "feature_slug": "storage-snapshot-selection-in-bare-metal-solution-order-form",
+  "summary": "Adds the ability to choose storage snapshots when creating storage volumes in the intake form.",
+  "extended_definition": "Adds the ability to choose storage snapshots when creating storage volumes in the intake form.",
+  "lifecycle": {
+    "latest_feature_date": "2022-01-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bare-metal/docs/bms-deploy",
+      "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+      "https://docs.cloud.google.com/bare-metal/docs/bms-nfs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Maintain the Bare Metal Solution environment \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "source_id": "site-docs-reference",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "Click the name to view additional information about the NFS storage volume, such as snapshots. at-2222222-nfs001-vol000 Labels Displays any labels you added to this NFS file storage resource You can use labels to filter the console output by copying the text of a label and pasting it in the Filter box just above the Status field. environment:test gcloud To view the status of your NFS file storage within the Bare Metal Solution environment, issue the gcloud bms nfs-shares list command: gcloud bms nfs-shares list --project= PROJECT ID --region= REGION Additional command options include: --limit: Limit the output to show a specific number of devices. --filter: Limit the output to show devices with a specific label or other filter parameter.",
+          "Click the name to view additional information about the storage volume, including LUNs and snapshots.",
+          "Click the ID to view basic information about the storage volume, including LUNs and snapshots."
+        ]
+      },
+      {
+        "title": "\"Add NFS file storage to a Bare Metal Solution environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-nfs",
+        "source_id": "site-docs-root-2",
+        "final_score": 128,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For more information about using NFS file storage with an Oracle database, see the following articles (requires an Oracle account): RMAN with NFS Direct NFS Client Mounts to NFS Storage Devices Request NFS file storage for Bare Metal Solution When you want to add NFS file storage to your Bare Metal Solution environment, you need to order your NFS volumes through Google Cloud Sales .",
+          "For RHEL 7, use multiple NFS clients to achieve similar performance. sudo mount -t nfs -o \\ rw,bg,hard,nointr,rsize=32768,wsize=32768,tcp,vers=3,timeo=600,nconnect=8 \\ NFS SERVER IP ADDRESS :/ NFS SHARE NAME /mnt/ DIRECTORY NAME For most Oracle implementations in a Bare Metal Solution environment, use the following command to mount the volume. sudo mount -t nfs -o \\ rw,bg,hard,nointr,rsize=32768,wsize=32768,tcp,vers=3,timeo=600 \\ NFS SERVER IP ADDRESS :/ NFS SHARE NAME /mnt/ DIRECTORY NAME If your Oracle implementation requires the storage of live Oracle RAC binaries or data files on the NFS volume, enter the following command that uses the actimeo option.",
+          "It appears in the following format: NFS SERVER IP ADDRESS:/NFS SHARE NAME For example, if the NFS server IP address is 192.168.1.240 and the NFS share name is at-1234567-nfs001 , the resulting NFS volume path looks like this: 192.168.1.240:/at-1234567-nfs001 Configure NFS file storage for Bare Metal Solution The following example helps you configure NFS file storage for your Bare Metal Solution servers, and uses Red Hat Enterprise Linux commands ."
+        ]
+      },
+      {
+        "title": "Deploy your Bare Metal Solution environment \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-deploy",
+        "source_id": "site-docs-reference",
+        "final_score": 119,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Use the Google Cloud console intake form to enter your selections Now that you have ordered your Bare Metal Solution resources and are prepared to bring them online, you need to enter the information for your Bare Metal Solution environment into the Google Cloud console intake form.",
+          "Before you begin Before you start filling out the Bare Metal Solution intake form, do the following: Place your order for networking, servers, and storage with Google Cloud Sales .",
+          "Checkbox selected to enable snapshots Protocol Select the storage protocol Fibre Channel NFS Fibre Channel LUNs Specify how you want to allocate your Logical Unit Numbers (LUNS) in the storage volume: Number of LUNs Size of each LUN Note: We recommend that you configure 1 LUN for each volume with 4 TiB or less, and 8 LUNs for volumes with more than 4 TiB."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-nfs",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-deploy"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:17.932Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution"
+}

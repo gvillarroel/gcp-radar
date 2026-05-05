@@ -1,0 +1,104 @@
+{
+  "feature_name": "Capacity Planner organization-level gcloud command generation for future reservation requests",
+  "feature_slug": "capacity-planner-organization-level-gcloud-command-generation-for-future-reservation-requests",
+  "summary": "Capacity Planner preview can generate gcloud CLI commands to create future reservation requests from organization-level VM usage data.",
+  "extended_definition": "Capacity Planner’s future reservation request feature enables users to create future reservation requests from usage and forecast data about Compute Engine resources, with support for planning capacity for projects, folders, or organizations. The recommended method for creating these requests is to configure them in the Google Cloud console and then generate gcloud CLI commands, which can be reviewed and edited before execution; separate Capacity Planner usage/forecast documentation also exposes organization-level query capabilities for usage and forecast data, so the feature can be applied at organization scope.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/capacity-planner/docs/choose-request-method",
+      "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View usage and forecast data \\_|\\_ Capacity Planner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/capacity-planner/docs/view-data",
+        "source_id": "site-docs-root",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Create future reservation requests \\_|\\_ Capacity Planner \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/capacity-planner/docs/choose-request-method",
+        "source_id": "site-docs-root",
+        "final_score": 76,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Resource attributes for IAM Conditions \\_|\\_ Identity and Access Management\\",
+        "url": "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "source_id": "site-iam-reference",
+        "final_score": 50,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "The Capacity Planner pages show that future reservation requests are forecast-based for compute/GPUs and include an editable gcloud CLI generation path, while the usage-and-forecast page documents organization-level query endpoints for Capacity Planner data."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/choose-request-method",
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/choose-request-method",
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/choose-request-method",
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/choose-request-method",
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/choose-request-method",
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:26.311Z",
+  "source_step08_card": "data/step-08/current/products/capacity-planner/card.json",
+  "product_name": "Capacity Planner",
+  "product_slug": "capacity-planner"
+}

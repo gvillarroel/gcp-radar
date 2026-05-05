@@ -1,0 +1,117 @@
+{
+  "feature_name": "Handwriting OCR",
+  "feature_slug": "handwriting-ocr",
+  "summary": "Handwriting OCR adds handwriting support to document text detection.",
+  "extended_definition": "Handwriting OCR adds handwriting support to document text detection.",
+  "lifecycle": {
+    "latest_feature_date": "2018-12-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vision/docs/fulltext-annotations",
+      "https://docs.cloud.google.com/vision/docs/handwriting",
+      "https://docs.cloud.google.com/vision/docs/ocr",
+      "https://docs.cloud.google.com/vision/docs/tutorials"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Detect handwriting in images \\_|\\_ Cloud Vision API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vision/docs/handwriting",
+        "source_id": "site-docs-root",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Image () image . source . image uri = uri response = client . document text detection ( image = image ) for page in response . full text annotation . pages : for block in page . blocks : print ( f \" \\n Block confidence: { block . confidence } \\n \" ) for paragraph in block . paragraphs : print ( \"Paragraph confidence: {} \" . format ( paragraph . confidence )) for word in paragraph . words : word text = \"\" . join ([ symbol . text for symbol in word . symbols ]) print ( \"Word text: {} (confidence: {} )\" . format ( word text , word . confidence ) ) for symbol in word . symbols : print ( \" \\t Symbol: {} (confidence: {} )\" . format ( symbol . text , symbol . confidence ) ) if response . error . message : raise Exception ( \" {} \\n For more info on error messages, check: \" \"https://cloud.google.com/apis/design/errors\" . format ( response . error . message ) ) gcloud To perform handwriting detection, use the gcloud ml vision detect-document command as shown in the following example: gcloud ml vision detect-document gs://cloud-samples-data/vision/handwriting image.png Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Vision reference documentation for .NET.",
+          "Handwriting detection with Optical Character Recognition (OCR) The Vision API can detect and extract text from images: DOCUMENT TEXT DETECTION extracts text from an image (or file ); the response is optimized for dense text and documents .",
+          "Multi-regional support This functionality currently only applies to the OCR feature (types TEXT DETECTION or DOCUMENT TEXT DETECTION )."
+        ]
+      },
+      {
+        "title": "\"Dense document text detection tutorial \\_|\\_ Cloud Vision API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vision/docs/fulltext-annotations",
+        "source_id": "site-docs-root",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Annotating an image using Document Text OCR This tutorial walks you through a basic Vision API application that makes a DOCUMENT TEXT DETECTION request , then processes the fullTextAnnotation response .",
+          "Making the API request and reading text bounds from the response Now that our Vision API service is ready, we can access the service by calling the document text detection method of the ImageAnnotatorClient instance.",
+          "Home Documentation AI and ML Cloud Vision API Guides Send feedback Dense document text detection tutorial Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Detect and extract text from images \\_|\\_ Cloud Vision API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vision/docs/ocr",
+        "source_id": "site-docs-root",
+        "final_score": 172,
+        "relevance": "",
+        "evidence_snippets": [
+          "Multi-regional support for Vision API OCR This functionality currently only applies to the OCR feature (types TEXT DETECTION or DOCUMENT TEXT DETECTION ).",
+          "If you choose to provide a language hint, modify the body of your request ( request.json file) to provide the string of one of the supported languages in the imageContext.languageHints field as shown in the following sample: { \"requests\" : [ { \"image\" : { \"source\" : { \"imageUri\" : \" IMAGE URL \" } } , \"features\" : [ { \"type\" : \"DOCUMENT TEXT DETECTION\" } ] , \"imageContext\" : { \"languageHints\" : [ \"en-t-i0-handwrit\" ] } } ] } How do language hints work?",
+          "As a best practice, don't depend on externally-hosted images for production applications . gcloud To perform text detection, use the gcloud ml vision detect-text command: gcloud ml vision detect-text gs://cloud-samples-data/vision/ocr/sign.jpg REST Before using any of the request data, make the following replacements: CLOUD STORAGE IMAGE URI : the path to a valid image file in a Cloud Storage bucket."
+        ]
+      },
+      {
+        "title": "Tutorials \\_|\\_ Cloud Vision API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vision/docs/tutorials",
+        "source_id": "site-iam-reference",
+        "final_score": 167,
+        "relevance": "",
+        "evidence_snippets": [
+          "Dense document text detection (OCR) tutorial Return text annotations from a dense text document.",
+          "Codelab: Use the Vision API with Python (label, text/OCR, landmark, and face detection) Learn how to set up your environment, authenticate, install the Python client library, and send requests for the following features: label detection, text detection (OCR), landmark detection, and face detection (external link).",
+          "Codelab: Use the Vision API with C# (label, text/OCR, landmark, and face detection) Learn how to set up your environment, authenticate, install the C# client library, and send requests for the following features: label detection, text detection (OCR), landmark detection, and face detection (external link)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "image.png",
+      "request.json",
+      "sign.jpg"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/vision/docs/fulltext-annotations",
+        "https://docs.cloud.google.com/vision/docs/ocr",
+        "https://docs.cloud.google.com/vision/docs/tutorials"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/vision/docs/fulltext-annotations",
+        "https://docs.cloud.google.com/vision/docs/ocr",
+        "https://docs.cloud.google.com/vision/docs/tutorials"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:44.908Z",
+  "source_step08_card": "data/step-08/current/products/cloud-vision/card.json",
+  "product_name": "Cloud Vision",
+  "product_slug": "cloud-vision"
+}

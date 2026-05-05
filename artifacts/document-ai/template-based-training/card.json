@@ -1,0 +1,170 @@
+{
+  "feature_name": "Template-based training",
+  "feature_slug": "template-based-training",
+  "summary": "Template-based training lets Custom Extractor learn accurate predictions from documents with consistent layouts.",
+  "extended_definition": "Template-based training lets Custom Extractor learn accurate predictions from documents with consistent layouts.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+      "https://docs.cloud.google.com/document-ai/docs/ce-template-based",
+      "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+      "https://docs.cloud.google.com/document-ai/docs/custom-based-extraction"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Template-based extraction \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/ce-template-based",
+        "source_id": "site-docs-root",
+        "final_score": 255,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Previous arrow back Custom-based extraction Next Custom extractor with generative AI arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Adding more documents than the minimum of three needed typically doesn't improve quality for template-based training.",
+          "Build and evaluate a custom extractor with template mode Create a custom extractor."
+        ]
+      },
+      {
+        "title": "\"Custom extractor with generative AI \\_|\\_ Document AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "source_id": "site-docs-root",
+        "final_score": 207,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Document AI Guides Send feedback Custom extractor with generative AI Stay organized with collections Save and categorize content based on your preferences.",
+          "What's next Learn about Custom extractor with derived field and signature detection .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json ` -Uri \"https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ PROCESSOR VERSION :process\" Select-Object -Expand Content Custom extractor with signature detection Preview This product is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms ."
+        ]
+      },
+      {
+        "title": "Custom-based extraction \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/custom-based-extraction",
+        "source_id": "site-docs-root",
+        "final_score": 179,
+        "relevance": "",
+        "evidence_snippets": [
+          "Custom model training and extraction lets you to build your own model designed specifically for your documents without the use of generative AI.",
+          "Previous arrow back Automated schema extraction Next Template-based extraction arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Auto-labeling with the foundation model The foundation model can accurately extract fields for a variety of document types, but you can also provide additional training data to improve the accuracy of the model for specific document structures."
+        ]
+      },
+      {
+        "title": "Custom extractor mechanisms \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "source_id": "site-docs-root",
+        "final_score": 176,
+        "relevance": "",
+        "evidence_snippets": [
+          "This is because the default custom extractor model type is a foundation model, which can perform zero-shot prediction, that is, without training.",
+          "At least 10 training instances and 10 test instances of each field are required for a custom model based processor.",
+          "Train custom model based processor Training might take several hours."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "documentai.googleapis.com",
+      "request.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-template-based",
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/custom-based-extraction",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-template-based",
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/custom-based-extraction",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-template-based",
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/custom-based-extraction",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-template-based",
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/custom-based-extraction",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-template-based",
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/custom-based-extraction",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-template-based",
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/custom-based-extraction",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-template-based",
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/custom-based-extraction",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-template-based",
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/custom-based-extraction",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:00.744Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai"
+}

@@ -1,0 +1,138 @@
+{
+  "feature_name": "Vertex AI online inference PSC service automation",
+  "feature_slug": "vertex-ai-online-inference-psc-service-automation",
+  "summary": "Vertex AI online inference adds preview support for Private Service Connect service automation that automatically creates PSC endpoints for dedicated private endpoints.",
+  "extended_definition": "Vertex AI online inference adds preview support for Private Service Connect service automation that automatically creates PSC endpoints for dedicated private endpoints.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-onlinestore",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+      "https://docs.cloud.google.com/vertex-ai/docs/start/predictions-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "source_id": "site-api-reference-2",
+        "final_score": 97,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported metrics: For Online Prediction: aiplatform.googleapis.com/prediction/online/accelerator/duty cycle aiplatform.googleapis.com/prediction/online/cpu/utilization aiplatform.googleapis.com/prediction/online/request count pubsub.googleapis.com/subscription/num undelivered messages prometheus.googleapis.com/vertex dcgm fi dev gpu util prometheus.googleapis.com/vertex vllm gpu cache usage perc prometheus.googleapis.com/vertex vllm num requests waiting target integer The target resource utilization in percentage (1% - 100%) for the given metric; once the real usage deviates from the target by a certain percentage, the machine replicas change.",
+          "Format: https://{endpoint id}.{region}-{uid}.prediction.vertexai.goog . clientConnectionConfig object ( ClientConnectionConfig ) Configurations that are applied to the endpoint for online prediction. satisfiesPzs boolean Output only.",
+          "ClientConnectionConfig JSON representation { \"inferenceTimeout\" : string } Fields inferenceTimeout string ( Duration format) Customizable online prediction request timeout."
+        ]
+      },
+      {
+        "title": "Get inferences beginner's guide \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/start/predictions-guide",
+        "source_id": "site-docs-reference-2",
+        "final_score": 91,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Get online inferences If you want to get online inferences, you need to take the extra step of deploying your model to a Vertex AI endpoint .",
+          "Overview of the managed inference service Vertex AI supports batch and online inferences.",
+          "How online inferences work in Vertex AI."
+        ]
+      },
+      {
+        "title": "Create an online store instance \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-onlinestore",
+        "source_id": "site-docs-reference-3",
+        "final_score": 85,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see the Python API reference documentation . from typing import List from google.cloud import aiplatform from vertexai.resources.preview import feature store def create optimized private feature online store sample ( project : str , location : str , feature online store id : str , project allowlist : List [ str ], ): aiplatform . init ( project = project , location = location ) fos = feature store .",
+          "For more information, see the Python API reference documentation . from google.cloud import aiplatform from vertexai.resources.preview import feature store def create optimized public feature online store sample ( project : str , location : str , feature online store id : str , ): aiplatform . init ( project = project , location = location ) fos = feature store .",
+          "For more information, see the Python API reference documentation . from google.cloud import aiplatform from vertexai.resources.preview import feature store def create bigtable feature online store sample ( project : str , location : str , feature online store id : str , ): aiplatform . init ( project = project , location = location ) fos = feature store ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "prediction.vertexai.goog",
+      "prometheus.googleapis.com",
+      "pubsub.googleapis.com",
+      "request.json",
+      "type.googleapis.com",
+      "vertexai.resources.preview"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/start/predictions-guide",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-onlinestore"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/start/predictions-guide",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-onlinestore"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/start/predictions-guide",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-onlinestore"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/start/predictions-guide",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-onlinestore"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/start/predictions-guide",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-onlinestore"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/start/predictions-guide",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-onlinestore"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:42.435Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai"
+}

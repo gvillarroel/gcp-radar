@@ -1,0 +1,116 @@
+{
+  "feature_name": "Backup size visibility",
+  "feature_slug": "backup-size-visibility",
+  "summary": "Cloud SQL lets you view the size of an instance backup.",
+  "extended_definition": "Cloud SQL lets you view the size of an instance backup.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restore"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud SQL backups overview \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "MySQL PostgreSQL SQL Server Cloud SQL lets you back up your instances on-demand, or automatically using a backup schedule.",
+          "This field lets you identify whether a particular backup belongs to a live or deleted instance.",
+          "To view your instance's final backup instance configuration, see View instance information ."
+        ]
+      },
+      {
+        "title": "\"Manage backups for deleted instances \\_|\\_ Cloud SQL for SQL Server \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /backups\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"name\": \"projects/ PROJECT ID /backups/ BACKUP ID \", \"kind\": \"sql#backup\", \"state\": \"SUCCESSFUL\", \"backupInterval\": { \"startTime\": \"2020-01-21T11:25:33.858Z\", \"endTime\": \"2020-01-21T11:26:18.663Z\", } \"type\": \"FINAL\", \"instance\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /backups/ BACKUP ID \", \"location\": \"us\" \"description\": \"This is a final backup.\", \"backupKind\": \"SNAPSHOT\", \"dataDiskSizeGB\": \"10\", \"expiryTime\": \"2020-01-30T11:26:18.663Z\", \"backup run\": \"projects/ PROJECT ID /instances/ INSTANCE ID /backupRuns/ BACKUP RUN ID \", \"satisfies pzs\": false, \"satisfies pzi\": false } View details for a retained backup Use this example to view the details of a retained or final backup.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /backups\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"name\": \"projects/ PROJECT ID /backups/ BACKUP ID \", \"kind\": \"sql#backup\", \"state\": \"SUCCESSFUL\", \"backupInterval\": { \"startTime\": \"2020-01-21T11:25:33.858Z\", \"endTime\": \"2020-01-21T11:26:18.663Z\", } \"type\": \"FINAL\", \"instance\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /backups/ BACKUP ID \", \"location\": \"us\" \"description\": \"This is a final backup.\", \"backupKind\": \"SNAPSHOT\", \"dataDiskSizeGB\": \"10\", \"expiryTime\": \"2020-01-30T11:26:18.663Z\", \"backup run\": \"projects/ PROJECT ID /instances/ INSTANCE ID /backupRuns/ BACKUP RUN ID \", \"satisfies pzs\": false, \"satisfies pzi\": false } View details for a backup Use this example to view the details of a retained or final backup.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /backups/ BACKUP ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"name\": \"projects/ PROJECT ID /backups/ BACKUP ID \", \"kind\": \"sql#backup\", \"status\": \"SUCCESSFUL\", \"backupInterval\": { \"startTime\": \"2020-01-21T11:25:33.858Z\", \"endTime\": \"2020-01-21T11:26:18.663Z\", } \"type\": \"FINAL\", \"instance\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /backups/ BACKUP ID \", \"location\": \"us\" \"description\": \"final backup\", \"backupKind\": \"SNAPSHOT\", \"dataDiskSizeGB\": \"10\", \"expiryTime\": \"2020-01-30T11:26:18.663Z\", \"backup run\": \"projects/ PROJECT ID /instances/ INSTANCE ID /backupRuns/ BACKUP RUN ID \", \"satisfies pzs\": false, \"satisfies pzi\": false } Update a retained or final backup after instance deletion After you delete an instance, you can update the settings for any retained or final backups associated with that instance that are stored at the project level."
+        ]
+      },
+      {
+        "title": "\"Restore an instance overview \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restore",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 166,
+        "relevance": "",
+        "evidence_snippets": [
+          "This lets you recover an instance to a specific period or time by either restoring the back to an existing instance, or restoring the backup to a new instance.",
+          "Cloud SQL always sets the storage capacity of the target instance to the maximum value of the size of both the configured disk and the backup disk.",
+          "MySQL PostgreSQL SQL Server Cloud SQL lets you restore your instances from a backup, or by performing point-in-time recovery (PITR)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restore"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restore"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restore"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/restore"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:41.951Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server"
+}

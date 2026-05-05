@@ -1,0 +1,115 @@
+{
+  "feature_name": "PyAMF 0.7.2 beta integration",
+  "feature_slug": "pyamf-0-7-2-beta-integration",
+  "summary": "PyAMF version 0.7.2 (Beta) has been added.",
+  "extended_definition": "PyAMF version 0.7.2 (Beta) has been added.",
+  "lifecycle": {
+    "latest_feature_date": "2015-08-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/quotas",
+      "https://docs.cloud.google.com/appengine/docs/standard/php7/mapping-custom-domains",
+      "https://docs.cloud.google.com/appengine/docs/standard/php7/php-differences"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quotas and limits \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/quotas",
+        "source_id": "site-docs-reference-4",
+        "final_score": 64,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following example illustrates how to catch the OverQuotaError , which may be raised by the SendMessage() method if an email-related quota has been exceeded: try: mail.SendMessage ( to = 'test@example.com' , from = 'admin@example.com' , subject = 'Test Email' , body = 'Testing' ) except apiproxy errors.OverQuotaError, message: Log the error. logging.error(message) Display an informative message to the user. self.response.out.write ( 'The email could not be sent. ' 'Please try again later.' ) Is your app exceeding the default limits?",
+          "The following limits apply to task queues according to their type: Push Queue Limits Maximum task size 100KB Queue execution rate 500 task invocations per second per queue Maximum countdown/ETA for a task 30 days from the current date and time Maximum number of tasks that can be added in a batch 100 tasks Maximum number of tasks that can be added in a transaction 5 tasks Default maximum number of task queues 100 queues.",
+          "Limit Free app Paid app Maximum services per app 5 210 Maximum versions per app 15 210 There is also a limit to the number of instances for each service with basic or manual scaling: Maximum instances per manual/basic scaling version Free app Paid app US Paid app EU 20 25 (200 for us-central ) 25 There is also a limit to the number of instances across standard versions that can be running per project and region."
+        ]
+      },
+      {
+        "title": "\"Mapping custom domains \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/php7/mapping-custom-domains",
+        "source_id": "site-docs-reference-4",
+        "final_score": 44,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use a dig tool, such as this online dig version , to confirm the DNS records have been successfully updated.",
+          "Wildcard routing rules apply to URLs that contain components for services, versions, and instances, following the service routing rules for App Engine .",
+          "If the user browses a domain that matches an application version name or service name, the application serves that version."
+        ]
+      },
+      {
+        "title": "\"Migrate from PHP 5.5 to the latest PHP runtime \\_|\\_ App Engine migration\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/php7/php-differences",
+        "source_id": "site-docs-reference-4",
+        "final_score": 44,
+        "relevance": "",
+        "evidence_snippets": [
+          "The behavior of some elements in the app.yaml configuration file has been modified: Element Change type Description entrypoint Added Optionally , use this field to specify the command that will run when your app starts . threadsafe Deprecated All applications are presumed to be threadsafe, meaning an instance can handle multiple requests at the same time. api version Deprecated Previously required but not needed in the second-generation PHP runtimes. application readable Deprecated builtins Deprecated libraries Deprecated Arbitrary third party dependencies can be installed using a composer.json metadata file. handlers Modified The script field is optional and the only accepted value is auto .",
+          "Compatibility issues between PHP 5.5 and the second-generation PHP runtimes The official PHP documentation provides information on migrating from different PHP versions: Migrating from PHP 5.5.x to PHP 5.6.x Migrating from PHP 5.6.x to PHP 7.0.x Migrating from PHP 7.0.x to PHP 7.1.x Migrating from PHP 7.1.x to PHP 7.2.x Migrating from PHP 7.2.x to PHP 7.3.x Migrating from PHP 7.3.x to PHP 7.4.x Migrating from PHP 7.4.x to PHP 8.0.x Migrating from PHP 8.0.x to PHP 8.1.x Key differences between PHP 5.5 and the second-generation PHP runtimes The following is a summary of the differences between the PHP 5.5 and the second-generation PHP runtimes in the App Engine standard environment: Memory usage differences Second-generation runtimes see a higher baseline of memory usage compared to first-generation runtimes.",
+          "Running your application locally To test your application and run it locally: Locally install a version of PHP that corresponds to a second-generation PHP runtime available in the App Engine standard environment."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "apps.services.versions.patch",
+      "composer.json",
+      "errors.OverQuotaError",
+      "example.com",
+      "logging.error",
+      "mail.SendMessage",
+      "self.response.out.write"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/php-differences",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/mapping-custom-domains"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/php-differences",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/mapping-custom-domains"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/php-differences",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/mapping-custom-domains"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:12.487Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-php/card.json",
+  "product_name": "App Engine standard environment PHP",
+  "product_slug": "app-engine-standard-environment-php"
+}

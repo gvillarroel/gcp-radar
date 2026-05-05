@@ -1,0 +1,116 @@
+{
+  "feature_name": "Copying non-partitioned tables to partitioned tables",
+  "feature_slug": "copying-non-partitioned-tables-to-partitioned-tables",
+  "summary": "BigQuery supports copying data from non-partitioned tables into partitioned tables.",
+  "extended_definition": "BigQuery supports copying data from non-partitioned tables into partitioned tables.",
+  "lifecycle": {
+    "latest_feature_date": "2017-02-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 2,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "generic_supporting_pages",
+        "message": "Supporting pages do not mention any informative feature tokens.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-load-data-from-bigquery-job",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataset-exists"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a BigQuery DataFrame from a finished query job \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-load-data-from-bigquery-job",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 60,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Client ( project = project , location = location ) Job ID inserted based on the query results selcted to explore job id = JOB ID job = client . get job ( job id ) destination = str ( job . destination ) Load data from a BigQuery table using BigFrames DataFrames: bq df = bpd . read gbq table ( destination ) What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .",
+          "For more information, see Set up authentication for client libraries . from google.cloud import bigquery import bigframes.pandas as bpd Project ID inserted based on the query results selected to explore project = your project id Location inserted based on the query results selected to explore location = \"us\" client = bigquery .",
+          "Home Documentation Data analytics BigQuery Samples Create a BigQuery DataFrame from a finished query job Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Extracting metadata from Apache Hive for migration \\_|\\_ BigQuery \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata",
+        "source_id": "site-api-reference",
+        "final_score": 44,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Data analytics BigQuery Reference Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Note: To get support or provide feedback for this feature, contact bigquery-permission-migration-support@google.com ."
+        ]
+      },
+      {
+        "title": "Check dataset existence \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataset-exists",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BigQuery bigquery = BigQueryOptions . getDefaultInstance (). getService (); Dataset dataset = bigquery . getDataset ( DatasetId . of ( datasetName )); if ( dataset != null ) { System . out . println ( \"Dataset already exists.\" ); } else { System . out . println ( \"Dataset not found.\" ); } } catch ( BigQueryException e ) { System . out . println ( \"Something went wrong. \\n\" + e . toString ()); } } } Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "Explore further For detailed documentation that includes this code sample, see the following: Listing datasets Code sample Java Before trying this sample, follow the Java setup instructions in the BigQuery quickstart using client libraries .",
+          "For more information, see Set up authentication for client libraries . from google.cloud import bigquery from google.cloud.exceptions import NotFound client = bigquery ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigframes.pandas"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-load-data-from-bigquery-job",
+        "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataset-exists"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-load-data-from-bigquery-job",
+        "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataset-exists"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

@@ -1,0 +1,58 @@
+{
+  "feature_name": "getMap() method",
+  "feature_slug": "getmap-method",
+  "summary": "GetMap() is deprecated in favor of getMapId(); deprecated on 2023-12-08.",
+  "extended_definition": "GetMap() is deprecated in favor of getMapId(); deprecated on 2023-12-08.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-08",
+    "deprecation_date": "2023-12-08",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/landsat"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Landsat Algorithms \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/landsat",
+        "source_id": "site-docs-reference",
+        "final_score": 27,
+        "relevance": "",
+        "evidence_snippets": [
+          "ImageCollection ( 'LANDSAT/LC09/C02/T1 L2' ) Simple cloud score For scoring Landsat pixels by their relative cloudiness, Earth Engine provides a rudimentary cloud scoring algorithm in the ee.Algorithms.Landsat.simpleCloudScore() method. (For details on the implementation, see this Code Editor sample script ).",
+          "Earth Engine provides specific processing methods for Landsat data, including calculating at-sensor radiance, TOA reflectance, surface reflectance, simple cloud scoring, and creating cloud-free composites.",
+          "This method selects a subset of scenes at each location, converts to TOA reflectance, applies the simple cloud score and takes the median of the least cloudy pixels."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 1 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "ee.Algorithms.Landsat.simpleCloudScore"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:03.090Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-javascript-client-library/card.json",
+  "product_name": "Earth Engine JavaScript Client Library",
+  "product_slug": "earth-engine-javascript-client-library"
+}

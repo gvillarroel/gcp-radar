@@ -1,0 +1,172 @@
+{
+  "feature_name": "BeyondCorp Enterprise integration for Cloud Workstations API",
+  "feature_slug": "beyondcorp-enterprise-integration-for-cloud-workstations-api",
+  "summary": "Cloud Workstations supports BeyondCorp Enterprise integration for the Cloud Workstations API; Cloud Workstations supports BeyondCorp Enterprise integration for the Cloud Workstations API.",
+  "extended_definition": "Cloud Workstations supports BeyondCorp Enterprise integration for the Cloud Workstations API; Cloud Workstations supports BeyondCorp Enterprise integration for the Cloud Workstations API.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient",
+      "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+      "https://docs.cloud.google.com/workstations/docs/authentication",
+      "https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Help secure the Cloud Workstations API using Chrome Enterprise Premium \\_\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise",
+        "source_id": "site-docs-root-2",
+        "final_score": 305,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Workstations access Chrome Enterprise Premium context-aware access control Google Cloud console gcloud CLI: Create, Edit, Delete resource gcloud CLI: SSH API: REST API: RPC API: Client Libraries API: browser access HTTP: browser access HTTP: SSH HTTP: local JetBrains IDEs HTTP: local VS Code Objectives This document describes the steps that an administrator follows to set up Chrome Enterprise Premium access control for the Cloud Workstations API and to provide additional mechanisms that help prevent source code exfiltration from browser-based Cloud Workstations IDEs.",
+          "Enable Chrome Enterprise Premium CAA for Google Cloud console To assign context-aware access controls (CAA) to workstations, start by enabling CAA for Google Cloud console: From the Google Cloud console , navigate to Security > BeyondCorp Enterprise .",
+          "Part 1: Set up Chrome Enterprise Premium for Cloud Workstations This section takes you through the steps to help you secure context-aware access to the Cloud Workstations API: Set up Cloud Workstations ."
+        ]
+      },
+      {
+        "title": "Authenticate to the Cloud Workstations API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "source_id": "site-docs-root-2",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you're new to the Cloud Workstations API, make sure that you read the following sections first: Before you begin Access control with IAM Authenticate and setup API access within a workstation For more information about Google Cloud authentication, see the Authentication methods .",
+          "You can access the API in the following ways: Client libraries Google Cloud CLI REST Client libraries The Cloud Workstations client libraries provide high-level language support for authenticating to Cloud Workstations programmatically.",
+          "To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Execute the following command: curl -X GET \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ \"https://iam.googleapis.com/v1/projects/ PROJECT ID /serviceAccounts\" PowerShell (Windows) Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers ` -Uri \"https://iam.googleapis.com/v1/projects/ PROJECT ID /serviceAccounts\" Select-Object -Expand Content For more information about authenticating using REST and gRPC, see Authenticate for using REST ."
+        ]
+      },
+      {
+        "title": "\"Authenticate and setup API access within a workstation \\_|\\_ Cloud Workstations\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/authentication",
+        "source_id": "site-docs-root-2",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "To impersonate the service account specified on your workstation configuration, you can specify the service account scopes field. gcloud workstations configs create CONFIG \\ --cluster= CLUSTER \\ --region= REGION \\ --project= PROJECT \\ --service-account= SERVICE ACCOUNT \\ --service-account-scopes=https://www.googleapis.com/auth/cloud-platform When specified, users of workstations under this configuration must have iam.serviceAccounts.actAs permission on the service account.",
+          "Issue an HTTP request to a workstation To issue an HTTP request to a workstation, you need an access token for an account that has the Cloud Workstations User role on that workstation: Generate an access token using the generateAccessToken API method.",
+          "Connect to the workstation in your browser Opening your workstation URL in your browser automatically authenticates through a redirect to the workstations server, and retrieves an access token generated by the generateAccessToken API method."
+        ]
+      },
+      {
+        "title": "\"Class WorkstationsAsyncClient (0.8.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import workstations v1 async def sample list usable workstation configs(): Create a client client = workstations v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import workstations v1 async def sample create workstation cluster(): Create a client client = workstations v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import workstations v1 async def sample delete workstation cluster(): Create a client client = workstations v1 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapis.dev",
+      "iam.googleapis.com",
+      "iam.serviceAccounts.actAs",
+      "options.html"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "https://docs.cloud.google.com/workstations/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "https://docs.cloud.google.com/workstations/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "https://docs.cloud.google.com/workstations/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "https://docs.cloud.google.com/workstations/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "https://docs.cloud.google.com/workstations/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "https://docs.cloud.google.com/workstations/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "https://docs.cloud.google.com/workstations/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise",
+        "https://docs.cloud.google.com/workstations/docs/authenticate-to-workstations-api",
+        "https://docs.cloud.google.com/workstations/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:45.212Z",
+  "source_step08_card": "data/step-08/current/products/cloud-workstations/card.json",
+  "product_name": "Cloud Workstations",
+  "product_slug": "cloud-workstations"
+}

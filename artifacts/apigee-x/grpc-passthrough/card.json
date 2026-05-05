@@ -1,0 +1,101 @@
+{
+  "feature_name": "gRPC passthrough",
+  "feature_slug": "grpc-passthrough",
+  "summary": "Apigee gRPC passthrough lets proxies receive gRPC requests and forward them to gRPC target servers; Apigee gRPC passthrough lets proxies receive gRPC requests and forward them to gRPC target servers.",
+  "extended_definition": "Apigee gRPC passthrough lets proxies receive gRPC requests and forward them to gRPC target servers; Apigee gRPC passthrough lets proxies receive gRPC requests and forward them to gRPC target servers.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Analytics metrics, dimensions, and filters reference \\_|\\_ Apigee \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 135,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For information on gRPC proxies, see Creating gRPC API proxies . gRPC Status x apigee grpc status Applicable only when the target service is gRPC.",
+          "This is often the X-Forwarded-For address of the inbound call, which is the IP address Apigee received from the last external TCP handshake.",
+          "The time starts when the API proxy receives the target service response and ends when Apigee forwards the response to the original caller."
+        ]
+      },
+      {
+        "title": "Endpoint properties reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference",
+        "source_id": "site-api-reference",
+        "final_score": 125,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "See Setting io.timeout.millis and api.timeout . supports.http11 true If this is true and the client sends a 1.1 request, the target is also sent a 1.1 request, otherwise 1.0 request is sent to the target. use.proxy true If the Apigee hybrid overrides file contains the HTTP PROXY configuration, as described in Configure forward proxying for API proxies , then use this property to manage/control which proxies should not use the proxy configuration.",
+          "TargetEndpoint Transport Property Specification Property Name Default Value Description allow.post.without.content.length false Lets you send POST requests with no content in the body. allow.put.without.content.length false Lets you send PUT requests with no content in the body. allow.tls.session.resumption true If true (the default) clients reuse TLS sessions when making new connections to the target.",
+          "If set to false , the API Proxy will skip the HTTP proxy configurations specified in the Apigee hybrid overrides file for target connections set in the proxy. use.proxy.tunneling true If this is set to true, and proxy configurations are specified Apigee hybrid overrides file as described in Configure forward proxying for API proxies , then target connections are set to use the specified tunnel."
+        ]
+      },
+      {
+        "title": "Flow variables reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "Proxy request proxy.client.ip String Read only The X-Forwarded-For address of the inbound call, which is the IP address Apigee received from the last external TCP handshake.",
+          "This ID allows requests received at the load balancer to be tracked after they are sent to the message processor.",
+          "For information on gRPC proxies, see Creating gRPC API proxies ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "allow.post.without.content.length",
+      "allow.put.without.content.length",
+      "allow.tls.session.resumption",
+      "api.timeout",
+      "compression.algorithm",
+      "io.timeout.millis",
+      "proxy.client.ip",
+      "supports.http11",
+      "use.proxy",
+      "use.proxy.tunneling"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:06.675Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x"
+}

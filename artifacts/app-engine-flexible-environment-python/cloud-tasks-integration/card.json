@@ -1,0 +1,170 @@
+{
+  "feature_name": "Cloud Tasks integration",
+  "feature_slug": "cloud-tasks-integration",
+  "summary": "App Engine applications can use Cloud Tasks to run asynchronous work outside user requests.",
+  "extended_definition": "App Engine applications can use Cloud Tasks to run asynchronous work outside user requests.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+      "https://docs.cloud.google.com/appengine/docs/flexible/create-appengine-tasks",
+      "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Run asynchronous tasks \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/create-appengine-tasks",
+        "source_id": "site-docs-reference",
+        "final_score": 61,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Run asynchronous tasks Stay organized with collections Save and categorize content based on your preferences.",
+          "Create App Engine tasks in the form of an HTTP request and then place them in Cloud Tasks queues, see Create App Engine tasks .",
+          "You can use the Cloud Tasks client library to run tasks in App Engine."
+        ]
+      },
+      {
+        "title": "\"Roles that grant access to App Engine \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+        "source_id": "site-docs-reference-2",
+        "final_score": 43,
+        "relevance": "",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: Project appengine.applications.get appengine. applications. listRuntimes appengine.applications.update appengine.instances. appengine.instances.delete appengine. instances. enableDebug appengine.instances.get appengine.instances.list appengine.memcache.addKey appengine.memcache.flush appengine.memcache.get appengine.memcache.update appengine.operations. appengine.operations.get appengine.operations.list appengine.runtimes.actAsAdmin appengine.services. appengine.services.delete appengine.services.get appengine.services.list appengine.services.update appengine.versions.create appengine.versions.delete appengine. versions. exportAppImage appengine.versions.get appengine.versions.list appengine.versions.update artifactregistry. projectsettings. get artifactregistry. repositories. deleteArtifacts artifactregistry. repositories. downloadArtifacts artifactregistry. repositories. uploadArtifacts recommender.locations. recommender.locations.get recommender.locations.list resourcemanager.projects.get resourcemanager.projects.list App Engine Creator ( roles/ appengine.appCreator ) Ability to create the App Engine resource for the project.",
+          "Lowest-level resources where you can grant this role: Project appengine.applications.get appengine. applications. listRuntimes appengine.instances.get appengine.instances.list appengine.operations. appengine.operations.get appengine.operations.list appengine.services.get appengine.services.list appengine.versions.create appengine.versions.delete appengine.versions.get appengine.versions.list artifactregistry. projectsettings. get artifactregistry. repositories. deleteArtifacts artifactregistry. repositories. downloadArtifacts artifactregistry. repositories. uploadArtifacts recommender.locations. recommender.locations.get recommender.locations.list resourcemanager.projects.get resourcemanager.projects.list App Engine Memcache Data Admin ( roles/ appengine.memcacheDataAdmin ) Can get, set, delete, and flush App Engine Memcache items. appengine.applications.get appengine.memcache.addKey appengine.memcache.flush appengine.memcache.get appengine.memcache.update resourcemanager.projects.get resourcemanager.projects.list App Engine Service Admin ( roles/ appengine.serviceAdmin ) Read-only access to all application configuration and settings.",
+          "Lowest-level resources where you can grant this role: Project appengine.applications.get appengine. applications. listRuntimes appengine.instances.get appengine.instances.list appengine.operations. appengine.operations.get appengine.operations.list appengine.services.get appengine.services.list appengine.versions.get appengine. versions. getFileContents appengine.versions.list artifactregistry. projectsettings. get resourcemanager.projects.get resourcemanager.projects.list App Engine Managed VM Debug Access ( roles/ appengine.debugger ) Ability to read or manage v2 instances. appengine.applications.get appengine. applications. listRuntimes appengine.instances. appengine.instances.delete appengine. instances. enableDebug appengine.instances.get appengine.instances.list appengine.operations. appengine.operations.get appengine.operations.list appengine.services.get appengine.services.list appengine.versions.get appengine.versions.list resourcemanager.projects.get resourcemanager.projects.list App Engine Deployer ( roles/ appengine.deployer ) Read-only access to all application configuration and settings."
+        ]
+      },
+      {
+        "title": "\"How requests are handled \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled",
+        "source_id": "site-docs-reference",
+        "final_score": 39,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "However, this is bound by the following restrictions: App Engine reserves automatic scaling capacity for applications with low latency, where the application responds to requests in less than one second.",
+          "When deploying to Google App Engine, a webserver process such as Gunicorn will serve the app. app . run ( host = \"127.0.0.1\" , port = 8080 , debug = True ) Quotas and limits App Engine automatically allocates resources to your application as traffic increases.",
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback How requests are handled Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.appCreator",
+      "appengine.applications.get",
+      "appengine.applications.update",
+      "appengine.debugger",
+      "appengine.deployer",
+      "appengine.instances",
+      "appengine.instances.delete",
+      "appengine.instances.get",
+      "appengine.instances.list",
+      "appengine.memcache.addKey",
+      "appengine.memcache.flush",
+      "appengine.memcache.get",
+      "appengine.memcache.update",
+      "appengine.memcacheDataAdmin",
+      "appengine.operations",
+      "appengine.operations.get",
+      "appengine.operations.list",
+      "appengine.runtimes.actAsAdmin",
+      "appengine.serviceAdmin",
+      "appengine.services",
+      "appengine.services.delete",
+      "appengine.services.get",
+      "appengine.services.list",
+      "appengine.services.update",
+      "appengine.versions.create",
+      "appengine.versions.delete",
+      "appengine.versions.get",
+      "appengine.versions.list",
+      "appengine.versions.update",
+      "recommender.locations",
+      "recommender.locations.get",
+      "recommender.locations.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/create-appengine-tasks",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/create-appengine-tasks",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/create-appengine-tasks",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/create-appengine-tasks",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:09.450Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-python/card.json",
+  "product_name": "App Engine flexible environment Python",
+  "product_slug": "app-engine-flexible-environment-python"
+}

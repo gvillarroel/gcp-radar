@@ -1,0 +1,233 @@
+{
+  "feature_name": "Read replicas on existing instances",
+  "feature_slug": "read-replicas-on-existing-instances",
+  "summary": "You can enable read replicas on an existing Memorystore for Redis instance.",
+  "extended_definition": "You can enable read replicas on an existing Memorystore for Redis instance.",
+  "lifecycle": {
+    "latest_feature_date": "2022-02-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/redis/about-read-replicas",
+      "https://docs.cloud.google.com/memorystore/docs/redis/access-control",
+      "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances",
+      "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About read replicas \\_|\\_ Memorystore for Redis \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/about-read-replicas",
+        "source_id": "site-docs-root-2",
+        "final_score": 293,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Behavior of enabling read replicas on an existing instance Enabling read replicas is an exclusive operation, meaning you cannot perform other update operation instance modifications as a part of the same operation that enables read replicas.",
+          "Enable read replicas on an existing instance Before you enable read replicas on an existing Memorystore for Redis instance, we strongly recommend that you reduce the write traffic to the primary node.",
+          "Read replicas can only be enabled on instances that use Redis version 5.0 or higher."
+        ]
+      },
+      {
+        "title": "\"Manage Memorystore for Redis resources with custom constraints \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "source_id": "site-docs-root-2",
+        "final_score": 243,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You could test this constraint by running the gcloud redis instances create command with replica-count set to 2 as demonstrated in the following snippet: gcloud redis instances create redis-test-instance \\ --project=my-project \\ --tier=standard \\ --size=16 \\ --region=us-central1 \\ --redis-version=redis 7 0 \\ --network=projects/my-project/global/networks/default \\ --connect-mode=PRIVATE SERVICE ACCESS \\ --read-replicas-mode=READ REPLICAS ENABLED \\ --replica-count=2 The output is similar to the following: Operation denied by custom org policies: [\"customConstraints/custom.restrictInstanceToOnereplica\": \"Prevent users from creating Redis instances with more than one replica\"] Memorystore for Redis supported resources and operations The following Memorystore for Redis custom constraint fields are available to use when you create or update a Memorystore for Redis resource .",
+          "Memorystore for Redis Instance resource.alternativeLocationId resource.authEnabled resource.authorizedNetwork resource.availableMaintenanceVersions resource.connectMode resource.customerManagedKey resource.displayName resource.locationId resource.maintenancePolicy.description resource.maintenancePolicy.weeklyMaintenanceWindow.day resource.maintenanceVersion resource.memorySizeGb resource.name resource.persistenceConfig.persistenceMode resource.persistenceConfig.rdbSnapshotPeriod resource.persistenceConfig.rdbSnapshotStartTime resource.readReplicasMode resource.redisConfigs resource.redisVersion resource.replicaCount resource.reservedIpRange resource.secondaryIpRange resource.suspensionReasons resource.tier resource.transitEncryptionMode Example custom constraints The following table provides an example custom constraint that restricts Redis instance to one replica: Description Constraint syntax Restrict Redis instances with one replicas name : organizations/ ORGANIZATION ID /customConstraints/custom.restrictInstanceToOnereplica resourceTypes : - redis.googleapis.com/Instance methodTypes : - CREATE - UPDATE condition : \"resource.replicaCount >= 2\" actionType : DENY displayName : Restrict Redis instances to one replica description : Prevent users from creating Redis instances with more than one replica What's next See Introduction to the Organization Policy Service to learn more about organization policies.",
+          "As the organization policy administrator , you can define an organization policy, which is a set of restrictions called constraints that apply to Google Cloud resources and descendants of those resources in the Google Cloud resource hierarchy ."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Memorystore for Redis \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 236,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permissions and their roles The following table lists each permission that Memorystore for Redis supports and the Memorystore for Redis roles that include it: Permission Redis role Basic role redis.instances.list Redis Admin Redis Editor Redis Viewer Reader redis.instances.get Redis Admin Redis Editor Redis Viewer Reader redis.instances.create Redis Admin Writer redis.instances.update Redis Admin Redis Editor Writer redis.instances.updateAuth Redis Admin Writer redis.instances.getAuthString Redis Admin Writer redis.instances.delete Redis Admin Writer redis.instances.upgrade Redis Admin Writer redis.instances.import Redis Admin Writer redis.instances.export Redis Admin Writer redis.locations.list Redis Admin Redis Editor Redis Viewer Reader redis.locations.get Redis Admin Redis Editor Redis Viewer Reader redis.operations.list Redis Admin Redis Editor Redis Viewer Reader redis.operations.get Redis Admin Redis Editor Redis Viewer Reader redis.operations.delete Redis Admin Writer Custom roles If the predefined roles do not address your unique business requirements, you can define your own custom roles with permissions that you specify.",
+          "Permissions needed Create a Memorystore instance with Redis AUTH enabled Enable / disable AUTH on an existing Redis instance View the AUTH string View whether AUTH is enabled / disabled for a Redis instance redis.instances.create ✓ X X X redis.instances.update X ✓ X X redis.instances.get X X X ✓ redis.instances.updateAuth ✓ ✓ X X redis.instances.getAuthString X X ✓ X In-transit encryption permissions The table below shows permissions required for enabling and managing In-transit encryption for Memorystore for Redis.",
+          "Permissions needed Create a Memorystore instance with a maintenance policy enabled Create or modify maintenance policies on an existing Memorystore instance View the maintenance policy settings Reschedule maintenance redis.instances.create ✓ X X X redis.instances.update X ✓ X X redis.instances.get X X ✓ X redis.instances.rescheduleMaintenance X X X ✓ Required permissions for import and export Using custom roles for importing and exporting requires two separate custom roles."
+        ]
+      },
+      {
+        "title": "\"Create and manage Redis instances \\_|\\_ Memorystore for Redis \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances",
+        "source_id": "site-docs-root",
+        "final_score": 231,
+        "relevance": "",
+        "evidence_snippets": [
+          "To choose one of the available OSS Redis versions for Memorystore for Redis, use the --redis-version flag with one of the following values: redis 7 2 redis 7 0 (Default) redis 6 X redis 5 0 redis 4 0 redis 3 2 For example: gcloud redis instances create myinstance --size=5 --region=us-central1 \\ --zone=us-central1-a --redis-version=redis 6 X Networking You can create Redis instances using one of two connection modes : --connect-mode=PRIVATE SERVICE ACCESS or --connect-mode=DIRECT PEERING .",
+          "Gcloud You can update the following properties after creating an instance: Display name Redis configuration Labels Size (For more information on scaling, see Scaling Instances .) For example, enter the following command to update the display name of an instance, replacing VARIABLES with appropriate values: gcloud redis instances update INSTANCE ID --region= REGION ID --display-name= NEW DISPLAY NAME For more details on how to set configuration parameters, see Configuring Redis Instances .",
+          "Note: If you set up a private services access connection , but the No existing IP ranges available status appears when you set an IP range name, then add the compute.globalAddresses.list permission to your account . gcloud Important: You must Establish a private services access connection on the host project network before you can create a Redis instance with the --connect-mode=private-service-access flag listed below."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.globalAddresses.list",
+      "custom.restrictInstanceToOnereplica",
+      "redis.googleapis.com",
+      "redis.instances.create",
+      "redis.instances.delete",
+      "redis.instances.export",
+      "redis.instances.get",
+      "redis.instances.getAuthString",
+      "redis.instances.import",
+      "redis.instances.list",
+      "redis.instances.rescheduleMaintenance",
+      "redis.instances.update",
+      "redis.instances.updateAuth",
+      "redis.instances.upgrade",
+      "redis.locations.get",
+      "redis.locations.list",
+      "redis.operations.delete",
+      "redis.operations.get",
+      "redis.operations.list",
+      "redis.viewer",
+      "resource.alternativeLocationId",
+      "resource.authEnabled",
+      "resource.authorizedNetwork",
+      "resource.availableMaintenanceVersions",
+      "resource.connectMode",
+      "resource.customerManagedKey",
+      "resource.displayName",
+      "resource.locationId",
+      "resource.maintenancePolicy.description",
+      "resource.maintenancePolicy.weeklyMaintenanceWindow.day",
+      "resource.maintenanceVersion",
+      "resource.memorySizeGb",
+      "resource.name",
+      "resource.persistenceConfig.persistenceMode",
+      "resource.persistenceConfig.rdbSnapshotPeriod",
+      "resource.persistenceConfig.rdbSnapshotStartTime",
+      "resource.readReplicasMode",
+      "resource.redisConfigs",
+      "resource.redisVersion",
+      "resource.replicaCount",
+      "resource.reservedIpRange",
+      "resource.secondaryIpRange",
+      "resource.suspensionReasons",
+      "resource.tier",
+      "resource.transitEncryptionMode"
+    ],
+    "missing_inventory_roles": [
+      "roles/redis.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-read-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/access-control",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-read-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/access-control",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-read-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/access-control",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-read-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/access-control",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-read-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/access-control",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-read-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/access-control",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-read-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/access-control",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-read-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/access-control",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-read-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/access-control",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-read-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/access-control",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:26.218Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis/card.json",
+  "product_name": "Memorystore for Redis",
+  "product_slug": "memorystore-for-redis"
+}

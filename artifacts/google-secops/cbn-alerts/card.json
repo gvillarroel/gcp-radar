@@ -1,0 +1,157 @@
+{
+  "feature_name": "CBN alerts",
+  "feature_slug": "cbn-alerts",
+  "summary": "CBN alerts will no longer be available and should be migrated to the YARA-L detection engine; deprecated on 2025-01-23.",
+  "extended_definition": "CBN alerts will no longer be available and should be migrated to the YARA-L detection engine; deprecated on 2025-01-23.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-23",
+    "deprecation_date": "2025-01-23",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/deprecations",
+      "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+      "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Feature deprecations \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "source_id": "site-docs-reference-2",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "Google Security Operations CBN alerts July 22, 2024 July 22, 2025 The Enterprise Insights page and the CBN alerts will no longer be available after July 2025.",
+          "This system will no longer be updated, and no alerts will be sent from this system after September 01, 2024.",
+          "NETSKOPE ALERT log type October 15, 2025 November 30, 2025 As of October 15, 2025, the Netskope Alerts v1 connector (for the NETSKOPE ALERT log type) has been deprecated and will be removed on November 30, 2025."
+        ]
+      },
+      {
+        "title": "\"Migrate CBN alerts to YARA-L detection rule alerts \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "source_id": "site-api-reference",
+        "final_score": 156,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Migrate CBN alerts to the YARA-L detection engine To migrate CBN alerts, you can ensure that your prior CBN alerts are available as detection rule alerts using the following options.",
+          "See the following example. metadata . vendor name = \"Microsoft\" metadata . product name = \"Windows Defender AV\" metadata . product event type = \"MALWAREPROTECTION STATE MALWARE DETECTED\" principal . asset . hostname = \"client02.example.local\" security result . action = \"BLOCK\" security result . severity = \"MEDIUM\" Create a new YARA-L detection engine rule. rule windows defender av monitored events { meta : author = \"Chronicle\" description = \"Migration of CBN alerts to Google SecOps YARA-L detection engine rule alert.\" // Severity is set at the Outcome level via security result.severity severity = \"INFORMATIONAL\" priority = \"INFORMATIONAL\" events : $ windows defender av . metadata . vendor name = \"Microsoft\" $ windows defender av . metadata . product name = \"Windows Defender AV\" $ windows defender av . metadata . product event type = \"MALWAREPROTECTION STATE MALWARE DETECTED\" $ windows defender av . principal . asset . hostname = $ host // optionally tune to only detection on ALLOW, i.e., failure to BLOCK //$windows defender av.security result.action = \"ALLOW\" // optionally tune on severity of detection //$windows defender av.security result.severity != \"LOW\" outcome : $ risk score = max ( if ( $ windows defender av . security result . severity = \"UNKNOWN SEVERITY\" , 0 ) + if ( $ windows defender av . security result . severity = \"LOW\" , 25 ) + if ( $ windows defender av . security result . severity = \"MEDIUM\" , 50 ) + if ( $ windows defender av . security result . severity = \"HIGH\" , 75 ) + if ( $ windows defender av . security result . severity = \"CRITICAL\" , 100 ) ) $ severity = array distinct ( $ windows defender av . security result . severity ) condition : $ windows defender av } CBN alert appears to use a field that was not parsed into UDM Using the parser extensions option you can quickly address this scenario.",
+          "For example, Corelight CBN alert uses the notice field and conditionally alerts only if true: if [ notice ] == \"true\" { mutate { replace = > { \"is significant\" = > \"true\" \"is alert\" = > \"true\" } } } Because this value isn't normalized into UDM by default you can use a parser extension Grok as follows to add that value as a UDM field of type Additional : filter { mutate { replace = > { \"notice\" = > \"\" } } grok { match = > { \"message\" = > [ \"(?P<message>\\{. \\})$\" ] } on error = > \" grok not syslog\" overwrite = > [ \"message\" ] } json { on error = > \"not json\" source = > \"message\" array function = > \"split columns\" } if ! [ not json ] { if [ notice ] != \"\" { mutate { convert = > { \"notice\" = > \"string\" } } mutate { replace = > { \"additional notice.key\" = > \"notice\" \"additional notice.value.string value\" = > \"%{notice}\" } } mutate { merge = > { \"event1.idm.read only udm.additional.fields\" = > \"additional notice\" } } mutate { merge = > { \"@output\" = > \"event1\" } } } } } You can then utilize this in a YARA-L detection engine rule as follows, and using the Maps function : events : // Corelight : Weird Log ( $ corelight . metadata . vendor name = \"Corelight\" and $ corelight . metadata . product name = \"Zeek\" and // this requires a custom parser extension to extract notice $ corelight . metadata . product event type = \"weird\" and $ corelight . additional . fields [ \"notice\" ] = \"true\" ) You must enable and turn on the authored rules for alerting."
+        ]
+      },
+      {
+        "title": "\"SOAR migration overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "source_id": "site-api-reference",
+        "final_score": 101,
+        "relevance": "",
+        "evidence_snippets": [
+          "The legacy SOAR API and API Keys will be available till September 30, 2026 after which they will no longer function.",
+          "Existing Remote Agents will be available until September 30, 2026, after which they will no longer function.",
+          "Following the downtime, the platform will be accessible, and SOAR services will resume processing any alerts generated or ingested during the downtime."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "av.security",
+      "client02.example.local",
+      "event1.idm.read",
+      "i.e",
+      "notice.key",
+      "notice.value.string",
+      "result.action",
+      "result.alert",
+      "result.severity",
+      "udm.additional.fields"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-cbn-alerts",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:18.186Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops"
+}

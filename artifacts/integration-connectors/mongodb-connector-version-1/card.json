@@ -1,0 +1,293 @@
+{
+  "feature_name": "MongoDB connector version 1",
+  "feature_slug": "mongodb-connector-version-1",
+  "summary": "Version 1 of the MongoDB connector is deprecated and support ends on 2024-04-20; deprecated on 2024-04-20.",
+  "extended_definition": "Version 1 of the MongoDB connector is deprecated and support ends on 2024-04-20; deprecated on 2024-04-20.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-19",
+    "deprecation_date": "2024-04-20",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/reference/rest",
+      "https://docs.cloud.google.com/integration-connectors/docs/reference/rest/v1/ConnectorVersionView"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"IAM roles and permissions for Integration Connectors \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions",
+        "source_id": "site-docs-root-2",
+        "final_score": 236,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table lists all the predefined IAM roles for Integration Connectors: Role Permissions Connector Admin ( roles/ connectors.admin ) Full access to all resources of Connectors Service. connectors.actions. connectors.actions.execute connectors.actions.list connectors.connections.create connectors.connections.delete connectors. connections. executeSqlQuery connectors. connections. generateOpenAPISpec connectors.connections.get connectors. connections. getConnectionSchemaMetadata connectors. connections. getIamPolicy connectors. connections. getRuntimeActionSchema connectors. connections. getRuntimeEntitySchema connectors.connections.list connectors. connections. setIamPolicy connectors.connections.update connectors.connectors. connectors.connectors.get connectors.connectors.list connectors. customConnectorVersions. connectors. customConnectorVersions. create connectors. customConnectorVersions. delete connectors. customConnectorVersions. get connectors. customConnectorVersions. getIamPolicy connectors. customConnectorVersions. list connectors. customConnectorVersions. setIamPolicy connectors. customConnectorVersions. update connectors.customConnectors. connectors. customConnectors. create connectors. customConnectors. delete connectors. customConnectors. get connectors. customConnectors. getIamPolicy connectors. customConnectors. list connectors. customConnectors. setIamPolicy connectors. customConnectors. update connectors. endpointAttachments. connectors. endpointAttachments. create connectors. endpointAttachments. delete connectors. endpointAttachments. get connectors. endpointAttachments. getIamPolicy connectors. endpointAttachments. list connectors. endpointAttachments. setIamPolicy connectors. endpointAttachments. update connectors.entities. connectors.entities.create connectors.entities.delete connectors. entities. deleteEntitiesWithConditions connectors.entities.get connectors.entities.list connectors.entities.update connectors. entities. updateEntitiesWithConditions connectors.entityTypes.list connectors. eventSubscriptions. connectors. eventSubscriptions. create connectors. eventSubscriptions. delete connectors. eventSubscriptions. get connectors. eventSubscriptions. list connectors. eventSubscriptions. update connectors.eventtypes. connectors.eventtypes.get connectors.eventtypes.list connectors.locations. connectors.locations.get connectors.locations.list connectors.managedZones. connectors.managedZones.create connectors.managedZones.delete connectors.managedZones.get connectors. managedZones. getIamPolicy connectors.managedZones.list connectors. managedZones. setIamPolicy connectors.managedZones.update connectors.operations. connectors.operations.cancel connectors.operations.delete connectors.operations.get connectors.operations.list connectors.providers. connectors.providers.get connectors.providers.list connectors.regionalSettings. connectors. regionalSettings. get connectors. regionalSettings. update connectors.runtimeconfig.get connectors. schemaMetadata. refresh connectors.settings. connectors.settings.get connectors.settings.update connectors.versions. connectors.versions.get connectors.versions.list resourcemanager.projects.get resourcemanager.projects.list secretmanager. secrets. getIamPolicy Connectors Viewer ( roles/ connectors.viewer ) Read-only access to Connectors all resources. connectors. connections. generateOpenAPISpec connectors.connections.get connectors. connections. getConnectionSchemaMetadata connectors. connections. getIamPolicy connectors. connections. getRuntimeActionSchema connectors. connections. getRuntimeEntitySchema connectors.connections.list connectors.connectors. connectors.connectors.get connectors.connectors.list connectors. customConnectorVersions. get connectors. customConnectorVersions. getIamPolicy connectors. customConnectorVersions. list connectors. customConnectors. get connectors. customConnectors. getIamPolicy connectors. customConnectors. list connectors. endpointAttachments. get connectors. endpointAttachments. getIamPolicy connectors. endpointAttachments. list connectors. eventSubscriptions. get connectors. eventSubscriptions. list connectors.eventtypes. connectors.eventtypes.get connectors.eventtypes.list connectors.locations. connectors.locations.get connectors.locations.list connectors.managedZones.get connectors. managedZones. getIamPolicy connectors.managedZones.list connectors.operations.get connectors.operations.list connectors.providers. connectors.providers.get connectors.providers.list connectors. regionalSettings. get connectors.runtimeconfig.get connectors.settings.get connectors.versions. connectors.versions.get connectors.versions.list resourcemanager.projects.get resourcemanager.projects.list Custom Connectors Admin ( roles/ connectors.customConnectorAdmin ) Custom Connector is a global resource which creates custom connector within the given target project.",
+          "Role Permissions Connectors Platform Service Agent ( roles/ connectors.serviceAgent ) Grants Connectors Platform service account to manage customer resources Warning: Do not grant service agent roles to any principals except service agents . connectors.actions. connectors.actions.execute connectors.actions.list connectors.connections.get connectors. connections. getConnectionSchemaMetadata connectors.connections.list connectors.connectors. connectors.connectors.get connectors.connectors.list connectors. customConnectorVersions. get connectors. customConnectorVersions. list connectors. customConnectors. get connectors. customConnectors. list connectors. endpointAttachments. get connectors. endpointAttachments. list connectors.entities.get connectors.entityTypes.list connectors. eventSubscriptions. get connectors. eventSubscriptions. list connectors.eventtypes. connectors.eventtypes.get connectors.eventtypes.list connectors.locations. connectors.locations.get connectors.locations.list connectors.managedZones.get connectors.managedZones.list connectors.providers. connectors.providers.get connectors.providers.list connectors.runtimeconfig.get iam. serviceAccounts. getAccessToken iam. serviceAccounts. getOpenIdToken iam. serviceAccounts. implicitDelegation monitoring. metricDescriptors. create monitoring. metricDescriptors. get monitoring. metricDescriptors. list monitoring. monitoredResourceDescriptors. monitoring. monitoredResourceDescriptors. get monitoring. monitoredResourceDescriptors. list monitoring.timeSeries.create For more information about predefined roles, see Roles and permissions .",
+          "This role grants Admin access to Custom Connector resources connectors. customConnectorVersions. connectors. customConnectorVersions. create connectors. customConnectorVersions. delete connectors. customConnectorVersions. get connectors. customConnectorVersions. getIamPolicy connectors. customConnectorVersions. list connectors. customConnectorVersions. setIamPolicy connectors. customConnectorVersions. update connectors.customConnectors. connectors. customConnectors. create connectors. customConnectors. delete connectors. customConnectors. get connectors. customConnectors. getIamPolicy connectors. customConnectors. list connectors. customConnectors. setIamPolicy connectors. customConnectors. update connectors.locations. connectors.locations.get connectors.locations.list Custom Connector Viewer ( roles/ connectors.customConnectorViewer ) Custom Connector is a global resource which creates custom connector within the given target project."
+        ]
+      },
+      {
+        "title": "ConnectorVersionView \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/reference/rest/v1/ConnectorVersionView",
+        "source_id": "site-api-reference",
+        "final_score": 234,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-06-27 UTC.\"],[],[]]",
+          "Home Documentation Application development Integration Connectors Reference Send feedback ConnectorVersionView Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Apache Cassandra \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 222,
+        "relevance": "",
+        "evidence_snippets": [
+          "PSC connection type Field name Details Location us-central1 Connector apachecassandra Connector version 1 Connection Name apache-cassandra-vm-conn-psc Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com Database DATABASE NAME Browsable Schemas Minimum number of nodes 2 Maximum number of nodes 50 SSL Configuration No Destination Type Host address Host 192.0.2.0 Port PORT Username USERNAME Password PASSWORD Secret version 1 SSL connection type Field name Details Location us-central1 Connector apachecassandra Connector version 1 Connection Name apache-cassandra-vm-conn Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com Database testgcp Browsable Schemas Minimum number of nodes 2 Maximum number of nodes 50 Enable SSL (under SSL Configuration) Yes Choose Trust Model (under Trust Store) Private Custom Trust Store CUSTOM TRUST STORE Secret version 1 Client Certificate (under Key Store) CLIENT CERT Secret version 1 Client Private Key (under Key Store) CLIENT PRIVATE KEY Secret version 1 Destination Type Host address Host 192.0.2.0 Port PORT Username USERNAME Password PASSWORD Secret version 1 Multinode connectivity type Field name Details Location europe-west1 Connector apachecassandra Connector version 1 Connection Name apache-cassandra-vm-conn-multinode1 Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com Database test-google-cloud Browsable Schemas Minimum number of nodes 2 Maximum number of nodes 50 Enable SSL (under SSL Configuration) No Destination Type Host address Host 192.0.2.0 Port PORT Host 192.0.2.0 Port PORT Host 192.0.2.0 Port PORT Username USERNAME Password PASSWORD Secret version 1 To use a multinode connection type, SSL must be disabled in the Cassandra instance and you must use the username and password to authenticate.",
+          "Connection configuration samples Basic authentication connection type Fieldname Details Location us-central1 Connector apachecassandra Connector version 1 Connection Name apache-cassandra-vm-conn Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com Database test-google-cloud Browsable Schemas Minimum number of nodes 2 Maximum number of nodes 50 Enable SSL (SSL Configuration) No Destination Type Host address Host 192.0.2.0 Port PORT Username USERNAME Password PASSWORD Secret version 1 If SSL is disabled in the Cassandra instance, you cannot use basic authentication with username and password.",
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { \"employeeCode\" : \"5100\" , \"startDate\" : \"2010-01-01 00:00:00.0\" , \"country\" : \"US\" } If the integration is successful, the connector task's connectorOutputPayload field will have the response of the create operation."
+        ]
+      },
+      {
+        "title": "Connectors API \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1.projects.locations.global.customConnectors.customConnectorVersions Methods create POST /v1/{parent=projects/ /locations/global/customConnectors/ }/customConnectorVersions Creates a new CustomConnectorVersion in a given project and location. get GET /v1/{name=projects/ /locations/global/customConnectors/ /customConnectorVersions/ } Gets details of a single CustomConnectorVersion. list GET /v1/{parent=projects/ /locations/global/customConnectors/ }/customConnectorVersions List CustomConnectorVersions in a given project REST Resource: v1.projects.locations.global.managedZones Methods create POST /v1/{parent=projects/ /locations/global}/managedZones Creates a new ManagedZone in a given project and location. delete DELETE /v1/{name=projects/ /locations/global/managedZones/ } Deletes a single ManagedZone. get GET /v1/{name=projects/ /locations/global/managedZones/ } Gets details of a single ManagedZone. list GET /v1/{parent=projects/ /locations/global}/managedZones List ManagedZones in a given project patch PATCH /v1/{managedZone.name=projects/ /locations/global/managedZones/ } Updates the parameters of a single ManagedZone.",
+          "REST Resource: v1.projects.locations.global.customConnectors Methods create POST /v1/{parent=projects/ /locations/global}/customConnectors Creates a new CustomConnector in a given project and location. delete DELETE /v1/{name=projects/ /locations/global/customConnectors/ } Deletes a single CustomConnector. get GET /v1/{name=projects/ /locations/global/customConnectors/ } Gets details of a single CustomConnector. list GET /v1/{parent=projects/ /locations/global}/customConnectors List CustomConnectorVersions in a given project patch PATCH /v1/{customConnector.name=projects/ /locations/global/customConnectors/ } Updates the parameters of a CustomConnector.",
+          "REST Resource: v1.projects.locations.providers.connectors.versions Methods fetchAuthSchema GET /v1/{name=projects/ /locations/ /providers/ /connectors/ /versions/ }:fetchAuthSchema fetch and return the list of auth config variables required to override the connection backend auth. get GET /v1/{name=projects/ /locations/ /providers/ /connectors/ /versions/ } Gets details of a single connector version. list GET /v1/{parent=projects/ /locations/ /providers/ /connectors/ }/versions Lists Connector Versions in a given project and location."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "connectors.actions",
+      "connectors.actions.execute",
+      "connectors.actions.list",
+      "connectors.admin",
+      "connectors.connections.create",
+      "connectors.connections.delete",
+      "connectors.connections.get",
+      "connectors.connections.list",
+      "connectors.connections.update",
+      "connectors.connectors",
+      "connectors.connectors.get",
+      "connectors.connectors.list",
+      "connectors.customConnectorAdmin",
+      "connectors.customConnectors",
+      "connectors.customConnectorViewer",
+      "connectors.endpointAttachmentAdmin",
+      "connectors.entities",
+      "connectors.entities.create",
+      "connectors.entities.delete",
+      "connectors.entities.get",
+      "connectors.entities.list",
+      "connectors.entities.update",
+      "connectors.entityTypes.list",
+      "connectors.eventtypes",
+      "connectors.eventtypes.get",
+      "connectors.eventtypes.list",
+      "connectors.googleapis.com",
+      "connectors.locations",
+      "connectors.locations.get",
+      "connectors.locations.list",
+      "connectors.managedZones",
+      "connectors.managedZones.create",
+      "connectors.managedZones.delete",
+      "connectors.managedZones.get",
+      "connectors.managedZones.list",
+      "connectors.managedZones.update",
+      "connectors.operations",
+      "connectors.operations.cancel",
+      "connectors.operations.delete",
+      "connectors.operations.get",
+      "connectors.operations.list",
+      "connectors.providers",
+      "connectors.providers.get",
+      "connectors.providers.list",
+      "connectors.regionalSettings",
+      "connectors.runtimeconfig.get",
+      "connectors.serviceAgent",
+      "connectors.settings",
+      "connectors.settings.get",
+      "connectors.settings.update",
+      "connectors.versions",
+      "connectors.versions.get",
+      "connectors.versions.list",
+      "connectors.viewer",
+      "iam.gserviceaccount.com",
+      "monitoring.timeSeries.create",
+      "secretmanager.secretAccessor",
+      "secretmanager.viewer",
+      "v1.projects.locations",
+      "v1.projects.locations.global.customConnectors",
+      "v1.projects.locations.global.customConnectors.customConnectorVersions",
+      "v1.projects.locations.global.managedZones",
+      "v1.projects.locations.providers.connectors.versions"
+    ],
+    "missing_inventory_roles": [
+      "roles/secretmanager.secretAccessor",
+      "roles/secretmanager.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest/v1/ConnectorVersionView",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest/v1/ConnectorVersionView",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest/v1/ConnectorVersionView",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest/v1/ConnectorVersionView",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest/v1/ConnectorVersionView",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest/v1/ConnectorVersionView",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest/v1/ConnectorVersionView",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest/v1/ConnectorVersionView",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest/v1/ConnectorVersionView",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest/v1/ConnectorVersionView",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest/v1/ConnectorVersionView",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors-access-permissions",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest/v1/ConnectorVersionView",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:22.663Z",
+  "source_step08_card": "data/step-08/current/products/integration-connectors/card.json",
+  "product_name": "Integration Connectors",
+  "product_slug": "integration-connectors"
+}

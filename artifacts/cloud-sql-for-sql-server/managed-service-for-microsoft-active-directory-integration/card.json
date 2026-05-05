@@ -1,0 +1,176 @@
+{
+  "feature_name": "Managed Service for Microsoft Active Directory integration",
+  "feature_slug": "managed-service-for-microsoft-active-directory-integration",
+  "summary": "Cloud SQL for SQL Server can join a managed Active Directory domain to support Windows Authentication and trusted integration with on-premises AD domains; Cloud SQL for SQL Server can join a managed Active Directory domain to support Windows Authentication and trusted integration with on-premises AD domains.",
+  "extended_definition": "Cloud SQL for SQL Server can join a managed Active Directory domain to support Windows Authentication and trusted integration with on-premises AD domains; Cloud SQL for SQL Server can join a managed Active Directory domain to support Windows Authentication and trusted integration with on-premises AD domains.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/features"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Overview of Managed Microsoft AD in Cloud SQL \\_|\\_ Cloud SQL for SQL Server\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If your Managed Microsoft AD is in a different project, AD PROJECT ID should be the one containing the Managed Service for Microsoft Active Directory instance, while the service account's SQL PROJECT NUMBER should be the one containing the SQL Server instance: gcloud projects add-iam-policy-binding AD PROJECT ID \\ --member = serviceAccount:service- SQL PROJECT NUMBER @gcp-sa-cloud-sql.iam.gserviceaccount.com \\ --role = roles/managedidentities.sqlintegrator Also see gcloud beta services identity create .",
+          "MySQL PostgreSQL SQL Server You can integrate Cloud SQL for SQL Server with Managed Service for Microsoft Active Directory (also called Managed Microsoft AD).",
+          "Best practices for integrating with Managed Microsoft AD When you plan an integration, review the following: Prerequisites for integration Integrating with a managed AD domain in a different project Managed Microsoft AD documentation Deploy domain controllers in additional regions Use the AD diagnosis tool to troubleshoot AD setup issues with your on-premises domain and Cloud SQL for SQL Server instances in Google Cloud console."
+        ]
+      },
+      {
+        "title": "\"Active Directory Diagnosis tool for Cloud SQL \\_|\\_ Cloud SQL for SQL Server\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 149,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "On-premises domain name, such as my-onprem-domain.com Managed AD domain name, such as my-ad-domain.com List of SQL Server Active Directory FQDNs and private IP addresses.",
+          "Home Documentation Databases Cloud SQL SQL Server Guides Send feedback Active Directory Diagnosis tool for Cloud SQL Stay organized with collections Save and categorize content based on your preferences.",
+          "The Active Directory (AD) Diagnosis tool is a utility PowerShell script that helps you to troubleshoot AD setup issues with your on-premises domain and Cloud SQL for SQL Server instances in Google Cloud."
+        ]
+      },
+      {
+        "title": "Cloud SQL for SQL Server features \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/features",
+        "source_id": "site-docs-root",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Integration with Managed Service for Microsoft Active Directory, including Windows Authentication.",
+          "Maintenance Plans Performance Data Collector Policy-Based Management PolyBase Machine Learning and R Services Resource Governor Server-level triggers Service Broker endpoints T-SQL endpoints (all operations using CREATE ENDPOINT are unavailable) WCF Data Services The sysadmin role and system stored procedures that require it Hybrid buffer pool Memory-optimized tempdb metadata In-memory OLTP support for database snapshots Registering external languages Row-level security Object storage backup and restore Persistent Memory (PMEM) Real-time operational analytics Integrated acceleration and offloading Hybrid buffer pool with direct write Multi-write replication Link to Azure SQL Managed instance Contained availability group Always Encrypted with secure enclaves Azure Active Directory authentication Support for PFX certificates and other cryptographic improvements MS-TDS 8.0 protocol and TLS 1.3 Note: Cloud SQL is a managed service so it restricts access to certain system procedures and tables that require advanced privileges; you can't create or have access to users with superuser permissions.",
+          "Integration with customer-managed Active Directory (CMAD), including Windows Authentication."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "domain.com",
+      "managedidentities.sqlintegrator",
+      "sql.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/managedidentities.sqlintegrator"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/features"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/features"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/features"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/features"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/features"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/features"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/features"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/features"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/features"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/features"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/features"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:41.951Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server"
+}

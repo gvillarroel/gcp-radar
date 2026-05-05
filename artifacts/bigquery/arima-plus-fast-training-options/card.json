@@ -1,0 +1,98 @@
+{
+  "feature_name": "ARIMA_PLUS fast training options",
+  "feature_slug": "arima-plus-fast-training-options",
+  "summary": "ARIMA_PLUS models support TIME_SERIES_LENGTH_FRACTION, MIN_TIME_SERIES_LENGTH, and MAX_TIME_SERIES_LENGTH options for faster training.",
+  "extended_definition": "ARIMA_PLUS models support TIME_SERIES_LENGTH_FRACTION, MIN_TIME_SERIES_LENGTH, and MAX_TIME_SERIES_LENGTH options for faster training.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/arima-single-time-series-forecasting-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/arima-speed-up-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/arima-time-series-forecasting-with-limits-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Scale an ARIMA_PLUS univariate time series model to millions of time series\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/arima-speed-up-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 361,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Go to BigQuery In the query editor, paste in the following query and click Run : CREATE OR REPLACE MODEL bqml tutorial.nyc citibike arima model max order 2 fast training OPTIONS ( model type = 'ARIMA PLUS' , time series timestamp col = 'date' , time series data col = 'num trips' , time series id col = 'start station name' , auto arima max order = 2 , max time series length = 30 ) AS SELECT FROM bqml tutorial.nyc citibike time series WHERE date '2016-06-01' ; The query takes about 35 seconds to complete.",
+          "The OPTIONS(model type='ARIMA PLUS', time series timestamp col='date', ...) clause indicates that you are creating a set of ARIMA -based time-series ARIMA PLUS models.",
+          "Go to BigQuery In the query editor, paste in the following query and click Run : CREATE OR REPLACE MODEL bqml tutorial.liquor forecast by product OPTIONS ( MODEL TYPE = 'ARIMA PLUS' , TIME SERIES TIMESTAMP COL = 'date' , TIME SERIES DATA COL = 'total bottles sold' , TIME SERIES ID COL = [ 'store number' , 'item description' ] , HOLIDAY REGION = 'US' , AUTO ARIMA MAX ORDER = 2 , MAX TIME SERIES LENGTH = 30 ) AS SELECT store number , item description , date , SUM ( bottles sold ) as total bottles sold FROM bigquery-public-data.iowa liquor sales.sales WHERE date BETWEEN DATE ( \"2015-01-01\" ) AND DATE ( \"2021-12-31\" ) GROUP BY store number , item description , date ; The query takes about 1 hour 16 minutes to complete."
+        ]
+      },
+      {
+        "title": "\"Forecast a single time series with an ARIMA_PLUS univariate model \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/arima-single-time-series-forecasting-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 320,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ARIMAPlus () model . auto arima = True model . data frequency = \"auto frequency\" model . decompose time series = True Use the data loaded in the previous step to fit the model training data = total visits . to frame () . reset index ( drop = False ) X = training data [[ \"parsed date\" ]] y = training data [[ \"total visits\" ]] model . fit ( X , y ) Evaluate the candidate models SQL Evaluate the time series models by using the ML.ARIMA EVALUATE function.",
+          "Go to BigQuery In the query editor, paste in the following query and click Run : CREATE OR REPLACE MODEL bqml tutorial.ga arima model OPTIONS ( model type = 'ARIMA PLUS' , time series timestamp col = 'parsed date' , time series data col = 'total visits' , auto arima = TRUE , data frequency = 'AUTO FREQUENCY' , decompose time series = TRUE ) AS SELECT PARSE TIMESTAMP ( \"%Y%m%d\" , date ) AS parsed date , SUM ( totals . visits ) AS total visits FROM bigquery-public-data.google analytics sample.ga sessions GROUP BY date ; The query takes about 4 seconds to complete, after which you can access the ga arima model model.",
+          "SQL In the following query, the OPTIONS(model type='ARIMA PLUS', time series timestamp col='date', ...) clause indicates that you are creating an ARIMA -based time series model."
+        ]
+      },
+      {
+        "title": "\"Limit forecasted values for an ARIMA_PLUS time series model \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/arima-time-series-forecasting-with-limits-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 312,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This option causes the model to only forecast values that are greater than 0, based on the values in the column specified by the time series data col argument, in this case num trips . #standardSQL CREATE OR REPLACE MODEL bqml tutorial . nyc citibike arima model OPTIONS ( model type = 'ARIMA PLUS' , time series timestamp col = 'date' , time series data col = 'num trips' , time series id col = 'start station id' , forecast limit lower bound = 0 ) AS SELECT EXTRACT ( DATE FROM starttime ) AS date , COUNT ( ) AS num trips , start station id FROM bigquery-public-data . new york . citibike trips WHERE starttime > '2014-07-11' AND starttime '2015-02-11' GROUP BY date , start station id ; Run the CREATE MODEL query to create and train your model: In the Google Cloud console, click the Compose new query button.",
+          "The CREATE MODEL statement creates and trains a model named bqml tutorial.nyc citibike arima model . #standardSQL CREATE OR REPLACE MODEL bqml tutorial . nyc citibike arima model OPTIONS ( model type = 'ARIMA PLUS' , time series timestamp col = 'date' , time series data col = 'num trips' , time series id col = 'start station id' ) AS SELECT EXTRACT ( DATE FROM starttime ) AS date , COUNT ( ) AS num trips , start station id FROM bigquery-public-data . new york . citibike trips WHERE starttime > '2014-07-11' AND starttime '2015-02-11' GROUP BY date , start station id ; The OPTIONS(model type='ARIMA PLUS', time series timestamp col='date', ...) clause indicates that you are creating an ARIMA -based time series model.",
+          "Enter the following GoogleSQL query in the query editor. #standardSQL CREATE OR REPLACE MODEL bqml tutorial . nyc citibike arima model OPTIONS ( model type = 'ARIMA PLUS' , time series timestamp col = 'date' , time series data col = 'num trips' , time series id col = 'start station id' , forecast limit lower bound = 0 ) AS SELECT EXTRACT ( DATE FROM starttime ) AS date , COUNT ( ) AS num trips , start station id FROM bigquery-public-data . new york . citibike trips WHERE starttime > '2014-07-11' AND starttime '2015-02-11' GROUP BY date , start station id ; Click Run ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.google",
+      "data.iowa",
+      "sales.sales",
+      "sample.ga",
+      "tutorial.ga",
+      "tutorial.liquor",
+      "tutorial.nyc"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/arima-speed-up-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/arima-single-time-series-forecasting-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/arima-time-series-forecasting-with-limits-tutorial"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

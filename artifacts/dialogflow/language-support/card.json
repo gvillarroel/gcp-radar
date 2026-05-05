@@ -1,0 +1,84 @@
+{
+  "feature_name": "Language support",
+  "feature_slug": "language-support",
+  "summary": "Dialogflow CX supports additional generally available languages for agent interactions; Dialogflow ES supports additional preview languages for agent interactions.",
+  "extended_definition": "Dialogflow CX supports additional generally available languages for agent interactions; Dialogflow ES supports additional preview languages for agent interactions.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-multilingual",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+      "https://docs.cloud.google.com/dialogflow/es/docs/agents-multilingual"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Multilingual agents \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-multilingual",
+        "source_id": "site-docs-root",
+        "final_score": 143,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dialogflow supports many languages.",
+          "That means Dialogflow is able to differentiate among languages like [\"en\", \"pt-br\"], but not among variants of the same language like [\"zh-tw\", \"zh-cn\"] or [\"pt\", \"pt-br\"].",
+          "Note: At the moment, language detection only supports identifying languages with major structural differences, and not variants of the same language."
+        ]
+      },
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "source_id": "site-docs-root",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "Languages settings Add additional language support to your agent.",
+          "Speech and IVR Speech options Text-to-Speech link Languages and voices link You can select the language and voice used for speech synthesis.",
+          "Dialogflow CX learns from training phrases that you provide and the language models built into Dialogflow CX."
+        ]
+      },
+      {
+        "title": "Multilingual agents \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-multilingual",
+        "source_id": "site-iam-reference",
+        "final_score": 115,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dialogflow supports many languages.",
+          "Add a language Note: As a best practice, you should complete your agent in the default language before adding additional languages.",
+          "The language you choose when creating an agent is set as the default language, and you can add additional languages."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2",
+      "com.google.cloud.dialogflow.v2.Agent.Builder"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:58.946Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

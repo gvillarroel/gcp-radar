@@ -1,0 +1,179 @@
+{
+  "feature_name": "ListProvisionableCloudIdentityTypes method",
+  "feature_slug": "listprovisionablecloudidentitytypes-method",
+  "summary": "Introduces the ListProvisionableCloudIdentityTypes API method, which returns available Google Workspace customer types for a domain and indicates whether they require a transfer.",
+  "extended_definition": "Introduces the ListProvisionableCloudIdentityTypes API method, which returns available Google Workspace customer types for a domain and indicates whether they require a transfer.",
+  "lifecycle": {
+    "latest_feature_date": "2021-08-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/channel/docs/codelabs/workspace/domain-verification",
+      "https://docs.cloud.google.com/channel/docs/codelabs/workspace/provisioning",
+      "https://docs.cloud.google.com/channel/docs/guides/manage-entitlements"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage Google Workspace and Google Chrome entitlements \\_|\\_ Channel Services\\",
+        "url": "https://docs.cloud.google.com/channel/docs/guides/manage-entitlements",
+        "source_id": "site-docs-reference",
+        "final_score": 123,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "QueryEligibleBillingAccountsRequest { \"customer\" : \"accounts/123/customers/abc\" , \"skus\" : [ \"products/product id/skus/sku id1\" ] } QueryEligibleBillingAccountsResponse { \"skuPurchaseGroups\" : [ { \"skus\" : [ \"products/product id/skus/sku id1\" ], \"billingAccountPurchaseInfos\" : [ { \"billingAccount\" : { \"name\" : \"accounts/123/billingAccounts/billing account id1\" , \"displayName\" : \"Google Workspace USD US 1\" , \"currencyCode\" : \"USD\" , \"regionCode\" : \"US\" } }, { \"billingAccount\" : { \"name\" : \"accounts/123/billingAccounts/billing account id2\" , \"displayName\" : \"Google Workspace CAD CA 1\" , \"currencyCode\" : \"CAD\" , \"regionCode\" : \"CA\" } } ] } ] } With the selected PurchasableSku and BillingAccount, use the listPurchasableOffers method to find the available PurchasableOffer ListPurchasableOffersRequest { \"customer\": \"accounts/123/customers/abc\", \"createEntitlementPurchase\": { \"sku\": \"products/product id/skus/sku id1\", \"billingAccount\": \"accounts/123/billingAccounts/billing account id2\" } } ListPurchasableOffersResponse { \"purchasableOffers\": [ { \"offer\": { \"name\": \"accounts/123/offers/offer id1\", }, \"sku\": { \"name\": \"products/product id/skus/sku id1\", }, \"plan\": { \"paymentPlan\": \"FLEXIBLE\", \"paymentCycle\": { \"duration\": 1, \"periodType\": \"MONTH\" } }, \"priceReferenceId\": \"price reference id 123\" } ], } At this point you should have the BillingAccount that will pay for the Entitlement and the PurchasableOffer.",
+          "QueryEligibleBillingAccountsRequest { \"customer\" : \"accounts/123/customers/abc\" , \"skus\" : [ \"products/product id/skus/voice sku id1\" , \"products/product id/skus/google workspace sku id2\" , \"google workspace chrome sku id3\" ] } QueryEligibleBillingAccountsResponse { \"skuPurchaseGroups\" : [ { \"skus\" : [ \"products/product id/skus/voice sku id1\" ], \"billingAccountPurchaseInfos\" : [ { \"billingAccount\" : { \"name\" : \"accounts/123/billingAccounts/voice billing account id1\" , \"displayName\" : \"Google Workspace Voice USD US 1\" , \"currencyCode\" : \"USD\" , \"regionCode\" : \"US\" } } ] }, { \"skus\" : [ \"products/product id/skus/google workspace sku id2\" , \"google workspace chrome sku id3\" ], \"billingAccountPurchaseInfos\" : [ { \"billingAccount\" : { \"name\" : \"accounts/123/billingAccounts/gw billing account id1\" , \"displayName\" : \"Google Workspace USD US 1\" , \"currencyCode\" : \"USD\" , \"regionCode\" : \"US\" } }, { \"billingAccount\" : { \"name\" : \"accounts/123/billingAccounts/gw billing account id2\" , \"displayName\" : \"Google Workspace CAD CA 1\" , \"currencyCode\" : \"CAD\" , \"regionCode\" : \"CA\" } } ] } ] } ``` For each TransferableSku and BillingAccount pairs, use the listTransferableOffers method to find available TransferableOffers .",
+          "QueryEligibleBillingAccountsRequest { \"customer\" : \"accounts/123/customers/abc\" , \"skus\" : [ \"products/product id/skus/sku id1\" ] } QueryEligibleBillingAccountsResponse { \"skuPurchaseGroups\" : [ { \"skus\" : [ \"products/product id/skus/sku id1\" ], \"billingAccountPurchaseInfos\" : [ { \"billingAccount\" : { \"name\" : \"accounts/123/billingAccounts/billing account id1\" , \"displayName\" : \"Google Workspace USD US 1\" , \"currencyCode\" : \"USD\" , \"regionCode\" : \"US\" } }, { \"billingAccount\" : { \"name\" : \"accounts/123/billingAccounts/billing account id2\" , \"displayName\" : \"Google Workspace CAD CA 1\" , \"currencyCode\" : \"CAD\" , \"regionCode\" : \"CA\" } } ] } ] } With the Entitlement and BillingAccount, use the listPurchasableOffers method to find any PurchasableOffer."
+        ]
+      },
+      {
+        "title": "\"Codelab: Automating domain verification for Google Workspace \\_|\\_ Channel\\",
+        "url": "https://docs.cloud.google.com/channel/docs/codelabs/workspace/domain-verification",
+        "source_id": "site-api-reference",
+        "final_score": 111,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Site () . setIdentifier ( CUSTOMER DOMAIN ) . setType ( \"INET DOMAIN\" )) . setOwners ( Arrays . asList ( \"admin@\" + CUSTOMER DOMAIN )); resource = verificationService . webResource (). insert ( \"DNS TXT\" , resource ). execute (); System . out . println ( \"=== Domain has been verified\" ); Node.js // Set the customer's admin user as an owner to make sure the domain // verification status is instantly propagated to the Workspace account await verificationService . webResource . insert ({ verificationMethod : 'DNS TXT' , requestBody : { site : { type : 'INET DOMAIN' , identifier : customerDomain , }, owners : [ admin@ ${ customerDomain } ], } }); console . log ( '=== Domain has been verified' ); PHP // Set the customer's admin user as an owner to make sure the domain // verification status is instantly propagated to the Workspace account $resource = new Google Service SiteVerification SiteVerificationWebResourceResource([ 'site' => [ 'type' => 'INET DOMAIN', 'identifier' => $CUSTOMER DOMAIN, ], 'owners' => ['admin@' . $CUSTOMER DOMAIN] ]); $resource = $verificationService->webResource->insert('DNS TXT', $resource); print '=== Domain has been verified' .",
+          "PHP EOL; Python Set the customer's admin user as an owner to make sure the domain verification status is instantly propagated to the Workspace account resource = verification service . webResource (). insert ( verificationMethod = \"DNS TXT\" , body = { \"site\" : { \"type\" : \"INET DOMAIN\" , \"identifier\" : CUSTOMER DOMAIN }, \"owners\" : [ \"admin@\" + CUSTOMER DOMAIN ] }). execute () print ( \"=== Domain has been verified\" ) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Site () . setType ( \"INET DOMAIN\" ) . setIdentifier ( CUSTOMER DOMAIN )); SiteVerificationWebResourceGettokenResponse response = verificationService . webResource (). getToken ( request ). execute (); String token = response . getToken (); System . out . println ( \"Site Verification token: \" + token ); Node.js Using the following import: const { google } = require ( 'googleapis' ); Create the API client and fetch the token: // Set up credentials with user impersonation const authJWT = new JWT ({ keyFile : jsonKeyFile , scopes : [ 'https://www.googleapis.com/auth/siteverification' ], subject : resellerAdminUser , }); // Create the API service const verificationService = google . siteVerification ({ version : 'v1' , auth : authJWT }); // Fetch the token const { data } = await verificationService . webResource . getToken ({ requestBody : { site : { type : 'INET DOMAIN' , identifier : customerDomain , }, verificationMethod : 'DNS TXT' , } }); const token = data . token ; console . log ( Site Verification token: ${ token } ); PHP Create the API client and fetch the token: // Set up credentials with user impersonation $client = new Google Client(); $client->setAuthConfig($JSON KEY FILE); $client->setSubject($RESELLER ADMIN USER); $client->setScopes('https://www.googleapis.com/auth/siteverification'); // Create the API service $verificationService = new Google Service SiteVerification($client); // Fetch the token $request = new Google Service SiteVerification SiteVerificationWebResourceGettokenRequest([ 'verificationMethod' => 'DNS TXT', 'site' => [ 'type' => 'INET DOMAIN', 'identifier' => $CUSTOMER DOMAIN ] ]); $response = $verificationService->webResource->getToken($request); $token = $response->token; print 'Site Verification token: ' . $token ."
+        ]
+      },
+      {
+        "title": "\"Codelab: Provisioning Google Workspace \\_|\\_ Channel Services \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/channel/docs/codelabs/workspace/provisioning",
+        "source_id": "site-api-reference",
+        "final_score": 111,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Add the CRM ID for this customer. correlationId : \"CRMID012345\" , // Distributors need to pass the following field // channelPartnerId: channelPartnerLinkId }, }); console . log ( === Created customer with id ${ customer . name } ); console . info ( customer ); // This endpoint returns a long-running operation. // For other ways to get operation results, see // https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations const [ operation ] = await client . provisionCloudIdentity ({ customer : customer . name , cloudIdentityInfo : { alternateEmail : 'john.doe@gmail.com' , languageCode : 'en-US' , }, user : { givenName : 'John' , familyName : 'Doe' , email : admin@ ${ customerDomain } , }, }); // Wait for the long-running operation and get the result. [ customer ] = await operation . promise (); console . log ( '=== Provisioned cloud identity' ); return customer ; } async function createEntitlement ( customer , selectedOffer ) { // This call returns a long-running operation. const [ operation ] = await client . createEntitlement ({ parent : customer . name , entitlement : { offer : selectedOffer . name , parameters : [ // Setting 5 seats for this Annual offer { name : 'num units' , value : { int64Value : 5 , }, }, ], commitmentSettings : { // Setting renewal settings to auto renew renewalSettings : { enableRenewal : true , paymentPlan : 'COMMITMENT' , paymentCycle : { duration : 1 , periodType : 'YEAR' , }, }, }, // A string of up to 80 characters. // We recommend using an internal transaction ID or // identifier for the customer in this field. purchaseOrderId : 'A codelab test' , }, }); // Wait for the long-running operation and get the result. const [ entitlement ] = await operation . promise (); console . log ( '=== Created entitlement' ); console . info ( entitlement ); return entitlement ; } main (). catch ( err = > { console . error ( err . message ); process . exitCode = 1 ; }); process . on ( 'unhandledRejection' , err = > { console . error ( err . message ); process . exitCode = 1 ; }); PHP < ?php // Licensed under the Apache License, Version 2.0 (the \"License\"); // you may not use this file except in compliance with the License. // You may obtain a copy of the License at // // https://www.apache.org/licenses/LICENSE-2.0 // // Unless required by applicable law or agreed to in writing, software // distributed under the License is distributed on an \"AS IS\" BASIS, // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. // See the License for the specific language governing permissions and // limitations under the License. // // Instructions for this codelab can be found on this page // https://cloud.google.com/channel/docs/codelabs/workspace/provisioning require 'vendor/autoload.php'; use Google\\Auth\\Credentials\\ServiceAccountCredentials; use Google\\Cloud\\Channel; // ############## REPLACE WITH YOUR OWN VALUES #################### $JSON KEY FILE = 'path/to/json key file.json'; $RESELLER ADMIN USER = 'admin@yourresellerdomain.com'; $ACCOUNT ID = 'C012345'; $CUSTOMER DOMAIN = 'example.com'; // ################################################################ $ACCOUNT NAME = 'accounts/' . $ACCOUNT ID; // Set up credentials with user impersonation $credentials = new ServiceAccountCredentials( 'https://www.googleapis.com/auth/apps.order', / $scope / $JSON KEY FILE, / $keyFile / $RESELLER ADMIN USER / $sub / ); // Create the API client $client = new Channel\\V1\\Client\\CloudChannelServiceClient([ 'credentials' => $credentials ]); $selectedOffer = selectOffer(); checkExists(); $customer = createCustomer(); $entitlement = createEntitlement($customer, $selectedOffer); $customerId = $customer->getCloudIdentityId(); print $customerId .",
+          "Format ( entitlement )) return entitlement } Java // Licensed under the Apache License, Version 2.0 (the \"License\"); // you may not use this file except in compliance with the License. // You may obtain a copy of the License at // // https://www.apache.org/licenses/LICENSE-2.0 // // Unless required by applicable law or agreed to in writing, software // distributed under the License is distributed on an \"AS IS\" BASIS, // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. // See the License for the specific language governing permissions and // limitations under the License. // // Instructions for this codelab can be found on this page // https://cloud.google.com/channel/docs/codelabs/workspace/provisioning import com.google.api.gax.core.FixedCredentialsProvider ; import com.google.api.gax.longrunning.OperationFuture ; import com.google.auth.oauth2.GoogleCredentials ; import com.google.auth.oauth2.ServiceAccountCredentials ; import com.google.cloud.channel.v1.AdminUser ; import com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest ; import com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistResponse ; import com.google.cloud.channel.v1.CloudChannelServiceClient ; import com.google.cloud.channel.v1.CloudChannelServiceSettings ; import com.google.cloud.channel.v1.CloudIdentityInfo ; import com.google.cloud.channel.v1.CommitmentSettings ; import com.google.cloud.channel.v1.CreateCustomerRequest ; import com.google.cloud.channel.v1.CreateEntitlementRequest ; import com.google.cloud.channel.v1.Customer ; import com.google.cloud.channel.v1.Entitlement ; import com.google.cloud.channel.v1.ListOffersRequest ; import com.google.cloud.channel.v1.Offer ; import com.google.cloud.channel.v1.OperationMetadata ; import com.google.cloud.channel.v1.Parameter ; import com.google.cloud.channel.v1.PaymentPlan ; import com.google.cloud.channel.v1.Period ; import com.google.cloud.channel.v1.PeriodType ; import com.google.cloud.channel.v1.ProvisionCloudIdentityRequest ; import com.google.cloud.channel.v1.RenewalSettings ; import com.google.cloud.channel.v1.Value ; import com.google.gson.Gson ; import com.google.type.PostalAddress ; import java.io.FileInputStream ; import java.io.IOException ; import java.util.Iterator ; import java.util.concurrent.ExecutionException ; / This is a basic example of provisioning a Google Workspace customer. / public class Codelab { / REPLACE WITH YOUR OWN VALUES / public static final String JSON KEY FILE = \"path/to/json key file.json\" ; public static final String RESELLER ADMIN USER = \"admin@yourresellerdomain.com\" ; public static final String ACCOUNT ID = \"C012345\" ; public static final String CUSTOMER DOMAIN = \"example.com\" ; / / public static final String ACCOUNT NAME = \"accounts/\" + ACCOUNT ID ; private static CloudChannelServiceClient client ; private static final Gson gson = new Gson (); public static void main ( String [] args ) throws Exception , IOException , ExecutionException , InterruptedException { // Set up credentials with user impersonation FileInputStream jsonKeyFileStream = new FileInputStream ( JSON KEY FILE ); GoogleCredentials credentials = ServiceAccountCredentials . fromStream ( jsonKeyFileStream ) . createScoped ( \"https://www.googleapis.com/auth/apps.order\" ) . createDelegated ( RESELLER ADMIN USER ); // Create the API client CloudChannelServiceSettings serviceSettings = CloudChannelServiceSettings . newBuilder () . setCredentialsProvider ( FixedCredentialsProvider . create ( credentials )) . build (); client = CloudChannelServiceClient . create ( serviceSettings ); Offer selectedOffer = selectOffer (); checkExists (); Customer customer = createCustomer (); Entitlement entitlement = createEntitlement ( customer , selectedOffer ); String adminSDKCustomerId = customer . getCloudIdentityId (); System . out . println ( adminSDKCustomerId ); } private static Offer selectOffer () { ListOffersRequest request = ListOffersRequest . newBuilder (). setParent ( ACCOUNT NAME ). build (); // For the purpose of this codelab, the code lists all offers and selects // the first offer for Google Workspace Business Standard on an Annual // plan.",
+          "OperationFuture<Entitlement , OperationMetadata > operation = client . createEntitlementAsync ( request ); // Wait for the long-running operation and get the result. entitlement = operation . get (); System . out . println ( \"=== Created entitlement\" ); System . out . println ( gson . toJson ( entitlement )); return entitlement ; } } Node.js // Licensed under the Apache License, Version 2.0 (the \"License\"); // you may not use this file except in compliance with the License. // You may obtain a copy of the License at // // https://www.apache.org/licenses/LICENSE-2.0 // // Unless required by applicable law or agreed to in writing, software // distributed under the License is distributed on an \"AS IS\" BASIS, // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. // See the License for the specific language governing permissions and // limitations under the License. // // Instructions for this codelab can be found on this page // https://cloud.google.com/channel/docs/codelabs/workspace/provisioning const { JWT } = require ( 'google-auth-library' ); const { grpc } = require ( 'google-gax' ); const { CloudChannelServiceClient } = require ( '@google-cloud/channel' ); // ############## REPLACE WITH YOUR OWN VALUES #################### const jsonKeyFile = 'path/to/json key file.json' ; const resellerAdminUser = 'admin@yourresellerdomain.com' ; const accountId = 'C012345' ; const customerDomain = 'example.com' ; // ################################################################ const accountName = accounts/ ${ accountId } ; // Set up credentials with user impersonation const authClient = new JWT ({ keyFile : jsonKeyFile , scopes : [ 'https://www.googleapis.com/auth/apps.order' ], subject : resellerAdminUser , }); const sslCreds = grpc . credentials . combineChannelCredentials ( grpc . credentials . createSsl (), grpc . credentials . createFromGoogleCredential ( authClient ) ); // Create the API client const client = new CloudChannelServiceClient ({ sslCreds }); async function main () { const selectedOffer = await selectOffer (); await checkExists (); const customer = await createCustomer (); const entitlement = await createEntitlement ( customer , selectedOffer ); const customerId = customer . cloudIdentityId ; console . log ( customerId ); } async function selectOffer () { const [ offers ] = await client . listOffers ({ parent : accountName , }); // For the purpose of this codelab, the code lists all offers and selects // the first offer for Google Workspace Business Standard on an Annual // plan."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apps.order",
+      "autoload.php",
+      "com.google.api.gax.core.FixedCredentialsProvider",
+      "com.google.api.gax.longrunning.OperationFuture",
+      "com.google.auth.oauth2.GoogleCredentials",
+      "com.google.auth.oauth2.ServiceAccountCredentials",
+      "com.google.cloud.channel.v1.AdminUser",
+      "com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest",
+      "com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistResponse",
+      "com.google.cloud.channel.v1.CloudChannelServiceClient",
+      "com.google.cloud.channel.v1.CloudChannelServiceSettings",
+      "com.google.cloud.channel.v1.CloudIdentityInfo",
+      "com.google.cloud.channel.v1.CommitmentSettings",
+      "com.google.cloud.channel.v1.CreateCustomerRequest",
+      "com.google.cloud.channel.v1.CreateEntitlementRequest",
+      "com.google.cloud.channel.v1.Customer",
+      "com.google.cloud.channel.v1.Entitlement",
+      "com.google.cloud.channel.v1.ListOffersRequest",
+      "com.google.cloud.channel.v1.Offer",
+      "com.google.cloud.channel.v1.OperationMetadata",
+      "com.google.cloud.channel.v1.Parameter",
+      "com.google.cloud.channel.v1.PaymentPlan",
+      "com.google.cloud.channel.v1.Period",
+      "com.google.cloud.channel.v1.PeriodType",
+      "com.google.cloud.channel.v1.ProvisionCloudIdentityRequest",
+      "com.google.cloud.channel.v1.RenewalSettings",
+      "com.google.cloud.channel.v1.Value",
+      "com.google.gson.Gson",
+      "com.google.type.PostalAddress",
+      "example.com",
+      "file.json",
+      "github.com",
+      "gmail.com",
+      "java.io.FileInputStream",
+      "java.io.IOException",
+      "java.util.concurrent.ExecutionException",
+      "java.util.Iterator",
+      "john.doe",
+      "libraries.md",
+      "yourresellerdomain.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/guides/manage-entitlements",
+        "https://docs.cloud.google.com/channel/docs/codelabs/workspace/domain-verification",
+        "https://docs.cloud.google.com/channel/docs/codelabs/workspace/provisioning"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/guides/manage-entitlements",
+        "https://docs.cloud.google.com/channel/docs/codelabs/workspace/domain-verification",
+        "https://docs.cloud.google.com/channel/docs/codelabs/workspace/provisioning"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/guides/manage-entitlements",
+        "https://docs.cloud.google.com/channel/docs/codelabs/workspace/domain-verification",
+        "https://docs.cloud.google.com/channel/docs/codelabs/workspace/provisioning"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/guides/manage-entitlements",
+        "https://docs.cloud.google.com/channel/docs/codelabs/workspace/domain-verification",
+        "https://docs.cloud.google.com/channel/docs/codelabs/workspace/provisioning"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/guides/manage-entitlements",
+        "https://docs.cloud.google.com/channel/docs/codelabs/workspace/domain-verification",
+        "https://docs.cloud.google.com/channel/docs/codelabs/workspace/provisioning"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/guides/manage-entitlements",
+        "https://docs.cloud.google.com/channel/docs/codelabs/workspace/domain-verification",
+        "https://docs.cloud.google.com/channel/docs/codelabs/workspace/provisioning"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/guides/manage-entitlements",
+        "https://docs.cloud.google.com/channel/docs/codelabs/workspace/domain-verification",
+        "https://docs.cloud.google.com/channel/docs/codelabs/workspace/provisioning"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:26.585Z",
+  "source_step08_card": "data/step-08/current/products/channel-services/card.json",
+  "product_name": "Channel Services",
+  "product_slug": "channel-services"
+}

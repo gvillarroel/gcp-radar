@@ -1,0 +1,142 @@
+{
+  "feature_name": "Cluster Enabled and Cluster Disabled instance creation modes",
+  "feature_slug": "cluster-enabled-and-cluster-disabled-instance-creation-modes",
+  "summary": "Memorystore for Valkey now supports creating instances in Cluster Enabled and Cluster Disabled modes.",
+  "extended_definition": "Memorystore for Valkey now supports creating instances in Cluster Enabled and Cluster Disabled modes.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/valkey/connect-instance",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/instance-node-specification",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/supported-commands"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create instances \\_|\\_ Memorystore for Valkey \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "source_id": "site-docs-root",
+        "final_score": 241,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: Cluster Mode Enabled example gcloud memorystore instances create my-instance \\ --location=us-central1 \\ --endpoints='[{\"connections\": [{\"pscAutoConnection\": {\"network\": \"projects/my-project/global/networks/default\", \"projectId\": \"my-project\"}}]}]' \\ --replica-count=2 \\ --node-type=highmem-medium \\ --shard-count=8 \\ --mode=cluster Cluster Mode Disabled example gcloud memorystore instances create my-instance \\ --location=us-central1 \\ --endpoints='[{\"connections\": [{\"pscAutoConnection\": {\"network\": \"projects/my-project/global/networks/default\", \"projectId\": \"my-project\"}}]}]' \\ --shard-count=1 \\ --replica-count=2 \\ --node-type=highmem-medium \\ --mode=cluster-disabled By default, in-transit encryption is disabled and the authorized network is default .",
+          "In the Node Type section, select one of the following node types : Shared-Core ( shared-core-nano ) Small ( standard-small ) Medium ( highmem-medium ) X-Large ( highmem-xlarge ) In the Cluster Mode section, specify whether you want a Cluster Mode Enabled or Cluster Mode Disabled instance.",
+          "In the Node Type section, select one of the following node types : Shared-Core ( shared-core-nano ) Small ( standard-small ) Medium ( highmem-medium ) X-Large ( highmem-xlarge ) In the Cluster Mode section, specify whether you want a Cluster Mode Enabled or Cluster Mode Disabled instance."
+        ]
+      },
+      {
+        "title": "\"Instance and node specification \\_|\\_ Memorystore for Valkey \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/instance-node-specification",
+        "source_id": "site-docs-root",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Maximum writable capacity This section lists the maximum writable capacity for Cluster Mode Enabled and Cluster Mode Disabled instances.",
+          "Node type and size Maximum capacity, given an instance shape of 250 primary nodes and 0 replicas per node Maximum capacity, given an instance shape of 125 primary nodes and 1 replica per node Maximum capacity, given an instance shape of 83 primary nodes and 2 replicas per node Maximum capacity, given an instance shape of 62 primary nodes and 3 replicas per node Maximum capacity, given an instance shape of 50 primary nodes and 4 replicas per node Maximum capacity, given an instance shape of 41 primary nodes and 5 replicas per node shared-core-nano - 1.4 GB 350 GB 175 GB 116.2 GB 86.8 GB 70 GB 57.4 GB standard-small - 6.5 GB 1,625 GB 812.5 GB 539.5 GB 403 GB 325 GB 266.5 GB highmem-medium - 13 GB 3,250 GB 1,625 GB 1,079 GB 806 GB 650 GB 533 GB highmem-xlarge - 58 GB 14,500 GB 7,250 GB 4,814 GB 3,596 GB 2,900 GB 2,378 GB Cluster Mode Disabled instances The following table lists the maximum writable capacity for Cluster Mode Disabled instances.",
+          "Instance endpoints for Cluster Mode Disabled This section explains the primary and reader endpoints that each Cluster Mode Disabled instance has."
+        ]
+      },
+      {
+        "title": "Connect to a Memorystore for Valkey instance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/connect-instance",
+        "source_id": "site-docs-root",
+        "final_score": 224,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The output should be similar to the following: authorizationMode: AUTH DISABLED createTime: '2024-08-06T22:02:55.224704101Z' deletionProtectionEnabled: false engineVersion: VALKEY 7 2 name: projects/myproject/locations/us-central1/instances/my-instance nodeConfig: sizeGb: 6.5 nodeType: STANDARD SMALL persistenceConfig: mode: DISABLED endpoints: - connections: - pscAutoConnection: connectionType: CONNECTION TYPE PRIMARY forwardingRule: https://www.googleapis.com/compute/v1/projects/my-project/regions/us-central1/forwardingRules/sca-auto-fr-ec00907a-3ee3-4740-8092-ae832428f8e4 ipAddress: 10.128.0.124 network: projects/my-project/global/networks/default port: 6379 projectId: my-project pscConnectionId: '38876592440606778' serviceAttachment: projects/448055306617/regions/us-central1/serviceAttachments/gcp-memorystore-auto-b3c43536-4a77-40-psc-sa - pscAutoConnection: connectionType: CONNECTION TYPE READER forwardingRule: https://www.googleapis.com/compute/v1/projects/my-project/regions/us-central1/forwardingRules/sca-auto-fr-5ce5518f-1c59-4b46-aa74-799fad70d7b1 ipAddress: 10.128.0.125 network: projects/my-project/global/networks/default port: 6379 projectId: my-project pscConnectionId: '38876592440606779' serviceAttachment: projects/448055306617/regions/us-central1/serviceAttachments/gcp-memorystore-auto-b3c43536-4a77-40-psc-sa-2 replicaCount: 2 shardCount: 1 mode: CLUSTER DISABLED state: ACTIVE transitEncryptionMode: TRANSIT ENCRYPTION DISABLED uid: 869f2d09-d20b-46d8-94ba-be83c48ceb54 updateTime: '2024-08-06T22:18:59.389980051Z' zoneDistributionConfig: mode: MULTI ZONE Primary endpoint: Take a note of the endpoint address and port number listed under CONNECTION TYPE PRIMARY in the endpoints: section.",
+          "The output should be similar to the following: authorizationMode: AUTH DISABLED createTime: '2024-08-06T22:02:55.224704101Z' deletionProtectionEnabled: false engineVersion: VALKEY 7 2 name: projects/myproject/locations/us-central1/instances/my-instance nodeConfig: sizeGb: 6.5 nodeType: STANDARD SMALL persistenceConfig: mode: DISABLED endpoints: - connections: - pscAutoConnection: connectionType: CONNECTION TYPE DISCOVERY forwardingRule: https://www.googleapis.com/compute/v1/projects/my-project/regions/us-central1/forwardingRules/sca-auto-fr-ec00907a-3ee3-4740-8092-ae832428f8e4 ipAddress: 10.128.0.58 network: projects/my-project/global/networks/default port: 6379 projectId: my-project pscConnectionId: '38876592440606778' serviceAttachment: projects/129109085717/regions/us-east1/serviceAttachments/gcp-memorystore-auto-58e78f71-fdb7-48-psc-sa - pscAutoConnection: forwardingRule: https://www.googleapis.com/compute/v1/projects/my-project/regions/us-central1/forwardingRules/sca-auto-fr-5ce5518f-1c59-4b46-aa74-799fad70d7b1 ipAddress: 10.128.0.59 network: projects/my-project/global/networks/default port: 6379 projectId: my-project pscConnectionId: '38876592440606779' serviceAttachment: projects/129109085717/regions/us-east1/serviceAttachments/gcp-memorystore-auto-58e78f71-fdb7-48-psc-sa-2 replicaCount: 2 shardCount: 5 state: ACTIVE transitEncryptionMode: TRANSIT ENCRYPTION DISABLED uid: 869f2d09-d20b-46d8-94ba-be83c48ceb54 updateTime: '2024-08-06T22:18:59.389980051Z' zoneDistributionConfig: mode: MULTI ZONE Take a note of the endpoint address and port number listed in the endpoints: section for the connectionType: CONNECTION TYPE DISCOVERY entry.",
+          "After you connect to the node, enter the following Valkey commands: Enter: PING Result: PONG Connect to a Cluster Mode Disabled instance This section explains how to connect to a Memorystore for Valkey Cluster Mode Disabled instance."
+        ]
+      },
+      {
+        "title": "\"Supported and blocked commands \\_|\\_ Memorystore for Valkey \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/supported-commands",
+        "source_id": "site-docs-root",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported commands Commands supported for Cluster Mode Enabled and Cluster Mode Disabled instances Memorystore for Valkey supports the following commands for Cluster Mode Enabled and Cluster Mode Disabled instances: APPEND AUTH BITCOUNT BITFIELD BITFIELD RO BITOP BITPOS BLMOVE BLMPOP BLPOP BRPOP BRPOPLPUSH BZMPOP BZPOPMAX BZPOPMIN CLIENT CACHING CLIENT GETNAME CLIENT GETREDIR CLIENT HELP CLIENT ID CLIENT INFO CLIENT KILL CLIENT LIST CLIENT REPLY CLIENT SETNAME CLIENT TRACKING CLIENT TRACKINGINFO COMMAND COUNT COMMAND DOCS COMMAND GETKEYS COMMAND GETKEYSANDFLAGS COMMAND HELP COMMAND INFO COMMAND LIST CONFIG HELP COPY DBSIZE DECR DECRBY DEL DISCARD DUMP ECHO EVAL EVAL RO EVALSHA EVALSHA RO EXEC EXISTS EXPIRE EXPIREAT EXPIRETIME FCALL FCALL RO FLUSHALL FLUSHDB FUNCTION DELETE FUNCTION DUMP FUNCTION FLUSH FUNCTION HELP FUNCTION KILL FUNCTION LIST FUNCTION LOAD FUNCTION RESTORE FUNCTION STATS GEOADD GEODIST GEOHASH GEOPOS GEORADIUS GEORADIUS RO GEORADIUSBYMEMBER GEORADIUSBYMEMBER RO GEOSEARCH GEOSEARCHSTORE GET GETBIT GETDEL GETEX GETRANGE GETSET HDEL HELLO HEXISTS HGET HGETALL HINCRBY HINCRBYFLOAT HKEYS HLEN HMGET HMSET HRANDFIELD HSCAN HSET HSETNX HSTRLEN HVALS INCR INCRBY INCRBYFLOAT INFO KEYS LATENCY DOCTOR LATENCY GRAPH LATENCY HELP LATENCY HISTOGRAM LATENCY HISTORY LATENCY LATEST LATENCY RESET LCS LINDEX LINSERT LLEN LMOVE LMPOP LOLWUT LPOP LPOS LPUSH LPUSHX LRANGE LREM LSET LTRIM MEMORY DOCTOR MEMORY HELP MEMORY MALLOC-STATS MEMORY PURGE MEMORY STATS MEMORY USAGE MGET MODULE HELP MONITOR MSET MSETNX MULTI OBJECT ENCODING OBJECT FREQ OBJECT HELP OBJECT IDLETIME OBJECT REFCOUNT PERSIST PEXPIRE PEXPIREAT PEXPIRETIME PFADD PFCOUNT PFMERGE PING PSETEX PSUBSCRIBE PTTL PUBLISH PUBSUB CHANNELS PUBSUB HELP PUBSUB NUMPAT PUBSUB NUMSUB PUBSUB SHARDCHANNELS PUBSUB SHARDNUMSUB PUNSUBSCRIBE QUIT RANDOMKEY RENAME RENAMENX RESET RESTORE ROLE RPOP RPOPLPUSH RPUSH RPUSHX SADD SCAN SCARD SCRIPT DEBUG SCRIPT EXISTS SCRIPT FLUSH SCRIPT HELP SCRIPT KILL SCRIPT LOAD SDIFF SDIFFSTORE SELECT SET SETBIT SETEX SETNX SETRANGE SINTER SINTERCARD SINTERSTORE SISMEMBER SLOWLOG HELP SMEMBERS SMISMEMBER SMOVE SORT SORT RO SPOP SPUBLISH SRANDMEMBER SREM SSCAN SSUBSCRIBE STRLEN SUBSCRIBE SUBSTR SUNION SUNIONSTORE SUNSUBSCRIBE TIME TOUCH TTL TYPE UNLINK UNSUBSCRIBE UNWATCH WAIT WATCH XACK XADD XAUTOCLAIM XCLAIM XDEL XGROUP CREATE XGROUP CREATECONSUMER XGROUP DELCONSUMER XGROUP DESTROY XGROUP HELP XGROUP SETID XINFO CONSUMERS XINFO GROUPS XINFO HELP XINFO STREAM XLEN XPENDING XRANGE XREAD XREADGROUP XREVRANGE XTRIM ZADD ZCARD ZCOUNT ZDIFF ZDIFFSTORE ZINCRBY ZINTER ZINTERCARD ZINTERSTORE ZLEXCOUNT ZMPOP ZMSCORE ZPOPMAX ZPOPMIN ZRANDMEMBER ZRANGE ZRANGEBYLEX ZRANGEBYSCORE ZRANGESTORE ZRANK ZREM ZREMRANGEBYLEX ZREMRANGEBYRANK ZREMRANGEBYSCORE ZREVRANGE ZREVRANGEBYLEX ZREVRANGEBYSCORE ZREVRANK ZSCAN ZSCORE ZUNION ZUNIONSTORE Additional commands supported for Cluster Mode Enabled instances Memorystore for Valkey also supports the following commands for Cluster Mode Enabled instances: ASKING CLUSTER COUNT-FAILURE-REPORTS CLUSTER COUNTKEYSINSLOT CLUSTER GETKEYSINSLOT CLUSTER HELP CLUSTER INFO CLUSTER KEYSLOT CLUSTER LINKS CLUSTER MYID CLUSTER NODES CLUSTER REPLICAS CLUSTER SHARDS CLUSTER SLOTS READONLY READWRITE Blocked commands Memorystore for Valkey supports all Valkey 7.2 commands, except for the commands that are listed in this section.",
+          "ACL DELUSER ACL DRYRUN ACL GETUSER ACL LIST ACL LOAD ACL LOG ACL SAVE ACL SETUSER ACL USERS ACL CAT ACL GENPASS ACL HELP ACL WHOAMI BGREWRITEAOF BGSAVE CLIENT NO-EVICT CLIENT PAUSE CLIENT UNBLOCK CLIENT UNPAUSE CLUSTER ADDSLOTS CLUSTER ADDSLOTSRANGE CLUSTER BUMPEPOCH CLUSTER DELSLOTS CLUSTER DELSLOTSRANGE CLUSTER FAILOVER CLUSTER FLUSHSLOTS CLUSTER FORGET CLUSTER MEET CLUSTER REPLICATE CLUSTER RESET CLUSTER SAVECONFIG CLUSTER SET-CONFIG-EPOCH CLUSTER SETSLOT CONFIG GET CONFIG RESETSTAT CONFIG REWRITE CONFIG SET DEBUG FAILOVER LASTSAVE MIGRATE MODULE LIST MODULE LOAD MODULE LOADEX MODULE UNLOAD MOVE PFDEBUG PFSELFTEST PSYNC REPLCONF REPLICAOF RESTORE-ASKING SAVE SHUTDOWN SLAVEOF SLOWLOG GET SLOWLOG LEN SLOWLOG RESET SWAPDB SYNC XSETID Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Databases Memorystore Memorystore for Valkey Guides Send feedback Supported and blocked commands Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "memorystore.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/instance-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/connect-instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/supported-commands"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/instance-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/connect-instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/supported-commands"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/instance-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/connect-instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/supported-commands"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/instance-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/connect-instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/supported-commands"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/instance-node-specification",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/connect-instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/supported-commands"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:26.694Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-valkey/card.json",
+  "product_name": "Memorystore for Valkey",
+  "product_slug": "memorystore-for-valkey"
+}

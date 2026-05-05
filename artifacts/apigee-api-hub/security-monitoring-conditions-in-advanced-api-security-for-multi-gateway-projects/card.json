@@ -1,0 +1,166 @@
+{
+  "feature_name": "Security monitoring conditions in Advanced API Security for multi-gateway projects",
+  "feature_slug": "security-monitoring-conditions-in-advanced-api-security-for-multi-gateway-projects",
+  "summary": "Adds support in Advanced API Security multi-gateway risk assessment for mapping gateways to security profiles and generating monitoring conditions and alerts in Cloud Monitoring.",
+  "extended_definition": "Adds support in Advanced API Security multi-gateway risk assessment for mapping gateways to security profiles and generating monitoring conditions and alerts in Cloud Monitoring.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/manage-security-add-on",
+      "https://docs.cloud.google.com/apigee/docs/api-security",
+      "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Advanced API Security for multiple Apigee organizations and gateways \\_\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "source_id": "site-docs-reference",
+        "final_score": 271,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To learn about managing security monitoring conditions and alerts, see Manage monitoring conditions for multiple Apigee organizations and gateways .",
+          "IAM roles and permissions To use Advanced API Security, you must have the following IAM roles and permissions: IAM roles Permissions Description API Security Admin ( roles/apigee.securityAdmin ) apigee.securityProfilesV2.create apigee.securityProfilesV2.delete apigee.securityProfilesV2.update apigee.securityProfilesV2.get apigee.securityProfilesV2.list Provides permissions to create, update, delete, get, and list security profiles. apigee.securityAssessmentResult.compute Provides permissions to compute security assessment results. apigee.securityMonitoringConditions.create apigee.securityMonitoringConditions.delete apigee.securityMonitoringConditions.get apigee.securityMonitoringConditions.list apigee.securityMonitoringConditions.update Provides permissions to create, delete, get, list, and update security monitoring conditions.",
+          "To configure and use security monitoring conditions and alerts in Cloud Monitoring: Action(s) Required roles or steps List and view security monitoring condition metrics Monitoring Admin ( roles/monitoring.admin ) Monitoring Editor ( roles/monitoring.editor ) Create, update, or delete monitoring alerts See Required roles (for security alerts) View monitoring alerts See Incidents for metric-based alerting policies: Before you begin For information about granting IAM roles, see Grant or revoke multiple IAM roles using the Google Cloud console ."
+        ]
+      },
+      {
+        "title": "Overview of Advanced API Security \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security",
+        "source_id": "site-docs-reference",
+        "final_score": 187,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For enablement and usage instructions, see Advanced API Security for multi-gateway projects .",
+          "Choose the right Advanced API Security features for your needs If you want the multi-gateway risk assessment functionality that you can apply to multiple Apigee gateways, including on Apigee Edge, enable the Advanced API Security add-on from your API hub instance.",
+          "Use Advanced API Security to perform risk assessments on multiple Apigee organizations and gateways You can use Advanced API Security to perform risk assessments across multiple Apigee organizations and gateways, including Apigee, Apigee hybrid, and Apigee Edge."
+        ]
+      },
+      {
+        "title": "\"Manage the Advanced API Security add-on \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/manage-security-add-on",
+        "source_id": "site-docs-reference",
+        "final_score": 140,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Tip: Advanced API Security is also available in Apigee API hub for multiple gateway types, including Apigee Edge.",
+          "See Advanced API Security for multiple Apigee organizations and gateways for information.",
+          "To disable the Advanced API Security add-on using the Apigee API, enter the following command: curl -X POST \\ https://apigee.googleapis.com/v1/organizations/ ORG NAME /environments/ ENV NAME /addonsConfig:setAddonEnablement \\ -H \"Authorization: Bearer $token\" \\ -H \"Content-type: application/json\" \\ -d '{\"apiSecurityEnabled\":false}' Where: ORG NAME is the name of the Apigee Pay-as-you-go organization where you want to disable Advanced API Security in eligible environments."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "apigee.securityAdmin",
+      "apigee.securityAssessmentResult.compute",
+      "apigee.securityMonitoringConditions.create",
+      "apigee.securityMonitoringConditions.delete",
+      "apigee.securityMonitoringConditions.get",
+      "apigee.securityMonitoringConditions.list",
+      "apigee.securityMonitoringConditions.update",
+      "apigee.securityProfilesV2.create",
+      "apigee.securityProfilesV2.delete",
+      "apigee.securityProfilesV2.get",
+      "apigee.securityProfilesV2.list",
+      "apigee.securityProfilesV2.update",
+      "monitoring.admin",
+      "monitoring.editor"
+    ],
+    "missing_inventory_roles": [
+      "roles/apigee.securityAdmin",
+      "roles/monitoring.admin",
+      "roles/monitoring.editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/api-security",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/manage-security-add-on"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/api-security",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/manage-security-add-on"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/api-security",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/manage-security-add-on"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/api-security",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/manage-security-add-on"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/api-security",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/manage-security-add-on"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/api-security",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/manage-security-add-on"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/api-security",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/manage-security-add-on"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/api-security",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/manage-security-add-on"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:05.893Z",
+  "source_step08_card": "data/step-08/current/products/apigee-api-hub/card.json",
+  "product_name": "Apigee API hub",
+  "product_slug": "apigee-api-hub"
+}

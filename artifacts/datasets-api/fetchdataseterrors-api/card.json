@@ -1,0 +1,139 @@
+{
+  "feature_name": "fetchDatasetErrors API",
+  "feature_slug": "fetchdataseterrors-api",
+  "summary": "The fetchDatasetErrors API returns all errors associated with a failed dataset upload.",
+  "extended_definition": "The fetchDatasetErrors API returns all errors associated with a failed dataset upload.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/datasets/create",
+      "https://developers.google.com/maps/documentation/datasets/reference/rest",
+      "https://developers.google.com/maps/documentation/datasets/reference/rest/v1/projects.datasets/fetchDatasetErrors",
+      "https://developers.google.com/maps/documentation/datasets/reference/rpc/google.maps.mapsplatformdatasets.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Method: projects.datasets.fetchDatasetErrors \\_|\\_ Maps Datasets API \\_\\",
+        "url": "https://developers.google.com/maps/documentation/datasets/reference/rest/v1/projects.datasets/fetchDatasetErrors",
+        "source_id": "site-api-reference",
+        "final_score": 202,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Products Google Maps Platform Documentation Maps Datasets API Reference Send feedback Method: projects.datasets.fetchDatasetErrors Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request GET https://mapsplatformdatasets.googleapis.com/v1/{dataset=projects/ /datasets/ }:fetchDatasetErrors The URL uses gRPC Transcoding syntax.",
+          "If this field is omitted, there are no subsequent pages. errors[] object ( Status ) The errors associated with a dataset."
+        ]
+      },
+      {
+        "title": "Create a dataset \\_|\\_ Maps Datasets API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/datasets/create",
+        "source_id": "site-docs-root",
+        "final_score": 190,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This API returns all data processing errors associated with a dataset: curl -X GET \\ -H \"X-Goog-User-Project: PROJECT NUMBER OR ID \" \\ -H \"Authorization: Bearer $TOKEN\" \\ \"https://mapsplatformdatasets.googleapis.com/v1/projects/ PROJECT NUMBER OR ID /datasets/f57074a0-a8b6-403e-9df1-e9fc46: fetchDatasetErrors \" The response contains the errors array.",
+          "To get complete error information, call the fetchDatasetErrors API.",
+          "For example, to get the next page of errors using the token from the previous response: curl -X GET \\ -H \"content-type: application/json\" \\ -H \"X-Goog-User-Project: PROJECT NUMBER OR ID \" \\ -H \"Authorization: Bearer $TOKEN\" \\ \"https://mapsplatformdatasets.googleapis.com/v1/projects/ PROJECT NUMBER OR ID /datasets/f57074a0-a8b6-403e-9df1-e9fc46:fetchDatasetErrors?pageToken=cigKJkIkMTU3MzM0NjQtYzlmMy00YzYxLWIxM2YtYmVkYjFjYjRkYzRj\" By default, the response contains a maximum of 50 errors per page."
+        ]
+      },
+      {
+        "title": "\"Package google.maps.mapsplatformdatasets.v1 \\_|\\_ Maps Datasets API \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/datasets/reference/rpc/google.maps.mapsplatformdatasets.v1",
+        "source_id": "site-api-reference",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "FetchDatasetErrors rpc FetchDatasetErrors( FetchDatasetErrorsRequest ) returns ( FetchDatasetErrorsResponse ) Gets all the errors of a dataset.",
+          "Index MapsPlatformDatasets (interface) CreateDatasetRequest (message) Dataset (message) DeleteDatasetRequest (message) DownloadDatasetRequest (message) DownloadDatasetResponse (message) FetchDatasetErrorsRequest (message) FetchDatasetErrorsResponse (message) FileFormat (enum) GcsSource (message) GetDatasetRequest (message) ImportDatasetRequest (message) ImportDatasetResponse (message) ListDatasetsRequest (message) ListDatasetsResponse (message) LocalFileSource (message) Status (message) Status.State (enum) UpdateDatasetMetadataRequest (message) Usage (enum) MapsPlatformDatasets Service definition for the Maps Platform Datasets API.",
+          "If this field is omitted, there are no subsequent pages. errors[] Status The errors associated with a dataset."
+        ]
+      },
+      {
+        "title": "Maps Platform Datasets API \\_|\\_ Maps Datasets API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/datasets/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 156,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1.projects.datasets Methods create POST /v1/{parent=projects/ }/datasets Creates a new dataset for the specified project. delete DELETE /v1/{name=projects/ /datasets/ } Deletes the specified dataset. fetchDatasetErrors GET /v1/{dataset=projects/ /datasets/ }:fetchDatasetErrors Gets all the errors of a dataset. get GET /v1/{name=projects/ /datasets/ } Gets the dataset. list GET /v1/{parent=projects/ }/datasets Lists all the datasets for the specified project. patch PATCH /v1/{dataset.name=projects/ /datasets/ } Updates the metadata for the dataset.",
+          "Dataset error information can be retrieved using the fetchDatasetErrors method, aiding in troubleshooting and data validation. mapsplatformdatasets.googleapis.com API.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-08-27 UTC.\"],[],[\"The mapsplatformdatasets.googleapis.com API provides two main resources: v1.media and v1.projects.datasets. v1.media allows users to download datasets using a GET request and upload new data versions via POST requests. v1.projects.datasets manages dataset lifecycle, enabling users to create, delete, get, list, and patch datasets."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataset.name",
+      "developers.google.com",
+      "mapsplatformdatasets.googleapis.com",
+      "projects.datasets",
+      "projects.datasets.fetchDatasetErrors",
+      "v1.media",
+      "v1.projects.datasets"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/datasets/reference/rest/v1/projects.datasets/fetchDatasetErrors",
+        "https://developers.google.com/maps/documentation/datasets/create",
+        "https://developers.google.com/maps/documentation/datasets/reference/rpc/google.maps.mapsplatformdatasets.v1",
+        "https://developers.google.com/maps/documentation/datasets/reference/rest"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/datasets/reference/rest/v1/projects.datasets/fetchDatasetErrors",
+        "https://developers.google.com/maps/documentation/datasets/create",
+        "https://developers.google.com/maps/documentation/datasets/reference/rpc/google.maps.mapsplatformdatasets.v1",
+        "https://developers.google.com/maps/documentation/datasets/reference/rest"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/datasets/reference/rest/v1/projects.datasets/fetchDatasetErrors",
+        "https://developers.google.com/maps/documentation/datasets/create",
+        "https://developers.google.com/maps/documentation/datasets/reference/rpc/google.maps.mapsplatformdatasets.v1",
+        "https://developers.google.com/maps/documentation/datasets/reference/rest"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/datasets/reference/rest/v1/projects.datasets/fetchDatasetErrors",
+        "https://developers.google.com/maps/documentation/datasets/create",
+        "https://developers.google.com/maps/documentation/datasets/reference/rpc/google.maps.mapsplatformdatasets.v1",
+        "https://developers.google.com/maps/documentation/datasets/reference/rest"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:56.466Z",
+  "source_step08_card": "data/step-08/current/products/datasets-api/card.json",
+  "product_name": "Datasets API",
+  "product_slug": "datasets-api"
+}

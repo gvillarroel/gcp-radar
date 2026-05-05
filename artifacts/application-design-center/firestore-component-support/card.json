@@ -1,0 +1,318 @@
+{
+  "feature_name": "Firestore component support",
+  "feature_slug": "firestore-component-support",
+  "summary": "Application Design Center supports Firestore as a design component.",
+  "extended_definition": "Application Design Center supports Firestore as a design component.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-design-center/docs/import-components",
+      "https://docs.cloud.google.com/application-design-center/docs/overview",
+      "https://docs.cloud.google.com/iam/docs/roles-permissions/designcenter"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Application Design Center overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-design-center/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 23,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can select from the following types of components: Google components : components designed by Google that incorporate Google Cloud best practices and default security configurations.",
+          "Components can include: Assets : supporting resources that help you control other resources, such as service accounts or secrets.",
+          "By using these components, you ensure that every part of your application follows security and performance standards."
+        ]
+      },
+      {
+        "title": "Import components \\_|\\_ Application Design Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-design-center/docs/import-components",
+        "source_id": "site-docs-root",
+        "final_score": 23,
+        "relevance": "",
+        "evidence_snippets": [
+          "Application Design Center supports several Google Cloud products that you can add as components to your application.",
+          "For example, the following is a metadata.yaml file that you might create for a service account: spec : info : actuationTool : flavor : Terraform version : \">= 1.3\" interfaces : # Optional variables : - name : service account connections : - source : source : github.com/terraform-google/terraform-google-service-accounts version : \">= 4.4\" spec : outputExpr : email requirements : roles : # Optional after IAM integrations - level : Project roles : - roles/iam.serviceAccountUser - roles/iap.admin - roles/run.admin - roles/iam.serviceAccountAdmin providerVersions : - source : hashicorp/google version : \">= 6, < 7\" - source : hashicorp/google-beta version : \">= 6, < 7\" ui : # Optional input : variables : ca root module : name : ca root module title : Ca Root Module service account : name : service account title : Service Account Import from your repository You can create an App Design Center component by importing a Terraform module that is based on a single Google Cloud product.",
+          "Create a catalog template revision based on the Terraform module in your repository. gcloud design-center spaces catalogs templates revisions create REVISION \\ --project = PROJECT \\ --catalog = CATALOG \\ --location = LOCATION \\ --space = SPACE \\ --template = COMPONENT TEMPLATE \\ --developer-connect-repo = DEVELOPER CONNECT REPO \\ --developer-connect-repo-ref = DEVELOPER CONNECT REPO REF \\ --developer-connect-repo-dir = DEVELOPER CONNECT REPO DIR \\ --metadata = METADATA Replace the following: REVISION : The revision ID for the revision that you want to create."
+        ]
+      },
+      {
+        "title": "\"Application Design Center roles and permissions \\_|\\_ Identity and Access\\",
+        "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/designcenter",
+        "source_id": "site-iam-reference",
+        "final_score": 21,
+        "relevance": "",
+        "evidence_snippets": [
+          "Application Design Center roles Role Permissions Application Design Center Admin ( roles/ designcenter.admin ) Full access to Application Design Center resources. apphub.applications.create apphub.applications.delete apphub.applications.get apphub.applications.list apphub.applications.update apphub.boundaries.attach apphub.boundaries.update apphub.locations. apphub.locations.get apphub.locations.list apphub. serviceProjectAttachments. list cloudbuild.builds.get cloudbuild.builds.list config.automigrationconfig.get config. deploymentgrouprevisions. config. deploymentgrouprevisions. get config. deploymentgrouprevisions. list config.deploymentgroups.get config.deploymentgroups.list config.deployments.get config. deployments. getIamPolicy config.deployments.list config.locations. config.locations.get config.locations.list config.operations.get config.operations.list config.previews.export config.previews.get config.previews.list config.resources. config.resources.get config.resources.list config.revisions.get config.revisions.list config.terraformversions. config.terraformversions.get config.terraformversions.list container.clusters.list designcenter. designcenter. applicationTemplateRevisions. delete designcenter. applicationTemplateRevisions. get designcenter. applicationTemplateRevisions. list designcenter. applicationTemplates. create designcenter. applicationTemplates. delete designcenter. applicationTemplates. get designcenter. applicationTemplates. list designcenter. applicationTemplates. update designcenter. applications. create designcenter. applications. delete designcenter.applications.get designcenter.applications.list designcenter. applications. update designcenter. catalogTemplateRevisions. create designcenter. catalogTemplateRevisions. delete designcenter. catalogTemplateRevisions. get designcenter. catalogTemplateRevisions. list designcenter. catalogTemplates. create designcenter. catalogTemplates. delete designcenter. catalogTemplates. get designcenter. catalogTemplates. list designcenter. catalogTemplates. update designcenter.catalogs.create designcenter.catalogs.delete designcenter.catalogs.get designcenter.catalogs.list designcenter.catalogs.update designcenter.components.create designcenter.components.delete designcenter.components.get designcenter.components.list designcenter.components.update designcenter. connections. create designcenter. connections. delete designcenter.connections.get designcenter.connections.list designcenter. connections. update designcenter.locations.get designcenter.locations.list designcenter.operations.cancel designcenter.operations.delete designcenter.operations.get designcenter.operations.list designcenter. sharedTemplateRevisions. get designcenter. sharedTemplateRevisions. list designcenter. sharedTemplates. get designcenter. sharedTemplates. list designcenter.shares.create designcenter.shares.delete designcenter.shares.get designcenter.shares.list designcenter.spaces.create designcenter.spaces.delete designcenter.spaces.get designcenter. spaces. getIamPolicy designcenter.spaces.list designcenter. spaces. setIamPolicy designcenter.spaces.update developerconnect. connections. constructGitHubAppManifest developerconnect. connections. create developerconnect. connections. delete developerconnect. connections. fetchGitHubInstallations developerconnect. connections. fetchLinkableGitRepositories developerconnect. connections. generateGitHubStateToken developerconnect. connections. get developerconnect. connections. list developerconnect. connections. processGitHubAppCreationCallback developerconnect. connections. processGitHubOAuthCallback developerconnect. connections. update developerconnect. gitRepositoryLinks. create developerconnect. gitRepositoryLinks. delete developerconnect. gitRepositoryLinks. fetchGitRefs developerconnect. gitRepositoryLinks. get developerconnect. gitRepositoryLinks. gitProxyRead developerconnect. gitRepositoryLinks. gitProxyWrite developerconnect. gitRepositoryLinks. list developerconnect.locations. developerconnect.locations.get developerconnect. locations. list developerconnect.operations. developerconnect. operations. cancel developerconnect. operations. delete developerconnect. operations. get developerconnect. operations. list monitoring.timeSeries.create orgpolicy.policy.get resourcemanager.projects.get resourcemanager.projects.list storage.folders. storage.folders.create storage.folders.delete storage.folders.get storage.folders.list storage.folders.rename storage.managedFolders.create storage.managedFolders.delete storage.managedFolders.get storage.managedFolders.list storage.multipartUploads. storage.multipartUploads.abort storage. multipartUploads. create storage.multipartUploads.list storage. multipartUploads. listParts storage.objects.create storage.objects.createContext storage.objects.delete storage.objects.deleteContext storage.objects.get storage.objects.list storage.objects.move storage.objects.restore storage.objects.update storage.objects.updateContext Designcenter Editor ( roles/ designcenter.editor ) Editor role for designcenter container.clusters.list designcenter. applicationTemplateRevisions. designcenter. applicationTemplateRevisions. delete designcenter. applicationTemplateRevisions. get designcenter. applicationTemplateRevisions. list designcenter. applicationTemplates. designcenter. applicationTemplates. create designcenter. applicationTemplates. delete designcenter. applicationTemplates. get designcenter. applicationTemplates. list designcenter. applicationTemplates. update designcenter.applications. designcenter. applications. create designcenter. applications. delete designcenter.applications.get designcenter.applications.list designcenter. applications. update designcenter. catalogTemplateRevisions. designcenter. catalogTemplateRevisions. create designcenter. catalogTemplateRevisions. delete designcenter. catalogTemplateRevisions. get designcenter. catalogTemplateRevisions. list designcenter. catalogTemplates. designcenter. catalogTemplates. create designcenter. catalogTemplates. delete designcenter. catalogTemplates. get designcenter. catalogTemplates. list designcenter. catalogTemplates. update designcenter.catalogs. designcenter.catalogs.create designcenter.catalogs.delete designcenter.catalogs.get designcenter.catalogs.list designcenter.catalogs.update designcenter.components. designcenter.components.create designcenter.components.delete designcenter.components.get designcenter.components.list designcenter.components.update designcenter.connections. designcenter. connections. create designcenter. connections. delete designcenter.connections.get designcenter.connections.list designcenter. connections. update designcenter.locations. designcenter.locations.get designcenter.locations.list designcenter.operations. designcenter.operations.cancel designcenter.operations.delete designcenter.operations.get designcenter.operations.list designcenter. sharedTemplateRevisions. designcenter. sharedTemplateRevisions. get designcenter. sharedTemplateRevisions. list designcenter.sharedTemplates. designcenter. sharedTemplates. get designcenter. sharedTemplates. list designcenter.shares. designcenter.shares.create designcenter.shares.delete designcenter.shares.get designcenter.shares.list designcenter.spaces.create designcenter.spaces.delete designcenter.spaces.get designcenter. spaces. getIamPolicy designcenter.spaces.list designcenter.spaces.update resourcemanager.projects.get resourcemanager.projects.list storage.folders.get storage.folders.list storage.managedFolders.get storage.managedFolders.list storage.objects.get storage.objects.list Application Design Center Viewer ( roles/ designcenter.viewer ) Readonly access to Application Design Center resources. container.clusters.list designcenter. applicationTemplateRevisions. get designcenter. applicationTemplateRevisions. list designcenter. applicationTemplates. get designcenter. applicationTemplates. list designcenter.applications.get designcenter.applications.list designcenter. catalogTemplateRevisions. get designcenter. catalogTemplateRevisions. list designcenter. catalogTemplates. get designcenter. catalogTemplates. list designcenter.catalogs.get designcenter.catalogs.list designcenter.components.get designcenter.components.list designcenter.connections.get designcenter.connections.list designcenter.locations. designcenter.locations.get designcenter.locations.list designcenter.operations.get designcenter.operations.list designcenter. sharedTemplateRevisions. designcenter. sharedTemplateRevisions. get designcenter. sharedTemplateRevisions. list designcenter.sharedTemplates. designcenter. sharedTemplates. get designcenter. sharedTemplates. list designcenter.shares.get designcenter.shares.list designcenter.spaces.get designcenter. spaces. getIamPolicy designcenter.spaces.list resourcemanager.projects.get resourcemanager.projects.list storage.folders.get storage.folders.list storage.managedFolders.get storage.managedFolders.list storage.objects.get storage.objects.list Application Admin ( roles/ designcenter.applicationAdmin ) Admin access to Application. apphub.applications.create apphub.applications.delete apphub.applications.get apphub.applications.list apphub.applications.update apphub.locations. apphub.locations.get apphub.locations.list apphub. serviceProjectAttachments. list cloudbuild.builds.get cloudbuild.builds.list config.automigrationconfig.get config. deploymentgrouprevisions. config. deploymentgrouprevisions. get config. deploymentgrouprevisions. list config.deploymentgroups.get config.deploymentgroups.list config.deployments.get config. deployments. getIamPolicy config.deployments.list config.locations. config.locations.get config.locations.list config.operations.get config.operations.list config.previews.export config.previews.get config.previews.list config.resources. config.resources.get config.resources.list config.revisions.get config.revisions.list config.terraformversions. config.terraformversions.get config.terraformversions.list container.clusters.list designcenter. applicationTemplateRevisions. get designcenter. applicationTemplateRevisions. list designcenter. applicationTemplates. get designcenter. applicationTemplates. list designcenter.applications. designcenter. applications. create designcenter. applications. delete designcenter.applications.get designcenter.applications.list designcenter. applications. update designcenter. sharedTemplateRevisions. designcenter. sharedTemplateRevisions. get designcenter. sharedTemplateRevisions. list designcenter.sharedTemplates. designcenter. sharedTemplates. get designcenter. sharedTemplates. list designcenter.shares.get designcenter.shares.list designcenter.spaces.get designcenter.spaces.list developerconnect. connections. constructGitHubAppManifest developerconnect. connections. create developerconnect. connections. delete developerconnect. connections. fetchGitHubInstallations developerconnect. connections. fetchLinkableGitRepositories developerconnect. connections. generateGitHubStateToken developerconnect. connections. get developerconnect. connections. list developerconnect. connections. processGitHubAppCreationCallback developerconnect. connections. processGitHubOAuthCallback developerconnect. connections. update developerconnect. gitRepositoryLinks. create developerconnect. gitRepositoryLinks. delete developerconnect. gitRepositoryLinks. fetchGitRefs developerconnect. gitRepositoryLinks. get developerconnect. gitRepositoryLinks. gitProxyRead developerconnect. gitRepositoryLinks. gitProxyWrite developerconnect. gitRepositoryLinks. list developerconnect.locations. developerconnect.locations.get developerconnect. locations. list developerconnect.operations. developerconnect. operations. cancel developerconnect. operations. delete developerconnect. operations. get developerconnect. operations. list resourcemanager.projects.get resourcemanager.projects.list Application Editor ( roles/ designcenter.applicationEditor ) Read and Write access to Application. apphub.applications.create apphub.applications.delete apphub.applications.get apphub.applications.list apphub.applications.update apphub.locations. apphub.locations.get apphub.locations.list apphub. serviceProjectAttachments. list cloudbuild.builds.get cloudbuild.builds.list config.automigrationconfig.get config. deploymentgrouprevisions. config. deploymentgrouprevisions. get config. deploymentgrouprevisions. list config.deploymentgroups.get config.deploymentgroups.list config.deployments.get config. deployments. getIamPolicy config.deployments.list config.locations. config.locations.get config.locations.list config.operations.get config.operations.list config.previews.export config.previews.get config.previews.list config.resources. config.resources.get config.resources.list config.revisions.get config.revisions.list config.terraformversions. config.terraformversions.get config.terraformversions.list container.clusters.list designcenter. applicationTemplateRevisions. get designcenter. applicationTemplateRevisions. list designcenter. applicationTemplates. get designcenter. applicationTemplates. list designcenter.applications. designcenter. applications. create designcenter. applications. delete designcenter.applications.get designcenter.applications.list designcenter. applications. update designcenter. sharedTemplateRevisions. designcenter. sharedTemplateRevisions. get designcenter. sharedTemplateRevisions. list designcenter.sharedTemplates. designcenter. sharedTemplates. get designcenter. sharedTemplates. list designcenter.shares.get designcenter.shares.list designcenter.spaces.get designcenter.spaces.list resourcemanager.projects.get resourcemanager.projects.list Application Viewer ( roles/ designcenter.applicationViewer ) Readonly access to Application. apphub.applications.get apphub.applications.list apphub.locations. apphub.locations.get apphub.locations.list config.automigrationconfig.get config. deploymentgrouprevisions. config. deploymentgrouprevisions. get config. deploymentgrouprevisions. list config.deploymentgroups.get config.deploymentgroups.list config.deployments.get config. deployments. getIamPolicy config.deployments.list config.locations. config.locations.get config.locations.list config.operations.get config.operations.list config.previews.get config.previews.list config.resources. config.resources.get config.resources.list config.revisions.get config.revisions.list config.terraformversions. config.terraformversions.get config.terraformversions.list container.clusters.list designcenter. applicationTemplateRevisions. get designcenter. applicationTemplateRevisions. list designcenter. applicationTemplates. get designcenter. applicationTemplates. list designcenter.applications.get designcenter.applications.list designcenter. sharedTemplateRevisions. designcenter. sharedTemplateRevisions. get designcenter. sharedTemplateRevisions. list designcenter.sharedTemplates. designcenter. sharedTemplates. get designcenter. sharedTemplates. list designcenter.shares.get designcenter.shares.list designcenter.spaces.get designcenter.spaces.list resourcemanager.projects.get resourcemanager.projects.list Application Design Center User ( roles/ designcenter.user ) Readonly access to Application Design Center resources. apphub. serviceProjectAttachments. list container.clusters.list designcenter. applicationTemplateRevisions. designcenter. applicationTemplateRevisions. delete designcenter. applicationTemplateRevisions. get designcenter. applicationTemplateRevisions. list designcenter. applicationTemplates. designcenter. applicationTemplates. create designcenter. applicationTemplates. delete designcenter. applicationTemplates. get designcenter. applicationTemplates. list designcenter. applicationTemplates. update designcenter.applications.get designcenter.applications.list designcenter. catalogTemplateRevisions. get designcenter. catalogTemplateRevisions. list designcenter. catalogTemplates. get designcenter. catalogTemplates. list designcenter.catalogs.get designcenter.catalogs.list designcenter.components. designcenter.components.create designcenter.components.delete designcenter.components.get designcenter.components.list designcenter.components.update designcenter.connections. designcenter. connections. create designcenter. connections. delete designcenter.connections.get designcenter.connections.list designcenter. connections. update designcenter.locations. designcenter.locations.get designcenter.locations.list designcenter.operations.get designcenter.operations.list designcenter. sharedTemplateRevisions. designcenter. sharedTemplateRevisions. get designcenter. sharedTemplateRevisions. list designcenter.sharedTemplates. designcenter. sharedTemplates. get designcenter. sharedTemplates. list designcenter.shares.get designcenter.shares.list designcenter.spaces.get designcenter. spaces. getIamPolicy designcenter.spaces.list monitoring.timeSeries.create orgpolicy.policy.get resourcemanager.projects.get resourcemanager.projects.list storage.folders. storage.folders.create storage.folders.delete storage.folders.get storage.folders.list storage.folders.rename storage.managedFolders.create storage.managedFolders.delete storage.managedFolders.get storage.managedFolders.list storage.multipartUploads. storage.multipartUploads.abort storage. multipartUploads. create storage.multipartUploads.list storage. multipartUploads. listParts storage.objects.create storage.objects.createContext storage.objects.delete storage.objects.deleteContext storage.objects.get storage.objects.list storage.objects.move storage.objects.restore storage.objects.update storage.objects.updateContext Service agent roles Service agent roles should only be granted to service agents .",
+          "SaaS Service Management Service Agent ( roles/ saasservicemgmt.serviceAgent ) designcenter. applications. create Owner ( roles/ owner ) Editor ( roles/ editor ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) Application Admin ( roles/ designcenter.applicationAdmin ) Application Editor ( roles/ designcenter.applicationEditor ) Gemini Cloud Assist User ( roles/ geminicloudassist.user ) designcenter. applications. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) Application Admin ( roles/ designcenter.applicationAdmin ) Application Editor ( roles/ designcenter.applicationEditor ) Gemini Cloud Assist User ( roles/ geminicloudassist.user ) designcenter.applications.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) Application Design Center Viewer ( roles/ designcenter.viewer ) App Management Viewer ( roles/ apphub.appManagementViewer ) Cloud Hub Operator ( roles/ cloudhub.operator ) Application Admin ( roles/ designcenter.applicationAdmin ) Application Editor ( roles/ designcenter.applicationEditor ) Application Viewer ( roles/ designcenter.applicationViewer ) Application Design Center User ( roles/ designcenter.user ) Gemini Cloud Assist User ( roles/ geminicloudassist.user ) Support User ( roles/ iam.supportUser ) designcenter.applications.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) Application Design Center Viewer ( roles/ designcenter.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) App Management Viewer ( roles/ apphub.appManagementViewer ) Cloud Hub Operator ( roles/ cloudhub.operator ) Application Admin ( roles/ designcenter.applicationAdmin ) Application Editor ( roles/ designcenter.applicationEditor ) Application Viewer ( roles/ designcenter.applicationViewer ) Application Design Center User ( roles/ designcenter.user ) Gemini Cloud Assist User ( roles/ geminicloudassist.user ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) designcenter. applications. update Owner ( roles/ owner ) Editor ( roles/ editor ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) Application Admin ( roles/ designcenter.applicationAdmin ) Application Editor ( roles/ designcenter.applicationEditor ) Gemini Cloud Assist User ( roles/ geminicloudassist.user ) designcenter. catalogTemplateRevisions. create Owner ( roles/ owner ) Editor ( roles/ editor ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) designcenter. catalogTemplateRevisions. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) designcenter. catalogTemplateRevisions. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) Application Design Center Viewer ( roles/ designcenter.viewer ) App Management Viewer ( roles/ apphub.appManagementViewer ) Cloud Hub Operator ( roles/ cloudhub.operator ) Application Design Center User ( roles/ designcenter.user ) Gemini Cloud Assist User ( roles/ geminicloudassist.user ) Support User ( roles/ iam.supportUser ) designcenter. catalogTemplateRevisions. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) Application Design Center Viewer ( roles/ designcenter.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) App Management Viewer ( roles/ apphub.appManagementViewer ) Cloud Hub Operator ( roles/ cloudhub.operator ) Application Design Center User ( roles/ designcenter.user ) Gemini Cloud Assist User ( roles/ geminicloudassist.user ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) designcenter. catalogTemplates. create Owner ( roles/ owner ) Editor ( roles/ editor ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) designcenter. catalogTemplates. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) designcenter. catalogTemplates. get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) Application Design Center Viewer ( roles/ designcenter.viewer ) App Management Viewer ( roles/ apphub.appManagementViewer ) Cloud Hub Operator ( roles/ cloudhub.operator ) Application Design Center User ( roles/ designcenter.user ) Gemini Cloud Assist User ( roles/ geminicloudassist.user ) Support User ( roles/ iam.supportUser ) designcenter. catalogTemplates. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) Application Design Center Viewer ( roles/ designcenter.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) App Management Viewer ( roles/ apphub.appManagementViewer ) Cloud Hub Operator ( roles/ cloudhub.operator ) Application Design Center User ( roles/ designcenter.user ) Gemini Cloud Assist User ( roles/ geminicloudassist.user ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) designcenter. catalogTemplates. update Owner ( roles/ owner ) Editor ( roles/ editor ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) designcenter.catalogs.create Owner ( roles/ owner ) Editor ( roles/ editor ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) designcenter.catalogs.delete Owner ( roles/ owner ) Editor ( roles/ editor ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) designcenter.catalogs.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) Application Design Center Viewer ( roles/ designcenter.viewer ) App Management Viewer ( roles/ apphub.appManagementViewer ) Cloud Hub Operator ( roles/ cloudhub.operator ) Application Design Center User ( roles/ designcenter.user ) Gemini Cloud Assist User ( roles/ geminicloudassist.user ) Support User ( roles/ iam.supportUser ) designcenter.catalogs.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) Application Design Center Viewer ( roles/ designcenter.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) App Management Viewer ( roles/ apphub.appManagementViewer ) Cloud Hub Operator ( roles/ cloudhub.operator ) Application Design Center User ( roles/ designcenter.user ) Gemini Cloud Assist User ( roles/ geminicloudassist.user ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) designcenter.catalogs.update Owner ( roles/ owner ) Editor ( roles/ editor ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) designcenter.components.create Owner ( roles/ owner ) Editor ( roles/ editor ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) Application Design Center User ( roles/ designcenter.user ) Gemini Cloud Assist User ( roles/ geminicloudassist.user ) designcenter.components.delete Owner ( roles/ owner ) Editor ( roles/ editor ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) Application Design Center User ( roles/ designcenter.user ) Gemini Cloud Assist User ( roles/ geminicloudassist.user ) designcenter.components.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) Application Design Center Viewer ( roles/ designcenter.viewer ) App Management Viewer ( roles/ apphub.appManagementViewer ) Cloud Hub Operator ( roles/ cloudhub.operator ) Application Design Center User ( roles/ designcenter.user ) Gemini Cloud Assist User ( roles/ geminicloudassist.user ) Support User ( roles/ iam.supportUser ) designcenter.components.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) Application Design Center Viewer ( roles/ designcenter.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) App Management Viewer ( roles/ apphub.appManagementViewer ) Cloud Hub Operator ( roles/ cloudhub.operator ) Application Design Center User ( roles/ designcenter.user ) Gemini Cloud Assist User ( roles/ geminicloudassist.user ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) designcenter.components.update Owner ( roles/ owner ) Editor ( roles/ editor ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) Application Design Center User ( roles/ designcenter.user ) Gemini Cloud Assist User ( roles/ geminicloudassist.user ) designcenter. connections. create Owner ( roles/ owner ) Editor ( roles/ editor ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) Application Design Center User ( roles/ designcenter.user ) Gemini Cloud Assist User ( roles/ geminicloudassist.user ) designcenter. connections. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) Application Design Center User ( roles/ designcenter.user ) Gemini Cloud Assist User ( roles/ geminicloudassist.user ) designcenter.connections.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) Application Design Center Viewer ( roles/ designcenter.viewer ) App Management Viewer ( roles/ apphub.appManagementViewer ) Cloud Hub Operator ( roles/ cloudhub.operator ) Application Design Center User ( roles/ designcenter.user ) Gemini Cloud Assist User ( roles/ geminicloudassist.user ) Support User ( roles/ iam.supportUser ) designcenter.connections.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) Application Design Center Viewer ( roles/ designcenter.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) App Management Viewer ( roles/ apphub.appManagementViewer ) Cloud Hub Operator ( roles/ cloudhub.operator ) Application Design Center User ( roles/ designcenter.user ) Gemini Cloud Assist User ( roles/ geminicloudassist.user ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) designcenter. connections. update Owner ( roles/ owner ) Editor ( roles/ editor ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) Application Design Center User ( roles/ designcenter.user ) Gemini Cloud Assist User ( roles/ geminicloudassist.user ) designcenter.locations.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Application Design Center Admin ( roles/ designcenter.admin ) Designcenter Editor ( roles/ designcenter.editor ) Application Design Center Viewer ( roles/ designcenter.viewer ) App Management Viewer ( roles/ apphub.appManagementViewer ) Cloud Hub Operator ( roles/ cloudhub.operator ) Application Design Center User ( roles/ designcenter.user ) Gemini Cloud Assist User ( roles/ geminicloudassist.user ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apphub.applications.create",
+      "apphub.applications.delete",
+      "apphub.applications.get",
+      "apphub.applications.list",
+      "apphub.applications.update",
+      "apphub.appManagementViewer",
+      "apphub.boundaries.attach",
+      "apphub.boundaries.update",
+      "apphub.locations",
+      "apphub.locations.get",
+      "apphub.locations.list",
+      "cloudbuild.builds.get",
+      "cloudbuild.builds.list",
+      "cloudhub.operator",
+      "config.automigrationconfig.get",
+      "config.deploymentgroups.get",
+      "config.deploymentgroups.list",
+      "config.deployments.get",
+      "config.deployments.list",
+      "config.locations",
+      "config.locations.get",
+      "config.locations.list",
+      "config.operations.get",
+      "config.operations.list",
+      "config.previews.export",
+      "config.previews.get",
+      "config.previews.list",
+      "config.resources",
+      "config.resources.get",
+      "config.resources.list",
+      "config.revisions.get",
+      "config.revisions.list",
+      "config.terraformversions",
+      "config.terraformversions.get",
+      "config.terraformversions.list",
+      "container.clusters.list",
+      "designcenter.admin",
+      "designcenter.applicationAdmin",
+      "designcenter.applicationEditor",
+      "designcenter.applications",
+      "designcenter.applications.get",
+      "designcenter.applications.list",
+      "designcenter.applicationViewer",
+      "designcenter.catalogs",
+      "designcenter.catalogs.create",
+      "designcenter.catalogs.delete",
+      "designcenter.catalogs.get",
+      "designcenter.catalogs.list",
+      "designcenter.catalogs.update",
+      "designcenter.components",
+      "designcenter.components.create",
+      "designcenter.components.delete",
+      "designcenter.components.get",
+      "designcenter.components.list",
+      "designcenter.components.update",
+      "designcenter.connections",
+      "designcenter.connections.get",
+      "designcenter.connections.list",
+      "designcenter.editor",
+      "designcenter.locations",
+      "designcenter.locations.get",
+      "designcenter.locations.list",
+      "designcenter.operations",
+      "designcenter.operations.cancel",
+      "designcenter.operations.delete",
+      "designcenter.operations.get",
+      "designcenter.operations.list",
+      "designcenter.sharedTemplates",
+      "designcenter.shares",
+      "designcenter.shares.create",
+      "designcenter.shares.delete",
+      "designcenter.shares.get",
+      "designcenter.shares.list",
+      "designcenter.spaces.create",
+      "designcenter.spaces.delete",
+      "designcenter.spaces.get",
+      "designcenter.spaces.list",
+      "designcenter.spaces.update",
+      "designcenter.user",
+      "designcenter.viewer",
+      "developerconnect.locations",
+      "developerconnect.locations.get",
+      "developerconnect.operations",
+      "geminicloudassist.user",
+      "github.com",
+      "iam.securityAdmin",
+      "iam.securityAuditor",
+      "iam.securityReviewer",
+      "iam.serviceAccountAdmin",
+      "iam.serviceAccountUser",
+      "iam.supportUser",
+      "iap.admin",
+      "metadata.yaml",
+      "monitoring.timeSeries.create",
+      "orgpolicy.policy.get",
+      "run.admin",
+      "saasservicemgmt.serviceAgent",
+      "storage.folders",
+      "storage.folders.create",
+      "storage.folders.delete",
+      "storage.folders.get",
+      "storage.folders.list",
+      "storage.folders.rename",
+      "storage.managedFolders.create",
+      "storage.managedFolders.delete",
+      "storage.managedFolders.get",
+      "storage.managedFolders.list",
+      "storage.multipartUploads",
+      "storage.multipartUploads.abort",
+      "storage.multipartUploads.list",
+      "storage.objects.create",
+      "storage.objects.createContext",
+      "storage.objects.delete",
+      "storage.objects.deleteContext",
+      "storage.objects.get",
+      "storage.objects.list",
+      "storage.objects.move",
+      "storage.objects.restore",
+      "storage.objects.update",
+      "storage.objects.updateContext"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.serviceAccountAdmin",
+      "roles/iam.serviceAccountUser",
+      "roles/iap.admin",
+      "roles/run.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/import-components",
+        "https://docs.cloud.google.com/application-design-center/docs/overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/designcenter"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/import-components",
+        "https://docs.cloud.google.com/application-design-center/docs/overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/designcenter"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/import-components",
+        "https://docs.cloud.google.com/application-design-center/docs/overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/designcenter"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/import-components",
+        "https://docs.cloud.google.com/application-design-center/docs/overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/designcenter"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/import-components",
+        "https://docs.cloud.google.com/application-design-center/docs/overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/designcenter"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/import-components",
+        "https://docs.cloud.google.com/application-design-center/docs/overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/designcenter"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/import-components",
+        "https://docs.cloud.google.com/application-design-center/docs/overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/designcenter"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/import-components",
+        "https://docs.cloud.google.com/application-design-center/docs/overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/designcenter"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/import-components",
+        "https://docs.cloud.google.com/application-design-center/docs/overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/designcenter"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/import-components",
+        "https://docs.cloud.google.com/application-design-center/docs/overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/designcenter"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/import-components",
+        "https://docs.cloud.google.com/application-design-center/docs/overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/designcenter"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:14.656Z",
+  "source_step08_card": "data/step-08/current/products/application-design-center/card.json",
+  "product_name": "Application Design Center",
+  "product_slug": "application-design-center"
+}

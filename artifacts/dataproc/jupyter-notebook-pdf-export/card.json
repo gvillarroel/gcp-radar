@@ -1,0 +1,218 @@
+{
+  "feature_name": "Jupyter notebook PDF export",
+  "feature_slug": "jupyter-notebook-pdf-export",
+  "summary": "Jupyter on Dataproc supports exporting notebooks as PDF files.",
+  "extended_definition": "Jupyter on Dataproc supports exporting notebooks as PDF files.",
+  "lifecycle": {
+    "latest_feature_date": "2020-04-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+      "https://docs.cloud.google.com/dataproc-metastore/docs/export-metadata",
+      "https://docs.cloud.google.com/dataproc-metastore/docs/networking"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Dataproc Metastore networking overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/networking",
+        "source_id": "site-docs-root-2",
+        "final_score": 31,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "VM services in the customer's network can access Dataproc Metastore service resources in any region if the Google Cloud service supports it.",
+          "To explicitly allow Dataproc Metastore traffic, run the following gcloud commands: gcloud compute firewall-rules create dpms-allow-egress- DPMS NETWORK - REGION --allow tcp --destination-ranges DPMS NET PREFIX /17 --network DPMS NETWORK --direction OUT gcloud compute firewall-rules create dpms-allow-ingress- DPMS NETWORK - REGION --allow tcp,udp --source-ranges DPMS NET PREFIX /17 --network DPMS NETWORK For DPMS NET PREFIX , apply a /17 subnet mask to your Dataproc Metastore service IP.",
+          "What's next VPC Service Controls with Dataproc Metastore Dataproc Metastore Identity and Access Management (IAM) and access control Private Service Connect with Dataproc Metastore Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Export metadata from Dataproc Metastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/export-metadata",
+        "source_id": "site-docs-root-2",
+        "final_score": 31,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Export metadata Before exporting your metadata, note the following considerations: While an export is running, you can't update a Dataproc Metastore service — for example changing configuration settings.",
+          "About exporting metadata When you export metadata from Dataproc Metastore, the service stores the data in one of the following file formats: A set of Avro files stored in a folder.",
+          "Required roles To get the permissions that you need to export metadata into Dataproc Metastore, ask your administrator to grant you the following IAM roles: To export metadata, either: Dataproc Metastore Editor ( roles/metastore.editor ) on the Dataproc Metastore service Dataproc Metastore Administrator ( roles/metastore.admin ) on the Dataproc Metastore service Dataproc Metastore Metadata Operator ( roles/metastore.metadataOperator ) on the Dataproc Metastore service For MySQL and Avro, to use the Cloud Storage object for export: grant your user account and the Dataproc Metastore service agent the Storage Creator role ( roles/storage.objectCreator ) on the Cloud Storage bucket For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      },
+      {
+        "title": "\"Encrypt data with customer-managed encryption keys \\_|\\_ Dataproc Metastore\\",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "source_id": "site-docs-root-2",
+        "final_score": 29,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When exporting, the exported database dump is protected according to the destination storage bucket's CMEK settings.",
+          "Grant Cloud KMS key permissions Use the following commands to grant Cloud KMS key permissions for Dataproc Metastore: Grant permissions to the Dataproc Metastore Service Agent service account: gcloud kms keys add-iam-policy-binding KEY NAME \\ --location LOCATION \\ --keyring KEY RING \\ --member=serviceAccount:$(gcloud beta services identity create \\ --service=metastore.googleapis.com 2>&1 awk '{print $4}') \\ --role=roles/cloudkms.cryptoKeyEncrypterDecrypter Grant permissions to the Cloud Storage service account: gcloud storage service-agent --authorize-cmek projects/ KEY PROJECT /locations/ LOCATION /keyRings/ KEY RING /cryptoKeys/ KEY NAME Create a single-region service with a CMEK key Use the following steps to configure CMEK encryption for a single-region Dataproc Metastore service.",
+          "Note: You must create your CMEK key in the same region where your Dataproc Metastore service is located. gcloud kms keyrings create KEY RING \\ --project= PROJECT ID \\ --location= LOCATION Replace the following: KEY RING : a name for your key ring."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "metastore.admin",
+      "metastore.editor",
+      "metastore.googleapis.com",
+      "metastore.metadataOperator",
+      "metastore.services.export",
+      "storage.objectCreator",
+      "storage.objects.create"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter",
+      "roles/metastore.admin",
+      "roles/metastore.editor",
+      "roles/metastore.metadataOperator",
+      "roles/storage.objectCreator"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/export-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/networking"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/export-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/networking"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/export-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/networking"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/export-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/networking"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/export-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/networking"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/export-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/networking"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/export-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/networking"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/export-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/networking"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/export-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/networking"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/export-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/networking"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/export-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/networking"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/export-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/networking"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/export-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/networking"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/export-metadata",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/networking"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:55.306Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc"
+}

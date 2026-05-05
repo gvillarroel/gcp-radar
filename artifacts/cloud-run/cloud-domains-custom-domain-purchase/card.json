@@ -1,0 +1,169 @@
+{
+  "feature_name": "Cloud Domains custom domain purchase",
+  "feature_slug": "cloud-domains-custom-domain-purchase",
+  "summary": "Cloud Run lets users purchase a custom domain through Cloud Domains in the Cloud Run interface.",
+  "extended_definition": "Cloud Run lets users purchase a custom domain through Cloud Domains in the Cloud Run interface.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/mapping-custom-domains",
+      "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+      "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Mapping custom domains \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/mapping-custom-domains",
+        "source_id": "site-docs-root",
+        "final_score": 242,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can determine whether the custom domain you want to use has been verified by running the following command: gcloud domains list-user-verified If your ownership of the domain needs to be verified, open the Search Console verification page: gcloud domains verify BASE-DOMAIN where BASE-DOMAIN is the base domain you want to verify.",
+          "If you need to add verified owners of your domain to other users or service accounts, you can add permission through the Search Console page: Navigate to the following address in your web browser: https://search.google.com/search-console/welcome Under Properties , click the domain that you want to add a user or service account to.",
+          "There are a few ways to set up a custom domain for a Cloud Run service: Use a global external Application Load Balancer (Recommended) Use Cloud Run domain mapping (Limited availability and Preview) Use Firebase Hosting You can map multiple custom domains to the same Cloud Run service."
+        ]
+      },
+      {
+        "title": "End user authentication for Cloud Run tutorial \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "source_id": "site-docs-root",
+        "final_score": 127,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You might also be able to get the required permissions through custom roles or other predefined roles .",
+          "Click Add Domain under Authorized Domains on the right panel, and enter the Cloud Run service URL.",
+          "Remove the gcloud default region configuration you added during tutorial setup: gcloud config unset run / region Remove the project configuration: gcloud config unset project Delete other Google Cloud resources created in this tutorial: Delete the service container image from Artifact Registry Delete the service account vote-identity@PROJECT ID.iam.gserviceaccount.com Delete the Cloud SQL instance Delete the secret in Secret Manager What's next Dive deeper into Connecting from Cloud Run to Cloud SQL Learn more about sign in methods and managing users with Identity Platform Review other ways to authenticate developers, services, and users of services deployed to Cloud Run Explore other Cloud Run demos, tutorials, and samples Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Migrate Node.js apps from Heroku to Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "source_id": "site-docs-root",
+        "final_score": 105,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: Because this sample tasks app is a public facing web app and uses the --allow-unauthenticated flag, deployment will fail if your organization has the Organization Policy iam.allowedPolicyMemberDomains enforced.",
+          "Cloud Run is a managed compute platform that lets you run stateless containers that are invocable through HTTP requests.",
+          "Set a password for the Postgres user: gcloud sql users set-password postgres \\ --instance=$CLOUDSQL DB NAME \\ --password= POSTGRES PASSWORD Replace POSTGRES PASSWORD with the password that you want to use for the Postgres database."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.js",
+      "auth.js",
+      "firebaseapp.com",
+      "iam.allowedPolicyMemberDomains",
+      "iam.gserviceaccount.com",
+      "search.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:35.569Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run"
+}

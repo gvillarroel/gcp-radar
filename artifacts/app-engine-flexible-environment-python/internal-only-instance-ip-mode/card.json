@@ -1,0 +1,116 @@
+{
+  "feature_name": "Internal-only instance IP mode",
+  "feature_slug": "internal-only-instance-ip-mode",
+  "summary": "App Engine flexible environment instances can be configured to use only internal IP addresses without external ephemeral IPs; App Engine flexible environment instances can be configured to use only internal IP addresses without external ephemeral IPs.",
+  "extended_definition": "App Engine flexible environment instances can be configured to use only internal IP addresses without external ephemeral IPs; App Engine flexible environment instances can be configured to use only internal IP addresses without external ephemeral IPs.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/flexible/debugging-an-instance",
+      "https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip",
+      "https://docs.cloud.google.com/appengine/docs/flexible/python/disable-external-ip"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure private internal-only services \\_|\\_ App Engine flexible environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip",
+        "source_id": "site-docs-reference",
+        "final_score": 148,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This ensures that you are using a version of the gcloud CLI that supports private IP addresses for flexible environment apps. gcloud components update In your app.yaml file, add the instance ip mode field to the network section and set it to internal .",
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Configure private internal-only services Stay organized with collections Save and categorize content based on your preferences.",
+          "This page shows the required configuration for exposing an App Engine flexible environment service only on its internal IP address."
+        ]
+      },
+      {
+        "title": "\"Configure private internal-only services \\_|\\_ App Engine flexible environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/python/disable-external-ip",
+        "source_id": "site-docs-reference-2",
+        "final_score": 148,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This ensures that you are using a version of the gcloud CLI that supports private IP addresses for flexible environment apps. gcloud components update In your app.yaml file, add the instance ip mode field to the network section and set it to internal .",
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Configure private internal-only services Stay organized with collections Save and categorize content based on your preferences.",
+          "This page shows the required configuration for exposing an App Engine flexible environment service only on its internal IP address."
+        ]
+      },
+      {
+        "title": "\"Debugging an instance \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/debugging-an-instance",
+        "source_id": "site-docs-reference",
+        "final_score": 82,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Debugging an instance Stay organized with collections Save and categorize content based on your preferences.",
+          "To enable and disable debug mode in gcloud : Use the gcloud app instances enable-debug command to debug the VMs for a particular instance and version, as follows: gcloud app --project PROJECT-ID instances enable-debug Replace PROJECT-ID with your own project ID, and follow the prompts to specify the instance version to debug.",
+          "To connect to an instance in the console: Visit the Google Cloud console instances page for your project: Go to the instances page Click SSH in the far right of the row containing the instance you want to access: This puts the instance into debug mode, and opens an SSH session for the instance in a terminal window."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip",
+        "https://docs.cloud.google.com/appengine/docs/flexible/python/disable-external-ip",
+        "https://docs.cloud.google.com/appengine/docs/flexible/debugging-an-instance"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip",
+        "https://docs.cloud.google.com/appengine/docs/flexible/python/disable-external-ip",
+        "https://docs.cloud.google.com/appengine/docs/flexible/debugging-an-instance"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip",
+        "https://docs.cloud.google.com/appengine/docs/flexible/python/disable-external-ip",
+        "https://docs.cloud.google.com/appengine/docs/flexible/debugging-an-instance"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip",
+        "https://docs.cloud.google.com/appengine/docs/flexible/python/disable-external-ip",
+        "https://docs.cloud.google.com/appengine/docs/flexible/debugging-an-instance"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:09.450Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-python/card.json",
+  "product_name": "App Engine flexible environment Python",
+  "product_slug": "app-engine-flexible-environment-python"
+}

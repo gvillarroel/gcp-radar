@@ -1,0 +1,221 @@
+{
+  "feature_name": "Custom connectors for Google Cloud Marketplace",
+  "feature_slug": "custom-connectors-for-google-cloud-marketplace",
+  "summary": "You can build and publish custom connectors for Google Cloud Marketplace.",
+  "extended_definition": "You can build and publish custom connectors for Google Cloud Marketplace.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud SQL for PostgreSQL \\_|\\_ Integration Connectors \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 241,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you want to establish a public connection to your backend systems with additional security, you can consider configuring static outbound IP addresses for your connections , and then configure your firewall rules to allowlist only the specific static IP addresses.",
+          "Get help from the Google Cloud community You can post your questions and discuss this connector in the Google Cloud community at Cloud Forums .",
+          "Note: You can view the entities, operations, and actions of a connector in the Connectors task ."
+        ]
+      },
+      {
+        "title": "Cloud SQL for MySQL \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 241,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you want to establish a public connection to your backend systems with additional security, you can consider configuring static outbound IP addresses for your connections , and then configure your firewall rules to allowlist only the specific static IP addresses.",
+          "Get help from the Google Cloud community You can post your questions and discuss this connector in the Google Cloud community at Cloud Forums .",
+          "Note: You can view the entities, operations, and actions of a connector in the Connectors task ."
+        ]
+      },
+      {
+        "title": "Apache Cassandra \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When creating this connection by using Terraform, you must set the following variables in your Terraform configuration file: Parameter name Data type Required Description keyspace STRING True Cassandra Keyspace Get help from the Google Cloud community You can post your questions and discuss this connector in the Google Cloud community at Cloud Forums .",
+          "If you want to establish a public connection to your backend systems with additional security, you can consider configuring static outbound IP addresses for your connections , and then configure your firewall rules to allowlist only the specific static IP addresses.",
+          "Note: You can view the entities, operations, and actions of a connector in the Connectors task ."
+        ]
+      },
+      {
+        "title": "\"Cloud SQL for SQL Server \\_|\\_ Integration Connectors \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 237,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you want to establish a public connection to your backend systems with additional security, you can consider configuring static outbound IP addresses for your connections , and then configure your firewall rules to allowlist only the specific static IP addresses.",
+          "Get help from the Google Cloud community You can post your questions and discuss this connector in the Google Cloud community at Cloud Forums .",
+          "Grant the following IAM roles to the service account that you want to use for the connector: roles/secretmanager.viewer roles/secretmanager.secretAccessor roles/cloudsql.editor A service account is a special type of Google account intended to represent a non-human user that needs to authenticate and be authorized to access data in Google APIs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.editor",
+      "iam.gserviceaccount.com",
+      "secretmanager.secretAccessor",
+      "secretmanager.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudsql.editor",
+      "roles/secretmanager.secretAccessor",
+      "roles/secretmanager.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:22.663Z",
+  "source_step08_card": "data/step-08/current/products/integration-connectors/card.json",
+  "product_name": "Integration Connectors",
+  "product_slug": "integration-connectors"
+}

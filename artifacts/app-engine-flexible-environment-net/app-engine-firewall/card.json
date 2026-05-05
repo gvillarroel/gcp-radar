@@ -1,0 +1,143 @@
+{
+  "feature_name": "App Engine firewall",
+  "feature_slug": "app-engine-firewall",
+  "summary": "App Engine Firewall was announced as generally available; The App Engine firewall entered beta release.",
+  "extended_definition": "App Engine Firewall was announced as generally available; The App Engine firewall entered beta release.",
+  "lifecycle": {
+    "latest_feature_date": "2017-10-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/appengine/docs/flexible/creating-firewalls",
+      "https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls",
+      "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/creating-firewalls"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Creating App Engine firewall rules \\_|\\_ App Engine flexible environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls",
+        "source_id": "site-docs-reference",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples: Use the following examples to help you create your firewall: Add a rule that allows an IPv6 address and subnet mask, and then test that rule to ensure it gets evaluated prior to your other rules: gcloud app firewall-rules create 123 --source-range fe80::3636:3bff:fecc:8778/128 --action allow gcloud app firewall-rules test-ip fe80::3636:3bff:fecc:8778 Add a rule to deny an IPv4 address and subnet mask, and then test that rule to ensure that it gets appropriately evaluated: gcloud app firewall-rules create 123456 --source-range \"74.125.0.0/16\" --action deny gcloud app firewall-rules test-ip 74 .125.0.8 Update and then test the default rule to ensure that it restricts all IP addresses that don't match any other rules: gcloud app firewall-rules update default --action deny gcloud app firewall-rules test-ip 123 .456.7.89 API To programmatically create firewall rules for your App Engine app, you can use the apps.firewall.ingressRules methods in the Admin API.",
+          "Before you begin Before you can create App Engine firewall rules for your app, you must have one of the following App Engine IAM roles , which include the necessary privileges for creating or modifying firewall rules: App Engine Admin Editor Owner Creating firewall rules Use one of the following methods to create a firewall rule.",
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Creating App Engine firewall rules Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Creating App Engine firewall rules \\_|\\_ App Engine flexible environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/creating-firewalls",
+        "source_id": "site-docs-reference-2",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples: Use the following examples to help you create your firewall: Add a rule that allows an IPv6 address and subnet mask, and then test that rule to ensure it gets evaluated prior to your other rules: gcloud app firewall-rules create 123 --source-range fe80::3636:3bff:fecc:8778/128 --action allow gcloud app firewall-rules test-ip fe80::3636:3bff:fecc:8778 Add a rule to deny an IPv4 address and subnet mask, and then test that rule to ensure that it gets appropriately evaluated: gcloud app firewall-rules create 123456 --source-range \"74.125.0.0/16\" --action deny gcloud app firewall-rules test-ip 74 .125.0.8 Update and then test the default rule to ensure that it restricts all IP addresses that don't match any other rules: gcloud app firewall-rules update default --action deny gcloud app firewall-rules test-ip 123 .456.7.89 API To programmatically create firewall rules for your App Engine app, you can use the apps.firewall.ingressRules methods in the Admin API.",
+          "Before you begin Before you can create App Engine firewall rules for your app, you must have one of the following App Engine IAM roles , which include the necessary privileges for creating or modifying firewall rules: App Engine Admin Editor Owner Creating firewall rules Use one of the following methods to create a firewall rule.",
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Creating App Engine firewall rules Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Creating App Engine firewall rules \\_|\\_ App Engine flexible environment\\",
+        "url": "https://cloud.google.com/appengine/docs/flexible/creating-firewalls",
+        "source_id": "site-docs-root",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples: Use the following examples to help you create your firewall: Add a rule that allows an IPv6 address and subnet mask, and then test that rule to ensure it gets evaluated prior to your other rules: gcloud app firewall-rules create 123 --source-range fe80::3636:3bff:fecc:8778/128 --action allow gcloud app firewall-rules test-ip fe80::3636:3bff:fecc:8778 Add a rule to deny an IPv4 address and subnet mask, and then test that rule to ensure that it gets appropriately evaluated: gcloud app firewall-rules create 123456 --source-range \"74.125.0.0/16\" --action deny gcloud app firewall-rules test-ip 74 .125.0.8 Update and then test the default rule to ensure that it restricts all IP addresses that don't match any other rules: gcloud app firewall-rules update default --action deny gcloud app firewall-rules test-ip 123 .456.7.89 API To programmatically create firewall rules for your App Engine app, you can use the apps.firewall.ingressRules methods in the Admin API.",
+          "Before you begin Before you can create App Engine firewall rules for your app, you must have one of the following App Engine IAM roles , which include the necessary privileges for creating or modifying firewall rules: App Engine Admin Editor Owner Creating firewall rules Use one of the following methods to create a firewall rule.",
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Creating App Engine firewall rules Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apps.firewall.ingressRules"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/flexible/creating-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/creating-firewalls"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/flexible/creating-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/creating-firewalls"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/flexible/creating-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/creating-firewalls"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/flexible/creating-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/creating-firewalls"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/flexible/creating-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/creating-firewalls"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/flexible/creating-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/creating-firewalls",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/creating-firewalls"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:09.053Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-net/card.json",
+  "product_name": "App Engine flexible environment .NET",
+  "product_slug": "app-engine-flexible-environment-net"
+}

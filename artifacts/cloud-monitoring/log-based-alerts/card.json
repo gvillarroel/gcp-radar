@@ -1,0 +1,137 @@
+{
+  "feature_name": "Log-based alerts",
+  "feature_slug": "log-based-alerts",
+  "summary": "Cloud Monitoring supports alerts triggered by log content matches created from Logs Explorer or the Monitoring API.",
+  "extended_definition": "Cloud Monitoring supports alerts triggered by log content matches created from Logs Explorer or the Monitoring API.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/docs",
+      "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+      "https://docs.cloud.google.com/python/docs/reference/monitoring/latest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Python Client for Stackdriver Monitoring \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/monitoring/latest",
+        "source_id": "site-python-reference",
+        "final_score": 41,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Python Client libraries Send feedback Python Client for Stackdriver Monitoring Stay organized with collections Save and categorize content based on your preferences.",
+          "The Google-specific logging configurations (default handlers for environment-based configuration; not propagating logging events to the root logger) get executed the first time any client library is instantiated in your application, and only if the affected loggers have not been previously configured. (This is the reason for 2.i. above.) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Code-Based Examples Configuring a handler for all Google-based loggers import logging from google.cloud import library v1 base logger = logging.getLogger(\"google\") base logger.addHandler(logging.StreamHandler()) base logger.setLevel(logging.DEBUG) Configuring a handler for a specific Google module (for a client library called library v1 ): import logging from google.cloud import library v1 base logger = logging.getLogger(\"google.cloud.library v1\") base logger.addHandler(logging.StreamHandler()) base logger.setLevel(logging.DEBUG) Logging details Regardless of which of the mechanisms above you use to configure logging for this library, by default logging events are not propagated up to the root logger from the google-level logger."
+        ]
+      },
+      {
+        "title": "Cloud Monitoring documentation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs",
+        "source_id": "site-docs-reference",
+        "final_score": 41,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use case Use cases SAP HANA monitoring agent user guide By using Cloud Monitoring, you can build dashboards to visualize your SAP HANA metrics and set up alerts based on metric.",
+          "Documentation resources Find quickstarts and guides, review key references, and get help with common issues. format list numbered Guides Quickstart: Collect Apache web server metrics with Ops Agent Create alerting policies Configure notification channels Create synthetic monitors Create charts Select metrics for charts and alerts Install the Ops Agent Create metrics with the API Configure a metrics scope More guides find in page Reference Google Cloud metrics Anthos metrics Kubernetes metrics Agent metrics Monitored resource types REST API API Method: projects.timeSeries.list Monitoring filters Monitoring Client Libraries More references info Resources Quotas and limits Release notes Pricing More resources Related resources Training and tutorials Use cases Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services.",
+          "Training Training and tutorials Google Cloud Fundamentals: Core Infrastructure This one-day course uses lectures, demos, and hands-on labs to give you an overview of Google Cloud products and services so that you can learn the value of Google Cloud and how to incorporate cloud-based solutions into your business strategies."
+        ]
+      },
+      {
+        "title": "Cloud Monitoring overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 35,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Observability Cloud Monitoring Guides Send feedback Cloud Monitoring overview Stay organized with collections Save and categorize content based on your preferences.",
+          "Monitoring supports common notification channels , including email, Cloud Mobile App, and services such as PagerDuty or Slack.",
+          "Cloud Monitoring API: The API supports Prometheus Query Language (PromQL) and Monitoring filter expressions."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "logger.addHandler",
+      "logger.setLevel",
+      "logging.DEBUG",
+      "logging.getLogger",
+      "logging.StreamHandler",
+      "projects.timeSeries.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest",
+        "https://docs.cloud.google.com/monitoring/docs",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest",
+        "https://docs.cloud.google.com/monitoring/docs",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest",
+        "https://docs.cloud.google.com/monitoring/docs",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest",
+        "https://docs.cloud.google.com/monitoring/docs",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest",
+        "https://docs.cloud.google.com/monitoring/docs",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest",
+        "https://docs.cloud.google.com/monitoring/docs",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:33.032Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring"
+}

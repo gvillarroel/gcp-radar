@@ -1,0 +1,242 @@
+{
+  "feature_name": "organization policy constraints for CMEK",
+  "feature_slug": "organization-policy-constraints-for-cmek",
+  "summary": "Memorystore for Valkey supports organization policy constraints that enforce CMEK protection and limit which Cloud KMS keys can be used.",
+  "extended_definition": "Memorystore for Valkey supports organization policy constraints that enforce CMEK protection and limit which Cloud KMS keys can be used.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/audit-logging",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/networking"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About customer-managed encryption keys (CMEK) \\_|\\_ Memorystore for Valkey\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 337,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "About CMEK organization policy constraints Memorystore for Valkey supports organization policy constraints for CMEK.",
+          "If the Memorystore for Valkey API is in the Deny policy list of services for this constraint, then you can't create non-CMEK-protected instances. constraints/gcp.restrictCmekCryptoKeyProjects : use this constraint to limit which Cloud KMS keys you can use for CMEK protection.",
+          "You can configure the following organization policy constraints: constraints/gcp.restrictNonCmekServices : use this constraint to enforce CMEK protection for your instances."
+        ]
+      },
+      {
+        "title": "\"Monitor access using audit logs \\_|\\_ Memorystore for Valkey \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/audit-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 211,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following are the audit log names, including variables for the resource identifiers: projects/ PROJECT ID /logs/cloudaudit.googleapis.com%2Factivity projects/ PROJECT ID /logs/cloudaudit.googleapis.com%2Fdata access projects/ PROJECT ID /logs/cloudaudit.googleapis.com%2Fsystem event projects/ PROJECT ID /logs/cloudaudit.googleapis.com%2Fpolicy folders/ FOLDER ID /logs/cloudaudit.googleapis.com%2Factivity folders/ FOLDER ID /logs/cloudaudit.googleapis.com%2Fdata access folders/ FOLDER ID /logs/cloudaudit.googleapis.com%2Fsystem event folders/ FOLDER ID /logs/cloudaudit.googleapis.com%2Fpolicy billingAccounts/ BILLING ACCOUNT ID /logs/cloudaudit.googleapis.com%2Factivity billingAccounts/ BILLING ACCOUNT ID /logs/cloudaudit.googleapis.com%2Fdata access billingAccounts/ BILLING ACCOUNT ID /logs/cloudaudit.googleapis.com%2Fsystem event billingAccounts/ BILLING ACCOUNT ID /logs/cloudaudit.googleapis.com%2Fpolicy organizations/ ORGANIZATION ID /logs/cloudaudit.googleapis.com%2Factivity organizations/ ORGANIZATION ID /logs/cloudaudit.googleapis.com%2Fdata access organizations/ ORGANIZATION ID /logs/cloudaudit.googleapis.com%2Fsystem event organizations/ ORGANIZATION ID /logs/cloudaudit.googleapis.com%2Fpolicy Note: The part of the log name following /logs/ must be URL-encoded.",
+          "Audited operations The following table summarizes which API operations correspond to each audit log type in Memorystore for Valkey: Audit logs category Memorystore for Valkey operations Admin Activity Instance operations: CreateInstance DeleteInstance UpdateInstance Token-Based Authentication Operations: AddTokenAuthUser DeleteTokenAuthUser AddAuthToken DeleteAuthToken Data Access (ADMIN READ) Instance operations: GetInstance ListInstances Token-Based Authentication Operations: ListTokenAuthUsers GetTokenAuthUser ListAuthTokens GetAuthToken Audit log format Audit log entries include the following objects: The log entry itself, which is an object of type LogEntry .",
+          "Available audit logs The following types of audit logs are available for Memorystore for Valkey: Admin Activity audit logs Includes \"admin write\" operations that write metadata or configuration information."
+        ]
+      },
+      {
+        "title": "Networking \\_|\\_ Memorystore for Valkey \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/networking",
+        "source_id": "site-docs-root",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The page also describes the following information about networking: Networking setup guidance Supported networking architectures Frequently asked questions Note: Memorystore for Valkey also supports networking for multiple VPCs.",
+          "Communicate networking requirements If you're a Valkey Admin, then ask your Network Admin if a service connection policy exists for the region, network, and gcp-memorystore service class where you want to create your instance .",
+          "Role 2: Network Admin Your goal is to find out if a service connection policy is created for the network and if it's located in the region where the Valkey Admin wants to deploy a Memorystore for Valkey instance."
+        ]
+      },
+      {
+        "title": "Create instances \\_|\\_ Memorystore for Valkey \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "source_id": "site-docs-root",
+        "final_score": 203,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable the Memorystore for Valkey API Memorystore for Valkey Enable the Network Connectivity API Network Connectivity API Enable the Service Consumer Management API Service Consumer Management API Other prerequisites You must have one of these IAM roles in the Google Cloud project you're using: roles/memorystore.admin (the Memorystore Admin predefined IAM role) roles/owner (the Owner basic IAM role) roles/editor (the Editor basic IAM role) Set up networking Read the Networking page to determine if you need to set up a service connection policy.",
+          "Cloud KMS key : you want to manage the encryption of your data by using customer-managed encryption keys (CMEKs) in Cloud Key Management Service (Cloud KMS) with CMEK-integrated services, such as Memorystore for Valkey.",
+          "Cloud KMS key : you want to manage the encryption of your data by using customer-managed encryption keys (CMEKs) in Cloud Key Management Service (Cloud KMS) with CMEK-integrated services, such as Memorystore for Valkey."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "gcp.restrictCmekCryptoKeyProjects",
+      "gcp.restrictNonCmekServices",
+      "memorystore.admin",
+      "memorystore.googleapis.com",
+      "memorystore.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/editor",
+      "roles/memorystore.admin",
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/audit-logging",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/networking",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/audit-logging",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/networking",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/audit-logging",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/networking",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/audit-logging",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/networking",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/audit-logging",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/networking",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/audit-logging",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/networking",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/audit-logging",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/networking",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/audit-logging",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/networking",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/audit-logging",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/networking",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/audit-logging",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/networking",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/audit-logging",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/networking",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/audit-logging",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/networking",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/audit-logging",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/networking",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/audit-logging",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/networking",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/audit-logging",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/networking",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:26.694Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-valkey/card.json",
+  "product_name": "Memorystore for Valkey",
+  "product_slug": "memorystore-for-valkey"
+}

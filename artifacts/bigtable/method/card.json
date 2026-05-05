@@ -1,0 +1,90 @@
+{
+  "feature_name": "method",
+  "feature_slug": "method",
+  "summary": "Adds a Cloud Bigtable metric for CPU utilization by app profile, method, and table for finer-grained observability.",
+  "extended_definition": "Adds a Cloud Bigtable metric for CPU utilization by app profile, method, and table for finer-grained observability.",
+  "lifecycle": {
+    "latest_feature_date": "2021-10-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-descriptions",
+      "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-setup",
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Client-side metrics descriptions \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-descriptions",
+        "source_id": "site-docs-root-2",
+        "final_score": 119,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Supported Bigtable operations ReadRow ReadRows MutateRow MutateRows SampleRowKeys CheckAndMutateRow BulkReadRows BulkMutateRows Type Distribution Available dimensions project ID instance ID table cluster zone app profile ID method name final operation status streaming operation client name Client library support The following table shows the minimum client library versions required to use the operation latencies metric.",
+          "Supported Bigtable operations ReadRow ReadRows MutateRow MutateRows SampleRowKeys CheckAndMutateRow BulkReadRows BulkMutateRows Type Distribution Available dimensions project ID instance ID table cluster zone app profile ID method name attempt status streaming operation client name Client library support The following table shows the minimum client library versions required to use the attempt latencies metric.",
+          "Supported Bigtable operations ReadRow ReadRows MutateRow MutateRows SampleRowKeys CheckAndMutateRow BulkReadRows BulkMutateRows Type Distribution Available dimensions project ID instance ID table cluster zone app profile ID method name attempt status streaming operation client name Client library support The following table shows the minimum client library versions required to use the server latencies metric."
+        ]
+      },
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Bigtable Google Cloud console page comes with prebuilt dashboards for tracking throughput and utilization metrics at the instance, cluster, and table levels.",
+          "You can also use the application profile as a tag to segment metrics.",
+          "When comparing the two databases, you should understand how each database physically stores data differently in the following aspects: The data distribution strategy The number of cell versions available The storage disk type The data durability and replication mechanism Data distribution In Cassandra, a consistent hash of the primary key's partition columns is the recommended method of determining data distribution across the various SSTables served by cluster nodes."
+        ]
+      },
+      {
+        "title": "Set up client-side metrics \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-setup",
+        "source_id": "site-docs-reference-2",
+        "final_score": 103,
+        "relevance": "",
+        "evidence_snippets": [
+          "Your code should look similar to the following: BigtableDataSettings settings = BigtableDataSettings . newBuilder () . setProjectId ( \"our-project-2-12\" ) . setInstanceId ( \"our-instance-85\" ) . setAppProfileId ( \"our-appProfile-06\" ) . build (); BigtableDataSettings . enableBuiltinMetrics (); try ( BigtableDataClient client = BigtableDataClient . create ( settings )) { // Application logic } Set up a custom OpenTelemetry instance If you are using version 2.38.0 or later, and you want to publish client-side metrics to Cloud Monitoring and custom sinks, you can set up a custom OpenTelemetry instance.",
+          "Optional: To view metrics for individual app profiles, click Application Profiles .",
+          "Select a metric, a group by method, and status, and pick an Aggregator ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-descriptions",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-setup"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:24.978Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable"
+}

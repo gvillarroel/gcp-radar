@@ -1,0 +1,177 @@
+{
+  "feature_name": "JSON_FLATTEN",
+  "feature_slug": "json-flatten",
+  "summary": "JSON_FLATTEN extracts all non-array values from a JSON value, including values under consecutively nested arrays.",
+  "extended_definition": "JSON_FLATTEN extracts all non-array values from a JSON value, including values under consecutively nested arrays.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "JSON functions | BigQuery | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "source_id": "feature-recovery-http",
+        "final_score": 372,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON_FLATTEN ( json_expr ) Description Produces a new SQL ARRAY<JSON> value containing all non-array values that are either directly in the input JSON value or children of one or more consecutively nested arrays in the input JSON value.",
+          "JSON_FLATTEN Produces a new SQL ARRAY<JSON> value containing all non-array values that are either directly in the input JSON value or children of one or more consecutively nested arrays in the input JSON value.",
+          "SELECT JSON_FLATTEN ( JSON '1' ) AS json_flatten /*--------------+ | json_flatten | +--------------+ | [1] | +--------------*/ In the following example, an input array of values is flattened."
+        ]
+      },
+      {
+        "title": "Work with arrays \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/arrays",
+        "source_id": "site-docs-reference",
+        "final_score": 77,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example SELECT FROM UNNEST ( [ 'foo' , 'bar' , 'baz' , 'qux' , 'corge' , 'garply' , 'waldo' , 'fred' ] ) AS element WITH OFFSET AS offset ORDER BY offset ; / ----------+--------+ element offset +----------+--------+ foo 0 bar 1 baz 2 qux 3 corge 4 garply 5 waldo 6 fred 7 +----------+-------- / To flatten an entire column of type ARRAY while preserving the values of the other columns in each row, use a correlated INNER JOIN to join the table containing the ARRAY column to the UNNEST output of that ARRAY column.",
+          "You can also flatten ARRAY type fields of STRUCT values.",
+          "WITH Sequences AS ( SELECT 1 AS id , [ 0 , 1 , 1 , 2 , 3 , 5 ] AS some numbers UNION ALL SELECT 2 AS id , [ 2 , 4 , 8 , 16 , 32 ] AS some numbers UNION ALL SELECT 3 AS id , [ 5 , 10 ] AS some numbers ) SELECT id AS matching rows FROM Sequences WHERE 2 IN UNNEST ( Sequences . some numbers ) ORDER BY matching rows ; / ---------------+ matching rows +---------------+ 1 2 +--------------- / Scanning for values that satisfy a condition To scan an array for values that match a condition, use UNNEST to return a table of the elements in the array, use WHERE to filter the resulting table in a subquery, and use EXISTS to check if the filtered table contains any rows."
+        ]
+      },
+      {
+        "title": "\"Limit forecasted values for an ARIMA_PLUS time series model \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/arima-time-series-forecasting-with-limits-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "This option causes the model to only forecast values that are greater than 0, based on the values in the column specified by the time series data col argument, in this case num trips . #standardSQL CREATE OR REPLACE MODEL bqml tutorial . nyc citibike arima model OPTIONS ( model type = 'ARIMA PLUS' , time series timestamp col = 'date' , time series data col = 'num trips' , time series id col = 'start station id' , forecast limit lower bound = 0 ) AS SELECT EXTRACT ( DATE FROM starttime ) AS date , COUNT ( ) AS num trips , start station id FROM bigquery-public-data . new york . citibike trips WHERE starttime > '2014-07-11' AND starttime '2015-02-11' GROUP BY date , start station id ; Run the CREATE MODEL query to create and train your model: In the Google Cloud console, click the Compose new query button.",
+          "As this tutorial shows, the forecast limit lower bound and forecast limit upper bound options can help you get more meaningful forecasting values in similar scenarios to the one shown here, such as when forecasting stock prices or future sales numbers.",
+          "In the Query results pane, click the Visualization tab: The chart shows that the forecasted values for the daily total number of Citi Bike trips where start station id=79 are negative numbers, which isn't useful."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "organizations.locations.dataExchanges",
+      "projects.dataSources",
+      "projects.locations",
+      "projects.locations.capacityCommitments",
+      "projects.locations.connections",
+      "projects.locations.dataExchanges",
+      "projects.locations.dataExchanges.listings",
+      "projects.locations.dataExchanges.queryTemplates",
+      "projects.locations.dataPolicies",
+      "projects.locations.dataSources",
+      "projects.locations.reservationGroups",
+      "projects.locations.reservations",
+      "projects.locations.reservations.assignments",
+      "projects.locations.subscriptions",
+      "projects.locations.transferConfigs",
+      "projects.locations.transferConfigs.runs",
+      "projects.locations.transferConfigs.runs.transferLogs",
+      "projects.locations.transferConfigs.transferResources",
+      "projects.locations.workflows",
+      "projects.locations.workflows.subtasks",
+      "projects.transferConfigs",
+      "projects.transferConfigs.runs",
+      "projects.transferConfigs.runs.transferLogs",
+      "projects.transferConfigs.transferResources"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

@@ -1,0 +1,191 @@
+{
+  "feature_name": "Cloud Storage triggers",
+  "feature_slug": "cloud-storage-triggers",
+  "summary": "Eventarc supports Cloud Storage triggers in general availability; Eventarc supports Cloud Storage triggers in preview.",
+  "extended_definition": "Eventarc supports Cloud Storage triggers in general availability; Eventarc supports Cloud Storage triggers in preview.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform",
+      "https://docs.cloud.google.com/eventarc/docs/locations",
+      "https://docs.cloud.google.com/eventarc/docs/understand-locations",
+      "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Build a BigQuery processing pipeline for Knative serving with Eventarc \\_\\",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial",
+        "source_id": "site-iam-reference",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a service account called TRIGGER GSA : TRIGGER GSA = eventarc-bigquery-triggers gcloud iam service-accounts create $TRIGGER GSA Grant the pubsub.subscriber , monitoring.metricWriter , and eventarc.eventReceiver roles to the service account: PROJECT ID = $( gcloud config get-value project ) gcloud projects add-iam-policy-binding $PROJECT ID \\ --member \"serviceAccount: $TRIGGER GSA @ $PROJECT ID .iam.gserviceaccount.com\" \\ --role \"roles/pubsub.subscriber\" gcloud projects add-iam-policy-binding $PROJECT ID \\ --member \"serviceAccount: $TRIGGER GSA @ $PROJECT ID .iam.gserviceaccount.com\" \\ --role \"roles/monitoring.metricWriter\" gcloud projects add-iam-policy-binding $PROJECT ID \\ --member \"serviceAccount: $TRIGGER GSA @ $PROJECT ID .iam.gserviceaccount.com\" \\ --role \"roles/eventarc.eventReceiver\" Create a Cloud Storage bucket Create a Cloud Storage bucket to save the charts.",
+          "Create the trigger: gcloud eventarc triggers create trigger- ${ SERVICE NAME } -gke \\ --destination-gke-cluster = $CLUSTER NAME \\ --destination-gke-location = $CLUSTER LOCATION \\ --destination-gke-namespace = default \\ --destination-gke-service = $SERVICE NAME \\ --destination-gke-path = / \\ --event-filters = \"type=google.cloud.audit.log.v1.written\" \\ --event-filters = \"serviceName=storage.googleapis.com\" \\ --event-filters = \"methodName=storage.objects.create\" \\ --service-account = $TRIGGER GSA @ $PROJECT ID .iam.gserviceaccount.com This creates a trigger called trigger-notifier-gke .",
+          "Standard Preview — Eventarc for GKE destinations This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms ."
+        ]
+      },
+      {
+        "title": "\"Create a trigger using Terraform \\_|\\_ Eventarc Standard \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform",
+        "source_id": "site-docs-root",
+        "final_score": 205,
+        "relevance": "",
+        "evidence_snippets": [
+          "Verify the creation of resources Cloud Run Confirm that the service has been created: gcloud run services list --region us-central1 Confirm that the trigger has been created: gcloud eventarc triggers list --location us-central1 The output should be similar to the following: NAME: trigger-storage-cloudrun-tf TYPE: google.cloud.storage.object.v1.finalized DESTINATION: Cloud Run service: hello-events ACTIVE: Yes LOCATION: us-central1 GKE Confirm that the service has been created: kubectl get service hello-gke Confirm that the trigger has been created: gcloud eventarc triggers list --location us-central1 The output should be similar to the following: NAME: trigger-storage-gke-tf TYPE: google.cloud.storage.object.v1.finalized DESTINATION: GKE: hello-gke ACTIVE: Yes LOCATION: us-central1 Workflows Confirm that the workflow has been created: gcloud workflows list --location us-central1 Confirm that the Eventarc trigger has been created: gcloud eventarc triggers list --location us-central1 The output should be similar to the following: NAME: trigger-storage-workflows-tf TYPE: google.cloud.storage.object.v1.finalized DESTINATION: Workflows: storage-workflow-tf ACTIVE: Yes LOCATION: us-central1 Generate and view an event You can generate an event and confirm that the Eventarc trigger is working as expected.",
+          "Important: Because Eventarc Standard uses Pub/Sub as its transport layer, Cloud Storage triggers can fail if a Cloud Storage event originates from a region not permitted by your Pub/Sub message storage policy, and if in-transit operations are enforced ( \"enforceInTransit\": true ).",
+          "Cloud Run Cloud Storage bucket names must be globally unique resource \"random id\" \"bucket name suffix\" { byte length = 4 } Create a Cloud Storage bucket resource \"google storage bucket\" \"default\" { name = \"trigger-cloudrun-${data.google project.project.name}-${random id.bucket name suffix.hex}\" location = google cloud run v2 service.default.location force destroy = true uniform bucket level access = true } Grant the Cloud Storage service account permission to publish pub/sub topics data \"google storage project service account\" \"gcs account\" {} resource \"google project iam member\" \"pubsubpublisher\" { project = data.google project.project.id role = \"roles/pubsub.publisher\" member = \"serviceAccount:${data.google storage project service account.gcs account.email address}\" depends on = [ data.google storage project service account.gcs account ] } GKE Cloud Storage bucket names must be globally unique resource \"random id\" \"bucket name suffix\" { byte length = 4 } Create a Cloud Storage bucket resource \"google storage bucket\" \"default\" { name = \"trigger-gke-${data.google project.project.name}-${random id.bucket name suffix.hex}\" location = \"us-central1\" force destroy = true uniform bucket level access = true } Grant the Cloud Storage service account permission to publish pub/sub topics data \"google storage project service account\" \"gcs account\" {} resource \"google project iam member\" \"pubsubpublisher\" { project = data.google project.project.id role = \"roles/pubsub.publisher\" member = \"serviceAccount:${data.google storage project service account.gcs account.email address}\" } Workflows Cloud Storage bucket names must be globally unique resource \"random id\" \"bucket name suffix\" { byte length = 4 } Create a Cloud Storage bucket resource \"google storage bucket\" \"default\" { name = \"trigger-workflows-${data.google project.project.name}-${random id.bucket name suffix.hex}\" location = google workflows workflow.default.region force destroy = true uniform bucket level access = true } Grant the Cloud Storage service account permission to publish Pub/Sub topics data \"google storage project service account\" \"gcs account\" {} resource \"google project iam member\" \"pubsubpublisher\" { project = data.google project.project.id role = \"roles/pubsub.publisher\" member = \"serviceAccount:${data.google storage project service account.gcs account.email address}\" } Create an event receiver to be the event target Create an event receiver using one of the following Terraform resources: google cloud run v2 service google container cluster google workflows workflow Cloud Run Create a Cloud Run service as an event destination for the Eventarc trigger: Deploy Cloud Run service resource \"google cloud run v2 service\" \"default\" { name = \"hello-events\" location = \"us-central1\" deletion protection = false # set to \"true\" in production template { containers { This container will log received events image = \"us-docker.pkg.dev/cloudrun/container/hello\" } service account = google service account.default.email } depends on = [ google project service.run ] } GKE To simplify this guide, create a Google Kubernetes Engine service as an event destination outside of Terraform, in between applying Terraform configurations."
+        ]
+      },
+      {
+        "title": "\"Understand Eventarc locations \\_|\\_ Eventarc Standard \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/eventarc/docs/understand-locations",
+        "source_id": "site-docs-root-2",
+        "final_score": 199,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, to capture Cloud Storage events from a bucket in the europe-west1 region with an audit logs trigger, create a trigger in the same location: gcloud eventarc triggers create trigger-auditlog \\ --destination-run-service = hello \\ --destination-run-region = us-central1 \\ --location = europe-west1 \\ --event-filters = \"type=google.cloud.audit.log.v1.written\" \\ --event-filters = \"serviceName=storage.googleapis.com\" \\ --event-filters = \"methodName=storage.objects.create\" \\ --service-account = $PROJECT NUMBER -compute@developer.gserviceaccount.com As there's no filtering by bucket when you use a Cloud Audit Logs trigger, this will match all buckets in the europe-west1 region. (To filter by bucket, you can instead use a direct Cloud Storage trigger.) Or, to match a dual-region or multi-region bucket such as eu , you can create a trigger with a global location and this will match all buckets in all regions for which the event filters match: gcloud eventarc triggers create trigger-storage \\ --destination-run-service = hello \\ --destination-run-region = us-central1 \\ --location = global \\ --event-filters = \"type=google.cloud.storage.object.v1.finalized\" \\ --event-filters = \"bucket=my-bucket-in-europe-west1-region\" \\ --service-account = $PROJECT NUMBER -compute@developer.gserviceaccount.com Note: There is a known issue with Cloud Audit Logs triggers for Compute Engine that results in events originating from a single region: us-central1 .",
+          "In the following example, the trigger location matches that of the Cloud Storage bucket (the eu multi-region location): gcloud eventarc triggers create trigger-storage \\ --destination-run-service = hello \\ --destination-run-region = us-central1 \\ --location = eu \\ --event-filters = \"type=google.cloud.storage.object.v1.finalized\" \\ --event-filters = \"bucket=my-bucket-in-eu-multi-region\" \\ --service-account = $PROJECT NUMBER -compute@developer.gserviceaccount.com If the bucket and trigger regions don't match, you will see an error similar to the following: ERROR: ( gcloud.eventarc.triggers.create ) INVALID ARGUMENT: The request was invalid: Bucket \"my-bucket-in-eu-multi-region\" location \"eu\" does not match trigger location \"europe-west1\" .",
+          "In the following example, since the Cloud Storage bucket is in the europe-west1 region, the trigger must also be located in europe-west1 . gcloud eventarc triggers create trigger-storage \\ --destination-run-service = hello \\ --destination-run-region = us-central1 \\ --location = europe-west1 \\ --event-filters = \"type=google.cloud.storage.object.v1.finalized\" \\ --event-filters = \"bucket=my-bucket-in-europe-west1-region\" \\ --service-account = $PROJECT NUMBER -compute@developer.gserviceaccount.com Target location When deploying your event target (for example, a Cloud Run service), you choose a supported region as its location."
+        ]
+      },
+      {
+        "title": "Eventarc locations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/eventarc/docs/locations",
+        "source_id": "site-docs-root",
+        "final_score": 185,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported regions The supported regions for Eventarc Standard are as follows: Americas Europe Asia-Pacific Middle East Africa Cloud Storage triggers only Cloud Firestore triggers only Americas The following table lists the regions in North and South America where Eventarc is available.",
+          "Important: Because Eventarc Standard uses Pub/Sub as its transport layer, Cloud Storage triggers can fail if a Cloud Storage event originates from a region not permitted by your Pub/Sub message storage policy, and if in-transit operations are enforced ( \"enforceInTransit\": true ).",
+          "Important: Because Eventarc Standard uses Pub/Sub as its transport layer, Cloud Storage triggers can fail if a Cloud Storage event originates from a region not permitted by your Pub/Sub message storage policy, and if in-transit operations are enforced ( \"enforceInTransit\": true )."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.default.email",
+      "account.email",
+      "account.eventarc.email",
+      "account.gcs",
+      "data.google",
+      "developer.gserviceaccount.com",
+      "docker.pkg.dev",
+      "event.data.bucket",
+      "event.data.name",
+      "event.type",
+      "eventarc.eventReceiver",
+      "gcloud.eventarc.triggers.create",
+      "iam.gserviceaccount.com",
+      "id.bucket",
+      "monitoring.metricWriter",
+      "project.project.id",
+      "project.project.name",
+      "pubsub.publisher",
+      "pubsub.subscriber",
+      "service.default.location",
+      "service.run",
+      "service.workflows",
+      "storage.googleapis.com",
+      "storage.objects.create",
+      "suffix.hex",
+      "sys.log",
+      "workflow.default.region"
+    ],
+    "missing_inventory_roles": [
+      "roles/eventarc.eventReceiver",
+      "roles/monitoring.metricWriter",
+      "roles/pubsub.publisher",
+      "roles/pubsub.subscriber"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial",
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform",
+        "https://docs.cloud.google.com/eventarc/docs/understand-locations",
+        "https://docs.cloud.google.com/eventarc/docs/locations"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial",
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform",
+        "https://docs.cloud.google.com/eventarc/docs/understand-locations",
+        "https://docs.cloud.google.com/eventarc/docs/locations"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial",
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform",
+        "https://docs.cloud.google.com/eventarc/docs/understand-locations",
+        "https://docs.cloud.google.com/eventarc/docs/locations"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial",
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform",
+        "https://docs.cloud.google.com/eventarc/docs/understand-locations",
+        "https://docs.cloud.google.com/eventarc/docs/locations"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial",
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform",
+        "https://docs.cloud.google.com/eventarc/docs/understand-locations",
+        "https://docs.cloud.google.com/eventarc/docs/locations"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial",
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform",
+        "https://docs.cloud.google.com/eventarc/docs/understand-locations",
+        "https://docs.cloud.google.com/eventarc/docs/locations"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/big-query-tutorial",
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform",
+        "https://docs.cloud.google.com/eventarc/docs/understand-locations",
+        "https://docs.cloud.google.com/eventarc/docs/locations"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:04.948Z",
+  "source_step08_card": "data/step-08/current/products/eventarc/card.json",
+  "product_name": "Eventarc",
+  "product_slug": "eventarc"
+}

@@ -1,0 +1,170 @@
+{
+  "feature_name": "Filestore availability in southamerica-west1 region",
+  "feature_slug": "filestore-availability-in-southamerica-west1-region",
+  "summary": "Filestore is available in the southamerica-west1 region for Basic HDD and Basic SSD instances.",
+  "extended_definition": "Filestore is available in the southamerica-west1 region for Basic HDD and Basic SSD instances.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/filestore/docs/configure-instance-replication",
+      "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+      "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Get instance information \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "source_id": "site-docs-root",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Go to the Filestore instances page Click the instance ID to open the instance details page. gcloud Get information about a Filestore instance by running the instances describe command: gcloud filestore instances describe instance-id --project= project-id --location= location The response to the instances describe command is similar to the following: createTime: '2021-10-11T17:28:23.340943077Z' customPerformanceSupported: true fileShares: - capacityGb: '1024' name: vol1 kmsKeyName: projects/example-project/locations/us-central1/keyRings/example-ring/cryptoKeys/example-key labels: key:val name: projects/yourproject/locations/us-central1/instances/nfs-server networks: - ipAddresses: - 10.0.0.2 network: default reservedIpRange: 10.0.0.0/26 performanceConfig: iopsPerTb: maxIopsPerTb: '17000' performanceLimits: maxIops: '17000' maxReadIops: '17000' maxReadThroughputBps: '417792000' maxWriteIops: '5100' maxWriteThroughputBps: '139264000' state: READY tier: REGIONAL These fields represent the following values: createTime : The time the instance was created, in RFC 3339 format. fileShares : capacityGb : The size of the Filestore file share in binary gigabytes ( GB ), where 1 GB = 1024 3 bytes. name : The name of the Filestore file share.",
+          "INSTANCE NAME ZONE TIER CAPACITY GB FILE SHARE NAME IP ADDRESS STATE CREATE TIME nfs-loc europe-west1-b BASIC HDD 1024 nfs1 10.0.5.2 READY 2017-10-09T22:11:28 nfs3 us-central1-c BASIC HDD 1024 acme 10.0.6.2 READY 2017-11-06T09:37:18 Example The following command lists the Filestore instances in project myproject : gcloud filestore instances list --project=myproject REST API Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header.",
+          "List the mount points for an instance You can list all mount points where a Filestore instance is mounted by running: sudo showmount -a INSTANCE IP Example The following command lists all mount points for a Filestore instance with the IP address 10.77.67.226 : sudo showmount -a 10.77.67.226 The response looks similar to the following: All mount points on 10 .77.67.226: 10 .128.0.1:/fileshare 10 .128.0.2:/fileshare 10 .128.0.3:/fileshare Get the number of mount points for an instance You can get the total number of mount points for a Filestore instance by running: sudo showmount -a INSTANCE IP --no-headers wc -l Example The following command displays the number of mount points for an instance with the IP address 10.77.67.226 : sudo showmount -a 10.77.67.226 --no-headers wc -l What's next Create another instance ."
+        ]
+      },
+      {
+        "title": "Manage instance replication \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/configure-instance-replication",
+        "source_id": "site-docs-root-2",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following specifications must match the source instance: Service tier , including capacity range Filestore protocol For reduced risk of data loss, you are encouraged to choose a region and zone unique to the source.",
+          "Note: Instance replication is available for regional, zonal, and enterprise service tiers .",
+          "When successfully completed, the following response or similar is returned: createTime: '2025-12-22T14:03:33.727531128Z' customPerformanceSupported: true description: Replica of active, us-central1 fileShares: - capacityGb: '1024' name: share name: projects/genomics-project/locations/us-central1/instances/my-replica networks: - connectMode: DIRECT PEERING ipAddresses: - 10.229.150.130 modes: - MODE IPV4 network: default reservedIpRange: 10.229.150.128/26 performanceLimits: maxIops: '12000' maxReadIops: '12000' maxReadThroughputBps: '125829120' maxWriteIops: '4000' maxWriteThroughputBps: '104857600' protocol: NFS V3 replication: replicas: - peerInstance: projects/genomics-project/locations/us-central1/instances/my-source state: READY stateUpdateTime: '2025-12-22T14:24:27.558413891Z' role: STANDBY state: READY tier: REGIONAL REST API Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header."
+        ]
+      },
+      {
+        "title": "Monitoring instances and quota \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "source_id": "site-docs-root",
+        "final_score": 201,
+        "relevance": "",
+        "evidence_snippets": [
+          "Select an available metric to view: Metric Description Basic tiers Regional, zonal, and enterprise tiers Average read latency The average time a read operation takes (in milliseconds). ✓ Average write latency The average time a write operation takes (in milliseconds). ✓ Bytes written Number of bytes written. ✓ ✓ Bytes read Number of bytes read from persistent storage.",
+          "If the Filestore instance caches the data, some write operations are not reflected as disk writes. ✓ ✓ Metadata operations count Number of disk metadata operations. ✓ Free bytes Number of free disk bytes. ✓ ✓ Free disk space percent Percentage of free disk bytes. ✓ ✓ Free raw capacity percent Free raw capacity as a percentage of total space. ✓ Procedure call count Returns the same information as the nfsstat -s command. ✓ Snapshots used bytes The amount of space used for storing snapshots, measured in bytes. ✓ Time (in milliseconds) spent on read operations Time spent on disk reads. ✓ Time (in milliseconds) spent on write operations Time spent on disk writes. ✓ Used bytes Number of used disk bytes. ✓ ✓ Used space percent Percentage of used disk bytes. ✓ ✓ Memory-cached operations only occur in basic tier instances.",
+          "Add a Filestore metric chart to a Cloud Monitoring dashboard To see Filestore performance metrics in a Cloud Monitoring dashboard, follow these steps: In the Google Cloud console, go to the leaderboard Metrics explorer page: Go to Metrics explorer If you use the search bar to find this page, then select the result whose subheading is Monitoring ."
+        ]
+      },
+      {
+        "title": "\"Class CloudFilestoreManagerClient (1.89.0) \\_|\\_ Java client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerClient",
+        "source_id": "site-java-reference",
+        "final_score": 198,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: To customize credentials: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library CloudFilestoreManagerSettings cloudFilestoreManagerSettings = CloudFilestoreManagerSettings . newBuilder () . setCredentialsProvider ( FixedCredentialsProvider . create ( myCredentials )) . build (); CloudFilestoreManagerClient cloudFilestoreManagerClient = CloudFilestoreManagerClient . create ( cloudFilestoreManagerSettings ); To customize the endpoint: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library CloudFilestoreManagerSettings cloudFilestoreManagerSettings = CloudFilestoreManagerSettings . newBuilder (). setEndpoint ( myEndpoint ). build (); CloudFilestoreManagerClient cloudFilestoreManagerClient = CloudFilestoreManagerClient . create ( cloudFilestoreManagerSettings ); To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over the wire: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library CloudFilestoreManagerSettings cloudFilestoreManagerSettings = CloudFilestoreManagerSettings . newHttpJsonBuilder (). build (); CloudFilestoreManagerClient cloudFilestoreManagerClient = CloudFilestoreManagerClient . create ( cloudFilestoreManagerSettings ); Please refer to the GitHub repository's samples for more quickstart code snippets.",
+          "Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( CloudFilestoreManagerClient cloudFilestoreManagerClient = CloudFilestoreManagerClient . create ()) { ListSnapshotsRequest request = ListSnapshotsRequest . newBuilder () . setParent ( InstanceName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[INSTANCE]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . setOrderBy ( \"orderBy-1207110587\" ) . setFilter ( \"filter-1274492040\" ) . setReturnPartialSuccess ( true ) . build (); ApiFuture<Snapshot> future = cloudFilestoreManagerClient . listSnapshotsPagedCallable (). futureCall ( request ); // Do something. for ( Snapshot element : future . get (). iterateAll ()) { // doThingsWith(element); } } Returns Type Description UnaryCallable < ListSnapshotsRequest , ListSnapshotsPagedResponse > promoteReplicaAsync(PromoteReplicaRequest request) public final OperationFuture<Instance , OperationMetadata > promoteReplicaAsync ( PromoteReplicaRequest request ) Promote the standby instance (replica).",
+          "Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( CloudFilestoreManagerClient cloudFilestoreManagerClient = CloudFilestoreManagerClient . create ()) { ListInstancesRequest request = ListInstancesRequest . newBuilder () . setParent ( LocationName . of ( \"[PROJECT]\" , \"[LOCATION]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . setOrderBy ( \"orderBy-1207110587\" ) . setFilter ( \"filter-1274492040\" ) . build (); ApiFuture<Instance> future = cloudFilestoreManagerClient . listInstancesPagedCallable (). futureCall ( request ); // Do something. for ( Instance element : future . get (). iterateAll ()) { // doThingsWith(element); } } Returns Type Description UnaryCallable < ListInstancesRequest , ListInstancesPagedResponse > listSnapshots(InstanceName parent) public final CloudFilestoreManagerClient ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.filestore.v1.CloudFilestoreManagerClient",
+      "com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "https://docs.cloud.google.com/filestore/docs/configure-instance-replication",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "https://docs.cloud.google.com/filestore/docs/configure-instance-replication",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerClient"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "https://docs.cloud.google.com/filestore/docs/configure-instance-replication",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerClient"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "https://docs.cloud.google.com/filestore/docs/configure-instance-replication",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "https://docs.cloud.google.com/filestore/docs/configure-instance-replication",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerClient"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "https://docs.cloud.google.com/filestore/docs/configure-instance-replication",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "https://docs.cloud.google.com/filestore/docs/configure-instance-replication",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerClient"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/getting-instance-information",
+        "https://docs.cloud.google.com/filestore/docs/configure-instance-replication",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerClient"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:05.302Z",
+  "source_step08_card": "data/step-08/current/products/filestore/card.json",
+  "product_name": "Filestore",
+  "product_slug": "filestore"
+}

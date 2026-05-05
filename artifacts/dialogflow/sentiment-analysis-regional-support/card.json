@@ -1,0 +1,92 @@
+{
+  "feature_name": "Sentiment analysis regional support",
+  "feature_slug": "sentiment-analysis-regional-support",
+  "summary": "Dialogflow CX sentiment analysis is available in additional regions for several supported languages.",
+  "extended_definition": "Dialogflow CX sentiment analysis is available in additional regions for several supported languages.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/ConversationTurn",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Package com.google.cloud.dialogflow.v2 (4.94.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "source_id": "site-java-reference",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "Sentiment analysis inspects user input and identifies the prevailing subjective opinion, especially to determine a user's attitude as positive, negative, or neutral. com. google. cloud. dialogflow. v2.",
+          "Sentiment analysis inspects user input and identifies the prevailing subjective opinion, especially to determine a user's attitude as positive, negative, or neutral. com. google. cloud. dialogflow. v2.",
+          "See: https://cloud.google.com/natural-language/docs/basics#interpreting sentiment analysis values com. google. cloud. dialogflow. v2."
+        ]
+      },
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "source_id": "site-docs-root",
+        "final_score": 90,
+        "relevance": "",
+        "evidence_snippets": [
+          "It is available in all Dialogflow CX regions .",
+          "It is available in all Dialogflow CX regions .",
+          "Advanced settings Currently, the only advanced setting is for sentiment analysis ."
+        ]
+      },
+      {
+        "title": "ConversationTurn \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/ConversationTurn",
+        "source_id": "site-docs-reference",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"input\" : { object ( QueryInput ) } , \"injectedParameters\" : { object } , \"isWebhookEnabled\" : boolean , \"enableSentimentAnalysis\" : boolean } Fields input object ( QueryInput ) Supports text input , event input , dtmf input in the test case. injectedParameters object ( Struct format) Parameters that need to be injected into the conversation during intent detection. isWebhookEnabled boolean If webhooks should be allowed to trigger in response to the user utterance.",
+          "Often if parameters are injected, webhooks should not be enabled. enableSentimentAnalysis boolean Whether sentiment analysis is enabled.",
+          "In this case Dialogflow defaults to USE BEST AVAILABLE."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/ConversationTurn"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:58.946Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

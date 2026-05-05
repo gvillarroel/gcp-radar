@@ -1,0 +1,155 @@
+{
+  "feature_name": "Pub/Sub Lite reservations",
+  "feature_slug": "pub-sub-lite-reservations",
+  "summary": "Pub/Sub Lite reservations let you reserve and share throughput capacity among multiple topics in a region.",
+  "extended_definition": "Pub/Sub Lite reservations let you reserve and share throughput capacity among multiple topics in a region.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/lite/docs/migrate-pubsub-lite-to-pubsub",
+      "https://docs.cloud.google.com/pubsub/lite/docs/reservations",
+      "https://docs.cloud.google.com/pubsub/lite/docs/subscriptions",
+      "https://docs.cloud.google.com/pubsub/lite/docs/topics"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and manage Lite reservations \\_|\\_ Pub/Sub Lite \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/lite/docs/reservations",
+        "source_id": "site-docs-root",
+        "final_score": 368,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Reservation ; import java.util.List ; public class ListReservationsExample { public static void main ( String ... args ) throws Exception { // TODO(developer): Replace these variables before running the sample. long projectNumber = Long . parseLong ( \"123456789\" ); String cloudRegion = \"your-cloud-region\" ; listReservationsExample ( projectNumber , cloudRegion ); } public static void listReservationsExample ( long projectNumber , String cloudRegion ) throws Exception { AdminClientSettings adminClientSettings = AdminClientSettings . newBuilder (). setRegion ( CloudRegion . of ( cloudRegion )). build (); LocationPath locationPath = LocationPath . newBuilder () . setProject ( ProjectNumber . of ( projectNumber )) . setLocation ( CloudRegion . of ( cloudRegion )) . build (); try ( AdminClient adminClient = AdminClient . create ( adminClientSettings )) { List<Reservation> reservations = adminClient . listReservations ( locationPath ). get (); for ( Reservation reservation : reservations ) { System . out . println ( reservation . getAllFields ()); } System . out . println ( reservations . size () + \" reservation(s) listed in \" + locationPath + \".\" ); } } } Python Before running this sample, follow the Python setup instructions in Pub/Sub Lite Client Libraries . from google.cloud.pubsublite import AdminClient from google.cloud.pubsublite.types import LocationPath TODO(developer): project number = 1122334455 cloud region = \"us-central1\" location path = LocationPath ( project number , cloud region ) client = AdminClient ( cloud region ) response = client . list reservations ( location path ) for reservation in response : print ( reservation ) print ( f \" { len ( response ) } reservation(s) listed in your project and location.\" ) Delete a Lite reservation You can delete Lite reservations with the Google Cloud console, the Google Cloud CLI, or the Pub/Sub Lite API.",
+          "In the dialog that appears, click Delete to confirm that you want to delete the Lite reservation. gcloud To delete a Lite reservation, use the gcloud pubsub lite-reservations delete command: gcloud pubsub lite-reservations delete RESERVATION ID \\ --location = REGION Replace the following: RESERVATION ID : the ID of the Lite reservation REGION : the region of the reservation Go Before running this sample, follow the Go setup instructions in Pub/Sub Lite Client Libraries . import ( \"context\" \"fmt\" \"io\" \"cloud.google.com/go/pubsublite\" ) func deleteReservation ( w io .",
+          "Home Documentation Data analytics Pub/Sub Pub/Sub Lite Guides Send feedback Create and manage Lite reservations Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Migrate from Pub/Sub Lite to Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/lite/docs/migrate-pubsub-lite-to-pubsub",
+        "source_id": "site-docs-root",
+        "final_score": 364,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dual-subscribe to Pub/Sub Lite and Pub/Sub topics In a development environment, update your subscriber clients to read messages directly from Pub/Sub topics, using the appropriate Pub/Sub client library .",
+          "Home Documentation Data analytics Pub/Sub Pub/Sub Lite Guides Send feedback Migrate from Pub/Sub Lite to Pub/Sub Stay organized with collections Save and categorize content based on your preferences.",
+          "Key migration point If you want to replicate Pub/Sub Lite behavior in Pub/Sub (for example, low latency and high efficiency), implement your consumer clients using the StreamingPull API."
+        ]
+      },
+      {
+        "title": "Create and manage Lite topics \\_|\\_ Pub/Sub Lite \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/lite/docs/topics",
+        "source_id": "site-docs-root",
+        "final_score": 318,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "False if using a zonal location. // https://cloud.google.com/pubsub/lite/docs/topics boolean regional = true ; listTopicsExample ( cloudRegion , zoneId , projectNumber , regional ); } public static void listTopicsExample ( String cloudRegion , char zoneId , long projectNumber , boolean regional ) throws Exception { AdminClientSettings adminClientSettings = AdminClientSettings . newBuilder (). setRegion ( CloudRegion . of ( cloudRegion )). build (); CloudRegionOrZone location ; if ( regional ) { location = CloudRegionOrZone . of ( CloudRegion . of ( cloudRegion )); } else { location = CloudRegionOrZone . of ( CloudZone . of ( CloudRegion . of ( cloudRegion ), zoneId )); } LocationPath locationPath = LocationPath . newBuilder () . setProject ( ProjectNumber . of ( projectNumber )) . setLocation ( location ) . build (); try ( AdminClient adminClient = AdminClient . create ( adminClientSettings )) { List<Topic> topics = adminClient . listTopics ( locationPath ). get (); for ( Topic topic : topics ) { System . out . println ( topic . getAllFields ()); } System . out . println ( topics . size () + \" topic(s) listed.\" ); } } } Python Before running this sample, follow the Python setup instructions in Pub/Sub Lite Client Libraries . from google.cloud.pubsublite import AdminClient from google.cloud.pubsublite.types import CloudRegion , CloudZone , LocationPath TODO(developer): project number = 1122334455 cloud region = \"us-central1\" zone id = \"a\" regional = True location = None if regional : A region. location = CloudRegion ( cloud region ) else : A zone. location = CloudZone ( CloudRegion ( cloud region ), zone id ) location path = LocationPath ( project number , location ) client = AdminClient ( cloud region ) response = client . list topics ( location path ) for topic in response : print ( topic ) print ( f \" { len ( response ) } topic(s) listed in your project and location.\" ) Delete a Lite topic You can delete Lite topics with the Google Cloud console, the Google Cloud CLI, or the Pub/Sub Lite API.",
+          "Increase throughput capacity of a Lite topic If you don't use Lite reservations, you can set the throughput capacity of each partition of any zonal Lite topic to a value set by the following limits: Publish throughput between 4 and 16 MiBps Subscribe throughput between 4 and 32 MiBps These limits also apply to partitions associated with a Lite reservation.",
+          "If you do not use reservations for a zonal Lite topic, you must explicitly provision the publish and subscribe throughput capacity of the topic."
+        ]
+      },
+      {
+        "title": "\"Create and manage Lite subscriptions \\_|\\_ Pub/Sub Lite \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/lite/docs/subscriptions",
+        "source_id": "site-docs-root",
+        "final_score": 314,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "False if using a zonal location. // https://cloud.google.com/pubsub/lite/docs/topics boolean regional = false ; deleteSubscriptionExample ( cloudRegion , zoneId , projectNumber , subscriptionId , regional ); } public static void deleteSubscriptionExample ( String cloudRegion , char zoneId , long projectNumber , String subscriptionId , boolean regional ) throws Exception { CloudRegionOrZone location ; if ( regional ) { location = CloudRegionOrZone . of ( CloudRegion . of ( cloudRegion )); } else { location = CloudRegionOrZone . of ( CloudZone . of ( CloudRegion . of ( cloudRegion ), zoneId )); } SubscriptionPath subscriptionPath = SubscriptionPath . newBuilder () . setLocation ( location ) . setProject ( ProjectNumber . of ( projectNumber )) . setName ( SubscriptionName . of ( subscriptionId )) . build (); AdminClientSettings adminClientSettings = AdminClientSettings . newBuilder (). setRegion ( CloudRegion . of ( cloudRegion )). build (); try ( AdminClient adminClient = AdminClient . create ( adminClientSettings )) { adminClient . deleteSubscription ( subscriptionPath ). get (); System . out . println ( subscriptionPath + \" deleted successfully.\" ); } catch ( ExecutionException e ) { try { throw e . getCause (); } catch ( NotFoundException notFound ) { System . out . println ( \"This subscription is not found.\" ); } catch ( Throwable throwable ) { throwable . printStackTrace (); } } } } Python Before running this sample, follow the Python setup instructions in Pub/Sub Lite Client Libraries . from google.api core.exceptions import NotFound from google.cloud.pubsublite import AdminClient from google.cloud.pubsublite.types import CloudRegion , CloudZone , SubscriptionPath TODO(developer): project number = 1122334455 cloud region = \"us-central1\" zone id = \"a\" subscription id = \"your-subscription-id\" regional = True if regional : location = CloudRegion ( cloud region ) else : location = CloudZone ( CloudRegion ( cloud region ), zone id ) subscription path = SubscriptionPath ( project number , location , subscription id ) client = AdminClient ( cloud region ) try : client . delete subscription ( subscription path ) print ( f \" { subscription path } deleted successfully.\" ) except NotFound : print ( f \" { subscription path } not found.\" ) What's Next Create and manage a Lite topic .",
+          "In the dialog that appears, click Delete to confirm that you want to delete the Lite subscription. gcloud To delete a Lite subscription, use the gcloud pubsub lite-subscriptions delete command: Run the delete command: gcloud pubsub lite-subscriptions delete SUBSCRIPTION ID \\ --location = LOCATION Replace the following: SUBSCRIPTION ID : the ID of the Lite subscription LOCATION : the name of the location that the Lite subscription is in To confirm, type Y .",
+          "False if using a zonal location. // https://cloud.google.com/pubsub/lite/docs/topics boolean regional = false ; listSubscriptionsInTopicExample ( cloudRegion , zoneId , projectNumber , topicId , regional ); } public static void listSubscriptionsInTopicExample ( String cloudRegion , char zoneId , long projectNumber , String topicId , boolean regional ) throws Exception { CloudRegionOrZone location ; if ( regional ) { location = CloudRegionOrZone . of ( CloudRegion . of ( cloudRegion )); } else { location = CloudRegionOrZone . of ( CloudZone . of ( CloudRegion . of ( cloudRegion ), zoneId )); } TopicPath topicPath = TopicPath . newBuilder () . setProject ( ProjectNumber . of ( projectNumber )) . setLocation ( location ) . setName ( TopicName . of ( topicId )) . build (); AdminClientSettings adminClientSettings = AdminClientSettings . newBuilder (). setRegion ( CloudRegion . of ( cloudRegion )). build (); try ( AdminClient adminClient = AdminClient . create ( adminClientSettings )) { List<SubscriptionPath> subscriptionPaths = adminClient . listTopicSubscriptions ( topicPath ). get (); for ( SubscriptionPath subscription : subscriptionPaths ) { System . out . println ( subscription . toString ()); } if ( regional ) { System . out . println ( subscriptionPaths . size () + \" subscription(s) listed in the regional topic \" + topicPath ); } else { System . out . println ( subscriptionPaths . size () + \" subscription(s) listed in the zonal topic \" + topicPath ); } } } } Python Before running this sample, follow the Python setup instructions in Pub/Sub Lite Client Libraries . from google.cloud.pubsublite import AdminClient from google.cloud.pubsublite.types import CloudRegion , CloudZone , TopicPath TODO(developer): project number = 1122334455 cloud region = \"us-central1\" zone id = \"a\" topic id = \"your-topic-id\" regional = True if regional : location = CloudRegion ( cloud region ) else : location = CloudZone ( CloudRegion ( cloud region ), zone id ) topic path = TopicPath ( project number , location , topic id ) client = AdminClient ( cloud region ) response = client . list topic subscriptions ( topic path ) for subscription path in response : print ( subscription path ) print ( f \" { len ( response ) } subscription(s) listed in your topic.\" ) Delete a Lite subscription You can delete Lite subscriptions with the Google Cloud console, the Google Cloud CLI, or the Pub/Sub Lite API."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "admin.projects.locations.reservations",
+      "admin.projects.locations.reservations.delete",
+      "core.exceptions",
+      "java.util.concurrent.ExecutionException",
+      "java.util.List"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/lite/docs/reservations",
+        "https://docs.cloud.google.com/pubsub/lite/docs/migrate-pubsub-lite-to-pubsub",
+        "https://docs.cloud.google.com/pubsub/lite/docs/topics",
+        "https://docs.cloud.google.com/pubsub/lite/docs/subscriptions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/lite/docs/reservations",
+        "https://docs.cloud.google.com/pubsub/lite/docs/migrate-pubsub-lite-to-pubsub",
+        "https://docs.cloud.google.com/pubsub/lite/docs/topics",
+        "https://docs.cloud.google.com/pubsub/lite/docs/subscriptions"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/lite/docs/reservations",
+        "https://docs.cloud.google.com/pubsub/lite/docs/migrate-pubsub-lite-to-pubsub",
+        "https://docs.cloud.google.com/pubsub/lite/docs/topics",
+        "https://docs.cloud.google.com/pubsub/lite/docs/subscriptions"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/lite/docs/reservations",
+        "https://docs.cloud.google.com/pubsub/lite/docs/migrate-pubsub-lite-to-pubsub",
+        "https://docs.cloud.google.com/pubsub/lite/docs/topics",
+        "https://docs.cloud.google.com/pubsub/lite/docs/subscriptions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/lite/docs/reservations",
+        "https://docs.cloud.google.com/pubsub/lite/docs/migrate-pubsub-lite-to-pubsub",
+        "https://docs.cloud.google.com/pubsub/lite/docs/topics",
+        "https://docs.cloud.google.com/pubsub/lite/docs/subscriptions"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/lite/docs/reservations",
+        "https://docs.cloud.google.com/pubsub/lite/docs/migrate-pubsub-lite-to-pubsub",
+        "https://docs.cloud.google.com/pubsub/lite/docs/topics",
+        "https://docs.cloud.google.com/pubsub/lite/docs/subscriptions"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:33.091Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub-lite/card.json",
+  "product_name": "Pub/Sub Lite",
+  "product_slug": "pub-sub-lite"
+}

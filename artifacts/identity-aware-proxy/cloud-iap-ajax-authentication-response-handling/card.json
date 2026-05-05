@@ -1,0 +1,239 @@
+{
+  "feature_name": "Cloud IAP AJAX authentication response handling",
+  "feature_slug": "cloud-iap-ajax-authentication-response-handling",
+  "summary": "Cloud IAP returns HTTP 401 for AJAX requests with missing or expired credentials instead of serving a login page.",
+  "extended_definition": "Cloud IAP returns HTTP 401 for AJAX requests with missing or expired credentials instead of serving a login page.",
+  "lifecycle": {
+    "latest_feature_date": "2017-08-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iap/docs/authentication-howto",
+      "https://docs.cloud.google.com/iap/docs/customizing",
+      "https://docs.cloud.google.com/iap/docs/external-identity-sessions",
+      "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Managing sessions with external identities \\_|\\_ Identity-Aware Proxy \\_\\",
+        "url": "https://docs.cloud.google.com/iap/docs/external-identity-sessions",
+        "source_id": "site-docs-root",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To do this: Update your application code to handle the error. if ( response . status === 401 ) { statusElm . innerHTML = 'Login stale. <input type=\"button\" value=\"Refresh\" onclick=\"sessionRefreshClicked();\"/>' ; } Add a handler that opens a window to reauthenticate the user, then closes it when the process completes. var iapSessionRefreshWindow = null ; function sessionRefreshClicked () { if ( iapSessionRefreshWindow == null ) { iapSessionRefreshWindow = window . open ( \"/?gcp-iap-mode=DO SESSION REFRESH\" ); window . setTimeout ( checkSessionRefresh , 500 ); } return false ; } function checkSessionRefresh () { if ( iapSessionRefreshWindow != null && ! iapSessionRefreshWindow . closed ) { // Attempting to start a new session. // XMLHttpRequests is used by the server to identify AJAX requests fetch ( '/favicon.ico' , { method : \"GET\" , credentials : 'include' , headers : { 'X-Requested-With' : 'XMLHttpRequest' } . then (( response ) = > { // Checking if browser has a session for the requested app if ( response . status === 401 ) { // No new session detected.",
+          "If you're receiving a 302 status code instead of 401 in response to AJAX requests, add an X-Requested-With header with a value of XMLHttpRequest .",
+          "Programmatically handling HTTP 401 Programmatically handling HTTP 401 status codes is the recommended way to refresh an AJAX session."
+        ]
+      },
+      {
+        "title": "\"Programmatic authentication \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . using Google.Apis.Auth.OAuth2 ; using System.Net.Http ; using System.Net.Http.Headers ; using System.Threading ; using System.Threading.Tasks ; public class IAPClient { /// <summary> /// Makes a request to a IAP secured application by first obtaining /// an OIDC token. /// </summary> /// <param name=\"iapClientId\">The client ID observed on /// https://console.cloud.google.com/apis/credentials. </param> /// <param name=\"uri\">HTTP URI to fetch.</param> /// <param name=\"cancellationToken\">The token to propagate operation cancel notifications.</param> /// <returns>The HTTP response message.</returns> public async Task<HttpResponseMessage> InvokeRequestAsync ( string iapClientId , string uri , CancellationToken cancellationToken = default ) { // Get the OidcToken. // You only need to do this once in your application // as long as you can keep a reference to the returned OidcToken.",
+          "GetAsync ( uri , cancellationToken ); } /// <summary> /// Obtains an OIDC token for authentication an IAP request. /// </summary> /// <param name=\"iapClientId\">The client ID observed on /// https://console.cloud.google.com/apis/credentials. </param> /// <param name=\"cancellationToken\">The token to propagate operation cancel notifications.</param> /// <returns>The HTTP response message.</returns> public async Task<OidcToken> GetOidcTokenAsync ( string iapClientId , CancellationToken cancellationToken ) { // Obtain the application default credentials.",
+          "For more information, see Set up authentication for a local development environment . namespace Google\\Cloud\\Samples\\Iap; Imports Auth libraries and Guzzle HTTP libraries. use Google\\Auth\\ApplicationDefaultCredentials; use GuzzleHttp\\Client; use GuzzleHttp\\HandlerStack; / Make a request to an application protected by Identity-Aware Proxy. @param string $url The Identity-Aware Proxy-protected URL to fetch. @param string $clientId The client ID used by Identity-Aware Proxy. / function make iap request($url, $clientId) { // create middleware, using the client ID as the target audience for IAP $middleware = ApplicationDefaultCredentials::getIdTokenMiddleware($clientId); $stack = HandlerStack::create(); $stack->push($middleware); // create the HTTP client $client = new Client([ 'handler' => $stack, 'auth' => 'google auth' ]); // make the request $response = $client->get($url); print('Printing out response body:'); print($response->getBody()); } Python To authenticate to IAP, set up Application Default Credentials."
+        ]
+      },
+      {
+        "title": "Customize IAP \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/customizing",
+        "source_id": "site-docs-root",
+        "final_score": 172,
+        "relevance": "",
+        "evidence_snippets": [
+          "Customize IAP settings IAP provides the following customization settings: Field Description access settings.cors settings.allow http options Control HTTP OPTIONS (CORS preflight) access settings.oauth settings.login hint Simplify login for users of a G Suite domain application settings.access denied page settings.access denied page uri Show a custom error page when access is denied application settings.csm settings.rctoken aud Issue GKE Enterprise and Istio RCTokens access settings.gcip settings Authenticate with Identity Platform access settings.ReauthSettings Set a reauthentication policy.",
+          "See getIapSettings() and updateIapSettings() for more information: To get or set settings for a specific IAP resource type under a project: https://iap.googleapis.com/v1/projects/ PROJECT-ID /iap web/appengine- APP-ID /services/ SERVICE-ID /versions/ VERSION-ID :iapSettings To get or set settings for a project: https://iap.googleapis.com/v1/projects/ PROJECT-ID :iapSettings To get or set settings for a folder: https://iap.googleapis.com/v1/folders/ FOLDER-ID :iapSettings To get or set settings for an organization: https://iap.googleapis.com/v1/organizations/ ORGANIZATION-ID :iapSettings IAP settings roles and permissions This section describes the roles and permissions that are required to view and update IAP settings.",
+          "See the gcloud iap settings set topic for more information: gcloud iap settings set SETTING FILE --project = PROJECT-ID \\ --resource-type = RESOURCE-TYPE-NAME API To get and modify settings using the IAP API, make requests using either the GET or PATCH HTTP verbs to the selected resource endpoint in Google Cloud."
+        ]
+      },
+      {
+        "title": "IapSettings \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "source_id": "site-api-reference",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following functions are supported: filter <list>.filter(<iter var>, <predicate>) : Returns a subset of <list> where <predicate> is true for every item. in <var> in <list> : Returns true if <list> contains <var> . selectByName <list>.selectByName(<string>) : Returns the attribute in <list> with the given <string> name, otherwise returns empty. emitAs <attribute>.emitAs(<string>) : Sets the <attribute> name field to the given <string> for propagation in selected output credentials. strict <attribute>.strict() : Ignores the x-goog-iap-attr- prefix for the provided <attribute> when propagating with the HEADER output credential, such as request headers. append <target list>.append(<attribute>) OR <target list>.append(<list>) : Appends the provided <attribute> or <list> to the end of <target list> .",
+          "Enables redirect to primary IDP by skipping Google's login screen. https://developers.google.com/identity/protocols/OpenIDConnect#hd-param Note: IAP does not verify that the id token's hd claim matches this value since access behavior is managed by IAM policies. clientId string Optional.",
+          "JSON representation { \"allowHttpOptions\" : boolean } Fields allowHttpOptions boolean Configuration to allow HTTP OPTIONS calls to skip authentication and authorization."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.com",
+      "console.cloud.google.com",
+      "developers.google.com",
+      "favicon.ico",
+      "file.json",
+      "iap.googleapis.com",
+      "key.json",
+      "settings.access",
+      "settings.allow",
+      "settings.cors",
+      "settings.csm",
+      "settings.gcip",
+      "settings.login",
+      "settings.oauth",
+      "settings.rctoken",
+      "settings.ReauthSettings",
+      "token.sh"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/external-identity-sessions",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/external-identity-sessions",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/external-identity-sessions",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/external-identity-sessions",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/external-identity-sessions",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/external-identity-sessions",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/external-identity-sessions",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/external-identity-sessions",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/external-identity-sessions",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/external-identity-sessions",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/external-identity-sessions",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/external-identity-sessions",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/external-identity-sessions",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/external-identity-sessions",
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:22.305Z",
+  "source_step08_card": "data/step-08/current/products/identity-aware-proxy/card.json",
+  "product_name": "Identity-Aware Proxy",
+  "product_slug": "identity-aware-proxy"
+}

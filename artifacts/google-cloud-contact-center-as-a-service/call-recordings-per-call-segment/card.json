@@ -1,0 +1,98 @@
+{
+  "feature_name": "Call recordings per call segment",
+  "feature_slug": "call-recordings-per-call-segment",
+  "summary": "Call recordings can be saved as separate recordings for each call segment instead of a single recording for the whole call.",
+  "extended_definition": "Call recordings can be saved as separate recordings for each call segment instead of a single recording for the whole call.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Queue and menu setup \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup",
+        "source_id": "site-docs-reference",
+        "final_score": 152,
+        "relevance": "",
+        "evidence_snippets": [
+          "Recording separation Recording separation enables you to choose to receive separate call recordings for each call segment rather than all of them in a single file.",
+          "The ability to keep separate call records for each conversation segment allows for more flexible call analysis and, potentially, more efficient issue resolution.",
+          "With Secure Payments, callers are taken through a payment flow and call recording is automatically paused Call recordings are saved as .mp3 files unless otherwise requested."
+        ]
+      },
+      {
+        "title": "\"Call settings \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "The phone number is now saved and will be used as the outbound number for calls from this queue and will show in the queue set up page next to each assigned queue.",
+          "When enabled, configure the TSS or upload a custom greeting in Settings > Languages & Messages Overcapacity deflection callback option - Request Already Placed message. - Limit consumer to 1 callback request per queue: a consumer could leave a separate callback request on a different queue than the first request. - Limit consumer to 1 callback request across all queues.",
+          "Overcapacity Deflection When enabled, the \"Overcapacity Deflection\" and \"Overcapacity Deflection Options\" messages will play, as well as specific recordings for options like \"Overcapacity Deflection Callback Option.\" When you add or remove options, be sure to update the message that lists the options callers have, otherwise, callers won't know the new options exist."
+        ]
+      },
+      {
+        "title": "\"Salesforce integration guide \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "Call and chat routing User segment DAP : CCAI Platform will search for a contact using phone number (IVR) or email address (Mobile) or custom field (Mobile) from Salesforce to match settings in the queue and directly route call or chat to the queue.",
+          "This includes: Call recordings Chat history Mobile SDK based diagnostic package Media files sent by end users UI examples File List UI - sample for session file list for call recording File Detail UI - for example, image upload by the consumer.",
+          "Do not enable this option if your compliance regulations/standards require all call recordings to be accessed because CCAI Platform will not be able to retrieve call recordings of calls where a case is not created."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Queue_and_Menu_Setup",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:12.756Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service"
+}

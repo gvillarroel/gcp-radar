@@ -1,0 +1,168 @@
+{
+  "feature_name": "ComputeTargetHTTPProxy HTTP keep-alive timeout",
+  "feature_slug": "computetargethttpproxy-http-keep-alive-timeout",
+  "summary": "Config Connector supports configuring HTTP keep-alive timeout on ComputeTargetHTTPProxy resources.",
+  "extended_definition": "Config Connector supports configuring HTTP keep-alive timeout on ComputeTargetHTTPProxy resources.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+      "https://docs.cloud.google.com/config-connector/docs/overview",
+      "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "source_id": "site-docs-reference",
+        "final_score": 29,
+        "relevance": "",
+        "evidence_snippets": [
+          "Pick a version from the list that meets the requirements . failed calling webhook Symptom You cannot uninstall Config Connector and receive an error similar to the following: error during reconciliation: error building deployment objects: error finalizing the deletion of Config Connector system components deployed by ConfigConnector controller: error waiting for CRDs to be deleted: error deleting CRD accesscontextmanageraccesslevels.accesscontextmanager.cnrm.cloud.google.com: Internal error occurred: failed calling webhook \"abandon-on-uninstall.cnrm.cloud.google.com\" : failed to call webhook: Post \"https://abandon-on-uninstall.cnrm-system.svc:443/abandon-on-uninstall?timeout=3s\" : service \"abandon-on-uninstall\" not found Cause This issue can occur when using the Config Connector add-on and disabling Config Connector before removing the Config Connector CRDs .",
+          "Compute Engine metadata not defined Symptom Your Config Connector resource has an UpdateFailed status with a message stating that the Compute Engine metadata is not defined, similar to the following error: Update call failed: error fetching live state: error reading underlying resource: summary: Error when reading or editing SpannerInstance \"my-project/my-spanner- instance\": Get \"https://spanner.googleapis.com/v1/projects/my-project/instances/my-spanner-instance?alt=json\": metadata: Compute Engine metadata \"instance/service-accounts/default/token? scopes=https%!A(MISSING)%!F(MISSING)%!F(MISSING)www.googleapis.com%!F(MISSING)auth%!F(MISSING)compute%!C(MISSING)https%!A(MISSING)%!F(MISSING)%!F(MISSING)www.googleapis.com%!F(MISSIN G)auth%!F(MISSING)cloud-platform%!C(MISSING)https%!A(MISSING)%!F(MISSING)%!F(MISSING)www.googleapis.com%!F(MISSING)auth%!F(MISSING)cloud-identity%!C(MISSING)https%!A(MISSING)%!F(MISS ING)%!F(MISSING)www.googleapis.com%!F(MISSING)auth%!F(MISSING)ndev.clouddns.readwrite%!C(MISSING)https%!A(MISSING)%!F(MISSING)%!F(MISSING)www.googleapis.com%!F(MISSING)auth%!F(MISSIN G)devstorage.full control%!C(MISSING)https%!A(MISSING)%!F(MISSING)%!F(MISSING)www.googleapis.com%!F(MISSING)auth%!F(MISSING)userinfo.email%!C(MISSING)https%!A(MISSING)%!F(MISSING)%!F (MISSING)www.googleapis.com%!F(MISSING)auth%!F(MISSING)drive.readonly\" not defined, detail: Cause It is likely that the IAM service account used by Config Connector does not exist.",
+          "Type of issue Common issues Reconciliation Resource keeps updating every 5-15 mins Resource has no status KNV2005: syncer excessively updating resource Resource deleted by Config Connector Controller Pod OOMKilled Deletion Deletions of namespaces stuck at Terminating Deletions of resources stuck at DeleteFailed after project was deleted Permissions Compute Engine Metadata not defined Error 403: Request had insufficient authentication scopes 403 Forbidden: The caller does not have permission Error 403: Caller is missing IAM permission Update error with IAMPolicy, IAMPartialPolicy and IAMPolicyMember Installation and upgrades Version not supported in Config Connector add-on installations failed calling webhook PodSecurityPolicy prevents upgrades Configuration Cannot make changes to immutable fields No matches for kind \"Foo\" Labels are not propagated to the Google Cloud resource Error due to special characters in resource name Unable to remove fields from resource spec Reconciliation The following section lists common issues related to reconciliation of resources by Config Connector."
+        ]
+      },
+      {
+        "title": "Configure webhook timeout \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+        "source_id": "site-docs-reference",
+        "final_score": 23,
+        "relevance": "",
+        "evidence_snippets": [
+          "Configure timeout for validating webhooks You can configure the following validating webhooks: deny-immutable-field-updates.cnrm.cloud.google.com deny-unknown-fields.cnrm.cloud.google.com iam-validation.cnrm.cloud.google.com resource-validation.cnrm.cloud.google.com abandon-on-uninstall.cnrm.cloud.google.com For example, you can configure the timeout of validating webhooks deny-immutable-field-updates.cnrm.cloud.google.com and deny-unknown-fields.cnrm.cloud.google.com by creating and applying the following example YAML file.",
+          "Create a file named configure-validating-webhook-timeout.yaml and copy the following YAML into it: apiVersion : customize.core.cnrm.cloud.google.com/v1beta1 kind : ValidatingWebhookConfigurationCustomization metadata : name : validating-webhook spec : webhooks : - name : deny-immutable-field-updates timeoutSeconds : 12 - name : deny-unknown-fields timeoutSeconds : 15 Note: when specifying the name of webhook configuration and the names of webhooks in the YAML file, don't include the .cnrm.cloud.google.com suffix.",
+          "Verify that the new custom timeout has been applied to the target webhooks: kubectl get validatingwebhookconfigurations validating-webhook.cnrm.cloud.google.com -o jsonpath='{.webhooks[?(@.name==\"deny-immutable-field-updates.cnrm.cloud.google.com\")].timeoutSeconds}{\"\\n\"}' kubectl get validatingwebhookconfigurations validating-webhook.cnrm.cloud.google.com -o jsonpath='{.webhooks[?(@.name==\"deny-unknown-fields.cnrm.cloud.google.com\")].timeoutSeconds}{\"\\n\"}' Applying the customization could take a few minutes."
+        ]
+      },
+      {
+        "title": "Config Connector overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 22,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accesscontextmanageraccesslevels.accesscontextmanager.cnrm.cloud.google.com",
+      "cnrm.cloud.google.com",
+      "customize.core.cnrm.cloud.google.com",
+      "devstorage.full",
+      "drive.readonly",
+      "fields.cnrm.cloud.google.com",
+      "ndev.clouddns.readwrite",
+      "spanner.googleapis.com",
+      "system.svc",
+      "timeout.yaml",
+      "uninstall.cnrm",
+      "uninstall.cnrm.cloud.google.com",
+      "updates.cnrm.cloud.google.com",
+      "userinfo.email",
+      "validation.cnrm.cloud.google.com",
+      "webhook.cnrm.cloud.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+        "https://docs.cloud.google.com/config-connector/docs/overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+        "https://docs.cloud.google.com/config-connector/docs/overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+        "https://docs.cloud.google.com/config-connector/docs/overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+        "https://docs.cloud.google.com/config-connector/docs/overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+        "https://docs.cloud.google.com/config-connector/docs/overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+        "https://docs.cloud.google.com/config-connector/docs/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+        "https://docs.cloud.google.com/config-connector/docs/overview"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+        "https://docs.cloud.google.com/config-connector/docs/overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:47.576Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector"
+}

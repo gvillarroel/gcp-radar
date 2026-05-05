@@ -1,0 +1,156 @@
+{
+  "feature_name": "Authorization policies for Application Load Balancers",
+  "feature_slug": "authorization-policies-for-application-load-balancers",
+  "summary": "Application Load Balancers support authorization policies to enforce access control checks on incoming traffic; Application Load Balancers support authorization policies to enforce access control checks on incoming traffic.",
+  "extended_definition": "Application Load Balancers support authorization policies to enforce access control checks on incoming traffic; Application Load Balancers support authorization policies to enforce access control checks on incoming traffic.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/auth-policy/auth-policy-overview",
+      "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+      "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Set up authorization policies for Application Load Balancers \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 291,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following example command imports the previously created policy file and creates an authorization policy in the LOCATION region: gcloud network-security authz-policies import my-authz-policy-allow \\ --source=authz-policy-allow.yaml \\ --location= LOCATION Authorization policy based on service accounts or tags You can apply authorization policies based on service accounts or tags only on internal Application Load Balancers.",
+          "Create and attach service accounts or tags to Google Cloud VMs For internal Application Load Balancers, you can apply authorization policies based on service accounts or tags attached to different Google Cloud resources .",
+          "Home Documentation Networking Load Balancing Guides Send feedback Set up authorization policies for Application Load Balancers Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Authorization policy overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/auth-policy/auth-policy-overview",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Authorization policies let you establish access control checks for incoming traffic to Application Load Balancers.",
+          "The following Application Load Balancers support authorization policies: Global external Application Load Balancers Regional external Application Load Balancers Regional internal Application Load Balancers Cross-region internal Application Load Balancers In Application Load Balancers, authorization policies are invoked after evaluating route extensions, network security policies (evaluated by Google Cloud Armor), cross-origin resource sharing (CORS) policies and Identity-Aware Proxy (IAP) policies, but before executing traffic management actions.",
+          "What's next Set up authorization policies for Application Load Balancers Delegate authorization to IAP and IAM Configure an authorization extension Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Internal Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "source_id": "site-docs-root",
+        "final_score": 187,
+        "relevance": "",
+        "evidence_snippets": [
+          "For cross-region internal Application Load Balancers You can set up a cross-region internal Application Load Balancer in multiple regions to get the following benefits: If the cross-region internal Application Load Balancer in a region fails, the DNS routing policies route traffic to a cross-region internal Application Load Balancer in another region.",
+          "Accessing connected networks Your clients can access an internal Application Load Balancer in your VPC network from a connected network by using the following: VPC Network Peering Cloud VPN and Cloud Interconnect For detailed examples, see Internal Application Load Balancers and connected networks .",
+          "H2C support is also available for load balancers created using the GKE Gateway controller and Cloud Service Mesh, but isn't supported for classic Application Load Balancers. gRPC support gRPC is an open-source framework for remote procedure calls."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "allow.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/auth-policy-overview",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/auth-policy-overview",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/auth-policy-overview",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/auth-policy-overview",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/auth-policy-overview",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/auth-policy-overview",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/auth-policy-overview",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/auth-policy-overview",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/auth-policy-overview",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:31.148Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing"
+}

@@ -1,0 +1,145 @@
+{
+  "feature_name": "Secret Manager - Access task",
+  "feature_slug": "secret-manager-access-task",
+  "summary": "The Secret Manager - Access task enables integrations to retrieve secret versions from Cloud Secret Manager.",
+  "extended_definition": "The Secret Manager - Access task enables integrations to retrieve secret versions from Cloud Secret Manager.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-integration/docs/api-fulfilment",
+      "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order",
+      "https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Insert data into BigQuery using a For Each Parallel task \\_|\\_ Application\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task",
+        "source_id": "site-docs-root",
+        "final_score": 160,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Do the following in your Google Cloud project: Grant the following roles to the service account that you want to use to create the connection: roles/bigquery.dataEditor roles/bigquery.readSessionUser roles/secretmanager.viewer roles/secretmanager.secretAccessor Enable the following services: secretmanager.googleapis.com (Secret Manager API) connectors.googleapis.com (Connectors API) If these services have not been enabled for your project previously, you are prompted to enable them when creating the connection in the Create Connection page.",
+          "To select three random entries from the sample dataset and store them in a way that you can pass them to the integration, enter the following commands in your Cloud Shell terminal: AUTH=$(gcloud auth print-access-token) export SAMPLE DOCS=$(jq $(r=$((RANDOM % 1000)) ; echo \".[$r:$((r + 3))]\") < bq-sample-dataset.json jq -Rs '.') generate post data() { cat <<EOF { \"triggerId\": \"api trigger/process-records API 1\", \"inputParameters\": { \"records\": { \"jsonValue\": $SAMPLE DOCS } } } EOF } To start the testing, enter the following command in your Cloud Shell terminal: curl -X POST \\ https://integrations.googleapis.com/v1/projects/ project id /locations/ region /integrations/process-records:execute \\ -H \"Authorization: Bearer $AUTH\" \\ -H \"Content-Type: application/json\" \\ -d \"$(generate post data)\" In this command, replace: project id with the project ID of your Google Cloud project. region with the region where you created your integration.",
+          "In this tutorial, you'll complete the following tasks: Set up a BigQuery connection Set up a sub-integration Set up the main integration Test your integration Before you begin Ensure that you have access to Application Integration."
+        ]
+      },
+      {
+        "title": "\"API request fulfilment \\_|\\_ Application Integration \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/api-fulfilment",
+        "source_id": "site-docs-root",
+        "final_score": 154,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Grant the following roles to the service account: Secret Manager Viewer ( roles/secretmanager.viewer ), Secret Manager Secret Accessor ( roles/secretmanager ) .",
+          "Grant the following roles to the service account: Secret Manager Viewer ( roles/secretmanager.viewer ), Secret Manager Secret Accessor ( roles/secretmanager ) .",
+          "Costs In this tutorial, you use the following billable components of Google Cloud: Application Integration Integration Connectors Secret Manager The instructions in this tutorial are designed to keep your resource usage within the limits of Google Cloud's Always Free tier ."
+        ]
+      },
+      {
+        "title": "\"Automate Salesforce opportunity to BigQuery order \\_|\\_ Application Integration\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order",
+        "source_id": "site-docs-root",
+        "final_score": 148,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Grant the following roles to the service account: BigQuery Data Editor ( roles/bigquery.dataEditor ), BigQuery Read Session User ( roles/bigquery.readSessionUser ), Secret Manager Viewer ( roles/secretmanager.viewer ), Secret Manager Secret Accessor ( roles/secretmanager ) .",
+          "Grant the following roles to the service account: BigQuery Data Editor ( roles/bigquery.dataEditor ), BigQuery Read Session User ( roles/bigquery.readSessionUser ), Secret Manager Viewer ( roles/secretmanager.viewer ), Secret Manager Secret Accessor ( roles/secretmanager ) .",
+          "Costs In this tutorial, you use the following billable components of Google Cloud: Application Integration Integration Connectors BigQuery Secret Manager The instructions in this tutorial are designed to keep your resource usage within the limits of Google Cloud's Always Free tier ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.dataEditor",
+      "bigquery.readSessionUser",
+      "connectors.googleapis.com",
+      "dataset.json",
+      "integrations.googleapis.com",
+      "secretmanager.googleapis.com",
+      "secretmanager.secretAccessor",
+      "secretmanager.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.readSessionUser",
+      "roles/secretmanager",
+      "roles/secretmanager.secretAccessor",
+      "roles/secretmanager.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task",
+        "https://docs.cloud.google.com/application-integration/docs/api-fulfilment",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task",
+        "https://docs.cloud.google.com/application-integration/docs/api-fulfilment",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task",
+        "https://docs.cloud.google.com/application-integration/docs/api-fulfilment",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task",
+        "https://docs.cloud.google.com/application-integration/docs/api-fulfilment",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task",
+        "https://docs.cloud.google.com/application-integration/docs/api-fulfilment",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task",
+        "https://docs.cloud.google.com/application-integration/docs/api-fulfilment",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:14.803Z",
+  "source_step08_card": "data/step-08/current/products/application-integration/card.json",
+  "product_name": "Application Integration",
+  "product_slug": "application-integration"
+}

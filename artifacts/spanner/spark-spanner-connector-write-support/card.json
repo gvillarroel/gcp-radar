@@ -1,0 +1,133 @@
+{
+  "feature_name": "Spark Spanner connector write support",
+  "feature_slug": "spark-spanner-connector-write-support",
+  "summary": "The Spark Spanner connector added support for writing Spark DataFrames to Spanner tables using the Spark data source API.",
+  "extended_definition": "The Spark Spanner connector added support for writing Spark DataFrames to Spanner tables using the Spark data source API.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/batch-write",
+      "https://docs.cloud.google.com/spanner/docs/change-streams",
+      "https://docs.cloud.google.com/spanner/docs/change-streams/manage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create and manage change streams \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "source_id": "site-docs-root",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "Watch specific tables To limit a change stream's scope to specific tables, rather than an entire database, specify a list of one or more tables: CREATE CHANGE STREAM SingerAlbumStream FOR Singers , Albums ; Spanner automatically updates change streams that watch whole tables to reflect any schema changes affecting those tables, such as added or dropped columns.",
+          "Using a separate metadata database eliminates complexities that might arise from allowing the connector to write directly to your application database: By separating the metadata database from the production database with the change stream, the connector needs only read permissions to the production database.",
+          "By restricting the traffic of the connector to a separate metadata database, writes performed by the connector itself are not included in the production change streams."
+        ]
+      },
+      {
+        "title": "Modify data using batch write \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/batch-write",
+        "source_id": "site-docs-root",
+        "final_score": 101,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Build (), }, }); for ( auto & commit result : commit results ) { if ( ! commit result ) throw std :: move ( commit result ). status (); std :: cout << \"Mutation group indexes [\" ; for ( auto index : commit result - > indexes ) std :: cout << \" \" << index ; std :: cout << \" ]: \" ; if ( commit result - > commit timestamp ) { auto const & ts = commit result - > commit timestamp ; std :: cout << \"Committed at \" << ts . get<absl :: Time > (). value (); } else { std :: cout << commit result - > commit timestamp . status (); } std :: cout << \" \\n \" ; } C# // Copyright 2026 Google LLC // // Licensed under the Apache License, Version 2.0 (the \"License\"); // you may not use this file except in compliance with the License. // You may obtain a copy of the License at // // http://www.apache.org/licenses/LICENSE-2.0 // // Unless required by applicable law or agreed to in writing, software // distributed under the License is distributed on an \"AS IS\" BASIS, // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. // See the License for the specific language governing permissions and // limitations under the License. using Google.Cloud.Spanner.Data ; using Google.Rpc ; using Google.Cloud.Spanner.V1 ; using Google.Protobuf.WellKnownTypes ; using System ; using System.Collections.Generic ; using System.Threading.Tasks ; public class BatchWriteAtLeastOnceAsyncSample { public async Task BatchWriteAtLeastOnceAsync ( string projectId , string instanceId , string databaseId ) { string connectionString = $\"Data Source=projects/{projectId}/instances/{instanceId}/databases/{databaseId}\" ; using var connection = new SpannerConnection ( connectionString ); await connection .",
+          "WriteLine ( $\"Error executing batch write: {ex.Message}\" ); throw ; } } } Go import ( \"context\" \"fmt\" \"io\" \"cloud.google.com/go/spanner\" sppb \"cloud.google.com/go/spanner/apiv1/spannerpb\" \"google.golang.org/grpc/status\" ) // batchWrite demonstrates writing mutations to a Spanner database through // BatchWrite API - https://pkg.go.dev/cloud.google.com/go/spanner#Client.BatchWrite func batchWrite ( w io .",
+          "You should group the following mutation types together when using batch write: Inserting rows with the same primary key prefix in both the parent and child tables."
+        ]
+      },
+      {
+        "title": "Change streams overview \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "source_id": "site-docs-root",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "They implicitly watch every column in every table, automatically watching any tables or columns added after the change stream's creation, and ceasing to watch any tables or columns dropped.",
+          "If using the SpannerIO connector, then the owner of the Dataflow job that reads change stream data requires additional Identity and Access Management (IAM) permissions, either on your application database or on a separate metadata database; see Create a metadata database .",
+          "Explicitly watching tables and columns If you configure a change stream to watch only particular columns in a table, and you later add columns to that table, the change stream will not begin to watch those columns unless you reconfigure that change stream to do so."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ex.Message",
+      "pkg.go.dev"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "https://docs.cloud.google.com/spanner/docs/batch-write",
+        "https://docs.cloud.google.com/spanner/docs/change-streams"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "https://docs.cloud.google.com/spanner/docs/batch-write",
+        "https://docs.cloud.google.com/spanner/docs/change-streams"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "https://docs.cloud.google.com/spanner/docs/batch-write",
+        "https://docs.cloud.google.com/spanner/docs/change-streams"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "https://docs.cloud.google.com/spanner/docs/batch-write",
+        "https://docs.cloud.google.com/spanner/docs/change-streams"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "https://docs.cloud.google.com/spanner/docs/batch-write",
+        "https://docs.cloud.google.com/spanner/docs/change-streams"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "https://docs.cloud.google.com/spanner/docs/batch-write",
+        "https://docs.cloud.google.com/spanner/docs/change-streams"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:07:37.939Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

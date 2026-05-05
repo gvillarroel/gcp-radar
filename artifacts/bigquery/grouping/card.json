@@ -1,0 +1,90 @@
+{
+  "feature_name": "GROUPING",
+  "feature_slug": "grouping",
+  "summary": "The GROUPING function indicates whether a groupable value in the GROUP BY clause is aggregated.",
+  "extended_definition": "The GROUPING function indicates whether a groupable value in the GROUP BY clause is aggregated.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/string_functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Comparison Shopping Services Center table schema \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/css-center-products-schema",
+        "source_id": "site-api-reference",
+        "final_score": 76,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Field name Type Description CSS ID INTEGER CSS ID Merchant ID INTEGER Merchant account ID who owns the offer Product ID STRING A unique identifier of the item Feed label STRING The feed label for the item, or \"-\" if not provided Language code STRING The two-letter ISO 639-1 language code for the item Channel STRING The item's channel, either online or local Title STRING Title of the item Brand STRING Brand of the item Category l{1-5} INTEGER Google Product Category of the item Product type l{1-5} STRING Product type of the item Price RECORD Full price of the item, prior to any discounts Value INTEGER Price value of the item Currency STRING The currency of the price Sale Price RECORD Sale price of the item, if applicable Value INTEGER Sale price value of the item Currency STRING The currency of the sale price Condition STRING Condition or state of the item Availability STRING Availability status of the item Shipping label STRING The shipping label specified in the feed Gtin STRING Global Trade Item Number (GTIN) of the item Item group ID STRING Shared identifier for all variants of the same product Creation time INTEGER The time this item was created by the provider as timestamp microseconds Expiration date DATE Date on which the item should expire, as specified upon insertion Aggregated reporting context status STRING The status of the product aggregated for all reporting contexts.",
+          "Its values can be AGGREGATED ISSUE SEVERITY UNSPECIFIED , DISAPPROVED , DEMOTED , or PENDING Resolution STRING Whether the issue can be resolved by the merchant Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The supported values are ELIGIBLE , ELIGIBLE LIMITED , PENDING , NOT ELIGIBLE OR DISAPPROVED , AGGREGATED STATUS UNSPECIFIED Reporting context statuses RECORD , REPEATED The status of the product in each reporting context and region Reporting context STRING Reporting context Region and status RECORD , REPEATED Status per region Region STRING Region code represented in ISO 3166 format Status STRING Status of the product in the region, can be ELIGIBLE , PENDING , or DISAPPROVED Item issues RECORD , REPEATED The list of item level issues associated with the product Type RECORD Issue type Code STRING The error code of the issue, equivalent to the code of Product issues Canonical attribute STRING Canonical attribute name for attribute-specific issues Severity RECORD How this issue affects serving of the offer Severity per reporting context RECORD , REPEATED Issue severity per reporting context Reporting context STRING Reporting context the issue applies to Disapproved regions STRING , REPEATED List of disapproved regions in the reporting context, represented in ISO 3166 format Demoted regions STRING , REPEATED List of demoted regions in the reporting context, represented in ISO 3166 format Aggregated severity STRING Aggregated severity of the issue for all reporting contexts it affects."
+        ]
+      },
+      {
+        "title": "String functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/string_functions",
+        "source_id": "site-docs-root",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "0 Left-pads the number with zeroes (0) instead of spaces when padding is specified (see width sub-specifier) ' Formats integers using the appropriating grouping character.",
+          "Returns an error if: The regular expression is invalid The regular expression has more than one capturing group The position isn't a positive integer The occurrence isn't a positive integer Return type STRING or BYTES Examples SELECT REGEXP EXTRACT ( 'foo@example.com' , r '^[a-zA-Z0-9 .+-]+' ) AS user name / -----------+ user name +-----------+ foo +----------- / SELECT REGEXP EXTRACT ( 'foo@example.com' , r '^[a-zA-Z0-9 .+-]+@[a-zA-Z0-9-]+ \\ .([a-zA-Z0-9-.]+$)' ) / ------------------+ top level domain +------------------+ com +------------------ / SELECT REGEXP EXTRACT ( 'ab' , '.b' ) AS result a , REGEXP EXTRACT ( 'ab' , '(.)b' ) AS result b , REGEXP EXTRACT ( 'xyztb' , '(.)+b' ) AS result c , REGEXP EXTRACT ( 'ab' , '(z)?b' ) AS result d / -------------------------------------------+ result a result b result c result d +-------------------------------------------+ ab a t NULL +------------------------------------------- / WITH example AS ( SELECT 'Hello Helloo and Hellooo' AS value , 'H?ello+' AS regex , 1 as position , 1 AS occurrence UNION ALL SELECT 'Hello Helloo and Hellooo' , 'H?ello+' , 1 , 2 UNION ALL SELECT 'Hello Helloo and Hellooo' , 'H?ello+' , 1 , 3 UNION ALL SELECT 'Hello Helloo and Hellooo' , 'H?ello+' , 1 , 4 UNION ALL SELECT 'Hello Helloo and Hellooo' , 'H?ello+' , 2 , 1 UNION ALL SELECT 'Hello Helloo and Hellooo' , 'H?ello+' , 3 , 1 UNION ALL SELECT 'Hello Helloo and Hellooo' , 'H?ello+' , 3 , 2 UNION ALL SELECT 'Hello Helloo and Hellooo' , 'H?ello+' , 3 , 3 UNION ALL SELECT 'Hello Helloo and Hellooo' , 'H?ello+' , 20 , 1 UNION ALL SELECT 'cats&dogs&rabbits' , ' \\\\ w+&' , 1 , 2 UNION ALL SELECT 'cats&dogs&rabbits' , ' \\\\ w+&' , 2 , 3 ) SELECT value , regex , position , occurrence , REGEXP EXTRACT ( value , regex , position , occurrence ) AS regexp value FROM example ; / --------------------------+---------+----------+------------+--------------+ value regex position occurrence regexp value +--------------------------+---------+----------+------------+--------------+ Hello Helloo and Hellooo H?ello+ 1 1 Hello Hello Helloo and Hellooo H?ello+ 1 2 Helloo Hello Helloo and Hellooo H?ello+ 1 3 Hellooo Hello Helloo and Hellooo H?ello+ 1 4 NULL Hello Helloo and Hellooo H?ello+ 2 1 ello Hello Helloo and Hellooo H?ello+ 3 1 Helloo Hello Helloo and Hellooo H?ello+ 3 2 Hellooo Hello Helloo and Hellooo H?ello+ 3 3 NULL Hello Helloo and Hellooo H?ello+ 20 1 NULL cats&dogs&rabbits \\w+& 1 2 dogs& cats&dogs&rabbits \\w+& 2 3 NULL +--------------------------+---------+----------+------------+-------------- / REGEXP EXTRACT ALL REGEXP EXTRACT ALL ( value , regexp ) Description Returns an array of all substrings of value that match the re2 regular expression , regexp .",
+          "SELECT CONTAINS SUBSTR ( 'hello' , NULL ) AS result ; -- Throws an error The following examples reference a table called Recipes that you can emulate with a WITH clause like this: WITH Recipes AS ( SELECT 'Blueberry pancakes' as Breakfast , 'Egg salad sandwich' as Lunch , 'Potato dumplings' as Dinner UNION ALL SELECT 'Potato pancakes' , 'Toasted cheese sandwich' , 'Beef stroganoff' UNION ALL SELECT 'Ham scramble' , 'Steak avocado salad' , 'Tomato pasta' UNION ALL SELECT 'Avocado toast' , 'Tomato soup' , 'Blueberry salmon' UNION ALL SELECT 'Corned beef hash' , 'Lentil potato soup' , 'Glazed ham' ) SELECT FROM Recipes ; / -------------------+-------------------------+------------------+ Breakfast Lunch Dinner +-------------------+-------------------------+------------------+ Bluberry pancakes Egg salad sandwich Potato dumplings Potato pancakes Toasted cheese sandwich Beef stroganoff Ham scramble Steak avocado salad Tomato pasta Avocado toast Tomato soup Blueberry samon Corned beef hash Lentil potato soup Glazed ham +-------------------+-------------------------+------------------ / The following query searches across all columns of the Recipes table for the value toast and returns the rows that contain this value."
+        ]
+      },
+      {
+        "title": "\"Query a public dataset with the BigQuery client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries",
+        "source_id": "site-docs-reference-2",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": [
+          "Do not replace any existing dependencies. <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-bigquery</artifactId> </dependency> On the line following the closing tag ( </dependencies> ), add the following: <dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>libraries-bom</artifactId> <version>26.1.5</version> <type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> In the Explorer pane, in your BIGQUERY-JAVA-QUICKSTART project, click src > main/java/com/google/app > SimpleApp.java .",
+          "TableResult result = queryJob . getQueryResults (); // Print all pages of the results. for ( FieldValueList row : result . iterateAll ()) { // String type String url = row . get ( \"url\" ). getStringValue (); String viewCount = row . get ( \"view count\" ). getStringValue (); System . out . printf ( \"%s : %s views\\n\" , url , viewCount ); } } catch ( BigQueryException InterruptedException e ) { System . out . println ( \"Simple App failed due to error: \\n\" + e . toString ()); } } } The query returns the top 10 most viewed Stack Overflow pages and their view counts.",
+          "Rename the App.java file that Maven creates by default: mv \\ bigquery-java-quickstart/src/main/java/com/google/app/App.java \\ bigquery-java-quickstart/src/main/java/com/google/app/SimpleApp.java Open the Cloud Shell Editor: cloudshell workspace bigquery-java-quickstart If you are prompted whether to synchronize the Java classpath or configuration, click Always ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.app",
+      "com.google.cloud",
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/string_functions"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

@@ -1,0 +1,115 @@
+{
+  "feature_name": "BigQuery Studio Explorer pane reorganization",
+  "feature_slug": "bigquery-studio-explorer-pane-reorganization",
+  "summary": "BigQuery Studio reorganizes the left pane into Explorer, Classic Explorer, and Git repository sections while retaining the full resource tree in Classic Explorer.",
+  "extended_definition": "BigQuery Studio reorganizes the left pane into Explorer, Classic Explorer, and Git repository sections while retaining the full resource tree in Classic Explorer.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ml-remote-model-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+      "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Explore BigQuery in the Google Cloud console \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "source_id": "site-docs-reference-5",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Studio page has the following components: Explorer tab of the left pane : use the Explorer tab to work with tables, views, routines, and other BigQuery resources, and view your job history .",
+          "Classic Explorer tab of the left pane : use the legacy version of the Explorer pane to view BigQuery resources.",
+          "The Explorer pane lists different code assets and data resources, and it lets you search for BigQuery resources."
+        ]
+      },
+      {
+        "title": "Control access to resources with IAM \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "source_id": "site-docs-reference-5",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to BigQuery In the left pane, click explore Explorer : In the Explorer pane, expand your project, click Datasets , and then select a dataset, or select a table, view, or routine in the dataset.",
+          "Go to BigQuery In the left pane, click explore Explorer : In the Explorer pane, expand your project, click Datasets , and then select a dataset.",
+          "Go to BigQuery In the left pane, click explore Explorer : In the Explorer pane, expand your project, click Datasets , and then select a dataset."
+        ]
+      },
+      {
+        "title": "\"Make predictions with remote models on Vertex AI \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ml-remote-model-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to BigQuery In the left pane, click explore Explorer : If you don't see the left pane, click last page Expand left pane to open the pane.",
+          "Go to the BigQuery page In the Explorer pane, click your project name.",
+          "Make sure that you have the following role or roles on the project: BigQuery Studio Admin ( roles/bigquery.studioAdmin ) Vertex AI User ( roles/aiplatform.user ) BigQuery Connection Admin ( roles/bigquery.connectionAdmin ) Check for the roles In the Google Cloud console, go to the IAM page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.user",
+      "bigquery.connectionAdmin",
+      "bigquery.studioAdmin",
+      "us.bqml"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.user",
+      "roles/bigquery.connectionAdmin",
+      "roles/bigquery.studioAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ml-remote-model-tutorial"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ml-remote-model-tutorial"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ml-remote-model-tutorial"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:18.899Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

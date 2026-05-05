@@ -1,0 +1,135 @@
+{
+  "feature_name": "Configurable budget time periods in Cloud Billing Budgets & alerts console",
+  "feature_slug": "configurable-budget-time-periods-in-cloud-billing-budgets-alerts-console",
+  "summary": "Enables Cloud Billing Budgets & alerts in the console to use calendar or custom budget time periods beyond the default monthly range.",
+  "extended_definition": "Enables Cloud Billing Budgets & alerts in the console to use calendar or custom budget time periods beyond the default monthly range.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/com.google.cloud.billing.budgets.v1.BudgetServiceGrpc.BudgetServiceBlockingStub",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/com.google.cloud.billing.budgets.v1.BudgetServiceGrpc.BudgetServiceBlockingV2Stub",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/com.google.cloud.billing.budgets.v1.BudgetServiceGrpc.BudgetServiceFutureStub"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class BudgetServiceGrpc.BudgetServiceBlockingStub (2.88.0) \\_|\\_ Java client\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/com.google.cloud.billing.budgets.v1.BudgetServiceGrpc.BudgetServiceBlockingStub",
+        "source_id": "site-java-reference",
+        "final_score": 234,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Inheritance java.lang.Object > io.grpc.stub.AbstractStub > io.grpc.stub.AbstractBlockingStub > BudgetServiceGrpc.BudgetServiceBlockingStub Inherited Members io.grpc.stub.AbstractBlockingStub.<T>newStub(io.grpc.stub.AbstractStub.StubFactory<T>,io.grpc.Channel) io.grpc.stub.AbstractBlockingStub.<T>newStub(io.grpc.stub.AbstractStub.StubFactory<T>,io.grpc.Channel,io.grpc.CallOptions) io.grpc.stub.AbstractStub.<T>withOption(io.grpc.CallOptions.Key<T>,T) io.grpc.stub.AbstractStub.build(io.grpc.Channel,io.grpc.CallOptions) io.grpc.stub.AbstractStub.getCallOptions() io.grpc.stub.AbstractStub.getChannel() io.grpc.stub.AbstractStub.withCallCredentials(io.grpc.CallCredentials) io.grpc.stub.AbstractStub.withChannel(io.grpc.Channel) io.grpc.stub.AbstractStub.withCompression(java.lang.String) io.grpc.stub.AbstractStub.withDeadline(io.grpc.Deadline) io.grpc.stub.AbstractStub.withDeadlineAfter(java.time.Duration) io.grpc.stub.AbstractStub.withDeadlineAfter(long,java.util.concurrent.TimeUnit) io.grpc.stub.AbstractStub.withExecutor(java.util.concurrent.Executor) io.grpc.stub.AbstractStub.withInterceptors(io.grpc.ClientInterceptor...) io.grpc.stub.AbstractStub.withMaxInboundMessageSize(int) io.grpc.stub.AbstractStub.withMaxOutboundMessageSize(int) io.grpc.stub.AbstractStub.withOnReadyThreshold(int) io.grpc.stub.AbstractStub.withWaitForReady() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods build(Channel channel, CallOptions callOptions) protected BudgetServiceGrpc .",
+          "Parameter Name Description request GetBudgetRequest Returns Type Description Budget listBudgets(ListBudgetsRequest request) public ListBudgetsResponse listBudgets ( ListBudgetsRequest request ) Returns a list of budgets for a billing account.",
+          "BudgetService stores Cloud Billing budgets, which define a budget plan and rules to execute as we track spend against that plan."
+        ]
+      },
+      {
+        "title": "\"Class BudgetServiceGrpc.BudgetServiceBlockingV2Stub (2.88.0) \\_|\\_ Java\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/com.google.cloud.billing.budgets.v1.BudgetServiceGrpc.BudgetServiceBlockingV2Stub",
+        "source_id": "site-java-reference",
+        "final_score": 234,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Inheritance java.lang.Object > io.grpc.stub.AbstractStub > io.grpc.stub.AbstractBlockingStub > BudgetServiceGrpc.BudgetServiceBlockingV2Stub Inherited Members io.grpc.stub.AbstractBlockingStub.<T>newStub(io.grpc.stub.AbstractStub.StubFactory<T>,io.grpc.Channel) io.grpc.stub.AbstractBlockingStub.<T>newStub(io.grpc.stub.AbstractStub.StubFactory<T>,io.grpc.Channel,io.grpc.CallOptions) io.grpc.stub.AbstractStub.<T>withOption(io.grpc.CallOptions.Key<T>,T) io.grpc.stub.AbstractStub.build(io.grpc.Channel,io.grpc.CallOptions) io.grpc.stub.AbstractStub.getCallOptions() io.grpc.stub.AbstractStub.getChannel() io.grpc.stub.AbstractStub.withCallCredentials(io.grpc.CallCredentials) io.grpc.stub.AbstractStub.withChannel(io.grpc.Channel) io.grpc.stub.AbstractStub.withCompression(java.lang.String) io.grpc.stub.AbstractStub.withDeadline(io.grpc.Deadline) io.grpc.stub.AbstractStub.withDeadlineAfter(java.time.Duration) io.grpc.stub.AbstractStub.withDeadlineAfter(long,java.util.concurrent.TimeUnit) io.grpc.stub.AbstractStub.withExecutor(java.util.concurrent.Executor) io.grpc.stub.AbstractStub.withInterceptors(io.grpc.ClientInterceptor...) io.grpc.stub.AbstractStub.withMaxInboundMessageSize(int) io.grpc.stub.AbstractStub.withMaxOutboundMessageSize(int) io.grpc.stub.AbstractStub.withOnReadyThreshold(int) io.grpc.stub.AbstractStub.withWaitForReady() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods build(Channel channel, CallOptions callOptions) protected BudgetServiceGrpc .",
+          "Parameter Name Description request GetBudgetRequest Returns Type Description Budget Exceptions Type Description io.grpc.StatusException listBudgets(ListBudgetsRequest request) public ListBudgetsResponse listBudgets ( ListBudgetsRequest request ) Returns a list of budgets for a billing account.",
+          "BudgetService stores Cloud Billing budgets, which define a budget plan and rules to execute as we track spend against that plan."
+        ]
+      },
+      {
+        "title": "\"Class BudgetServiceGrpc.BudgetServiceFutureStub (2.88.0) \\_|\\_ Java client\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/com.google.cloud.billing.budgets.v1.BudgetServiceGrpc.BudgetServiceFutureStub",
+        "source_id": "site-java-reference",
+        "final_score": 232,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Inheritance java.lang.Object > io.grpc.stub.AbstractStub > io.grpc.stub.AbstractFutureStub > BudgetServiceGrpc.BudgetServiceFutureStub Inherited Members io.grpc.stub.AbstractFutureStub.<T>newStub(io.grpc.stub.AbstractStub.StubFactory<T>,io.grpc.Channel) io.grpc.stub.AbstractFutureStub.<T>newStub(io.grpc.stub.AbstractStub.StubFactory<T>,io.grpc.Channel,io.grpc.CallOptions) io.grpc.stub.AbstractStub.<T>withOption(io.grpc.CallOptions.Key<T>,T) io.grpc.stub.AbstractStub.build(io.grpc.Channel,io.grpc.CallOptions) io.grpc.stub.AbstractStub.getCallOptions() io.grpc.stub.AbstractStub.getChannel() io.grpc.stub.AbstractStub.withCallCredentials(io.grpc.CallCredentials) io.grpc.stub.AbstractStub.withChannel(io.grpc.Channel) io.grpc.stub.AbstractStub.withCompression(java.lang.String) io.grpc.stub.AbstractStub.withDeadline(io.grpc.Deadline) io.grpc.stub.AbstractStub.withDeadlineAfter(java.time.Duration) io.grpc.stub.AbstractStub.withDeadlineAfter(long,java.util.concurrent.TimeUnit) io.grpc.stub.AbstractStub.withExecutor(java.util.concurrent.Executor) io.grpc.stub.AbstractStub.withInterceptors(io.grpc.ClientInterceptor...) io.grpc.stub.AbstractStub.withMaxInboundMessageSize(int) io.grpc.stub.AbstractStub.withMaxOutboundMessageSize(int) io.grpc.stub.AbstractStub.withOnReadyThreshold(int) io.grpc.stub.AbstractStub.withWaitForReady() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods build(Channel channel, CallOptions callOptions) protected BudgetServiceGrpc .",
+          "Parameter Name Description request GetBudgetRequest Returns Type Description com.google.common.util.concurrent.ListenableFuture < Budget > listBudgets(ListBudgetsRequest request) public ListenableFuture<ListBudgetsResponse> listBudgets ( ListBudgetsRequest request ) Returns a list of budgets for a billing account.",
+          "BudgetService stores Cloud Billing budgets, which define a budget plan and rules to execute as we track spend against that plan."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.billing.budgets.v1.BudgetServiceClient.ListBudgetsFixedSizeCollection",
+      "com.google.cloud.billing.budgets.v1.BudgetServiceGrpc.BudgetServiceBlockingStub",
+      "com.google.cloud.billing.budgets.v1.BudgetServiceGrpc.BudgetServiceBlockingV2Stub",
+      "com.google.cloud.billing.budgets.v1.BudgetServiceGrpc.BudgetServiceFutureStub",
+      "com.google.cloud.billing.budgets.v1.BudgetServiceGrpc.BudgetServiceStub",
+      "com.google.common.util.concurrent.ListenableFuture",
+      "io.grpc.CallCredentials",
+      "io.grpc.CallOptions",
+      "io.grpc.CallOptions.Key",
+      "io.grpc.Channel",
+      "io.grpc.ClientInterceptor",
+      "io.grpc.Deadline",
+      "io.grpc.StatusException",
+      "io.grpc.stub.AbstractBlockingStub",
+      "io.grpc.stub.AbstractFutureStub",
+      "io.grpc.stub.AbstractStub",
+      "io.grpc.stub.AbstractStub.build",
+      "io.grpc.stub.AbstractStub.getCallOptions",
+      "io.grpc.stub.AbstractStub.getChannel",
+      "io.grpc.stub.AbstractStub.StubFactory",
+      "io.grpc.stub.AbstractStub.withCallCredentials",
+      "io.grpc.stub.AbstractStub.withChannel",
+      "io.grpc.stub.AbstractStub.withCompression",
+      "io.grpc.stub.AbstractStub.withDeadline",
+      "io.grpc.stub.AbstractStub.withDeadlineAfter",
+      "io.grpc.stub.AbstractStub.withExecutor",
+      "io.grpc.stub.AbstractStub.withInterceptors",
+      "io.grpc.stub.AbstractStub.withMaxInboundMessageSize",
+      "io.grpc.stub.AbstractStub.withMaxOutboundMessageSize",
+      "io.grpc.stub.AbstractStub.withOnReadyThreshold",
+      "io.grpc.stub.AbstractStub.withWaitForReady",
+      "java.lang.Object",
+      "java.lang.String",
+      "java.time.Duration",
+      "java.util.concurrent.Executor",
+      "java.util.concurrent.TimeUnit"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/com.google.cloud.billing.budgets.v1.BudgetServiceGrpc.BudgetServiceBlockingV2Stub",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/com.google.cloud.billing.budgets.v1.BudgetServiceGrpc.BudgetServiceBlockingStub",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/com.google.cloud.billing.budgets.v1.BudgetServiceGrpc.BudgetServiceFutureStub"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/com.google.cloud.billing.budgets.v1.BudgetServiceGrpc.BudgetServiceBlockingV2Stub",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/com.google.cloud.billing.budgets.v1.BudgetServiceGrpc.BudgetServiceBlockingStub",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-billingbudgets/latest/com.google.cloud.billing.budgets.v1.BudgetServiceGrpc.BudgetServiceFutureStub"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T20:06:27.261Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing"
+}
