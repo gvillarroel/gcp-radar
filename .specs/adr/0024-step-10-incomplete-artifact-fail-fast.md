@@ -92,9 +92,10 @@ Step 10 also verifies that each promoted product index links the product
 service card and every promoted feature README listed in the promotion
 manifest, does not duplicate those promoted links, and does not retain stale
 local feature README or service card links. It also verifies the product index
-title, Step 08 provenance line, summary values, and promoted feature link labels
-before rendering. Product index drift is therefore caught before `radar/` or
-`data/step-10/current/index.json` is rewritten.
+title, Step 08 provenance line, summary values, official service evidence
+links, and promoted feature link labels before rendering. Product index drift
+is therefore caught before `radar/` or `data/step-10/current/index.json` is
+rewritten.
 
 If any required card is missing or any artifact identity check fails, Step 10
 exits with an error that lists the problem paths or values and does not rewrite

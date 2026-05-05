@@ -378,6 +378,9 @@ Promoted feature documentation must also render security capabilities from the
 feature card. When a capability has official Google evidence links, those
 links belong in the README so artifact review can validate security signals
 without opening JSON.
+Promoted product indexes must render the promoted service card's official
+evidence links, not only the source-link count, so product-level provenance is
+reviewable from Markdown.
 
 ## Step 10
 
@@ -459,7 +462,9 @@ link, missing any promoted feature README link listed by the promotion
 manifest, or still linking stale feature or service artifact paths before any
 radar Markdown is rewritten. It also rejects promoted product indexes whose
 title, Step 08 provenance line, summary values, or promoted feature link labels
-have drifted from the promotion manifest and canonical Step 08 product card.
+have drifted from the promotion manifest and canonical Step 08 product card,
+or that omit official service evidence links from the canonical Step 08
+service card.
 
 During regeneration, Step 10 removes stale Markdown files directly under
 `radar/products/` when they do not correspond to a currently promoted artifact
@@ -601,10 +606,11 @@ when rendering final radar reports.
 Product artifact indexes and product reports must link every promoted feature
 README for their product. Product artifact indexes must also link the promoted
 service card. Product artifact indexes must keep their rendered title, Step 08
-provenance, summary fields, and feature link labels aligned with the promotion
-manifest, promoted service card, and canonical Step 08 product card. Product
-artifact indexes must not duplicate promoted feature README links or the
-promoted service-card link. Product reports must also link the promoted service
+provenance, summary fields, official service evidence links, and feature link
+labels aligned with the promotion manifest, promoted service card, and
+canonical Step 08 product card. Product artifact indexes must not duplicate
+promoted feature README links or the promoted service-card link. Product
+reports must also link the promoted service
 card and product artifact index, must not duplicate promoted feature README,
 promoted service-card, or product artifact-index links, and their promoted and
 skipped feature summary counts must match the promotion manifest. Product

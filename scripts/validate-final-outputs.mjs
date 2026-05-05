@@ -438,6 +438,10 @@ function escapeMarkdownLinkLabel(label) {
   return String(label || "").replace(/([\\[\]])/g, "\\$1");
 }
 
+function expectedMarkdownLink(label, target) {
+  return `[${escapeMarkdownLinkLabel(label)}](${target})`;
+}
+
 function expectedStep08FeatureGate(feature) {
   const validation = feature?.validation || {};
   if (Number(validation.fail_count || 0) > 0) {
@@ -1243,12 +1247,25 @@ async function validateArtifactProductIndexes() {
       }
     }
 
+    for (const url of serviceCard?.official_source_links || []) {
+      const expectedLine = `- ${expectedMarkdownLink(url, url)}`;
+      if (!indexMarkdown.includes(expectedLine)) {
+        findings.push({
+          severity: "error",
+          rule: "artifact_index_service_evidence_link_mismatch",
+          path: productIndexPath,
+          product_slug: productSlug,
+          expected: expectedLine,
+        });
+      }
+    }
+
     for (const feature of promotionFeatureList(promotion, "promoted_features")) {
       const featureSlug = feature?.feature_slug;
       if (!featureSlug) {
         continue;
       }
-      const expectedLine = `- [${escapeMarkdownLinkLabel(feature.feature_name || featureSlug)}](./${featureSlug}/README.md)`;
+      const expectedLine = `- ${expectedMarkdownLink(feature.feature_name || featureSlug, `./${featureSlug}/README.md`)}`;
       if (!indexMarkdown.includes(expectedLine)) {
         findings.push({
           severity: "error",

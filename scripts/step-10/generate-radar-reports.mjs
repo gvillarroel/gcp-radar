@@ -570,6 +570,12 @@ async function loadArtifacts() {
           errors.push(`Promoted product index summary mismatch for ${productSlug}: ${relativeToCwd(productIndexPath)} missing ${expectedLine}`);
         }
       }
+      for (const url of step08Card?.service_card?.official_source_links || []) {
+        const expectedLine = `- ${markdownLink(url, url)}`;
+        if (!productIndexMarkdown.includes(expectedLine)) {
+          errors.push(`Promoted product index service evidence mismatch for ${productSlug}: ${relativeToCwd(productIndexPath)} missing ${expectedLine}`);
+        }
+      }
       for (const feature of Array.isArray(promotion.promoted_features) ? promotion.promoted_features : []) {
         const featureSlug = feature?.feature_slug;
         if (!featureSlug) {

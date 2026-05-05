@@ -247,9 +247,15 @@ function renderProductIndex(card, promotedFeatures, sourceStep08Card) {
     `- Latest feature date: ${card.service_card?.lifecycle?.latest_feature_date || "unknown"}`,
     `- Official source links: ${card.service_card?.official_source_links?.length || 0}`,
     "",
-    "## Features",
+    "## Official Service Evidence",
     "",
   ];
+
+  for (const url of card.service_card?.official_source_links || []) {
+    lines.push(`- ${markdownLink(url, url)}`);
+  }
+
+  lines.push("", "## Features", "");
 
   for (const feature of promotedFeatures) {
     lines.push(`- ${markdownLink(feature.feature_name, `./${feature.feature_slug}/README.md`)}`);

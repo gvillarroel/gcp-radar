@@ -518,6 +518,10 @@ Each promoted feature artifact README must also render security capabilities
 from the feature card. When a capability carries official Google evidence
 links, those links must be visible in the README so security review does not
 require opening JSON.
+Each promoted product artifact index must also render the official service
+evidence links from the promoted service card, not only the count, so
+product-level artifact review can verify service provenance without opening
+JSON.
 
 ### Step 10: Final Radar Reporting
 
@@ -606,6 +610,9 @@ Step 10 must also fail before rewriting reports when a promoted product index
 has a stale title, Step 08 provenance line, summary value, or promoted feature
 link label that no longer matches the promotion manifest and canonical Step 08
 product card.
+Step 10 must also fail before rewriting reports when a promoted product index
+is missing any official service evidence link from the canonical Step 08
+service card.
 
 Step 10 owns the generated Markdown files directly under `radar/products/`.
 During report generation, stale product reports that do not match the current
@@ -782,9 +789,9 @@ Each promoted feature README link and the promoted service-card link must
 appear only once in the product artifact index.
 Each product artifact index must also keep its product title, Step 08
 provenance line, promoted feature count, Step 07 status, corpus health, latest
-feature date, official source-link count, and feature link labels aligned with
-the promotion manifest, promoted service card, and canonical Step 08 product
-card.
+feature date, official source-link count, official service evidence links, and
+feature link labels aligned with the promotion manifest, promoted service
+card, and canonical Step 08 product card.
 Radar Markdown links that target promoted `artifacts/` content must resolve to
 existing files or directories. Each product report must also link every
 promoted feature README for that product, must include at least one official
