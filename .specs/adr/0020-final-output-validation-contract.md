@@ -86,8 +86,9 @@ The validator must check:
   inventory without duplicate or stale product entries, including product names
   from the corresponding promotion manifests
 - `data/step-09/current/index.json` exposes `accepted_warning_rules` as a
-  sorted, duplicate-free array, and every product promotion manifest keeps its
-  own `accepted_warning_rules` array aligned with that index policy
+  sorted, duplicate-free array of non-empty string rule IDs, and every product
+  promotion manifest keeps its own `accepted_warning_rules` array aligned with
+  that index policy
 - `data/step-09/current/index.json` latest-run scope metadata is internally
   consistent: `processed_products` is a sorted duplicate-free list of products
   with canonical Step 08 cards, `processed_product_count` matches that list,

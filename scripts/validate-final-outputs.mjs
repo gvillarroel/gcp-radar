@@ -328,6 +328,27 @@ function validatePromotionFeatureListOrdering(promotion, promotionPath, productS
   return findings;
 }
 
+function validateAcceptedWarningRulesArray(rules, recordPath, rulePrefix, extra = {}) {
+  if (!Array.isArray(rules)) {
+    return [];
+  }
+  const findings = [];
+  for (const [index, value] of rules.entries()) {
+    if (typeof value !== "string" || !value.trim()) {
+      findings.push({
+        severity: "error",
+        rule: `${rulePrefix}_accepted_warning_rule_invalid`,
+        path: recordPath,
+        index,
+        actual_type: value === null ? "null" : typeof value,
+        actual: typeof value === "string" ? value : null,
+        ...extra,
+      });
+    }
+  }
+  return findings;
+}
+
 async function validatePromotionStaleFeatureCleanup(promotion, promotionPath, productSlug) {
   const findings = [];
   const staleDirs = promotion?.stale_feature_artifact_dirs_removed;
@@ -657,6 +678,12 @@ async function validateArtifacts() {
         });
       } else {
         const actualAcceptedWarningRules = stringArray(promotion.accepted_warning_rules);
+        findings.push(...validateAcceptedWarningRulesArray(
+          promotion.accepted_warning_rules,
+          promotionPath,
+          "promotion_manifest",
+          { product_slug: productSlug }
+        ));
         if (expectedAcceptedWarningRules && !jsonEquals(actualAcceptedWarningRules, expectedAcceptedWarningRules)) {
           findings.push({
             severity: "error",
@@ -2743,6 +2770,11 @@ async function validateStep09IndexMatchesArtifacts() {
       actual_type: step09Index.accepted_warning_rules === null ? "null" : typeof step09Index.accepted_warning_rules,
     });
   } else {
+    findings.push(...validateAcceptedWarningRulesArray(
+      step09Index.accepted_warning_rules,
+      step09IndexPath,
+      "step09_index"
+    ));
     const seenAcceptedWarningRules = new Set();
     let previousAcceptedWarningRule = "";
     for (const rule of stringArray(step09Index.accepted_warning_rules)) {

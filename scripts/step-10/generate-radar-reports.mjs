@@ -351,7 +351,13 @@ function validatePromotionWarningPolicy(productSlug, promotion, errors) {
 
   const seen = new Set();
   let previousRule = "";
-  for (const rule of promotion.accepted_warning_rules.map((value) => String(value))) {
+  for (const [index, value] of promotion.accepted_warning_rules.entries()) {
+    if (typeof value !== "string" || !value.trim()) {
+      const actualType = value === null ? "null" : typeof value;
+      errors.push(`Promotion manifest accepted_warning_rules entry must be a non-empty string for ${productSlug} at index ${index}: got ${actualType}`);
+      continue;
+    }
+    const rule = value;
     if (seen.has(rule)) {
       errors.push(`Promotion manifest accepted_warning_rules has duplicate rule for ${productSlug}: ${rule}`);
     }

@@ -42,8 +42,9 @@ also checks that the promotion manifest exposes
 every canonical Step 08 feature exactly one promoted or skipped disposition,
 that every entry in both arrays carries a non-empty `feature_slug`, that both
 arrays are sorted by `feature_slug`, and that
-`accepted_warning_rules` is a sorted duplicate-free array before the
-manifest warning-review policy is used for promoted feature eligibility, that
+`accepted_warning_rules` is a sorted duplicate-free array of non-empty string
+rule IDs before the manifest warning-review policy is used for promoted
+feature eligibility, that
 `stale_feature_artifact_dirs_removed` is a sorted duplicate-free array scoped
 to removed directories under the matching product artifact directory, and
 that the promotion manifest, promoted service card, and
