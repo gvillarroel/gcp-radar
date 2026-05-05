@@ -35,6 +35,12 @@ Each feature card contains feature identity, summary, extended definition,
 lifecycle dates, official evidence links, Step 07 findings, IAM mapping data,
 and security capability signals when present.
 
+Step 08 rejects card construction before writing outputs when service-card
+source links, feature source links, feature supporting page URLs, or security
+capability evidence links are not official Google HTTP(S) URLs. This preserves
+the source policy at the card layer instead of relying only on Step 09 or final
+validation to detect contaminated evidence later.
+
 Feature IAM mapping data must be feature-level, not only product-level. It
 must preserve explicit roles, explicit permissions, derived roles, derived
 permissions, and any evidence mentions that were missing from the Step 05

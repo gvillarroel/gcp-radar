@@ -521,6 +521,39 @@ function assertValidFeatureSlugs(productSlug, features) {
   }
 }
 
+function collectNonOfficialUrls(urls) {
+  return uniqueSorted(arrayOfStrings(urls)).filter((url) => !isOfficialGoogleUrl(url));
+}
+
+function collectSecurityCapabilityEvidenceLinks(capabilities) {
+  return [...new Set((capabilities || []).flatMap((capability) => capability.evidence_links || []))];
+}
+
+function assertOfficialCardEvidence(productSlug, card) {
+  const errors = [];
+  for (const url of collectNonOfficialUrls(card.service_card?.official_source_links || [])) {
+    errors.push(`Step 08 service card for ${productSlug} has non-official source link: ${url}`);
+  }
+  for (const url of collectNonOfficialUrls(collectSecurityCapabilityEvidenceLinks(card.service_card?.security_capabilities || []))) {
+    errors.push(`Step 08 service card for ${productSlug} has non-official security evidence link: ${url}`);
+  }
+  for (const feature of card.features || []) {
+    const featureSlug = feature.feature_slug || "(missing feature slug)";
+    for (const url of collectNonOfficialUrls(feature.evidence?.source_links || [])) {
+      errors.push(`Step 08 feature card for ${productSlug}/${featureSlug} has non-official source link: ${url}`);
+    }
+    for (const url of collectNonOfficialUrls((feature.evidence?.supporting_pages || []).map((page) => page?.url))) {
+      errors.push(`Step 08 feature card for ${productSlug}/${featureSlug} has non-official supporting page URL: ${url}`);
+    }
+    for (const url of collectNonOfficialUrls(collectSecurityCapabilityEvidenceLinks(feature.security_capabilities || []))) {
+      errors.push(`Step 08 feature card for ${productSlug}/${featureSlug} has non-official security evidence link: ${url}`);
+    }
+  }
+  if (errors.length > 0) {
+    throw new Error(errors.join("\n"));
+  }
+}
+
 function buildServiceCard({ generatedAt, step06, validation, corpus, iamSummary, features, step02Summary = null }) {
   const officialSourceLinks = uniqueSorted(features.flatMap((feature) => feature.evidence.source_links || []));
   const lifecycleLatestDates = [
@@ -806,6 +839,7 @@ async function main() {
     if (!card) {
       continue;
     }
+    assertOfficialCardEvidence(productSlug, card);
     const productDir = path.join(outputProductsDir, productSlug);
     await mkdir(productDir, { recursive: true });
     await writeJson(path.join(productDir, "card.json"), card);

@@ -455,6 +455,12 @@ feature requirements. `derived_from_permission_prefix` mappings are related IAM
 signals, not confirmed feature requirements. `unknown` means the final output
 must state that no defensible IAM mapping was found.
 
+Step 08 must fail before writing product cards when a service card, feature
+card, supporting page, or security capability evidence link would contain a
+non-official Google HTTP(S) URL. This keeps the card-construction layer inside
+the same authoritative source policy later enforced by artifact promotion and
+final-output validation.
+
 ### Step 9: Source-Of-Truth Artifact Organization
 
 Organize validated documentation under `artifacts/` by product and then by feature.

@@ -316,6 +316,12 @@ any role or permission mentions that were not found in the Step 05 inventory.
 Only explicit mappings may be treated as evidence-backed required IAM for the
 feature. Derived mappings are related IAM signals and must be labeled as such.
 
+Step 08 fails before writing cards if a service card, feature source link,
+supporting page URL, or security capability evidence link would contain a
+non-official Google HTTP(S) URL. Contaminated evidence should be repaired in
+the upstream extraction or corpus stages, not carried forward for Step 09 or
+Step 10 to reject later.
+
 ## Step 09
 
 ### Goal
