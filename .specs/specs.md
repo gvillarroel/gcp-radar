@@ -812,22 +812,23 @@ reports and the IAM report must keep explicit IAM evidence separate from
 derived IAM signals. The IAM report must link every promoted feature artifact
 and must not retain feature artifact links outside the promoted artifact
 inventory. The IAM report rows must also keep each promoted feature's product
-name, mapping status, explicit roles, explicit permissions, derived roles, and
-derived permissions aligned with the promoted feature card values rendered by
-Step 10. Each product report's feature rows must also keep each promoted
-feature's IAM mapping status, explicit roles, explicit permissions, derived
-roles, derived permissions, coverage status, and rendered source links aligned
-with the promoted feature card values. Each product report must also keep its
+name, rendered feature link label, mapping status, explicit roles, explicit
+permissions, derived roles, and derived permissions aligned with the promoted
+feature card values rendered by Step 10. Each product report's feature rows
+must also keep each promoted feature's rendered feature link label, IAM mapping
+status, explicit roles, explicit permissions, derived roles, derived
+permissions, coverage status, and rendered source links aligned with the
+promoted feature card values. Each product report must also keep its
 rendered title, latest feature date, and service IAM status summary aligned
 with the promoted artifact manifest and service card. The services report must link every
 promoted product service card and must not keep stale service-card links
 outside the promoted artifact inventory.
 When a promoted service card has official Google source links, the services
 report must include at least one of those service evidence links.
-Each services report row must keep the service status, promoted feature count,
-latest feature date, explicit IAM count, derived IAM count, unknown IAM count,
-and rendered official source links aligned with the promoted service card and
-promotion manifest.
+Each services report row must keep the rendered service link label, service
+status, promoted feature count, latest feature date, explicit IAM count,
+derived IAM count, unknown IAM count, and rendered official source links
+aligned with the promoted service card and promotion manifest.
 The root radar index must link every promoted product report and service card,
 must not retain stale product or service-card links outside the promoted
 artifact inventory, and must keep its service-card and promoted-feature summary
@@ -849,8 +850,9 @@ The security report must link every promoted feature artifact that contains
 security capability signals, must not retain stale promoted-feature links, and
 must include official Google evidence links for those security signals when
 the promoted feature card provides them. Each security report row must also
-keep the promoted feature's product name, capability list, and rendered
-evidence links aligned with the promoted feature card.
+keep the promoted feature's product name, rendered feature link label,
+capability list, and rendered evidence links aligned with the promoted feature
+card.
 
 ### Step 11: Knowledge Capture
 

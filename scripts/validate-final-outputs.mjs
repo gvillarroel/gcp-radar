@@ -1916,8 +1916,10 @@ async function validateRadarIamReportMatchesArtifacts() {
         continue;
       }
       const iam = featureCard.iam || {};
-      expectedRows.set(relativeMarkdownPath(iamReportDir, path.join(productDir, featureSlug, "README.md")), {
+      const featureLink = relativeMarkdownPath(iamReportDir, path.join(productDir, featureSlug, "README.md"));
+      expectedRows.set(featureLink, {
         product_name: promotion.product_name || productSlug,
+        feature: expectedMarkdownLink(featureCard?.feature_name || featureSlug, featureLink),
         mapping: iam.iam_mapping_status || "unknown",
         explicit_roles: formatRolesForReportValidation(iam.explicit_roles),
         explicit_permissions: formatPermissionsForReportValidation(iam.explicit_permissions),
@@ -1989,6 +1991,7 @@ async function validateRadarIamReportMatchesArtifacts() {
     }
     actualRows.set(featureLink, {
       product_name: cells[0],
+      feature: cells[1],
       mapping: cells[2],
       explicit_roles: cells[3],
       explicit_permissions: cells[4],
@@ -2018,7 +2021,7 @@ async function validateRadarIamReportMatchesArtifacts() {
       });
       continue;
     }
-    for (const field of ["product_name", "mapping", "explicit_roles", "explicit_permissions", "derived_roles", "derived_permissions"]) {
+    for (const field of ["product_name", "feature", "mapping", "explicit_roles", "explicit_permissions", "derived_roles", "derived_permissions"]) {
       if (actual[field] !== expected[field]) {
         findings.push({
           severity: "error",
@@ -2065,7 +2068,9 @@ async function validateRadarServicesReportMatchesArtifacts() {
     }
     const serviceCard = await readJson(path.join(artifactsRoot, productSlug, "card.json"), null);
     const iam = serviceCard?.iam_status_counts || {};
-    expectedRows.set(relativeMarkdownPath(servicesReportDir, path.join(artifactsRoot, productSlug, "card.json")), {
+    const serviceLink = relativeMarkdownPath(servicesReportDir, path.join(artifactsRoot, productSlug, "card.json"));
+    expectedRows.set(serviceLink, {
+      service: expectedMarkdownLink(promotion.product_name || productSlug, serviceLink),
       status: serviceCard?.validation?.product_status || promotion.product_status || "unknown",
       features: Number(serviceCard?.feature_count || promotion.promoted_feature_count || 0),
       latest_feature: serviceCard?.lifecycle?.latest_feature_date || "unknown",
@@ -2141,6 +2146,7 @@ async function validateRadarServicesReportMatchesArtifacts() {
       });
     }
     actualRows.set(serviceLink, {
+      service: cells[0],
       status: cells[1],
       features: parseIntegerCell(cells[2]),
       latest_feature: cells[3],
@@ -2180,7 +2186,7 @@ async function validateRadarServicesReportMatchesArtifacts() {
       });
       continue;
     }
-    for (const field of ["status", "features", "latest_feature", "explicit_iam", "derived_iam", "unknown_iam", "sources"]) {
+    for (const field of ["service", "status", "features", "latest_feature", "explicit_iam", "derived_iam", "unknown_iam", "sources"]) {
       if (actual[field] !== expected[field]) {
         findings.push({
           severity: "error",
@@ -2260,10 +2266,12 @@ async function validateRadarSecurityReportMatchesArtifacts() {
       if (capabilities.length === 0) {
         continue;
       }
-      expectedFeatureLinks.set(relativeMarkdownPath(securityReportDir, path.join(productDir, featureSlug, "README.md")), {
+      const featureLink = relativeMarkdownPath(securityReportDir, path.join(productDir, featureSlug, "README.md"));
+      expectedFeatureLinks.set(featureLink, {
         product_name: promotion.product_name || productSlug,
         product_slug: productSlug,
         feature_slug: featureSlug,
+        feature: expectedMarkdownLink(featureCard?.feature_name || featureSlug, featureLink),
         capabilities: formatSecurityCapabilitiesForReportValidation(capabilities),
         evidence: formatSourcesForReportValidation([...new Set(capabilities.flatMap((capability) => capability.evidence_links || []))], 4),
         evidence_links: [...new Set(capabilities.flatMap((capability) => capability.evidence_links || []))]
@@ -2337,6 +2345,7 @@ async function validateRadarSecurityReportMatchesArtifacts() {
     }
     actualRows.set(featureLink, {
       product_name: cells[0],
+      feature: cells[1],
       capabilities: cells[2],
       evidence: cells[3],
     });
@@ -2375,7 +2384,7 @@ async function validateRadarSecurityReportMatchesArtifacts() {
       });
       continue;
     }
-    for (const field of ["product_name", "capabilities", "evidence"]) {
+    for (const field of ["product_name", "feature", "capabilities", "evidence"]) {
       if (actual[field] !== expected[field]) {
         findings.push({
           severity: "error",
@@ -3860,7 +3869,9 @@ async function validateRadarMatchesArtifacts() {
       const featureCard = await readJson(featureCardPath, null);
       const officialSourceLinks = (featureCard?.evidence?.source_links || []).filter(isOfficialGoogleUrl);
       const iam = featureCard?.iam || {};
-      expectedFeatureRows.set(relativeMarkdownPath(reportDir, path.join(artifactsRoot, product.product_slug, featureSlug, "README.md")), {
+      const featureLink = relativeMarkdownPath(reportDir, path.join(artifactsRoot, product.product_slug, featureSlug, "README.md"));
+      expectedFeatureRows.set(featureLink, {
+        feature: expectedMarkdownLink(featureCard?.feature_name || featureSlug, featureLink),
         iam: iam.iam_mapping_status || "unknown",
         explicit_roles: formatRolesForReportValidation(iam.explicit_roles),
         explicit_permissions: formatPermissionsForReportValidation(iam.explicit_permissions),
@@ -3911,6 +3922,7 @@ async function validateRadarMatchesArtifacts() {
         });
       }
       actualFeatureRows.set(featureLink, {
+        feature: cells[0],
         iam: cells[1],
         explicit_roles: cells[2],
         explicit_permissions: cells[3],
@@ -3932,7 +3944,7 @@ async function validateRadarMatchesArtifacts() {
         });
         continue;
       }
-      for (const field of ["iam", "explicit_roles", "explicit_permissions", "derived_roles", "derived_permissions", "coverage", "sources"]) {
+      for (const field of ["feature", "iam", "explicit_roles", "explicit_permissions", "derived_roles", "derived_permissions", "coverage", "sources"]) {
         if (actual[field] !== expected[field]) {
           findings.push({
             severity: "error",

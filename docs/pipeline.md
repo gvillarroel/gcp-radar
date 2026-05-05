@@ -635,20 +635,22 @@ missing report while still matching the promoted product inventory by name.
 Product reports and the IAM report must retain
 separate explicit and derived IAM columns. The IAM report must link every
 promoted feature artifact and must not retain stale feature artifact links.
-Its rows must also match the promoted feature cards for product name, IAM
-mapping status, explicit roles, explicit permissions, derived roles, and
-derived permissions. Product report feature rows must also match promoted
-feature cards for IAM mapping status, explicit roles, explicit permissions,
-derived roles, derived permissions, coverage status, and rendered source links.
+Its rows must also match the promoted feature cards for product name, rendered
+feature link label, IAM mapping status, explicit roles, explicit permissions,
+derived roles, and derived permissions. Product report feature rows must also
+match promoted feature cards for rendered feature link label, IAM mapping
+status, explicit roles, explicit permissions, derived roles, derived
+permissions, coverage status, and rendered source links.
 Product report title, latest feature date, and service IAM status summary must
 also match the promoted artifact manifest and service card.
 The services report must link every promoted product service card and must not
 retain service-card links outside the promoted artifact inventory. When a
 promoted service card has official
 Google source links, the services report must include at least one of those
-service evidence links. Each services report row must keep status, promoted
-feature count, latest feature date, IAM counts, and rendered official source
-links aligned with the promoted service card and promotion manifest. The root
+service evidence links. Each services report row must keep rendered service
+link label, status, promoted feature count, latest feature date, IAM counts,
+and rendered official source links aligned with the promoted service card and
+promotion manifest. The root
 radar index must link every promoted
 product report and service card, must not retain stale product or service-card
 links outside the promoted artifact inventory, must not duplicate valid
@@ -668,8 +670,9 @@ promoted artifact inventory.
 The security report must link every promoted feature with security capability
 signals, must not retain stale feature artifact links, and must include
 official Google evidence links for those signals when promoted feature cards
-provide them. Its table rows must also keep the product name, capability list,
-and rendered evidence links aligned with the promoted feature cards.
+provide them. Its table rows must also keep the product name, rendered feature
+link label, capability list, and rendered evidence links aligned with the
+promoted feature cards.
 
 ## Practical Lessons
 

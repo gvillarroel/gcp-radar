@@ -214,11 +214,11 @@ The validator must check:
 - the Step 10 IAM report links every promoted feature artifact and does not
   retain feature artifact links outside the promoted artifact inventory
 - the Step 10 IAM report rows match promoted feature cards for product name,
-  IAM mapping status, explicit roles, explicit permissions, derived roles, and
-  derived permissions
-- Step 10 product report feature rows match promoted feature cards for IAM
-  mapping status, explicit roles, explicit permissions, derived roles, derived
-  permissions, coverage status, and rendered source links
+  rendered feature link label, IAM mapping status, explicit roles, explicit
+  permissions, derived roles, and derived permissions
+- Step 10 product report feature rows match promoted feature cards for rendered
+  feature link label, IAM mapping status, explicit roles, explicit permissions,
+  derived roles, derived permissions, coverage status, and rendered source links
 - Step 10 product reports keep their title, latest feature date, and service
   IAM status summary aligned with the promoted artifact manifest and service
   card
@@ -227,8 +227,9 @@ The validator must check:
 - the Step 10 services report includes at least one official Google evidence
   link for each promoted service card that has service-level source links
 - the Step 10 services report rows match promoted service cards and promotion
-  manifests for status, feature count, latest feature date, explicit IAM count,
-  derived IAM count, unknown IAM count, and rendered official source links
+  manifests for rendered service link label, status, feature count, latest
+  feature date, explicit IAM count, derived IAM count, unknown IAM count, and
+  rendered official source links
 - the Step 10 root index links every promoted product report and service card,
   and does not retain stale product or service-card links outside the promoted
   artifact inventory
@@ -249,8 +250,8 @@ The validator must check:
   security capability signals, does not retain stale security feature links,
   includes official Google evidence links for those signals when promoted
   feature cards provide them, and keeps each security row's product name,
-  capability list, and rendered evidence links aligned with the promoted
-  feature card
+  rendered feature link label, capability list, and rendered evidence links
+  aligned with the promoted feature card
 
 ## Consequences
 
