@@ -583,12 +583,13 @@ provenance, summary fields, and feature link labels aligned with the promotion
 manifest, promoted service card, and canonical Step 08 product card. Product
 artifact indexes must not duplicate promoted feature README links or the
 promoted service-card link. Product reports must also link the promoted service
-card and product artifact index, and their promoted and skipped feature summary
-counts must match the promotion manifest. Product reports must include at least
-one official Google evidence link from each promoted feature card so evidence
-review can be done from the final radar output. Product artifact indexes and
-product reports must not retain feature README links that are no longer in that
-product's promotion manifest.
+card and product artifact index, must not duplicate promoted feature README,
+promoted service-card, or product artifact-index links, and their promoted and
+skipped feature summary counts must match the promotion manifest. Product
+reports must include at least one official Google evidence link from each
+promoted feature card so evidence review can be done from the final radar
+output. Product artifact indexes and product reports must not retain feature
+README links that are no longer in that product's promotion manifest.
 The fixed Step 10 report paths recorded in `data/step-10/current/index.json`
 must match the canonical radar report layout and resolve to existing files.
 The Step 10 report index must remain a closed report inventory: only the

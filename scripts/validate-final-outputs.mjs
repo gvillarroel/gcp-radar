@@ -3365,9 +3365,11 @@ async function validateRadarMatchesArtifacts() {
     const staleFeatureLinks = new Set();
     const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
     const reportLinks = new Set();
+    const reportLinkCounts = new Map();
     for (const match of report.matchAll(linkPattern)) {
       const link = String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0];
       reportLinks.add(link);
+      reportLinkCounts.set(link, (reportLinkCounts.get(link) || 0) + 1);
       if (!link.startsWith("../../artifacts/") || !link.endsWith("/README.md")) {
         continue;
       }
@@ -3435,6 +3437,16 @@ async function validateRadarMatchesArtifacts() {
         link: expectedServiceCardLink,
       });
     }
+    if ((reportLinkCounts.get(expectedServiceCardLink) || 0) > 1) {
+      findings.push({
+        severity: "error",
+        rule: "duplicate_radar_product_service_card_link",
+        path: reportPath,
+        product_slug: product.product_slug,
+        link: expectedServiceCardLink,
+        count: reportLinkCounts.get(expectedServiceCardLink),
+      });
+    }
     if (!reportLinks.has(expectedArtifactIndexLink)) {
       findings.push({
         severity: "error",
@@ -3442,6 +3454,16 @@ async function validateRadarMatchesArtifacts() {
         path: reportPath,
         product_slug: product.product_slug,
         link: expectedArtifactIndexLink,
+      });
+    }
+    if ((reportLinkCounts.get(expectedArtifactIndexLink) || 0) > 1) {
+      findings.push({
+        severity: "error",
+        rule: "duplicate_radar_product_artifact_index_link",
+        path: reportPath,
+        product_slug: product.product_slug,
+        link: expectedArtifactIndexLink,
+        count: reportLinkCounts.get(expectedArtifactIndexLink),
       });
     }
     for (const link of expectedFeatureLinks) {
@@ -3452,6 +3474,16 @@ async function validateRadarMatchesArtifacts() {
           path: reportPath,
           product_slug: product.product_slug,
           link,
+        });
+      }
+      if ((reportLinkCounts.get(link) || 0) > 1) {
+        findings.push({
+          severity: "error",
+          rule: "duplicate_radar_feature_artifact_link",
+          path: reportPath,
+          product_slug: product.product_slug,
+          link,
+          count: reportLinkCounts.get(link),
         });
       }
     }

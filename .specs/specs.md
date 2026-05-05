@@ -768,6 +768,9 @@ Google evidence link from each promoted feature card, must link the promoted
 service card and product artifact index, must keep its promoted and skipped
 feature summary counts aligned with the promotion manifest, and must not link
 feature README files outside the product's promoted feature inventory. Product
+reports must also avoid duplicate promoted feature README, promoted
+service-card, and product artifact-index links so repeated links cannot
+overstate the promoted artifact inventory. Product
 reports and the IAM report must keep explicit IAM evidence separate from
 derived IAM signals. The IAM report must link every promoted feature artifact
 and must not retain feature artifact links outside the promoted artifact

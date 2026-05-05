@@ -177,6 +177,8 @@ The validator must check:
   product
 - each Step 10 product report links the promoted service card and product
   artifact index for that product
+- each Step 10 product report does not duplicate promoted feature README,
+  promoted service-card, or product artifact-index links
 - each Step 10 product report keeps its promoted and skipped feature summary
   counts aligned with the promotion manifest for that product
 - each Step 10 product report includes at least one official Google evidence
